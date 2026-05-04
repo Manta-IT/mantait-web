@@ -578,89 +578,99 @@
        CONTACT
     ════════════════════════════════════ */
     #contact {
+      padding: var(--pad-section) 0;
       background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border-strong);
     }
-
     .contact-inner {
-      text-align: center;
-      max-width: 560px;
+      max-width: 640px;
       margin: 0 auto;
+      padding: 0 var(--pad-x);
+      text-align: center;
     }
-
     .contact-headline {
-      color: #fff;
-      margin-bottom: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 18px 0;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.3px;
     }
-
+    .contact-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
     .contact-sub {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-muted);
       margin-bottom: 40px;
+      line-height: 1.5;
     }
-
     .contact-cta-wrap {
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
-
     .contact-details {
       display: flex;
       justify-content: center;
-      gap: 48px;
+      gap: 64px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border-strong);
+      margin-top: 12px;
       flex-wrap: wrap;
     }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
     .contact-item-label {
-      font-size: 9px;
+      display: block;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text-faint);
+      margin-bottom: 8px;
+      font-weight: 600;
     }
-
     .contact-item-value {
-      font-size: 15px;
-      color: var(--text-dim);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--text);
+      font-weight: 500;
       text-decoration: none;
-      transition: color 0.2s;
     }
-
-    .contact-item-value:hover { color: var(--gold); }
-
     .contact-note {
-      margin-top: 24px;
-      font-size: 11px;
-      color: var(--text-muted);
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-faint);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     /* ════════════════════════════════════
        FOOTER
     ════════════════════════════════════ */
     footer {
-      padding: 28px var(--pad-x);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 32px var(--pad-x);
+      border-top: 1px solid var(--border-strong);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      font-size: 13px;
+      color: var(--text-faint);
       flex-wrap: wrap;
+      gap: 16px;
     }
-
     .footer-brand {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      color: var(--text-muted);
+      font-size: 18px;
+      color: var(--text);
+      font-weight: 500;
     }
-
-    .footer-brand span { color: var(--gold); }
-
+    .footer-brand span {
+      color: var(--accent);
+    }
     .footer-meta {
-      font-size: 11px;
-      color: var(--text-muted);
+      font-size: 13px;
+      color: var(--text-faint);
     }
 
     /* ════════════════════════════════════
@@ -956,37 +966,35 @@
 
 <!-- ═══ CONTACT ═══ -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <span class="label">Kontakt</span>
-      <h2 class="contact-headline">Začněme konzultací.</h2>
-      <p class="contact-sub">30 minut. Bez závazku. Pochopím vaši situaci.</p>
+  <div class="contact-inner">
+    <span class="label">Kontakt</span>
+    <h2 class="contact-headline">Začněme <em>konzultací.</em></h2>
+    <p class="contact-sub">30 minut. Bez závazku. Pochopím vaši situaci.</p>
 
-      <div class="contact-cta-wrap">
-        <a href="mailto:petr@mantait.cz" class="btn">Napsat email</a>
-      </div>
-
-      <div class="contact-details">
-        <div class="contact-item">
-          <span class="contact-item-label">Email</span>
-          <a href="mailto:petr@mantait.cz" class="contact-item-value">petr@mantait.cz</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item-label">Telefon</span>
-          <a href="tel:+420000000000" class="contact-item-value">+420 000 000 000</a>
-        </div>
-      </div>
-
-      <p class="contact-note">Odpovím do 24 hodin.</p>
+    <div class="contact-cta-wrap">
+      <a href="mailto:petr@mantait.cz" class="btn">Napsat email</a>
     </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:petr@mantait.cz" class="contact-item-value">petr@mantait.cz</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Telefon</span>
+        <a href="tel:+420000000000" class="contact-item-value">+420 000 000 000</a>
+      </div>
+    </div>
+
+    <p class="contact-note">Odpovím do 24 hodin.</p>
   </div>
 </section>
 
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="container">
-  <div class="footer-brand">Manta<span>IT</span> · Petr Kokoška</div>
-  <div class="footer-meta">IČO: 00000000 &nbsp;·&nbsp; © 2026</div>
+<footer>
+  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div class="footer-meta">IČO: 00000000 &middot; &copy; 2026</div>
 </footer>
 
 </body>
