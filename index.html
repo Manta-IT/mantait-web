@@ -116,45 +116,40 @@
        NAV
     ════════════════════════════════════ */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 20px var(--pad-x);
+      z-index: 10;
+      background: rgba(241, 237, 228, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      padding: 22px var(--pad-x);
     }
-
     .nav-brand {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 500;
       color: var(--text);
       text-decoration: none;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
-
-    .nav-brand span { color: var(--gold); }
-
+    .nav-brand span {
+      color: var(--accent);
+    }
     .nav-cta {
-      font-size: 10px;
+      padding: 9px 20px;
+      background: var(--accent);
+      color: var(--text-on-dark);
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
+      border-radius: 4px;
       text-decoration: none;
-      border: 1px solid var(--gold-dim);
-      padding: 8px 18px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s ease;
     }
-
     .nav-cta:hover {
-      background: var(--gold-faint);
+      background: #234436;
     }
 
     /* ════════════════════════════════════
@@ -718,7 +713,7 @@
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-brand">Manta<span>IT</span></a>
-  <a href="#contact" class="nav-cta">Konzultace</a>
+  <a href="#contact" class="nav-cta">Domluvit konzultaci</a>
 </nav>
 
 
