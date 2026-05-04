@@ -1,24 +1,26 @@
-# MantaIT Web -- STATUS
-> Aktualizovano: 2026-04-16 | Oblast: VENTURES
-> Zdroje: web/CONTEXT.md, parent CONTEXT.md (manta-it), STATUS.md (predchozi 2026-04-15) | TrueMemory MCP v teto session nedostupny -- fallback na predchozi STATUS
+# Manta IT Web -- STATUS
+> Aktualizovano: 2026-05-04 | Oblast: VENTURES
+> Zdroje: web/CONTEXT.md, parent CONTEXT.md (manta-it), STATUS.md (predchozi 2026-04-16) | redesign warm-professional dokoncen 2026-05-04
 
 ## Stav
-**ready-to-publish** | Priorita: MED | Posledni zmena: 2026-04-11
+**ready-to-publish** | Priorita: MED | Posledni zmena: 2026-05-04 (warm-professional redesign hotov, OG meta tagy doplneny)
 
 ## Blocker
 Domena mantait.cz -- stav neznamy (nezkontrolovano: owner, DNS, MX). Bez overeni domeny a rozhodnuti o hostingu nelze publikovat. Email petr@mantait.cz je v kontaktu na strance ale MX funkcnost neoverena. Placeholdry (telefon +420 000 000 000, ICO 00000000) stale v HTML.
 
 ## Action list
+- [x] Vizualni redesign na warm-professional (bezova + zelena, Cormorant + Inter) -- 2026-05-04, spec: docs/superpowers/specs/2026-05-04-mantait-web-redesign-warm-professional.md
+- [x] Pridat OG meta tagy (og:title, og:description, og:type) -- 2026-05-04
 - [ ] Overit stav domeny mantait.cz (registrator, expiraci, DNS, MX)
 - [ ] Rozhodnout hosting: GitHub Pages / Vercel / vlastni hosting (spec doporucuje GitHub Pages nebo Netlify)
 - [ ] Doplnit realne telefonni cislo (aktualne placeholder +420 000 000 000)
 - [ ] Doplnit realne ICO (aktualne placeholder 00000000)
-- [ ] Pridat OG meta tagy (title/description hotove, OG chybi)
 - [ ] Pridat bio + foto Petra (doporuceni UX reviewu -- zvysuje duveryhodnost)
 - [ ] Pridat case studies + testimonials (doporuceni UX i marketing reviewu -- social proof, min. 1 anonymizovana case study)
 - [ ] Implementovat SEO doporuceni z market research (H1 optimalizace, meta description)
 - [ ] Nasadit Google Analytics / sledovani konverzi
 - [ ] Publish a overit kontaktni tok (formular/email)
+- [ ] Smazat web/index.html.dark-gold-backup po mergi do master (uz zazalohovano v git historii)
 
 ## Namety (zmineneho, nezacate)
 - Zrevidovat web agentem pro B2B review (zmineno jako TODO v lead gen projektu: project_mantait_web_agent_review.md)
