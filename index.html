@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Petr Kokoška — externí IT ředitel pro firmy bez CTO. Převezmu řízení vašich IT projektů a zajistím jasný výsledek. Praha a celá ČR.">
+  <title>MantaIT — Petr Kokoška · Externí IT leadership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold:        #C9973A;
+      --gold-dim:    #8a641f;
+      --gold-faint:  rgba(201, 151, 58, 0.08);
+      --bg:          #0a0a0a;
+      --bg-alt:      #0f0f0f;
+      --surface:     #141414;
+      --border:      #1e1e1e;
+      --border-mid:  #2a2a2a;
+      --text:        #e8e8e8;
+      --text-dim:    #888;
+      --text-muted:  #444;
+      --max-w:       1080px;
+      --pad-x:       clamp(24px, 6vw, 80px);
+      --pad-section: clamp(72px, 10vw, 120px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Layout ─── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    section {
+      padding: var(--pad-section) 0;
+    }
+
+    /* ─── Typography ─── */
+    .label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: clamp(36px, 5vw, 64px); }
+    h2 { font-size: clamp(28px, 3.5vw, 44px); }
+    h3 { font-size: clamp(18px, 2vw, 24px); }
+
+    .gold { color: var(--gold); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      background: #e0aa42;
+      transform: translateY(-1px);
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      margin: 24px 0;
+    }
+
+    /* ════════════════════════════════════
+       NAV
+    ════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-brand span { color: var(--gold); }
+
+    .nav-cta {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid var(--gold-dim);
+      padding: 8px 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-faint);
+    }
+
+    /* ════════════════════════════════════
+       HERO
+    ════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-left {}
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-eyebrow-text {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-headline {
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-contact {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-contact a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-contact a:hover { color: var(--gold); }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-claim {
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold);
+      padding: 32px 28px;
+      max-width: 300px;
+    }
+
+    .hero-claim-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .hero-claim-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════
+       PAIN POINTS
+    ════════════════════════════════════ */
+    #pain {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pain-header {
+      margin-bottom: 48px;
+    }
+
+    .pain-headline {
+      color: #fff;
+    }
+
+    .pain-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .pain-card {
+      background: var(--bg-alt);
+      padding: 36px 28px;
+      transition: background 0.2s;
+    }
+
+    .pain-card:hover {
+      background: var(--surface);
+    }
+
+    .pain-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--border-mid);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .pain-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ddd;
+      margin-bottom: 12px;
+    }
+
+    .pain-card-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .pain-card-answer {
+      font-size: 12px;
+      color: var(--gold);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      line-height: 1.5;
+    }
+
+    /* ════════════════════════════════════
+       PROCESS
+    ════════════════════════════════════ */
+    #process {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-header {
+      margin-bottom: 56px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--border) 100%);
+    }
+
+    .process-step {
+      padding: 0 20px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--gold);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .process-tagline {
+      margin-top: 48px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    /* ════════════════════════════════════
+       SERVICES
+    ════════════════════════════════════ */
+    #services {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-header {
+      margin-bottom: 48px;
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1.8fr 2.2fr auto;
+      align-items: center;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      border-left: 2px solid var(--gold);
+      padding: 28px 32px;
+      background: var(--bg-alt);
+      transition: background 0.2s;
+      gap: 32px;
+    }
+
+    .service-row:last-child {
+      border-bottom: none;
+    }
+
+    .service-row:hover {
+      background: var(--surface);
+    }
+
+    .service-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ddd;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--gold);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .service-price small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* ════════════════════════════════════
+       DIFFERENTIATOR
+    ════════════════════════════════════ */
+    #diff {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diff-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .diff-left {}
+
+    .diff-negations {
+      list-style: none;
+      margin: 24px 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .diff-neg-item {
+      padding: 14px 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .diff-neg-item:last-child {
+      border-bottom: none;
+    }
+
+    .diff-neg-item::before {
+      content: '✕';
+      color: var(--border-mid);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .diff-positive {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .diff-positive strong {
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    .diff-right {
+      text-align: center;
+    }
+
+    .diff-quote-box {
+      border: 1px solid var(--border-mid);
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .diff-quote-box::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .diff-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 600;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .diff-attribution {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ════════════════════════════════════
+       CONTACT
+    ════════════════════════════════════ */
+    #contact {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-inner {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .contact-headline {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .contact-cta-wrap {
+      margin-bottom: 40px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-item-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .contact-item-value {
+      font-size: 15px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item-value:hover { color: var(--gold); }
+
+    .contact-note {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    footer {
+      padding: 28px var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .footer-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-right {
+        justify-content: flex-start;
+      }
+
+      .hero-claim {
+        max-width: 100%;
+      }
+
+      .pain-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .service-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .service-price {
+        text-align: left;
+      }
+
+      .diff-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .contact-details {
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        padding: 16px var(--pad-x);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">Manta<span>IT</span></a>
+  <a href="#contact" class="nav-cta">Konzultace</a>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <div class="hero-eyebrow-text">Petr Kokoška · MantaIT</div>
+        </div>
+        <h1 class="hero-headline">
+          IT má firmu posouvat.<br>
+          Ne zaměstnávat vedení.
+        </h1>
+        <p class="hero-sub">
+          Převezmu řízení vašich IT projektů, nastavím nové iniciativy
+          a zajistím, že technologická rozhodnutí budou mít jasný směr
+          a výsledek.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Domluvit konzultaci</a>
+          <div class="hero-contact">
+            <a href="tel:+420000000000">+420 000 000 000</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-claim">
+          <p class="hero-claim-text">
+            "Konzultanti doporučují.<br>
+            Já přebírám řízení."
+          </p>
+          <p class="hero-claim-sub">
+            Nejsem konzultant, který napíše report.<br>
+            Jsem IT ředitel, kterého si půjčujete.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PAIN POINTS ═══ -->
+<section id="pain">
+  <div class="container">
+    <div class="pain-header">
+      <span class="label">Možná řešíte</span>
+      <h2 class="pain-headline">Jednu z těchto situací</h2>
+    </div>
+
+    <div class="pain-cards">
+
+      <div class="pain-card">
+        <div class="pain-card-num">01</div>
+        <div class="pain-card-title">Rozjetý projekt</div>
+        <p class="pain-card-body">
+          Máte rozjetý IT projekt a nemáte z něj dobrý pocit?
+          Rozpočet roste. Termíny se posouvají.
+          Dodavatel mluví technicky, ale výsledek není jasný.
+          Vedení řeší detaily místo strategie.
+        </p>
+        <div class="pain-card-answer">
+          Převezmu řízení projektu a nastavím jasná pravidla, kontrolu a směr.
+        </div>
+      </div>
+
+      <div class="pain-card">
+        <div class="pain-card-num">02</div>
+        <div class="pain-card-title">Nový systém</div>
+        <p class="pain-card-body">
+          Chcete stavět nový systém nebo produkt?
+          Nemáte přesné zadání. Nevíte, koho vybrat.
+          Nechcete riskovat drahé chyby.
+        </p>
+        <div class="pain-card-answer">
+          Definuji zadání, pomohu vybrat partnera a řídím realizaci.
+        </div>
+      </div>
+
+      <div class="pain-card">
+        <div class="pain-card-num">03</div>
+        <div class="pain-card-title">Nejistota</div>
+        <p class="pain-card-body">
+          Nejste si jistí, zda vaše IT dává smysl?
+          Máte mnoho systémů. Náklady rostou.
+          Chybí přehled. Nikdo neřídí priority.
+        </p>
+        <div class="pain-card-answer">
+          Provedu nezávislou revizi a navrhnu konkrétní další kroky.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="container">
+    <div class="process-header">
+      <span class="label">Jak spolupráce probíhá</span>
+      <h2>Od prvního hovoru po výsledek</h2>
+    </div>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">1</span>
+        </div>
+        <div class="step-title">Úvodní konzultace</div>
+        <p class="step-desc">
+          Pochopím vaši situaci, cíle a to, kde vás IT skutečně bolí.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">2</span>
+        </div>
+        <div class="step-title">Vyjasnění situace</div>
+        <p class="step-desc">
+          Zmapujeme kde stojíte — projekty, dodavatelé, systémy, rizika.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">3</span>
+        </div>
+        <div class="step-title">Návrh postupu</div>
+        <p class="step-desc">
+          Dostanete konkrétní plán — ne prezentaci do šuplíku.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">4</span>
+        </div>
+        <div class="step-title">Převzetí řízení</div>
+        <p class="step-desc">
+          Vstoupím do projektu a přebírám zodpovědnost za výsledek.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="process-tagline">Žádná teorie bez realizace.</p>
+  </div>
+</section>
+
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <span class="label">Způsoby spolupráce</span>
+      <h2>Tři způsoby jak pracujeme</h2>
+    </div>
+
+    <div class="services-list">
+
+      <div class="service-row">
+        <div class="service-name">Projektové řízení</div>
+        <div class="service-desc">
+          Vstoupím do rozjetého nebo nového IT projektu a přebírám
+          zodpovědnost za scope, dodavatele a výsledek.
+          Pracuji přímo s vaším týmem i s dodavateli.
+        </div>
+        <div class="service-price">
+          8–10 000 Kč
+          <small>za den</small>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-name">IT retainer</div>
+        <div class="service-desc">
+          Průběžná spolupráce — IT strategie, vendor management,
+          rozhodování, dohled nad projekty. Váš externí IT ředitel
+          na dohled, bez nákladů na interní pozici.
+        </div>
+        <div class="service-price">
+          od 50 000 Kč
+          <small>měsíčně</small>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-name">IT revize</div>
+        <div class="service-desc">
+          Nezávislý audit vašeho IT — systémy, náklady, dodavatelé,
+          bezpečnostní rizika. Dostanete konkrétní doporučení
+          a priority, ne obecný report.
+        </div>
+        <div class="service-price">
+          individuálně
+          <small>dle rozsahu</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ DIFFERENTIATOR ═══ -->
+<section id="diff">
+  <div class="container">
+    <div class="diff-inner">
+
+      <div class="diff-left">
+        <span class="label">Proč to není další konzultant</span>
+        <h2>Jiná zodpovědnost.<br>Jiný výsledek.</h2>
+
+        <ul class="diff-negations">
+          <li class="diff-neg-item">Nepřináším prezentace, které skončí v šuplíku</li>
+          <li class="diff-neg-item">Nevypracuji strategii, kterou si budete realizovat sami</li>
+          <li class="diff-neg-item">Neprodávám teorii bez realizace</li>
+          <li class="diff-neg-item">Nejsem napojen na žádného dodavatele</li>
+          <li class="diff-neg-item">Nevyvíjím software</li>
+        </ul>
+
+        <p class="diff-positive">
+          Pokud vstoupím do projektu, <strong>převezmu jeho řízení.</strong>
+          Nastavím jasná pravidla, kontrolu a způsob rozhodování.
+          A zůstávám u toho, dokud věci nefungují tak, jak mají.
+          <br><br>
+          <strong>Stojím na straně firmy.</strong>
+        </p>
+      </div>
+
+      <div class="diff-right">
+        <div class="diff-quote-box">
+          <p class="diff-quote">
+            "Konzultanti doporučují.<br>
+            Já přebírám řízení."
+          </p>
+          <div class="divider" style="margin: 0 auto 16px;"></div>
+          <p class="diff-attribution">Petr Kokoška · MantaIT</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <span class="label">Kontakt</span>
+      <h2 class="contact-headline">Začněme konzultací.</h2>
+      <p class="contact-sub">30 minut. Bez závazku. Pochopím vaši situaci.</p>
+
+      <div class="contact-cta-wrap">
+        <a href="mailto:petr@mantait.cz" class="btn">Napsat email</a>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <a href="mailto:petr@mantait.cz" class="contact-item-value">petr@mantait.cz</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Telefon</span>
+          <a href="tel:+420000000000" class="contact-item-value">+420 000 000 000</a>
+        </div>
+      </div>
+
+      <p class="contact-note">Odpovím do 24 hodin.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="container">
+  <div class="footer-brand">Manta<span>IT</span> · Petr Kokoška</div>
+  <div class="footer-meta">IČO: 00000000 &nbsp;·&nbsp; © 2026</div>
+</footer>
+
+</body>
+</html>
