@@ -679,60 +679,78 @@
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
+        min-height: auto;
       }
-
-      .hero-right {
-        justify-content: flex-start;
+      .hero-headline {
+        font-size: 44px;
       }
-
-      .hero-claim {
-        max-width: 100%;
-      }
-
       .pain-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
-
+      .pain-cards .pain-card:last-child {
+        grid-column: span 2;
+      }
       .process-steps {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
       }
-
       .process-steps::before {
         display: none;
       }
-
       .service-row {
         grid-template-columns: 1fr;
         gap: 12px;
       }
-
       .service-price {
         text-align: left;
       }
-
       .diff-inner {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
       }
-
-      .contact-details {
-        gap: 32px;
+      .pain-headline,
+      #process h2,
+      #services h2,
+      .diff-left h2,
+      .contact-headline {
+        font-size: 36px;
       }
     }
 
     @media (max-width: 600px) {
+      :root {
+        --pad-section: 60px;
+      }
+      .hero-headline {
+        font-size: 36px;
+      }
+      .hero-quote {
+        font-size: 22px;
+      }
+      .pain-cards {
+        grid-template-columns: 1fr;
+      }
+      .pain-cards .pain-card:last-child {
+        grid-column: auto;
+      }
       .process-steps {
         grid-template-columns: 1fr;
         gap: 32px;
       }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
+      .pain-headline,
+      #process h2,
+      #services h2,
+      .diff-left h2,
+      .contact-headline {
+        font-size: 30px;
       }
-
+      .diff-quote {
+        font-size: 24px;
+      }
+      .contact-details {
+        gap: 32px;
+      }
       nav {
         padding: 16px var(--pad-x);
       }
