@@ -332,73 +332,89 @@
        PROCESS
     ════════════════════════════════════ */
     #process {
-      border-bottom: 1px solid var(--border);
+      padding: var(--pad-section) 0;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
     }
-
     .process-header {
-      margin-bottom: 56px;
+      max-width: var(--max-w);
+      margin: 0 auto 56px;
+      padding: 0 var(--pad-x);
     }
-
+    #process h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      line-height: 1.1;
+      margin-top: 0;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+    #process h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
     .process-steps {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      gap: 32px;
       position: relative;
     }
-
     .process-steps::before {
       content: '';
       position: absolute;
-      top: 20px;
-      left: calc(12.5%);
-      right: calc(12.5%);
+      top: 24px;
+      left: calc(var(--pad-x) + 6%);
+      right: calc(var(--pad-x) + 6%);
       height: 1px;
-      background: linear-gradient(90deg, var(--gold) 0%, var(--border) 100%);
+      background: var(--border-strong);
+      z-index: 0;
     }
-
     .process-step {
-      padding: 0 20px 0 0;
       position: relative;
       z-index: 1;
+      text-align: left;
     }
-
-    .step-circle {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--gold);
-      background: var(--bg);
+    .step-circle,
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
-
-    .step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
     .step-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #ccc;
-      margin-bottom: 8px;
-    }
-
-    .step-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .process-tagline {
-      margin-top: 48px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-style: italic;
+      font-size: 22px;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      font-size: 14px;
       color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .process-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--accent);
+      text-align: center;
+      margin-top: 48px;
+      font-weight: 500;
     }
 
     /* ════════════════════════════════════
@@ -805,58 +821,56 @@
 
 <!-- ═══ PROCESS ═══ -->
 <section id="process">
-  <div class="container">
-    <div class="process-header">
-      <span class="label">Jak spolupráce probíhá</span>
-      <h2>Od prvního hovoru po výsledek</h2>
-    </div>
-
-    <div class="process-steps">
-
-      <div class="process-step">
-        <div class="step-circle">
-          <span class="step-num">1</span>
-        </div>
-        <div class="step-title">Úvodní konzultace</div>
-        <p class="step-desc">
-          Pochopím vaši situaci, cíle a to, kde vás IT skutečně bolí.
-        </p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-circle">
-          <span class="step-num">2</span>
-        </div>
-        <div class="step-title">Vyjasnění situace</div>
-        <p class="step-desc">
-          Zmapujeme kde stojíte — projekty, dodavatelé, systémy, rizika.
-        </p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-circle">
-          <span class="step-num">3</span>
-        </div>
-        <div class="step-title">Návrh postupu</div>
-        <p class="step-desc">
-          Dostanete konkrétní plán — ne prezentaci do šuplíku.
-        </p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-circle">
-          <span class="step-num">4</span>
-        </div>
-        <div class="step-title">Převzetí řízení</div>
-        <p class="step-desc">
-          Vstoupím do projektu a přebírám zodpovědnost za výsledek.
-        </p>
-      </div>
-
-    </div>
-
-    <p class="process-tagline">Žádná teorie bez realizace.</p>
+  <div class="process-header">
+    <span class="label">Jak spolupráce probíhá</span>
+    <h2>Od prvního hovoru <em>po výsledek</em></h2>
   </div>
+
+  <div class="process-steps">
+
+    <div class="process-step">
+      <div class="step-circle">
+        <span class="step-num">1</span>
+      </div>
+      <div class="step-title">Úvodní konzultace</div>
+      <p class="step-desc">
+        Pochopím vaši situaci, cíle a to, kde vás IT skutečně bolí.
+      </p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-circle">
+        <span class="step-num">2</span>
+      </div>
+      <div class="step-title">Vyjasnění situace</div>
+      <p class="step-desc">
+        Zmapujeme kde stojíte — projekty, dodavatelé, systémy, rizika.
+      </p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-circle">
+        <span class="step-num">3</span>
+      </div>
+      <div class="step-title">Návrh postupu</div>
+      <p class="step-desc">
+        Dostanete konkrétní plán — ne prezentaci do šuplíku.
+      </p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-circle">
+        <span class="step-num">4</span>
+      </div>
+      <div class="step-title">Převzetí řízení</div>
+      <p class="step-desc">
+        Vstoupím do projektu a přebírám zodpovědnost za výsledek.
+      </p>
+    </div>
+
+  </div>
+
+  <p class="process-tagline">Žádná teorie bez realizace.</p>
 </section>
 
 
