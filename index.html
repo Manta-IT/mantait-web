@@ -257,65 +257,75 @@
        PAIN POINTS
     ════════════════════════════════════ */
     #pain {
-      background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
+      padding: var(--pad-section) 0;
     }
-
     .pain-header {
-      margin-bottom: 48px;
+      max-width: var(--max-w);
+      margin: 0 auto 56px;
+      padding: 0 var(--pad-x);
     }
-
     .pain-headline {
-      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      line-height: 1.1;
+      margin-top: 0;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.3px;
     }
-
+    .pain-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
     .pain-cards {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
     }
-
     .pain-card {
-      background: var(--bg-alt);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       padding: 36px 28px;
-      transition: background 0.2s;
+      border-radius: 6px;
     }
-
-    .pain-card:hover {
-      background: var(--surface);
-    }
-
     .pain-card-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--border-mid);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .pain-card-title {
-      font-size: 16px;
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 3px;
+      margin-bottom: 18px;
       font-weight: 600;
-      color: #ddd;
-      margin-bottom: 12px;
     }
-
+    .pain-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
     .pain-card-body {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.6;
+      margin-bottom: 22px;
     }
-
     .pain-card-answer {
-      font-size: 12px;
-      color: var(--gold);
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      line-height: 1.5;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.55;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-strong);
+      font-weight: 500;
+    }
+    .pain-card-answer::before {
+      content: '\2192';
+      color: var(--accent);
+      margin-right: 8px;
+      font-weight: 600;
     }
 
     /* ════════════════════════════════════
@@ -741,57 +751,54 @@
 </section>
 
 
-<!-- ═══ PAIN POINTS ═══ -->
 <section id="pain">
-  <div class="container">
-    <div class="pain-header">
-      <span class="label">Možná řešíte</span>
-      <h2 class="pain-headline">Jednu z těchto situací</h2>
+  <div class="pain-header">
+    <span class="label">Možná řešíte</span>
+    <h2 class="pain-headline">Jednu z těchto <em>situací</em></h2>
+  </div>
+
+  <div class="pain-cards">
+
+    <div class="pain-card">
+      <div class="pain-card-num">01</div>
+      <div class="pain-card-title">Rozjetý projekt</div>
+      <p class="pain-card-body">
+        Máte rozjetý IT projekt a nemáte z něj dobrý pocit?
+        Rozpočet roste. Termíny se posouvají.
+        Dodavatel mluví technicky, ale výsledek není jasný.
+        Vedení řeší detaily místo strategie.
+      </p>
+      <div class="pain-card-answer">
+        Převezmu řízení projektu a nastavím jasná pravidla, kontrolu a směr.
+      </div>
     </div>
 
-    <div class="pain-cards">
-
-      <div class="pain-card">
-        <div class="pain-card-num">01</div>
-        <div class="pain-card-title">Rozjetý projekt</div>
-        <p class="pain-card-body">
-          Máte rozjetý IT projekt a nemáte z něj dobrý pocit?
-          Rozpočet roste. Termíny se posouvají.
-          Dodavatel mluví technicky, ale výsledek není jasný.
-          Vedení řeší detaily místo strategie.
-        </p>
-        <div class="pain-card-answer">
-          Převezmu řízení projektu a nastavím jasná pravidla, kontrolu a směr.
-        </div>
+    <div class="pain-card">
+      <div class="pain-card-num">02</div>
+      <div class="pain-card-title">Nový systém</div>
+      <p class="pain-card-body">
+        Chcete stavět nový systém nebo produkt?
+        Nemáte přesné zadání. Nevíte, koho vybrat.
+        Nechcete riskovat drahé chyby.
+      </p>
+      <div class="pain-card-answer">
+        Definuji zadání, pomohu vybrat partnera a řídím realizaci.
       </div>
-
-      <div class="pain-card">
-        <div class="pain-card-num">02</div>
-        <div class="pain-card-title">Nový systém</div>
-        <p class="pain-card-body">
-          Chcete stavět nový systém nebo produkt?
-          Nemáte přesné zadání. Nevíte, koho vybrat.
-          Nechcete riskovat drahé chyby.
-        </p>
-        <div class="pain-card-answer">
-          Definuji zadání, pomohu vybrat partnera a řídím realizaci.
-        </div>
-      </div>
-
-      <div class="pain-card">
-        <div class="pain-card-num">03</div>
-        <div class="pain-card-title">Nejistota</div>
-        <p class="pain-card-body">
-          Nejste si jistí, zda vaše IT dává smysl?
-          Máte mnoho systémů. Náklady rostou.
-          Chybí přehled. Nikdo neřídí priority.
-        </p>
-        <div class="pain-card-answer">
-          Provedu nezávislou revizi a navrhnu konkrétní další kroky.
-        </div>
-      </div>
-
     </div>
+
+    <div class="pain-card">
+      <div class="pain-card-num">03</div>
+      <div class="pain-card-title">Nejistota</div>
+      <p class="pain-card-body">
+        Nejste si jistí, zda vaše IT dává smysl?
+        Máte mnoho systémů. Náklady rostou.
+        Chybí přehled. Nikdo neřídí priority.
+      </p>
+      <div class="pain-card-answer">
+        Provedu nezávislou revizi a navrhnu konkrétní další kroky.
+      </div>
+    </div>
+
   </div>
 </section>
 
