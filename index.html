@@ -420,69 +420,67 @@
        SERVICES
     ════════════════════════════════════ */
     #services {
-      background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
+      padding: var(--pad-section) 0;
     }
-
     .services-header {
-      margin-bottom: 48px;
+      max-width: var(--max-w);
+      margin: 0 auto 56px;
+      padding: 0 var(--pad-x);
     }
-
+    #services h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      line-height: 1.1;
+      margin-top: 0;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+    #services h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
     .services-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--border);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      border-top: 1px solid var(--border-strong);
     }
-
     .service-row {
       display: grid;
-      grid-template-columns: 1.8fr 2.2fr auto;
-      align-items: center;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      border-left: 2px solid var(--gold);
-      padding: 28px 32px;
-      background: var(--bg-alt);
-      transition: background 0.2s;
-      gap: 32px;
+      grid-template-columns: 220px 1fr 200px;
+      gap: 40px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border-strong);
+      align-items: start;
     }
-
-    .service-row:last-child {
-      border-bottom: none;
-    }
-
-    .service-row:hover {
-      background: var(--surface);
-    }
-
     .service-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: #ddd;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      color: var(--text);
+      font-weight: 500;
     }
-
     .service-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
     }
-
     .service-price {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      color: var(--gold);
-      white-space: nowrap;
+      font-size: 24px;
+      color: var(--accent);
       text-align: right;
+      font-weight: 500;
     }
-
     .service-price small {
       display: block;
       font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      margin-top: 2px;
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     /* ════════════════════════════════════
@@ -867,54 +865,52 @@
 
 <!-- ═══ SERVICES ═══ -->
 <section id="services">
-  <div class="container">
-    <div class="services-header">
-      <span class="label">Způsoby spolupráce</span>
-      <h2>Tři způsoby jak pracujeme</h2>
+  <div class="services-header">
+    <span class="label">Způsoby spolupráce</span>
+    <h2>Tři způsoby <em>jak pracujeme</em></h2>
+  </div>
+
+  <div class="services-list">
+
+    <div class="service-row">
+      <div class="service-name">Projektové řízení</div>
+      <div class="service-desc">
+        Vstoupím do rozjetého nebo nového IT projektu a přebírám
+        zodpovědnost za scope, dodavatele a výsledek.
+        Pracuji přímo s vaším týmem i s dodavateli.
+      </div>
+      <div class="service-price">
+        8-10 000 Kč
+        <small>za den</small>
+      </div>
     </div>
 
-    <div class="services-list">
-
-      <div class="service-row">
-        <div class="service-name">Projektové řízení</div>
-        <div class="service-desc">
-          Vstoupím do rozjetého nebo nového IT projektu a přebírám
-          zodpovědnost za scope, dodavatele a výsledek.
-          Pracuji přímo s vaším týmem i s dodavateli.
-        </div>
-        <div class="service-price">
-          8–10 000 Kč
-          <small>za den</small>
-        </div>
+    <div class="service-row">
+      <div class="service-name">IT retainer</div>
+      <div class="service-desc">
+        Průběžná spolupráce — IT strategie, vendor management,
+        rozhodování, dohled nad projekty. Váš externí IT ředitel
+        na dohled, bez nákladů na interní pozici.
       </div>
-
-      <div class="service-row">
-        <div class="service-name">IT retainer</div>
-        <div class="service-desc">
-          Průběžná spolupráce — IT strategie, vendor management,
-          rozhodování, dohled nad projekty. Váš externí IT ředitel
-          na dohled, bez nákladů na interní pozici.
-        </div>
-        <div class="service-price">
-          od 50 000 Kč
-          <small>měsíčně</small>
-        </div>
+      <div class="service-price">
+        od 50 000 Kč
+        <small>měsíčně</small>
       </div>
-
-      <div class="service-row">
-        <div class="service-name">IT revize</div>
-        <div class="service-desc">
-          Nezávislý audit vašeho IT — systémy, náklady, dodavatelé,
-          bezpečnostní rizika. Dostanete konkrétní doporučení
-          a priority, ne obecný report.
-        </div>
-        <div class="service-price">
-          individuálně
-          <small>dle rozsahu</small>
-        </div>
-      </div>
-
     </div>
+
+    <div class="service-row">
+      <div class="service-name">IT revize</div>
+      <div class="service-desc">
+        Nezávislý audit vašeho IT — systémy, náklady, dodavatelé,
+        bezpečnostní rizika. Dostanete konkrétní doporučení
+        a priority, ne obecný report.
+      </div>
+      <div class="service-price">
+        individuálně
+        <small>dle rozsahu</small>
+      </div>
+    </div>
+
   </div>
 </section>
 
