@@ -1,0 +1,5 @@
+# Brainstorming cache (Visual Companion)
+.superpowers/
+
+# Local Claude config
+.claude/
