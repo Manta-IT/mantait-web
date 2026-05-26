@@ -14,10 +14,10 @@ Web nasazen na **mantait.cz** přes Cloudflare Pages auto-deploy z master branch
 - **Manual deploy**: NEPOUŽÍVAT wrangler. Vše přes git push.
 
 ## Pending (po launch)
+- **Calendly → Google Appointment Schedule** (zítra) — Calendly nemá CZ. Petr vytvoří v Google Calendar (Workspace už platí, zdarma, plně česky), pak Claude search-replace všech CTAs na `<a href="https://calendar.app.google/XXX" target="_blank">`. Odstranit Calendly script + CSS + inline JS handler.
 - **Logo finalizace** — brand-lab v1-v6 jako research, žádný nevybrán. Petr odložil, vrátíme se později.
 - **Foto Petra** — square 800×800 + landscape 1200×630
 - **og:image asset** (čeká na logo)
-- **Calendly Pro** — Petr může upgrade + vytvořit 6 event types per service
 - **External registrace**: Firmy.cz, Google Business Profile, LinkedIn Company page Manta IT
 - **Submit sitemap**: Google Search Console + Seznam Webmaster Tools
 
