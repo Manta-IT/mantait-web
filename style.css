@@ -2240,6 +2240,67 @@ footer {
 }
 
 /* ════════════════════════════════════
+   Touch device hover reset (no sticky hover na mobile)
+   @media (hover: none) = touch-only devices (telefon, tablet bez myši)
+════════════════════════════════════ */
+@media (hover: none) {
+  /* Product cards */
+  .product-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+  .product-card:hover .product-card-btn-primary {
+    background: var(--accent);
+  }
+  .product-card-btn-secondary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  /* Subservice rows (dílčí služby pod IT governance) */
+  .subservice-row:hover {
+    background: var(--bg);
+    border-color: var(--border);
+  }
+  .subservice-row:hover .subservice-row-num,
+  .subservice-row:hover .subservice-row-name,
+  .subservice-row:hover .subservice-row-tagline,
+  .subservice-row:hover .subservice-row-desc,
+  .subservice-row:hover .subservice-row-price-amount,
+  .subservice-row:hover .subservice-row-price-unit {
+    color: inherit;
+  }
+  .subservice-row:hover .subservice-row-bullets li {
+    color: inherit;
+  }
+  .subservice-row:hover .subservice-row-bullets li::before {
+    color: var(--accent);
+  }
+
+  /* Specializace karty */
+  .specializace-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+  .specializace-card:hover .specializace-link {
+    color: var(--accent);
+  }
+
+  /* Pain karty - border accent reset */
+  .pain-card:hover,
+  .pain-card:focus-within {
+    border-color: var(--border);
+  }
+
+  /* Nav dropdown - na mobilu se otevírá CSS-only s tap, ne hover */
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: none;
+  }
+}
+
+/* ════════════════════════════════════
    Reduced motion (WCAG 2.3.3)
 ════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
