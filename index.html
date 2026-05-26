@@ -3,772 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Petr Kokoška - externí IT ředitel pro firmy bez CTO. Převezmu řízení vašich IT projektů a zajistím jasný výsledek. Praha a celá ČR.">
-  <meta property="og:title" content="Manta IT - Externí IT leadership">
-  <meta property="og:description" content="Petr Kokoška - externí IT ředitel pro firmy bez CTO. Převezmu řízení vašich IT projektů a zajistím jasný výsledek.">
+  <meta name="description" content="Manta IT - externí IT vedení pro firmy bez vlastního IT ředitele. Projektové řízení, product discovery, IT revize. Petr Kokoška, Praha a celá ČR.">
+  <meta property="og:title" content="Manta IT - externí IT leadership">
+  <meta property="og:description" content="Externí IT vedení pro firmy bez vlastního IT ředitele. Projektové řízení, product discovery, IT revize.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/">
+  <meta property="og:site_name" content="Manta IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manta IT - externí IT leadership">
+  <meta name="twitter:description" content="Externí IT vedení pro firmy bez vlastního IT ředitele.">
+  <link rel="canonical" href="https://mantait.cz/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Manta IT - Petr Kokoška - Externí IT leadership</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+  <link rel="stylesheet" href="style.css">
 
-    :root {
-      /* Paleta -- warm professional */
-      --bg:               #f1ede4;
-      --bg-alt:           #ebe5d6;
-      --bg-card:          #f8f5ec;
-      --bg-dark:          #16201d;
+  <!-- Structured data: LocalBusiness + ProfessionalService + Offers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://mantait.cz/#business",
+    "name": "Manta IT",
+    "url": "https://mantait.cz/",
+    "logo": "https://mantait.cz/favicon.svg",
+    "description": "Externí IT vedení pro firmy bez vlastního IT ředitele. Projektové řízení, product discovery, IT revize a AI assessment.",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://mantait.cz/#petr",
+      "name": "Petr Kokoška",
+      "jobTitle": "Externí IT ředitel",
+      "email": "petr.kokoska@mantait.cz",
+      "telephone": "+420732329431",
+      "url": "https://mantait.cz/o-mne.html",
+      "knowsAbout": [
+        "Projektové řízení IT",
+        "Product Discovery",
+        "Vendor management",
+        "IT strategie",
+        "AI assessment",
+        "Systémová integrace"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/pekok0/",
+        "https://github.com/Manta-IT"
+      ]
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Česká republika"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CZ",
+      "addressLocality": "Praha"
+    },
+    "email": "petr.kokoska@mantait.cz",
+    "telephone": "+420732329431",
+    "taxID": "04158351",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Služby Manta IT",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "AI Assessment",
+          "description": "2 dny ve firmě + plán do týdne. Hloubkový rozbor procesů a AI příležitostí.",
+          "price": "27900",
+          "priceCurrency": "CZK"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI Assessment Lite",
+          "description": "4 hodiny online + report do týdne. Rychlá orientace, kde AI ano a kde ne.",
+          "price": "11900",
+          "priceCurrency": "CZK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Web Standard",
+          "description": "Web na míru se snadnou správou textů a obrázků. Optimalizovaný pro vyhledávače.",
+          "price": "16900",
+          "priceCurrency": "CZK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Web Quick",
+          "description": "Jednoduchá webovka 4-6 stránek pro řemeslníky a malé firmy. Hotovo do týdne.",
+          "price": "8900",
+          "priceCurrency": "CZK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Raynet konzultace a integrace",
+          "description": "Konzultace, integrace s účetnictvím, úpravy na míru, audit Raynet CRM.",
+          "price": "15000",
+          "priceCurrency": "CZK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Projektové řízení",
+          "description": "Vedení nového nebo rozjetého IT projektu jako externí projekt manažer.",
+          "price": "10000",
+          "priceCurrency": "CZK",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "unitText": "DAY"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Product Discovery a Product Ownership",
+          "description": "Definice zadání nového produktu, převzetí product ownership existujícího, nebo dlouhodobé vedení produktu.",
+          "price": "10000",
+          "priceCurrency": "CZK",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "unitText": "DAY"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "IT retainer",
+          "description": "Měsíční paušál - externí IT vedení napříč projekty.",
+          "price": "50000",
+          "priceCurrency": "CZK",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "unitText": "MON"
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
-      --accent:           #2d5447;
-      --accent-warm:      #c9b88a;
-
-      --text:             #16201d;
-      --text-muted:       #485854;
-      --text-faint:       #7a8782;
-
-      --border:           #e0dccf;
-      --border-strong:    #d8d1bf;
-
-      --text-on-dark:        #f1ede4;
-      --text-on-dark-muted:  rgba(241,237,228,0.75);
-      --text-on-dark-faint:  rgba(241,237,228,0.5);
-
-      /* Layout */
-      --max-w:            1080px;
-      --pad-x:            clamp(24px, 6vw, 80px);
-      --pad-section:      clamp(72px, 10vw, 120px);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─── Layout ─── */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-    }
-
-    section {
-      padding: var(--pad-section) 0;
-    }
-
-    /* ─── Typography ─── */
-    .label {
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      line-height: 1.15;
-    }
-
-    h1 { font-size: clamp(36px, 5vw, 64px); }
-    h2 { font-size: clamp(28px, 3.5vw, 44px); }
-    h3 { font-size: clamp(18px, 2vw, 24px); }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: var(--text-on-dark);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .btn:hover {
-      background: #234436;
-    }
-
-    /* ─── Divider ─── */
-    .divider {
-      width: 48px;
-      height: 1px;
-      background: var(--border-strong);
-    }
-
-    /* ════════════════════════════════════
-       NAV
-    ════════════════════════════════════ */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(241, 237, 228, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px var(--pad-x);
-    }
-    .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-    }
-    .nav-brand span {
-      color: var(--accent);
-    }
-    .nav-cta {
-      padding: 9px 20px;
-      background: var(--accent);
-      color: var(--text-on-dark);
-      font-size: 13px;
-      font-weight: 500;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .nav-cta:hover {
-      background: #234436;
-    }
-
-    /* ════════════════════════════════════
-       HERO
-    ════════════════════════════════════ */
-    #hero {
-      padding-top: 60px;
-      padding-bottom: var(--pad-section);
-    }
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 60px;
-      align-items: center;
-      min-height: calc(100vh - 200px);
-    }
-    .hero-left .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 28px;
-    }
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 56px;
-      line-height: 1.08;
-      margin-bottom: 28px;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-    .hero-headline em {
-      font-style: italic;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .hero-lead {
-      font-size: 17px;
-      color: var(--text-muted);
-      margin-bottom: 36px;
-      line-height: 1.55;
-      max-width: 520px;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .hero-cta-secondary {
-      padding: 14px 4px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
-    }
-    .hero-reassure {
-      margin-top: 22px;
-      font-size: 13px;
-      color: var(--text-faint);
-      font-style: italic;
-      font-family: 'Cormorant Garamond', serif;
-    }
-    .hero-right {
-      background: #e8e2d3;
-      border-radius: 6px;
-      padding: 44px 36px;
-      border-left: 3px solid var(--accent);
-    }
-    .hero-quote-mark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 64px;
-      line-height: 1;
-      color: var(--accent);
-      margin-bottom: -12px;
-    }
-    .hero-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-    .hero-quote em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-attribution {
-      font-size: 12px;
-      color: var(--text-faint);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    /* ════════════════════════════════════
-       PAIN POINTS
-    ════════════════════════════════════ */
-    #pain {
-      padding: var(--pad-section) 0;
-    }
-    .pain-header {
-      max-width: var(--max-w);
-      margin: 0 auto 56px;
-      padding: 0 var(--pad-x);
-    }
-    .pain-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      margin-top: 0;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-    .pain-headline em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .pain-cards {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 28px;
-    }
-    .pain-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 36px 28px;
-      border-radius: 6px;
-    }
-    .pain-card-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
-      color: var(--accent);
-      letter-spacing: 3px;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-    .pain-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      color: var(--text);
-      margin-bottom: 14px;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-    .pain-card-body {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .pain-card-answer {
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.55;
-      padding-top: 18px;
-      border-top: 1px solid var(--border-strong);
-      font-weight: 500;
-    }
-    .pain-card-answer::before {
-      content: '\2192';
-      color: var(--accent);
-      margin-right: 8px;
-      font-weight: 600;
-    }
-
-    /* ════════════════════════════════════
-       PROCESS
-    ════════════════════════════════════ */
-    #process {
-      padding: var(--pad-section) 0;
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border-strong);
-      border-bottom: 1px solid var(--border-strong);
-    }
-    .process-header {
-      max-width: var(--max-w);
-      margin: 0 auto 56px;
-      padding: 0 var(--pad-x);
-    }
-    #process h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      margin-top: 0;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-    #process h2 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .process-steps {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 24px;
-      left: calc(var(--pad-x) + 6%);
-      right: calc(var(--pad-x) + 6%);
-      height: 1px;
-      background: var(--border-strong);
-      z-index: 0;
-    }
-    .process-step {
-      position: relative;
-      z-index: 1;
-      text-align: left;
-    }
-    .step-num {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--bg-alt);
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-    }
-    .step-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      color: var(--text);
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    .step-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .process-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 20px;
-      color: var(--accent);
-      text-align: center;
-      margin-top: 48px;
-      font-weight: 500;
-    }
-
-    /* ════════════════════════════════════
-       SERVICES
-    ════════════════════════════════════ */
-    #services {
-      padding: var(--pad-section) 0;
-    }
-    .services-header {
-      max-width: var(--max-w);
-      margin: 0 auto 56px;
-      padding: 0 var(--pad-x);
-    }
-    #services h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      margin-top: 0;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-    #services h2 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .services-list {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      border-top: 1px solid var(--border-strong);
-    }
-    .service-row {
-      display: grid;
-      grid-template-columns: 220px 1fr 200px;
-      gap: 40px;
-      padding: 36px 0;
-      border-bottom: 1px solid var(--border-strong);
-      align-items: start;
-    }
-    .service-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .service-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .service-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      color: var(--accent);
-      text-align: right;
-      font-weight: 500;
-    }
-    .service-price small {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      color: var(--text-faint);
-      margin-top: 4px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    /* ════════════════════════════════════
-       DIFFERENTIATOR
-    ════════════════════════════════════ */
-    #diff {
-      padding: var(--pad-section) 0;
-      background: var(--bg-dark);
-      color: var(--text-on-dark);
-    }
-    #diff .label {
-      color: var(--accent-warm);
-    }
-    .diff-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .diff-left h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      margin-top: 0;
-      margin-bottom: 32px;
-      font-weight: 500;
-      color: var(--text-on-dark);
-      letter-spacing: -0.3px;
-    }
-    .diff-left h2 em {
-      font-style: italic;
-      color: var(--accent-warm);
-    }
-    .diff-negations {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 32px 0;
-    }
-    .diff-neg-item {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(241, 237, 228, 0.12);
-      font-size: 15px;
-      color: var(--text-on-dark-muted);
-      position: relative;
-      padding-left: 28px;
-    }
-    .diff-neg-item::before {
-      content: '\2715';
-      position: absolute;
-      left: 0;
-      color: var(--accent-warm);
-      font-size: 12px;
-      top: 17px;
-    }
-    .diff-positive {
-      margin-top: 32px;
-      font-size: 16px;
-      color: var(--text-on-dark);
-      line-height: 1.65;
-    }
-    .diff-positive strong {
-      color: var(--accent-warm);
-      font-weight: 600;
-    }
-    .diff-quote-box {
-      background: rgba(241, 237, 228, 0.04);
-      border-left: 3px solid var(--accent-warm);
-      padding: 48px 40px;
-      border-radius: 4px;
-    }
-    .diff-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      line-height: 1.3;
-      color: var(--text-on-dark);
-      margin: 0 0 28px 0;
-      font-weight: 500;
-    }
-    .diff-quote em {
-      font-style: italic;
-      color: var(--accent-warm);
-    }
-    .diff-attribution {
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-on-dark-faint);
-      font-weight: 500;
-    }
-
-    /* ════════════════════════════════════
-       CONTACT
-    ════════════════════════════════════ */
-    #contact {
-      padding: var(--pad-section) 0;
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border-strong);
-    }
-    .contact-inner {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      text-align: center;
-    }
-    .contact-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      margin: 18px 0;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-    .contact-headline em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .contact-sub {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-      line-height: 1.5;
-    }
-    .contact-cta-wrap {
-      margin-bottom: 48px;
-    }
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: 64px;
-      padding-top: 36px;
-      border-top: 1px solid var(--border-strong);
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-    .contact-item-label {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .contact-item-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      color: var(--text);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .contact-note {
-      margin-top: 32px;
-      font-size: 13px;
-      color: var(--text-faint);
-      font-style: italic;
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    /* ════════════════════════════════════
-       FOOTER
-    ════════════════════════════════════ */
-    footer {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 32px var(--pad-x);
-      border-top: 1px solid var(--border-strong);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: var(--text-faint);
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .footer-brand span {
-      color: var(--accent);
-    }
-    .footer-meta {
-      font-size: 13px;
-      color: var(--text-faint);
-    }
-
-    /* ════════════════════════════════════
-       RESPONSIVE
-    ════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        min-height: auto;
+  <!-- Structured data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Pro koho je IT governance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pro firmy bez vlastního IT ředitele, které řeší více než jeden z těchto problémů: propojení systémů a automatizace, kontrola nákladů a reporting, nový systém bez jasného zadání, špatně používané nástroje, rozjetý projekt, který se vymyká."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jaké jsou ceny?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IT governance od 50 000 Kč/měsíc paušál. Dílčí zakázky 10 000 Kč/den. Produktové služby s pevnou cenou (AI Assessment 27 900 Kč, Web Standard 16 900 Kč atd.)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak začneme?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30minutový orientační hovor online nebo u vás. Bez závazku. Pochopím vaši situaci a navrhnu další kroky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "V jaké geografii pracuji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Česká republika. Online nebo osobně v Praze a okolí. Větší klienti i v terénu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak dlouhá je typická spolupráce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IT governance je dlouhodobý paušál (minimum 3 měsíce). Dílčí zakázky a produktové služby jednorázově."
+        }
       }
-      .hero-headline {
-        font-size: 44px;
-      }
-      .pain-cards {
-        grid-template-columns: 1fr 1fr;
-      }
-      .pain-cards .pain-card:last-child {
-        grid-column: span 2;
-      }
-      .process-steps {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-      .process-steps::before {
-        display: none;
-      }
-      .service-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .service-price {
-        text-align: left;
-      }
-      .diff-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .pain-headline,
-      #process h2,
-      #services h2,
-      .diff-left h2,
-      .contact-headline {
-        font-size: 36px;
-      }
-    }
+    ]
+  }
+  </script>
 
-    @media (max-width: 600px) {
-      :root {
-        --pad-section: 60px;
-      }
-      .hero-headline {
-        font-size: 36px;
-      }
-      .hero-quote {
-        font-size: 22px;
-      }
-      .pain-cards {
-        grid-template-columns: 1fr;
-      }
-      .pain-cards .pain-card:last-child {
-        grid-column: auto;
-      }
-      .process-steps {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .pain-headline,
-      #process h2,
-      #services h2,
-      .diff-left h2,
-      .contact-headline {
-        font-size: 30px;
-      }
-      .diff-quote {
-        font-size: 24px;
-      }
-      .contact-details {
-        gap: 32px;
-      }
-      nav {
-        padding: 16px var(--pad-x);
-      }
-    }
-  </style>
+  <!-- Structured data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Manta IT",
+      "item": "https://mantait.cz/"
+    }]
+  }
+  </script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-brand">Manta<span>IT</span></a>
-  <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447'});return false;">Domluvit konzultaci</a>
+  <a href="index.html" class="nav-brand">Manta<span>IT</span></a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">Domů</a>
+    <a href="index.html#sluzby" class="nav-link">Služby</a>
+    <a href="ai.html" class="nav-link">AI</a>
+    <a href="weby.html" class="nav-link">Weby</a>
+    <div class="nav-dropdown">
+      <a href="index.html#specializace" class="nav-link">Specializace</a>
+      <div class="nav-dropdown-menu">
+        <a href="raynet.html">Raynet CRM</a>
+      </div>
+    </div>
+    <a href="o-mne.html" class="nav-link">O mně</a>
+    <a href="kontakt.html" class="nav-link">Kontakt</a>
+  </div>
+  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
 </nav>
 
+<main>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
@@ -777,12 +240,12 @@
     <div class="hero-left">
       <div class="hero-eyebrow">Externí IT ředitel</div>
       <h1 class="hero-headline">IT má firmu <em>posouvat.</em><br>Ne zaměstnávat vedení.</h1>
-      <p class="hero-lead">Pro firmy 50-300 lidí, které potřebují někoho, kdo IT řídí - ne radí. Přebírám zodpovědnost za rozhodnutí, dodavatele i výsledek.</p>
+      <p class="hero-lead">Pro firmy, které potřebují někoho, kdo IT řídí - ne radí. Vstupuji jako zástupce firmy a vedu projekt, dodavatele i rozhodování k dohodnutému výsledku.</p>
       <div class="hero-ctas">
-        <a href="#" class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447'});return false;">Domluvit konzultaci</a>
-        <a href="#process" class="hero-cta-secondary">Jak spolupráce probíhá</a>
+        <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+        <a href="#proces" class="hero-cta-secondary">Jak spolupráce probíhá</a>
       </div>
-      <p class="hero-reassure">30 minut. Bez závazku.</p>
+      <p class="hero-reassure">30 minut. Online nebo u vás. Bez závazku.</p>
     </div>
 
     <div class="hero-right">
@@ -795,6 +258,7 @@
 </section>
 
 
+<!-- ═══ PAIN POINTS ═══ -->
 <section id="pain">
   <div class="pain-header">
     <span class="label">Možná řešíte</span>
@@ -805,41 +269,77 @@
 
     <div class="pain-card">
       <div class="pain-card-num">01</div>
-      <div class="pain-card-title">Rozjetý projekt</div>
+      <div class="pain-card-title">Propojení systémů a automatizace procesů</div>
       <p class="pain-card-body">
-        Máte rozjetý IT projekt a nemáte z něj dobrý pocit?
-        Rozpočet roste. Termíny se posouvají.
-        Dodavatel mluví technicky, ale výsledek není jasný.
-        Vedení řeší detaily místo strategie.
+        Máte slušně rozjeté systémy, nic dalšího už stavět nechcete. Chcete je
+        jen propojit, ať si data tečou sama, a zbavit se ručního přepisování
+        mezi účetnictvím, CRM, e-shopem a interními aplikacemi.
       </p>
       <div class="pain-card-answer">
-        Převezmu řízení projektu a nastavím jasná pravidla, kontrolu a směr.
+        Navrhnu propojení, vyberu nástroj a postarám se o zavedení.
       </div>
     </div>
 
     <div class="pain-card">
       <div class="pain-card-num">02</div>
-      <div class="pain-card-title">Nový systém</div>
+      <div class="pain-card-title">Náklady rostou, chybí přehled a reporting</div>
       <p class="pain-card-body">
-        Chcete stavět nový systém nebo produkt?
-        Nemáte přesné zadání. Nevíte, koho vybrat.
-        Nechcete riskovat drahé chyby.
+        Máte mnoho systémů a dodavatelů. Provoz stojí víc než dřív.
+        Nikdo neřídí priority. K majiteli nebo vedení neproudí pravidelný
+        reporting o stavu IT, projektů a financí.
       </p>
       <div class="pain-card-answer">
-        Definuji zadání, pomohu vybrat partnera a řídím realizaci.
+        Provedu revizi, srovnám náklady a nastavím pravidelný reporting.
       </div>
     </div>
 
     <div class="pain-card">
       <div class="pain-card-num">03</div>
-      <div class="pain-card-title">Nejistota</div>
+      <div class="pain-card-title">Nový systém nebo aplikace bez jasného zadání</div>
       <p class="pain-card-body">
-        Nejste si jistí, zda vaše IT dává smysl?
-        Máte mnoho systémů. Náklady rostou.
-        Chybí přehled. Nikdo neřídí priority.
+        Chcete stavět nový systém nebo modernizovat, co dosluhuje.
+        Nevíte přesně co, jak ani s kým. Nechcete riskovat drahé chyby.
       </p>
       <div class="pain-card-answer">
-        Provedu nezávislou revizi a navrhnu konkrétní další kroky.
+        Definuji zadání, doporučím řešení a postup. Pak vedu realizaci.
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-num">04</div>
+      <div class="pain-card-title">Lidé špatně používají, co máte</div>
+      <p class="pain-card-body">
+        Máte systémy a nástroje, ale zaměstnanci je nevyužívají naplno
+        nebo špatně. Nebo potřebujete zavést nový digitální nástroj
+        - od CRM po ticketing - a nikdo to neumí vybrat a zaškolit.
+      </p>
+      <div class="pain-card-answer">
+        Vyberu vhodný nástroj, postarám se o zavedení a zaškolím v něm vaše lidi.
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-num">05</div>
+      <div class="pain-card-title">Rozjetý projekt, který se vymyká</div>
+      <p class="pain-card-body">
+        Rozpočet roste. Termíny se posouvají. Dodavatel mluví technicky,
+        ale výsledek není jasný. Vedení řeší detaily místo strategie.
+      </p>
+      <div class="pain-card-answer">
+        Vstoupím do projektu a srovnám rozsah, dodavatele i tempo.
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-num">06</div>
+      <div class="pain-card-title">Bezpečnost a data pod kontrolou</div>
+      <p class="pain-card-body">
+        Compliance, zálohování, GDPR, kyber risk. Víte, jestli to máte
+        vyřešené dobře, nebo si jen myslíte, že ano?
+      </p>
+      <div class="pain-card-answer">
+        Nezávislé posouzení bezpečnosti, audit zálohování a krizový plán
+        pro případ incidentu. Žádné prodávání řešení.
       </div>
     </div>
 
@@ -847,36 +347,201 @@
 </section>
 
 
-<!-- ═══ PROCESS ═══ -->
-<section id="process">
-  <div class="process-header">
-    <span class="label">Jak spolupráce probíhá</span>
-    <h2>Od prvního hovoru <em>po výsledek</em></h2>
+<!-- ═══ SERVICES ═══ -->
+<section id="sluzby">
+  <div class="services-header">
+    <span class="label">Co nabízím</span>
+    <h2>Dlouhodobé vedení <em>vašeho IT</em></h2>
+    <p class="services-sub">
+      Níže také nabízím jednotlivé služby: projektové řízení, product discovery a samostatnou IT revizi.
+    </p>
   </div>
 
-  <div class="process-steps">
+  <!-- IT GOVERNANCE - hlavní služba -->
+  <div class="governance-box" id="governance">
+    <div class="governance-inner">
+      <div class="governance-left">
+        <span class="label">Hlavní služba &middot; srdce nabídky</span>
+        <h3 class="governance-name">IT governance</h3>
+        <p class="governance-subtitle">Externí IT ředitel pro firmy bez vlastního IT vedení</p>
+        <p class="governance-desc">
+          Dlouhodobý paušál pro firmy, které potřebují IT vedení, ale ne dalšího plného CTO.
+          Postarám se o celý IT rámec - od strategie a vendor managementu přes projektové
+          řízení po průběžný přehled pro majitele. Začínám revizí stavu, sestavím priority,
+          převezmu řízení a stojím na straně firmy ve všech rozhodnutích.
+        </p>
+        <p class="service-bullets-label">V rámci IT governance pokrývám:</p>
+        <ul class="service-bullets">
+          <li>Propojení systémů a automatizaci procesů</li>
+          <li>Kontrolu nákladů, audit dodavatelů a pravidelný přehled</li>
+          <li>Průzkum a realizaci nových systémů nebo aplikací</li>
+          <li>Výběr a zavedení nových nástrojů včetně zaškolení personálu</li>
+          <li>Stabilizaci a vedení rozjetých projektů</li>
+          <li>Posouzení bezpečnosti, zálohování a krizový plán pro případ incidentu</li>
+        </ul>
+      </div>
+      <div class="governance-right">
+        <div class="governance-price-block">
+          <div class="governance-price">od 50 000 Kč</div>
+          <div class="governance-format">měsíčně &middot; retainer</div>
+          <p class="governance-price-note">
+            Rozsah a cena se ladí podle velikosti firmy a stavu IT.
+            Začínáme úvodní revizí.
+          </p>
+        </div>
+        <!-- TODO: nahradit za Calendly event type 'IT governance' -->
+        <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub-nabídka: jednotlivé zakázky jako karty -->
+  <div class="subservices-header">
+    <span class="label">Nebo dílčí zakázky</span>
+    <h3>Jednotlivé <em>oblasti zvlášť</em></h3>
+    <p class="subservices-sub">
+      Pokud nepotřebujete celkové vedení, můžete si objednat samostatnou službu.
+      Účtuji podle dnů nebo podle dohodnutého rozsahu.
+    </p>
+  </div>
+
+  <div class="subservices-list">
+
+    <div class="subservice-row">
+      <div class="subservice-row-num">01</div>
+      <div class="subservice-row-content">
+        <h4 class="subservice-row-name">Projektové řízení</h4>
+        <p class="subservice-row-tagline">Vedu váš projekt od začátku do konce nebo přebírám rozjetý.</p>
+        <p class="subservice-row-desc">
+          Vstupuji jako externí projekt manažer. Buď od první schůzky a definice zadání,
+          nebo do rozjetého projektu, který se vymyká z kontroly. Pokud má smysl,
+          zapojuji se i jako druhý nezávislý názor nebo auditor.
+        </p>
+        <ul class="subservice-row-bullets">
+          <li>Vedení nového projektu od začátku do konce</li>
+          <li>Záskok za projekt manažera u rozjetého projektu</li>
+          <li>Řízení změn a rizik v průběhu vývoje</li>
+          <li>Druhý nezávislý názor na dodavatele nebo architekturu</li>
+        </ul>
+      </div>
+      <div class="subservice-row-price">
+        <span class="subservice-row-price-amount">10 000 Kč</span>
+        <span class="subservice-row-price-unit">za den</span>
+      </div>
+    </div>
+
+    <div class="subservice-row">
+      <div class="subservice-row-num">02</div>
+      <div class="subservice-row-content">
+        <h4 class="subservice-row-name">Product Discovery a Product Ownership</h4>
+        <p class="subservice-row-tagline">Definuji nový produkt, převezmu rozjetý, nebo se o něj starám dlouhodobě.</p>
+        <p class="subservice-row-desc">
+          Tři situace, ve kterých vstupuji. Discovery nového produktu, kde mapuji
+          procesy a definuji zadání. Převzetí ownership existujícího produktu,
+          kde se ztratil směr. Nebo dlouhodobé vedení produktu i po jeho spuštění.
+        </p>
+        <ul class="subservice-row-bullets">
+          <li>Definice zadání pro nový systém nebo aplikaci</li>
+          <li>Propojení systémů (CRM, účetnictví, e-shop)</li>
+          <li>Převzetí produktu, který nemá vlastníka na straně klienta</li>
+          <li>Dlouhodobé vedení produktu po spuštění</li>
+        </ul>
+      </div>
+      <div class="subservice-row-price">
+        <span class="subservice-row-price-amount">10 000 Kč</span>
+        <span class="subservice-row-price-unit">za den</span>
+      </div>
+    </div>
+
+    <div class="subservice-row">
+      <div class="subservice-row-num">03</div>
+      <div class="subservice-row-content">
+        <h4 class="subservice-row-name">Zavádění a adopce nástrojů</h4>
+        <p class="subservice-row-tagline">Vyberu, zavedu a naučím vaše lidi s novým nástrojem.</p>
+        <p class="subservice-row-desc">
+          Potřebujete zavést nový digitální nástroj (CRM, ticketing, kamerový systém,
+          docházku) nebo dostat lidi do existujících nástrojů, které špatně používají.
+          Vyberu vhodné řešení, postarám se o zavedení a naučím s ním personál.
+        </p>
+        <ul class="subservice-row-bullets">
+          <li>Výběr a zavedení nového nástroje podle vašich potřeb</li>
+          <li>Audit používání stávajících nástrojů a jejich potenciálu</li>
+          <li>Příprava návodů, školení zaměstnanců a vedení</li>
+          <li>Sjednocení postupů napříč odděleními</li>
+        </ul>
+      </div>
+      <div class="subservice-row-price">
+        <span class="subservice-row-price-amount">10 000 Kč</span>
+        <span class="subservice-row-price-unit">za den</span>
+      </div>
+    </div>
+
+    <div class="subservice-row">
+      <div class="subservice-row-num">04</div>
+      <div class="subservice-row-content">
+        <h4 class="subservice-row-name">IT revize</h4>
+        <p class="subservice-row-tagline">Nezávislý pohled na vaše IT, bez závazku dlouhodobé spolupráce.</p>
+        <p class="subservice-row-desc">
+          Přijdu, projdu, doporučím. Systémy, náklady, dodavatelé, bezpečnost.
+          Výstupem jsou konkrétní kroky a priority, ne obecný report do šuplíku.
+          Pokud má smysl pokračovat dál, navážeme. Pokud ne, rozejdeme se v dobrém.
+        </p>
+        <ul class="subservice-row-bullets">
+          <li>Audit nákladů na provoz, licence a dodavatele</li>
+          <li>Přehled propojení systémů a duplicit</li>
+          <li>Sjednocení dodavatelů a vyjednání smluv</li>
+          <li>Bezpečnostní rizika a stav vůči zákonným požadavkům</li>
+        </ul>
+      </div>
+      <div class="subservice-row-price">
+        <span class="subservice-row-price-amount">individuálně</span>
+        <span class="subservice-row-price-unit">dle rozsahu</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="subservices-cta">
+    <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+    <p class="subservices-cta-note">Nebo se podívejte na <a href="#governance" style="color:var(--accent);">IT governance balíček</a>, který obsahuje všechny tyto služby v jednom.</p>
+  </div>
+</section>
+
+
+<!-- ═══ PROCESS ═══ -->
+<section id="proces">
+  <div class="process-header">
+    <span class="label">Průběh spolupráce</span>
+    <h2>Od první schůzky <em>po výsledek</em></h2>
+    <p class="process-sub">
+      Tady popisuji, jak typicky probíhá nástup do role IT governance.
+      Pokud spolupracujeme jen na dílčí zakázce, přeskočíme rovnou ke kroku 4.
+    </p>
+  </div>
+
+  <div class="process-steps process-steps-five">
 
     <div class="process-step">
       <div class="step-num">1</div>
-      <div class="step-title">Úvodní konzultace</div>
+      <div class="step-title">Úvodní schůzka</div>
       <p class="step-desc">
-        Pochopím vaši situaci, cíle a to, kde vás IT skutečně bolí.
+        Probereme vaši situaci a kde vás IT tlačí. Zjistíme, jestli má smysl pokračovat.
       </p>
     </div>
 
     <div class="process-step">
       <div class="step-num">2</div>
-      <div class="step-title">Vyjasnění situace</div>
+      <div class="step-title">Vstupní revize</div>
       <p class="step-desc">
-        Zmapujeme kde stojíte - projekty, dodavatelé, systémy, rizika.
+        Projdu systémy, dodavatele a běžící projekty. Najdu, kde to dnes drhne.
       </p>
     </div>
 
     <div class="process-step">
       <div class="step-num">3</div>
-      <div class="step-title">Návrh postupu</div>
+      <div class="step-title">Plán a priority</div>
       <p class="step-desc">
-        Dostanete konkrétní plán - ne prezentaci do šuplíku.
+        Sestavím plán s prioritami, riziky a odhady nákladů. Rozhodneme, kudy jdeme.
       </p>
     </div>
 
@@ -884,7 +549,15 @@
       <div class="step-num">4</div>
       <div class="step-title">Převzetí řízení</div>
       <p class="step-desc">
-        Vstoupím do projektu a přebírám zodpovědnost za výsledek.
+        Podepíšeme NDA a smlouvu. Vstupuji do role a řídím dodavatele i projekty.
+      </p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">5</div>
+      <div class="step-title">Průběžný reporting</div>
+      <p class="step-desc">
+        Pravidelně reportuji vedení. Co se daří, co ne, co je další krok.
       </p>
     </div>
 
@@ -894,65 +567,13 @@
 </section>
 
 
-<!-- ═══ SERVICES ═══ -->
-<section id="services">
-  <div class="services-header">
-    <span class="label">Způsoby spolupráce</span>
-    <h2>Tři způsoby <em>jak pracujeme</em></h2>
-  </div>
-
-  <div class="services-list">
-
-    <div class="service-row">
-      <div class="service-name">Projektové řízení</div>
-      <div class="service-desc">
-        Vstoupím do rozjetého nebo nového IT projektu a přebírám
-        zodpovědnost za scope, dodavatele a výsledek.
-        Pracuji přímo s vaším týmem i s dodavateli.
-      </div>
-      <div class="service-price">
-        8-10 000 Kč
-        <small>za den</small>
-      </div>
-    </div>
-
-    <div class="service-row">
-      <div class="service-name">IT retainer</div>
-      <div class="service-desc">
-        Průběžná spolupráce - IT strategie, vendor management,
-        rozhodování, dohled nad projekty. Váš externí IT ředitel
-        na dohled, bez nákladů na interní pozici.
-      </div>
-      <div class="service-price">
-        od 50 000 Kč
-        <small>měsíčně</small>
-      </div>
-    </div>
-
-    <div class="service-row">
-      <div class="service-name">IT revize</div>
-      <div class="service-desc">
-        Nezávislý audit vašeho IT - systémy, náklady, dodavatelé,
-        bezpečnostní rizika. Dostanete konkrétní doporučení
-        a priority, ne obecný report.
-      </div>
-      <div class="service-price">
-        individuálně
-        <small>dle rozsahu</small>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
 <!-- ═══ DIFFERENTIATOR ═══ -->
 <section id="diff">
   <div class="diff-inner">
 
     <div class="diff-left">
       <span class="label">Proč to není další konzultant</span>
-      <h2>Jiná zodpovědnost.<br><em>Jiný výsledek.</em></h2>
+      <h2>Jiný přístup.<br><em>Jiný výsledek.</em></h2>
 
       <ul class="diff-negations">
         <li class="diff-neg-item">Nepřináším prezentace, které skončí v šuplíku</li>
@@ -986,15 +607,143 @@
 </section>
 
 
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
+<!-- ═══ PRODUKTOVÉ SLUŽBY ═══ -->
+<section id="produkty" class="products-section">
+  <div class="products-header">
+    <span class="label">Produktové služby</span>
+    <h2>Pevná cena, <em>jasný výstup</em></h2>
+    <p class="products-sub">
+      Vedle hlavních služeb nabízím čtyři hotové balíčky s pevnou cenou
+      a definovaným výstupem. Hodí se, pokud chcete začít konkrétně - bez dlouhého ladění zadání.
+    </p>
+  </div>
+
+  <!-- AI -->
+  <div class="products-row-label">
+    <span class="label">AI</span>
+    <h3>Pomoc s nasazením AI ve vaší firmě</h3>
+  </div>
+  <div class="products-grid products-grid-two">
+
+    <article class="product-card product-card-featured" data-card-href="ai.html">
+      <span class="product-card-tag">AI</span>
+      <h3 class="product-card-name">AI Assessment</h3>
+      <p class="product-card-subtitle">Hloubkový rozbor, kde má AI ve vaší firmě smysl</p>
+      <div class="product-card-price">27 900 Kč</div>
+      <div class="product-card-format">2 dny u vás &middot; plán do týdne</div>
+      <p class="product-card-desc">
+        Projdu s vámi vaše procesy a systémy. Výstupem je konkrétní plán s pojmenovanými
+        příklady použití, odhadem nákladů a doporučeným pořadím.
+      </p>
+      <div class="product-card-actions">
+        <a href="ai.html" class="product-card-btn-primary">Více informací</a>
+        <!-- TODO: nahradit za Calendly event type 'AI Assessment' -->
+        <button type="button" class="product-card-btn-secondary" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit termín</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-card-href="ai.html">
+      <span class="product-card-tag">AI</span>
+      <h3 class="product-card-name">AI Assessment Lite</h3>
+      <p class="product-card-subtitle">Rychlá orientace, kde AI ano a kde ne</p>
+      <div class="product-card-price">11 900 Kč</div>
+      <div class="product-card-format">4 hodiny online &middot; report do týdne</div>
+      <p class="product-card-desc">
+        Online hovor s vedením. Najdu příležitosti, kde má AI smysl, určím pořadí
+        a řeknu, čeho se vyvarovat.
+      </p>
+      <div class="product-card-actions">
+        <a href="ai.html" class="product-card-btn-primary">Více informací</a>
+        <!-- TODO: nahradit za Calendly event type 'AI Assessment Lite' -->
+        <button type="button" class="product-card-btn-secondary" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit termín</button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- WEBY -->
+  <div class="products-row-label">
+    <span class="label">Weby s AI</span>
+    <h3>Profesionální web rychle a za rozumnou cenu</h3>
+  </div>
+  <div class="products-grid products-grid-two">
+
+    <article class="product-card product-card-featured" data-card-href="weby.html">
+      <span class="product-card-tag">Weby s AI</span>
+      <h3 class="product-card-name">Web Standard</h3>
+      <p class="product-card-subtitle">Web na míru se snadnou správou textů a obrázků</p>
+      <div class="product-card-price">16 900 Kč</div>
+      <div class="product-card-format">Web do 2 týdnů &middot; jednoduchá správa obsahu</div>
+      <p class="product-card-desc">
+        Profesionální web s vlastním designem. Můžete si sami měnit texty a obrázky.
+        Optimalizovaný pro vyhledávače i rychlost.
+      </p>
+      <div class="product-card-actions">
+        <a href="weby.html" class="product-card-btn-primary">Více informací</a>
+        <!-- TODO: nahradit za Calendly event type 'Web Standard' -->
+        <button type="button" class="product-card-btn-secondary" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit termín</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-card-href="weby.html">
+      <span class="product-card-tag">Weby s AI</span>
+      <h3 class="product-card-name">Web Quick</h3>
+      <p class="product-card-subtitle">Jednoduchá webovka rychle a levně</p>
+      <div class="product-card-price">8 900 Kč</div>
+      <div class="product-card-format">Hotovo do týdne &middot; bez složité údržby</div>
+      <p class="product-card-desc">
+        Jednoduchý web 4-6 stránek s vlastním designem. Vhodný pro řemeslníky
+        a malé firmy, kteří dnes web nemají nebo ho mají zastaralý.
+      </p>
+      <div class="product-card-actions">
+        <a href="weby.html" class="product-card-btn-primary">Více informací</a>
+        <!-- TODO: nahradit za Calendly event type 'Web Quick' -->
+        <button type="button" class="product-card-btn-secondary" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit termín</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═══ SPECIALIZACE ═══ -->
+<section id="specializace" class="specializace-section">
+  <div class="specializace-header">
+    <span class="label">Specializace</span>
+    <h2>Konkrétní platformy, <em>které znám zevnitř</em></h2>
+    <p class="specializace-sub">
+      Vedle obecných služeb se specializuji na pár konkrétních platforem, které dlouhodobě
+      používám a znám do detailů. Pokud o nich uvažujete nebo je už máte, dokážu pomoct
+      přímo a rychle.
+    </p>
+  </div>
+
+  <div class="specializace-grid">
+
+    <a href="raynet.html" class="specializace-card">
+      <span class="specializace-tag">CRM &middot; České</span>
+      <h3 class="specializace-name">Raynet</h3>
+      <p class="specializace-desc">
+        České CRM pro malé a střední firmy. Pomůžu se zavedením, propojením s účetnictvím,
+        úpravami na míru nebo auditem stávajícího nasazení. Doprovodím vás vším kromě
+        samotného programování.
+      </p>
+      <span class="specializace-link">Detail &rarr;</span>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ═══ CONTACT CTA (homepage compact) ═══ -->
+<section id="kontakt-cta">
   <div class="contact-inner">
     <span class="label">Kontakt</span>
-    <h2 class="contact-headline">Začněme <em>konzultací.</em></h2>
-    <p class="contact-sub">30 minut. Bez závazku. Pochopím vaši situaci.</p>
+    <h2 class="contact-headline">Začněme <em>rozhovorem.</em></h2>
+    <p class="contact-sub">30 minut. Online nebo u vás. Bez závazku.</p>
 
     <div class="contact-cta-wrap">
-      <a href="#" class="btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447'});return false;">Domluvit konzultaci</a>
+      <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
     </div>
 
     <div class="contact-details">
@@ -1008,16 +757,39 @@
       </div>
     </div>
 
-    <p class="contact-note">Nebo napište - odpovím do 24 hodin.</p>
+    <p class="contact-note">Nebo si projděte <a href="kontakt.html" style="color:var(--accent);">kontaktní stránku</a>.</p>
   </div>
 </section>
 
+</main>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
+  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpověď do 24 hodin</div>
   <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
   <div class="footer-meta">IČO: 04158351 &middot; &copy; 2026</div>
 </footer>
+
+<script>
+// Card-level click handler (whole card navigates to detail page)
+document.querySelectorAll('[data-card-href]').forEach(function (card) {
+  card.addEventListener('click', function (event) {
+    // Don't navigate if user clicked an interactive element inside
+    if (event.target.closest('a, button')) return;
+    window.location.href = card.dataset.cardHref;
+  });
+});
+
+// Calendly popup buttons (data-calendly attribute)
+document.querySelectorAll('[data-calendly]').forEach(function (btn) {
+  btn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: btn.dataset.calendly });
+    }
+  });
+});
+</script>
 
 </body>
 </html>

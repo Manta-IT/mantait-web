@@ -1,0 +1,42 @@
+# Manta IT
+
+> Externí IT vedení pro malé a střední české firmy bez vlastního IT ředitele. Zakladatel a jediný provozovatel je Petr Kokoška, 10 let praxe v IT projektovém řízení a product ownership. Hlavní službou je IT governance jako dlouhodobý paušál (od 50 000 Kč měsíčně), vedle toho produktové balíčky s pevnou cenou.
+
+Cílovka: majitelé a CEO firem 50 až 300 lidí v ČR, kteří mají rozjeté IT (systémy, infrastrukturu, dodavatele), ale nemají vlastního IT ředitele. Web cíleně používá srozumitelnou češtinu bez IT žargonu.
+
+## Hlavní stránky
+
+- [Domů](https://mantait.cz/index.html): Přehled nabídky, problémy které řeším, IT governance, dílčí služby, průběh spolupráce.
+- [O mně](https://mantait.cz/o-mne.html): Petr Kokoška, 10 let praxe, reference projektů (e-commerce, mediální platformy, integrace ERP/CRM), case studies pod NDA.
+- [AI ve vaší firmě](https://mantait.cz/ai.html): AI Assessment (27 900 Kč, 2 dny u klienta) a AI Assessment Lite (11 900 Kč, 4 hodiny online). Strukturovaný rozbor kde má AI ve firmě smysl a kde ne. FAQ a typické příklady použití.
+- [Weby s AI](https://mantait.cz/weby.html): Web Standard (16 900 Kč, do 2 týdnů, jednoduchá správa obsahu) a Web Quick (8 900 Kč, do týdne, statický). Pro malé a střední firmy, řemeslníky.
+- [Raynet CRM](https://mantait.cz/raynet.html): Specializace na české CRM Raynet. Zavedení, propojení s účetnictvím (Pohoda), úpravy na míru, audit. Od 15 000 Kč.
+- [Kontakt](https://mantait.cz/kontakt.html): Domluvit schůzku (Calendly), email petr.kokoska@mantait.cz, telefon +420 732 329 431.
+
+## Co je hlavní službou
+
+IT governance je dlouhodobá role externího IT ředitele. Pokrývá:
+- Propojení systémů a automatizaci procesů
+- Kontrolu nákladů, audit dodavatelů, pravidelný reporting
+- Průzkum a realizaci nových systémů
+- Výběr a zavedení nových nástrojů včetně zaškolení personálu
+- Stabilizaci a vedení rozjetých projektů
+- Posouzení bezpečnosti, zálohování a krizový plán pro případ incidentu
+
+## Dílčí služby bez paušálu
+
+- Projektové řízení: 10 000 Kč za den
+- Product Discovery a Product Ownership: 10 000 Kč za den
+- Zavádění nástrojů: 10 000 Kč za den
+- IT revize: individuálně dle rozsahu
+
+## Co Manta IT NENÍ
+
+- Není to softwarový vývoj (žádné programování interně)
+- Není to konzultace s prezentací do šuplíku
+- Není to napojení na konkrétního dodavatele
+
+## Klíčové fráze
+
+"Konzultanti doporučují. Já přebírám řízení."
+"IT má firmu posouvat. Ne zaměstnávat vedení."

@@ -3,3 +3,16 @@
 
 # Local Claude config
 .claude/
+
+# Brand iteration history (internal research, not for public deploy)
+brand-lab.html
+brand-lab-v2.html
+brand-lab-v3.html
+brand-lab-v4.html
+brand-lab-v5.html
+brand-lab-v6.html
+
+# Temporary screenshots
+Clipboard_*.jpg
+Clipboard_*.png
+.playwright-mcp/

@@ -1,54 +1,86 @@
-# CLAUDE.md
+# CLAUDE.md — web
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRINCIPLES.md`.
 
 ## Co to je
-Staticka landing page pro **Manta IT** -- jeden soubor `index.html` (HTML + inline CSS, zadny JS framework, zadny build step). Zatim nepublikovano.
-
-V komunikaci pouzivej brand **Manta IT**.
+6stránkový statický web pro Manta IT (značka Petra Kokošky). Žádný build step, žádný framework.
+- `index.html` — Hero, pain, IT governance, dílčí služby, průběh, produktové služby, specializace, differentiator, kontakt
+- `o-mne.html` — Bio + reference + case studies
+- `ai.html` — AI Assessment a AI Assessment Lite
+- `weby.html` — Web Standard a Web Quick
+- `raynet.html` — Specializace na Raynet CRM
+- `kontakt.html` — Calendly embed + kontakty
+- `style.css` — sdílený stylesheet (vždy editovat tady, nikdy inline)
 
 ## Workflow
-- **Editace:** primo `index.html` (CSS je inline v `<style>`).
-- **Preview:** otevri `index.html` v prohlizeci (file://) nebo `python -m http.server` v adresari `web/`.
-- **Build / test / lint:** zadny -- staticky HTML.
-- **Deploy:** zatim nerozhodnuto (kandidati: GitHub Pages, Vercel, Netlify). Domena `mantait.cz` -- stav neoveren.
+1. Editace `.html` přímo. CSS jen v `style.css`.
+2. Preview: `python -m http.server` v adresáři `web/` → `http://localhost:8000/`.
+3. Žádný build, žádný lint, žádný framework.
+4. Před každým commitem: projít každou ze 6 stránek desktop (1280px) + 600px viewport, console errors check, ASCII grep clean.
 
-## Release workflow (po publishi)
-Web zije na masteru. Kazda zmena = jeden commit = jeden release-bod.
+## Závazná pravidla (porušení = chyba)
 
-1. **Drobna zmena** (text, font-size, drobny styling): edituj `index.html` primo na masteru, commitni s popisnou zpravou (`feat`/`fix`/`chore`/`refactor` prefix), pushni.
-2. **Vetsi zmena** (nova sekce, redesign, restruktura): vytvor feature branch (`web-<feature>`), iteruj, smerge do masteru po overeni v prohlizeci.
-3. **Pred kazdym commitem:** otevri `index.html` v prohlizeci, projdi celou stranku desktop + 800px + 400px sirku.
-4. **Rollback:** kazdy commit je obnoveni-bod (`git checkout <SHA> -- web/index.html`).
-5. **Hosting** (po vyresnem hostingu): push na master = automaticky deploy. Bez kontaminace zadnym build krokem.
+### Copywriting
+- **Sacred phrase** "Konzultanti doporučují. Já přebírám řízení." nikdy neměnit.
+- **ASCII-only.** Žádné em-dash (—), smart quotes („" ‚'), ellipsis (…). Renderuje se rozbitě. Používej regular `-`, `"`, `'`, `...`.
+- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: AI Assessment, AI Assessment Lite, Web Standard, Web Quick, Raynet, Pohoda, IT governance.
+- **Domluvit schůzku** jako primární CTA. Ne "hovor", ne "konzultace", ne "objednat" (falešný slib pro 30min hovor).
+- **Žádný humor typu Baťa cvičky.** Profesionální tón.
+- **Místo žargonu používej:** paušál (ne retainer), propojovací aplikace (ne middleware), zaškolím (ne naučím s), zavádění (ne adopce), pravidelný přehled (ne reporting), průzkum / mapování zadání (ne discovery v textu — Product Discovery jako název služby OK).
 
-## Design system (drz konzistentni)
-- **Paleta:** pozadi `#f1ede4` (bezova), alt `#ebe5d6`, card `#f8f5ec`, dark accent section `#16201d`. Akcent: hluboka zelena `#2d5447`, na tmavem pozadi tepla bezo-zlata `#c9b88a`.
-- **Fonty:** Cormorant Garamond (display/headlines, vahy 400/500/600 + italic 500/600), Inter (body, navigation, eyebrow, CTA -- vahy 400/500/600).
-- **Breakpointy:** 900px, 600px.
-- **Tonalita copy:** primocara, sebevedoma, bez buzzwordu. Klicova veta: *"Konzultanti doporucuji. Ja prebiram rizeni."*
-- **Italic em pro duraz:** misto bold/uppercase pro klicova slova v headlinech (napr. "*posouvat*", "*Jiny vysledek*"), barveno akcentem.
-- **Vizualni rytmus pasu:** svetla -> alt bezova -> svetla -> alt -> tmava -> alt -> footer. Tmava sekce pouze "Proc to neni konzultant".
+### Design
+- **`--text-faint #5d6a66` NIKDY jako text na světlém pozadí** (kontrast 3.2:1, fail WCAG). Použij `--text-muted` nebo `--text-secondary`.
+- **Body text minimum 15px**, ideál 16px. Drobné labely nikdy pod 12px.
+- **Italic Cormorant** jen jako akcent v `<em>` v nadpisech (h1/h2) a jako standalone pull-quote. NIKDY jako subtitle pod kartami (čte se jako druhý titulek).
+- **Tap targets ≥ 44px** výška na CTA tlačítkách (Petr požaduje mobile UX).
+- **Vizuální rytmus pozadí:** `--bg` → `--bg-alt` → `--bg` → `--bg-alt` → `--bg-dark` → `--bg-alt` → footer. Tmavá sekce primárně pro IT governance + differentiator.
+- **Cormorant Garamond** display (nadpisy, akcenty). **Inter** body/nav/CTA. Žádné třetí fonty.
+- **Breakpointy:** 600px (mobile), 900px (tablet), 1100px (nav collapse).
 
-## Struktura stranky (6 sekci)
-Hero -> Mozna resite (3 scenare) -> Jak spoluprace probiha (4 kroky) -> Zpusoby spoluprace (3 radky: 8-10k/den, retainer od 50k/mes, revize) -> Proc to neni konzultant (tmava) -> Kontakt.
+### Struktura nabídky (nepřehazovat bez Petra)
+- **IT governance** = hlavní služba, od 50 000 Kč měsíčně (paušál). Pokrývá všech 5 pain pointů. Dlouhodobý retainer.
+- **Dílčí zakázky** (10 000 Kč/den): Projektové řízení, Product Discovery a Product Ownership, Zavádění a adopce nástrojů, IT revize (individuálně).
+- **Produktové služby** (pevná cena):
+  - AI Assessment 27 900 Kč (2 dny u klienta)
+  - AI Assessment Lite 11 900 Kč (4h online)
+  - Web Standard 16 900 Kč (do 2 týdnů)
+  - Web Quick 8 900 Kč (do týdne)
+- **Specializace:** Raynet (od 15 000 Kč).
 
-Aktualni spec: `../docs/superpowers/specs/2026-05-04-mantait-web-redesign-warm-professional.md` (nahrazuje 2026-04-10 dark/gold spec, ten zustava jako historicka reference).
+### SEO / GEO
+- `<link rel="canonical">` musí přesně odpovídat URL v sitemap.xml (oba `.html`, ne mix).
+- `robots.txt` allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, anthropic-ai, CCBot.
+- `llms.txt` v root webu — udržuj aktuální, hlavně ceny a názvy služeb.
+- Per-page meta: `og:title`, `og:description`, `og:type`, `og:locale=cs_CZ`, `og:url`, `og:site_name`, `twitter:card=summary_large_image`, canonical.
+- JSON-LD: každá page má alespoň jedno relevantní schema (ProfessionalService/Person/Service/FAQPage).
 
-## Znamy stav / placeholders
-- Telefon `+420 000 000 000` -- placeholder.
-- ICO `00000000` -- placeholder.
-- Vizualni redesign warm-professional dokoncen 2026-05-04. Backup puvodni dark/gold verze: `web/index.html.dark-gold-backup` (po mergi do master smazat -- v git historii zustava).
-- OG meta tagy doplneny 2026-05-04 (og:title, og:description, og:type).
-- Bio + foto Petra a case studies -- zatim ne (faze 2 po publishi; UX review doporucuje pridat).
+### Změny obsahu
+- **Reference (Grandit IT éra 2015-2022)**: NDA expirované, jména projektů + loga + screenshoty OK (čeká na podklady od Petra).
+- **Reference (Blueghost éra 2022-2025)**: NDA platí, anonymně.
+- **Reference (Manta IT — MHA, PlanetLine, Ultra Marine)**: pod NDA, obecný popis + tag "Case study under NDA". UltraConfig.cz NDA neplatí.
+- **Calendly**: aktuálně všechny CTA vedou na obecný 30min event (`https://calendly.com/petr-kokoska-mantait/30min`). Po Calendly Pro upgrade Petr vytvoří event types pro AI Assessment / AI Assessment Lite / Web Standard / Web Quick / IT governance — pak nahradit (TODO komentáře v HTML).
 
-Aktualni action list a blockers viz `STATUS.md`. Kontext a souvislosti viz `CONTEXT.md`.
+## Kontext a souvislosti
+- **Parent workspace:** `../` (`ventures/manta-it/`) — branding, lead gen, market research.
+- **Reports/research:** `web/docs/research/` (seo-research.md, competitor-research.md). Čti při strategických úvahách.
+- **Detail pravidel:** `web/PRINCIPLES.md` (design + copywriting + SEO bible).
+- **Stav a TODO:** `web/STATUS.md`.
 
-## Souvislosti
-- **Parent workspace:** `../` (`ventures/manta-it/`) -- branding, lead gen pipeline, market research.
-- **Lead gen system:** outreach (LinkedIn DM, email) vede na tento web -- web je vizitka pro cold prospekty, kvalita prime ovlivnuje konverzi.
+## Před commitem checklist
+1. ASCII grep: `grep -P '[\x{2010}-\x{2015}\x{2018}-\x{201F}\x{2026}]' web/*.html` → 0 hitů
+2. Console errors: otevřít každou stránku v Chrome, DevTools → 0 errors
+3. Mobile: viewport 600px, žádný horizontal scroll, čitelné texty
+4. Calendly CTA: kliknout, popup se otevře v warm-professional palette
+5. Nav active state: na každé stránce zvýrazněna ta aktuální položka
+6. Anchor scroll: kotvy s `scroll-margin-top: 84px` neskáčou pod nav
 
-## Konvence
-- ASCII-only v HTML (zadny em-dash, smart quotes, ellipsis -- renderuji se rozbite v nekterych prohlizecich/encodingu pri spatnem charsetu).
-- Pri zmene textu na strance overit soulad s positioning v parent `manta-it/CONTEXT.md`.
-- Pri zmene struktury / sekci aktualizovat `STATUS.md` (action list) a `CONTEXT.md` (Co chybi / TODO).
+## Co NEDĚLAT
+- Nevkládat inline CSS do HTML (vše do `style.css`).
+- Nepřidávat JS framework. Vanilla nebo nic.
+- Nevolat externí JS kromě Calendly + Google Fonts.
+- Negenerovat fake reviews ani fake reference.
+- Nezvyšovat ceny bez Petrova explicitního pokynu.
+- Nepoužívat `--text-faint` jako barvu textu.
+- Nepřepisovat "Domluvit schůzku" na "Objednat" / "Konzultaci".
+- Nevkládat hidden metadata, hidden SEO triky.
+- Nepřidávat anglicismy do body copy.
