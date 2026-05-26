@@ -4,14 +4,22 @@
 > Vlastník: Petr Kokoška + Claude Code
 
 ## Stav
-**fixy-aplikovany-cekam-na-brand** | Priorita: HIGH | Poslední velká změna: 2026-05-26
+**LIVE V PRODUKCI** | Priorita: MEDIUM | Poslední deploy: 2026-05-26
 
-Po 8-paralel fanout: aplikováno cca 90% TODO z A.2 (UX), A.3 (code review), C (SEO), F (copy). Brand v2 dodal 6 konceptů — Petr nevybral, jdeme do v3 (matrix 4 textury x 4 směry "AI požírá tradiční fabriku"). Deployment ČEKÁ na Petrův web review + výběr loga.
+Web nasazen na **mantait.cz** přes Cloudflare Pages auto-deploy z master branch (commit b5006b7). Po 2 kolech fanout subagentů (8+6 paralelních agentů) + Petr review + 12 cílených fixů. Logo zatím odloženo (brand-lab v1-v6 vygenerovány, žádný nevybrán) — gitignored.
 
-## Blocker
-- **Logo** — v1 (5 konceptů) ani v2 (6 konceptů) nevyhovuje. v3 generuje subagent matrix: PCB / synapse / mesh / hybrid x zleva/zprava/shora/diffuze = 16 kombinací. Klíč: budova musí být vizuálně POŽÍRÁNA digitální strukturou (ne abstraktní geometrie).
-- **Petr web review** — Petr chce projít všech 6 stránek lokálně před deploymentem, případně iterativní úpravy.
-- **Calendly Pro** — pro správné CTA per service type Petr potřebuje upgrade + vytvořit 6 event types.
+## Deployment
+- **GitHub**: https://github.com/Manta-IT/mantait-web
+- **Auto-deploy**: push to master → Cloudflare Pages → mantait.cz (1-2 min)
+- **Manual deploy**: NEPOUŽÍVAT wrangler. Vše přes git push.
+
+## Pending (po launch)
+- **Logo finalizace** — brand-lab v1-v6 jako research, žádný nevybrán. Petr odložil, vrátíme se později.
+- **Foto Petra** — square 800×800 + landscape 1200×630
+- **og:image asset** (čeká na logo)
+- **Calendly Pro** — Petr může upgrade + vytvořit 6 event types per service
+- **External registrace**: Firmy.cz, Google Business Profile, LinkedIn Company page Manta IT
+- **Submit sitemap**: Google Search Console + Seznam Webmaster Tools
 
 ## Co je hotové (this session)
 

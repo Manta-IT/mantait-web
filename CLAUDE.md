@@ -14,9 +14,20 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 
 ## Workflow
 1. Editace `.html` přímo. CSS jen v `style.css`.
-2. Preview: `python -m http.server` v adresáři `web/` → `http://localhost:8000/`.
+2. Preview: `python -m http.server 8773` v adresáři `web/` → `http://localhost:8773/`.
 3. Žádný build, žádný lint, žádný framework.
 4. Před každým commitem: projít každou ze 6 stránek desktop (1280px) + 600px viewport, console errors check, ASCII grep clean.
+
+## Deployment
+
+**Auto-deploy přes Cloudflare Pages z `master` branch.**
+- Repo: `https://github.com/Manta-IT/mantait-web`
+- Push do `master` = automatický deploy do produkce (Cloudflare má vlastní pipeline napojenou na repo)
+- Doména: `mantait.cz` (DNS spravovaná na Cloudflare)
+- Build: žádný (static HTML/CSS)
+- **NESPOUŠTĚT wrangler manuálně** — Cloudflare Pages to dělá samo z GitHubu
+
+Workflow: `git commit -m "..." && git push origin master` → deploy běží automaticky, hotovo za 1-2 minuty.
 
 ## Závazná pravidla (porušení = chyba)
 
