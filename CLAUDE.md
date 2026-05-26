@@ -27,7 +27,25 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - Build: žádný (static HTML/CSS)
 - **NESPOUŠTĚT wrangler manuálně** — Cloudflare Pages to dělá samo z GitHubu
 
-Workflow: `git commit -m "..." && git push origin master` → deploy běží automaticky, hotovo za 1-2 minuty.
+**Workflow před každým release:**
+```bash
+# 1. Změny v style.css? Bump cache version (PŘED commit):
+python scripts/bump-cache.py
+
+# 2. Commit + push (Cloudflare auto-deploy)
+git add -A
+git commit -m "fix: ..."
+git push origin master
+```
+
+## Cache strategy
+
+- **HTML stránky**: max-age=300 (5 min, must-revalidate) — drobné copy fixy se dostanou rychle
+- **style.css**: max-age=1 rok + immutable — browser nikdy nezhodnotí, hash v query (`?v=573b155`) ho donutí stáhnout novou verzi
+- **sitemap.xml**: max-age=3600 (1h)
+- Cloudflare CDN edge cache se auto-purgne při každém deployi (cca 30s globálně)
+
+`scripts/bump-cache.py` updatuje `<link href="style.css?v=XXX">` ve všech 6 HTML na aktuální git short hash. **Pust před každým commit který mění style.css.**
 
 ## Závazná pravidla (porušení = chyba)
 
