@@ -27,12 +27,20 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - Build: žádný (static HTML/CSS)
 - **NESPOUŠTĚT wrangler manuálně** — Cloudflare Pages to dělá samo z GitHubu
 
-**Workflow před každým release:**
+**Workflow:**
 ```bash
-# 1. Změny v style.css? Bump cache version (PŘED commit):
-python scripts/bump-cache.py
+# Po klonu repa - jednou:
+sh scripts/install-hooks.sh
 
-# 2. Commit + push (Cloudflare auto-deploy)
+# Pak normalni commit (pre-commit hook auto-bumpne ?v=hash):
+git add -A
+git commit -m "fix: ..."
+git push origin master      # Cloudflare auto-deploy
+```
+
+Bez pre-commit hook (fallback):
+```bash
+python scripts/bump-cache.py    # manualni bump pred commitem
 git add -A
 git commit -m "fix: ..."
 git push origin master

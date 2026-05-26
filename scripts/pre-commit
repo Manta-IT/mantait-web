@@ -1,0 +1,38 @@
+#!/bin/sh
+# Pre-commit hook pro Manta IT web
+# Auto-bump cache version (?v=hash) na style.css pri zmenach v CSS nebo HTML
+#
+# Instalace (jednou):
+#   cp scripts/pre-commit .git/hooks/pre-commit
+#   chmod +x .git/hooks/pre-commit
+#
+# Nebo na Windows (Git Bash):
+#   cp scripts/pre-commit .git/hooks/pre-commit
+#
+# Hook se spousti pred kazdym 'git commit', upravi 6 HTML, restaguje je.
+
+# Skip pokud commit nesahne na style.css ani HTML
+changed=$(git diff --cached --name-only --diff-filter=ACM)
+needs_bump=0
+
+echo "$changed" | grep -qE '(style\.css|^(index|o-mne|ai|weby|raynet|kontakt)\.html)$' && needs_bump=1
+
+if [ "$needs_bump" -eq 0 ]; then
+  exit 0
+fi
+
+echo "[pre-commit] CSS nebo HTML zmena -> bump cache version"
+
+# Bumpni cache (pouzije aktualni HEAD hash; pro upcoming commit se to v praxi
+# lisi o 1 commit, ale to nevadi - hlavni je ze se zmeni ?v= mezi releasy)
+python scripts/bump-cache.py
+if [ $? -ne 0 ]; then
+  echo "[pre-commit] bump-cache.py selhal, abortuju commit"
+  exit 1
+fi
+
+# Restaguj HTML soubory (bump je upravil)
+git add index.html o-mne.html ai.html weby.html raynet.html kontakt.html
+
+echo "[pre-commit] hotovo, pokracuje commit"
+exit 0
