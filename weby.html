@@ -8,16 +8,16 @@
   <meta property="og:description" content="Profesionální web pro malou nebo střední firmu. Web Quick 8 900 Kč do týdne, Web Standard 16 900 Kč do 2 týdnů.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
-  <meta property="og:url" content="https://mantait.cz/weby.html">
+  <meta property="og:url" content="https://mantait.cz/weby">
   <meta property="og:site_name" content="Manta IT">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://mantait.cz/weby.html">
+  <link rel="canonical" href="https://mantait.cz/weby">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Weby s AI - rychle a za rozumnou cenu - Manta IT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <link rel="stylesheet" href="style.css">
@@ -92,7 +92,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Manta IT", "item": "https://mantait.cz/"},
-          {"@type": "ListItem", "position": 2, "name": "Weby s pevnou cenou", "item": "https://mantait.cz/weby.html"}
+          {"@type": "ListItem", "position": 2, "name": "Weby s pevnou cenou", "item": "https://mantait.cz/weby"}
         ]
       }
     ]
@@ -103,22 +103,22 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">Manta<span>IT</span></a>
+  <a href="/" class="nav-brand">Manta<span>IT</span></a>
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
   <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
   <div class="nav-links">
-    <a href="index.html" class="nav-link">Domů</a>
-    <a href="index.html#sluzby" class="nav-link">Služby</a>
-    <a href="ai.html" class="nav-link">AI</a>
-    <a href="weby.html" class="nav-link active">Weby</a>
+    <a href="/" class="nav-link">Domů</a>
+    <a href="/#sluzby" class="nav-link">Služby</a>
+    <a href="/ai" class="nav-link">AI</a>
+    <a href="/weby" class="nav-link active" aria-current="page">Weby</a>
     <div class="nav-dropdown">
-      <a href="index.html#specializace" class="nav-link">Specializace</a>
+      <a href="/#specializace" class="nav-link">Specializace</a>
       <div class="nav-dropdown-menu">
-        <a href="raynet.html">Raynet CRM</a>
+        <a href="/raynet">Raynet CRM</a>
       </div>
     </div>
-    <a href="o-mne.html" class="nav-link">O mně</a>
-    <a href="kontakt.html" class="nav-link">Kontakt</a>
+    <a href="/o-mne" class="nav-link">O mně</a>
+    <a href="/kontakt" class="nav-link">Kontakt</a>
   </div>
   <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
 </nav>
@@ -155,7 +155,7 @@
 
     <div class="ai-card ai-card-featured" id="web-standard">
       <span class="ai-card-tag">Doporučuji</span>
-      <div class="ai-card-name">Web Standard</div>
+      <h3 class="ai-card-name">Web Standard</h3>
       <p class="ai-card-subtitle">Web na míru se snadnou správou textů a obrázků</p>
       <div class="ai-card-price">16 900 Kč</div>
       <div class="ai-card-format">Hotovo do 2 týdnů &middot; jednoduchá správa obsahu</div>
@@ -168,7 +168,7 @@
       <div class="ai-card-deliverable-label">Co dostanete</div>
       <p class="ai-card-deliverable">
         Hotový web (typicky 6-10 stránek), jednoduché rozhraní pro úpravy obsahu,
-        zaškolení, doménu a hosting na vaše jméno. Pomoc se Google Analytics
+        zaškolení, doménu a hosting na vaše jméno. Pomoc s Google Analytics
         a vyhledávači. Měsíční podporu prvního měsíce.
       </p>
       <!-- TODO: nahradit za Calendly event type 'Web Standard' -->
@@ -177,7 +177,7 @@
 
     <div class="ai-card" id="web-quick">
       <span class="ai-card-tag">Rychlý start</span>
-      <div class="ai-card-name">Web Quick</div>
+      <h3 class="ai-card-name">Web Quick</h3>
       <p class="ai-card-subtitle">Jednoduchá webovka rychle a levně</p>
       <div class="ai-card-price">8 900 Kč</div>
       <div class="ai-card-format">Hotovo do týdne &middot; bez složité údržby</div>
@@ -225,7 +225,7 @@
       <div class="step-num">2</div>
       <div class="step-title">Návrh designu</div>
       <p class="step-desc">
-        Ukážu vám návrh designu a struktury. Společně doladíme.
+        Ukážu vám návrh designu a struktury. Společně jej doladíme.
       </p>
     </div>
 
@@ -292,7 +292,7 @@
       <details>
         <summary>Jak je to s doménou a hostingem? Kde web pojede?</summary>
         <div class="faq-answer">
-          <p>Web typicky hostujeme u Cloudflare nebo podobné moderní služby. Hosting je rychlý, bezpečný a v základní variantě často zdarma. Účet zakládáme na vás - hosting i doména jsou ve vašem vlastnictví, ne v mém.</p>
+          <p>Web hostujeme u Cloudflare nebo podobně moderní služby. Hosting je rychlý, bezpečný a v základní variantě často zdarma. Účet zakládáme vaším jménem - hosting i doména patří vám, ne mně.</p>
           <p>Pokud máte stávající doménu (např. firma.cz), pomůžu s přesměrováním. Pokud doménu teprve potřebujete, doporučím a pomohu zaregistrovat. Cena registrace domény (cca 300 Kč ročně) není v ceně webu.</p>
         </div>
       </details>
@@ -302,8 +302,8 @@
       <details>
         <summary>Co když budu chtít web později rozšířit nebo upravit?</summary>
         <div class="faq-answer">
-          <p>Žádný problém. Drobné úpravy řešíme operativně. Větší rozšíření naceníme podle rozsahu - typicky 1-2 dny mé práce. Web není zamčený do žádné drahé platformy, takže vás úpravy nestojí měsíční poplatky navíc.</p>
-          <p>Pokud z malé webovky postupně narostete a budete potřebovat plnohodnotný web, můžeme přejít na Web Standard - struktura a doména zůstávají.</p>
+          <p>Drobné úpravy řeším operativně. Větší rozšíření nacením podle rozsahu, typicky 1-2 dny práce. Web neběží na drahé platformě s měsíčními poplatky - úpravy vás nestojí nic navíc.</p>
+          <p>Pokud váš web postupně naroste a budete potřebovat plnohodnotný web, můžeme přejít na Web Standard - struktura a doména zůstává.</p>
         </div>
       </details>
     </div>
