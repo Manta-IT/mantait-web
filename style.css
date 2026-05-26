@@ -2226,10 +2226,41 @@ footer {
 }
 
 /* ════════════════════════════════════
-   Touch device hover reset (no sticky hover na mobile)
-   @media (hover: none) = touch-only devices (telefon, tablet bez myši)
+   Touch device defaults (telefon, tablet bez myši)
+   Disable text selection na navigaci/nadpisech/CTAs
+   Zachovat selection na body textech, cenách, kontaktech (uživatel může chtít zkopírovat)
 ════════════════════════════════════ */
 @media (hover: none) {
+  /* Zakázat text selection + Android long-press search popup na non-text elementech */
+  nav, .nav, .nav-link, .nav-cta, .nav-dropdown-menu a,
+  h1, h2, h3, h4, h5, h6,
+  .btn, .btn-primary, .btn-secondary, button,
+  .pain-card-title, .pain-card-num, .pain-card-answer,
+  .service-name, .subservice-row-name, .subservice-row-num, .subservice-row-tagline,
+  .product-card-name, .product-card-tag, .product-card-subtitle,
+  .ai-card-name, .ai-card-subtitle,
+  .specializace-card, .specializace-link,
+  .step-num, .step-title,
+  .faq-item summary,
+  .label, .hero-attribution,
+  .footer-brand, .footer-meta, .footer-trust,
+  .page-header .label {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Body text, ceny, kontakty - selection ZACHOVAT (kopírovatelné) */
+  p, .pain-card-body, .service-desc, .subservice-row-desc, .product-card-desc, .ai-card-desc,
+  .product-card-price, .subservice-row-price-amount, .service-price,
+  .contact-item-value, .ref-case-body, .faq-answer,
+  .hero-quote, .diff-quote, .bio-pullquote {
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
+  }
+
   /* Product cards */
   .product-card:hover {
     transform: none;
