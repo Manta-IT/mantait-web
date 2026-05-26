@@ -1883,20 +1883,6 @@ footer {
   .pain-cards {
     grid-template-columns: 1fr 1fr;
   }
-  /* Mobile/tablet: disable hover-reveal, only .expanded (JS-toggled) shows body */
-  .pain-card:hover .pain-card-body,
-  .pain-card:focus-within .pain-card-body {
-    max-height: 0;
-    opacity: 0;
-    margin-top: 0;
-    flex: 0 1 auto;
-  }
-  .pain-card.expanded .pain-card-body {
-    max-height: 300px;
-    opacity: 1;
-    margin-top: 14px;
-    flex: 1;
-  }
   .step-title {
     white-space: normal;
   }
