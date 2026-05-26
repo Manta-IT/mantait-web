@@ -195,9 +195,8 @@ nav {
 }
 .nav-dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 18px);
   left: -16px;
-  margin-top: 14px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -208,6 +207,15 @@ nav {
   pointer-events: none;
   transform: translateY(-4px);
   transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: transparent;
 }
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
