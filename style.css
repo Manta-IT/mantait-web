@@ -2486,7 +2486,7 @@ footer {
 .get-item { display:flex; gap:16px; padding:22px; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; }
 .get-item .mark { font-family:var(--serif); font-size:24px; color:var(--accent); flex-shrink:0; line-height:1.2; }
 .get-item h4 { font-size:16px; font-weight:600; margin-bottom:5px; }
-.get-item p { font-size:14px; line-height:1.5; color:var(--text-muted); }
+.get-item p { font-size:15px; line-height:1.5; color:var(--text-muted); }
 
 /* ---------- DETAIL: ZAVER CTA ---------- */
 .end { padding:0; background:var(--bg-dark); color:var(--on-dark); }
@@ -2528,11 +2528,11 @@ footer {
 .mx-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border-strong); border:1px solid var(--border-strong); border-radius:16px; overflow:hidden; }
 .mx-q { background:var(--bg-card); padding:20px; min-height:170px; }
 .mx-q-label { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-secondary); font-weight:600; }
-.mx-item { display:block; margin-top:10px; padding:11px 14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:10px; font-size:14px; line-height:1.45; font-weight:500; }
+.mx-item { display:block; margin-top:10px; padding:11px 14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:10px; font-size:15px; line-height:1.45; font-weight:500; }
 .mx-item.first { background:var(--accent); border-color:var(--accent); color:#fff; }
 .mx-note { display:block; font-size:12px; font-weight:400; color:var(--text-muted); margin-top:4px; line-height:1.45; }
 .mx-item.first .mx-note { color:rgba(255,255,255,0.85); }
-.mx-empty { margin-top:12px; font-size:14px; font-style:italic; color:var(--text-muted); }
+.mx-empty { margin-top:12px; font-size:15px; font-style:italic; color:var(--text-muted); }
 .matrix-list { display:none; margin-top:24px; list-style:none; counter-reset:mx; }
 .matrix-list li { counter-increment:mx; display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--border-strong); font-size:15px; line-height:1.5; font-weight:500; }
 .matrix-list li::before { content:counter(mx); font-family:var(--serif); font-size:22px; font-weight:600; color:var(--accent); flex-shrink:0; line-height:1.1; }
