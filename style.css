@@ -2472,7 +2472,7 @@ footer {
 .step { position:relative; padding:28px 24px; background:var(--bg-card); border:1px solid var(--border); border-radius:16px; }
 .step-n { font-family:var(--serif); font-size:42px; font-weight:600; color:var(--accent-warm); line-height:1; }
 .step h3 { font-family:var(--serif); font-size:21px; font-weight:500; margin:14px 0 8px; }
-.step p { font-size:14px; line-height:1.55; color:var(--text-muted); }
+.step p { font-size:15px; line-height:1.55; color:var(--text-muted); }
 .step.final { background:var(--bg-dark); color:var(--on-dark); border-color:var(--accent-dark); }
 .step.final p { color:var(--on-dark-muted); }
 
