@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Projekt nam utika - Manta IT</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=5ef84af">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/index-v2.html" class="nav-brand">Manta<span>IT</span></a>
+  <div class="nav-right">
+    <a href="/o-mne" class="nav-link">O mně</a>
+    <a href="/kontakt" class="nav-link">Kontakt</a>
+    <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  </div>
+</nav>
+
+<div class="back"><a href="/index-v2.html">Zpět na výběr</a></div>
+
+<!-- HERO -->
+<section class="d-hero">
+  <div>
+    <div class="d-eyebrow">Řešíte: projekt nám utíká</div>
+    <h1>Rozjetý projekt <em>zase srovnám.</em></h1>
+    <p class="lead">Rozpočet roste, termíny se posouvají, dodavatel mluví technicky a jasný výsledek nikde. Vstoupím do projektu, srovnám rozsah, dodavatele i tempo a převezmu řízení - zůstanu, dokud věci neběží tak, jak mají.</p>
+  </div>
+  <div class="d-card">
+    <div class="pricetag">individuálně</div>
+    <div class="priceunit">podle rozsahu projektu</div>
+    <div class="simple">
+      <div class="big">Přestanete se topit v detailech.</div>
+      <div class="small">Projekt přebírám do ruky. Vy se vrátíte k vedení firmy.</div>
+    </div>
+    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+    <div class="reassure">30 minut nezávazně. Online nebo u vás.</div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="proc">
+  <div class="proc-in">
+    <span class="label">Jak to probíhá</span>
+    <h2>Jak projekt srovnám.</h2>
+    <div class="proc-steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <h3>Zjistím, kde to drhne</h3>
+        <p>Projdu stav projektu, rozpočet, termíny a dodavatele. Najdu, proč to utíká.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <h3>Srovnám rozsah a tempo</h3>
+        <p>Nastavím jasná pravidla, priority a způsob rozhodování. Dodavatel začne tlačit správným směrem.</p>
+      </div>
+      <div class="step final">
+        <div class="step-n">3</div>
+        <h3>Dotáhnu to do konce</h3>
+        <p>Vedu projekt až k výsledku a průběžně vás informuji. Žádné překvapení na konci.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CO DOSTANETE -->
+<section class="get">
+  <span class="label">Co dostanete</span>
+  <h2>Projekt zpátky pod kontrolou.</h2>
+  <div class="get-list">
+    <div class="get-item">
+      <span class="mark">01</span>
+      <div><h4>Jasný stav</h4><p>Konečně víte, kde projekt je a co zbývá. Bez technického zamlžování.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">02</span>
+      <div><h4>Srovnané tempo</h4><p>Termíny a rozpočet, které drží, protože je někdo hlídá.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">03</span>
+      <div><h4>Řízený dodavatel</h4><p>Dodavatel pracuje na tom, co potřebujete, ne na tom, co se mu hodí.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">04</span>
+      <div><h4>Výsledek</h4><p>Projekt dovedený do provozu, ne navždy rozdělaný.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ZAVER -->
+<section class="end">
+  <div class="end-in">
+    <h2>Řekněte mi, kde to <em>vázne.</em></h2>
+    <p>Řekněte mi, co se s projektem děje. Já vám řeknu, jak ho srovnat - a pak teprve se rozhodnete.</p>
+    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+    <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
+    });
+  });
+</script>
+
+</body>
+</html>

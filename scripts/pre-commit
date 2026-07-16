@@ -9,17 +9,14 @@
 # Nebo na Windows (Git Bash):
 #   cp scripts/pre-commit .git/hooks/pre-commit
 #
-# Hook se spousti pred kazdym 'git commit', upravi 6 HTML, restaguje je.
+# Hook se spousti pred kazdym 'git commit', bumpne ?v= ve vsech HTML
+# a restaguje JEN ty HTML, ktere uz byly stagovane -- aby se do commitu
+# nepribalily nesouvisejici rozdelane zmeny z working tree.
 
 # Skip pokud commit nesahne na style.css ani HTML
 changed=$(git diff --cached --name-only --diff-filter=ACM)
-needs_bump=0
 
-echo "$changed" | grep -qE '(style\.css|^(index|o-mne|ai|weby|raynet|kontakt)\.html)$' && needs_bump=1
-
-if [ "$needs_bump" -eq 0 ]; then
-  exit 0
-fi
+echo "$changed" | grep -qE '\.(css|html)$' || exit 0
 
 echo "[pre-commit] CSS nebo HTML zmena -> bump cache version"
 
@@ -31,8 +28,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Restaguj HTML soubory (bump je upravil)
-git add index.html o-mne.html ai.html weby.html raynet.html kontakt.html
+# Restaguj jen HTML, ktere uz ve stagi byly (bump je mohl upravit)
+echo "$changed" | grep -E '\.html$' | while IFS= read -r f; do
+  [ -f "$f" ] && git add "$f"
+done
 
 echo "[pre-commit] hotovo, pokracuje commit"
 exit 0

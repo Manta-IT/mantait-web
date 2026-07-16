@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Cache-bust style.css href v 6 HTML stránkách.
+Cache-bust style.css href ve všech HTML stránkách v rootu webu.
 
 Použití:
     python scripts/bump-cache.py            # použije aktuální git short hash
@@ -15,8 +15,9 @@ import re
 import subprocess
 import sys
 
-PAGES = ['index.html', 'o-mne.html', 'ai.html', 'weby.html', 'raynet.html', 'kontakt.html']
 WEB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+# Vsechny HTML stranky v rootu webu; stranky bez style.css linku se preskoci.
+PAGES = sorted(f for f in os.listdir(WEB_DIR) if f.endswith('.html'))
 
 
 def get_version() -> str:
@@ -36,7 +37,6 @@ def bump_file(filepath: str, version: str) -> bool:
     new_href = f'href="style.css?v={version}"'
     new_content, count = pattern.subn(new_href, content)
     if count == 0:
-        print(f'  WARNING: {os.path.basename(filepath)} nema style.css link')
         return False
     if content != new_content:
         with open(filepath, 'w', encoding='utf-8') as f:
