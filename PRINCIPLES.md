@@ -33,8 +33,9 @@ Konkurenční landscape (květen 2026):
 - **Bez humoru lidového typu** (Baťa cvičky atd.) — profesionál, ne kamarád z hospody.
 - **Bez agrese.** "Převezmu řízení" ano, "převezmu zodpovědnost" ne (lživé).
 
-### Sacred phrases (NEMĚNIT)
-- "Konzultanti doporučují. Já přebírám řízení."
+### Sacred phrases (historie)
+Redesign v2 (2026-07-16) obě fráze z webu vypustil:
+- "Konzultanti doporučují. Já přebírám řízení." -- v outreach (parent workspace) platí dál, na web nevracet bez Petrova pokynu.
 - "IT má firmu posouvat. Ne zaměstnávat vedení."
 
 ---
@@ -67,7 +68,7 @@ Konkurenční landscape (květen 2026):
 | Lighthouse-ready | rychlý a kvalitní web |
 
 ### Výjimky — brand názvy zachovat
-- AI Assessment, AI Assessment Lite
+- Mapa AI příležitostí
 - Web Standard, Web Quick
 - IT governance (Petr o tom rozhodl, je to název hlavní služby)
 - Product Discovery a Product Ownership (název dílčí služby)
@@ -178,9 +179,8 @@ Tmavé sekce (`--bg-dark`) primárně pro **emocionální moment**:
    ├─ Zavádění a adopce nástrojů
    └─ IT revize (individuálně)
    
-3. Produktové služby (pevná cena, baťovská)
-   ├─ AI Assessment 27 900 Kč (2 dny u klienta)
-   ├─ AI Assessment Lite 11 900 Kč (4h online)
+3. Produktové služby (pevná cena)
+   ├─ Mapa AI příležitostí 15 000 Kč (2x 1h workshop online, výstup report)
    ├─ Web Standard 16 900 Kč (do 2 týdnů)
    └─ Web Quick 8 900 Kč (do týdne)
    
@@ -207,7 +207,7 @@ Aktuální copy v `index.html` v `.governance-desc` toto vyjadřuje. Při změn�
 ## 5. SEO a GEO
 
 ### Canonical URL pravidlo
-Musí přesně odpovídat URL v `sitemap.xml`. Aktuálně všechny `.html` extension (ne trailing slash). Při změně sitemap změnit i canonical.
+Musí přesně odpovídat URL v `sitemap.xml`. Od 2026-07-16 všechny **bez přípony `.html`** (např. `/reseni-ai`; ne trailing slash) -- soubory na disku příponu mají, Cloudflare Pages extensionless URL obslouží. Při změně sitemap změnit i canonical.
 
 ### llms.txt
 Soubor v root webu (`/llms.txt`). Anthropic + Perplexity ho oficiálně podporují (květen 2026). Google explicitně ne, ale cena je nulová.
@@ -222,12 +222,13 @@ Allow všech AI crawlerů explicitně:
 - GPTBot, ClaudeBot, Claude-Web, PerplexityBot, Google-Extended, anthropic-ai, CCBot
 
 ### JSON-LD schémata per page
-- `index.html`: ProfessionalService + Person (founder) + OfferCatalog
 - `o-mne.html`: Person s knowsAbout, alumniOf
-- `ai.html`: Service × 2 + FAQPage (nejvyšší LLM yield)
+- `reseni-ai.html`: Service (Mapa AI příležitostí) + Offer (15 000 Kč)
+- `reseni-*.html` ostatní (8x): Service bez Offer (cena není pevná)
 - `weby.html`: Service × 2 + FAQPage
 - `raynet.html`: Service + FAQPage
 - `kontakt.html`: ContactPage + ContactPoint
+- `index.html` (rozcestník) a `ukazka-reportu.html`: zatím bez schématu
 
 ### Open Graph kompletní sada
 Každá stránka musí mít:
@@ -237,7 +238,7 @@ Každá stránka musí mít:
 - `og:locale` = `cs_CZ`
 - `og:url` (full URL)
 - `og:site_name` = "Manta IT"
-- `og:image` (1200×630) — TODO čeká na asset od Petra
+- `og:image` (1200×630) — `og-image.png` existuje (2026-07-16, generovaná z existujícího loga; po výběru finálního loga přegenerovat)
 - `twitter:card` = `summary_large_image`
 - `twitter:title`, `twitter:description`
 
@@ -268,7 +269,7 @@ Příklad: "Manta IT — externí IT vedení pro firmy bez vlastního IT ředite
 - Loga + screenshoty Grandit-éra projektů (Almeco, Pro-doma, Unihobby, Radiotéka, ikiosek, Prima Nápady, Tympanum)
 - PlanetLine logo + screenshot dispatching aplikace
 - UltraConfig.cz obrázky + specifikace (Petr přihlásí Claude do prostředí)
-- og:image asset (1200×630, branded)
+- og:image asset — hotovo 2026-07-16 z existujícího loga (`og-image.png`); po výběru finálního loga z Brand Labu přegenerovat
 
 ---
 
@@ -276,8 +277,7 @@ Příklad: "Manta IT — externí IT vedení pro firmy bez vlastního IT ředite
 
 Aktuálně všechny CTA vedou na obecný 30min event. Po Calendly Pro upgrade Petr vytvoří:
 - 30min orientační (existující)
-- AI Assessment briefing
-- AI Assessment Lite briefing
+- Mapa AI příležitostí briefing
 - Web Standard briefing
 - Web Quick briefing
 - IT governance úvodní revize
@@ -327,3 +327,7 @@ V HTML jsou TODO komentáře u všech CTA pro nahrazení URL.
 - 2026-05-26: ceny upraveny na baťovské (8 900 / 11 900 / 16 900 / 27 900)
 - 2026-05-26: copywriting cleanup (Baťa cvičky pryč, falešné Objednat → Domluvit schůzku)
 - 2026-05-26: 4 subagent research reports (UX, copy, SEO/GEO, competitor) — pravidla extrahována sem
+- 2026-07-16: redesign v2 -- rozcestník (8 dlaždic) jako index.html + 9 detail stránek `reseni-*.html` + `ukazka-reportu.html` (anonymizovaný klientský případ); `ai.html` smazána, redirect `/ai` -> `/reseni-ai`
+- 2026-07-16: AI Assessment (27 900) a AI Assessment Lite (11 900) nahrazeny službou "Mapa AI příležitostí" za 15 000 Kč (2x 1h workshop online)
+- 2026-07-16: URL konvence bez přípony `.html` (canonical i sitemap); og-image.png vytvořena z existujícího loga
+- 2026-07-16: sacred phrases vypuštěny z webu (v outreach parent workspace žije "Konzultanti doporučují..." dál)
