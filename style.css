@@ -2449,6 +2449,7 @@ footer {
 
 /* ---------- DETAIL: prodejni karta ---------- */
 .d-card { background:var(--bg-dark); color:var(--on-dark); border-radius:20px; padding:34px 30px; box-shadow:0 20px 50px rgba(22,32,29,0.22); }
+.d-card-label { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-warm); font-weight:600; margin-bottom:14px; }
 .d-card .pricetag { font-family:var(--serif); font-size:46px; font-weight:600; color:var(--accent-warm); line-height:1; }
 .d-card .priceunit { font-size:14px; color:var(--on-dark-muted); margin-top:8px; }
 .d-card .simple { margin:22px 0; padding:18px 0; border-top:1px solid rgba(241,237,228,0.14); border-bottom:1px solid rgba(241,237,228,0.14); }
@@ -2465,6 +2466,7 @@ footer {
 /* margin-bottom:0 prebiji globalni .label (14px) -- prototyp margin nemel */
 .proc .label { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:0; }
 .proc h2 { font-family:var(--serif); font-weight:500; font-size:clamp(28px,4vw,42px); margin-top:10px; letter-spacing:-0.01em; }
+.proc-note { margin-top:14px; font-size:15px; line-height:1.6; color:var(--text-muted); max-width:60ch; }
 .proc-steps { margin-top:44px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 @media (max-width:760px){ .proc-steps{ grid-template-columns:1fr; } .proc-in{ padding:50px 20px; } }
 .step { position:relative; padding:28px 24px; background:var(--bg-card); border:1px solid var(--border); border-radius:16px; }
