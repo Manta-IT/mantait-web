@@ -21,7 +21,7 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=a27b75e">
+  <link rel="stylesheet" href="style.css?v=7d7a246">
 </head>
 <body>
 
@@ -105,10 +105,28 @@
     <div class="calc">
       <div class="calc-result">30-60 minut denně na každého, kdo počítá ceny</div>
       <div class="calc-how">
-        <p>Jak jsem k tomu došel: kolem deseti dodavatelských odpovědí denně, každá zabere asi pět minut přepisování, to je zhruba padesát minut. K tomu přepis každé ceny do kalkulační tabulky, další dvě až tři minuty na odpověď. Dohromady zhruba 70-80 minut denně. Kolik z toho automat reálně ušetří, záleží na tom, jak velkou část odpovědí dokáže spolehlivě přečíst: když polovinu, je to kolem 35 minut denně, když většinu, blíží se to celým 70-80 minutám. Proto v reportu počítám opatrně s rozsahem 30-60 minut.</p>
-        <p class="calc-honest">Je to odhad z toho, co mi na workshopu řekli, ne měření. U vás vyjde jiné číslo a spočítáme si ho spolu.</p>
+        <table class="rep-table">
+          <tr><td class="assume">~10 dodavatelských odpovědí denně, ~5 minut přepisu každé</td><td>~50 min</td></tr>
+          <tr><td class="assume">Přenos každé ceny do kalkulační tabulky, 2-3 minuty</td><td>~25 min</td></tr>
+          <tr class="total"><th>Ruční přepisování celkem</th><th>70-80 min denně</th></tr>
+          <tr><td class="assume">Automat spolehlivě přečte polovinu až většinu odpovědí</td><td>úspora 30-60 min denně</td></tr>
+        </table>
+        <p class="calc-honest">Odhad z toho, co mi na workshopu řekli, ne měření. U vás vyjde jiné číslo a spočítáme si ho spolu.</p>
       </div>
     </div>
+
+    <h3 class="rep-h3">Co to udělá s penězi</h3>
+    <p>Ušetřený čas je kapacita navíc: stejní lidé stihnou odbavit víc poptávek. Levý sloupec jsou modelové předpoklady - u vás si dosadíme vaše čísla.</p>
+    <table class="rep-table">
+      <tr><td class="assume">Úspora 60 minut denně, 2 lidé, 21 pracovních dní</td><td>~42 hodin měsíčně navíc</td></tr>
+      <tr><td class="assume">Nabídka zabere zhruba 2 hodiny práce</td><td>+20 nabídek měsíčně</td></tr>
+      <tr><td class="assume">Uspěje zhruba 30 % nabídek</td><td>+6 zakázek měsíčně</td></tr>
+      <tr><td class="assume">Průměrná zakázka 40 000 Kč</td><td>obrat +240 000 Kč měsíčně</td></tr>
+      <tr><td class="assume">Marže 25 %</td><td>přínos +60 000 Kč měsíčně</td></tr>
+      <tr><td class="assume">Pomocník: pořízení ~100 000 Kč, provoz ~3 000 Kč měsíčně</td><td>náklad</td></tr>
+      <tr class="total"><th>Návratnost pomocníka</th><th>necelé 2 měsíce</th></tr>
+    </table>
+    <p class="calc-honest">A i kdyby kapacita nepřinesla jedinou nabídku navíc: 42 hodin měsíčně je práce za desítky tisíc korun.</p>
   </div>
 </section>
 
@@ -174,9 +192,25 @@
   <div class="rep-in">
     <span class="label">06 - Doporučení</span>
     <h2>Čím začít</h2>
-    <p>Začal bych vytahováním dat z e-mailů rovnou do kalkulací. Ruční přepisování dnes běží na obou koncích procesu: příchozí poptávky od zákazníků se přepisují do interní aplikace a odpovědi dodavatelů do kalkulační tabulky.</p>
-    <p>První krok je pomocník, který e-mail přečte, vytáhne z něj data (kdo poptává, jaké položky, jaké ceny) a připraví kalkulační podklad. Člověk ho zkontroluje a schválí.</p>
-    <p>Proč právě tohle první: dá se začít hned, nic nevyžaduje předem a nesahá do stávajících systémů. Když se neosvědčí, vypne se a proces jede dál jako předtím. A výsledek lidé ve firmě uvidí sami a rychle.</p>
+    <p>Začal bych vytahováním dat z e-mailů rovnou do kalkulací - ruční přepisování dnes běží na obou koncích procesu.</p>
+    <div class="get-list">
+      <div class="get-item">
+        <span class="mark">01</span>
+        <div><h4>Pomocník přečte e-mail</h4><p>Příchozí poptávku od zákazníka i odpověď dodavatele.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">02</span>
+        <div><h4>Vytáhne z něj data</h4><p>Kdo poptává, jaké položky, jaké ceny.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">03</span>
+        <div><h4>Připraví kalkulační podklad</h4><p>Člověk zkontroluje a schválí. Nic neodchází samo.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">+</span>
+        <div><h4>Proč právě tohle první</h4><p>Dá se začít hned a nesahá do stávajících systémů. Když se neosvědčí, vypne se a proces jede dál jako předtím.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -185,9 +219,8 @@
   <div class="rep-in">
     <span class="label">07 - Výhled</span>
     <h2>Co přijde potom</h2>
-    <p>První krok ušetří čas hned, ale podstatu neřeší. Data pořád zůstávají na čtyřech místech: e-mail, Excel, interní aplikace na nabídky a starší podnikový systém. Přehled napříč zákazníky a dodavateli se nad tím postavit nedá.</p>
-    <p>Dlouhodobý směr je jedno místo: jedna databáze poptávek, nabídek a historie cen, s jasnými stavy, kdo na čem je. Cest tam vede víc. Kterou se vydat, záleží hlavně na tom, kolik to bude stát a jak rychle to firma potřebuje. To už se rozhoduje u konkrétní firmy.</p>
-    <p>První krok má smysl právě proto, že funguje, i když se firma k velké přestavbě nikdy nerozhoupe.</p>
+    <p>První krok ušetří čas hned, ale data dál zůstávají na čtyřech místech: e-mail, Excel, aplikace na nabídky a starší podnikový systém. Dlouhodobý směr je jedno místo - jedna databáze poptávek, nabídek a historie cen.</p>
+    <p>Cest tam vede víc a rozhodují peníze a tempo. První krok má smysl právě proto, že funguje, i kdyby k velké přestavbě nikdy nedošlo.</p>
   </div>
 </section>
 
