@@ -2535,7 +2535,7 @@ footer {
 .no-item p { margin-top:12px; font-size:15px; line-height:1.6; color:var(--on-dark-muted); }
 
 /* === Teaser na ukazku reportu (reseni-ai) === */
-.d-card-sample { display:block; text-align:center; margin-top:12px; padding:11px 14px; border:1px solid rgba(241,237,228,0.28); border-radius:10px; font-size:14.5px; font-weight:600; color:var(--on-dark); }
+.d-card-sample { display:block; text-align:center; margin-top:12px; padding:11px 14px; border:1px solid rgba(241,237,228,0.28); border-radius:10px; font-size:14.5px; font-weight:600; color:var(--on-dark); text-decoration:none; }
 .d-card-sample span { display:block; font-weight:400; font-size:12.5px; color:var(--on-dark-muted); margin-top:3px; }
 .d-card-sample:hover { border-color:var(--accent-warm); color:var(--accent-warm); }
 .rep-h3 { font-family:var(--serif); font-weight:500; font-size:clamp(22px,3vw,30px); margin-top:44px; }
