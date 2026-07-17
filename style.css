@@ -2148,9 +2148,6 @@ footer {
   .bio-photo {
     max-width: 200px;
   }
-  .bio-monogram {
-    font-size: 72px;
-  }
   .ref-list {
     grid-template-columns: 1fr;
     gap: 16px;
