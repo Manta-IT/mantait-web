@@ -1,15 +1,22 @@
 # Manta IT Web -- STATUS
-> Aktualizovano: 2026-07-16 | Oblast: VENTURES
+> Aktualizovano: 2026-07-17 | Oblast: VENTURES
 > Zdroje: STATUS.md (predchozi 2026-05-29), plan docs/superpowers/plans/2026-07-16-web-v2-launch.md (parent), CLAUDE.md, PRINCIPLES.md
 
 ## Stav
-**active** | Priorita: MEDIUM | Posledni zmena: 2026-07-16
+**active** | Priorita: MEDIUM | Posledni zmena: 2026-07-17
 
-Web LIVE V PRODUKCI na mantait.cz (Cloudflare Pages auto-deploy z master). **Redesign v2 hotovy a commitnuty lokalne** -- ceka na Petrovu revizi + push (Task 11 planu), pak je live: rozcestnik s 8 dlazdicemi jako index.html, 9 detail stranek `reseni-*.html`, `ukazka-reportu.html` (ukazkovy report z anonymizovaneho klientskeho pripadu), `ai.html` smazana (redirect `/ai` -> `/reseni-ai`), SEO meta + JSON-LD + og-image.png, sitemap i canonical bez pripony `.html`. Sluzba prejmenovana na **Mapa AI prilezitosti, 15 000 Kc** (2x 1h workshop online) -- stare ceny 11 900/27 900 z webu pryc. Celkem 15 stranek + sdileny style.css (inline CSS extrahovano).
+**Redesign v2 NASAZEN DO PRODUKCE 2026-07-17** (push fc5b182, Petr schvalil "good enough").
+Live na mantait.cz: rozcestnik s 8 dlazdicemi jako index.html, 9 detail stranek
+`reseni-*.html`, `ukazka-reportu.html` (ukazkovy report z anonymizovaneho klientskeho
+pripadu vc. ROI tabulky), `ai.html` smazana (redirect `/ai` -> `/reseni-ai`), SEO meta +
+JSON-LD + og-image.png, sitemap i canonical bez pripony. Sluzba **Mapa AI prilezitosti,
+11 900 Kc** (2x 1h workshop online; Petr 2026-07-17 snizil z 15 000). Fotka Petra
+v bio sekci + Person schema (petr-kokoska.jpg). Jednotne menu na vsech 15 strankach
+(Domu/Sluzby/O mne/Kontakt). Dalsi krok: marketingova kampan (Google Ads) -- vlastni spec.
 
 ## Blocker
 - **Logo neni vybrane** [!] -- Brand Lab v1-v6 vygenerovany, Petr nevybral zadny. Blokuje brand assets (email podpis, favicon set, LinkedIn cover, brand guidelines). og-image.png uz existuje (2026-07-16, z existujiciho loga) -- po vyberu finalniho loga pregenerovat.
-- **Foto Petra** [!] -- chybi (square 800x800 + landscape 1200x630). Blokuje bio sekci o-mne.html a Person.image schema.
+- ~~Foto Petra~~ -- VYRESENO 2026-07-17 (nanobanana z CV fotky, 800x800 v bio + Person schema). Landscape 1200x630 varianta zatim nepotrebna (og-image je z loga).
 
 Cenovy blocker UZAVREN 2026-07-16: Petr rozhodl 15 000 Kc za Mapu AI prilezitosti (nahrazuje AI Assessment 27 900 i Lite 11 900, i drive zvazovane 21 900/31 900).
 
