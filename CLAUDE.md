@@ -16,7 +16,7 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 
 ## Workflow
 1. Editace `.html` přímo. CSS jen v `style.css`.
-2. Preview: `python -m http.server 8773` v adresáři `web/` → `http://localhost:8773/`.
+2. Preview: `python scripts/serve.py` v adresáři `web/` → `http://localhost:8773/` (umí extensionless URL jako Cloudflare Pages).
 3. Žádný build, žádný lint, žádný framework.
 4. Před každým commitem: projít každou z 15 stránek desktop (1280px) + 600px viewport, console errors check, ASCII grep clean.
 
