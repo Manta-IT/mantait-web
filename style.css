@@ -2548,4 +2548,11 @@ footer {
 .calc .rep-table .assume { color:var(--on-dark-muted); }
 .calc .rep-table tr.total th { border-top-color:var(--accent-warm); color:var(--accent-warm); }
 .rep-in > .calc-honest { color:var(--text-muted); font-size:15px; }
+.partner-badge { display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:10px 16px; border:1px solid var(--accent); border-radius:999px; background:var(--bg-card); font-size:14px; font-weight:600; color:var(--accent-dark); text-decoration:none; }
+.partner-badge:hover { background:var(--accent); color:var(--on-dark); }
+.partner-badge:hover .partner-more { color:var(--on-dark); }
+.partner-check { font-size:15px; line-height:1; }
+.partner-more { font-weight:400; color:var(--text-muted); border-left:1px solid var(--border-strong); padding-left:10px; }
+@media (max-width:600px){ .partner-badge{ flex-wrap:wrap; border-radius:14px; row-gap:4px; } }
+.faq-answer a { color:var(--accent); border-bottom:1px solid currentColor; }
 @media (max-width:600px){ .rep-table{ font-size:13.5px; } .rep-table td, .rep-table th{ padding:9px 8px; } }
