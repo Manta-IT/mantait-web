@@ -21,18 +21,21 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=7d7a246">
+  <link rel="stylesheet" href="style.css?v=5bc3440">
 </head>
 <body>
 
-<nav class="nav">
+<nav>
   <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <div class="nav-right">
-    <a href="#sluzby" class="nav-link">Služby</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+  <div class="nav-links">
+    <a href="/" class="nav-link active" aria-current="page">Domů</a>
+    <a href="/#sluzby" class="nav-link">Služby</a>
     <a href="/o-mne" class="nav-link">O mně</a>
     <a href="/kontakt" class="nav-link">Kontakt</a>
-    <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
   </div>
+  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
 </nav>
 
 <main>
