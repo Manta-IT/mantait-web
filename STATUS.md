@@ -1,18 +1,32 @@
 # Manta IT Web -- STATUS
-> Aktualizovano: 2026-07-17 | Oblast: VENTURES
+> Aktualizovano: 2026-07-18 | Oblast: VENTURES
 > Zdroje: STATUS.md (predchozi 2026-05-29), plan docs/superpowers/plans/2026-07-16-web-v2-launch.md (parent), CLAUDE.md, PRINCIPLES.md
 
 ## Stav
-**active** | Priorita: MEDIUM | Posledni zmena: 2026-07-17
+**active** | Priorita: MEDIUM | Posledni zmena: 2026-07-18
 
-**Redesign v2 NASAZEN DO PRODUKCE 2026-07-17** (push fc5b182, Petr schvalil "good enough").
-Live na mantait.cz: rozcestnik s 8 dlazdicemi jako index.html, 9 detail stranek
-`reseni-*.html`, `ukazka-reportu.html` (ukazkovy report z anonymizovaneho klientskeho
-pripadu vc. ROI tabulky), `ai.html` smazana (redirect `/ai` -> `/reseni-ai`), SEO meta +
-JSON-LD + og-image.png, sitemap i canonical bez pripony. Sluzba **Mapa AI prilezitosti,
-11 900 Kc** (2x 1h workshop online; Petr 2026-07-17 snizil z 15 000). Fotka Petra
-v bio sekci + Person schema (petr-kokoska.jpg). Jednotne menu na vsech 15 strankach
-(Domu/Sluzby/O mne/Kontakt). Dalsi krok: marketingova kampan (Google Ads) -- vlastni spec.
+**Redesign v2 LIVE V PRODUKCI** (nasazeno 2026-07-17 push fc5b782, doladeno do 2026-07-18).
+mantait.cz: rozcestnik s 8 dlazdicemi (index.html), 9 detail stranek `reseni-*.html`,
+`ukazka-reportu.html` (ukazkovy report z anonymizovaneho MHA pripadu vc. ROI tabulky --
+cesta A1 poptavkoveho agenta), `ai.html` smazana (redirect `/ai` -> `/reseni-ai`),
+SEO meta + JSON-LD + og-image.png, sitemap i canonical bez pripony. Jednotne menu na
+vsech 15 strankach (Domu/Sluzby/O mne/Kontakt).
+
+**Sluzba Mapa AI prilezitosti, 11 900 Kc** (2x 1h workshop online; Petr snizil 15 000 ->
+11 900 dne 2026-07-17, driv "AI Assessment").
+
+**Doladeno po launchi (2026-07-17/18):**
+- Fotka Petra: petr-kokoska.jpg (nanobanana z CV foto, watermark Gemini odstranen
+  inpaintem), 800x800 v bio + Person schema image.
+- **Raynet oficialni partner** (medailonek raynet.cz/marketplace/partneri/manta-it
+  SCHVALEN): partner badge v hlavicce raynet.html, FAQ prepsano na "Ano", JSON-LD + sameAs.
+- Cena propojeni systemu zmenena na "podle rozsahu" (bylo 40-100 tis.).
+- **Google Ads mereni nasazeno**: gtag.js (tag AW-18329667650) + konverze "Rezervace
+  schuzky" na klik data-calendly + Consent Mode v2 cookie lista (vanilla JS, barvy webu).
+  Overeno naostro na produkci.
+- **CRO na /reseni-ai** (paid landing): vyjasnen uvodni hovor 30 min vs sluzba 2h,
+  odstranen unik "Zpet na vyber" (logo plni funkci).
+- Lokalni preview: `python scripts/serve.py` (umi extensionless URL jako Cloudflare).
 
 ## Blocker
 - **Logo neni vybrane** [!] -- Brand Lab v1-v6 vygenerovany, Petr nevybral zadny. Blokuje brand assets (email podpis, favicon set, LinkedIn cover, brand guidelines). og-image.png uz existuje (2026-07-16, z existujiciho loga) -- po vyberu finalniho loga pregenerovat.
@@ -22,10 +36,16 @@ Cenovy blocker UZAVREN 2026-07-16: Petr rozhodl 15 000 Kc za Mapu AI prilezitost
 
 ## Action list
 
+### CRO doporuceni pro /reseni-ai (paid landing) -- rozhodnuti Petra
+- [ ] **Nav na paid landingu = uniky pozornosti** (Domu/Sluzby/O mne/Kontakt + hamburger).
+  CRO princip: odstranit uniky. Koliduje s jednotnym menu. Doporuceni: A/B test varianty
+  s minimal nav (jen logo + CTA). Sitelinky v reklame roli nav uz plni.
+- [ ] **Dukaz above-the-fold**: Raynet partner + ukazka reportu jsou nejsilnejsi assety,
+  ted nejsou videt hned. Zvazit prominentni dukazni blok vys na strance.
+
 ### Ceka na Petra (podklady / rozhodnuti)
-- [ ] Revize lokalniho nahledu redesignu v2 + `git push origin master` (Task 11 planu 2026-07-16) -- pak je redesign live
 - [ ] Feedback na Brand Lab (co se nelibi, kam v2) -> pak Claude spusti subagenta
-- [ ] Foto Petra (square + landscape)
+- [ ] Foto Petra landscape 1200x630 (square hotovo; landscape zatim nepotreba)
 - [ ] Loga + screenshoty Grandit-era projektu (Almeco, Pro-doma, Unihobby, Radioteka, ikiosek, Prima Napady, Tympanum) -- NDA expirovane
 - [ ] PlanetLine screenshot + specifikace; UltraConfig.cz obrazky + specifikace (NDA neplatí)
 - [ ] Calendly Pro upgrade + 6 event types URL (NEBO pivot na Google Appointment Schedule -- viz Namety)
