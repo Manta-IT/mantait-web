@@ -13,7 +13,7 @@ SEO meta + JSON-LD + og-image.png, sitemap i canonical bez pripony. Jednotne men
 vsech 15 strankach (Domu/Sluzby/O mne/Kontakt).
 
 **Sluzba "AI plan do 48 hodin", 9 900 Kc** (2x 1h workshop online; plan do 48 hodin od
-druheho workshopu, pripadny AI agent/automatizace dodan Mantou do tydne. Prejmenovano
+druheho workshopu, pripadny AI agent/automatizace dodan Mantou do tydne za orientacne 50 000 Kc. Prejmenovano
 2026-07-24 z "Mapa AI prilezitosti" -- nazev = slib rychlosti. Cenova historie:
 15 000 -> 11 900 (2026-07-17) -> 9 900 (2026-07-24), driv "AI Assessment").
 

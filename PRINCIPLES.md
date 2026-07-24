@@ -334,4 +334,5 @@ V HTML jsou TODO komentáře u všech CTA pro nahrazení URL.
 - 2026-07-17: Mapa AI příležitostí zlevněna 15 000 -> 11 900 (rozhodnutí Petra)
 - 2026-07-23: sekce "S plánem nezůstanete sami" na /reseni-ai (pokračování po Mapě: zavedení / řízení / plán je váš) -- dotažení pipeline na paid landingu
 - 2026-07-24: Mapa AI 11 900 -> 9 900; nové sliby: plán do 48 hodin od druhého workshopu, případný AI agent/automatizace dodán Mantou do týdne (rozhodnutí Petra; rychlost jako diferenciátor)
+- 2026-07-24: orientační cena AI agenta/automatizace z plánu zveřejněna: ~50 000 Kč (konzistentní s 10k/den x do týdne); poznámka v ukázce reportu (původní odhad 100k zachován, dnes dodávka za ~50k)
 - 2026-07-24: služba přejmenována "Mapa AI příležitostí" -> **"AI plán do 48 hodin"** (rozhodnutí Petra; název = slib rychlosti). URL /reseni-ai a /ukazka-reportu beze změny, JSON-LD alternateName drží starý název. Metafora "mapa" nahrazena "plánem" i na ukázce.
