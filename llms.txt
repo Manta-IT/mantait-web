@@ -8,7 +8,7 @@ Cílovka: majitelé a CEO firem 50 až 300 lidí v ČR, kteří mají rozjeté I
 
 - [Domů](https://mantait.cz/index.html): Přehled nabídky, problémy které řeším, IT governance, dílčí služby, průběh spolupráce.
 - [O mně](https://mantait.cz/o-mne.html): Petr Kokoška, 10 let praxe, reference projektů (e-commerce, mediální platformy, integrace ERP/CRM), case studies pod NDA.
-- [Mapa AI příležitostí](https://mantait.cz/reseni-ai) (11 900 Kč): dva hodinové workshopy online, výstup je report - kde AI ve firmě pomůže, kde ne, čím začít a co to přinese. Ukázka reportu: https://mantait.cz/ukazka-reportu
+- [Mapa AI příležitostí](https://mantait.cz/reseni-ai) (9 900 Kč): dva hodinové workshopy online, plán do 48 hodin od druhého workshopu - kde AI ve firmě pomůže, kde ne, čím začít a co to přinese. Případný AI agent nebo automatizace dodán do týdne. Ukázka reportu: https://mantait.cz/ukazka-reportu
 - [Weby s AI](https://mantait.cz/weby.html): Web Standard (16 900 Kč, do 2 týdnů, jednoduchá správa obsahu) a Web Quick (8 900 Kč, do týdne, statický). Pro malé a střední firmy, řemeslníky.
 - [Raynet CRM](https://mantait.cz/raynet): Specializace na české CRM Raynet. Zavedení, propojení s účetnictvím (Pohoda), úpravy na míru, audit. Od 15 000 Kč.
 - [Kontakt](https://mantait.cz/kontakt.html): Domluvit schůzku (Calendly), email petr.kokoska@mantait.cz, telefon +420 732 329 431.
@@ -32,7 +32,7 @@ IT governance je dlouhodobá role externího IT ředitele. Pokrývá:
 
 ## Co Manta IT NENÍ
 
-- Není to softwarový vývoj (žádné programování interně)
+- Není to klasický softwarový vývoj na zakázku (AI agenty a menší automatizace z Mapy AI příležitostí ale dodává Manta IT sama, do týdne)
 - Není to konzultace s prezentací do šuplíku
 - Není to napojení na konkrétního dodavatele
 

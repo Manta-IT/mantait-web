@@ -331,3 +331,6 @@ V HTML jsou TODO komentáře u všech CTA pro nahrazení URL.
 - 2026-07-16: AI Assessment (27 900) a AI Assessment Lite (11 900) nahrazeny službou "Mapa AI příležitostí" za 15 000 Kč (2x 1h workshop online)
 - 2026-07-16: URL konvence bez přípony `.html` (canonical i sitemap); og-image.png vytvořena z existujícího loga
 - 2026-07-16: sacred phrases vypuštěny z webu (v outreach parent workspace žije "Konzultanti doporučují..." dál)
+- 2026-07-17: Mapa AI příležitostí zlevněna 15 000 -> 11 900 (rozhodnutí Petra)
+- 2026-07-23: sekce "S plánem nezůstanete sami" na /reseni-ai (pokračování po Mapě: zavedení / řízení / plán je váš) -- dotažení pipeline na paid landingu
+- 2026-07-24: Mapa AI 11 900 -> 9 900; nové sliby: plán do 48 hodin od druhého workshopu, případný AI agent/automatizace dodán Mantou do týdne (rozhodnutí Petra; rychlost jako diferenciátor)

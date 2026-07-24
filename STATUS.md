@@ -12,8 +12,21 @@ cesta A1 poptavkoveho agenta), `ai.html` smazana (redirect `/ai` -> `/reseni-ai`
 SEO meta + JSON-LD + og-image.png, sitemap i canonical bez pripony. Jednotne menu na
 vsech 15 strankach (Domu/Sluzby/O mne/Kontakt).
 
-**Sluzba Mapa AI prilezitosti, 11 900 Kc** (2x 1h workshop online; Petr snizil 15 000 ->
-11 900 dne 2026-07-17, driv "AI Assessment").
+**Sluzba Mapa AI prilezitosti, 9 900 Kc** (2x 1h workshop online; plan do 48 hodin od
+druheho workshopu, pripadny AI agent/automatizace dodan Mantou do tydne. Cenova historie:
+15 000 -> 11 900 (2026-07-17) -> 9 900 (2026-07-24), driv "AI Assessment").
+
+**POZOR -- Google Ads reklama rika "Pevna cena 11 900 Kc"** (nadpis #5 RSA v AI sestave).
+Po nasazeni nove ceny NUTNE rucne opravit v Ads (2FA, Petr) na 9 900, jinak reklama
+slibuje vyssi cenu nez web. Neni to skodlivy nesoulad (realita je levnejsi), ale je
+to nekonzistence.
+
+**CRO 2026-07-23 -- dotazeni pipeline na paid landingu (commit b60f3d2, CEKA NA PUSH):**
+Petruv nalez: stranka koncila reportem, chybela odpoved na "dostanu plan, ale kdo ho
+udela?". Pridana sekce "Co pak s planem" na /reseni-ai (3 cesty: zavedu prvni krok
+za 10k/den / odridim cele zavadeni / plan je vas), veta o zavedeni v hero leadu,
+ukazka-reportu sekce 08 explicitne "pod mym vedenim" + zaver s navaznosti na realizaci.
+Vazba na marketing plan sekce 8 (Mapa AI = konverzni produkt, most k dilcim zakazkam).
 
 **Doladeno po launchi (2026-07-17/18):**
 - Fotka Petra: petr-kokoska.jpg (nanobanana z CV foto, watermark Gemini odstranen
