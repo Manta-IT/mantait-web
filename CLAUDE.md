@@ -61,7 +61,7 @@ git push origin master
 
 ### Copywriting
 - **ASCII-only v typografii.** Žádné em-dash (—), smart quotes („" ‚'), ellipsis (…). Renderuje se rozbitě. Používej regular `-`, `"`, `'`, `...`. Česká diakritika se ale ZACHOVÁVÁ.
-- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: Mapa AI příležitostí, Web Standard, Web Quick, Raynet, Pohoda, IT governance.
+- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: AI plán do 48 hodin (dřív "Mapa AI příležitostí"), Web Standard, Web Quick, Raynet, Pohoda, IT governance.
 - **Domluvit schůzku** jako primární CTA. Ne "hovor", ne "konzultace", ne "objednat" (falešný slib pro 30min hovor).
 - **Žádný humor typu Baťa cvičky.** Profesionální tón.
 - **Místo žargonu používej:** paušál (ne retainer), propojovací aplikace (ne middleware), zaškolím (ne naučím s), zavádění (ne adopce), pravidelný přehled (ne reporting), průzkum / mapování zadání (ne discovery v textu — Product Discovery jako název služby OK).
@@ -79,7 +79,7 @@ git push origin master
 - **IT governance** = hlavní služba, od 50 000 Kč měsíčně (paušál). Pokrývá všech 5 pain pointů. Dlouhodobý retainer.
 - **Dílčí zakázky** (10 000 Kč/den): Projektové řízení, Product Discovery a Product Ownership, Zavádění a adopce nástrojů, IT revize (individuálně).
 - **Produktové služby** (pevná cena):
-  - Mapa AI příležitostí 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu; případný AI agent/automatizace dodán Mantou do týdne jako dílčí zakázka 10 000 Kč/den; sníženo z 11 900 rozhodnutím Petra 2026-07-24, předtím z 15 000 dne 2026-07-17)
+  - AI plán do 48 hodin 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu; případný AI agent/automatizace dodán Mantou do týdne jako dílčí zakázka 10 000 Kč/den; přejmenováno z "Mapa AI příležitostí" + sníženo z 11 900 rozhodnutím Petra 2026-07-24, předtím z 15 000 dne 2026-07-17)
   - Web Standard 16 900 Kč (do 2 týdnů)
   - Web Quick 8 900 Kč (do týdne)
 - **Specializace:** Raynet (od 15 000 Kč).

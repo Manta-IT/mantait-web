@@ -90,7 +90,7 @@ git push origin master
 - **IT governance** = hlavní služba, od 50 000 Kč měsíčně (paušál). Pokrývá všech 5 pain pointů. Dlouhodobý retainer.
 - **Dílčí zakázky** (10 000 Kč/den): Projektové řízení, Product Discovery a Product Ownership, Zavádění a adopce nástrojů, IT revize (individuálně).
 - **Produktové služby** (pevná cena):
-  - Mapa AI příležitostí 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu, případný AI agent do týdne; nahradila AI Assessment / Lite)
+  - AI plán do 48 hodin 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu, případný AI agent do týdne; dřív "Mapa AI příležitostí", předtím AI Assessment / Lite)
   - Web Standard 16 900 Kč (do 2 týdnů)
   - Web Quick 8 900 Kč (do týdne)
 - **Specializace:** Raynet (od 15 000 Kč).
