@@ -33,10 +33,12 @@ Konkurenční landscape (květen 2026):
 - **Bez humoru lidového typu** (Baťa cvičky atd.) — profesionál, ne kamarád z hospody.
 - **Bez agrese.** "Převezmu řízení" ano, "převezmu zodpovědnost" ne (lživé).
 
-### Sacred phrases (historie)
-Redesign v2 (2026-07-16) obě fráze z webu vypustil:
-- "Konzultanti doporučují. Já přebírám řízení." -- v outreach (parent workspace) platí dál, na web nevracet bez Petrova pokynu.
-- "IT má firmu posouvat. Ne zaměstnávat vedení."
+### Claim
+Aktuální claim (od 2026-07-24): **"Vy řídíte firmu. Já vaše IT."**
+Starý claim "Konzultanti doporučují. Já přebírám řízení." ZRUŠEN plošně (i outreach) --
+vymezoval se vůči konkurenci. Nikde nevracet. Druhé pravidlo: žádné "ručím/ručení/odpovědnost"
+jako slib v copy (implikuje právní garanci). Historie: redesign v2 (2026-07-16) vypustil
+z webu i "IT má firmu posouvat. Ne zaměstnávat vedení." (ta smí zůstat v llms.txt).
 
 ---
 

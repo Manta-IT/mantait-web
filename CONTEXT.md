@@ -18,7 +18,7 @@ Hotova HTML stranka (`index.html`) -- zatim nepublikovana.
 - Pain points: 3 scenare (rozjety projekt, novy system, nejistota)
 - Proces: 4 kroky spoluprace
 - Sluzby: Projektove rizeni (8–10k/den), IT retainer (od 50k/mesic), IT revize (individualne)
-- Differentiator: "Konzultanti doporucuji. Ja prebiram rizeni."
+- Differentiator: puvodne "Konzultanti doporucuji. Ja prebiram rizeni." (ZRUSENO 2026-07-24, novy claim "Vy ridite firmu. Ja vase IT.")
 - Kontakt: petr@mantait.cz | telefon placeholder (+420 000 000 000)
 
 ## Co chybi / TODO

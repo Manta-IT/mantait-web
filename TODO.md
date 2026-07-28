@@ -12,6 +12,14 @@
 
 ## A. ROZJETÉ — pokračujeme dál (priorita 1)
 
+### A.0 Inspirace z cizích webů → úpravy mantait.cz (zadáno 2026-07-24)
+
+- [ ] **Projít https://elementario.agency/ a https://ross-automation.cz a vytáhnout to nejlepší**
+  - **Co:** Analýza obou webů (struktura, copy, vizuál, CTA flow, práce s důvěrou) → shortlist prvků, které dávají smysl pro mantait.cz → návrh konkrétních úprav Petrovi ke schválení.
+  - **Proč:** Petr je označil jako laťku; chce z nich "vzít to nejlepší a upravit tím náš web".
+  - **Pozor:** nový claim "Vy řídíte firmu. Já vaše IT." + zákaz vymezování vůči konkurenci a "ručím/odpovědnost" v copy (pravidla 2026-07-24).
+  - **Vlastník:** Claude (analýza + návrh) → Petr (výběr) → Claude (implementace)
+
 ### A.1 Brand identity & logo — pokračování Brand Lab v2
 
 - [!] **Logo z Brand Lab v1 se nelíbí — Petr nevybral žádný z 5 konceptů**

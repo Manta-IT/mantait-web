@@ -33,10 +33,10 @@ IT governance je dlouhodobá role externího IT ředitele. Pokrývá:
 ## Co Manta IT NENÍ
 
 - Není to klasický softwarový vývoj na zakázku (AI agenty a menší automatizace z AI plánu ale dodává Manta IT sama, do týdne a orientačně za 50 000 Kč)
-- Není to konzultace s prezentací do šuplíku
+- Není to jednorázová analýza - výstupem je zavedené řešení v provozu
 - Není to napojení na konkrétního dodavatele
 
 ## Klíčové fráze
 
-"Konzultanti doporučují. Já přebírám řízení."
+"Vy řídíte firmu. Já vaše IT."
 "IT má firmu posouvat. Ne zaměstnávat vedení."

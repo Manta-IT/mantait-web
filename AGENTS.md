@@ -70,7 +70,7 @@ git push origin master
 ## Závazná pravidla (porušení = chyba)
 
 ### Copywriting
-- **Sacred phrase** "Konzultanti doporučují. Já přebírám řízení." nikdy neměnit.
+- **Claim** (od 2026-07-24): "Vy řídíte firmu. Já vaše IT." Starý claim "Konzultanti doporučují. Já přebírám řízení." je ZRUŠEN -- nikde nepoužívat. Žádné vymezování vůči konkurenci, žádné "ručím/odpovědnost" v copy.
 - **ASCII-only.** Žádné em-dash (—), smart quotes („" ‚'), ellipsis (…). Renderuje se rozbitě. Používej regular `-`, `"`, `'`, `...`.
 - **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: AI Assessment, AI Assessment Lite, Web Standard, Web Quick, Raynet, Pohoda, IT governance.
 - **Domluvit schůzku** jako primární CTA. Ne "hovor", ne "konzultace", ne "objednat" (falešný slib pro 30min hovor).
