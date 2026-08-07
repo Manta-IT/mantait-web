@@ -1,4 +1,8 @@
 # Interni soubory - NIKDY nenahravat na web (Workers assets ignore)
+# KRITICKE: .git obsahuje celou historii repa (rekonstruovatelnou pres
+# .git/objects). Bez tohoto radku je repozitar verejny -- overeno 2026-08-07.
+.git
+.git/**
 CLAUDE.md
 AGENTS.md
 PRINCIPLES.md
