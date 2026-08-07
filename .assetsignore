@@ -1,0 +1,17 @@
+# Interni soubory - NIKDY nenahravat na web (Workers assets ignore)
+CLAUDE.md
+AGENTS.md
+PRINCIPLES.md
+README.md
+STATUS.md
+TODO.md
+CONTEXT.md
+docs/
+scripts/
+.playwright-mcp/
+.gitignore
+.assetsignore
+wrangler.jsonc
+brand-lab*.html
+Clipboard_*.jpg
+WhatsApp*.jpeg
