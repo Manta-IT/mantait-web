@@ -23,12 +23,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Block brand iteration experiments
-Disallow: /brand-lab
-Disallow: /brand-lab-v2
-Disallow: /brand-lab-v3
-Disallow: /brand-lab-v4
-Disallow: /brand-lab-v5
-Disallow: /brand-lab-v6
-
 Sitemap: https://mantait.cz/sitemap.xml
