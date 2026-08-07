@@ -10,7 +10,8 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - `o-mne.html` — Bio + reference + case studies
 - `weby.html` — Web Standard a Web Quick
 - `raynet.html` — Specializace na Raynet CRM
-- `kontakt.html` — Calendly embed + kontakty
+- `kontakt.html` — kontaktní formulář (mailto compose; Worker+SendGrid backend TODO) + kontakty. Calendly ODSTRANĚNO 2026-08-07 (Petr: "vypadá noobsky") — na indexu a kontaktu; na ostatních stránkách zatím zůstává, sjednotit.
+- `dotace-mas.html` — landing kampaně "Dotace na klíč pro digitalizaci" (OP TAK Technologie pro MAS II) s formulářem způsobilosti; obsah řídí mission control v parent workspace (`../deliverables/2026-08-07_dotacni-tazeni-mission-control.html`)
 - `style.css` — sdílený stylesheet (vždy editovat tady, nikdy inline)
 - `_redirects` -- Cloudflare redirecty (`/ai` -> `/reseni-ai`); stará `ai.html` smazána 2026-07-16
 
@@ -94,7 +95,8 @@ git push origin master
 ### Změny obsahu
 - **Reference (Grandit IT éra 2015-2022)**: NDA expirované, jména projektů + loga + screenshoty OK (čeká na podklady od Petra).
 - **Reference (Blueghost éra 2022-2025)**: NDA platí, anonymně.
-- **Reference (Manta IT — MHA, PlanetLine, Ultra Marine)**: pod NDA, obecný popis + tag "Case study under NDA". UltraConfig.cz NDA neplatí.
+- **Reference (Manta IT — MHA, PlanetLine)**: pod NDA, obecný popis + tag "Case study under NDA". MHA jen anonymně ("B2B distribuční firma") dokud Petr nedodá text NDA.
+- **ZÁKAZ (Petr 2026-08-07): Ultra Marine, UltraConfig.cz a VŠECHNY projekty spojené s Ultramarínem se NIKDY neuvádějí** — na webu, v CV, nikde. Detail v memory `feedback-ultramarin-nikdy-reference`. (Přepisuje starší pravidlo "UltraConfig.cz NDA neplatí".)
 - **Calendly**: aktuálně všechny CTA vedou na obecný 30min event (`https://calendly.com/petr-kokoska-mantait/30min`). Po Calendly Pro upgrade Petr vytvoří event types pro Mapu AI příležitostí / Web Standard / Web Quick / IT governance — pak nahradit (TODO komentáře v HTML).
 
 ## Kontext a souvislosti

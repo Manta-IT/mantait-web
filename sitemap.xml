@@ -40,4 +40,10 @@
   <url><loc>https://mantait.cz/reseni-web</loc></url>
   <url><loc>https://mantait.cz/reseni-vedeni-it</loc></url>
   <url><loc>https://mantait.cz/ukazka-reportu</loc></url>
+  <url>
+    <loc>https://mantait.cz/dotace-mas</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

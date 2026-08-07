@@ -2567,3 +2567,56 @@ footer {
 .consent-accept { background:var(--accent-warm); color:var(--bg-dark); }
 .consent-accept:hover { filter:brightness(1.08); }
 @media (max-width:600px){ .consent-actions{ flex:1 1 100%; } .consent-bar button{ flex:1; } }
+
+/* ─── Iniciativy (index): 2 aktualni kampane s deadliny ─── */
+.init-strip { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x) 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.init-card { display: block; background: var(--bg-dark); color: var(--text-on-dark); border-radius: 10px; padding: 28px 30px; text-decoration: none; position: relative; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
+.init-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22,32,29,.28); }
+.init-card.alt { background: var(--accent); }
+.init-badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--accent-warm); border: 1px solid rgba(201,184,138,.5); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px; }
+.init-card h3 { font-size: clamp(20px, 2.4vw, 27px); color: var(--text-on-dark); margin-bottom: 8px; }
+.init-card p { font-size: 15px; color: var(--text-on-dark-muted); max-width: 46ch; }
+.init-go { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--accent-warm); }
+@media (max-width: 900px) { .init-strip { grid-template-columns: 1fr; } }
+
+/* ─── Reference pas ─── */
+.ref-strip { background: var(--bg-alt); padding: 42px 0; }
+.ref-strip-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); text-align: center; }
+.ref-strip .label { margin-bottom: 18px; }
+.ref-names { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 34px; font-family: 'EB Garamond', serif; font-size: 19px; font-weight: 500; color: var(--text-secondary); }
+.ref-names span { white-space: nowrap; }
+.ref-note { margin-top: 14px; font-size: 13px; color: var(--text-secondary); }
+
+/* ─── Landing dotace + formulare ─── */
+.lp-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x) 26px; }
+.lp-fact { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; }
+.lp-fact b { display: block; font-family: 'EB Garamond', serif; font-size: 26px; color: var(--accent); line-height: 1.2; }
+.lp-fact span { font-size: 13.5px; color: var(--text-secondary); }
+.lp-section { max-width: 860px; margin: 0 auto; padding: 34px var(--pad-x); }
+.lp-section h2 { margin-bottom: 14px; }
+.lp-list { list-style: none; margin-top: 10px; }
+.lp-list li { position: relative; padding: 9px 0 9px 34px; font-size: 16px; border-bottom: 1px solid var(--border); }
+.lp-list li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+.lp-steps { counter-reset: krok; list-style: none; margin-top: 14px; }
+.lp-steps li { counter-increment: krok; position: relative; padding: 14px 0 14px 62px; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lp-steps li::before { content: counter(krok); position: absolute; left: 0; top: 12px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--text-on-dark); font-family: 'EB Garamond', serif; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+.lp-steps li b { display: block; font-size: 16.5px; margin-bottom: 2px; }
+.lp-price { background: var(--bg-dark); color: var(--text-on-dark); border-radius: 10px; padding: 30px 32px; margin-top: 18px; }
+.lp-price .big { font-family: 'EB Garamond', serif; font-size: 42px; color: var(--accent-warm); line-height: 1.1; }
+.lp-price p { font-size: 15px; color: var(--text-on-dark-muted); margin-top: 10px; }
+.lp-faq details { border-bottom: 1px solid var(--border); padding: 4px 0; }
+.lp-faq summary { cursor: pointer; font-weight: 600; font-size: 16px; padding: 12px 0; list-style: none; position: relative; padding-right: 30px; }
+.lp-faq summary::after { content: "+"; position: absolute; right: 4px; top: 10px; font-size: 22px; color: var(--accent); }
+.lp-faq details[open] summary::after { content: "-"; }
+.lp-faq p { font-size: 15px; color: var(--text-muted); padding: 0 0 14px; }
+.form-box { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 12px; padding: 30px 32px; margin-top: 20px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+.form-field { display: flex; flex-direction: column; }
+.form-field.full { grid-column: 1 / -1; }
+.form-field label { font-size: 13px; font-weight: 600; letter-spacing: .3px; margin-bottom: 6px; color: var(--text-muted); }
+.form-field input, .form-field select, .form-field textarea { font-family: 'Inter', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 6px; background: #fff; color: var(--text); }
+.form-field textarea { min-height: 96px; resize: vertical; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--accent); }
+.form-note { font-size: 13px; color: var(--text-secondary); margin-top: 12px; }
+.form-box .btn { margin-top: 18px; min-height: 48px; font-size: 15px; }
+@media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } .lp-price { padding: 24px 22px; } }
