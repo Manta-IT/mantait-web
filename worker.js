@@ -9,6 +9,7 @@ const TEL = '+420 732 329 431';
 const FORMS = {
   dotaznik: {
     subject: 'Dotace MAS: overeni zpusobilosti',
+    replySubject: 'Mam vas dotaznik - Manta IT',
     fields: ['ico', 'obec', 'zamestnanci', 'ucetni_roky', 'vazby', 'bezdluznost',
              'datovka', 'zamer', 'investice', 'drivejsi_dotace', 'jmeno', 'telefon', 'email', 'mas'],
     reply: (d) => `Dobry den${d.jmeno ? ', ' + d.jmeno : ''},
@@ -25,6 +26,7 @@ Manta IT | mantait.cz | ${TEL}`,
   },
   kontakt: {
     subject: 'Zprava z kontaktniho formulare',
+    replySubject: 'Mam vasi zpravu - Manta IT',
     fields: ['jmeno', 'firma', 'telefon', 'email', 'zprava'],
     reply: (d) => `Dobry den${d.jmeno ? ', ' + d.jmeno : ''},
 
@@ -101,7 +103,7 @@ async function handleForm(request, env, formName) {
   if (email) {
     // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit request
     try {
-      await sendMail(key, email, 'Mam vas dotaznik - Manta IT', form.reply(data));
+      await sendMail(key, email, form.replySubject, form.reply(data));
     } catch (e) {
       console.error('potvrzeni klientovi selhalo', e);
     }
