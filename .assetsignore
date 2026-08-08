@@ -16,6 +16,7 @@ scripts/
 .gitignore
 .assetsignore
 wrangler.jsonc
+worker.js
 brand-lab*.html
 Clipboard_*.jpg
 WhatsApp*.jpeg

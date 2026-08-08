@@ -1,20 +1,20 @@
+
 # Brainstorming cache (Visual Companion)
-.superpowers/
-
-# Local Claude config
-.claude/
-
 # Brand iteration history (internal research, not for public deploy)
-brand-lab.html
+# Local Claude config
+# Temporary screenshots
+.claude/
+.dev.vars
+.playwright-mcp/
+.superpowers/
+.wrangler/
+Clipboard_*.jpg
+Clipboard_*.png
+WhatsApp Image*.jpeg
+WhatsApp Image*.jpg
 brand-lab-v2.html
 brand-lab-v3.html
 brand-lab-v4.html
 brand-lab-v5.html
 brand-lab-v6.html
-
-# Temporary screenshots
-Clipboard_*.jpg
-Clipboard_*.png
-WhatsApp Image*.jpeg
-WhatsApp Image*.jpg
-.playwright-mcp/
+brand-lab.html
