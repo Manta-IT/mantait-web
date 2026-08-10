@@ -2,8 +2,13 @@
 // Formular je jediny vstupni bod dotacni kampane -- lead se NESMI tise ztratit.
 // Pri selhani odeslani vraci stranku s telefonem, ne prazdnou 500.
 
+// Odesila se pres Gmail API primo z pracovni schranky. Puvodni cesta
+// (SendGrid, odesilatel formular@manta-it.cz) skoncila 10. 8.: Gmail tu
+// domenu s pomlckou oznacoval za pokus vydavat se za mantait.cz a pripsal
+// prijemci varovani "zprava muze byt nebezpecna". Posta k webovemu formulari
+// musi chodit z tehoz jmena jako web, jinak je podezrela uz z principu.
 const NOTIFY_TO = 'petr.kokoska@mantait.cz';
-const FROM = { email: 'formular@manta-it.cz', name: 'Manta IT - formular' };
+const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };
 const TEL = '+420 732 329 431';
 
 const FORMS = {
@@ -55,19 +60,60 @@ function errorPage(msg) {
   );
 }
 
-async function sendMail(key, to, subject, text, replyTo) {
-  const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
+function b64url(text) {
+  const bytes = new TextEncoder().encode(text);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function b64(text) {
+  const bytes = new TextEncoder().encode(text);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+
+// Hlavicka s diakritikou musi byt zakodovana (RFC 2047), jinak z "Kokoška"
+// dorazi rozsypany caj.
+const hlavicka = (s) => (/[^\x20-\x7E]/.test(s) ? `=?UTF-8?B?${b64(s)}?=` : s);
+
+async function accessToken(env) {
+  const res = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
-    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      personalizations: [{ to: [{ email: to }] }],
-      from: FROM,
-      ...(replyTo ? { reply_to: { email: replyTo } } : {}),
-      subject,
-      content: [{ type: 'text/plain', value: text }],
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      client_id: env.GMAIL_CLIENT_ID,
+      client_secret: env.GMAIL_CLIENT_SECRET,
+      refresh_token: env.GMAIL_REFRESH_TOKEN,
+      grant_type: 'refresh_token',
     }),
   });
-  if (!res.ok) throw new Error(`SendGrid ${res.status}: ${await res.text()}`);
+  if (!res.ok) throw new Error(`OAuth ${res.status}: ${await res.text()}`);
+  return (await res.json()).access_token;
+}
+
+async function sendMail(token, to, subject, text, replyTo) {
+  const zprava = [
+    `To: ${to}`,
+    `From: ${hlavicka(FROM.name)} <${FROM.email}>`,
+    ...(replyTo ? [`Reply-To: ${replyTo}`] : []),
+    `Subject: ${hlavicka(subject)}`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset="UTF-8"',
+    'Content-Transfer-Encoding: base64',
+    '',
+    b64(text),
+  ].join('\r\n');
+  const res = await fetch(
+    'https://gmail.googleapis.com/gmail/v1/users/me/messages/send',
+    {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ raw: b64url(zprava) }),
+    },
+  );
+  if (!res.ok) throw new Error(`Gmail ${res.status}: ${await res.text()}`);
 }
 
 async function handleForm(request, env, formName) {
@@ -91,11 +137,13 @@ async function handleForm(request, env, formName) {
     .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000)}`);
   const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${request.headers.get('referer') || 'webu'}`;
 
-  const key = env.SENDGRID_API_KEY;
-  if (!key) return errorPage('Odesilani e-mailu neni na serveru nastavene.');
-
+  if (!env.GMAIL_REFRESH_TOKEN) {
+    return errorPage('Odesilani e-mailu neni na serveru nastavene.');
+  }
+  let token;
   try {
-    await sendMail(key, NOTIFY_TO, form.subject, body, email || undefined);
+    token = await accessToken(env);
+    await sendMail(token, NOTIFY_TO, form.subject, body, email || undefined);
   } catch (e) {
     console.error('notifikace selhala', e);
     return errorPage('Server odmitl zpravu odeslat.');
@@ -103,13 +151,17 @@ async function handleForm(request, env, formName) {
   if (email) {
     // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit request
     try {
-      await sendMail(key, email, form.replySubject, form.reply(data));
+      await sendMail(token, email, form.replySubject, form.reply(data));
     } catch (e) {
       console.error('potvrzeni klientovi selhalo', e);
     }
   }
   return Response.redirect(new URL('/dekujeme', request.url), 303);
 }
+
+// Pro scripts/test-mail.mjs -- overuje sestaveni MIME a odeslani proti
+// skutecnemu Gmail API bez toho, aby bezel cely Worker.
+export { b64, b64url, hlavicka, accessToken, sendMail };
 
 export default {
   async fetch(request, env) {
