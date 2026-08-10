@@ -18,10 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5632260">
+  <link rel="stylesheet" href="style.css?v=cb2962f">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,7 +52,7 @@
     <a href="/o-mne" class="nav-link">O mně</a>
     <a href="/kontakt" class="nav-link">Kontakt</a>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
 </nav>
 
 <div class="back"><a href="/">Zpět na výběr</a></div>
@@ -64,7 +62,11 @@
   <div>
     <div class="d-eyebrow">Řešíte: chci web</div>
     <h1>Web na míru, <em>bez složitostí.</em></h1>
-    <p class="lead">Nemáte web nebo se za ten stávající stydíte. Udělám vám web na míru, který si pak sami snadno spravujete - vyměníte text i obrázek bez programátora. Rychle a za rozumnou cenu.</p>
+    <p class="lead">Nemáte web nebo se za ten stávající stydíte. Udělám vám web na míru,
+    který si pak sami snadno spravujete - vyměníte text i obrázek bez programátora.
+    Je to nejmenší z věcí, které pro firmy stavím, a platí pro něj to samé jako pro
+    <a href="/reseni-nova-aplikace">aplikace na míru</a>: popíšete, co potřebujete,
+    a dostanete to hotové.</p>
   </div>
   <div class="d-card">
     <div class="pricetag">od 30 000</div>
@@ -73,8 +75,8 @@
       <div class="big">Web, který si pak spravujete sami.</div>
       <div class="small">Žádné měsíční poplatky za drobnou změnu. Text i fotku si vyměníte sami.</div>
     </div>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
-    <div class="reassure">30 minut nezávazně. Online nebo u vás.</div>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
+    <div class="reassure">Odpovím do 24 hodin. Nezávazně.</div>
   </div>
 </section>
 
@@ -132,19 +134,10 @@
   <div class="end-in">
     <h2>Řekněte mi, <em>co potřebujete.</em></h2>
     <p>Řekněte mi, k čemu web má sloužit. Já vám řeknu, jak by mohl vypadat a co vás bude stát - a pak teprve se rozhodnete.</p>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
-    <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
+    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
   </div>
 </section>
-
-<script>
-  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
-    });
-  });
-</script>
 
 </body>
 </html>
