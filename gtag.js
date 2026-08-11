@@ -45,11 +45,11 @@
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Souhlas s cookies');
     bar.innerHTML =
-      '<p>Pouzivam cookies k mereni navstevnosti a ucinnosti reklamy. ' +
+      '<p>Používám cookies k měření návštěvnosti a účinnosti reklamy. ' +
       'Bez souhlasu se nesledujete.</p>' +
       '<div class="consent-actions">' +
-      '<button type="button" class="consent-reject">Odmitnout</button>' +
-      '<button type="button" class="consent-accept">Souhlasim</button>' +
+      '<button type="button" class="consent-reject">Odmítnout</button>' +
+      '<button type="button" class="consent-accept">Souhlasím</button>' +
       '</div>';
     document.body.appendChild(bar);
 
@@ -67,6 +67,19 @@
   // Konverze: klik na kterekoli CTA s data-calendly (otevreni rezervace).
   document.addEventListener('click', function (e) {
     var t = e.target.closest && e.target.closest('[data-calendly]');
+    if (t) gtag('event', 'conversion', { send_to: CONVERSION, value: 1.0, currency: 'CZK' });
+  });
+
+  // Konverze: odeslany formular. Worker po ulozeni presmeruje na /dekujeme,
+  // takze konverzi hlasi ta stranka. Bez tohoto se formularovy lead nemeri
+  // vubec a kampan se vyhodnoti jako nulova (nalez oponentury 2026-08-11).
+  if (/^\/dekujeme/.test(location.pathname)) {
+    gtag('event', 'conversion', { send_to: CONVERSION, value: 1.0, currency: 'CZK' });
+  }
+
+  // Konverze: klik na telefon.
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('a[href^="tel:"]');
     if (t) gtag('event', 'conversion', { send_to: CONVERSION, value: 1.0, currency: 'CZK' });
   });
 })();

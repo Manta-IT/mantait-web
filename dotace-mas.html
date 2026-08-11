@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3ab653c">
+  <link rel="stylesheet" href="style.css?v=37e5c8e">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
 
@@ -130,6 +130,9 @@
   <div class="lp-table-wrap">
     <table class="lp-table">
       <tr><th>Území</th><th>Uzávěrka záměrů</th><th>Peníze ve výzvě</th><th>Vejde se zhruba</th></tr>
+      <tr><td>Hlinecko</td><td>24. srpna 2026</td><td>2 260 000 Kč</td><td>3 až 4 projekty</td></tr>
+      <tr><td>Bohumínsko</td><td>28. srpna 2026</td><td>přes 4 500 000 Kč</td><td>6 až 9 projektů</td></tr>
+      <tr><td>Olomoucko a Přerovsko (Hanácké Království)</td><td>31. srpna 2026</td><td>1 650 000 Kč</td><td>2 až 3 projekty</td></tr>
       <tr><td>Posázaví (Benešovsko a okolí)</td><td>1. září 2026</td><td>4 020 000 Kč</td><td>5 až 8 projektů</td></tr>
       <tr><td>Podhostýnska (Bystřice pod Hostýnem)</td><td>7. září 2026</td><td>2 060 000 Kč</td><td>3 až 4 projekty</td></tr>
       <tr><td>Rýmařovsko (Bruntálsko)</td><td>10. září 2026</td><td>1 650 000 Kč</td><td>2 až 3 projekty</td></tr>
@@ -391,19 +394,24 @@
 // Kampanovy odkaz nese ?mas=<slug>: dopln nazev MAS a uzaverku do hero
 // a do skryteho pole formulare, at vime, ze ktere vlny lead prisel.
 (function () {
+  // Diakritika tu MUSI byt -- tenhle text cte navstevnik, ne prekladac.
   var MAS = {
-    chrudimsko: { nazev: 'Chrudimsko', uzaverka: '11. zari' },
-    hlucinsko: { nazev: 'Hlucinsko', uzaverka: '25. zari' },
-    rymarovsko: { nazev: 'Rymarovsko', uzaverka: '10. zari' },
-    podhostynska: { nazev: 'Podhostynska', uzaverka: '7. zari' },
-    posazavi: { nazev: 'Posazavi', uzaverka: '1. zari' }
+    hlinecko: { nazev: 'Hlinecka', uzaverka: '24. srpna' },
+    bohuminsko: { nazev: 'Bohumínska', uzaverka: '28. srpna' },
+    'hanacke-kralovstvi': { nazev: 'Olomoucka a Přerovska', uzaverka: '31. srpna' },
+    posazavi: { nazev: 'Posázaví', uzaverka: '1. září' },
+    podhostynska: { nazev: 'Podhostýnska', uzaverka: '7. září' },
+    rymarovsko: { nazev: 'Rýmařovska', uzaverka: '10. září' },
+    chrudimsko: { nazev: 'Chrudimska', uzaverka: '11. září' },
+    hlucinsko: { nazev: 'Hlučínska', uzaverka: '25. září' }
   };
   var slug = new URLSearchParams(location.search).get('mas');
+  // Atribuce se ulozi i u neznameho slugu, jinak lead prijde bez zdroje.
+  if (slug) document.getElementById('f-mas').value = slug;
   var m = slug && MAS[slug];
   if (!m) return;
-  document.getElementById('f-mas').value = slug;
   var el = document.getElementById('lp-region');
-  if (el) el.textContent = 'Firmy z regionu ' + m.nazev + ' mohou podat zamer do ' + m.uzaverka + '.';
+  if (el) el.textContent = 'Firmy z ' + m.nazev + ' mohou podat záměr do ' + m.uzaverka + '.';
 })();
 </script>
 

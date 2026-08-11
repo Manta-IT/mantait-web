@@ -13,32 +13,32 @@ const TEL = '+420 732 329 431';
 
 const FORMS = {
   dotaznik: {
-    subject: 'Dotace MAS: overeni zpusobilosti',
-    replySubject: 'Mam vas dotaznik - Manta IT',
+    subject: 'Dotace MAS: ověření způsobilosti',
+    replySubject: 'Mám váš dotazník - Manta IT',
     fields: ['ico', 'obec', 'zamestnanci', 'ucetni_roky', 'vazby', 'bezdluznost',
              'datovka', 'zamer', 'investice', 'drivejsi_dotace', 'jmeno', 'telefon', 'email', 'mas'],
-    reply: (d) => `Dobry den${d.jmeno ? ', ' + d.jmeno : ''},
+    reply: (d) => `Dobrý den${d.jmeno ? ', ' + d.jmeno : ''},
 
-diky za odeslany dotaznik. Mam ho a projdu ho osobne.
+díky za odeslaný dotazník. Mám ho a projdu ho osobně.
 
-Ozvu se vam do jednoho pracovniho dne s jasnou odpovedi: ano splnujete, ano
-s doplnenim (a cim), nebo ne a proc -- vcetne toho, co jde delat misto toho.
+Ozvu se vám do jednoho pracovního dne s jasnou odpovědí: ano splňujete, ano
+s doplněním (a čím), nebo ne a proč, včetně toho, co jde dělat místo toho.
 
-Kdyby to bylo naspech nebo chcete cokoliv doresit driv, volejte ${TEL}.
+Kdyby to bylo naspěch nebo chcete cokoliv dořešit dřív, volejte ${TEL}.
 
-Petr Kokoska
+Petr Kokoška
 Manta IT | mantait.cz | ${TEL}`,
   },
   kontakt: {
-    subject: 'Zprava z kontaktniho formulare',
-    replySubject: 'Mam vasi zpravu - Manta IT',
+    subject: 'Zpráva z kontaktního formuláře',
+    replySubject: 'Mám vaši zprávu - Manta IT',
     fields: ['jmeno', 'firma', 'telefon', 'email', 'zprava'],
-    reply: (d) => `Dobry den${d.jmeno ? ', ' + d.jmeno : ''},
+    reply: (d) => `Dobrý den${d.jmeno ? ', ' + d.jmeno : ''},
 
-diky za zpravu, dorazila mi. Ozvu se vam do jednoho pracovniho dne.
-Kdyby to spechalo, volejte ${TEL}.
+díky za zprávu, dorazila mi. Ozvu se vám do jednoho pracovního dne.
+Kdyby to spěchalo, volejte ${TEL}.
 
-Petr Kokoska
+Petr Kokoška
 Manta IT | mantait.cz | ${TEL}`,
   },
 };

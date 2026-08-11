@@ -2383,7 +2383,7 @@ footer {
 .tier-label:first-child { margin-top:4px; }
 .tier-label::after { content:""; flex:1; height:1px; background:var(--border); }
 .tile.feature { grid-column:span 6; }
-.tile.common { grid-column:span 6; }
+.tile.common { grid-column:span 4; }
 .tile { grid-column:span 3; }
 @media (max-width:980px){ .tile, .tile.feature, .tile.common { grid-column:span 6; } }
 @media (max-width:560px){ .grid{ padding:0 20px 30px; } .tile, .tile.feature, .tile.common { grid-column:span 12; } }
