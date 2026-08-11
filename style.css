@@ -2425,13 +2425,13 @@ footer {
 .more-go { font-size:14px; font-weight:600; color:var(--accent); white-space:nowrap; }
 
 /* ---------- DETAIL: zpet na vyber ---------- */
-.back { max-width:1100px; margin:0 auto; padding:28px 40px 0; }
+.back { max-width:var(--max-w); margin:0 auto; padding:28px var(--pad-x) 0; }
 .back a { font-size:14px; color:var(--text-secondary); font-weight:500; display:inline-flex; gap:8px; }
 .back a::before { content:"<-"; }
 .back a:hover { color:var(--accent); }
 
 /* ---------- DETAIL: HERO (asymetricky split) ---------- */
-.d-hero { max-width:1100px; margin:0 auto; padding:40px 40px 60px; display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:center; }
+.d-hero { max-width:var(--max-w); margin:0 auto; padding:40px var(--pad-x) 60px; display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:center; }
 @media (max-width:860px){ .d-hero{ grid-template-columns:1fr; gap:32px; padding:32px 20px 48px; } }
 .d-eyebrow { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:22px; }
 .d-hero h1 { font-family:var(--serif); font-weight:500; font-size:clamp(36px,5.5vw,62px); line-height:1.05; letter-spacing:-0.015em; }
@@ -2454,7 +2454,7 @@ footer {
 /* ---------- DETAIL: PROCES ---------- */
 /* padding:0 prebiji globalni `section` padding nahore */
 .proc { padding:0; background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-.proc-in { max-width:1100px; margin:0 auto; padding:70px 40px; }
+.proc-in { max-width:var(--max-w); margin:0 auto; padding:70px var(--pad-x); }
 /* margin-bottom:0 prebiji globalni .label (14px) -- prototyp margin nemel */
 .proc .label { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:0; }
 .proc h2 { font-family:var(--serif); font-weight:500; font-size:clamp(28px,4vw,42px); margin-top:10px; letter-spacing:-0.01em; }
@@ -2469,7 +2469,7 @@ footer {
 .step.final p { color:var(--on-dark-muted); }
 
 /* ---------- DETAIL: CO DOSTANETE ---------- */
-.get { max-width:1100px; margin:0 auto; padding:70px 40px; }
+.get { max-width:var(--max-w); margin:0 auto; padding:70px var(--pad-x); }
 @media (max-width:760px){ .get{ padding:50px 20px; } }
 .get .label { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:0; }
 .get h2 { font-family:var(--serif); font-weight:500; font-size:clamp(28px,4vw,42px); margin-top:10px; }
@@ -2495,7 +2495,7 @@ footer {
 .d-hero.solo .lead { max-width:62ch; }
 
 .rep { padding:0; }
-.rep-in { max-width:1100px; margin:0 auto; padding:64px 40px; }
+.rep-in { max-width:var(--max-w); margin:0 auto; padding:64px var(--pad-x); }
 @media (max-width:760px){ .rep-in{ padding:48px 20px; } }
 .rep.alt { background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .rep.dark { background:var(--bg-dark); color:var(--on-dark); }
