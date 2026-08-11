@@ -133,7 +133,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px var(--pad-x);
+  /* pad-x edge-to-edge on mobile; on wide viewports aligns to the same
+     content edge as the max-width+auto-margin sections below (nav has no
+     max-width of its own so its sticky blur background stays full-bleed) */
+  padding: 22px max(var(--pad-x), calc((100% - var(--max-w)) / 2 + var(--pad-x)));
 }
 .nav-brand {
   font-family: 'EB Garamond', serif;
@@ -2358,7 +2361,7 @@ footer {
 /* v2 nav markup sjednocen na spolecny <nav> (2026-07-17), stylovani viz nav {} nahore */
 
 /* ---------- ROZCESTNIK: HERO ---------- */
-.hero { position:relative; padding:90px 40px 40px; max-width:1200px; margin:0 auto; overflow:hidden; }
+.hero { position:relative; padding:90px var(--pad-x) 40px; max-width:var(--max-w); margin:0 auto; overflow:hidden; }
 .hero::before { content:""; position:absolute; right:-120px; top:-60px; width:520px; height:520px; background:radial-gradient(circle at center, rgba(45,84,71,0.07), transparent 68%); pointer-events:none; }
 /* .hero-eyebrow / .hero-lead scopovane pod .hero -- stary index.html ma
    stejnojmenne tridy s jinym stylem */
@@ -2370,15 +2373,15 @@ footer {
 @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
 
 /* ---------- ROZCESTNIK: PROMPT pruh ---------- */
-.prompt { max-width:1200px; margin:0 auto; padding:56px 40px 22px; display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; border-bottom:1px solid var(--border); scroll-margin-top:84px; }
+.prompt { max-width:var(--max-w); margin:0 auto; padding:56px var(--pad-x) 22px; display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; border-bottom:1px solid var(--border); scroll-margin-top:84px; }
 /* prompt nese id="sluzby" -- starsi #sluzby pravidlo (ID selektor, sekce
    SERVICES nahore) by jinak prebilo padding */
-#sluzby.prompt { padding:56px 40px 22px; }
+#sluzby.prompt { padding:56px var(--pad-x) 22px; }
 .prompt h2 { font-family:var(--serif); font-weight:500; font-size:clamp(26px,4vw,40px); letter-spacing:-0.01em; }
 .prompt .count { font-size:13px; color:var(--text-secondary); font-weight:500; }
 
 /* ---------- ROZCESTNIK: MRIZKA DLAZDIC (3 vrstvy) ---------- */
-.grid { max-width:1200px; margin:0 auto; padding:0 40px 30px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+.grid { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x) 30px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
 .tier-label { grid-column:span 12; display:flex; align-items:center; gap:14px; margin:30px 0 2px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-secondary); font-weight:600; }
 .tier-label:first-child { margin-top:4px; }
 .tier-label::after { content:""; flex:1; height:1px; background:var(--border); }
@@ -2414,7 +2417,7 @@ footer {
 .tile:nth-child(7){animation-delay:.66s} .tile:nth-child(8){animation-delay:.72s}
 
 /* ---------- ROZCESTNIK: RESIM VIC ---------- */
-.more { max-width:1200px; margin:0 auto; padding:0 40px 90px; }
+.more { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x) 90px; }
 .more a { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:30px 36px; background:var(--bg-alt); border:1px solid var(--border-strong); border-radius:16px; transition:border-color 0.3s, transform 0.3s; }
 .more a:hover { border-color:var(--accent); transform:translateY(-2px); }
 .more-txt h4 { font-family:var(--serif); font-size:24px; font-weight:500; }
