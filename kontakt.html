@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kontakt na Petra Kokošku - Manta IT. Domluvte si schůzku: 30 minut, online nebo u vás, bez závazku. Odpovím do 24 hodin. Email, telefon, online kalendář.">
+  <meta name="description" content="Kontakt na Petra Kokošku - Manta IT. Napište, co řešíte, odpovím do jednoho pracovního dne. E-mail, telefon.">
   <meta property="og:title" content="Kontakt - Manta IT - Petr Kokoška">
-  <meta property="og:description" content="Domluvte si 30 minut schůzku zdarma. Email, telefon, online kalendář.">
+  <meta property="og:description" content="Napište, co řešíte. Odpovím do jednoho pracovního dne s konkrétním návrhem dalšího kroku.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/kontakt">
@@ -16,11 +16,8 @@
   <title>Kontakt - Manta IT - Petr Kokoška</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link rel="stylesheet" href="style.css?v=61a9bf7">
+  <link rel="stylesheet" href="style.css?v=5632260">
 
   <!-- Structured data: ContactPage -->
   <script type="application/ld+json">
@@ -84,7 +81,7 @@
     <a href="/o-mne" class="nav-link">O mně</a>
     <a href="/kontakt" class="nav-link active" aria-current="page">Kontakt</a>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  <a href="#zprava" class="nav-cta">Domluvit schůzku</a>
 </nav>
 
 <main>
@@ -95,27 +92,62 @@
     <span class="label">Kontakt</span>
     <h1>Začněme <em>rozhovorem.</em></h1>
     <p class="page-header-sub">
-      30 minut. Online nebo u vás. Bez závazku. Pochopím vaši situaci a domluvíme se,
-      jestli vám můžu být užitečný. Odpovím do 24 hodin.
+      Napište pár vět o tom, co řešíte. Do jednoho pracovního dne odpovím s konkrétním návrhem
+      dalšího kroku a domluvíme schůzku: 30 minut, online nebo u vás, bez závazku.
     </p>
   </div>
 </section>
 
 
-<!-- ═══ CALENDLY INLINE ═══ -->
-<section style="padding: 56px 0;">
-  <div class="calendly-inline">
-    <div class="calendly-inline-widget" data-url="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f8f5ec&text_color=16201d&primary_color=2d5447"></div>
-  </div>
+<!-- ═══ FORMULAR + KONTAKTY ═══ -->
+<section style="padding: 20px 0 80px;" id="zprava">
+  <div class="lp-section" style="padding-top: 0;">
+    <form class="form-box" id="kontakt-form" method="post" action="/api/kontakt">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="k-jmeno">Jméno a příjmení</label>
+          <input id="k-jmeno" name="jmeno" type="text" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="k-firma">Firma</label>
+          <input id="k-firma" name="firma" type="text" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="k-tel">Telefon</label>
+          <input id="k-tel" name="telefon" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="k-mail">E-mail</label>
+          <input id="k-mail" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="form-field full">
+          <label for="k-zprava">Co řešíte?</label>
+          <textarea id="k-zprava" name="zprava" placeholder="Klidně jen dvě věty. Např.: dosluhuje nám skladový systém a nevíme, čím ho nahradit."></textarea>
+        </div>
+      </div>
+      <div class="hp-field" aria-hidden="true">
+        <label for="k-web">Nevyplňujte</label>
+        <input id="k-web" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="btn">Odeslat zprávu</button>
+      <p class="form-note">Odpovím do jednoho pracovního dne. Vyplňte alespoň e-mail nebo telefon,
+      ať mám kam odpovědět. Jak nakládám s údaji, popisují
+      <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
+    </form>
 
-  <div class="kontakt-details">
-    <div>
-      <span class="contact-item-label">Email</span>
-      <a href="mailto:petr.kokoska@mantait.cz" class="contact-item-value">petr.kokoska@mantait.cz</a>
-    </div>
-    <div>
-      <span class="contact-item-label">Telefon</span>
-      <a href="tel:+420732329431" class="contact-item-value">+420 732 329 431</a>
+    <div class="kontakt-details" style="margin-top: 34px;">
+      <div>
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:petr.kokoska@mantait.cz" class="contact-item-value">petr.kokoska@mantait.cz</a>
+      </div>
+      <div>
+        <span class="contact-item-label">Telefon</span>
+        <a href="tel:+420732329431" class="contact-item-value">+420 732 329 431</a>
+      </div>
+      <div>
+        <span class="contact-item-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/petrkokoska/" class="contact-item-value" rel="noopener" target="_blank">petrkokoska</a>
+      </div>
     </div>
   </div>
 </section>
@@ -125,23 +157,11 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
+  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do jednoho pracovního dne</div>
   <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
   <div class="footer-meta">IČO: 04158351 &middot; &copy; 2026</div>
 </footer>
 
-<script>
-document.querySelectorAll('[data-calendly]').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (typeof Calendly !== 'undefined') {
-      Calendly.initPopupWidget({url: btn.dataset.calendly});
-    } else {
-      window.location.href = 'kontakt.html';
-    }
-  });
-});
-</script>
 
 </body>
 </html>

@@ -18,10 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=61a9bf7">
+  <link rel="stylesheet" href="style.css?v=cb2962f">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,7 +52,7 @@
     <a href="/o-mne" class="nav-link">O mně</a>
     <a href="/kontakt" class="nav-link">Kontakt</a>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
 </nav>
 
 <div class="back"><a href="/">Zpět na výběr</a></div>
@@ -64,7 +62,10 @@
   <div>
     <div class="d-eyebrow">Řešíte: chci propojit systémy</div>
     <h1>Vaše data si <em>potečou sama.</em></h1>
-    <p class="lead">Data ručně přenášíte mezi účetnictvím, CRM, e-shopem a interními aplikacemi. Je to otrava a chyby se množí. Navrhnu propojení, vyberu nástroj a postarám se o zavedení - lidi přestanou přepisovat to samé dokola. Specializuji se mimo jiné na <a href="/raynet">Raynet CRM</a> a jeho propojení s účetnictvím.</p>
+    <p class="lead">Obchodník vystaví nabídku a účetní ji opíše do faktury. Ceník udržujete zvlášť
+    v e-shopu a zvlášť ve skladu. Poptávky z mailu někdo ručně přeťukává do systému.
+    Napíšu propojení, které to udělá za vás, a postarám se o zavedení. Pracuji běžně
+    s <strong>Pohodou</strong> a jsem oficiální partner <a href="/raynet">Raynet CRM</a>.</p>
   </div>
   <div class="d-card">
     <div class="pricetag">podle rozsahu</div>
@@ -73,8 +74,8 @@
       <div class="big">Konec ručního přepisování.</div>
       <div class="small">Systémy si předají data mezi sebou. Vám i lidem se uvolní ruce.</div>
     </div>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
-    <div class="reassure">30 minut nezávazně. Online nebo u vás.</div>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
+    <div class="reassure">Odpovím do 24 hodin. Nezávazně.</div>
   </div>
 </section>
 
@@ -99,6 +100,30 @@
         <h3>Zavedu a otestuji</h3>
         <p>Propojení nasadím, otestuji na reálných datech a pohlídám, že vše teče správně.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CO SE PROPOJUJE NEJCASTEJI -->
+<section class="get">
+  <span class="label">Co se propojuje nejčastěji</span>
+  <h2>Poznáte se v některé z nich?</h2>
+  <div class="get-list">
+    <div class="get-item">
+      <span class="mark">01</span>
+      <div><h4>Raynet a Pohoda</h4><p>Kontakty, nabídky a faktury na jednom místě. Obchodník vystaví nabídku, faktura z ní vznikne sama.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">02</span>
+      <div><h4>E-shop a sklad</h4><p>Objednávky, stavy zásob a ceník. Konec toho, že ceník měníte dvakrát a sklad stejně nesedí.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">03</span>
+      <div><h4>Pošta a CRM</h4><p>Poptávka přijde mailem a založí se v systému sama, roztříděná a s doplněnými údaji o firmě.</p></div>
+    </div>
+    <div class="get-item">
+      <span class="mark">04</span>
+      <div><h4>Excel a zbytek světa</h4><p>Když klíčový proces firmy žije v tabulce, kterou umí obsluhovat jeden člověk. Nejčastější případ ze všech.</p></div>
     </div>
   </div>
 </section>
@@ -132,19 +157,10 @@
   <div class="end-in">
     <h2>Ukažte mi, co <em>přepisujete ručně.</em></h2>
     <p>Řekněte mi, mezi kterými systémy data přenášíte. Já vám řeknu, jak je propojit - a co vám to ušetří.</p>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
-    <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
+    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
   </div>
 </section>
-
-<script>
-  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
-    });
-  });
-</script>
 
 </body>
 </html>

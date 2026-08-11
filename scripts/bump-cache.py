@@ -16,8 +16,16 @@ import subprocess
 import sys
 
 WEB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-# Vsechny HTML stranky v rootu webu; stranky bez style.css linku se preskoci.
+# HTML stranky v rootu + v podadresarich s obsahem (clanky/). Stranky bez
+# style.css linku se preskoci. Podadresare pouzivaji root-relativni cestu
+# "/style.css", root cestu relativni -- proto dva vzory nize.
+SUBDIRS = ['clanky']
 PAGES = sorted(f for f in os.listdir(WEB_DIR) if f.endswith('.html'))
+PAGES += sorted(
+    os.path.join(d, f)
+    for d in SUBDIRS if os.path.isdir(os.path.join(WEB_DIR, d))
+    for f in os.listdir(os.path.join(WEB_DIR, d)) if f.endswith('.html')
+)
 
 
 def get_version() -> str:
@@ -33,9 +41,9 @@ def get_version() -> str:
 def bump_file(filepath: str, version: str) -> bool:
     with open(filepath, encoding='utf-8') as f:
         content = f.read()
-    pattern = re.compile(r'href="style\.css(?:\?v=[^"]*)?"')
-    new_href = f'href="style.css?v={version}"'
-    new_content, count = pattern.subn(new_href, content)
+    pattern = re.compile(r'href="(/?)style\.css(?:\?v=[^"]*)?"')
+    new_content, count = pattern.subn(
+        lambda m: f'href="{m.group(1)}style.css?v={version}"', content)
     if count == 0:
         return False
     if content != new_content:

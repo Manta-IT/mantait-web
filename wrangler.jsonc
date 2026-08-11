@@ -1,0 +1,13 @@
+{
+  // Workers Builds config: umoznuje preview verze z non-production branchi
+  // (versions upload). Produkce ma deploy command v CF dashboardu.
+  "name": "mantait-web",
+  "compatibility_date": "2026-08-01",
+  "main": "worker.js",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  }
+}
+// Secret SENDGRID_API_KEY: nastavit v CF dashboardu (Workers -> mantait-web ->
+// Settings -> Variables -> Secret). Bez nej formulare vraci chybovou stranku.
