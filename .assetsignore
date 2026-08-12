@@ -20,3 +20,5 @@ worker.js
 brand-lab*.html
 Clipboard_*.jpg
 WhatsApp*.jpeg
+specs/
+.superpowers/
