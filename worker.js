@@ -17,7 +17,9 @@ const FORMS = {
     replySubject: 'Mám váš dotazník - Manta IT',
     fields: ['ico', 'obec', 'zamestnanci', 'ucetni_roky', 'vazby', 'bezdluznost',
              'datovka', 'zamer', 'investice', 'drivejsi_dotace', 'jmeno', 'telefon', 'email', 'mas'],
-    reply: (d) => `Dobrý den${d.jmeno ? ', ' + d.jmeno : ''},
+    // Jmeno z formulare je v 1. padu a JS ho neumi sklonit ("Dobry den,
+    // Robin Mrtvy" -- nalez DK12). Osloveni bez jmena je spravne vzdy.
+    reply: (d) => `Dobrý den,
 
 díky za odeslaný dotazník. Mám ho a projdu ho osobně.
 
@@ -33,7 +35,7 @@ Manta IT | mantait.cz | ${TEL}`,
     subject: 'Zpráva z kontaktního formuláře',
     replySubject: 'Mám vaši zprávu - Manta IT',
     fields: ['jmeno', 'firma', 'telefon', 'email', 'zprava'],
-    reply: (d) => `Dobrý den${d.jmeno ? ', ' + d.jmeno : ''},
+    reply: (d) => `Dobrý den,
 
 díky za zprávu, dorazila mi. Ozvu se vám do jednoho pracovního dne.
 Kdyby to spěchalo, volejte ${TEL}.
