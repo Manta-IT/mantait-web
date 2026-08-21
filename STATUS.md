@@ -97,7 +97,7 @@ Cenovy blocker UZAVREN 2026-07-16: Petr rozhodl 15 000 Kc za Mapu AI prilezitost
 
 ## Strategie
 - Stack: ciste HTML/CSS, zadny build step, zadny framework (senior call dle code-review, drzet)
-- Warm-professional paleta (kremova/tmave zelena), Cormorant Garamond display + Inter body, zadny treti font
+- Warm-professional paleta (kremova/tmave zelena), EB Garamond display + Inter body, zadny treti font
 - ASCII-only v typografii (em-dash/smart quotes renderuji rozbite), diakritika se zachovava; sacred phrases z webu vypusteny redesignem v2 (2026-07-16); 2026-07-24 stary claim ZRUSEN plosne (i outreach), novy claim "Vy ridite firmu. Ja vase IT." + zakaz "rucim/odpovednost" v copy
 - Bez IT zargonu v body copy (cilovka ne-tech SMB majitele 50+, bryle na blizko); zargon jen v brand nazvech sluzeb
 - "Domluvit schuzku" jako primarni CTA (ne "Objednat" -- falesny slib pro 30min hovor)

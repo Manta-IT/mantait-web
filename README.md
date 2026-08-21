@@ -10,7 +10,7 @@ Jeden HTML soubor s inline CSS. Žádný build step, žádný framework.
 
 - `index.html` — celý web
 - Hosting: Cloudflare Pages (auto-deploy z `master`)
-- Fonty: Google Fonts (Cormorant Garamond, Inter)
+- Fonty: Google Fonts (EB Garamond, Inter)
 
 ## Lokální preview
 

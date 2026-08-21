@@ -145,7 +145,7 @@ Před commitem si přečti nahlas. Pokud zní jako:
 | Nav CTA | 14px | 14px |
 | Tap target height | 44px | 44-48px |
 
-### Italic Cormorant — kdy ano, kdy ne
+### Italic EB Garamond — kdy ano, kdy ne
 **ANO:**
 - `<em>` uvnitř h1, h2 nadpisů (accent slovo)
 - Standalone pull-quotes (velké, 22px+, centered)

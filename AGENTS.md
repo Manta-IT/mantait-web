@@ -80,10 +80,10 @@ git push origin master
 ### Design
 - **`--text-faint #5d6a66` NIKDY jako text na světlém pozadí** (kontrast 3.2:1, fail WCAG). Použij `--text-muted` nebo `--text-secondary`.
 - **Body text minimum 15px**, ideál 16px. Drobné labely nikdy pod 12px.
-- **Italic Cormorant** jen jako akcent v `<em>` v nadpisech (h1/h2) a jako standalone pull-quote. NIKDY jako subtitle pod kartami (čte se jako druhý titulek).
+- **Italic EB Garamond** jen jako akcent v `<em>` v nadpisech (h1/h2) a jako standalone pull-quote. NIKDY jako subtitle pod kartami (čte se jako druhý titulek).
 - **Tap targets ≥ 44px** výška na CTA tlačítkách (Petr požaduje mobile UX).
 - **Vizuální rytmus pozadí:** `--bg` → `--bg-alt` → `--bg` → `--bg-alt` → `--bg-dark` → `--bg-alt` → footer. Tmavá sekce primárně pro IT governance + differentiator.
-- **Cormorant Garamond** display (nadpisy, akcenty). **Inter** body/nav/CTA. Žádné třetí fonty.
+- **EB Garamond** display (nadpisy, akcenty). **Inter** body/nav/CTA. Žádné třetí fonty.
 - **Breakpointy:** 600px (mobile), 900px (tablet), 1100px (nav collapse).
 
 ### Struktura nabídky (nepřehazovat bez Petra)

@@ -23,6 +23,10 @@
   --border:           #e0dccf;
   --border-strong:    #d8d1bf;
 
+  --tile-mint-1:      #e8efe9;
+  --tile-mint-2:      #e3ecdf;
+  --tile-mint-border: #cad8cc;
+
   --text-on-dark:        #f1ede4;
   --text-on-dark-muted:  rgba(241,237,228,0.75);
   --text-on-dark-faint:  rgba(241,237,228,0.5);
@@ -2394,35 +2398,38 @@ footer {
 .tile.feature a { min-height:230px; background:var(--bg-dark); color:var(--on-dark); border-color:var(--accent-dark); }
 .tile a:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 14px 30px rgba(22,32,29,0.12); }
 .tile.feature a:hover { box-shadow:0 18px 40px rgba(22,32,29,0.3); }
-.tile.common a { min-height:190px; background:linear-gradient(150deg,#e8efe9 0%,#e3ecdf 100%); border-color:#cad8cc; }
+.tile.common a { min-height:190px; background:linear-gradient(150deg,var(--tile-mint-1) 0%,var(--tile-mint-2) 100%); border-color:var(--tile-mint-border); }
 .tile.common a:hover { border-color:var(--accent); }
 .tile-num { font-family:var(--serif); font-size:14px; font-weight:600; color:var(--accent-warm); }
 .tile:not(.feature) .tile-num { color:var(--accent); opacity:0.55; }
 .tile h3 { font-family:var(--serif); font-weight:500; font-size:22px; line-height:1.18; margin-top:14px; letter-spacing:-0.005em; }
 .tile.feature h3 { font-size:30px; max-width:80%; }
-.tile-sub { font-size:14px; color:var(--text-muted); line-height:1.5; margin-top:10px; }
+.tile-sub { font-size:15px; color:var(--text-muted); line-height:1.5; margin-top:10px; }
 .tile.feature .tile-sub { color:var(--on-dark-muted); font-size:15px; max-width:78%; }
 .tile-foot { margin-top:auto; padding-top:18px; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; }
 .tile-foot .price { color:var(--accent-warm); font-family:var(--serif); font-size:16px; }
 .tile:not(.feature) .tile-foot .price { color:var(--accent); }
 .tile-foot .go { color:var(--accent); display:inline-flex; align-items:center; gap:6px; }
 .tile.feature .tile-foot .go { color:var(--accent-warm); }
-.tile-foot .go::after { content:"->"; transition:transform 0.25s; }
+.tile-foot .go::after { content:"\2192"; transition:transform 0.25s; }
 .tile a:hover .tile-foot .go::after { transform:translateX(5px); }
 .tile.feature a::after { content:attr(data-mark); position:absolute; right:-10px; bottom:-40px; font-family:var(--serif); font-size:200px; line-height:1; color:rgba(201,184,138,0.08); pointer-events:none; font-style:italic; }
 .tile { animation:rise 0.6s both; }
-.tile:nth-child(1){animation-delay:.30s} .tile:nth-child(2){animation-delay:.36s}
-.tile:nth-child(3){animation-delay:.42s} .tile:nth-child(4){animation-delay:.48s}
-.tile:nth-child(5){animation-delay:.54s} .tile:nth-child(6){animation-delay:.60s}
-.tile:nth-child(7){animation-delay:.66s} .tile:nth-child(8){animation-delay:.72s}
+/* nth-child pocita i .tier-label (pozice 1, 4, 8) -- pri zmene poctu dlazdic prepocitat */
+.tile:nth-child(2){animation-delay:.30s} .tile:nth-child(3){animation-delay:.36s}
+.tile:nth-child(5){animation-delay:.42s} .tile:nth-child(6){animation-delay:.48s}
+.tile:nth-child(7){animation-delay:.54s} .tile:nth-child(9){animation-delay:.60s}
+.tile:nth-child(10){animation-delay:.66s} .tile:nth-child(11){animation-delay:.72s}
+.tile:nth-child(12){animation-delay:.78s}
 
 /* ---------- ROZCESTNIK: RESIM VIC ---------- */
 .more { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x) 90px; }
 .more a { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:30px 36px; background:var(--bg-alt); border:1px solid var(--border-strong); border-radius:16px; transition:border-color 0.3s, transform 0.3s; }
 .more a:hover { border-color:var(--accent); transform:translateY(-2px); }
 .more-txt h4 { font-family:var(--serif); font-size:24px; font-weight:500; }
-.more-txt p { font-size:14px; color:var(--text-muted); margin-top:6px; }
+.more-txt p { font-size:15px; color:var(--text-muted); margin-top:6px; }
 .more-go { font-size:14px; font-weight:600; color:var(--accent); white-space:nowrap; }
+@media (max-width:560px){ .more a { flex-direction:column; align-items:flex-start; gap:14px; } }
 
 /* ---------- DETAIL: zpet na vyber ---------- */
 .back { max-width:var(--max-w); margin:0 auto; padding:28px var(--pad-x) 0; }
@@ -2489,6 +2496,7 @@ footer {
 .end .cta { background:var(--accent-warm); color:var(--bg-dark); border:none; border-radius:10px; padding:16px 34px; font-family:var(--sans); font-size:16px; font-weight:600; cursor:pointer; }
 .end .cta:hover { filter:brightness(1.08); }
 .end .reassure { font-size:13px; color:var(--on-dark-muted); margin-top:16px; }
+.end .reassure a { color:var(--accent-warm); text-decoration:underline; }
 
 /* ---------- UKAZKA REPORTU ---------- */
 .d-hero.solo { grid-template-columns:1fr; }
