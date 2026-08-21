@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample: this is what the AI plan in 48 hours looks like - Manta IT</title>
+  <meta name="description" content="A shortened report from a real project: where AI helps the company, where it does not, what to start with and how it turned out. Names replaced, numbers and conclusions original.">
+  <link rel="canonical" href="https://mantait.cz/en/ukazka-reportu">
+  <link rel="alternate" hreflang="cs" href="https://mantait.cz/ukazka-reportu">
+  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/ukazka-reportu">
+  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/ukazka-reportu">
+  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/ukazka-reportu">
+  <meta property="og:title" content="Sample: this is what the AI plan in 48 hours looks like - Manta IT">
+  <meta property="og:description" content="A shortened report from a real project: where AI helps the company, where it does not, what to start with and how it turned out. Names replaced, numbers and conclusions original.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://mantait.cz/en/ukazka-reportu">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css?v=e80bad9">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-brand">Manta<span>IT</span></a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+  <div class="nav-links">
+    <a href="/en/" class="nav-link">Home</a>
+    <a href="/en/#sluzby" class="nav-link active" aria-current="page">Services</a>
+    <a href="/en/o-mne" class="nav-link">About me</a>
+    <a href="/en/kontakt" class="nav-link">Contact</a>
+    <div class="lang-switch"><a href="/ukazka-reportu" hreflang="cs">CZ</a><a href="/sk/ukazka-reportu" hreflang="sk">SK</a><span aria-current="true">EN</span></div>
+  </div>
+  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Book a meeting</button>
+</nav>
+
+<div class="back"><a href="/en/reseni-ai">Back to AI plan in 48 hours</a></div>
+
+<!-- HERO -->
+<section class="d-hero solo">
+  <div>
+    <div class="d-eyebrow">A sample of the actual deliverable</div>
+    <h1>This is the <em>plan you receive.</em></h1>
+    <p class="lead">This is a shortened report from a real project. The company's name and its systems are replaced with generic descriptions; the numbers and conclusions are original.</p>
+  </div>
+</section>
+
+<!-- 01 CO FIRMA RESILA -->
+<section class="rep alt">
+  <div class="rep-in">
+    <span class="label">01 - Starting point</span>
+    <h2>What the company was dealing with</h2>
+    <p>A B2B distribution company, around 30 people, over 25 years on the market. Quotes keep the company alive - and every quote starts as an inquiry that passes through four pairs of hands and four programs:</p>
+    <div class="get-list">
+      <div class="get-item">
+        <span class="mark">01</span>
+        <div><h4>An inquiry arrives</h4><p>The customer sends an email, often with an attachment. The inquiry is registered in an internal quoting application: deadline, quantities, contacts.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">02</span>
+        <div><h4>Suppliers are contacted</h4><p>The inquiry reaches the person who calculates the price. They email the suppliers.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">03</span>
+        <div><h4>Prices are retyped by hand</h4><p>Each supplier replies differently: email, PDF, sometimes even SMS. Someone retypes it all into a costing spreadsheet in Excel, where purchase prices become the selling price.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">04</span>
+        <div><h4>A quote is created</h4><p>The price is transferred from Excel back into the internal application and the quote goes out to the customer.</p></div>
+      </div>
+    </div>
+    <p>The owners suspected it was slow, error-prone and eating people's time. They wanted to know where to start.</p>
+  </div>
+</section>
+
+<!-- 02 KDE SE ZTRACI CAS -->
+<section class="rep">
+  <div class="rep-in">
+    <span class="label">02 - Findings</span>
+    <h2>Where time gets lost</h2>
+    <p>The workshop revealed three places where the process hurts most:</p>
+    <div class="get-list stack">
+      <div class="get-item">
+        <span class="mark">01</span>
+        <div><h4>Retyping prices from emails by hand</h4><p>Supplier replies arrive as emails, PDFs and SMS, and someone retypes them into the costing spreadsheet by hand. The retyping and filling-in takes more time than the price calculation itself. People jump between four programs: email, Excel, the internal quoting application and an older company system.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">02</span>
+        <div><h4>Over five hundred costing spreadsheets, each one different</h4><p>No single template; the structure differs file by file. Nothing can be automated on top of them in their current form; the spreadsheets would have to be unified first. The count is a workshop estimate; I did not count the files myself.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">03</span>
+        <div><h4>Supplier knowledge only in people's heads</h4><p>Nowhere is it written down who can manufacture what or how fast each supplier responds. A few people carry it all in their heads - and when one of them leaves, the company loses it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 KOLIK TO HODI -->
+<section class="rep alt">
+  <div class="rep-in">
+    <span class="label">03 - Estimated benefit</span>
+    <h2>What it brings</h2>
+    <p>The client had no savings figure of their own - and I will not pretend a measurement that never happened. For the biggest loss, manual price retyping, the estimate comes out like this:</p>
+    <div class="calc">
+      <div class="calc-result">30-60 minutes a day for everyone who calculates prices</div>
+      <div class="calc-how">
+        <table class="rep-table">
+          <tr><td class="assume">~10 supplier replies a day, ~5 minutes of retyping each</td><td>~50 min</td></tr>
+          <tr><td class="assume">Transferring each price into the costing spreadsheet, 2-3 minutes</td><td>~25 min</td></tr>
+          <tr class="total"><th>Manual retyping in total</th><th>70-80 min a day</th></tr>
+          <tr><td class="assume">Automation reliably reads half to most of the replies</td><td>saves 30-60 min a day</td></tr>
+        </table>
+        <p class="calc-honest">An estimate based on what they told me at the workshop, not a measurement. Your number will be different and we will calculate it together.</p>
+      </div>
+    </div>
+
+    <h3 class="rep-h3">What it does to the money</h3>
+    <p>The time saved is extra capacity: the same people can handle more inquiries. The left column shows model assumptions - for you, we plug in your numbers.</p>
+    <table class="rep-table">
+      <tr><td class="assume">Saving 60 minutes a day, 2 people, 21 working days</td><td>~42 extra hours a month</td></tr>
+      <tr><td class="assume">A quote takes about 2 hours of work</td><td>+20 quotes a month</td></tr>
+      <tr><td class="assume">About 30 % of quotes succeed</td><td>+6 orders a month</td></tr>
+      <tr><td class="assume">Average order 1,700 EUR</td><td>turnover +10,200 EUR a month</td></tr>
+      <tr><td class="assume">25 % margin</td><td>benefit +2,550 EUR a month</td></tr>
+      <tr><td class="assume">Assistant: setup ~4,100 EUR, running costs ~120 EUR a month</td><td>cost</td></tr>
+      <tr class="total"><th>Assistant payback</th><th>under 2 months</th></tr>
+    </table>
+    <p class="calc-honest">And even if the extra capacity brought no additional quote at all: 42 hours a month is work worth well over a thousand euros.</p>
+    <p class="calc-honest">The ~4,100 EUR setup estimate is the original number from the report. Today I build and deliver similar assistants myself, for approx. 2,100 EUR - payback then comes out at roughly a month.</p>
+  </div>
+</section>
+
+<!-- 04 CO DRIV, CO POTOM -->
+<section class="rep">
+  <div class="rep-in">
+    <span class="label">04 - Priorities</span>
+    <h2>What first, what later</h2>
+    <p>More opportunities came up than it makes sense to do at once. The report ranks them by two questions: how much it brings the company and how much work it costs. Here are the five most important:</p>
+    <div class="matrix">
+      <div class="mx-grid">
+        <div class="mx-q">
+          <div class="mx-q-label">High impact - little effort</div>
+          <span class="mx-item first">Extract prices from supplier emails automatically<span class="mx-note">Start here.</span></span>
+        </div>
+        <div class="mx-q">
+          <div class="mx-q-label">High impact - more effort</div>
+          <span class="mx-item">Be able to look up everything the company has ever manufactured</span>
+          <span class="mx-item">Unify the costing spreadsheets into one format<span class="mx-note">Prerequisite: without a unified spreadsheet format, automatic reading does not make full sense.</span></span>
+        </div>
+        <div class="mx-q">
+          <div class="mx-q-label">Smaller impact - little effort</div>
+          <span class="mx-item">Pre-fill inquiries to suppliers</span>
+          <span class="mx-item">See in one place what is being calculated where</span>
+        </div>
+        <div class="mx-q">
+          <div class="mx-q-label">Smaller impact - more effort</div>
+          <p class="mx-empty">Nothing. Whatever comes out here does not belong in the plan.</p>
+        </div>
+      </div>
+      <ol class="matrix-list">
+        <li><div>Extract prices from supplier emails automatically<span class="mx-note">High impact, little effort. Start here.</span></div></li>
+        <li><div>Be able to look up everything the company has ever manufactured<span class="mx-note">High impact, more effort.</span></div></li>
+        <li><div>Pre-fill inquiries to suppliers<span class="mx-note">Smaller impact, little effort.</span></div></li>
+        <li><div>See in one place what is being calculated where<span class="mx-note">Smaller impact, little effort.</span></div></li>
+        <li><div>Unify the costing spreadsheets into one format<span class="mx-note">High impact, more effort. Prerequisite for automatic reading.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 05 KDE AI NEPOMUZE -->
+<section class="rep dark">
+  <div class="rep-in">
+    <span class="label">05 - Where AI does not</span>
+    <h2>Where AI will not help</h2>
+    <p>I said no in two places. Precisely these two "no"s protected the client from the most expensive mistakes:</p>
+    <div class="rep-no">
+      <div class="no-item">
+        <h3>The price calculation itself</h3>
+        <p>The price here is not a mechanical calculation. Every inquiry is different, and during costing a business decision - and often a new business opportunity - arises. The people who calculate prices protected that space themselves: if a machine built the price, it would disappear. AI may at most suggest from history ("you made a similar thing last year for this much").</p>
+      </div>
+      <div class="no-item">
+        <h3>Deciding what the quote looks like</h3>
+        <p>Every customer inquires differently: free text, their own spreadsheet, a PDF with pictures. And an email does not reliably reveal what form of quote the customer expects: one large customer wants prices filled into their own spreadsheet, and another with a different one can appear at any time. A mistake here means a lost order. I therefore ruled out two automation ideas entirely: having AI build the quote straight from the inquiry, and having it fill in customer spreadsheets on its own. AI may read and pre-fill - but it must not decide for a person what the quote should look like, and it must not send anything without review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 CIM ZACIT -->
+<section class="rep alt">
+  <div class="rep-in">
+    <span class="label">06 - Recommendation</span>
+    <h2>What to start with</h2>
+    <p>I would start by extracting data from emails straight into the costing - manual retyping currently runs at both ends of the process.</p>
+    <div class="get-list">
+      <div class="get-item">
+        <span class="mark">01</span>
+        <div><h4>The assistant reads the email</h4><p>An incoming customer inquiry as well as a supplier reply.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">02</span>
+        <div><h4>It extracts the data</h4><p>Who is inquiring, which items, which prices.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">03</span>
+        <div><h4>It prepares the costing input</h4><p>A person reviews and approves. Nothing goes out on its own.</p></div>
+      </div>
+      <div class="get-item">
+        <span class="mark">+</span>
+        <div><h4>Why this first</h4><p>You can start right away and it does not touch the existing systems. If it does not prove itself, you switch it off and the process runs as before.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CO PRIJDE POTOM -->
+<section class="rep">
+  <div class="rep-in">
+    <span class="label">07 - Outlook</span>
+    <h2>What comes next</h2>
+    <p>The first step saves time immediately, but the data still lives in four places: email, Excel, the quoting application and the older company system. The long-term direction is one place - a single database of inquiries, quotes and price history.</p>
+    <p>There is more than one way to get there, and money and pace decide. The first step makes sense precisely because it works even if the big rebuild never happens.</p>
+  </div>
+</section>
+
+<!-- 08 JAK TO DOPADLO -->
+<section class="rep alt">
+  <div class="rep-in">
+    <span class="label">08 - Today</span>
+    <h2>How it turned out</h2>
+    <p>The client chose that first step and left the rollout to me. The assistant is now being built under my direction - it reads incoming inquiries and prepares an input that a person only reviews and approves. The report did not end up in a drawer.</p>
+    <p>The pilot is already running on real data: from an actual inquiry the assistant extracted all 47 items including specifications and prepared the costing spreadsheet. One pilot case proves nothing yet, but this is exactly what the first step is supposed to do.</p>
+  </div>
+</section>
+
+<!-- ZAVER -->
+<section class="end">
+  <div class="end-in">
+    <h2>Want <em>your plan?</em></h2>
+    <p>In 30 minutes I will tell you whether it makes sense for your company. And if you decide to go ahead based on the plan, I will see the rollout through with you - just like with this company.</p>
+    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Book a meeting</button>
+    <div class="reassure">No commitment. Online or at your office.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-trust">Prague and the whole Czech Republic &middot; I travel to clients &middot; I reply within 24 hours</div>
+  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; Company ID (IČO): 04158351 &middot; registered in the Czech Trade Licensing Register &middot; &copy; 2026</div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
+    });
+  });
+</script>
+
+</body>
+</html>

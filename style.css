@@ -2431,7 +2431,7 @@ footer {
 .tile-sub { font-size:15px; color:var(--text-muted); line-height:1.5; margin-top:10px; }
 .tile.feature .tile-sub { color:var(--on-dark-muted); font-size:15px; max-width:78%; }
 .tile-foot { margin-top:auto; padding-top:18px; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; }
-.tile-foot .price { color:var(--accent-warm); font-family:var(--serif); font-size:16px; }
+.tile-foot .price { color:var(--accent-warm); font-family:var(--serif); font-size:16px; white-space:nowrap; }
 .tile:not(.feature) .tile-foot .price { color:var(--accent); }
 .tile-foot .go { color:var(--accent); display:inline-flex; align-items:center; gap:6px; }
 .tile.feature .tile-foot .go { color:var(--accent-warm); }
@@ -2605,6 +2605,8 @@ footer {
 
 /* ─── Iniciativy (index): 2 aktualni kampane s deadliny ─── */
 .init-strip { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x) 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+/* SK/EN mutace maji jen jednu kartu (dotacni je CZ-only) */
+.init-strip > .init-card:only-child { grid-column: 1 / -1; max-width: 720px; width: 100%; justify-self: center; }
 .init-card { display: block; background: var(--bg-dark); color: var(--text-on-dark); border-radius: 10px; padding: 28px 30px; text-decoration: none; position: relative; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
 .init-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22,32,29,.28); }
 .init-card.alt { background: var(--accent); }

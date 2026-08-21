@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt na Petra Kokošku - Manta IT. Napíšte, čo riešite, odpoviem do jedného pracovného dňa. E-mail, telefón.">
+  <meta property="og:title" content="Kontakt - Manta IT - Petr Kokoška">
+  <meta property="og:description" content="Napíšte, čo riešite. Odpoviem do jedného pracovného dňa s konkrétnym návrhom ďalšieho kroku.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:url" content="https://mantait.cz/sk/kontakt">
+  <meta property="og:site_name" content="Manta IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://mantait.cz/sk/kontakt">
+  <link rel="alternate" hreflang="cs" href="https://mantait.cz/kontakt">
+  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/kontakt">
+  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/kontakt">
+  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/kontakt">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Kontakt - Manta IT - Petr Kokoška</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=e80bad9">
+
+  <!-- Structured data: ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt - Manta IT",
+    "url": "https://mantait.cz/sk/kontakt",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Manta IT",
+      "url": "https://mantait.cz/",
+      "email": "petr.kokoska@mantait.cz",
+      "telephone": "+420732329431",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.0755,
+        "longitude": 14.4378
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/petrkokoska/",
+        "https://github.com/Manta-IT"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "petr.kokoska@mantait.cz",
+        "telephone": "+420732329431",
+        "areaServed": "CZ",
+        "availableLanguage": ["cs", "en"]
+      }
+    }
+  }
+  </script>
+
+  <!-- Structured data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Manta IT", "item": "https://mantait.cz/sk/"},
+      {"@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://mantait.cz/sk/kontakt"}
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/sk/" class="nav-brand">Manta<span>IT</span></a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otvoriť menu">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+  <div class="nav-links">
+    <a href="/sk/" class="nav-link">Domov</a>
+    <a href="/sk/#sluzby" class="nav-link">Služby</a>
+    <a href="/sk/o-mne" class="nav-link">O mne</a>
+    <a href="/sk/kontakt" class="nav-link active" aria-current="page">Kontakt</a>
+    <div class="lang-switch"><a href="/kontakt" hreflang="cs">CZ</a><span aria-current="true">SK</span><a href="/en/kontakt" hreflang="en">EN</a></div>
+  </div>
+  <a href="#zprava" class="nav-cta">Dohodnúť stretnutie</a>
+</nav>
+
+<main>
+
+<!-- ═══ PAGE HEADER ═══ -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <span class="label">Kontakt</span>
+    <h1>Začnime <em>rozhovorom.</em></h1>
+    <p class="page-header-sub">
+      Napíšte pár viet o tom, čo riešite. Do jedného pracovného dňa odpoviem s konkrétnym návrhom
+      ďalšieho kroku a dohodneme stretnutie: 30 minút, online alebo u vás, bez záväzku.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ FORMULAR + KONTAKTY ═══ -->
+<section style="padding: 20px 0 80px;" id="zprava">
+  <div class="lp-section" style="padding-top: 0;">
+    <form class="form-box" id="kontakt-form" method="post" action="/api/kontakt">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="k-jmeno">Meno a priezvisko</label>
+          <input id="k-jmeno" name="jmeno" type="text" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="k-firma">Firma</label>
+          <input id="k-firma" name="firma" type="text" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="k-tel">Telefón</label>
+          <input id="k-tel" name="telefon" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="k-mail">E-mail</label>
+          <input id="k-mail" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="form-field full">
+          <label for="k-zprava">Čo riešite?</label>
+          <textarea id="k-zprava" name="zprava" placeholder="Pokojne len dve vety. Napr.: dosluhuje nám skladový systém a nevieme, čím ho nahradiť."></textarea>
+        </div>
+      </div>
+      <div class="hp-field" aria-hidden="true">
+        <label for="k-web">Nevypĺňajte</label>
+        <input id="k-web" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="btn">Odoslať správu</button>
+      <p class="form-note">Odpoviem do jedného pracovného dňa. Vyplňte aspoň e-mail alebo telefón,
+      aby som mal kam odpovedať. Ako nakladám s údajmi, opisujú
+      <a href="/sk/soukromi">zásady spracúvania osobných údajov</a>.</p>
+    </form>
+
+    <div class="kontakt-details" style="margin-top: 34px;">
+      <div>
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:petr.kokoska@mantait.cz" class="contact-item-value">petr.kokoska@mantait.cz</a>
+      </div>
+      <div>
+        <span class="contact-item-label">Telefón</span>
+        <a href="tel:+420732329431" class="contact-item-value">+420 732 329 431</a>
+      </div>
+      <div>
+        <span class="contact-item-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/petrkokoska/" class="contact-item-value" rel="noopener" target="_blank">petrkokoska</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-trust">Praha a celé Česko &middot; Cestujem za klientom &middot; Odpoviem do jedného pracovného dňa</div>
+  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapísaný v živnostenskom registri &middot; &copy; 2026</div>
+</footer>
+
+
+</body>
+</html>
