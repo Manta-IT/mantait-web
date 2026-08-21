@@ -184,6 +184,26 @@ nav {
   height: 1.5px;
   background: var(--accent);
 }
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.lang-switch a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 4px 5px;
+}
+.lang-switch a:hover {
+  color: var(--accent);
+}
+.lang-switch span {
+  color: var(--accent);
+  padding: 4px 5px;
+}
 .nav-dropdown {
   position: relative;
 }
@@ -2088,6 +2108,10 @@ footer {
   .nav-link.active {
     color: var(--accent);
     font-weight: 600;
+  }
+  .lang-switch {
+    padding: 12px var(--pad-x);
+    font-size: 15px;
   }
   .nav-dropdown {
     position: static;

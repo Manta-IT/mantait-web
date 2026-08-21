@@ -40,16 +40,23 @@
   }
 
   function showBanner() {
+    // Texty podle jazyka stranky (/sk/ a /en/ mutace sdileji tento skript).
+    var lang = (document.documentElement.lang || 'cs').slice(0, 2);
+    var texts = {
+      cs: { aria: 'Souhlas s cookies', msg: 'Používám cookies k měření návštěvnosti a účinnosti reklamy. Bez souhlasu se nesledujete.', reject: 'Odmítnout', accept: 'Souhlasím' },
+      sk: { aria: 'Súhlas s cookies', msg: 'Používam cookies na meranie návštevnosti a účinnosti reklamy. Bez súhlasu vás nesledujem.', reject: 'Odmietnuť', accept: 'Súhlasím' },
+      en: { aria: 'Cookie consent', msg: 'I use cookies to measure traffic and ad performance. Without your consent, you are not tracked.', reject: 'Decline', accept: 'Accept' }
+    };
+    var t = texts[lang] || texts.cs;
     var bar = document.createElement('div');
     bar.className = 'consent-bar';
     bar.setAttribute('role', 'dialog');
-    bar.setAttribute('aria-label', 'Souhlas s cookies');
+    bar.setAttribute('aria-label', t.aria);
     bar.innerHTML =
-      '<p>Používám cookies k měření návštěvnosti a účinnosti reklamy. ' +
-      'Bez souhlasu se nesledujete.</p>' +
+      '<p>' + t.msg + '</p>' +
       '<div class="consent-actions">' +
-      '<button type="button" class="consent-reject">Odmítnout</button>' +
-      '<button type="button" class="consent-accept">Souhlasím</button>' +
+      '<button type="button" class="consent-reject">' + t.reject + '</button>' +
+      '<button type="button" class="consent-accept">' + t.accept + '</button>' +
       '</div>';
     document.body.appendChild(bar);
 

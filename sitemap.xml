@@ -54,4 +54,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url><loc>https://mantait.cz/sk/</loc></url>
+  <url><loc>https://mantait.cz/en/</loc></url>
+  <url><loc>https://mantait.cz/sk/o-mne</loc></url>
+  <url><loc>https://mantait.cz/en/o-mne</loc></url>
+  <url><loc>https://mantait.cz/sk/kontakt</loc></url>
+  <url><loc>https://mantait.cz/en/kontakt</loc></url>
+  <url><loc>https://mantait.cz/sk/weby</loc></url>
+  <url><loc>https://mantait.cz/en/weby</loc></url>
+  <url><loc>https://mantait.cz/sk/raynet</loc></url>
+  <url><loc>https://mantait.cz/en/raynet</loc></url>
+  <url><loc>https://mantait.cz/sk/ukazka-reportu</loc></url>
+  <url><loc>https://mantait.cz/en/ukazka-reportu</loc></url>
+  <url><loc>https://mantait.cz/sk/case-kalkulacka</loc></url>
+  <url><loc>https://mantait.cz/en/case-kalkulacka</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-ai</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-ai</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-ai-zamestnanec</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-ai-zamestnanec</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-nova-aplikace</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-nova-aplikace</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-propojeni</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-propojeni</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-nastroje</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-nastroje</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-projekt</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-projekt</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-naklady</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-naklady</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-bezpecnost</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-bezpecnost</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-web</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-web</loc></url>
+  <url><loc>https://mantait.cz/sk/reseni-vedeni-it</loc></url>
+  <url><loc>https://mantait.cz/en/reseni-vedeni-it</loc></url>
 </urlset>

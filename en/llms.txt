@@ -1,0 +1,43 @@
+# Manta IT
+
+> External IT leadership for small and mid-sized companies in the Czech Republic that have no IT director of their own. Founded and run solely by Petr Kokoska, 10 years of experience in IT project management and product ownership. The core service is IT governance as a long-term fixed monthly fee (from approx. EUR 2,100 per month), plus fixed-price product packages. EUR prices are approximate, converted from CZK.
+
+Audience: owners and CEOs of companies with 50 to 300 people operating in the Czech Republic - including foreign-owned companies with a Czech branch - who have running IT (systems, infrastructure, vendors) but no IT director.
+
+## Main pages
+
+- [Home](https://mantait.cz/en/): Overview of services, the problems I solve, IT governance, individual services, how the cooperation works.
+- [About me](https://mantait.cz/en/o-mne): Petr Kokoska, 10 years of experience, project references (e-commerce, media platforms, ERP/CRM integrations), case studies under NDA.
+- [AI plan in 48 hours](https://mantait.cz/en/reseni-ai) (approx. EUR 400): two one-hour online workshops, a plan within 48 hours of the second workshop - where AI will help your company, where it will not, what to start with and what it will bring. An AI agent or automation, if chosen, delivered within a week for approx. EUR 2,100. Sample plan: https://mantait.cz/en/ukazka-reportu
+- [Custom application](https://mantait.cz/en/reseni-nova-aplikace) (from approx. EUR 2,100): The client does not write a specification; the brief emerges from their answers to questions. They receive a finished application deployed in production. First working version within a week. The client receives the source code at handover. Real case: https://mantait.cz/en/case-kalkulacka
+- [AI employee](https://mantait.cz/en/reseni-ai-zamestnanec) (approx. EUR 3,700 one-off for deployment, operation and management from approx. EUR 330 per month): A continuously running AI with access to the company systems the client assigns. Unlike a chatbot it does not wait for questions - it decides what needs doing, has permanent memory and reports every morning. Two deployment options: on-premise or in a cloud managed by Manta IT.
+- [Websites with AI](https://mantait.cz/en/weby): Web Standard (approx. EUR 700, within 2 weeks, simple content management) and Web Quick (approx. EUR 370, within a week, static). For small businesses and tradespeople.
+- [Raynet CRM](https://mantait.cz/en/raynet): Specialisation in Raynet, a Czech CRM. Implementation, integration with accounting (Pohoda), custom adjustments, audit. From approx. EUR 620.
+- [Contact](https://mantait.cz/en/kontakt): Contact form, email petr.kokoska@mantait.cz, phone +420 732 329 431.
+
+## The core service
+
+IT governance is a long-term external IT director role. It covers:
+- Connecting systems and automating processes
+- Cost control, vendor audits, a regular overview for management
+- Researching and delivering new systems
+- Selecting and introducing new tools, including staff training
+- Stabilising and leading projects already in motion
+- Assessing security, backups and a crisis plan for incidents
+
+## Individual services without a monthly fee
+
+- Project management: approx. EUR 420 per day
+- Product discovery and product ownership: approx. EUR 420 per day
+- Tool introduction: approx. EUR 420 per day
+- IT review: individual, based on scope
+
+## What Manta IT is NOT
+
+- Not a large development agency with a team. Applications, system integrations and AI agents are built and deployed by Petr Kokoska himself, with a fixed price agreed in advance.
+- Not a one-off analysis - the output is a working solution in production
+- Not tied to any particular vendor
+
+## Key phrases
+
+"You run the company. I run your IT."

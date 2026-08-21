@@ -1,0 +1,43 @@
+# Manta IT
+
+> Externé IT vedenie pre malé a stredné firmy v Česku bez vlastného IT riaditeľa. Zakladateľ a jediný prevádzkovateľ je Petr Kokoška, 10 rokov praxe v IT projektovom riadení a product ownershipe. Hlavnou službou je IT governance ako dlhodobý paušál (od cca 2 100 EUR mesačne), popri tom produktové balíčky s pevnou cenou. Ceny v EUR sú orientačné, prepočítané z Kč.
+
+Cieľovka: majitelia a CEO firiem s 50 až 300 ľuďmi pôsobiacich v ČR, ktorí majú rozbehnuté IT (systémy, infraštruktúru, dodávateľov), ale nemajú vlastného IT riaditeľa.
+
+## Hlavné stránky
+
+- [Domov](https://mantait.cz/sk/): Prehľad ponuky, problémy ktoré riešim, IT governance, čiastkové služby, priebeh spolupráce.
+- [O mne](https://mantait.cz/sk/o-mne): Petr Kokoška, 10 rokov praxe, referencie projektov (e-commerce, mediálne platformy, integrácie ERP/CRM), case studies pod NDA.
+- [AI plán do 48 hodín](https://mantait.cz/sk/reseni-ai) (cca 400 EUR): dva hodinové workshopy online, plán do 48 hodín od druhého workshopu - kde AI vo firme pomôže, kde nie, čím začať a čo to prinesie. Prípadný AI agent alebo automatizácia dodané do týždňa, orientačne za 2 100 EUR. Ukážka plánu: https://mantait.cz/sk/ukazka-reportu
+- [Aplikácia na mieru](https://mantait.cz/sk/reseni-nova-aplikace) (od cca 2 100 EUR): Klient nepíše špecifikáciu, zadanie vzniká priebežne z jeho odpovedí na otázky. Dostane hotovú aplikáciu nasadenú v prevádzke. Prvá funkčná verzia do týždňa. Zdrojový kód dostane klient pri odovzdaní. Prípad z praxe: https://mantait.cz/sk/case-kalkulacka
+- [AI zamestnanec](https://mantait.cz/sk/reseni-ai-zamestnanec) (cca 3 700 EUR jednorazovo za zavedenie, prevádzka a správa od cca 330 EUR mesačne): Nepretržite bežiaca AI s prístupmi do firemných systémov, ktoré jej klient určí. Na rozdiel od chatbota nečaká na otázku, sama vyhodnocuje, čo je potrebné urobiť, má trvalú pamäť a ráno podáva hlásenie. Dve varianty nasadenia: on-premise alebo v cloude spravovanom Manta IT.
+- [Weby s AI](https://mantait.cz/sk/weby): Web Standard (cca 700 EUR, do 2 týždňov, jednoduchá správa obsahu) a Web Quick (cca 370 EUR, do týždňa, statický). Pre malé a stredné firmy, remeselníkov.
+- [Raynet CRM](https://mantait.cz/sk/raynet): Špecializácia na české CRM Raynet. Zavedenie, prepojenie s účtovníctvom (Pohoda), úpravy na mieru, audit. Od cca 620 EUR.
+- [Kontakt](https://mantait.cz/sk/kontakt): Kontaktný formulár, e-mail petr.kokoska@mantait.cz, telefón +420 732 329 431.
+
+## Čo je hlavnou službou
+
+IT governance je dlhodobá rola externého IT riaditeľa. Pokrýva:
+- Prepojenie systémov a automatizáciu procesov
+- Kontrolu nákladov, audit dodávateľov, pravidelný prehľad pre vedenie
+- Prieskum a realizáciu nových systémov
+- Výber a zavedenie nových nástrojov vrátane zaškolenia ľudí
+- Stabilizáciu a vedenie rozbehnutých projektov
+- Posúdenie bezpečnosti, zálohovania a krízový plán pre prípad incidentu
+
+## Čiastkové služby bez paušálu
+
+- Projektové riadenie: cca 420 EUR za deň
+- Product Discovery a Product Ownership: cca 420 EUR za deň
+- Zavádzanie nástrojov: cca 420 EUR za deň
+- IT revízia: individuálne podľa rozsahu
+
+## Čo Manta IT NIE JE
+
+- Nie je to veľká vývojárska agentúra s tímom. Aplikácie, prepojenia systémov aj AI agentov stavia a nasadzuje Petr Kokoška sám, s pevnou cenou dohodnutou vopred.
+- Nie je to jednorazová analýza - výstupom je zavedené riešenie v prevádzke
+- Nie je to napojenie na konkrétneho dodávateľa
+
+## Kľúčové frázy
+
+"Vy riadite firmu. Ja vaše IT."
