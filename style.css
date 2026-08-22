@@ -2614,7 +2614,8 @@ footer {
 .init-card h3 { font-size: clamp(20px, 2.4vw, 27px); color: var(--text-on-dark); margin-bottom: 8px; }
 .init-card p { font-size: 15px; color: var(--text-on-dark-muted); max-width: 46ch; }
 .init-go { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--accent-warm); }
-@media (max-width: 900px) { .init-strip { grid-template-columns: 1fr; } }
+.init-strip.triple { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .init-strip, .init-strip.triple { grid-template-columns: 1fr; } }
 
 /* ─── Reference pas ─── */
 .ref-strip { background: var(--bg-alt); padding: 42px 0; }

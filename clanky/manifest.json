@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "dotace-technologie-pro-mas-2026",
+    "title": "Poslední velké kolo dotací na technologie je o polovinu menší",
+    "description": "540 milionů korun ve výzvě Technologie pro MAS II proti až miliardě v předchozím kole. Co to znamená pro firmy do 250 zaměstnanců mimo velká města.",
+    "date_published": "2026-08-08",
+    "date_modified": "2026-08-18",
+    "highlight": true,
+    "cta_href": "/dotace-mas",
+    "og_image": null
+  },
+  {
+    "slug": "novy-zakon-kyberbezpecnost-3-otazky",
+    "title": "Dopadne na vás nový zákon o kybernetické bezpečnosti? Tři otázky, které to prozradí",
+    "description": "Zákonná lhůta běží do 1. ledna 2027 a dopadá na tisíce českých firem, které to zatím netuší. Tři otázky, ze kterých poznáte, jestli jste mezi nimi.",
+    "date_published": "2026-08-22",
+    "date_modified": "2026-08-22",
+    "highlight": true,
+    "cta_href": "/reseni-bezpecnost",
+    "og_image": null
+  },
+  {
+    "slug": "kolik-stoji-rucni-prepisovani",
+    "title": "Kolik stojí hodina ručního přepisování dat? Spočítejte si to",
+    "description": "Hodina denně strávená přepisováním mezi systémy je 21 hodin měsíčně na jednoho člověka. Návod na vlastní výpočet a čísla z reálné zakázky.",
+    "date_published": "2026-08-22",
+    "date_modified": "2026-08-22",
+    "highlight": true,
+    "cta_href": "/reseni-propojeni",
+    "og_image": null
+  },
+  {
+    "slug": "dotace-poslednich-6-mesicu",
+    "title": "Posledních šest měsíců velkých dotací na technologie. Co stihne firma, která začne dnes",
+    "description": "Žádosti běží do 1. září 2027 a nové výzvy stát ohlašuje až po roce 2028. Časová osa firmy, která začne teď, proti firmě, která počká do jara.",
+    "date_published": "2026-08-22",
+    "date_modified": "2026-08-22",
+    "highlight": false,
+    "cta_href": "/dotace-mas",
+    "og_image": null
+  },
+  {
+    "slug": "ai-zamestnanec-co-je-a-co-neni",
+    "title": "AI zaměstnanec: co to reálně je a co není",
+    "description": "Běží nepřetržitě, má přístupy do vašich systémů a ráno podává hlášení. Co takový agent umí, co dělat nemá a jak vypadá zavedení ve firmě.",
+    "date_published": "2026-08-22",
+    "date_modified": "2026-08-22",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "og_image": null
+  }
+]

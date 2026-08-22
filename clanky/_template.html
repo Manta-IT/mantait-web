@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITULEK}} - Manta IT</title>
+  <meta name="description" content="{{POPIS}}">
+  <link rel="canonical" href="https://mantait.cz/clanky/{{SLUG}}">
+  <meta property="og:title" content="{{TITULEK}}">
+  <meta property="og:description" content="{{POPIS}}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/{{SLUG}}">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=7a6436b">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITULEK}}",
+    "description": "{{POPIS}}",
+    "inLanguage": "cs",
+    "datePublished": "{{DATUM_ISO}}",
+    "dateModified": "{{DATUM_ISO}}",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/{{SLUG}}"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["{{TEMA_1}}", "{{TEMA_2}}"]
+  }
+  </script>
+  <!-- FAQPage JSON-LD: jen kdyz ma clanek skutecnou FAQ sekci (zrcadli details/summary) -->
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Manta<span>IT</span></a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Domů</a>
+    <a href="/#sluzby" class="nav-link">Služby</a>
+    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
+    <a href="/o-mne" class="nav-link">O mně</a>
+    <a href="/kontakt" class="nav-link">Kontakt</a>
+  </div>
+  <a href="{{CTA_HREF}}" class="nav-cta">{{CTA_NAV_TEXT}}</a>
+</nav>
+
+<main>
+
+<!-- HERO: definition-first lead - musi sam o sobe odpovidat, o cem clanek je -->
+<section class="hero">
+  <span class="hero-eyebrow">{{EYEBROW}}</span>
+  <h1>{{H1 s <em>akcentem.</em>}}</h1>
+  <p class="hero-lead">{{LEAD - 2-4 vety, samostatne citovatelna odpoved}}</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno {{DATUM_CESKY}}</p>
+</section>
+
+<!-- TELO: sekce lp-section, kazde cislo s inline zdrojem (rel="nofollow" + datum) -->
+<section class="lp-section">
+  <span class="label">{{LABEL}}</span>
+  <h2>{{NADPIS s <em>akcentem.</em>}}</h2>
+  <p>{{TEXT - min. 1 kontextovy interni odkaz na /reseni-* nebo /dotace-mas}}</p>
+</section>
+
+<!-- ZAVER + CTA blok na JEDNU nejrelevantnejsi stranku -->
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>{{ZAVER_NADPIS}}</h2>
+  <p>{{ZAVER_TEXT}}</p>
+  <div class="lp-price">
+    <p><b>{{CTA_VETA}}</b></p>
+    <p style="margin-top: 18px;"><a href="{{CTA_HREF}}" class="btn">{{CTA_TLACITKO}}</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do jednoho pracovního dne</div>
+  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; <a href="/soukromi">Osobní údaje</a> &middot; &copy; 2026</div>
+</footer>
+
+</body>
+</html>
