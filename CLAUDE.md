@@ -12,6 +12,8 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - `raynet.html` — Specializace na Raynet CRM
 - `kontakt.html` — kontaktní formulář (mailto compose; Worker+SendGrid backend TODO) + kontakty. Calendly ODSTRANĚNO 2026-08-07 (Petr: "vypadá noobsky") — na indexu a kontaktu; na ostatních stránkách zatím zůstává, sjednotit.
 - `dotace-mas.html` — landing kampaně "Dotace na klíč pro digitalizaci" (OP TAK Technologie pro MAS II) s formulářem způsobilosti; obsah řídí mission control v parent workspace (`../deliverables/2026-08-07_dotacni-tazeni-mission-control.html`)
+- `clanky/` — obsahový hub (jen CZ): `manifest.json` = zdroj dat, `_template.html` = šablona, index + homepage highlights generuje `scripts/gen_clanky_index.py` (publikační checklist v `specs/blog/README.md`)
+- `sk/`, `en/` — jazykové mutace (19 stránek, ceny v EUR, dotační obsah vynechán); KAŽDÁ obsahová změna CZ stránky se promítá i sem (pravidla v `docs/dt13-spec.md`)
 - `style.css` — sdílený stylesheet (vždy editovat tady, nikdy inline)
 - `_redirects` -- Cloudflare redirecty (`/ai` -> `/reseni-ai`); stará `ai.html` smazána 2026-07-16
 
@@ -23,7 +25,7 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 
 ## Deployment
 
-**Auto-deploy přes Cloudflare Pages z `master` branch.**
+**Auto-deploy přes Cloudflare Workers Builds z `master` branch** (Worker `mantait-web`, worker.js = statické assety + POST /api/dotaznik a /api/kontakt přes Gmail API; ověřeno 22. 8. 2026 — dřívější zmínky o "Pages" byly nepřesné).
 - Repo: `https://github.com/Manta-IT/mantait-web`
 - Push do `master` = automatický deploy do produkce (Cloudflare má vlastní pipeline napojenou na repo)
 - Doména: `mantait.cz` (DNS spravovaná na Cloudflare)
