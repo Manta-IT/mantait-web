@@ -19,7 +19,9 @@ WEB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 # HTML stranky v rootu + v podadresarich s obsahem (clanky/). Stranky bez
 # style.css linku se preskoci. Podadresare pouzivaji root-relativni cestu
 # "/style.css", root cestu relativni -- proto dva vzory nize.
-SUBDIRS = ['clanky']
+# sk/ a en/ tu chybely od zavedeni mutaci 22. 8. -- 38 stranek zustavalo viset
+# na stare verzi CSS, takze zmeny stylu se v nich neprojevily (nalez 24. 8.).
+SUBDIRS = ['clanky', 'sk', 'en']
 PAGES = sorted(f for f in os.listdir(WEB_DIR) if f.endswith('.html'))
 PAGES += sorted(
     os.path.join(d, f)
