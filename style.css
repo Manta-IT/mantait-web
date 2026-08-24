@@ -2681,3 +2681,17 @@ a.cta { display:inline-block; text-decoration:none; min-height:44px; }
 
 /* Drobne labely nikdy pod 12px (pravidlo webu). */
 .init-badge { font-size:12px; }
+
+/* Formular v tmave paticce landing stranek (24. 8. 2026).
+   .end-in centruje text, formularova pole potrebuji zarovnani vlevo. */
+.end-form { text-align:left; max-width:620px; margin:0 auto; }
+.end-form .form-note { font-size:14px; color:var(--text-muted); margin-top:14px; }
+.end-form .form-note a { color:var(--accent); }
+.end-form .btn { margin-top:18px; min-height:48px; font-size:15px; width:100%; }
+.end .end-form + .reassure { margin-top:18px; }
+
+/* iOS Safari zoomne celou stranku, kdyz ma pole font pod 16px. Tyka se
+   vsech formularu (kontakt, dotacni dotaznik i paticky landingu). */
+@media (max-width: 700px) {
+  .form-field input, .form-field select, .form-field textarea { font-size:16px; }
+}

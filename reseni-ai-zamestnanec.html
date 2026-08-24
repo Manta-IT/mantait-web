@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=83e6312">
+  <link rel="stylesheet" href="style.css?v=869f2d2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -283,7 +283,36 @@
     <p>Řekněte mi, co u vás ve firmě dělají lidé pořád dokola. Podíváme se,
     co z toho může dělat za ně, a co je lepší nechat na lidech.
     Když to celé nedává smysl, dozvíte se to hned a nic vás to nestálo.</p>
-    <a href="/kontakt" class="cta">Domluvit schůzku</a>
+    <form class="form-box end-form" method="post" action="/api/kontakt">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="lp-jmeno">Jméno a příjmení</label>
+          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="lp-firma">Firma</label>
+          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="lp-tel">Telefon</label>
+          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="lp-mail">E-mail</label>
+          <input id="lp-mail" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="form-field full">
+          <label for="lp-zprava">Co řešíte?</label>
+          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
+        </div>
+      </div>
+      <div class="hp-field" aria-hidden="true">
+        <label for="lp-web">Nevyplňujte</label>
+        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="btn">Odeslat zprávu</button>
+      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
+    </form>
     <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
   </div>
 </section>
