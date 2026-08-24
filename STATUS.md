@@ -1,10 +1,51 @@
 # Manta IT Web -- STATUS
-> Aktualizovano: 2026-07-18 | Oblast: VENTURES
-> Zdroje: STATUS.md (predchozi 2026-05-29), plan docs/superpowers/plans/2026-07-16-web-v2-launch.md (parent), CLAUDE.md, PRINCIPLES.md
+> Aktualizovano: 2026-08-24 | Oblast: VENTURES
+> Zdroje: audit 24. 8. (task T0824-17), CLAUDE.md, PRINCIPLES.md, git log
 
 ## Stav
-**active** | Priorita: MEDIUM | Posledni zmena: 2026-07-18
+**active** | Priorita: MEDIUM | Posledni zmena: 2026-08-24
 
+### Co se stalo 24. 8. -- audit a opravy (task T0824-17)
+Strojovy audit 65 stranek (typografie, meta, canonical, nadpisy, jazyky, JSON-LD,
+odkazy, ceny, pristupnost) + zivy test konverzni cesty. Nasazeno commity 83e6312
+a 176d345.
+
+**Calendly pryc ze vsech stranek.** Petr ho odmitl uz 7. 8. ("vypada noobsky"),
+ale zmizel jen z indexu a kontaktu -- na zbylych 30 strankach (10 CZ x 3 jazyky)
+bezel dal, vcetne placene landing page /reseni-ai, kam mireni Google Ads. Vsechna
+CTA "Domluvit schuzku" ted vedou na /kontakt. Zaroven zmizelo blokujici CSS a JS
+z ciziho hostu. Rozhodnuti je zapsane v CLAUDE.md a PRINCIPLES.md sekci 7, aby
+ho pristi session nevratila.
+
+**Formular (worker.js).** Uzivatelska chyba vracela HTTP 502 jako vypadek serveru,
+chybova stranka byla bez diakritiky ("Formular se neodeslal") a zpetny odkaz vedl
+natvrdo na /dotace-mas i z kontaktniho formulare. Opraveno: 400 pro validaci,
+502 jen pro Gmail, diakritika, noindex, spravny navrat. Happy path overena naostro
+(POST -> 303 -> /dekujeme).
+
+**SEO.** 13 title zkraceno pod 60 znaku a 17 description pod 160 -- Google je
+usekaval uprostred vety. sk/kontakt mel cesky title shodny s CZ verzi. llms.txt
+michal URL s priponou .html proti canonical bez pripony. Sitemap doplnena
+o soukromi (CZ/SK/EN).
+
+**Pristupnost.** Skip-link na vsech 64 strankach (chybel uplne). Nadpisy: 39 stranek
+skakalo z h2 na h4. Kremova na zelene karte mela kontrast 4.33:1, ted 5.53:1.
+H1 na trech indexech a dotacni landingu se cetl slepene ("reditelna vasi strane")
+kvuli <br> bez mezery.
+
+**Nalez v nastroji.** `scripts/bump-cache.py` od zavedeni mutaci 22. 8. preskakoval
+sk/ a en/ -- 38 stranek viselo na CSS z 12. srpna, takze se v nich zmeny stylu
+vubec neprojevovaly. Opraveno v samotnem skriptu, ne jen v datech.
+
+**Otevrene po auditu:**
+- Cena webu si na homepage protireci: dlazdice 09 uvadi od 30 000 Kc, cenik o kus
+  niz Web Standard 16 900 Kc. Navstevnik vidi obe cisla. Ceka na Petra (task T0822-25).
+- CTA na landing strankach ted odvadi pryc na /kontakt. Formular primo v paticce
+  landingu (jak to ma /dotace-mas) by konvertoval lip. Ceka na rozhodnuti.
+- 4 stranky (indexy CZ/SK/EN + hub clanku) stale skacou z h1 na h3. Oprava by znamenala
+  pridat nadpis sekce, coz je zmena vizualni struktury -- na Petrovi.
+
+### Drivejsi stav
 **Redesign v2 LIVE V PRODUKCI** (nasazeno 2026-07-17 push fc5b782, doladeno do 2026-07-18).
 mantait.cz: rozcestnik s 8 dlazdicemi (index.html), 9 detail stranek `reseni-*.html`,
 `ukazka-reportu.html` (ukazkovy report z anonymizovaneho MHA pripadu vc. ROI tabulky --
