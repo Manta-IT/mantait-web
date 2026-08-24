@@ -10,7 +10,7 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - `o-mne.html` — Bio + reference + case studies
 - `weby.html` — Web Standard a Web Quick
 - `raynet.html` — Specializace na Raynet CRM
-- `kontakt.html` — kontaktní formulář (mailto compose; Worker+SendGrid backend TODO) + kontakty. Calendly ODSTRANĚNO 2026-08-07 (Petr: "vypadá noobsky") — na indexu a kontaktu; na ostatních stránkách zatím zůstává, sjednotit.
+- `kontakt.html` — kontaktní formulář (POST /api/kontakt, Worker odesílá přes Gmail API) + kontakty. Calendly ODSTRANĚNO: 2026-08-07 z indexu a kontaktu (Petr: "vypadá noobsky"), 2026-08-24 ze zbylých 30 stránek. Všechna CTA "Domluvit schůzku" nyní vedou na `/kontakt`.
 - `dotace-mas.html` — landing kampaně "Dotace na klíč pro digitalizaci" (OP TAK Technologie pro MAS II) s formulářem způsobilosti; obsah řídí mission control v parent workspace (`../deliverables/2026-08-07_dotacni-tazeni-mission-control.html`)
 - `clanky/` — obsahový hub (jen CZ): `manifest.json` = zdroj dat, `_template.html` = šablona, index + homepage highlights generuje `scripts/gen_clanky_index.py` (publikační checklist v `specs/blog/README.md`)
 - `sk/`, `en/` — jazykové mutace (19 stránek, ceny v EUR, dotační obsah vynechán); KAŽDÁ obsahová změna CZ stránky se promítá i sem (pravidla v `docs/dt13-spec.md`)
@@ -99,7 +99,7 @@ git push origin master
 - **Reference (Blueghost éra 2022-2025)**: NDA platí, anonymně.
 - **Reference (Manta IT — MHA, PlanetLine)**: pod NDA, obecný popis + tag "Case study under NDA". MHA jen anonymně ("B2B distribuční firma") dokud Petr nedodá text NDA.
 - **ZÁKAZ (Petr 2026-08-07): Ultra Marine, UltraConfig.cz a VŠECHNY projekty spojené s Ultramarínem se NIKDY neuvádějí** — na webu, v CV, nikde. Detail v memory `feedback-ultramarin-nikdy-reference`. (Přepisuje starší pravidlo "UltraConfig.cz NDA neplatí".)
-- **Calendly**: aktuálně všechny CTA vedou na obecný 30min event (`https://calendly.com/petr-kokoska-mantait/30min`). Po Calendly Pro upgrade Petr vytvoří event types pro Mapu AI příležitostí / Web Standard / Web Quick / IT governance — pak nahradit (TODO komentáře v HTML).
+- **Rezervace schůzky**: Calendly je z webu pryč (24. 8. 2026) a nevrací se — všechna CTA vedou na `/kontakt`, kde formulář posílá poptávku přes Worker a Gmail API. Konverze se měří na `/dekujeme`. Nezavádět externí rezervační widget bez Petrova pokynu.
 
 ## Kontext a souvislosti
 - **Parent workspace:** `../` (`ventures/manta-it/`) — branding, lead gen, market research.
@@ -111,14 +111,14 @@ git push origin master
 1. ASCII grep: `grep -P '[\x{2010}-\x{2015}\x{2018}-\x{201F}\x{2026}]' web/*.html` → 0 hitů
 2. Console errors: otevřít každou stránku v Chrome, DevTools → 0 errors
 3. Mobile: viewport 600px, žádný horizontal scroll, čitelné texty
-4. Calendly CTA: kliknout, popup se otevře v warm-professional palette
+4. CTA "Domluvit schůzku": klik vede na `/kontakt`, formulář odešle a přesměruje na `/dekujeme`
 5. Nav active state: na každé stránce zvýrazněna ta aktuální položka
 6. Anchor scroll: kotvy s `scroll-margin-top: 84px` neskáčou pod nav
 
 ## Co NEDĚLAT
 - Nevkládat inline CSS do HTML (vše do `style.css`).
 - Nepřidávat JS framework. Vanilla nebo nic.
-- Nevolat externí JS kromě Calendly + Google Fonts.
+- Nevolat externí JS kromě Google Fonts, Google Ads (gtag) a Cloudflare Web Analytics.
 - Negenerovat fake reviews ani fake reference.
 - Nezvyšovat ceny bez Petrova explicitního pokynu.
 - Nepoužívat `--text-faint` jako barvu textu.

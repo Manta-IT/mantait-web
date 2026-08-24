@@ -45,20 +45,25 @@ Manta IT | mantait.cz | ${TEL}`,
   },
 };
 
-function errorPage(msg) {
+// Status rozlisuje, kdo chybu udelal: 400 kdyz chybi udaj ve formulari,
+// 502 kdyz selhal Gmail. Jeden kod pro oboji delal z preklepu v e-mailu
+// serverovou chybu. Zpetny odkaz vede tam, odkud formular prisel -- drive
+// mirilo natvrdo na /dotace-mas i z kontaktniho formulare.
+function errorPage(msg, { status = 502, zpet = '/kontakt' } = {}) {
   return new Response(
     `<!doctype html><html lang="cs"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Formular se neodeslal | Manta IT</title>
+<meta name="robots" content="noindex">
+<title>Formulář se neodeslal | Manta IT</title>
 <link rel="stylesheet" href="/style.css"></head><body>
 <main style="max-width:640px;margin:80px auto;padding:0 24px">
-<h1>Formular se neodeslal</h1>
-<p>${msg} Omlouvam se. Napiste mi prosim primo na
+<h1>Formulář se neodeslal</h1>
+<p>${msg} Omlouvám se. Napište mi prosím přímo na
 <a href="mailto:${NOTIFY_TO}">${NOTIFY_TO}</a> nebo volejte
-<a href="tel:+420732329431">${TEL}</a> -- odpovim stejne rychle.</p>
-<p><a href="/dotace-mas">Zpet na stranku</a></p>
+<a href="tel:+420732329431">${TEL}</a> -- odpovím stejně rychle.</p>
+<p><a href="${zpet}">Zpět na stránku</a></p>
 </main></body></html>`,
-    { status: 502, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
+    { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
   );
 }
 
@@ -125,13 +130,16 @@ async function handleForm(request, env, formName) {
   // honeypot: bot vyplni skryte pole, clovek ne
   if (data.website) return Response.redirect(new URL('/dekujeme', request.url), 303);
 
+  const zpet = formName === 'dotaznik' ? '/dotace-mas' : '/kontakt';
+  const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
+
   const email = (data.email || '').trim();
   const telefon = (data.telefon || '').trim();
   if (!email && !telefon) {
-    return errorPage('Chybi e-mail i telefon, takze bych nemel jak odpovedet.');
+    return chybaUzivatele('Chybí e-mail i telefon, takže bych neměl jak odpovědět.');
   }
   if (email && !/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email)) {
-    return errorPage('E-mailova adresa nevypada platne.');
+    return chybaUzivatele('E-mailová adresa nevypadá platně.');
   }
 
   const lines = form.fields
@@ -140,7 +148,7 @@ async function handleForm(request, env, formName) {
   const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${request.headers.get('referer') || 'webu'}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {
-    return errorPage('Odesilani e-mailu neni na serveru nastavene.');
+    return errorPage('Odesílání e-mailu není na serveru nastavené.', { zpet });
   }
   let token;
   try {
@@ -148,7 +156,7 @@ async function handleForm(request, env, formName) {
     await sendMail(token, NOTIFY_TO, form.subject, body, email || undefined);
   } catch (e) {
     console.error('notifikace selhala', e);
-    return errorPage('Server odmitl zpravu odeslat.');
+    return errorPage('Server odmítl zprávu odeslat.', { zpet });
   }
   if (email) {
     // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit request

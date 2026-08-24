@@ -71,12 +71,6 @@
     });
   }
 
-  // Konverze: klik na kterekoli CTA s data-calendly (otevreni rezervace).
-  document.addEventListener('click', function (e) {
-    var t = e.target.closest && e.target.closest('[data-calendly]');
-    if (t) gtag('event', 'conversion', { send_to: CONVERSION, value: 1.0, currency: 'CZK' });
-  });
-
   // Konverze: odeslany formular. Worker po ulozeni presmeruje na /dekujeme,
   // takze konverzi hlasi ta stranka. Bez tohoto se formularovy lead nemeri
   // vubec a kampan se vyhodnoti jako nulova (nalez oponentury 2026-08-11).

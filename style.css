@@ -2450,7 +2450,7 @@ footer {
 .more { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x) 90px; }
 .more a { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:30px 36px; background:var(--bg-alt); border:1px solid var(--border-strong); border-radius:16px; transition:border-color 0.3s, transform 0.3s; }
 .more a:hover { border-color:var(--accent); transform:translateY(-2px); }
-.more-txt h4 { font-family:var(--serif); font-size:24px; font-weight:500; }
+.more-txt h3 { font-family:var(--serif); font-size:24px; font-weight:500; }
 .more-txt p { font-size:15px; color:var(--text-muted); margin-top:6px; }
 .more-go { font-size:14px; font-weight:600; color:var(--accent); white-space:nowrap; }
 @media (max-width:560px){ .more a { flex-direction:column; align-items:flex-start; gap:14px; } }
@@ -2508,7 +2508,7 @@ footer {
 @media (max-width:660px){ .get-list{ grid-template-columns:1fr; } }
 .get-item { display:flex; gap:16px; padding:22px; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; }
 .get-item .mark { font-family:var(--serif); font-size:24px; color:var(--accent); flex-shrink:0; line-height:1.2; }
-.get-item h4 { font-size:16px; font-weight:600; margin-bottom:5px; }
+.get-item h3 { font-size:16px; font-weight:600; margin-bottom:5px; }
 .get-item p { font-size:15px; line-height:1.5; color:var(--text-muted); }
 
 /* ---------- DETAIL: ZAVER CTA ---------- */
@@ -2519,6 +2519,9 @@ footer {
 .end p { font-size:17px; color:var(--on-dark-muted); margin:20px 0 30px; }
 .end .cta { background:var(--accent-warm); color:var(--bg-dark); border:none; border-radius:10px; padding:16px 34px; font-family:var(--sans); font-size:16px; font-weight:600; cursor:pointer; }
 .end .cta:hover { filter:brightness(1.08); }
+/* CTA jsou od 24. 8. odkazy na /kontakt, ne tlacitka Calendly popupu.
+   <a> je inline, takze by svisly padding nezvedl radek a vyska by spadla pod 44px. */
+a.cta { display:inline-block; text-decoration:none; min-height:44px; }
 .end .reassure { font-size:13px; color:var(--on-dark-muted); margin-top:16px; }
 .end .reassure a { color:var(--accent-warm); text-decoration:underline; }
 
@@ -2664,3 +2667,17 @@ footer {
 .lp-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .lp-table tr:last-child td { border-bottom: none; }
 @media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } .lp-price { padding: 24px 22px; } .lp-table { font-size: 14px; } .lp-table th, .lp-table td { padding: 10px 12px; } }
+
+
+/* --- Pristupnost a kontrast (24. 8. 2026) --- */
+
+/* Skip-link: skryty, dokud na nej uzivatel neprejde tabulatorem (WCAG 2.4.1). */
+.skip-link { position:absolute; left:-9999px; top:0; z-index:300; background:var(--accent); color:var(--text-on-dark); padding:12px 20px; border-radius:0 0 8px 0; font-family:var(--sans); font-size:14px; font-weight:600; text-decoration:none; }
+.skip-link:focus { left:0; }
+
+/* Krémová na zelené dava 4.33:1, tesne pod AA. Na tmave sekci zustava puvodni odstin. */
+.init-card.alt .init-badge, .init-card.alt .init-go { color:#dcd0ab; }
+.init-card.alt .init-badge { border-color:rgba(220,208,171,.55); }
+
+/* Drobne labely nikdy pod 12px (pravidlo webu). */
+.init-badge { font-size:12px; }

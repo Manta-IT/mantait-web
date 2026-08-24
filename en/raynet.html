@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Raynet CRM specialist. Raynet is a Czech CRM for small and mid-sized companies. Consulting, accounting integrations, custom adjustments, audits of existing setups. For companies with 10-300 employees.">
+  <meta name="description" content="Raynet CRM specialist. Raynet is a Czech CRM for small and mid-sized companies. Consulting, accounting integrations, custom work, audits.">
   <meta property="og:title" content="Raynet CRM - specialization and integrations - Manta IT">
   <meta property="og:description" content="I have known Raynet, a Czech CRM, for years. I can help you deploy it, connect it to your accounting, or tune it if you already use it.">
   <meta property="og:type" content="website">
@@ -22,8 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <link rel="stylesheet" href="/style.css?v=e80bad9">
 
   <!-- Structured data: Service + FAQPage -->
@@ -113,6 +111,7 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <!-- NAV -->
 <nav>
@@ -127,10 +126,10 @@
     <a href="/en/kontakt" class="nav-link">Contact</a>
     <div class="lang-switch"><a href="/raynet" hreflang="cs">CZ</a><a href="/sk/raynet" hreflang="sk">SK</a><span aria-current="true">EN</span></div>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Book a meeting</button>
+  <a href="/kontakt" class="nav-cta">Book a meeting</a>
 </nav>
 
-<main>
+<main id="obsah">
 
 <!-- ═══ PAGE HEADER ═══ -->
 <section class="page-header">
@@ -267,8 +266,7 @@
         Accounting integration: from approx. 1 900 EUR &middot;
         Complex deployment with automation: individual quote.
       </p>
-      <!-- TODO: nahradit za Calendly event type 'Raynet konzultace' -->
-      <button type="button" class="btn ai-card-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Book a meeting</button>
+      <a href="/kontakt" class="btn ai-card-cta">Book a meeting</a>
     </div>
 
   </div>
@@ -409,7 +407,7 @@
     <p class="contact-sub">Half an hour is enough for a first decision. Online or at your office.</p>
 
     <div class="contact-cta-wrap">
-      <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Book a meeting</button>
+      <a href="/kontakt" class="btn">Book a meeting</a>
     </div>
 
     <div class="contact-details">
@@ -435,18 +433,6 @@
   <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; Company ID (IČO): 04158351 &middot; registered in the Czech Trade Licensing Register &middot; &copy; 2026</div>
 </footer>
 
-<script>
-document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-  btn.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (typeof Calendly !== 'undefined') {
-      Calendly.initPopupWidget({ url: btn.dataset.calendly });
-    } else {
-      window.location.href = '/en/kontakt';
-    }
-  });
-});
-</script>
 
 </body>
 </html>

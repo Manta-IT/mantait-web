@@ -22,9 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link rel="stylesheet" href="style.css?v=d0d1871">
+  <link rel="stylesheet" href="style.css?v=3d943c4">
 
   <!-- Structured data: Service -->
   <script type="application/ld+json">
@@ -148,6 +146,7 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <!-- NAV -->
 <nav>
@@ -162,10 +161,10 @@
     <a href="/kontakt" class="nav-link">Kontakt</a>
     <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/weby" hreflang="sk" lang="sk">SK</a><a href="/en/weby" hreflang="en" lang="en">EN</a></div>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
 </nav>
 
-<main>
+<main id="obsah">
 
 <!-- ═══ PAGE HEADER ═══ -->
 <section class="page-header">
@@ -212,8 +211,7 @@
         zaškolení, doménu a hosting na vaše jméno. Pomoc s Google Analytics
         a vyhledávači. Měsíční podporu prvního měsíce.
       </p>
-      <!-- TODO: nahradit za Calendly event type 'Web Standard' -->
-      <button type="button" class="btn ai-card-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku k Web Standard</button>
+      <a href="/kontakt" class="btn ai-card-cta">Domluvit schůzku k Web Standard</a>
     </div>
 
     <div class="ai-card" id="web-quick">
@@ -234,8 +232,7 @@
         Optimalizace pro mobil i vyhledávače. Pomoc se zápisem do Googlu
         a registru firem.
       </p>
-      <!-- TODO: nahradit za Calendly event type 'Web Quick' -->
-      <button type="button" class="btn ai-card-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku k Web Quick</button>
+      <a href="/kontakt" class="btn ai-card-cta">Domluvit schůzku k Web Quick</a>
     </div>
 
   </div>
@@ -411,7 +408,7 @@
     <p class="contact-sub">30 minut. Online, u vás, nebo u kávy. Bez závazku. Probereme, který typ webu se vám hodí.</p>
 
     <div class="contact-cta-wrap">
-      <button type="button" class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+      <a href="/kontakt" class="btn">Domluvit schůzku</a>
     </div>
 
     <div class="contact-details">
@@ -438,15 +435,6 @@
 </footer>
 
 <script>
-// Calendly popup buttons (data-calendly attribute)
-document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-  btn.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (window.Calendly) {
-      Calendly.initPopupWidget({ url: btn.dataset.calendly });
-    }
-  });
-});
 </script>
 
 </body>

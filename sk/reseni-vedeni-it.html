@@ -22,8 +22,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <link rel="stylesheet" href="/style.css?v=e80bad9">
   <script type="application/ld+json">
@@ -49,6 +47,7 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <nav>
   <a href="/sk/" class="nav-brand">Manta<span>IT</span></a>
@@ -62,10 +61,10 @@
     <a href="/sk/kontakt" class="nav-link">Kontakt</a>
     <div class="lang-switch"><a href="/reseni-vedeni-it" hreflang="cs">CZ</a><span aria-current="true">SK</span><a href="/en/reseni-vedeni-it" hreflang="en">EN</a></div>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Dohodnúť stretnutie</button>
+  <a href="/kontakt" class="nav-cta">Dohodnúť stretnutie</a>
 </nav>
 
-<div class="back"><a href="/sk/">Späť na výber</a></div>
+<div class="back" id="obsah"><a href="/sk/">Späť na výber</a></div>
 
 <!-- HERO -->
 <section class="d-hero">
@@ -81,7 +80,7 @@
       <div class="big">Konečne jeden človek, ktorý vaše IT vedie.</div>
       <div class="small">Žiadny nábor, žiadny plat na plný úväzok, žiadne riziko zlej voľby.</div>
     </div>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Dohodnúť stretnutie</button>
+    <a href="/kontakt" class="cta">Dohodnúť stretnutie</a>
     <div class="reassure">30 minút. Online alebo u vás. Bez záväzku.</div>
   </div>
 </section>
@@ -118,19 +117,19 @@
   <div class="get-list">
     <div class="get-item">
       <span class="mark">01</span>
-      <div><h4>Jeden konkrétny človek</h4><p>Koniec stavu, keď IT nikto nevedie. Máte za kým ísť.</p></div>
+      <div><h3>Jeden konkrétny človek</h3><p>Koniec stavu, keď IT nikto nevedie. Máte za kým ísť.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">02</span>
-      <div><h4>Riadenie dodávateľov</h4><p>Strážim, kontrolujem a vyjednávam. Vždy v prospech firmy, nie som ničí predajca.</p></div>
+      <div><h3>Riadenie dodávateľov</h3><p>Strážim, kontrolujem a vyjednávam. Vždy v prospech firmy, nie som ničí predajca.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">03</span>
-      <div><h4>Pravidelný prehľad</h4><p>Viete, čo sa darí, čo nie a čo je ďalší krok. Bez technického zahmlievania.</p></div>
+      <div><h3>Pravidelný prehľad</h3><p>Viete, čo sa darí, čo nie a čo je ďalší krok. Bez technického zahmlievania.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">04</span>
-      <div><h4>Pokoj a kontrola</h4><p>Vrátite sa k podnikaniu. O IT sa starám ja a zostanem aj pri tom, čo ešte len príde.</p></div>
+      <div><h3>Pokoj a kontrola</h3><p>Vrátite sa k podnikaniu. O IT sa starám ja a zostanem aj pri tom, čo ešte len príde.</p></div>
     </div>
   </div>
 </section>
@@ -157,7 +156,7 @@
   <div class="end-in">
     <h2>Začneme <em>jedným hovorom.</em></h2>
     <p>Povedzte mi, čo všetko okolo IT riešite. Ja vám poviem, ako to prevziať a čo vám to prinesie - a až potom sa rozhodnete.</p>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Dohodnúť stretnutie</button>
+    <a href="/kontakt" class="cta">Dohodnúť stretnutie</a>
     <div class="reassure">30 minút. Online alebo u vás. Bez záväzku.</div>
   </div>
 </section>
@@ -168,14 +167,6 @@
   <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapísaný v živnostenskom registri &middot; &copy; 2026</div>
 </footer>
 
-<script>
-  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
-    });
-  });
-</script>
 
 </body>
 </html>

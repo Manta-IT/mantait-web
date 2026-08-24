@@ -22,8 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <link rel="stylesheet" href="/style.css?v=e80bad9">
 
   <!-- Structured data: Person -->
@@ -94,7 +92,7 @@
         "name": "Ako ma možno osloviť?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "30-minútový orientačný rozhovor online alebo u vás. Calendly alebo e-mail petr.kokoska@mantait.cz."
+          "text": "30-minútový orientačný rozhovor online alebo u vás. Napíšte cez formulár na mantait.cz/sk/kontakt alebo na petr.kokoska@mantait.cz."
         }
       },
       {
@@ -126,6 +124,7 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <!-- NAV -->
 <nav>
@@ -140,10 +139,10 @@
     <a href="/sk/kontakt" class="nav-link">Kontakt</a>
     <div class="lang-switch"><a href="/o-mne" hreflang="cs">CZ</a><span aria-current="true">SK</span><a href="/en/o-mne" hreflang="en">EN</a></div>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Dohodnúť stretnutie</button>
+  <a href="/kontakt" class="nav-cta">Dohodnúť stretnutie</a>
 </nav>
 
-<main>
+<main id="obsah">
 
 <!-- ═══ PAGE HEADER ═══ -->
 <section class="page-header">
@@ -399,7 +398,7 @@
     <p class="contact-sub">Pol hodiny stačí. Online alebo u vás. Po rozhovore viete, či má zmysel ísť ďalej.</p>
 
     <div class="contact-cta-wrap">
-      <button class="btn" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Dohodnúť stretnutie</button>
+      <a href="/kontakt" class="btn">Dohodnúť stretnutie</a>
     </div>
 
     <div class="contact-details">
@@ -425,18 +424,6 @@
   <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapísaný v živnostenskom registri &middot; &copy; 2026</div>
 </footer>
 
-<script>
-document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-  btn.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (typeof Calendly !== 'undefined') {
-      Calendly.initPopupWidget({ url: btn.dataset.calendly });
-    } else {
-      window.location.href = '/sk/kontakt';
-    }
-  });
-});
-</script>
 
 </body>
 </html>

@@ -78,7 +78,7 @@ z webu i "IT má firmu posouvat. Ne zaměstnávat vedení." (ta smí zůstat v l
 - Project Manager, Product Owner, Head of IT (skutečné názvy minulých pozic v referencích)
 
 ### CTA katalog (sjednocené formulace)
-- **Primary CTA** (vede na Calendly): "Domluvit schůzku"
+- **Primary CTA** (vede na `/kontakt`): "Domluvit schůzku"
 - **Sekundární CTA** (vede na detail page): "Detail" / "Více informací"
 - **Reassurance pod CTA:** "30 minut. Online nebo u vás. Bez závazku."
 - **Headlines kontaktních sekcí:** "Začněme rozhovorem."
@@ -275,17 +275,22 @@ Příklad: "Manta IT — externí IT vedení pro firmy bez vlastního IT ředite
 
 ---
 
-## 7. Calendly event types (TODO)
+## 7. Rezervace schůzky -- proč formulář, ne widget
 
-Aktuálně všechny CTA vedou na obecný 30min event. Po Calendly Pro upgrade Petr vytvoří:
-- 30min orientační (existující)
-- Mapa AI příležitostí briefing
-- Web Standard briefing
-- Web Quick briefing
-- IT governance úvodní revize
-- Raynet konzultace
+Calendly bylo z webu odstraněno ve dvou krocích: 7. 8. 2026 z indexu a kontaktu
+(Petr: "vypadá noobsky"), 24. 8. 2026 ze zbylých 30 stránek včetně placené
+landing page /reseni-ai. Plánované event types (Web Standard briefing, Raynet
+konzultace a další) nevzniknou.
 
-V HTML jsou TODO komentáře u všech CTA pro nahrazení URL.
+Všechna CTA "Domluvit schůzku" vedou na `/kontakt`. Důvody:
+- Externí widget přidával blokující CSS a JS z cizí domény na každou stránku.
+- Formulář posílá poptávku přes vlastní Worker a Gmail API, konverze se měří
+  na `/dekujeme`. Rezervace přes Calendly se neměřila stejně spolehlivě.
+- Návštěvník nemusí vybírat termín dřív, než ví, co chce řešit.
+
+Otevřené: na landing stránkách (/reseni-ai) odvádí odkaz na /kontakt pozornost
+pryč ze stránky. Formulář přímo v patičce landingu, jak to má /dotace-mas, by
+konvertoval líp. Čeká na Petrovo rozhodnutí.
 
 ---
 
@@ -306,7 +311,7 @@ V HTML jsou TODO komentáře u všech CTA pro nahrazení URL.
 
 ### Před deploymentem
 1. Lighthouse audit (Chrome DevTools) → 90+ na všech 4 metrikách
-2. Test Calendly popup na všech stránkách
+2. Test CTA "Domluvit schůzku" -> /kontakt -> odeslání -> /dekujeme
 3. Test mailto linků
 4. ASCII grep + ortografická kontrola
 5. Sdílet link 1 důvěrnému kontaktu pro 10min review

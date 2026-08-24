@@ -30,6 +30,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://mantait.cz/soukromi</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
   <url><loc>https://mantait.cz/reseni-ai</loc></url>
   <url><loc>https://mantait.cz/reseni-nova-aplikace</loc></url>
   <url><loc>https://mantait.cz/reseni-ai-zamestnanec</loc></url>
@@ -60,6 +66,8 @@
   <url><loc>https://mantait.cz/en/o-mne</loc></url>
   <url><loc>https://mantait.cz/sk/kontakt</loc></url>
   <url><loc>https://mantait.cz/en/kontakt</loc></url>
+  <url><loc>https://mantait.cz/sk/soukromi</loc></url>
+  <url><loc>https://mantait.cz/en/soukromi</loc></url>
   <url><loc>https://mantait.cz/sk/weby</loc></url>
   <url><loc>https://mantait.cz/en/weby</loc></url>
   <url><loc>https://mantait.cz/sk/raynet</loc></url>

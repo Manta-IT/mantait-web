@@ -22,10 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=d0d1871">
+  <link rel="stylesheet" href="style.css?v=3d943c4">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,6 +47,7 @@
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <nav>
   <a href="/" class="nav-brand">Manta<span>IT</span></a>
@@ -62,10 +61,10 @@
     <a href="/kontakt" class="nav-link">Kontakt</a>
     <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/reseni-nastroje" hreflang="sk" lang="sk">SK</a><a href="/en/reseni-nastroje" hreflang="en" lang="en">EN</a></div>
   </div>
-  <button type="button" class="nav-cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
 </nav>
 
-<div class="back"><a href="/">Zpět na výběr</a></div>
+<div class="back" id="obsah"><a href="/">Zpět na výběr</a></div>
 
 <!-- HERO -->
 <section class="d-hero">
@@ -81,7 +80,7 @@
       <div class="big">Aby nezapadl jako ten minulý.</div>
       <div class="small">Nestačí nástroj koupit. Lidé v něm musí umět pracovat a chtít ho používat.</div>
     </div>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
     <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
   </div>
 </section>
@@ -118,19 +117,19 @@
   <div class="get-list">
     <div class="get-item">
       <span class="mark">01</span>
-      <div><h4>Správný výběr</h4><p>Řešení podle toho, jak reálně pracujete, ne podle reklamy.</p></div>
+      <div><h3>Správný výběr</h3><p>Řešení podle toho, jak reálně pracujete, ne podle reklamy.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">02</span>
-      <div><h4>Hladké zavedení</h4><p>Nastavení a propojení se stávajícími systémy bez chaosu.</p></div>
+      <div><h3>Hladké zavedení</h3><p>Nastavení a propojení se stávajícími systémy bez chaosu.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">03</span>
-      <div><h4>Zaškolení lidé</h4><p>Tým, který nástroj umí a používá ho, ne jen má licenci.</p></div>
+      <div><h3>Zaškolení lidé</h3><p>Tým, který nástroj umí a používá ho, ne jen má licenci.</p></div>
     </div>
     <div class="get-item">
       <span class="mark">04</span>
-      <div><h4>Sjednocené postupy</h4><p>Stejný způsob práce napříč odděleními, ne každý po svém.</p></div>
+      <div><h3>Sjednocené postupy</h3><p>Stejný způsob práce napříč odděleními, ne každý po svém.</p></div>
     </div>
   </div>
 </section>
@@ -140,7 +139,7 @@
   <div class="end-in">
     <h2>Řekněte mi, co vám <em>nefunguje.</em></h2>
     <p>Řekněte mi, který nástroj lidé nepoužívají nebo co potřebujete zavést. Já vám řeknu, jak to rozjet.</p>
-    <button type="button" class="cta" data-calendly="https://calendly.com/petr-kokoska-mantait/30min?hide_gdpr_banner=1&background_color=f1ede4&text_color=16201d&primary_color=2d5447">Domluvit schůzku</button>
+    <a href="/kontakt" class="cta">Domluvit schůzku</a>
     <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
   </div>
 </section>
@@ -151,14 +150,6 @@
   <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
 </footer>
 
-<script>
-  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (window.Calendly) Calendly.initPopupWidget({ url: btn.getAttribute('data-calendly') });
-    });
-  });
-</script>
 
 </body>
 </html>
