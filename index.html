@@ -295,6 +295,7 @@ a.obor{text-decoration:none}
   gap:20px;align-items:baseline;
   padding:22px 0;border-bottom:1px solid var(--linka);
 }
+a.polozka{text-decoration:none;transition:padding-left .25s var(--krivka)}
 .polozka-nazev{font-family:var(--display);font-size:clamp(18px,1.5vw,22px);letter-spacing:-.02em}
 .polozka-popis{font-size:15px;color:var(--tlum);margin-top:6px;max-width:52ch}
 .polozka-cena{
@@ -335,6 +336,8 @@ a.obor{text-decoration:none}
   .ohlasy-vse:hover{color:var(--inkoust);gap:10px}
   .pas:hover .pas-jmena img{opacity:.2}
   .pas .pas-jmena img:hover{opacity:.82;transform:translateY(-2px)}
+  a.polozka:hover{padding-left:10px}
+  a.polozka:hover .polozka-nazev{color:var(--akcent)}
   .obor:hover{border-color:var(--inkoust);transform:translateY(-2px)}
   a.obor:hover .obor-sipka{transform:translateX(4px)}
   a.obor:hover .obor-obraz{transform:scale(1.03)}
@@ -586,7 +589,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-velky obor-tmavy" href="/reseni-vedeni-it">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">Dlouhodobé vedení IT</h3>
           <p class="obor-popis">Převezmu technologickou stránku firmy celou: systémy,
           dodavatele, rozpočet i bezpečnost. Vy se k IT vracíte jen na poradách.</p>
@@ -596,7 +599,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-stredni" href="/reseni-nova-aplikace">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">Aplikace a systémy na míru</h3>
           <p class="obor-popis">Nemusíte umět napsat zadání. Popíšete, co potřebujete,
           a dostanete hotovou aplikaci v provozu. Zdrojový kód je pak váš.</p>
@@ -606,7 +609,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-ai-zamestnanec">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">AI, která opravdu pracuje</h3>
           <p class="obor-popis">Ne chatbot. Zaměstnanec s přístupy, který běží
           nepřetržitě a ráno podá hlášení.</p>
@@ -616,7 +619,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-propojeni">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">Propojení a automatizace</h3>
           <p class="obor-popis">Data přestanou putovat ručně mezi systémy.
           Účetnictví, sklad a CRM si konečně rozumí.</p>
@@ -626,7 +629,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-mapa-firmy">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">Mapa firmy: kudy tečou data</h3>
           <p class="obor-popis">Než se dá něco postavit, musí být jasné, kde
           který údaj žije a kdo ho smí měnit.</p>
@@ -636,12 +639,12 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly obor-zvyrazneny" href="/reseni-bezpecnost">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=5765313" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=adb8507" alt="" loading="lazy">
           <h3 style="margin-top:10px">Bezpečnost a nový zákon</h3>
-          <p class="obor-popis">Zjistím, jestli na vás dopadá zákon o kybernetické
-          bezpečnosti, a dovedu vás do souladu.</p>
+          <p class="obor-popis">Za pět minut zjistíte, jestli na vás dopadá zákon
+          o kybernetické bezpečnosti a co po vás chce.</p>
         </div>
-        <span class="obor-cena">podle rozsahu <span class="obor-sipka">&rarr;</span></span>
+        <span class="obor-cena">Projít tři otázky <span class="obor-sipka">&rarr;</span></span>
       </a>
 
     </div>
@@ -654,7 +657,7 @@ textarea{min-height:104px;resize:vertical}
     <h2 style="max-width:24ch">Ceny jsou tady, ne až v nabídce.</h2>
 
     <div class="cenik">
-      <div class="polozka">
+      <a class="polozka" href="/ukazka-reportu">
         <div>
           <div class="polozka-nazev">AI plán do 48 hodin</div>
           <p class="polozka-popis">Dva hodinové workshopy online. Do 48 hodin od druhého
@@ -663,9 +666,9 @@ textarea{min-height:104px;resize:vertical}
           z ní odečte.</p>
         </div>
         <div class="polozka-cena">9 900 Kč<small>pevná cena</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
+      <a class="polozka" href="/reseni-mapa-firmy">
         <div>
           <div class="polozka-nazev">Mapa firmy: procesy a data</div>
           <p class="polozka-popis">Za dva týdny vysleduju, kudy u vás tečou práce a data.
@@ -673,52 +676,43 @@ textarea{min-height:104px;resize:vertical}
           nasazená v ceně. Když jdete z AI plánu, jeho cena se odečte.</p>
         </div>
         <div class="polozka-cena">39 000 Kč<small>pevná cena</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
+      <a class="polozka" href="/reseni-nova-aplikace">
         <div>
           <div class="polozka-nazev">Aplikace na míru</div>
           <p class="polozka-popis">První funkční verze do týdne, další podle připomínek
           obvykle do druhého dne. Doladění toho, co v aplikaci je, neúčtuju.</p>
         </div>
         <div class="polozka-cena">od 50 000 Kč<small>pevná cena za rozsah</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
+      <a class="polozka" href="/reseni-ai-zamestnanec">
         <div>
           <div class="polozka-nazev">AI zaměstnanec</div>
           <p class="polozka-popis">Zavedení včetně infrastruktury, u vás na serveru
           nebo v cloudu. Cena odpovídá jednomu měsíčnímu nákladu na dobrého člověka.</p>
         </div>
         <div class="polozka-cena">89 000 Kč<small>provoz od 8 000 Kč měsíčně</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
+      <a class="polozka" href="/reseni-propojeni">
         <div>
           <div class="polozka-nazev">Propojení a automatizace</div>
           <p class="polozka-popis">Účetnictví, sklad, e-shop a CRM si předávají data
           samy. Cenu určuje počet systémů a objem dat, řeknu ji po prvním hovoru.</p>
         </div>
         <div class="polozka-cena">podle rozsahu<small>pevná cena po prvním hovoru</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
-        <div>
-          <div class="polozka-nazev">Bezpečnost a nový zákon</div>
-          <p class="polozka-popis">Ověřím, jestli na vás dopadá zákon o kybernetické
-          bezpečnosti, a dovedu vás k registraci. Ověření samotné je práce na dny.</p>
-        </div>
-        <div class="polozka-cena">podle rozsahu<small>ověření nároku v řádu dnů</small></div>
-      </div>
-
-      <div class="polozka">
+      <a class="polozka" href="/reseni-vedeni-it">
         <div>
           <div class="polozka-nazev">Dlouhodobé vedení IT</div>
           <p class="polozka-popis">Paušál. Pokud řešíte víc věcí najednou, vyjde levněji
           než jednotlivé zakázky a nezůstanete bez nikoho, až se vynoří další.</p>
         </div>
         <div class="polozka-cena">od 50 000 Kč<small>měsíčně</small></div>
-      </div>
+      </a>
 
       <div class="polozka">
         <div>
@@ -729,23 +723,32 @@ textarea{min-height:104px;resize:vertical}
         <div class="polozka-cena">10 000 Kč<small>za den</small></div>
       </div>
 
-      <div class="polozka">
+      <a class="polozka" href="/raynet">
+        <div>
+          <div class="polozka-nazev">Raynet CRM</div>
+          <p class="polozka-popis">Zavedení, propojení s účetnictvím a úpravy na míru.
+          Od července 2026 jsem jejich oficiální integrační partner.</p>
+        </div>
+        <div class="polozka-cena">od 15 000 Kč<small>podle rozsahu</small></div>
+      </a>
+
+      <a class="polozka" href="/weby">
         <div>
           <div class="polozka-nazev">Web</div>
           <p class="polozka-popis">Web Standard do dvou týdnů s jednoduchou správou obsahu,
           Web Quick do týdne.</p>
         </div>
         <div class="polozka-cena">16 900 / 8 900 Kč<small>podle rozsahu</small></div>
-      </div>
+      </a>
 
-      <div class="polozka">
+      <a class="polozka" href="/dotace-mas">
         <div>
           <div class="polozka-nazev">Dotace na digitalizaci</div>
           <p class="polozka-popis">Ověření nároku, projektový záměr, cenové nabídky
           i vyplnění žádosti. Jedna částka, služba končí podáním.</p>
         </div>
         <div class="polozka-cena">30 000 Kč<small>pevná cena</small></div>
-      </div>
+      </a>
     </div>
 
     <p class="cenik-pozn">Nejsem plátce DPH, ceny jsou konečné. U položek "od" a "podle rozsahu"
