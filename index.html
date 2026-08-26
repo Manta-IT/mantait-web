@@ -163,6 +163,48 @@ h1 b{font-weight:600;color:var(--akcent)}
 .z1{animation-delay:.04s}.z2{animation-delay:.10s}
 .z3{animation-delay:.16s}.z4{animation-delay:.22s}
 
+/* ---------- Akcni pozice: co prave bezi a ma konec ----------
+   Petr 27. 8.: dotacni vyzva ma kampan i newsletter a konci v rijnu, takze
+   si zaslouzi vlastni misto, ne radek v ceniku. Az vyzva skonci, sekce se
+   vymeni za dalsi akci; kdyz zadna nebezi, cela sekce se z HTML odstrani.
+
+   Upozornuje na sebe tim, ze zije: tepajici bod u stitku a odpocet do
+   uzaverky. Neblika a nehybe se cely -- pohyb je jen tam, kde nese informaci
+   (bezici cas). Pod reduced-motion se tep zastavi a zustane plny bod. */
+.akce-pruh{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.akce-pruh::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(52% 60% at 88% 0%,
+    color-mix(in srgb, var(--akcent) 26%, transparent), transparent 62%)}
+.akce-vnitrek{position:relative;max-width:var(--sirka);margin:0 auto;
+  padding:clamp(26px,3.2vw,40px) var(--okraj);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3vw,44px);
+  align-items:center}
+.akce-stitek{display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--akcent-sv);margin-bottom:14px}
+.akce-tep{width:8px;height:8px;border-radius:50%;background:var(--akcent-sv);flex:none;
+  animation:tep 2.4s var(--krivka-klid) infinite}
+@keyframes tep{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+.akce-vnitrek h2{font-size:clamp(24px,2.6vw,36px);max-width:22ch}
+.akce-popis{color:color-mix(in srgb,var(--papir) 70%,transparent);
+  margin-top:12px;max-width:56ch;font-size:16px}
+.akce-cas{display:flex;gap:clamp(18px,2.4vw,34px);margin-top:20px;flex-wrap:wrap}
+.akce-udaj b{display:block;font-family:var(--display);font-size:clamp(22px,2.2vw,30px);
+  letter-spacing:-.03em;line-height:1}
+.akce-udaj span{display:block;margin-top:5px;font-family:var(--mono);font-size:12px;
+  color:color-mix(in srgb,var(--papir) 58%,transparent)}
+.akce-cta{display:grid;gap:10px;justify-items:stretch;min-width:min(260px,100%)}
+.akce-pruh .btn-hlavni{background:var(--papir);color:var(--inkoust)}
+.akce-pruh .sipka{background:color-mix(in srgb,var(--inkoust) 12%,transparent)}
+.akce-vedlejsi{font-size:14px;color:color-mix(in srgb,var(--papir) 62%,transparent);
+  text-align:center;text-decoration:none}
+@media (max-width:860px){
+  .akce-vnitrek{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .akce-tep{animation:none}
+}
+
 /* ---------- Ohlasy: pruh s clanky na konci prvni obrazovky ---------- */
 .ohlasy{border-top:1px solid var(--linka);background:var(--papir-tmav)}
 .ohlasy-vnitrek{
@@ -511,6 +553,32 @@ textarea{min-height:104px;resize:vertical}
     </div>
   </div>
 
+<!-- ============ AKCNI POZICE ============ -->
+<section class="akce-pruh" id="akce">
+  <div class="akce-vnitrek">
+    <div>
+      <span class="akce-stitek"><span class="akce-tep"></span>Právě běží</span>
+      <h2>Dotace na technologie končí letos na podzim.</h2>
+      <p class="akce-popis">Výzva Technologie pro MAS je poslední velké kolo, ve kterém
+      stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají
+      průběžně a další srovnatelný program zatím ohlášený není. Žádost zpracuju a podám
+      za vás, jedna částka a žádná druhá faktura.</p>
+      <div class="akce-cas">
+        <div class="akce-udaj"><b id="akce-dnu">Pár</b><span>dnů do poslední uzávěrky</span></div>
+        <div class="akce-udaj"><b>50 %</b><span>ceny vrací stát</span></div>
+        <div class="akce-udaj"><b>30 000 Kč</b><span>za zpracování i podání</span></div>
+      </div>
+    </div>
+    <div class="akce-cta">
+      <a href="/dotace-mas" class="btn btn-hlavni">
+        Chci vědět, jestli na to dosáhnu
+        <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="/clanky/dotace-technologie-pro-mas-2026" class="akce-vedlejsi">Co přesně ta výzva je</a>
+    </div>
+  </div>
+</section>
+
   <section class="pas-obal">
     <div class="pas">
       <span class="pas-popis">Vedl jsem projekty pro</span>
@@ -589,7 +657,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-velky obor-tmavy" href="/reseni-vedeni-it">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">Dlouhodobé vedení IT</h3>
           <p class="obor-popis">Převezmu technologickou stránku firmy celou: systémy,
           dodavatele, rozpočet i bezpečnost. Vy se k IT vracíte jen na poradách.</p>
@@ -599,7 +667,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-stredni" href="/reseni-nova-aplikace">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">Aplikace a systémy na míru</h3>
           <p class="obor-popis">Nemusíte umět napsat zadání. Popíšete, co potřebujete,
           a dostanete hotovou aplikaci v provozu. Zdrojový kód je pak váš.</p>
@@ -609,7 +677,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-ai-zamestnanec">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">AI, která opravdu pracuje</h3>
           <p class="obor-popis">Ne chatbot. Zaměstnanec s přístupy, který běží
           nepřetržitě a ráno podá hlášení.</p>
@@ -619,7 +687,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-propojeni">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">Propojení a automatizace</h3>
           <p class="obor-popis">Data přestanou putovat ručně mezi systémy.
           Účetnictví, sklad a CRM si konečně rozumí.</p>
@@ -629,7 +697,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-mapa-firmy">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">Mapa firmy: kudy tečou data</h3>
           <p class="obor-popis">Než se dá něco postavit, musí být jasné, kde
           který údaj žije a kdo ho smí měnit.</p>
@@ -639,7 +707,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly obor-zvyrazneny" href="/reseni-bezpecnost">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=adb8507" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=d8f4f36" alt="" loading="lazy">
           <h3 style="margin-top:10px">Bezpečnost a nový zákon</h3>
           <p class="obor-popis">Za pět minut zjistíte, jestli na vás dopadá zákon
           o kybernetické bezpečnosti a co po vás chce.</p>
@@ -673,7 +741,7 @@ textarea{min-height:104px;resize:vertical}
           <div class="polozka-nazev">Mapa firmy: procesy a data</div>
           <p class="polozka-popis">Za dva týdny vysleduju, kudy u vás tečou práce a data.
           Mapa, strojová kontrola vašich exportů, nálezy podle peněz a jedna oprava
-          nasazená v ceně. Když jdete z AI plánu, jeho cena se odečte.</p>
+          nasazená v ceně. Když jdete z AI plánu, jeho cenu odečtu.</p>
         </div>
         <div class="polozka-cena">39 000 Kč<small>pevná cena</small></div>
       </a>
@@ -980,7 +1048,7 @@ new IntersectionObserver(([z]) => nav.classList.toggle('posunuto', !z.isIntersec
     } else {
       kdy = 'kterýkoli den';
     }
-    const casText = cast ? cast.t + ' (' + cast.p + ')' : 'kdykoli během dne';
+    const casText = cast ? cast.t + ' (' + cast.p + ')' : 'kdykoliv během dne';
     elSouhrn.innerHTML = 'Poznamenám si <b>' + kdy + '</b>, ' + casText +
       '. Když se čas nehodí, stačí v pozvánce navrhnout jiný.';
     elSouhrn.classList.add('videt');
@@ -1010,6 +1078,18 @@ new IntersectionObserver(([z]) => nav.classList.toggle('posunuto', !z.isIntersec
   prepni('zprava');
 })();
 
+
+/* Odpocet do uzaverky. Datum je jedine misto, ktere se meni, kdyz se vyzva
+   posune -- cislo dnu se dopocita samo, takze na strance nezustane vcerejsek.
+   Bez skriptu zustane pomlcka a zbytek pruhu dava smysl i tak. */
+(function odpocet(){
+  const el = document.getElementById('akce-dnu');
+  if (!el) return;
+  const UZAVERKA = '2026-10-31';
+  const dnu = Math.ceil((new Date(UZAVERKA + 'T23:59:59') - new Date()) / 86400000);
+  if (dnu > 0) el.textContent = dnu;
+  else document.getElementById('akce')?.remove();
+})();
 </script>
 </body>
 </html>
