@@ -1,0 +1,105 @@
+/* =========================================================================
+   Kruh -- propojene systemy.
+
+   Vedle sebe s hranolem na strance AI zamestnance to musi byt jiny tvar,
+   jinak je z toho sablona. Hranol je VEJIR: jeden vstup, pet vystupu.
+   Tohle je OKRUH: ctyri systemy, zadny zacatek ani konec, zaznamy jedou
+   dokola a nikdo je nenese. Presne to ta sluzba dela.
+
+   Popisky stoji, hybou se jen zaznamy -- rotujici popisky jsou duvod, proc
+   se zahodila otacejici se konstelace na strance Kdo jsem.
+   ========================================================================= */
+
+.kruh-sekce{background:var(--inkoust);color:var(--papir);
+  overflow:hidden;position:relative}
+.kruh-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 56% at 50% 56%,
+    color-mix(in srgb,var(--akcent) 26%,transparent), transparent 68%)}
+.kruh-sekce .obsah{position:relative}
+.kruh-sekce h2{max-width:22ch}
+.kruh-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);
+  margin-top:16px;max-width:52ch}
+
+.kruh{position:relative;width:100%;max-width:760px;aspect-ratio:1;
+  margin:clamp(30px,4vw,48px) auto 0}
+.kruh-drahy{position:absolute;inset:0;width:100%;height:100%}
+.kruh-klid{fill:none;stroke:color-mix(in srgb,var(--papir) 22%,transparent);
+  stroke-width:1}
+/* Zaznam jedouci po okruhu. Kratka carka na dlouhe mezere obehne kruh
+   dokola -- proto je dasharray delsi nez obvod. */
+.kruh-tok{fill:none;stroke-width:2.6;stroke-linecap:round;
+  stroke-dasharray:30 1590;
+  animation:obeh 9s linear infinite}
+.kruh-zar{fill:none;stroke-width:12;stroke-linecap:round;opacity:.2;
+  stroke-dasharray:30 1590;animation:obeh 9s linear infinite}
+@keyframes obeh{to{stroke-dashoffset:-1620}}
+.o1,.oz1{stroke:#12A06B;animation-delay:0s}
+.o2,.oz2{stroke:#12908F;animation-delay:-2.25s}
+.o3,.oz3{stroke:#3F6FC4;animation-delay:-4.5s}
+.o4,.oz4{stroke:#B0762A;animation-delay:-6.75s}
+
+/* Stanice na okruhu. Stoji, sviti jen kdyz kolem projede zaznam.
+
+   Kotvi se IKONA, ne cely blok. Prvni verze mela na stanici
+   `translate(-50%,-50%)` a v ni ikonu i popisek v gridu -- centrovalo se tedy
+   teziste celeho bloku vysokeho 120 px, takze ikona sedela o 28 px mimo
+   kruznici. Na bocnich stanicich to nebylo videt, na horni a dolni ano.
+   Popisek je proto mimo tok a visi pod ikonou. */
+.stanice{position:absolute;transform:translate(-50%,-50%);
+  width:clamp(52px,6vw,64px);aspect-ratio:1;
+  transition:opacity .25s var(--krivka-klid)}
+.stanice-text{position:absolute;top:calc(100% + 10px);left:50%;
+  transform:translateX(-50%);text-align:center;white-space:nowrap}
+.stanice-znak{width:100%;height:100%;border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--papir) 24%,transparent);
+  background:var(--inkoust);display:grid;place-items:center;
+  animation:sviti 9s linear infinite}
+.stanice-znak svg{width:44%;height:44%;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke:color-mix(in srgb,var(--papir) 72%,transparent)}
+@keyframes sviti{
+  0%,10%{border-color:color-mix(in srgb,var(--papir) 24%,transparent);
+         box-shadow:0 0 0 0 transparent}
+  4%{border-color:currentColor;box-shadow:0 0 22px 2px currentColor}
+  100%{border-color:color-mix(in srgb,var(--papir) 24%,transparent)}}
+/* currentColor drzi jen kolecko, aby zaz mela spravny odstin.
+   Popisek zustava papirovy -- stanice neni "ta zelena", barvu ma
+   zaznam, ktery kolem prave projel. */
+.s1 .stanice-znak{color:#12A06B} .s2 .stanice-znak{color:#12908F}
+.s3 .stanice-znak{color:#3F6FC4} .s4 .stanice-znak{color:#B0762A}
+.s1 .stanice-znak{animation-delay:0s}
+.s2 .stanice-znak{animation-delay:-6.75s}
+.s3 .stanice-znak{animation-delay:-4.5s}
+.s4 .stanice-znak{animation-delay:-2.25s}
+.stanice b{font-weight:500;font-size:clamp(14px,1.15vw,16px);color:var(--papir)}
+.stanice small{display:block;font-size:12px;
+  color:color-mix(in srgb,var(--papir) 46%,transparent)}
+
+/* Uprostred to, co odpadlo. */
+.kruh-stred{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  text-align:center;max-width:34%}
+.kruh-stred b{display:block;font-family:var(--display);font-weight:400;
+  font-size:clamp(19px,2vw,26px);letter-spacing:-.03em;line-height:1.15}
+.kruh-stred small{display:block;margin-top:8px;font-size:13px;
+  color:color-mix(in srgb,var(--papir) 52%,transparent)}
+
+@media (max-width:820px){
+  /* Kruh o sirce telefonu ma stanice pres sebe. Tytez ctyri systemy,
+     jina skladba: mrizka dva krat dva a veta pod ni. */
+  .kruh{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;
+    gap:16px;max-width:none}
+  .kruh-drahy{display:none}
+  .stanice{position:static;transform:none;width:auto;aspect-ratio:auto;
+    display:grid;justify-items:center;gap:9px;
+    border:1px solid color-mix(in srgb,var(--papir) 16%,transparent);
+    border-radius:var(--r-l);padding:20px 14px}
+  .stanice-znak{width:clamp(52px,6vw,64px);height:auto;aspect-ratio:1}
+  .stanice-text{position:static;transform:none;white-space:normal}
+  .kruh-stred{position:static;transform:none;max-width:none;
+    grid-column:1 / -1;padding-top:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  .kruh-tok,.kruh-zar,.stanice-znak{animation:none}
+  .kruh-zar{display:none}
+  .kruh-tok{stroke-dasharray:none;opacity:.5}
+}

@@ -1,1 +1,32 @@
-/ai  /reseni-ai  301
+# Presmerovani po nasazeni redesignu 26. 8. 2026.
+#
+# Stranky, ktere jeste nemaji novou podobu, se stahuji z webu, ale NEMAZOU se
+# -- 301 posle navstevnika i vyhledavac na nejblizsi zive misto, takze se
+# neztrati ani pozice, ani clovek, ktery prisel ze stareho odkazu.
+# Az se ty stranky prepisi, radek se odsud smaze.
+
+# Stara zkratka
+/ai  /  301
+
+# Pet zanikajicich cest. V nove strukture jsou to radky v ceniku, ne stranky.
+/reseni-ai         /              301
+/reseni-naklady    /reseni-vedeni-it  301
+/reseni-nastroje   /reseni-vedeni-it  301
+/reseni-projekt    /reseni-vedeni-it  301
+/reseni-web        /weby          301
+
+# Kontakt: novy web ma formular primo na hlavni strance.
+/kontakt  /#napiste  301
+
+# Jazykove mutace jeste nejsou prelozene do noveho designu. Zustavaji v repu,
+# jen se odpojuji z webu, aby navstevnik nespadl ze srovnaneho webu do stareho.
+/sk/*  /  301
+/en/*  /  301
+
+# Pracovni verze brandu nemaji byt verejne vubec.
+/brand-lab      /  301
+/brand-lab-v2   /  301
+/brand-lab-v3   /  301
+/brand-lab-v4   /  301
+/brand-lab-v5   /  301
+/brand-lab-v6   /  301

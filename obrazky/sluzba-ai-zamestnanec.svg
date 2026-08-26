@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Jedna zpráva vstoupí a vyjde z ní pět hotových věcí" fill="none">
+<title>Jedna zpráva vstoupí a vyjde z ní pět hotových věcí</title>
+  <rect x="20" y="84" width="52" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M30 95h32" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 104h22" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M72 100h52" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M152 66l26 15v38l-26 15-26-15V81z" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M152 84l12 7v18l-12 7-12-7V91z" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M180 100C214 100 228 38 262 38" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="0.68"/>
+  <circle cx="272" cy="38" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M180 100C214 100 228 69 262 69" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="0.84"/>
+  <circle cx="272" cy="69" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M180 100C214 100 228 100 262 100" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="272" cy="100" r="5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M180 100C214 100 228 131 262 131" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="0.84"/>
+  <circle cx="272" cy="131" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M180 100C214 100 228 162 262 162" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="0.68"/>
+  <circle cx="272" cy="162" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.6"/>
+</svg>

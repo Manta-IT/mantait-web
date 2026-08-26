@@ -1,224 +1,660 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaše data si potečou sama - Manta IT</title>
-  <meta name="description" content="Ruční přepisování dat mezi účetnictvím, CRM a e-shopem? Navrhnu propojení, vyberu nástroj a postarám se o zavedení.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propojení systémů a automatizace - Manta IT</title>
+<meta name="description" content="Data přestanou putovat ručně mezi systémy. Účetnictví, sklad a CRM si předají údaje samy. Běžně pracuji s Pohodou a jsem partner Raynet CRM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/kruh.css?v=f3e20f0">
+<link rel="stylesheet" href="/sluzba.css?v=f3e20f0">
   <link rel="canonical" href="https://mantait.cz/reseni-propojeni">
-  <link rel="alternate" hreflang="cs" href="https://mantait.cz/reseni-propojeni">
-  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/reseni-propojeni">
-  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/reseni-propojeni">
-  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/reseni-propojeni">
-  <meta property="og:title" content="Vaše data si potečou sama - Manta IT">
-  <meta property="og:description" content="Ruční přepisování dat mezi účetnictvím, CRM a e-shopem? Navrhnu propojení, vyberu nástroj a postarám se o zavedení.">
+  <meta property="og:title" content="Propojení systémů a automatizace - Manta IT">
+  <meta property="og:description" content="Data přestanou putovat ručně mezi systémy. Účetnictví, sklad a CRM si předají údaje samy.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/reseni-propojeni">
   <meta property="og:site_name" content="Manta IT">
   <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=03a0b57">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Propojení systémů",
-    "description": "Ruční přepisování dat mezi účetnictvím, CRM a e-shopem? Navrhnu propojení, vyberu nástroj a postarám se o zavedení.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Manta IT",
-      "url": "https://mantait.cz"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Česká republika"
-    }
+    "name": "Propojení systémů a automatizace",
+    "description": "Data přestanou putovat ručně mezi systémy. Účetnictví, sklad a CRM si předají údaje samy.",
+    "serviceType": "Propojení systémů a automatizace",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
-  <!-- Cloudflare Web Analytics (cookieless) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
 <body>
-<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
-<nav>
-  <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Domů</a>
-    <a href="/#sluzby" class="nav-link active" aria-current="page">Služby</a>
-    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
-    <a href="/o-mne" class="nav-link">O mně</a>
-    <a href="/kontakt" class="nav-link">Kontakt</a>
-    <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/reseni-propojeni" hreflang="sk" lang="sk">SK</a><a href="/en/reseni-propojeni" hreflang="en" lang="en">EN</a></div>
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
   </div>
-  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<div class="back" id="obsah"><a href="/">Zpět na výběr</a></div>
-
-<!-- HERO -->
-<section class="d-hero">
+<header class="hero" id="hero">
   <div>
-    <div class="d-eyebrow">Řešíte: chci propojit systémy</div>
-    <h1>Vaše data si <em>potečou sama.</em></h1>
-    <p class="lead">Obchodník vystaví nabídku a účetní ji opíše do faktury. Ceník udržujete zvlášť
-    v e-shopu a zvlášť ve skladu. Poptávky z mailu někdo ručně přeťukává do systému.
-    Napíšu propojení, které to udělá za vás, a postarám se o zavedení. Pracuji běžně
-    s <strong>Pohodou</strong> a jsem oficiální partner <a href="/raynet">Raynet CRM</a>.</p>
+    <a href="/#obory" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Všechno, s čím pomůžu
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Vaše data</span></span>
+      <span class="radek"><b class="r2">potečou sama.</b></span>
+    </h1>
+    <p class="lead vstup z2">Obchodník vystaví nabídku a účetní ji opíše do faktury. Ceník udržujete zvlášť v e-shopu a zvlášť ve skladu. Napíšu propojení, které to udělá za vás.</p>
   </div>
-  <div class="d-card">
-    <div class="pricetag">podle rozsahu</div>
-    <div class="priceunit">záleží, kolik systémů propojujeme</div>
-    <div class="simple">
-      <div class="big">Konec ručního přepisování.</div>
-      <div class="small">Systémy si předají data mezi sebou. Vám i lidem se uvolní ruce.</div>
+
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">Podle rozsahu</div>
+    <div class="cenovka-pod">cenu řeknu po prvním hovoru a od té chvíle se nemění; určuje ji počet systémů, počet směrů toku a to, jestli se data cestou přepočítávají</div>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Chci to probrat
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
+
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Co to udělá s vaším týdnem.</h2>
+
+    <div class="parova-hlava">
+      <span>Dnes</span><span class="mezera"></span><span>S propojenými systémy</span>
     </div>
-    <a href="/kontakt" class="cta">Domluvit schůzku</a>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
+    <div class="parova">
+      <div class="par">
+        <span class="par-dnes">Faktury přepisujete z e-shopu do účetnictví ručně.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Doklad se založí sám, vy ho jen schválíte.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Objednávku zadáváte dvakrát: do skladu i do systému.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Zadáte ji jednou, dál si ji systémy předají mezi sebou.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Ceník měníte zvlášť v e-shopu a zvlášť ve skladu.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Měníte ho na jednom místě, druhý systém se srovná sám.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Chybu z přepisu hledáte zpětně po zákaznících.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Přepis zmizel a s ním i tenhle typ chyb.</span>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Kolik řádků jste poznali? Není to tím,
+    že by u vás někdo něco zanedbal.</p>
+    <p class="lead" style="margin-top:18px;max-width:60ch">Systém, který drží celý
+    provoz pohromadě, mají čtyři z deseti malých firem. U středních firem, tedy od
+    padesáti do dvou set padesáti lidí, jsou to tři ze čtyř. Ostatní mají několik
+    programů vedle sebe, protože se kupovaly postupně a každý dodavatel prodal jen
+    ten svůj. A i firma, která jeden velký systém má, ho stejně propojuje: e-shop,
+    banka a doprava zůstávají venku.</p>
+    <p class="vyberko-pozn">ČSÚ, Informační společnost v číslech 2026, tabulka D10,
+    data za rok 2025.</p>
   </div>
 </section>
 
-<!-- PROCES -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Jak to probíhá</span>
-    <h2>Jak systémy propojím.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">1</div>
+<!-- ============ OKRUH: PROPOJENE SYSTEMY ============ -->
+<section class="kruh-sekce">
+  <div class="obsah">
+    <h2>Čtyři systémy, jeden okruh.</h2>
+    <p class="kruh-lead">Údaj vzniká jednou a dál si ho systémy předají mezi sebou.
+    Okruh nemá začátek ani konec, protože nikdo nic nikam nenosí.</p>
+
+    <div class="kruh">
+      <svg class="kruh-drahy" viewBox="0 0 760 760" aria-hidden="true">
+        <path class="kruh-klid" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-zar oz1" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-zar oz2" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-zar oz3" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-zar oz4" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-tok o1" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-tok o2" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-tok o3" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+        <path class="kruh-tok o4" d="M 380.0 122.0 A 258.0 258.0 0 1 1 380.0 638.0 A 258.0 258.0 0 1 1 380.0 122.0"/>
+      </svg>
+
+      <div class="stanice s1" style="left:50.00%;top:16.05%">
+        <span class="stanice-znak"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></span>
+        <span class="stanice-text"><b>Účetnictví</b><small>faktury a doklady</small></span>
+      </div>
+
+      <div class="stanice s2" style="left:83.95%;top:50.00%">
+        <span class="stanice-znak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5v11H3z"/><path d="M9 20v-6h6v6"/></svg></span>
+        <span class="stanice-text"><b>Sklad</b><small>stavy a ceny</small></span>
+      </div>
+
+      <div class="stanice s3" style="left:50.00%;top:83.95%">
+        <span class="stanice-znak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16l-1.5 10H5.5z"/><path d="M8 6V4.5a4 4 0 0 1 8 0V6"/><path d="M9 20h.01M16 20h.01"/></svg></span>
+        <span class="stanice-text"><b>E-shop</b><small>objednávky</small></span>
+      </div>
+
+      <div class="stanice s4" style="left:16.05%;top:50.00%">
+        <span class="stanice-znak"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M17 7h4M19 5v4"/></svg></span>
+        <span class="stanice-text"><b>CRM</b><small>kontakty a nabídky</small></span>
+      </div>
+
+      <div class="kruh-stred">
+        <b>Nikdo nic nepřepisuje</b>
+        <small>Tohle místo dřív zabíral člověk s druhým otevřeným oknem.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CO TO JE A CO TO NENI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Není to nový systém.<br>Je to trubka mezi těmi, které máte.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Většina lidí si pod
+    propojením představí něco jiného, než co dostane. Tady je obojí vedle sebe.</p>
+
+    <div class="protiklad">
+      <div class="pole pole-ne">
+        <h3>S čím se to plete</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>S novým systémem. Nic se nevyměňuje a nic se neodpojuje.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>S doplňkem z katalogu. Ten umí přesně to, co jeho autor předvídal, a nastavit se dá jen v mezích, které dovolil.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>S robotem, který za člověka kliká v obrazovkách. Data jdou rozhraním, takže se to nerozbije, když někdo přesune tlačítko.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>S exportem do Excelu a importem jinam. To umíte i beze mě. Není to propojení, je to přepis s mezikrokem.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>S umělou inteligencí. Propojení je předvídatelná trubka. AI se na ni dá napojit až potom, bez ní nemá kam sáhnout.</li>
+        </ul>
+      </div>
+      <div class="pole pole-ano">
+        <h3>Co to doopravdy je</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Program, který přenáší data mezi vašimi systémy přesně tak, jak to potřebujete vy.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Běží sám. Buď na plánu (každou hodinu srovnej ceník), nebo na události (přijde objednávka, vznikne doklad). Nikdo nikde neklikne.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Používá rozhraní, která vaše programy už mají. Většina je má v ceně, a kde se dokupuje, řeknu to předem.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Má hlídání. Když se přenos zastaví, dozvím se to já z upozornění. Ne vy z nesedícího účetnictví na konci měsíce.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Je vaše. Zdrojový kód, přístupy i popis toku dostanete vy.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KDE SE ZTRACI CAS ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Přepisování nebolí najednou.<br>Bolí každý den po troškách.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Takhle vypadá týden
+    ručního přenášení dat u firmy kolem dvaceti lidí. Žádná z položek nestojí
+    za řeč sama o sobě. Proto je nikdo roky neřeší.</p>
+
+    <div class="naklady" id="cas">
+      <div class="naklad">
+        <span class="naklad-jmeno">Faktury z e-shopu do účetnictví</span>
+        <span class="naklad-pruh"><i style="--w:100%"></i></span>
+        <span class="naklad-castka">125 min / týden</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Objednávky do skladu podruhé</span>
+        <span class="naklad-pruh"><i style="--w:80%"></i></span>
+        <span class="naklad-castka">100 min / týden</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Ceník zvlášť v e-shopu a ve skladu</span>
+        <span class="naklad-pruh"><i style="--w:64%"></i></span>
+        <span class="naklad-castka">80 min / týden</span>
+      </div>
+      <div class="naklad zbytecny">
+        <span class="naklad-jmeno">Hledání a opravy chyb z přepisu
+          <span class="naklad-znacka">chyby</span></span>
+        <span class="naklad-pruh"><i style="--w:48%"></i></span>
+        <span class="naklad-castka">60 min / týden</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Párování plateb s objednávkami</span>
+        <span class="naklad-pruh"><i style="--w:24%"></i></span>
+        <span class="naklad-castka">30 min / týden</span>
+      </div>
+    </div>
+
+    <p class="naklady-zaver">Dohromady zhruba jeden pracovní den týdně.
+    Placený každý týden, bez konce, a ta červená položka k tomu vyrábí
+    nespokojené zákazníky.</p>
+    <p class="lead" style="margin-top:18px;max-width:56ch">Hranice, od které to má
+    smysl řešit, je zhruba pět hodin měsíčně na jednom úkonu. Pod ní se propojení
+    nezaplatí a řeknu to.</p>
+    <p class="vyberko-pozn">Modelový rozpad, ne měření u vás. Přesná čísla si
+    spočítáme na prvním hovoru z toho, co vaši lidé skutečně přenášejí. Kolik chyb
+    ruční přepis vyrobí, se u účetních dokladů systematicky neměří; recenzovaná
+    studie z roku 2019 měřila ruční opis v laboratoři a našla 0,83 procenta
+    chybných úhozů (JAMIA, Shaw a kol., 2019). Účetnictví to není, ale řád to
+    ukazuje.</p>
+  </div>
+</section>
+
+<!-- ============ PRUBEH ============ -->
+<section>
+  <div class="obsah">
+    <h2>Jak systémy propojím</h2>
+
+    <div class="osa">
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>
+        <div class="etapa-kdy">Na prvním hovoru</div>
         <h3>Zmapuji, co máte</h3>
-        <p>Projdu vaše systémy a najdu, kde se data přepisují ručně a kde vznikají chyby.</p>
+        <p>Projdu vaše systémy a najdu místa, kde se data přepisují ručně a kde kvůli tomu vznikají chyby. Skoro pokaždé jsou to dvě až tři místa a jedno z nich je Excel.</p>
       </div>
-      <div class="step">
-        <div class="step-n">2</div>
-        <h3>Navrhnu propojení</h3>
-        <p>Vyberu správný způsob a nástroj. Řeknu, co to obnáší a co to přinese, dříve než se do toho pustíme.</p>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="7" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 7h5a3 3 0 0 1 3 3v4"/></svg></span>
+        <div class="etapa-kdy">Do pár dní</div>
+        <h3>Navrhnu způsob a řeknu cenu</h3>
+        <p>Vyberu, kudy data potečou a čím. Běžně pracuji s Pohodou a jsem oficiální integrační partner Raynet CRM, takže tyhle cesty mám prošlapané.</p>
       </div>
-      <div class="step final">
-        <div class="step-n">3</div>
-        <h3>Zavedu a otestuji</h3>
-        <p>Propojení nasadím, otestuji na reálných datech a pohlídám, že vše teče správně.</p>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v11a3.5 3.5 0 0 0 7 0V3"/><path d="M8 3h9"/><path d="M9.5 11h6"/></svg></span>
+        <div class="etapa-kdy">Podle rozsahu</div>
+        <h3>Zavedu a otestuji na vašich datech</h3>
+        <p>Propojení nasadím a vyzkouším na skutečných datech, ne na vzorku. Než to pustíme naostro, uvidíte, co přesně kam poteče.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+        <div class="etapa-kdy">Potom</div>
+        <h3>Hlídám, že to teče dál</h3>
+        <p>Systémy vydávají aktualizace a rozhraní se mění. Když se propojení zastaví, dozvím se to dřív než vy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ ROZHRANI SE MENI ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Rozhraní se mění.<br>Jde o to, kdo se to dozví první.</h2>
+
+    <div class="pripad">
+      <div class="pripad-text">
+        <h3>Proč je hlídání součástí dodávky, ne příplatkem</h3>
+        <p>Programy na obou stranách se vyvíjejí a vydávají aktualizace. Někdy se
+        tím změní i cesta, kterou si data předávají, a přenos se zastaví. Není to
+        porucha ani ničí chyba, je to normální život programu a potká to každé
+        propojení, ať ho postavil kdokoliv.</p>
+        <p>Když se tok zastaví, přijde upozornění mně a opravím to. Bez hlídání se
+        na to přijde na konci měsíce, když nesedí účetnictví, a to už se dohledává
+        zpětně u zákazníků.</p>
+        <p>Dvě oznámení z poslední doby. Obojí vydal sám výrobce a obojí dopadlo na
+        každého, kdo na tom rozhraní stál.</p>
+      </div>
+      <div class="pripad-cisla">
+        <div class="cislo"><b>8. 9. 2026</b><span>Účetní služba iDoklad oznámila 3. července 2026, že k tomuhle dni vypne starší verzi svého rozhraní. Kdo na ní stál, měl deset týdnů na přesun.</span></div>
+        <div class="cislo"><b>11. 6. 2024</b><span>E-shopová platforma WooCommerce k tomuto dni vyřadila původní rozhraní z jádra a přesunula ho do samostatného doplňku. Kdo si ho nedoinstaloval, přišel o spojení.</span></div>
+      </div>
+    </div>
+
+    <p class="vyberko-pozn">Obě oznámení jsou veřejná a pocházejí přímo od výrobce
+    (idoklad.cz, developer.woocommerce.com). Ověřeno 26. 8. 2026.</p>
+  </div>
+</section>
+
+<!-- ============ VAS PROGRAM MLUVIT UMI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Váš program mluvit umí.<br>Jen vám to nikdo neřekl.</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">Většina běžných programů
+    rozhraní má. Jen o něm ve firmě nikdo neví, protože ho dodavatel neprodával.
+    Tohle jsou cesty, které mám prošlapané, a rovnou u nich stojí, co obnášejí.</p>
+
+    <div class="doklady">
+      <div class="doklad">
+        <div>
+          <h3>POHODA</h3>
+          <span class="etapa-kdy" style="display:block;margin:8px 0 0">v ceně programu</span>
+        </div>
+        <p>Data vydávat i přijímat umí a nekupuje se k tomu nic navíc. Prakticky
+        k tomu ale patří vyhrazená instance programu a server, na kterém poběží.</p>
+      </div>
+      <div class="doklad">
+        <div>
+          <h3>Money S3</h3>
+          <span class="naklad-znacka" style="display:block;margin:8px 0 0">dokupuje se</span>
+        </div>
+        <p>Rozhraní se licencuje jako samostatný modul, 4 990 Kč ročně bez DPH.
+        Je to náklad, který znáte předem a platíte ho svému dodavateli, ne mně.</p>
+      </div>
+      <div class="doklad">
+        <div>
+          <h3>Raynet CRM</h3>
+          <span class="etapa-kdy" style="display:block;margin:8px 0 0">podle tarifu</span>
+        </div>
+        <p>Od července 2026 jsem oficiální integrační partner. Který tarif rozhraní
+        zahrnuje, ověřím u nich přímo pro váš případ, ať se to nedozvíte až z faktury.
+        Rozhraní má strop na
+        počet volání za den, který se dá za příplatek navýšit. U běžného provozu na to
+        obvykle nedojde a při návrhu s tím počítám.</p>
+      </div>
+      <div class="doklad">
+        <div>
+          <h3>Shoptet</h3>
+          <span class="etapa-kdy" style="display:block;margin:8px 0 0">v ceně</span>
+        </div>
+        <p>Rozhraní má v ceně a je dobře popsané. Nedovolí ale sáhnout na data,
+        kdykoliv se komu zachce, a s tím se počítá už při návrhu.</p>
+      </div>
+      <div class="doklad">
+        <div>
+          <h3>ABRA Flexi a Helios iNuvio</h3>
+          <span class="stitek" style="display:block;margin:8px 0 0">podle systému</span>
+        </div>
+        <p>Obojí data vydat umí. U Heliosu se vrstva pro propojení licencuje zvlášť
+        podle počtu lidí, kteří přes ni budou zapisovat.</p>
+      </div>
+      <div class="doklad">
+        <div>
+          <h3>Fakturoid</h3>
+          <span class="stitek" style="display:block;margin:8px 0 0">podle tarifu</span>
+        </div>
+        <p>Bezplatný tarif má strop 1 500 požadavků měsíčně. Na běžný provoz
+        e-shopu to nemusí stačit a je lepší to vědět předem než v půlce měsíce.</p>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Co přesně to bude znamenat u vás, zjistím při mapování.
+    Máte to v nabídce dřív, než cokoliv objednáte.</p>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Když se ukáže, že váš
+    program data vydat neumí a ani náhradní cesta nevede, řeknu to a nic si
+    neúčtuju.</p>
+    <p class="vyberko-pozn">Ceny a limity podle veřejných zdrojů výrobců, ověřeno
+    26. 8. 2026: money.cz, fakturoid.cz, raynet.cz, stormware.cz. Vaše verze
+    a tarif tím můžou pohnout, proto to u vás vždycky ověřuju znovu.</p>
+  </div>
+</section>
+
+<!-- ============ CO Z TOHO ROSTE ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Na propojení se staví.<br>Samo o sobě je to jen začátek.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Ušetřený čas je první
+    přínos, ne ten největší. Ten přijde z toho, co propojené systémy umožní dál.</p>
+
+    <div class="rust">
+      <div class="rust-krok">
+        <h3>Zmizí přepis</h3>
+        <p>Lidem se vrátí hodiny, které padaly na kopírování mezi okny,
+        a s přepisem zmizí i jeho chyby.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Čísla si odpovídají</h3>
+        <p>Přehled o firmě přestane vznikat skládáním tří tabulek,
+        které si nesedí. Údaj je pořád ve dvou programech,
+        ale v obou stejný, protože ho tam nikdo nepřepisoval.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Automatizace má na čem stát</h3>
+        <p>AI zaměstnanec i další automatika sahají rovnou do systémů.
+        Bez propojení by neměly kam.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Další cesta je levnější</h3>
+        <p>První propojení postaví infrastrukturu. Každé další už po ní
+        jen vede nový tok dat.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CO SE PROPOJUJE NEJCASTEJI -->
-<section class="get">
-  <span class="label">Co se propojuje nejčastěji</span>
-  <h2>Poznáte se v některé z nich?</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Raynet a Pohoda</h3><p>Kontakty, nabídky a faktury na jednom místě. Obchodník vystaví nabídku, faktura z ní vznikne sama.</p></div>
+<!-- ============ VYSLEDKY V CISLECH ============ -->
+<section class="vysledky">
+  <div class="obsah">
+    <h2>Čtyři čísla, která u toho platí.</h2>
+    <p class="vysledky-lead">Dvě z nich uvidíte první měsíc po nasazení. Dvě platí od podpisu.</p>
+
+    <div class="cisla">
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 70 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="1" style="--i:1" x="25" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="2" style="--i:2" x="50" y="4" width="20" height="26" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">2-4<span class="cislo-jednotka">systémy</span></b>
+        <span class="cislo-popis">Kolik jich obvykle propojuji. Nejčastěji účetnictví, sklad a e-shop.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 40 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="40" height="26" rx="4" fill="none" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2"/><path data-i="1" style="--i:1" d="M4 30L36 4" stroke="#12A06B" stroke-width="2" stroke-linecap="round"/></svg>
+        <b class="cislo-hodnota">0<span class="cislo-jednotka">ručních přepisů</span></b>
+        <span class="cislo-popis">Údaj vzniká jednou. Dál si ho systémy předají mezi sebou.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 43 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="8" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="16" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="24" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="4" style="--i:4" x="32" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="5" style="--i:5" x="40" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/></svg>
+        <b class="cislo-hodnota">30-60<span class="cislo-jednotka">minut denně</span></b>
+        <span class="cislo-popis">Kolik času to obvykle vrátí člověku, který dnes data přepisuje.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 50 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="26" width="8" height="8" rx="2" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="12" y="20" width="8" height="14" rx="2" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="24" y="13" width="8" height="21" rx="2" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="36" y="5" width="8" height="29" rx="2" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><path data-i="4" style="--i:4" d="M1 27H49" stroke="#12A06B" stroke-width="2" stroke-linecap="round"/></svg>
+        <b class="cislo-hodnota">0<span class="cislo-jednotka">Kč za doklad</span></b>
+        <span class="cislo-popis">Provoz platíte za server, na kterém to běží. Ne za počet dokladů, které tudy projdou.</span>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>E-shop a sklad</h3><p>Objednávky, stavy zásob a ceník. Konec toho, že ceník měníte dvakrát a sklad stejně nesedí.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">03</span>
-      <div><h3>Pošta a CRM</h3><p>Poptávka přijde mailem a založí se v systému sama, roztříděná a s doplněnými údaji o firmě.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">04</span>
-      <div><h3>Excel a zbytek světa</h3><p>Když klíčový proces firmy žije v tabulce, kterou umí obsluhovat jeden člověk. Nejčastější případ ze všech.</p></div>
-    </div>
+
+    <p class="cisla-pozn">Počet systémů a ušetřený čas jsou modelové odhady z toho, co firmy popisují, ne měření. U vás vyjde jiné číslo a spočítáme si ho spolu na prvním hovoru. Nula ručních přepisů a nula korun za doklad odhady nejsou: to je předmět dodávky a způsob účtování.</p>
   </div>
 </section>
 
-<!-- PRED / PO -->
-<section class="lp-section">
-  <h2>Co to udělá s vaším týdnem</h2>
-  <div class="lp-table-wrap">
-    <table class="lp-table">
-      <tr><th>Dnes</th><th>S propojenými systémy</th></tr>
-      <tr><td>Faktury přepisujete z e-shopu do účetnictví ručně</td><td>Doklad se založí sám, vy ho jen schválíte</td></tr>
-      <tr><td>Objednávku zadáváte dvakrát: do skladu i do systému</td><td>Zadáte ji jednou, dál si ji systémy předají</td></tr>
-      <tr><td>Stav skladu ladíte proti tabulce na konci týdne</td><td>Čísla sedí průběžně, kontrola je na dvě minuty</td></tr>
-      <tr><td>Chybu z přepisu hledáte zpětně po zákaznících</td><td>Přepis zmizel a s ním i tenhle typ chyb</td></tr>
-    </table>
+<!-- ============ CO ZNAMENA PODLE ROZSAHU ============ -->
+<section>
+  <div class="obsah">
+    <h2>Co znamená "podle rozsahu"</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Cenu určují tři věci
+    a všechny tři se dají zjistit na prvním hovoru. Žádná z nich není objem
+    vašich dat.</p>
+
+    <div class="vyberko vyberko-3">
+      <div class="vyberko-radek">
+        <span>Co určuje cenu</span>
+        <span>Jednodušší případ</span>
+        <span>Náročnější případ</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Kolik systémů</span>
+        <span>Dva. Nejčastější zadání.</span>
+        <span>Tři a víc. Každý další je další strana s vlastními pravidly, kterou je potřeba znát a hlídat.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Kolik směrů</span>
+        <span>Jedním směrem. Objednávka jde do skladu a tím to končí.</span>
+        <span>Oběma směry. Sklad hlásí zpátky, kolik zbylo, a musí se určit, kdo má pravdu, když si dva systémy odporují.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Co se s daty děje cestou</span>
+        <span>Jdou tak, jak jsou.</span>
+        <span>Cestou se přepočítávají. Sazby DPH, měny, jednotky, varianty zboží, párování podle vašeho vlastního klíče.</span>
+      </div>
+    </div>
+
+    <p class="vyberko-pozn">Žádný z řádků není příplatek z ceníku. Je to popis toho,
+    co práci prodlužuje, a v nabídce to uvidíte pojmenované.</p>
+
+    <aside class="cenovka" style="max-width:620px;margin-top:clamp(30px,3.4vw,44px)">
+      <div class="cenovka-castka" style="font-size:clamp(21px,2vw,27px);line-height:1.2">Cena se po prvním hovoru už nemění.</div>
+      <p class="cenovka-pod" style="margin-top:12px">Není to hodinovka. Když se během
+      práce ukáže něco, co jsme předtím nevěděli, řeknu to dřív, než na tom začnu
+      dělat, a rozhodnete vy. Provoz pak platíte za server, na kterém to běží,
+      ne za počet dokladů, které tudy projdou.</p>
+      <p class="cenovka-pozn" style="text-align:left">Nejsem plátce DPH, cena, kterou
+      uslyšíte, je konečná.</p>
+    </aside>
   </div>
 </section>
 
-<!-- CO DOSTANETE -->
-<section class="get">
-  <span class="label">Co dostanete</span>
-  <h2>Méně ruční práce, míň chyb.</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Konec přepisování</h3><p>Data se přenášejí sama. Lidé se věnují práci, ne kopírování.</p></div>
+<!-- ============ CO PO MNE ZUSTANE ============ -->
+<section class="stul">
+  <div class="obsah">
+    <h2>Co po mně zůstane u vás</h2>
+    <p class="stul-lead">Jsem jeden člověk, takže otázka "nebudeme na vás uvázaní?"
+    je na místě. Odpovím na ni výčtem toho, co fyzicky dostanete, ne slibem
+    nezávislosti.</p>
+
+    <div class="papir" style="position:static;transform:none;width:auto;max-width:620px;margin:clamp(34px,4.4vw,56px) auto 0">
+      <div class="papir-hlava">
+        <b>Předávací list</b>
+        <span>propojení účetnictví a e-shopu, ukázka</span>
+      </div>
+      <div class="papir-blok">
+        <b>Co dostanete</b>
+        <div class="papir-radek"><span class="papir-cislo">1</span><span>Zdrojový kód propojení. <span class="tlum">Celý, ne zabalená aplikace. Patří vám a nemusíte se mě ptát, co s ním.</span></span></div>
+        <div class="papir-radek"><span class="papir-cislo">2</span><span>Přístupy ke všemu, co jsem kvůli tomu zakládal. <span class="tlum">Server, účty, klíče k rozhraním.</span></span></div>
+        <div class="papir-radek"><span class="papir-cislo">3</span><span>Popis toho, co kudy teče. <span class="tlum">Jaký údaj vzniká kde, kam jde, jak často a co se s ním po cestě stane.</span></span></div>
+        <div class="papir-radek"><span class="papir-cislo">4</span><span>Postup při výpadku. <span class="tlum">Co udělat, když se tok zastaví a já jsem zrovna nedostupný, včetně toho, jak data přenášet ručně, než se to spraví.</span></span></div>
+        <div class="papir-radek"><span class="papir-cislo">5</span><span>Ruční cesta zůstává funkční. <span class="tlum">Propojení ji nevypíná a nikdy nevypne.</span></span></div>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>Míň chyb</h3><p>Kde nikdo nic nepřepisuje ručně, tam se neztratí ani nepřehodí.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">03</span>
-      <div><h3>Přehled na jednom místě</h3><p>Správné údaje všude, kde je potřebujete, bez hledání.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">04</span>
-      <div><h3>Vybraný nástroj</h3><p>Konkrétní řešení vybrané pro vaši situaci, ne univerzální krabice.</p></div>
-    </div>
+
+    <p class="lhuta-pozn" style="max-width:620px;margin-left:auto;margin-right:auto">Tohle je ve smlouvě, ne slíbené v mailu. Váš člověk nebo jiný dodavatel to může převzít, aniž by se mě ptal.</p>
   </div>
 </section>
 
-<!-- ZAVER -->
-<section class="end">
-  <div class="end-in">
-    <h2>Ukažte mi, co <em>přepisujete ručně.</em></h2>
-    <p>Řekněte mi, mezi kterými systémy data přenášíte. Já vám řeknu, jak je propojit - a co vám to ušetří.</p>
-    <form class="form-box end-form" method="post" action="/api/kontakt">
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="lp-jmeno">Jméno a příjmení</label>
-          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
+<!-- ============ KDY NE ============ -->
+<section class="varovani">
+  <div class="obsah">
+    <span class="stitek">Kdy říkám ne</span>
+    <div class="varovani-delene">
+      <div class="varovani-uvod">
+        <h2>Kdy propojení nemá smysl</h2>
+        <p>Ne všechno ruční přepisování se vyplatí nahradit. Tři případy, u kterých vám to řeknu rovnou.</p>
+      </div>
+      <div>
+        <div class="varovani-polozka">
+          <h3>Když to nezabere aspoň pár hodin měsíčně</h3>
+          <p>Hranice je zhruba pět hodin měsíčně na jednom úkonu. Pod ní se propojení nezaplatí ani za rok a někdy stačí naučit program export do správného formátu. Řeknu to a nabídku neposílám.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-firma">Firma</label>
-          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
+        <div class="varovani-polozka">
+          <h3>Když je rozbitý samotný proces</h3>
+          <p>Když se ve firmě neshodnete, kdo objednávku schvaluje, propojení ten spor jen zrychlí. Nejdřív proces, potom technika. A když není jasné ani to, kde který údaj žije a kdo ho smí měnit, jde se nejdřív přes <a href="/reseni-mapa-firmy" style="color:var(--akcent)">Mapu firmy</a>.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-tel">Telefon</label>
-          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
-        </div>
-        <div class="form-field">
-          <label for="lp-mail">E-mail</label>
-          <input id="lp-mail" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field full">
-          <label for="lp-zprava">Co řešíte?</label>
-          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
+        <div class="varovani-polozka">
+          <h3>Když systém nemá jak data vydat</h3>
+          <p>Starší programy někdy neumí nic než tisk. Pak je otázka, jestli data přepisovat dál, nebo systém vyměnit, a to je jiné rozhodnutí i jiná cena.</p>
         </div>
       </div>
-      <div class="hp-field" aria-hidden="true">
-        <label for="lp-web">Nevyplňujte</label>
-        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+  </div>
+</section>
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Co když náš systém nemá rozhraní pro propojení?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Většina běžných systémů rozhraní má, jen o něm nikdo ve firmě neví. Když opravdu žádné není, existují náhradní cesty přes exporty nebo databázi. Ověřím to hned na začátku, ne až po objednávce.</p>
+        <p>Když ani to nejde, řeknu to a nabídku neposílám.</p>
       </div>
-      <button type="submit" class="btn">Odeslat zprávu</button>
-      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
-    </form>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
+    </details>
+
+    <details>
+      <summary>Kde propojení poběží?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Buď u vás, nebo v cloudu, který spravuji. Když jde o citlivá data, má smysl první varianta a data pak firmu neopustí.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co se stane, když jeden ze systémů vydá aktualizaci?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Občas se tím rozhraní změní a propojení se zastaví. Proto propojení hlídám: když přestane téct, dostanu upozornění a opravím to. Bez hlídání by se na to přišlo až u nesedícího účetnictví na konci měsíce.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Můžeme si to nechat převzít vlastním člověkem?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano. Dostanete zdrojový kód i popis, jak to běží a co se stane, když to spadne. Nejste na mně uvázaní.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Nemusíme kvůli tomu něco dokupovat?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Někdy ano a řeknu to na začátku, ne na faktuře. Rozhraní bývá součástí programu, který už máte zaplacený, ale ne vždycky. U Money S3 se licencuje jako samostatný modul za 4 990 Kč ročně bez DPH. U Pohody se nekupuje nic navíc, ale prakticky k tomu patří vyhrazená instance programu a server, na kterém poběží. U Fakturoidu má bezplatný tarif strop 1 500 požadavků měsíčně, což na běžný provoz e-shopu nemusí stačit.</p>
+        <p>Co přesně to bude u vás, zjistím při mapování a máte to v nabídce dřív, než cokoliv objednáte.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Tohle přece zvládne naše účetní, dělá to takhle roky.<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Zvládne, o tom se nepřu. Otázka není, jestli to umí, ale jestli chcete, aby to dělala. Propojení jí nebere práci, bere jí tu část, kterou stejně nikdo dělat nechce, a vrací jí čas na věci, které za ni stroj neudělá.</p>
+        <p>Schvalování zůstává na ní: doklad se založí sám, pustí ho pořád člověk.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Už jsme to jednou zkoušeli a nefungovalo to.<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Zeptám se, co přesně přestalo fungovat a kdy. Skoro vždycky je to jedna ze dvou věcí. Buď se změnilo rozhraní na jedné straně a nikdo to nehlídal, nebo to postavil někdo, kdo pak odešel, a nezůstal po něm popis.</p>
+        <p>Obojímu se dá předejít a obojí je důvod, proč je hlídání i předávací popis součástí dodávky, ne příplatek.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co když to spadne a my nebudeme moct fakturovat nebo expedovat?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ruční cesta zůstává funkční, propojení ji nevypíná. Zavádí se na vašich skutečných datech a než se pustí naostro, uvidíte, co přesně kam poteče.</p>
+        <p>Když se tok zastaví, dozvím se to z upozornění já. Součástí předání je postup, co dělat, když jsem zrovna nedostupný, včetně toho, jak data přenášet ručně, než se to spraví.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jak dlouho to trvá?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Jednoduché propojení dvou systémů bývá otázka dnů. Když se propojuje víc systémů nebo je potřeba data cestou přepočítat, jsou to spíš týdny. Termín řeknu spolu s cenou po prvním hovoru.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Umíte pracovat s Pohodou a s Raynetem?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, obojí běžně. U Raynet CRM jsem od července 2026 oficiální integrační partner. To ale neznamená, že vám ho budu prodávat: když máte jiný systém a funguje vám, propojím ten váš.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Ukažte mi, co přepisujete ručně.</h2>
+    <p>Řekněte mi, mezi kterými systémy data přenášíte. Já vám řeknu, jak je propojit a co vám to ušetří.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
 </footer>
 
+<script src="/sluzba.js?v=f3e20f0"></script>
 </body>
 </html>

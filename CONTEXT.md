@@ -1,42 +1,46 @@
-# MantaIT Web — CONTEXT
+# MantaIT Web -- CONTEXT
 
 ## Co to je
-Jednoducha staticka landing page pro MantaIT (drive Kokoska IT).
-Cil: prezentovat Petra Kokousku jako externiho IT reditele, generovat lead pres kontaktni formular/email.
 
-## Stav
-Hotova HTML stranka (`index.html`) -- zatim nepublikovana.
+Verejny web mantait.cz -- hlavni dukazni material znacky. Hook pro navstevnika
+NENI vycet referenci: semi-warm kontakt uz o Mante vi a prisel overit, ze je
+to real deal. Presvedci ho provedeni samotneho webu ("i ten web vypada, ze
+sakra vime, co delame"). Firma prodavajici digitalizaci se dokazuje tim, jak
+vypada jeji vlastni web.
 
-## Technologie
-- Ciste HTML/CSS, bez JS frameworku
-- Fonty: Cormorant Garamond (serif, headings) + DM Sans (sans-serif, body)
-- Design: tmavy (#0a0a0a), zlaty akcent (#C9973A)
-- Plne responzivni (breakpointy 900px, 600px)
+## Stav (25. 8. 2026)
 
-## Obsah stranky
-- Hero: "IT ma firmu posouvat. Ne zamestnavat vedeni."
-- Pain points: 3 scenare (rozjety projekt, novy system, nejistota)
-- Proces: 4 kroky spoluprace
-- Sluzby: Projektove rizeni (8–10k/den), IT retainer (od 50k/mesic), IT revize (individualne)
-- Differentiator: puvodne "Konzultanti doporucuji. Ja prebiram rizeni." (ZRUSENO 2026-07-24, novy claim "Vy ridite firmu. Ja vase IT.")
-- Kontakt: petr@mantait.cz | telefon placeholder (+420 000 000 000)
+- **Produkce:** 65 stranek (20 CZ + 20 SK + 20 EN + 5 clanku), live na
+  mantait.cz, Cloudflare Worker, deploy z `master`. Nese jeste STARY design.
+- **Redesign (T0825-7):** 8 novych stranek v `../specs/web-redesign/prototypy/`,
+  homepage Petr schvalil, zbytek ceka na schvaleni. Nasazuje se cely web
+  najednou vcetne jazyku -- do te doby se do produkce nesaha.
+  Stav a rozhodnuti: `../specs/web-redesign/STAV.md`.
 
-## Co chybi / TODO
-- Doplnit realne telefonni cislo (zatim placeholder)
-- Doplnit realne ICO (zatim 00000000)
-- Rozhodnout kde hostovat (GitHub Pages, Vercel, vlastni hosting)
-- Domena mantait.cz -- stav neznamy
-- SEO meta tagy -- title/description jsou, OG tagy chybi
-- Pridat bio+foto Petra (doporuceni UX reviewu -- zvysuje duveryhodnost)
-- Pridat case studies + testimonials (doporuceni UX i marketing reviewu)
-- Google Analytics / sledovani konverzi
-- Implementovat SEO doporuceni (H1, meta description optimalizace, OG tagy)
+## Pozice a obsah
 
-## Reviews provedene
-- Marketing review: provedeno, silny positioning, chybi case studies
-- UX review: provedeno, chybi bio/foto, social proof (case studies, testimonials)
-- SEO review: provedeno, vice oblastí ke zlepseni (OG tagy, H1, meta)
+- Claim: **"Vy ridite firmu. Ja vase IT."** (od 24. 7.)
+- Pozice (korekce Petra 25. 8.): technologicky lidr, ktery vede digitalni
+  transformaci firem do ~250 lidi -- ne IT manager na spravu pocitacu.
+- Cilovka: majitele ne-tech firem, 50+, nesnasi zargon.
+- Sluzeb pet: vedeni IT, aplikace na miru, propojeni a automatizace,
+  bezpecnost a novy zakon, AI zamestnanec. K tomu clanky (obsahovy hub),
+  dotace na klic (30 000 Kc, konci podanim) a web (16 900 / 8 900 Kc).
+- Mereni: pocet poptavek pres formular (/dekujeme). GA4 se nezaklada.
+
+## Otevrene otazky
+
+- **Pet zanikajicich cest** (`reseni-ai`, `reseni-naklady`, `reseni-nastroje`,
+  `reseni-projekt`, `reseni-web`): presmerovat, nebo nechat zit? URL muzou
+  mit navstevnost.
+- **Pozvanky do kalendare** z vyberu terminu (T0825-36) -- ceka na Petruv
+  OAuth a mapovani casti dne.
+- Benchmark cen konkurence (Digitisk 648-793 tis.) se NIKDY neuvadi jako
+  srovnani na webu -- smi byt jen "radovy rozpocet" bez vazby na dodavatele.
 
 ## Souvislosti
-- **mantait-lead-gen** -- web je vizitka pro lead gen system; outreach vede na tento web
-- **ventures/manta-it** -- matersky workspace; branding, positioning, market research zde
+
+- Parent workspace `../` (manta-it): leadgen, kampane, CRM, brand.
+- Pravidla prace: `CLAUDE.md` (zavazna), `PRINCIPLES.md` (proc).
+- Clanky plni pipeline: obsah z redesignu se recykluje do clanku a kampani
+  (reserse `../specs/web-redesign/vyzkum-bolesti-vyvoje.md`).

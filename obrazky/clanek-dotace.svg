@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Tři kroky, na jejichž konci je schválená žádost" fill="none">
+<title>Tři kroky, na jejichž konci je schválená žádost</title>
+  <circle cx="48" cy="100" r="20" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M43 100h10" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="144" cy="100" r="20" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M139 100h10" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="240" cy="100" r="20" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M231 100l6 7 12-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M68 100h56" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M164 100h56" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="28" y="40" width="40" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="124" y="134" width="40" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+</svg>

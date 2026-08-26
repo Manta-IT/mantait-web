@@ -1,0 +1,708 @@
+/* =========================================================================
+   Detail sluzby -- druha uroven webu.
+
+   Uloha stranky: clovek uz vi, ze neco takoveho chce. Ted potrebuje vedet,
+   co presne dostane, pro koho to neni, jak to probehne a kolik to stoji.
+   FAQ na konci neni vypln -- je to hlavni material pro vyhledavace a pro
+   AI odpovedi, protoze prave na tyhle otazky se lidi ptaji.
+   ========================================================================= */
+:root{
+  --papir:#FBFBF9; --papir-tmav:#F1F2EF; --inkoust:#101413;
+  --tlum:#5E6663; --akcent:#0B6E4F; --akcent-sv:#E7F0EB; --linka:#E2E4DF;
+  /* Druhy ton systemu, pridan 25. 8. Pouziva se VYHRADNE tam, kde data
+     varuji (nedokoncene projekty). Nikdy jako dekorace ani jako CTA. */
+  --vada:#9A3F2B;
+  /* Tyz ton pro TMAVE pozadi. Na #101413 ma #9A3F2B kontrast jen 2,8:1, tedy
+     pod pristupnostnim minimem -- na tmavych sekcich se proto pouziva tahle
+     svetlejsi varianta (5,1:1). Nalez z implementace 26. 8. */
+  --vada-sv:#D4715A;
+  /* Obrys prvku, ktere se ovladaji: pole, obrysova tlacitka, pilulky voleb.
+     --linka (#E2E4DF) je dekorativni cara s kontrastem 1,3:1; na hranici,
+     kterou ma clovek najit, to je pod minimem 3:1. Nalez z auditu 26. 8. */
+  --obrys:#8B928C;
+  --display:'Outfit',system-ui,sans-serif; --text:'Manrope',system-ui,sans-serif;
+  /* Tretí rez jen pro strojova data: stitky, casy, cisla, zdroje.
+     Nikdy na prodejni text -- tam by delal z webu terminal. */
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --krivka:cubic-bezier(.23,1,.32,1); --krivka-klid:cubic-bezier(.4,0,.2,1);
+  --r-s:8px; --r:10px; --r-l:14px; --sirka:1360px; --okraj:clamp(20px,4vw,56px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--papir);color:var(--inkoust);font-family:var(--text);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.obsah{max-width:var(--sirka);margin:0 auto;padding:0 var(--okraj)}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06}
+h2{font-size:clamp(28px,3.2vw,44px)}
+h3{font-size:clamp(18px,1.4vw,21px);letter-spacing:-.02em;line-height:1.3}
+a{color:inherit}
+section{padding:clamp(64px,8vw,116px) 0}
+.stitek{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tlum);margin-bottom:20px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:40;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--okraj);background:var(--papir);
+  border-bottom:1px solid transparent;transition:border-color .25s var(--krivka-klid)}
+nav.posunuto{border-bottom-color:var(--linka)}
+.znacka{font-family:var(--display);font-size:19px;font-weight:500;letter-spacing:-.02em;
+  text-decoration:none;display:flex;align-items:center;gap:9px}
+.znak{width:22px;height:22px;border-radius:6px;background:var(--akcent);position:relative;flex:none;
+  transition:transform .28s var(--krivka)}
+.znak::after{content:'';position:absolute;inset:6px 6px auto auto;width:8px;height:8px;
+  border-radius:2px;background:var(--papir);transition:transform .28s var(--krivka)}
+.menu{display:flex;align-items:center;gap:clamp(16px,2.2vw,32px)}
+.menu a{font-size:15px;color:var(--tlum);text-decoration:none;position:relative;padding:6px 0;
+  transition:color .18s var(--krivka-klid)}
+.menu a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--inkoust);
+  transform:scaleX(0);transform-origin:right;transition:transform .2s var(--krivka)}
+.nav-cta{font-size:15px;font-weight:600;color:var(--papir);background:var(--inkoust);
+  padding:11px 20px;border-radius:var(--r);text-decoration:none;
+  transition:background .2s var(--krivka-klid),transform .16s var(--krivka)}
+.nav-cta:active{transform:scale(.97)}
+
+.btn{font-family:var(--text);font-size:16px;font-weight:600;padding:15px 26px;border-radius:var(--r);
+  text-decoration:none;border:0;cursor:pointer;display:inline-flex;align-items:center;
+  justify-content:center;gap:11px;min-height:52px;
+  transition:transform .16s var(--krivka),background .2s var(--krivka-klid),border-color .2s var(--krivka-klid)}
+.btn-hlavni{background:var(--inkoust);color:var(--papir)}
+.btn-vedlejsi{color:var(--inkoust);background:transparent;border:1px solid var(--linka)}
+.btn:active{transform:scale(.98)}
+.sipka{width:26px;height:26px;border-radius:50%;flex:none;
+  background:color-mix(in srgb,var(--papir) 18%,transparent);display:grid;place-items:center;
+  transition:transform .2s var(--krivka)}
+.sipka svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+/* ---------- Hero sluzby: kratsi nez na homepage, cena hned videt ---------- */
+.hero{padding:120px var(--okraj) clamp(26px,3vw,40px);max-width:var(--sirka);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(32px,5vw,72px);align-items:end}
+.zpet{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--tlum);
+  text-decoration:none;margin-bottom:26px;transition:gap .2s var(--krivka),color .18s var(--krivka-klid)}
+.zpet svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7}
+h1{font-size:clamp(38px,5.4vw,74px);max-width:16ch}
+h1 b{font-weight:600;color:var(--akcent)}
+.radek{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.radek > *{display:block;animation:vyjezd .78s var(--krivka) backwards}
+.r1{animation-delay:.04s}.r2{animation-delay:.13s}
+@keyframes vyjezd{from{transform:translateY(105%)}}
+.lead{margin-top:24px;font-size:clamp(17px,1.3vw,20px);color:var(--tlum);max-width:52ch}
+.vstup{animation:prichod .7s var(--krivka) backwards}
+@keyframes prichod{from{opacity:0;transform:translateY(20px)}}
+.z2{animation-delay:.10s}.z3{animation-delay:.16s}
+
+.cenovka{border:1px solid var(--linka);border-radius:var(--r-l);padding:26px 28px;background:var(--papir-tmav)}
+.cenovka-castka{font-family:var(--display);font-size:clamp(30px,3vw,40px);letter-spacing:-.03em}
+.cenovka-pod{font-size:14px;color:var(--tlum);margin-top:4px}
+.cenovka .btn{width:100%;margin-top:20px}
+.cenovka-pozn{font-size:13px;color:var(--tlum);margin-top:12px;text-align:center}
+
+/* ---------- Co to je: dva sloupce, ne tri karty ---------- */
+.protiklad{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+.pole{border:1px solid var(--linka);border-radius:var(--r-l);padding:26px 28px}
+.pole-ne{background:var(--papir-tmav)}
+.pole-ano{background:var(--inkoust);color:var(--papir);border-color:var(--inkoust)}
+.pole h3{margin-bottom:14px}
+.pole ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.pole li{font-size:15.5px;display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start}
+.pole-ne li{color:var(--tlum)}
+.pole-ano li{color:color-mix(in srgb,var(--papir) 78%,transparent)}
+.znamenko{width:17px;height:17px;flex:none;margin-top:4px}
+.znamenko svg{width:17px;height:17px;stroke-width:1.8;fill:none}
+.pole-ne .znamenko svg{stroke:var(--tlum)}
+.pole-ano .znamenko svg{stroke:var(--akcent-sv)}
+
+/* ---------- Prubeh: casova osa, ne cislovane karty ----------
+   Kazda etapa ma piktogram, ktery se pri doscrollovani nakresli tahem, ne
+   objevi. Cara osy se vykresli shora dolu pred nimi. Duvod: osa je na vsech
+   peti detailech a jako holy seznam s puntiky je to nejnudnejsi prvek webu.
+
+   Vychozi stav je nakresleno. Zavreny stav nasazuje az skript, takze bez JS
+   nechybi nic -- stejny obraceny postup jako u desek s hlasenim. */
+.osa{margin-top:40px;position:relative;padding-left:clamp(56px,5vw,68px)}
+.osa::before{content:'';position:absolute;left:clamp(21px,2.4vw,25px);top:12px;bottom:12px;
+  width:1px;background:var(--linka);transform-origin:top;
+  transition:transform 1s var(--krivka)}
+.etapa{position:relative;padding:0 0 clamp(30px,3.4vw,40px)}
+.etapa:last-child{padding-bottom:0}
+.etapa-znak{position:absolute;left:calc(-1 * clamp(56px,5vw,68px));top:-6px;
+  width:clamp(42px,4.8vw,50px);aspect-ratio:1;border-radius:50%;
+  border:1px solid var(--linka);background:var(--papir);
+  display:grid;place-items:center;
+  transition:border-color .3s var(--krivka-klid),background .3s var(--krivka-klid)}
+.etapa-znak svg{width:50%;height:50%;stroke:var(--akcent);fill:none;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:140;
+  transition:stroke-dashoffset .9s var(--krivka)}
+.etapa-kdy{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--akcent);margin-bottom:6px}
+.etapa p{font-size:15.5px;color:var(--tlum);margin-top:6px;max-width:60ch}
+
+/* Zavreny stav: cara nenakreslena, piktogramy nedotazene. */
+.osa.pripravena::before{transform:scaleY(0)}
+.osa.pripravena .etapa-znak svg{stroke-dashoffset:140}
+.osa.pripravena .etapa-znak{border-color:color-mix(in srgb,var(--linka) 40%,transparent)}
+.etapa:nth-child(1) .etapa-znak svg{transition-delay:.34s}
+.etapa:nth-child(2) .etapa-znak svg{transition-delay:.5s}
+.etapa:nth-child(3) .etapa-znak svg{transition-delay:.66s}
+.etapa:nth-child(4) .etapa-znak svg{transition-delay:.82s}
+.etapa:nth-child(5) .etapa-znak svg{transition-delay:.98s}
+
+@media (hover:hover) and (pointer:fine){
+  .etapa:hover .etapa-znak{border-color:var(--akcent);background:var(--akcent-sv)}
+}
+@media (prefers-reduced-motion:reduce){
+  .osa.pripravena::before{transform:none}
+  .osa.pripravena .etapa-znak svg{stroke-dashoffset:0}
+}
+
+/* ---------- Pro koho to neni: poctivost prodava.
+   Delena skladba, ne tri stejne karty vedle sebe -- ty by z upozorneni
+   udelaly dalsi vycet vlastnosti a cetly by se jako vyhody. ---------- */
+.varovani{background:var(--papir-tmav)}
+.varovani-delene{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(26px,5vw,72px);align-items:start;margin-top:8px}
+.varovani-uvod p{color:var(--tlum);margin-top:18px;max-width:34ch}
+.varovani-polozka{padding:22px 0;border-top:1px solid var(--linka)}
+.varovani-polozka:first-child{border-top:0;padding-top:0}
+.varovani-polozka p{font-size:15.5px;color:var(--tlum);margin-top:8px;max-width:54ch}
+
+/* ---------- FAQ: hlavni material pro vyhledavace ---------- */
+.faq{max-width:var(--sirka)}
+.faq > *{max-width:860px}
+details{border-bottom:1px solid var(--linka)}
+details:first-of-type{border-top:1px solid var(--linka)}
+summary{
+  list-style:none;cursor:pointer;padding:22px 0;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  font-family:var(--display);font-size:clamp(17px,1.35vw,20px);letter-spacing:-.02em;
+}
+summary::-webkit-details-marker{display:none}
+.znak-plus{width:20px;height:20px;flex:none;position:relative}
+.znak-plus::before,.znak-plus::after{
+  content:'';position:absolute;background:var(--akcent);border-radius:1px;
+  transition:transform .28s var(--krivka),opacity .28s var(--krivka-klid);
+}
+.znak-plus::before{left:0;right:0;top:9.5px;height:1.6px}
+.znak-plus::after{top:0;bottom:0;left:9.5px;width:1.6px}
+details[open] .znak-plus::after{transform:rotate(90deg);opacity:0}
+.odpoved{padding:0 0 24px;max-width:66ch;color:var(--tlum);font-size:16px}
+.odpoved p + p{margin-top:12px}
+
+/* ---------- Zaver ---------- */
+.zaver{background:var(--inkoust);color:var(--papir);text-align:center}
+.zaver h2{max-width:18ch;margin:0 auto}
+.zaver p{color:color-mix(in srgb,var(--papir) 66%,transparent);margin:18px auto 30px;max-width:46ch}
+.zaver .btn-hlavni{background:var(--papir);color:var(--inkoust)}
+.zaver .sipka{background:color-mix(in srgb,var(--inkoust) 12%,transparent)}
+
+footer{border-top:1px solid var(--linka);padding:34px 0;font-size:14px;color:var(--tlum)}
+.pata{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;align-items:start;padding-top:104px}
+  .menu{display:none}
+  .protiklad,.varovani-delene{grid-template-columns:1fr}
+}
+@media (hover:hover) and (pointer:fine){
+  .znacka:hover .znak{transform:rotate(-90deg)}
+  .znacka:hover .znak::after{transform:translate(-8px,8px)}
+  .menu a:hover{color:var(--inkoust)}
+  .menu a:hover::after{transform:scaleX(1);transform-origin:left}
+  .nav-cta:hover,.btn-hlavni:hover{background:var(--akcent)}
+  .zaver .btn-hlavni:hover{background:var(--akcent-sv)}
+  .btn-hlavni:hover .sipka{transform:translateX(3px)}
+  .btn-vedlejsi:hover{border-color:var(--inkoust);background:var(--papir-tmav)}
+  .zpet:hover{gap:11px;color:var(--inkoust)}
+  summary:hover{color:var(--akcent)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .vstup,.radek > *{animation:none}
+}
+
+/* =========================================================================
+   Moduly jednotlivych sluzeb.
+
+   Kazda sluzba ma jeden vlastni blok navic, aby patero detailu necetlo jako
+   jedna stranka s vymenenymi slovy. Skladba se lisi podle toho, co ma dana
+   sluzba dokazat -- doklady u vedeni, dvojice u propojeni, otazky u zakona,
+   pripad u vyvoje.
+   ========================================================================= */
+
+/* ---------- Vedeni IT: co konkretne prijde kazdy mesic ---------- */
+.doklady{margin-top:36px;border-top:1px solid var(--linka)}
+.doklad{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
+  gap:clamp(14px,3vw,44px);padding:24px 0;border-bottom:1px solid var(--linka);align-items:baseline}
+.doklad p{font-size:15.5px;color:var(--tlum);max-width:62ch}
+.doklady-zaver{margin-top:34px;font-family:var(--display);font-size:clamp(20px,2vw,27px);
+  letter-spacing:-.025em;line-height:1.25;max-width:36ch}
+
+/* ---------- Propojeni: dvojice dnes / potom ---------- */
+.parova{margin-top:36px;display:grid;gap:12px;max-width:1040px}
+.par{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(14px,2.5vw,30px);
+  align-items:center;border:1px solid var(--linka);border-radius:var(--r);
+  background:var(--papir);padding:20px clamp(20px,2.4vw,28px)}
+.parova-hlava{display:grid;font-family:var(--mono);grid-template-columns:1fr auto 1fr;
+  gap:clamp(14px,2.5vw,30px);padding:0 clamp(20px,2.4vw,28px) 12px;
+  font-family:var(--display);font-size:14px;letter-spacing:-.01em;max-width:1040px}
+.parova-hlava span:first-child{color:var(--tlum)}
+.parova-hlava .mezera{width:28px}
+.parova-hlava span:last-child{color:var(--akcent)}
+.par-dnes{color:var(--tlum);font-size:15.5px}
+.par-pak{font-size:15.5px;font-weight:600}
+.par-sipka{width:28px;height:28px;border-radius:50%;background:var(--akcent-sv);
+  display:grid;place-items:center;flex:none}
+.par-sipka svg{width:14px;height:14px;stroke:var(--akcent);fill:none;stroke-width:1.9}
+
+/* ---------- Bezpecnost: tri otazky, na ktere clovek sam odpovi ----------
+   Puvodne to byly tri odstavce k precteni. Ted si na ne clovek odpovi a dole
+   dostane vysledek. Neni to kalkulacka ztrat -- ta by pocitala vymyslena
+   cisla a strasila, a na teze strance stoji veta, ze straseni je spatny
+   obchodni model. Tohle jen secte jeho vlastni odpovedi.
+
+   Jeden z moznych vysledku je "netyka se vas, neresite nic". Kdyby ten
+   vysledek nebyl mozny, byl by to kviz s predem danym koncem. */
+.otazky{margin-top:36px;display:grid;gap:12px}
+.otazka{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);
+  padding:26px clamp(22px,2.6vw,32px);display:grid;grid-template-columns:auto 1fr;
+  gap:clamp(18px,2.2vw,28px);align-items:start;border-width:1px;margin:0;
+  transition:border-color .25s var(--krivka-klid)}
+.otazka:has(input:checked){border-color:color-mix(in srgb,var(--akcent) 40%,transparent)}
+.otazka-c{font-family:var(--mono);font-size:clamp(22px,2vw,28px);color:var(--akcent);
+  line-height:1;letter-spacing:-.01em}
+.otazka legend{padding:0}
+.otazka h3{font-size:clamp(18px,1.4vw,21px);letter-spacing:-.02em;line-height:1.3}
+.otazka p{font-size:15.5px;color:var(--tlum);margin-top:10px;max-width:64ch}
+.otazka p + p{margin-top:10px}
+
+.volby{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.volba{position:relative}
+.volba input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.volba span{display:block;padding:9px 18px;border:1px solid var(--linka);
+  border-radius:999px;font-size:15px;background:var(--papir);
+  transition:border-color .18s var(--krivka-klid),background .18s var(--krivka-klid),
+             color .18s var(--krivka-klid)}
+.volba input:checked + span{background:var(--inkoust);color:var(--papir);
+  border-color:var(--inkoust)}
+.volba input:focus-visible + span{outline:2px solid var(--akcent);outline-offset:3px}
+
+/* Vysledek. Bez skriptu zustane videt vychozi text, ktery nic netvrdi. */
+.vysledek{margin-top:20px;border:1px solid var(--linka);border-radius:var(--r-l);
+  padding:clamp(22px,2.6vw,30px);background:var(--papir);
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.vysledek-znak{width:38px;aspect-ratio:1;border-radius:50%;flex:none;
+  display:grid;place-items:center;background:var(--papir-tmav);
+  font-family:var(--mono);font-size:15px;color:var(--tlum)}
+.vysledek h3{font-size:clamp(17px,1.4vw,20px)}
+.vysledek p{font-size:15.5px;color:var(--tlum);margin-top:8px;max-width:62ch}
+.vysledek[data-stav="dopada"] .vysledek-znak{background:var(--akcent-sv);color:var(--akcent)}
+.vysledek[data-stav="nedopada"] .vysledek-znak{background:var(--akcent);color:var(--papir)}
+.vysledek[data-stav="nevim"] .vysledek-znak{
+  background:color-mix(in srgb,var(--vada) 14%,transparent);color:var(--vada)}
+/* Dodavatel regulovane firmy: pravne mimo zakon, obchodne uvnitr. Neni to vada,
+   tak tady zadny ton --vada -- jen neutralni odkaz dal. */
+.vysledek[data-stav="retez"] .vysledek-znak{
+  background:var(--papir-tmav);color:var(--inkoust)}
+
+/* ---------- Lhuta: retez etap, kde posledni clanek je cil, ne vada ----------
+   Na strance Aplikace je posledni clanek retezu misto, kde to praskne, proto
+   ma napevno --vada. Tady je posledni clanek hotovy stav, takze se prebiji. */
+.lhuta{background:var(--inkoust);color:var(--papir)}
+.lhuta h2{max-width:22ch}
+.lhuta-lead{color:color-mix(in srgb,var(--papir) 66%,transparent);margin-top:16px;max-width:60ch}
+.lhuta .clanek{border-top-color:color-mix(in srgb,var(--papir) 22%,transparent)}
+.lhuta .clanek::before{background:var(--inkoust);
+  border-color:color-mix(in srgb,var(--papir) 34%,transparent)}
+.lhuta .clanek-kdo{color:var(--akcent-sv)}
+.lhuta .clanek p{color:color-mix(in srgb,var(--papir) 62%,transparent)}
+.lhuta .clanek:last-child{border-top-color:var(--akcent-sv)}
+.lhuta .clanek:last-child::before{border-color:var(--akcent-sv)}
+.lhuta .clanek:last-child .clanek-kdo{color:var(--akcent-sv)}
+.lhuta-pozn{margin-top:clamp(26px,3vw,38px);font-family:var(--mono);font-size:12.5px;
+  line-height:1.6;max-width:76ch;color:color-mix(in srgb,var(--papir) 58%,transparent)}
+@media (max-width:900px){
+  .lhuta .clanek{border-left-color:color-mix(in srgb,var(--papir) 22%,transparent)}
+  .lhuta .clanek:last-child{border-left-color:var(--akcent-sv)}
+}
+
+/* Matice se tremi sloupci misto peti -- rezimy zakona, ne dodavatele. */
+.vyberko-3 .vyberko-radek{grid-template-columns:minmax(0,1.5fr) repeat(2,minmax(0,1fr))}
+.vyberko-3 .vyberko-radek > span{align-items:flex-start;font-size:14px;line-height:1.45}
+.vyberko-3 .vyberko-radek:first-child > span{font-size:12px}
+
+@media (hover:hover) and (pointer:fine){
+  .volba:hover span{border-color:var(--inkoust)}
+  .volba input:checked + span:hover{background:var(--inkoust)}
+}
+@media (max-width:600px){
+  .otazka{grid-template-columns:1fr;gap:10px}
+  .vysledek{grid-template-columns:1fr}
+}
+
+/* ---------- Vyvoj: dolozitelny pripad misto slibu ---------- */
+.pripad{margin-top:36px;border:1px solid var(--linka);border-radius:var(--r);overflow:hidden;
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
+.pripad-text{padding:clamp(28px,3.4vw,46px);background:var(--papir)}
+.pripad-text p{color:var(--tlum);margin-top:14px;max-width:52ch}
+.pripad-cisla{background:var(--inkoust);color:var(--papir);
+  padding:clamp(28px,3.4vw,46px);display:grid;align-content:center;gap:24px}
+.cislo b{font-family:var(--display);font-weight:400;font-size:clamp(27px,2.7vw,38px);
+  letter-spacing:-.03em;line-height:1;display:block}
+.cislo span{display:block;margin-top:7px;font-size:14px;
+  color:color-mix(in srgb,var(--papir) 62%,transparent)}
+
+@media (max-width:900px){
+  .doklad,.pripad{grid-template-columns:1fr}
+  .doklad{gap:6px}
+  .parova-hlava{display:none}
+  .par{grid-template-columns:1fr;gap:12px}
+  .par-sipka{transform:rotate(90deg)}
+}
+
+/* ---------- Rannni hlaseni: desky prilitnou na stul a otevrou se ----------
+   Zamer (Petr 25. 8.): ma to vypadat, jako kdyby ti na stul prilitly desky,
+   otevrely se a papir prijel k tobe. Neni to embednuty dokument -- je to
+   skutecny HTML papir, takze se da cist, kopirovat i cist cteckou.
+
+   Scena bezi jednou, az kdyz na ni clovek doscrolluje. Neni scrubovana:
+   scrubovani by znamenalo, ze pri rychlem scrollu se papir nikdy neotevre.
+
+   POZOR na poradi stavu: vychozi stav v CSS je ten KONCOVY, tedy otevrene
+   desky a citelny papir. Zavreny stav nasazuje az skript tridou `pripravena`.
+   Kdyz se skript nenacte, clovek vidi hotovou scenu misto prazdneho mista. */
+.stul{background:var(--inkoust);color:var(--papir);overflow:hidden;position:relative}
+.stul::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(46% 42% at 50% 62%, color-mix(in srgb,var(--akcent) 34%,transparent), transparent 68%),
+    radial-gradient(70% 50% at 50% 108%, color-mix(in srgb,var(--akcent) 26%,transparent), transparent 60%),
+    radial-gradient(50% 40% at 8% 0%, color-mix(in srgb,var(--akcent) 12%,transparent), transparent 72%)}
+.stul .obsah{position:relative}
+.stul h2{max-width:20ch}
+.stul .stul-lead{color:color-mix(in srgb,var(--papir) 62%,transparent);
+  margin-top:16px;max-width:50ch}
+
+.scena{position:relative;margin-top:clamp(38px,5vw,64px);
+  height:clamp(430px,44vw,560px);perspective:1500px;perspective-origin:50% 34%}
+.desky{position:absolute;left:50%;bottom:0;width:min(88%,660px);height:64%;
+  transform:translateX(-50%);transform-style:preserve-3d}
+
+/* Zadni deska lezi na stole. Musi byt svetlejsi nez pozadi, jinak splyne
+   a cela scena se cte jako tmavy klin bez tvaru. */
+.desky-zada{position:absolute;inset:0;border-radius:8px 8px 4px 4px;
+  background:linear-gradient(172deg,#4A544F 0%,#39423E 42%,#2A312E 100%);
+  box-shadow:0 34px 74px rgba(0,0,0,.55);
+  transform:rotateX(64deg);transform-origin:bottom center}
+.desky-zada::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;
+  border-radius:8px 8px 0 0;background:color-mix(in srgb,var(--papir) 26%,transparent)}
+
+/* Prednii klopa je odklopena smerem k divakovi, takze je videt jeji rub.
+   Hrana ohybu ji odlisi od zadni desky -- bez ni jsou to dva stejne klinu. */
+.desky-klopa{position:absolute;inset:0;border-radius:4px 4px 10px 10px;
+  background:linear-gradient(2deg,#1E2422 0%,#2C3330 66%,#39423E 100%);
+  transform:rotateX(112deg);transform-origin:bottom center;
+  box-shadow:0 -14px 34px rgba(0,0,0,.4) inset;
+  transition:transform 1.15s var(--krivka) .12s}
+.desky-klopa::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--papir) 34%,transparent) 12%,
+    color-mix(in srgb,var(--papir) 34%,transparent) 88%,transparent)}
+/* Stitek na deskach. Drobnost, ale prave podle nej se to cte jako desky. */
+.desky-klopa::after{content:'';position:absolute;left:50%;bottom:26px;
+  width:118px;height:26px;border-radius:3px;transform:translateX(-50%);
+  background:color-mix(in srgb,var(--papir) 9%,transparent);
+  border:1px solid color-mix(in srgb,var(--papir) 13%,transparent)}
+
+/* Papir vyjede z desek a prijede k divakovi. Neni to obrazek dokumentu:
+   je to skutecny HTML text, takze se da precist cteckou, oznacit i zvetsit. */
+.papir{position:absolute;left:50%;bottom:8%;width:min(84%,560px);
+  transform:translateX(-50%) translateY(-26%) rotateX(6deg) scale(1);
+  transform-origin:bottom center;
+  background:var(--papir);color:var(--inkoust);border-radius:3px;
+  padding:clamp(22px,2.6vw,34px) clamp(24px,3vw,40px);
+  text-align:left;
+  box-shadow:0 40px 80px rgba(0,0,0,.42), 0 4px 14px rgba(0,0,0,.24);
+  transition:transform 1.25s var(--krivka) .34s, opacity .5s var(--krivka-klid) .34s}
+
+/* Zavreny stav. Nasazuje ho skript, nez scena prijde do zorneho pole. */
+.scena.pripravena .desky-klopa{transform:rotateX(64deg)}
+.scena.pripravena .papir{transform:translateX(-50%) translateY(4%) rotateX(58deg) scale(.9);
+  opacity:0}
+
+/* obsah papiru */
+.papir-hlava{display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;padding-bottom:12px;border-bottom:1px solid var(--linka);flex-wrap:wrap}
+.papir-hlava b{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.3vw,18px);
+  letter-spacing:.02em;text-transform:uppercase}
+.papir-hlava span{font-family:var(--mono);font-size:12.5px;color:var(--tlum)}
+.papir-blok{margin-top:16px}
+.papir-blok > b{display:block;font-family:var(--mono);font-weight:500;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+.papir-radek{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:baseline;
+  font-size:clamp(13px,1.05vw,15px);line-height:1.45;padding:3px 0}
+.papir-cislo{font-family:var(--mono);font-weight:500;color:var(--akcent);
+  min-width:1.6em;text-align:right}
+.papir-znak{color:var(--akcent);font-weight:700}
+.papir .tlum{color:var(--tlum)}
+
+@media (max-width:760px){
+  .scena{height:clamp(400px,110vw,520px);perspective:900px}
+  .desky{width:96%}
+  .papir{width:94%;padding:20px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  /* Zadny prilet -- zavreny stav se vubec nenasadi a papir rovnou lezi. */
+  .scena.pripravena .desky-klopa{transform:rotateX(112deg)}
+  .scena.pripravena .papir{transform:translateX(-50%) translateY(-26%) rotateX(0deg) scale(1);
+    opacity:1}
+}
+
+/* =========================================================================
+   Aplikace na miru -- antikampan na stary model vyvoje.
+
+   Utoci se na MECHANIKU, ne na firmy. Vymezovani vuci konkurenci je v
+   `manta-copy` zakazane (rozhodnuti Petra 24. 7.) a je i slabsi: zakaznik
+   ho cte jako nejistotu. Pojmenovana systemova vada se cte jako vhled.
+   Cisla maji zdroj, viz specs/web-redesign/vyzkum-bolesti-vyvoje.md.
+   ========================================================================= */
+
+/* ---------- Retez rukou, kterymi zadani projde ---------- */
+.retez{margin-top:clamp(34px,4vw,52px);display:grid;
+  grid-template-columns:repeat(4,1fr);gap:0;align-items:stretch}
+.clanek{position:relative;padding:26px clamp(16px,1.8vw,26px) 26px 0;
+  border-top:2px solid var(--linka)}
+.clanek::before{content:'';position:absolute;left:0;top:-7px;width:12px;height:12px;
+  border-radius:50%;background:var(--papir);border:2px solid var(--linka)}
+.clanek h3{font-size:clamp(16px,1.25vw,19px)}
+.clanek p{font-size:14.5px;color:var(--tlum);margin-top:8px}
+.clanek-kdo{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tlum);margin-bottom:9px}
+/* Posledni clanek je ten, kde to praskne */
+.clanek:last-child{border-top-color:var(--vada)}
+.clanek:last-child::before{border-color:var(--vada)}
+.clanek:last-child .clanek-kdo{color:var(--vada)}
+.retez-zaver{margin-top:clamp(28px,3vw,40px);font-family:var(--display);
+  font-size:clamp(20px,2.1vw,29px);letter-spacing:-.025em;line-height:1.22;max-width:30ch}
+
+/* ---------- Sto projektu, sto ctverecku ----------
+   Puvodne to byl pruh, jehoz dily dorostly pri scrollu. Antigravity to
+   oznacila za nejotrepanejsi korporatni prvek posledni dekady a mela pravdu:
+   dorustajici cislo je efekt, ne dukaz.
+
+   Ctverecky rikaji totez doslova -- sto projektu, kazdy jeden ctverecek --
+   a nehybou se. Misto pasivniho sledovani je tu interakce: najeti na polozku
+   legendy ztlumi ostatni skupiny, takze si clovek muze vzit jednu po druhe. */
+.data{background:var(--papir-tmav)}
+.data-popis{color:var(--tlum);max-width:52ch;margin-top:16px}
+
+.sto{margin-top:clamp(30px,3.6vw,44px);display:grid;
+  grid-template-columns:repeat(25,1fr);gap:clamp(4px,.55vw,7px);
+  max-width:760px}
+.d{aspect-ratio:1;border-radius:2px;
+  transition:opacity .22s var(--krivka-klid),transform .22s var(--krivka)}
+.d-ok{background:var(--akcent)}
+.d-potize{background:color-mix(in srgb,var(--akcent) 26%,var(--papir))}
+.d-konec{background:var(--vada)}
+
+.sto-legenda{margin-top:26px;display:flex;flex-wrap:wrap;
+  gap:10px clamp(18px,2.4vw,34px)}
+.sto-polozka{display:flex;align-items:center;gap:10px;font-size:15px;
+  cursor:default;transition:opacity .22s var(--krivka-klid)}
+.sto-polozka i{width:13px;height:13px;border-radius:2px;flex:none}
+.sto-polozka b{font-family:var(--mono);font-weight:500}
+.sto-polozka span{color:var(--tlum)}
+
+@media (hover:hover) and (pointer:fine){
+  .data:has(.sto-polozka:hover) .d{opacity:.16}
+  .data:has(.sto-polozka:hover) .sto-polozka:not(:hover){opacity:.45}
+  .data:has([data-sk="ok"]:hover) .d-ok,
+  .data:has([data-sk="potize"]:hover) .d-potize,
+  .data:has([data-sk="konec"]:hover) .d-konec{opacity:1;transform:scale(1.14)}
+}
+.sto-polozka:focus-visible{outline:2px solid var(--akcent);outline-offset:4px}
+
+.data-zdroj{margin-top:22px;font-family:var(--mono);font-size:12.5px;
+  line-height:1.6;color:var(--tlum);max-width:76ch}
+.data-zdroj b{font-weight:500;color:var(--inkoust)}
+
+@media (max-width:760px){
+  .sto{grid-template-columns:repeat(20,1fr)}
+}
+
+/* ---------- Modelove rozpocty ---------- */
+.rozpocty{margin-top:clamp(34px,4vw,50px);display:grid;
+  grid-template-columns:repeat(3,1fr);gap:14px}
+.rozpocet{border:1px solid var(--linka);border-radius:var(--r);
+  padding:clamp(24px,2.6vw,32px);background:var(--papir);display:flex;
+  flex-direction:column;justify-content:space-between;gap:22px}
+.rozpocet p{font-size:15px;color:var(--tlum);margin-top:9px}
+.rozpocet-cena{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.rozpocet-drive{font-size:15px;color:var(--tlum);text-decoration:line-through;
+  text-decoration-thickness:1px}
+.rozpocet-dnes{font-family:var(--display);font-size:clamp(22px,2.2vw,30px);
+  letter-spacing:-.03em;color:var(--akcent)}
+.rozpocty-pozn{margin-top:18px;font-size:13.5px;color:var(--tlum);max-width:70ch}
+
+@media (max-width:900px){
+  .retez{grid-template-columns:1fr}
+  .clanek{padding:22px 0 22px 26px;border-top:0;border-left:2px solid var(--linka)}
+  .clanek::before{left:-7px;top:22px}
+  .clanek:last-child{border-top:0;border-left-color:var(--vada)}
+  .rozpocty{grid-template-columns:1fr}
+  .pruh{height:auto;flex-direction:column}
+  .dil{padding:16px 14px}
+}
+
+/* ---------- Vysledky v cislech ----------
+   Petr 25. 8.: "Mame moc textu na jednom bilem pozadi, to musime rozbit.
+   Potrebujeme infograficky nastinit vystupy a prinosy kazde sluzby, idealne
+   v cislech a presnych vyjadrenich, co vlastne udelame."
+
+   Kazde cislo ma nad sebou mikro-diagram, ktery je ukazuje: sedm dni je sedm
+   carek, nula je preskrtnuty tvar, ctyri tydny jsou ctyri bloky. Cislo se
+   necte, ono se **spocita**, a to je rozdil proti popisku pod ikonou.
+
+   Cisla NEDORUSTAJI -- to jsme zavrhli jako klise. Nabihaji mikro-diagramy,
+   protoze u nich ma pohyb duvod: ukazuji pocet. */
+.vysledky{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.vysledky::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 70% at 78% 10%,
+    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 62%)}
+.vysledky .obsah{position:relative}
+.vysledky h2{max-width:20ch}
+.vysledky-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);
+  margin-top:16px;max-width:52ch}
+
+.cisla{margin-top:clamp(36px,4.4vw,58px);display:grid;
+  grid-template-columns:repeat(4,1fr);gap:0}
+.cislo-blok{padding:0 clamp(16px,2vw,28px);
+  border-left:1px solid color-mix(in srgb,var(--papir) 14%,transparent)}
+.cislo-blok:first-child{padding-left:0;border-left:0}
+.cislo-vizual{display:block;height:34px;width:auto;margin-bottom:18px;overflow:visible}
+.cislo-vizual [data-i]{opacity:0;transform:scale(.6);transform-origin:center;
+  transition:opacity .4s var(--krivka-klid),transform .5s var(--krivka)}
+.vysledky:not(.pripravena) .cislo-vizual [data-i]{opacity:1;transform:none;
+  transition-delay:calc(var(--i) * .045s)}
+.cislo-hodnota{display:block;font-family:var(--display);font-weight:400;
+  font-size:clamp(34px,4vw,54px);letter-spacing:-.04em;line-height:.95}
+.cislo-jednotka{font-size:.46em;letter-spacing:-.01em;margin-left:.12em;
+  color:color-mix(in srgb,var(--papir) 60%,transparent)}
+.cislo-popis{display:block;margin-top:12px;font-size:15px;line-height:1.42;
+  color:color-mix(in srgb,var(--papir) 66%,transparent);max-width:26ch}
+.cisla-pozn{margin-top:clamp(26px,3vw,38px);font-family:var(--mono);
+  font-size:12.5px;line-height:1.6;max-width:74ch;
+  color:color-mix(in srgb,var(--papir) 58%,transparent)}
+
+@media (max-width:900px){
+  .cisla{grid-template-columns:1fr 1fr;gap:30px 0}
+  .cislo-blok:nth-child(odd){padding-left:0;border-left:0}
+}
+@media (max-width:560px){
+  .cisla{grid-template-columns:1fr;gap:26px}
+  .cislo-blok{padding-left:0;border-left:0;
+    border-top:1px solid color-mix(in srgb,var(--papir) 14%,transparent);
+    padding-top:24px}
+  .cislo-blok:first-child{border-top:0;padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .vysledky.pripravena .cislo-vizual [data-i]{opacity:1;transform:none}
+}
+
+/* =========================================================================
+   Dlouhodobe vedeni IT -- vizualy prinosu.
+
+   Petr 25. 8.: "Nechceme to prodavat tak, ze se neco nekde deje a nekdo nad
+   tim drzi ruku. Majitel si to prelozi jako 'vyresim si to sam a usetrim
+   padesat tisic'. Musi tam byt vyjmenovane, co to prinese."
+
+   Proto tri vizualy misto obecneho popisu: kde jsou penize, jak se vybira
+   dodavatel a co prijde kazdy mesic na stul.
+   ========================================================================= */
+
+/* ---------- Kde jsou penize ----------
+   Rozpad IT nakladu po polozkach. Nekolik radku je oznacenych jako to,
+   co firma plati zbytecne -- prave tohle je nalez, kvuli kteremu ma revize
+   smysl. Sirka pruhu odpovida castce, takze pomer je videt driv nez cislo. */
+.naklady{margin-top:clamp(32px,4vw,46px);display:grid;gap:10px;max-width:780px}
+.naklad{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) auto;
+  gap:clamp(12px,2vw,22px);align-items:center;font-size:15px}
+.naklad-jmeno{color:var(--tlum)}
+.naklad-pruh{height:22px;border-radius:4px;background:var(--papir-tmav);
+  position:relative;overflow:hidden}
+.naklad-pruh i{position:absolute;inset:0 auto 0 0;border-radius:4px;
+  background:color-mix(in srgb,var(--akcent) 30%,var(--papir));
+  width:var(--w);transition:width .9s var(--krivka)}
+.naklad-castka{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+.naklad.zbytecny .naklad-pruh i{background:color-mix(in srgb,var(--vada) 34%,var(--papir))}
+.naklad.zbytecny .naklad-jmeno{color:var(--inkoust)}
+.naklad.zbytecny .naklad-castka{color:var(--vada)}
+.naklad-znacka{font-family:var(--mono);font-size:11.5px;color:var(--vada);
+  letter-spacing:.06em;text-transform:uppercase}
+.naklady.pripravena .naklad-pruh i{width:0}
+.naklady-zaver{margin-top:26px;font-family:var(--display);
+  font-size:clamp(19px,2vw,26px);letter-spacing:-.025em;line-height:1.25;
+  max-width:38ch}
+
+/* ---------- Vyberko ----------
+   Matice dodavatelu proti parametrum. Jeden radek vyhraje, ostatni jsou
+   videt i s duvodem, proc ne. Ukazuje, ze vyber neni pocit, ale porovnani. */
+.vyberko{margin-top:clamp(32px,4vw,46px);border:1px solid var(--linka);
+  border-radius:var(--r-l);overflow:hidden;background:var(--papir)}
+.vyberko-radek{display:grid;
+  grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--linka)}
+.vyberko-radek:first-child{border-top:0;background:var(--papir-tmav)}
+.vyberko-radek > span{padding:14px clamp(12px,1.6vw,20px);font-size:14.5px;
+  display:flex;align-items:center;gap:8px}
+.vyberko-radek:first-child > span{font-family:var(--mono);font-size:12px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--tlum)}
+.vyberko-radek.vitez{background:var(--akcent-sv);
+  box-shadow:inset 3px 0 0 var(--akcent)}
+.vyberko-radek.vitez > span:first-child{font-weight:600}
+.vyberko-znak{width:16px;height:16px;flex:none}
+.vyberko-znak svg{width:16px;height:16px;fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.ano svg{stroke:var(--akcent)} .ne svg{stroke:var(--vada)}
+.vyberko-pozn{margin-top:16px;font-family:var(--mono);font-size:12.5px;
+  color:var(--tlum);max-width:74ch;line-height:1.6}
+
+/* ---------- Co roste ----------
+   Retez: jedna vec vede k druhe. Vedeni IT se neprodava tim, ze nekdo
+   dohlizi, ale tim, co z toho firma ma dal. */
+.rust{margin-top:clamp(32px,4vw,48px);display:grid;
+  grid-template-columns:repeat(4,1fr);gap:0}
+.rust-krok{position:relative;padding:0 clamp(14px,1.8vw,26px) 0 0}
+.rust-krok::before{content:'';position:absolute;left:0;top:15px;right:14px;
+  height:1px;background:color-mix(in srgb,var(--akcent) 40%,transparent)}
+.rust-krok::after{content:'';position:absolute;left:0;top:10px;width:11px;
+  height:11px;border-radius:50%;background:var(--papir);
+  border:2px solid var(--akcent)}
+.rust-krok:last-child::before{display:none}
+.rust-krok h3{margin-top:38px;font-size:clamp(16px,1.3vw,19px)}
+.rust-krok p{font-size:14.5px;color:var(--tlum);margin-top:7px}
+
+@media (max-width:900px){
+  .naklad{grid-template-columns:1fr auto;gap:6px 14px}
+  .naklad-pruh{grid-column:1 / -1;order:2}
+  .vyberko-radek{grid-template-columns:minmax(0,1.2fr) repeat(4,minmax(0,1fr));
+    font-size:13px}
+  .vyberko-radek > span{padding:11px 8px;font-size:13px}
+  .rust{grid-template-columns:1fr;gap:22px}
+  .rust-krok{padding:0 0 0 26px}
+  .rust-krok::before{left:5px;top:22px;right:auto;bottom:-22px;width:1px;height:auto}
+  .rust-krok::after{left:0;top:4px}
+  .rust-krok h3{margin-top:0}
+}
+
+
+/* Text jen pro ctecku obrazovky. Vizualne pryc, ale zustava ve strome
+   pristupnosti -- display:none nebo visibility:hidden by ho odstranily uplne. */
+.jen-ctecka{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Nadpis otazky v self-checku. Drive to byl <legend>, ktery ale musi byt prvni
+   ve <fieldset>, jinak ctecka precte jen Ano/Ne/Nevim bez otazky. */
+.otazka-nadpis{margin:0}
+
+/* Interaktivni prvky maji viditelnou hranici, dekorativni cary zustavaji jemne. */
+.volba span,.otazka{border-color:var(--obrys)}
+.otazka{border-color:var(--linka)}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Nesourodé podklady vlevo se mění v jednu hotovou aplikaci vpravo" fill="none">
+<title>Nesourodé podklady vlevo se mění v jednu hotovou aplikaci vpravo</title>
+  <g transform="rotate(-6 57 56)"><rect x="26" y="34" width="62" height="44" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/></g>
+  <g transform="rotate(4 61 97)"><rect x="34" y="78" width="54" height="38" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/></g>
+  <g transform="rotate(-3 55 133)"><rect x="22" y="116" width="66" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/></g>
+  <path d="M104 100h44" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M148 94l10 6-10 6" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="172" y="40" width="124" height="120" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M172 62h124" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="184" cy="51" r="3" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M188 82h76" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M188 95h60" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M188 108h88" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M188 121h52" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M188 134h70" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+</svg>

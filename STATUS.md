@@ -1,9 +1,47 @@
+## 2026-08-25 -- bezi redesign, do produkce se zatim nesaha
+
+Kompletni redesign webu bezi v `../specs/web-redesign/` (task T0825-7). Osm stranek
+stoji jako prototypy: homepage, pet detailu sluzeb, Kdo jsem a rozcestnik clanku.
+
+**Do `web/` se zatim nesaha.** Petr rozhodl nasadit az cely web najednou vcetne
+mutaci `sk/` a `en/` -- osm novych stranek vedle padesati sedmi starych by slo
+proti duvodu, proc redesign vznikl.
+
+**Nez na `web/` nekdo sahne:** `CLAUDE.md` i `PRINCIPLES.md` v teto slozce porad
+predepisuji EB Garamond, kremovou paletu a CTA "Domluvit schuzku" z doby Calendly.
+Redesign presne tohle odstranuje. Reviduje se v tasku T0825-20 a **ma prednost pred
+dalsi stavbou** -- jinak podle nich vznikne zbytek webu.
+
+Novy designovy jazyk vcetne duvodu u kazdeho rozhodnuti: `../specs/web-redesign/STAV.md`.
+
+---
+
 # Manta IT Web -- STATUS
-> Aktualizovano: 2026-08-24 | Oblast: VENTURES
-> Zdroje: audit 24. 8. (task T0824-17), CLAUDE.md, PRINCIPLES.md, git log
+> Aktualizovano: 2026-08-25 | Oblast: VENTURES
+> Zdroje: specs/web-redesign/STAV.md, tasky T0825-7 a T0825-28, git log
 
 ## Stav
-**active** | Priorita: MEDIUM | Posledni zmena: 2026-08-24
+**active** | Priorita: HIGH | Posledni zmena: 2026-08-25
+
+### Redesign rozjety (task T0825-7)
+Petr 25. 8.: "mam AI slop web". Skilly design-taste-frontend a emil-design-eng
+nezavisle oznacily dva prvky tohoto webu za doslovne AI tells -- serif display
+(EB Garamond) a kremovo-bezovou paletu. Oboji je v PRINCIPLES.md predepsane
+jako zavazne, takze pravidla drzi prave to, co je spatne. Revize tri .md
+souboru je task T0825-20.
+
+**Prototypy zijou v `specs/web-redesign/prototypy/`**, ne v tomto repu:
+homepage, vzor detailu sluzby a rozcestnik clanku. Petr schvalil homepage.
+Detail a blog cekaji na jeho verdikt. Stav a rozhodnuti: `specs/web-redesign/STAV.md`.
+
+**Novy jazyk:** Outfit + Manrope (zadny serif), papir #FBFBF9 / inkoust #101413
+/ jedna zelena #0B6E4F. Kontakt ma tri cesty (napsat, zavolat, poslat termin)
+a vyber terminu bez kalendare -- klik na den v tydnu odkryje tri nejblizsi data.
+
+**Zbyva:** hero animace (T0825-28, Petr zamitl muj WebGL pokus), detaily
+zbylych sluzeb, stranka Kdo jsem, prenos do produkce.
+
+### Drivejsi stav
 
 ### Co se stalo 24. 8. -- audit a opravy (task T0824-17)
 Strojovy audit 65 stranek (typografie, meta, canonical, nadpisy, jazyky, JSON-LD,

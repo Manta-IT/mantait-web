@@ -34,14 +34,37 @@ Manta IT | mantait.cz | ${TEL}`,
   kontakt: {
     subject: 'Zpráva z kontaktního formuláře',
     replySubject: 'Mám vaši zprávu - Manta IT',
-    fields: ['jmeno', 'firma', 'telefon', 'email', 'zprava'],
-    reply: (d) => `Dobrý den,
+    // `cesta` a `termin` prisly s novym kontaktem (napsat / zavolat / poslat
+    // termin). Bez nich by vybrany termin nikdy nedorazil -- formular by ho
+    // sebral a Worker zahodil.
+    fields: ['cesta', 'jmeno', 'firma', 'telefon', 'email', 'zprava', 'termin'],
+    reply: (d) => {
+      if (d.cesta === 'zavolat') {
+        return `Dobrý den,
+
+mám vaše číslo a zavolám vám do jednoho pracovního dne.
+Kdyby to spěchalo dřív, volejte ${TEL}.
+
+Petr Kokoška
+Manta IT | mantait.cz | ${TEL}`;
+      }
+      if (d.cesta === 'termin') {
+        return `Dobrý den,
+
+termín ${d.termin || 'jste vybrali'} jsem si poznamenal a potvrdím vám ho
+mailem i s odkazem na hovor. Kdyby se čas nehodil, napište jiný.
+
+Petr Kokoška
+Manta IT | mantait.cz | ${TEL}`;
+      }
+      return `Dobrý den,
 
 díky za zprávu, dorazila mi. Ozvu se vám do jednoho pracovního dne.
 Kdyby to spěchalo, volejte ${TEL}.
 
 Petr Kokoška
-Manta IT | mantait.cz | ${TEL}`,
+Manta IT | mantait.cz | ${TEL}`;
+    },
   },
 };
 
@@ -173,6 +196,32 @@ async function handleForm(request, env, formName) {
 // skutecnemu Gmail API bez toho, aby bezel cely Worker.
 export { b64, b64url, hlavicka, accessToken, sendMail };
 
+/* Presmerovani po nasazeni redesignu 26. 8. 2026.
+
+   Stranky, ktere jeste nemaji novou podobu, se stahuji z webu. Nemazou se:
+   301 posle navstevnika i vyhledavac na nejblizsi zive misto, takze se
+   neztrati ani pozice ve vyhledavani, ani clovek, ktery prisel ze stareho
+   odkazu nebo z rozeslaneho mailu.
+
+   Proc tady a ne v `_redirects`: web bezi jako Worker se statickymi assety,
+   ne jako Pages. Zpracovani `_redirects` se u Workers lisi podle nastaveni,
+   takze pravidlo, na kterem zavisi zive URL, patri do kodu, kde je jiste.
+   Soubor `_redirects` zustava jako citelny seznam tehoz. */
+const PRESMEROVANI = new Map([
+  ['/ai', '/'],
+  // Pet zanikajicich cest: v nove strukture jsou to radky v ceniku, ne stranky.
+  ['/reseni-ai', '/'],
+  ['/reseni-naklady', '/reseni-vedeni-it'],
+  ['/reseni-nastroje', '/reseni-vedeni-it'],
+  ['/reseni-projekt', '/reseni-vedeni-it'],
+  ['/reseni-web', '/weby'],
+  // Novy web ma formular primo na hlavni strance.
+  ['/kontakt', '/#napiste'],
+]);
+
+// Pracovni verze brandu nemaji byt verejne vubec.
+const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
@@ -181,6 +230,15 @@ export default {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       return handleForm(request, env, match[1]);
     }
+
+    // Bez koncoveho lomitka, at /kontakt a /kontakt/ konci stejne.
+    const cesta = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
+    const cil = PRESMEROVANI.get(cesta);
+    if (cil) return Response.redirect(new URL(cil, request.url), 301);
+    if (STAZENE_PREFIXY.some(p => cesta === p.replace(/\/$/, '') || cesta.startsWith(p))) {
+      return Response.redirect(new URL('/', request.url), 301);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };

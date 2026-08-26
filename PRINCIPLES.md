@@ -3,18 +3,30 @@
 Detailní bible designu, copywritingu, pozicování a SEO. Pro lidi i pro Claude Code.
 Pro tlustá pravidla viz `CLAUDE.md`. Tento dokument vysvětluje **proč**.
 
-Zdroje: 4 subagent reporty (UX, copywriting, SEO/GEO, competitor) + Petrova rozhodnutí napříč 9 iteracemi designu (květen 2026).
+Zdroje: 4 subagent reporty (UX, copywriting, SEO/GEO, competitor) + Petrova rozhodnutí napříč 9 iteracemi designu (květen 2026) + redesign srpen 2026 (`../specs/web-redesign/STAV.md`).
+
+> **POZOR: běží redesign (T0825-7).** Design pravidla níže popisují NOVÝ systém.
+> Produkce nese starý design (béžová + EB Garamond) až do nasazení celého webu
+> najednou. Historie starého systému je v changelogu dole.
 
 ---
 
 ## 1. Pozicování
 
 ### Cílovka
-- **Ne-tech SMB CEO 50-300 lidí v ČR**, bez vlastního IT vedení.
+- **Ne-tech SMB CEO do ~250 lidí v ČR**, bez vlastního IT vedení.
 - Mají infrastrukturu (servery, aplikace, dodavatelé), ale nemají IT manažera.
 - 50+ let, často brýle na blízko.
 - **Nesnášejí IT žargon.** ITáci je v minulosti často shazovali nebo z nich dělali blbce.
 - Web cíleně mluví srozumitelně a věcně.
+
+### Pozice (korekce Petra 25. 8. 2026)
+Nejsme IT manager, který spravuje počítače -- jsme **technologický lídr, který
+vede digitální transformaci firmy**. Stránka vedení IT prodává vedení a směr,
+doklady (měsíční zápis, kontrola dodavatelů) jsou důkaz, ne argument.
+Vzor: `sluzba-vedeni-it.html` v prototypech. "Digitální transformace" je tu
+povolená jako pojmenování služby (title, hero) -- v běžném prodejním textu
+zůstává na indexu buzzwordů.
 
 ### Whitespace v segmentu
 Konkurenční landscape (květen 2026):
@@ -70,7 +82,7 @@ z webu i "IT má firmu posouvat. Ne zaměstnávat vedení." (ta smí zůstat v l
 | Lighthouse-ready | rychlý a kvalitní web |
 
 ### Výjimky — brand názvy zachovat
-- Mapa AI příležitostí
+- AI plán do 48 hodin, AI zaměstnanec
 - Web Standard, Web Quick
 - IT governance (Petr o tom rozhodl, je to název hlavní služby)
 - Product Discovery a Product Ownership (název dílčí služby)
@@ -78,11 +90,13 @@ z webu i "IT má firmu posouvat. Ne zaměstnávat vedení." (ta smí zůstat v l
 - Project Manager, Product Owner, Head of IT (skutečné názvy minulých pozic v referencích)
 
 ### CTA katalog (sjednocené formulace)
-- **Primary CTA** (vede na `/kontakt`): "Domluvit schůzku"
+- **Primary CTA** (vede na kontakt): **"Napište mi"** (od 25. 8. 2026; nahradilo
+  "Domluvit schůzku" z doby Calendly -- to už se nevrací).
 - **Sekundární CTA** (vede na detail page): "Detail" / "Více informací"
-- **Reassurance pod CTA:** "30 minut. Online nebo u vás. Bez závazku."
-- **Headlines kontaktních sekcí:** "Začněme rozhovorem."
-- **NIKDY:** "Objednat AI Assessment" (vede na 30min hovor, ne na objednávku — falešný slib).
+- **Dvě CTA se stejným cílem v jedné liště nikdy** (proto v menu není položka
+  Kontakt vedle tlačítka "Napište mi").
+- **NIKDY:** "Objednat ..." u služeb, které vedou na hovor, ne na objednávku
+  (falešný slib).
 
 ### Gramatické pasti
 - "vedení" (n.) → shoda neutrum: "vedení vědělo, nevidělo" (ne "věděla, neviděla")
@@ -103,106 +117,87 @@ Před commitem si přečti nahlas. Pokud zní jako:
 
 ## 3. Design pravidla
 
-### Color tokens
+### Proč tenhle jazyk stavby
+
+Skilly `design-taste-frontend` a `emil-design-eng` jmenovitě označují dva prvky
+starého webu jako AI tells: **serif jako signál prémiovosti** (EB Garamond)
+a **krémovo-béžovou paletu s tlumeným akcentem**. Nový systém jde proti oběma.
+
+### Color tokens (redesign, srpen 2026)
 ```css
---bg:               #f1ede4;  /* main beige */
---bg-alt:           #ebe5d6;  /* darker beige for rhythm */
---bg-card:          #f8f5ec;  /* card background */
---bg-dark:          #16201d;  /* IT governance, differentiator */
-
---accent:           #2d5447;  /* deep green */
---accent-warm:      #c9b88a;  /* warm gold for dark sections */
-
---text:             #16201d;  /* primary text */
---text-muted:       #2e3835;  /* secondary text — POUŽÍVAT */
---text-secondary:   #3a4744;  /* alternative for 13-14px texts */
---text-faint:       #5d6a66;  /* JEN PRO HAIRLINES / DECORATIVE, NIKDY PRO TEXT */
-
---text-on-dark:        #f1ede4;
---text-on-dark-muted:  rgba(241,237,228,0.75);
---text-on-dark-faint:  rgba(241,237,228,0.65);  /* zvýšeno z 0.5 kvůli kontrastu */
-
---border:           #e0dccf;
---border-strong:    #d8d1bf;
+--papir:   #FBFBF9;  /* pozadí */
+--inkoust: #101413;  /* text, tmavé sekce */
+--zelena:  #0B6E4F;  /* JEDINÝ akcent na stránce */
+--vada:    #9A3F2B;  /* výhradně data, která varují; nikdy dekorace, nikdy CTA */
 ```
+Pět spektrálních odstínů (`#12A06B #12908F #3F6FC4 #B0762A #B4553C`) patří
+výhradně kanálům hranolu na stránce AI zaměstnance, mimo ni se nepoužívají --
+jinak se z jednoho akcentu stane duha. *(Paleta schválena Petrem 25. 8. 2026.)*
 
-### Color contrast pravidla
-- Body text musí mít WCAG AA (4.5:1) minimum, AAA (7:1) ideál (cílovka 50+).
-- `--text-muted` na `--bg`: 7.5:1 ✓
-- `--text-faint` na `--bg`: 3.2:1 FAIL → nepoužívat pro text
-- `--accent` na `--bg`: 6.7:1 ✓ (OK pro CTA, nadpisy)
-- `--accent-warm` na `--bg-dark`: 8.6:1 ✓
-- `bio-photo-name` (text na monogramu): plný `--text`, ne rgba
+### Typografie
+- **Outfit** display (nadpisy), **Manrope** text, **JetBrains Mono** JEN pro
+  strojová data (štítky, časy, čísla, zdroje) -- nikdy na prodejní text,
+  z webu by dělal terminál. Žádný serif.
+- Body text min. 15 px, drobné popisky min. 12 px, tap targets >= 44 px.
+- Kontrast: WCAG AA (4.5:1) minimum všude, AAA ideál (cílovka 50+).
+  Poznámky pod čarou, které nesou výhradu, min. ~58 % inkoustu na papíru.
 
-### Font sizes
-| Element | Minimum | Doporučeno |
-|---|---|---|
-| Body (paragrafy v kartách) | 15px | 16px |
-| Bullety v kartách | 14px | 15px |
-| Labely (UPPERCASE eyebrow) | 12px | 12-13px |
-| Footer texty | 14px | 14px |
-| Nav links | 14px | 14px |
-| Nav CTA | 14px | 14px |
-| Tap target height | 44px | 44-48px |
+### Poloměry -- hierarchie, ne jedna hodnota
+`--r-s` 8 px (štítky, ikony), `--r` 10 px (tlačítka, pole), `--r-l` 14 px
+(velké panely). Jedna hodnota na všem byl vyzkoušený a zamítnutý extrém:
+uniformita není systém. Výjimky jen fyzické objekty (desky, papír).
 
-### Italic EB Garamond — kdy ano, kdy ne
-**ANO:**
-- `<em>` uvnitř h1, h2 nadpisů (accent slovo)
-- Standalone pull-quotes (velké, 22px+, centered)
-- Process tagline ("Žádná teorie bez realizace.")
+### Pohyb (podle Emila Kowalského)
+- Jedna křivka: `cubic-bezier(.23,1,.32,1)`.
+- Stisk do 160 ms, hover 180-250 ms, stagger po 60 ms.
+- Hover vždy v `@media (hover:hover) and (pointer:fine)` -- na dotyku by zůstal zaseknutý.
+- **Výchozí stav v CSS je vždy koncový**; zavřený nasazuje skript. Odkrývá
+  sdílená `odkryj()` v `sluzba.js` s tvrdým časovačem 5 s (samotný
+  IntersectionObserver v uspané záložce nikdy nepromluví).
+- Žádná dorůstající čísla (klišé; nabíhat smí jen diagram, který ukazuje počet).
+- Žádné node diagramy (Petr zakázal jmenovitě).
+- Animace jen s účelem (skill `animate` má rozhodovací bránu); nekonečná
+  smyčka jen tam, kde by zastavení lhalo (hranol = běžící služba).
 
-**NE:**
-- Subtitle pod jménem karty (čte se jako druhý titulek)
-- Tagline pod ikonou (vypadá jako podnadpis)
-- Text na barevném pozadí (bio-photo-name)
-- Texty pod 15px (italic + malé = nečitelné)
+### Skladba sekcí
+- Každá sekce jiná skladba -- žádné tři stejné karty vedle sebe (AI tell).
+- Nikde dvě tmavé sekce po sobě (slily by se v jeden blok).
+- Interakce > pasivní scroll: aspoň jedno místo, kde návštěvník něco přepne
+  (self-check zákona, hover legendy sta čtverečků, kanály hranolu).
 
-### Vizuální rytmus pozadí
-Sekce by se měly střídat: `--bg` → `--bg-alt` → `--bg` → `--bg-alt` → `--bg-dark` → `--bg-alt` → footer.
-
-Tmavé sekce (`--bg-dark`) primárně pro **emocionální moment**:
-- IT governance hlavní služba (homepage)
-- "Proč to není konzultant" (differentiator)
-- Hover stav sub-services (translation z light do dark)
+### Ilustrace
+SVG kreslené generátorem (`prototypy/obrazky/generuj.py`), jeden mechanismus
+pro celou sadu: blok (systém/dokument), linka (cesta), kruh (rozhodnutí).
+Test soudržnosti: každý tvar musí jít pojmenovat slovem z naší práce; co
+nejde, patří pryč. Kreslit s vědomím nejmenšího místa použití -- linky 1,5 px
+při zmenšení 4x zmizí. Změna palety = přegenerovat celou sadu, ne kreslit ručně.
 
 ---
 
 ## 4. Struktura nabídky
 
-### Pyramid pricing (od nejdražšího po nejlevnější)
+### Pět služeb (redesign, srpen 2026)
 
-```
-1. IT governance (paušál od 50 000 Kč/měsíc)
-   └─ pokrývá všech 5 pain pointů + obsahuje v sobě všechny dílčí služby
-   
-2. Dílčí zakázky (10 000 Kč/den, nebo individuálně)
-   ├─ Projektové řízení
-   ├─ Product Discovery a Product Ownership
-   ├─ Zavádění a adopce nástrojů
-   └─ IT revize (individuálně)
-   
-3. Produktové služby (pevná cena)
-   ├─ Mapa AI příležitostí 15 000 Kč (2x 1h workshop online, výstup report)
-   ├─ Web Standard 16 900 Kč (do 2 týdnů)
-   └─ Web Quick 8 900 Kč (do týdne)
-   
-4. Specializace (od 15 000 Kč)
-   └─ Raynet CRM
-```
-
-### Selling point dlouhodobosti
-**Klíčová zpráva v IT governance:** "Pokud máte více než jeden problém z těch výše, dejte si rovnou paušál. Vyjde to levněji a nezůstanete bez nikoho, až se vynoří další věc."
-
-Aktuální copy v `index.html` v `.governance-desc` toto vyjadřuje. Při změně kopírovat tuto logiku.
-
-### Pain points → Služby mapping
-| # | Pain | Hlavní řešení |
+| Služba | Cena | Vlastní blok stránky |
 |---|---|---|
-| 01 | Propojení systémů a automatizace procesů | Product Discovery a Product Ownership / IT governance |
-| 02 | Náklady rostou, chybí přehled a reporting | IT revize / IT governance |
-| 03 | Nový systém nebo aplikace bez jasného zadání | Product Discovery a Product Ownership |
-| 04 | Lidé špatně používají, co máte | Zavádění a adopce nástrojů |
-| 05 | Rozjetý projekt, který se vymyká | Projektové řízení |
+| Vedení IT (digitální transformace) | od 50 000 Kč měsíčně | čtyři doklady každý měsíc; VZOR pro ostatní |
+| Aplikace a systémy na míru | od 50 000 Kč, pevná cena za rozsah | antikampaň na starý model vývoje |
+| Propojení a automatizace | podle rozsahu | okruh čtyř systémů, dvojice dnes -> potom |
+| Bezpečnost a nový zákon | podle rozsahu | self-check zákona (Ano/Ne/Nevím) |
+| AI zaměstnanec | 89 000 Kč, provoz od 8 000 Kč měsíčně | hranol; protiklad proti chatbotu |
+
+Ceník na homepage navíc: AI plán do 48 hodin 9 900 Kč; dílčí zakázky
+10 000 Kč/den; web 16 900 / 8 900 Kč; dotace na klíč 30 000 Kč (končí podáním).
+
+Pět stránek sdílí kostru (`sluzba.css`/`sluzba.js`), ale prostředek se liší --
+pět stránek se stejnou skladbou a vyměněnými slovy by četlo jako generované.
+Sekce "kdy vám to nedoporučím" je na všech pěti. Staré cesty `reseni-ai`,
+`reseni-naklady`, `reseni-nastroje`, `reseni-projekt`, `reseni-web` v nové
+struktuře zanikají (řádky v ceníku) -- o přesměrování zatím nerozhodnuto.
+
+Kategorie služeb z T0821-3 (Consulting/Advisory, Enterprise Architecture...)
+jsou devíza pod hlavičkou interim IT governance, NE menu webu -- je to žargon
+dodavatele. Na webu jsou jako sliby v první osobě.
 
 ---
 
@@ -225,8 +220,9 @@ Allow všech AI crawlerů explicitně:
 
 ### JSON-LD schémata per page
 - `o-mne.html`: Person s knowsAbout, alumniOf
-- `reseni-ai.html`: Service (Mapa AI příležitostí) + Offer (15 000 Kč)
-- `reseni-*.html` ostatní (8x): Service bez Offer (cena není pevná)
+- `reseni-ai.html`: Service (AI plán do 48 hodin) + Offer (9 900 Kč)
+- `reseni-*.html` ostatní: Service bez Offer (cena není pevná)
+- nové detaily služeb: FAQPage se generuje samo z viditelných otázek (`sluzba.js`)
 - `weby.html`: Service × 2 + FAQPage
 - `raynet.html`: Service + FAQPage
 - `kontakt.html`: ContactPage + ContactPoint
@@ -264,14 +260,17 @@ Příklad: "Manta IT — externí IT vedení pro firmy bez vlastního IT ředite
 | Grandit IT | 2015-2022 | Jména projektů, loga, screenshoty (NDA expirované) |
 | Blueghost | 2022-2025 | Pouze anonymně, NDA platí |
 | Manta IT | 2026+ | Pod NDA — obecný popis, tag "Case study under NDA" |
-| UltraConfig.cz (Ultra Marine) | 2025+ | NDA neplatí, plně možno detail + obrázky |
+| UltraConfig.cz (Ultra Marine) | 2025+ | **ZÁKAZ (Petr 7. 8. 2026): neuvádí se NIKDY, nikde** (přepisuje starší "NDA neplatí") |
+
+Schválený seznam referencí (Petr 25. 8., uvádět všechny): Český rozhlas,
+Radiotéka, Prima, Czech News Center, UniHobby, Pro-Doma, Almeco. Loga stažená
+v `../specs/web-redesign/prototypy/loga/` (jednobarevné siluety, hover
+rozsvítí). Formulace pásu: "Projekty, které jsem vedl".
 
 ### Aktuální TODO assets (čeká na Petra)
 - Foto Petra (monogram PK je placeholder)
-- Loga + screenshoty Grandit-éra projektů (Almeco, Pro-doma, Unihobby, Radiotéka, ikiosek, Prima Nápady, Tympanum)
 - PlanetLine logo + screenshot dispatching aplikace
-- UltraConfig.cz obrázky + specifikace (Petr přihlásí Claude do prostředí)
-- og:image asset — hotovo 2026-07-16 z existujícího loga (`og-image.png`); po výběru finálního loga z Brand Labu přegenerovat
+- og:image — po schválení nové palety přegenerovat do nového designu
 
 ---
 
@@ -282,15 +281,15 @@ Calendly bylo z webu odstraněno ve dvou krocích: 7. 8. 2026 z indexu a kontakt
 landing page /reseni-ai. Plánované event types (Web Standard briefing, Raynet
 konzultace a další) nevzniknou.
 
-Všechna CTA "Domluvit schůzku" vedou na `/kontakt`. Důvody:
+Všechna CTA vedou na kontakt (od 25. 8. znějí "Napište mi"). Důvody:
 - Externí widget přidával blokující CSS a JS z cizí domény na každou stránku.
 - Formulář posílá poptávku přes vlastní Worker a Gmail API, konverze se měří
   na `/dekujeme`. Rezervace přes Calendly se neměřila stejně spolehlivě.
 - Návštěvník nemusí vybírat termín dřív, než ví, co chce řešit.
 
-Otevřené: na landing stránkách (/reseni-ai) odvádí odkaz na /kontakt pozornost
-pryč ze stránky. Formulář přímo v patičce landingu, jak to má /dotace-mas, by
-konvertoval líp. Čeká na Petrovo rozhodnutí.
+Redesign to řeší: kontakt se třemi cestami (napíšu co řeším / zavolejte mi /
+pošlete mi termin) je přímo na homepage. Výběr termínu bez kalendáře: tři
+kliky, dnešek se nikdy nenabízí. Pozvánky do kalendáře čekají na T0825-36.
 
 ---
 
@@ -311,7 +310,7 @@ konvertoval líp. Čeká na Petrovo rozhodnutí.
 
 ### Před deploymentem
 1. Lighthouse audit (Chrome DevTools) → 90+ na všech 4 metrikách
-2. Test CTA "Domluvit schůzku" -> /kontakt -> odeslání -> /dekujeme
+2. Test CTA "Napište mi" -> kontakt -> odeslání -> /dekujeme
 3. Test mailto linků
 4. ASCII grep + ortografická kontrola
 5. Sdílet link 1 důvěrnému kontaktu pro 10min review
@@ -343,3 +342,6 @@ konvertoval líp. Čeká na Petrovo rozhodnutí.
 - 2026-07-24: Mapa AI 11 900 -> 9 900; nové sliby: plán do 48 hodin od druhého workshopu, případný AI agent/automatizace dodán Mantou do týdne (rozhodnutí Petra; rychlost jako diferenciátor)
 - 2026-07-24: orientační cena AI agenta/automatizace z plánu zveřejněna: ~50 000 Kč (konzistentní s 10k/den x do týdne); poznámka v ukázce reportu (původní odhad 100k zachován, dnes dodávka za ~50k)
 - 2026-07-24: služba přejmenována "Mapa AI příležitostí" -> **"AI plán do 48 hodin"** (rozhodnutí Petra; název = slib rychlosti). URL /reseni-ai a /ukazka-reportu beze změny, JSON-LD alternateName drží starý název. Metafora "mapa" nahrazena "plánem" i na ukázce.
+- 2026-08-07: Calendly pryč z indexu a kontaktu ("vypadá noobsky"); 2026-08-24 ze zbylých 30 stránek. Nevrací se.
+- 2026-08-22: web trojjazyčný (CZ/SK/EN, ceny v EUR), hub /clanky/, ceník a FAQ na indexu.
+- 2026-08-25: redesign (T0825-7) -- nová paleta papír/inkoust/zelená, Outfit + Manrope + JetBrains Mono, 8 stránek v prototypech, CTA "Napište mi", pozice "vedení digitální transformace", pět služeb + AI zaměstnanec 89 000 Kč, dotace na klíč 30 000 Kč (pivot: služba končí podáním). Serif a béžová paleta ZRUŠENY jako AI tells. Nasazení celého webu najednou po schválení.

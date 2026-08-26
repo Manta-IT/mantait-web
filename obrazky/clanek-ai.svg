@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Vlevo nástroj, který čeká na dotaz, vpravo ten, který sám odbavuje" fill="none">
+<title>Vlevo nástroj, který čeká na dotaz, vpravo ten, který sám odbavuje</title>
+  <rect x="24" y="52" width="108" height="96" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M44 84h68M44 100h52M44 116h60" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="78" cy="68" r="6" fill="#FBFBF9" stroke="#9AA29E" stroke-width="1.6"/>
+  <path d="M140 100h40" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="188" y="52" width="108" height="96" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <circle cx="206" cy="76" r="5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M218 76h62" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="206" cy="100" r="5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M218 100h62" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="206" cy="124" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.6"/>
+  <path d="M218 124h62" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>

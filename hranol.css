@@ -1,0 +1,153 @@
+/* =========================================================================
+   Hranol -- co AI zamestnanec dela s postou.
+
+   Zadani Petra 25. 8.: "ne trapny node diagram, ale nejaky zajimavejsi
+   objekt". Bloky a sipky jsou proto nahrazene opticke metafory: jednotvarna
+   posta prilete zleva jako sedy proud, projde hranolem a vyjde z nej pet
+   ruznobarevnych vystupu. Rozklad svetla je zaroven presne to, co ta sluzba
+   dela -- z jednoho vstupu udela pet uzitecnych veci.
+
+   Odtud berou barvu i kanaly. Neni to dekorace: kazdy odstin patri jednomu
+   vystupu a nikde jinde na webu se nepouziva.
+
+   Branka podle skillu `animate`: cetnost = jednou za navstevu (marketingova
+   stranka), ucel = VYSVETLENI. Obojí animaci opravnuje. Smycka je nekonecna
+   zamerne -- ten zamestnanec bezi nepretrzite, zastavena smycka by lhala.
+   ========================================================================= */
+
+.hranol-sekce{background:var(--inkoust);color:var(--papir);
+  overflow:hidden;position:relative}
+.hranol-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(46% 60% at 44% 52%,
+    color-mix(in srgb,var(--akcent) 30%,transparent), transparent 66%)}
+.hranol-sekce .obsah{position:relative}
+.hranol-sekce h2{max-width:22ch}
+.hranol-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);
+  margin-top:16px;max-width:54ch}
+
+.hranol{position:relative;width:100%;aspect-ratio:1200/440;
+  margin-top:clamp(32px,4vw,52px)}
+
+/* ---------- Drahy ----------
+   Puls po draze se dela posunem carkovani. Neni to transform ani opacity,
+   ale u cesty po krivce k tomu neni ekvivalent -- stejna vyjimka jako vyska
+   u harmoniky. Jde o jednu tenkou caru, ne o plochu, takze to nic nestoji. */
+.hranol-drahy{position:absolute;inset:0;width:100%;height:100%}
+.klid{fill:none;stroke:color-mix(in srgb,var(--papir) 20%,transparent);stroke-width:1}
+.tok{fill:none;stroke-width:2.4;stroke-linecap:round;
+  stroke-dasharray:26 300;
+  animation:tece 3.4s linear infinite;
+  transition:stroke-width .25s var(--krivka-klid),opacity .25s var(--krivka-klid)}
+/* Puls sam o sobe je tenka cara. Zare je tataz draha jeste jednou, siroka
+   a tlumena -- levnejsi a spolehlivejsi nez SVG filtr. */
+.zar{fill:none;stroke-width:11;stroke-linecap:round;opacity:.22;
+  stroke-dasharray:26 300;animation:tece 3.4s linear infinite;
+  transition:opacity .25s var(--krivka-klid)}
+@keyframes tece{from{stroke-dashoffset:326}to{stroke-dashoffset:0}}
+.vstup-tok{stroke:color-mix(in srgb,var(--papir) 46%,transparent);
+  stroke-dasharray:22 150;animation-duration:2.2s}
+
+/* Pet kanalu, pet odstinu. Poradi je zamerne spektralni: co vyjde z hranolu
+   nejvys, ma nejkratsi vlnovou delku. */
+.k1{stroke:#12A06B} .k2{stroke:#12908F} .k3{stroke:#3F6FC4}
+.k4{stroke:#B0762A} .k5{stroke:#B4553C}
+.z1{stroke:#12A06B} .z2{stroke:#12908F} .z3{stroke:#3F6FC4}
+.z4{stroke:#B0762A} .z5{stroke:#B4553C}
+.k1,.z1{animation-delay:.0s} .k2,.z2{animation-delay:.18s}
+.k3,.z3{animation-delay:.36s} .k4,.z4{animation-delay:.54s}
+.k5,.z5{animation-delay:.72s}
+
+/* ---------- Hranol ----------
+   Tri vnorene desky misto jedne plochy. Bez vrstev to je kosoctverec,
+   s vrstvami to ma hmotu a vypada to jako broušene sklo. */
+.kamen{position:absolute;left:43.8%;top:50%;width:clamp(74px,8.4vw,110px);
+  aspect-ratio:.82;transform:translate(-50%,-50%);
+  animation:otaceni 52s linear infinite}
+@keyframes otaceni{to{transform:translate(-50%,-50%) rotate(360deg)}}
+/* Sestiuhelnik s vodorovnymi ploskami cte jako brouseny kamen. Zaobleny
+   ctverec, ktery tu byl predtim, se cetl jako svitici tlacitko. */
+.deska{position:absolute;inset:0;
+  clip-path:polygon(50% 0%, 94% 26%, 94% 74%, 50% 100%, 6% 74%, 6% 26%);
+  background:linear-gradient(128deg,
+    color-mix(in srgb,var(--papir) 30%,transparent) 0%,
+    color-mix(in srgb,var(--akcent) 62%,transparent) 48%,
+    color-mix(in srgb,var(--papir) 16%,transparent) 100%)}
+.deska:nth-child(2){inset:13%;opacity:.85;
+  background:linear-gradient(-52deg,
+    color-mix(in srgb,var(--papir) 46%,transparent),
+    color-mix(in srgb,var(--akcent) 24%,transparent))}
+.deska:nth-child(3){inset:33%;
+  background:color-mix(in srgb,var(--papir) 80%,transparent)}
+/* Zare kolem kamene. Samostatna vrstva, aby ji neorezal clip-path desek. */
+.kamen::before{content:'';position:absolute;inset:-46%;border-radius:50%;
+  background:radial-gradient(circle,
+    color-mix(in srgb,var(--akcent) 46%,transparent), transparent 66%)}
+
+/* ---------- Popisky ---------- */
+.uzel{position:absolute;transform:translateY(-50%);
+  font-size:clamp(13px,1.05vw,15px);line-height:1.3;white-space:nowrap;
+  display:flex;align-items:center;gap:9px;
+  transition:opacity .25s var(--krivka-klid)}
+.uzel-vstup{left:0;transform:translateY(-50%)}
+.uzel-vystup{right:0;flex-direction:row-reverse;text-align:right}
+.uzel b{font-weight:500}
+.uzel small{display:block;font-size:12px;
+  color:color-mix(in srgb,var(--papir) 46%,transparent);white-space:normal}
+.puntik{width:9px;height:9px;border-radius:50%;flex:none}
+.uzel-vstup .puntik{background:color-mix(in srgb,var(--papir) 46%,transparent)}
+.p1{background:#12A06B} .p2{background:#12908F} .p3{background:#3F6FC4}
+.p4{background:#B0762A} .p5{background:#B4553C}
+.uzel-vystup .puntik{animation:tep 3.4s var(--krivka-klid) infinite}
+@keyframes tep{
+  0%,58%{transform:scale(1);box-shadow:0 0 0 0 currentColor}
+  70%{transform:scale(1.55);box-shadow:0 0 14px 3px currentColor}
+  100%{transform:scale(1);box-shadow:0 0 0 0 currentColor}}
+.p1{color:#12A06B} .p2{color:#12908F} .p3{color:#3F6FC4}
+.p4{color:#B0762A} .p5{color:#B4553C}
+[data-k="1"] .puntik{animation-delay:.0s} [data-k="2"] .puntik{animation-delay:.18s}
+[data-k="3"] .puntik{animation-delay:.36s} [data-k="4"] .puntik{animation-delay:.54s}
+[data-k="5"] .puntik{animation-delay:.72s}
+
+/* ---------- Interakce ----------
+   Najeti na vystup zesili jeho drahu a ostatni ztlumi. Je to jediny zpusob,
+   jak si v tom obrazku neco vybrat, takze to neni ozdoba. */
+@media (hover:hover) and (pointer:fine){
+  .hranol:has(.uzel-vystup:hover) .tok:not(.vstup-tok),
+  .hranol:has(.uzel-vystup:hover) .zar{opacity:.1}
+  .hranol:has(.uzel-vystup:hover) .uzel-vystup:not(:hover){opacity:.4}
+  .uzel-vystup:hover{cursor:default}
+  .hranol:has([data-k="1"]:hover) .k1,
+  .hranol:has([data-k="2"]:hover) .k2,
+  .hranol:has([data-k="3"]:hover) .k3,
+  .hranol:has([data-k="4"]:hover) .k4,
+  .hranol:has([data-k="5"]:hover) .k5{opacity:1;stroke-width:3.6}
+  .hranol:has([data-k="1"]:hover) .z1,.hranol:has([data-k="2"]:hover) .z2,
+  .hranol:has([data-k="3"]:hover) .z3,.hranol:has([data-k="4"]:hover) .z4,
+  .hranol:has([data-k="5"]:hover) .z5{opacity:.36}
+}
+
+@media (max-width:900px){
+  /* Sirka telefonu na peti drahach nestaci. Tytez kanaly, jina skladba:
+     kamen nahore, vystupy pod nim jako seznam. */
+  .hranol{aspect-ratio:auto;display:grid;justify-items:center;gap:18px;
+    margin-top:30px}
+  .hranol-drahy{display:none}
+  .kamen{position:static;transform:none;width:96px;
+    animation:otaceni-mobil 42s linear infinite}
+  @keyframes otaceni-mobil{to{transform:rotate(360deg)}}
+  .uzel{position:static;transform:none;width:100%;white-space:normal;
+    border-top:1px solid color-mix(in srgb,var(--papir) 12%,transparent);
+    padding-top:12px}
+  .uzel-vystup{flex-direction:row;text-align:left}
+  .uzel-vstup{border-top:0;padding-top:0;
+    color:color-mix(in srgb,var(--papir) 70%,transparent)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  /* Zadny tok ani otaceni. Drahy zustanou nakreslene, takze obrazek porad
+     rika, co s cim souvisi -- jen se nehybe. */
+  .tok{animation:none;stroke-dasharray:none;opacity:.55}
+  .zar,.uzel-vystup .puntik{animation:none}
+  .zar{display:none}
+  .kamen{animation:none}
+}

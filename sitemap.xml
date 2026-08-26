@@ -2,103 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mantait.cz/</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://mantait.cz/reseni-vedeni-it</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/reseni-nova-aplikace</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/reseni-propojeni</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/reseni-bezpecnost</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/reseni-ai-zamestnanec</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/reseni-mapa-firmy</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mantait.cz/o-mne</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/dotace-mas</loc>
+    <lastmod>2026-08-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mantait.cz/weby</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mantait.cz/raynet</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mantait.cz/kontakt</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://mantait.cz/ukazka-reportu</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/case-kalkulacka</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mantait.cz/soukromi</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url><loc>https://mantait.cz/reseni-ai</loc></url>
-  <url><loc>https://mantait.cz/reseni-nova-aplikace</loc></url>
-  <url><loc>https://mantait.cz/reseni-ai-zamestnanec</loc></url>
-  <url><loc>https://mantait.cz/case-kalkulacka</loc></url>
-  <url><loc>https://mantait.cz/reseni-propojeni</loc></url>
-  <url><loc>https://mantait.cz/reseni-nastroje</loc></url>
-  <url><loc>https://mantait.cz/reseni-projekt</loc></url>
-  <url><loc>https://mantait.cz/reseni-naklady</loc></url>
-  <url><loc>https://mantait.cz/reseni-bezpecnost</loc></url>
-  <url><loc>https://mantait.cz/reseni-web</loc></url>
-  <url><loc>https://mantait.cz/reseni-vedeni-it</loc></url>
-  <url><loc>https://mantait.cz/ukazka-reportu</loc></url>
-  <url>
-    <loc>https://mantait.cz/dotace-mas</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mantait.cz/clanky/dotace-technologie-pro-mas-2026</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
   </url>
-  <url><loc>https://mantait.cz/sk/</loc></url>
-  <url><loc>https://mantait.cz/en/</loc></url>
-  <url><loc>https://mantait.cz/sk/o-mne</loc></url>
-  <url><loc>https://mantait.cz/en/o-mne</loc></url>
-  <url><loc>https://mantait.cz/sk/kontakt</loc></url>
-  <url><loc>https://mantait.cz/en/kontakt</loc></url>
-  <url><loc>https://mantait.cz/sk/soukromi</loc></url>
-  <url><loc>https://mantait.cz/en/soukromi</loc></url>
-  <url><loc>https://mantait.cz/sk/weby</loc></url>
-  <url><loc>https://mantait.cz/en/weby</loc></url>
-  <url><loc>https://mantait.cz/sk/raynet</loc></url>
-  <url><loc>https://mantait.cz/en/raynet</loc></url>
-  <url><loc>https://mantait.cz/sk/ukazka-reportu</loc></url>
-  <url><loc>https://mantait.cz/en/ukazka-reportu</loc></url>
-  <url><loc>https://mantait.cz/sk/case-kalkulacka</loc></url>
-  <url><loc>https://mantait.cz/en/case-kalkulacka</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-ai</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-ai</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-ai-zamestnanec</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-ai-zamestnanec</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-nova-aplikace</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-nova-aplikace</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-propojeni</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-propojeni</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-nastroje</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-nastroje</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-projekt</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-projekt</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-naklady</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-naklady</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-bezpecnost</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-bezpecnost</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-web</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-web</loc></url>
-  <url><loc>https://mantait.cz/sk/reseni-vedeni-it</loc></url>
-  <url><loc>https://mantait.cz/en/reseni-vedeni-it</loc></url>
-  <url><loc>https://mantait.cz/clanky/</loc></url>
-  <url><loc>https://mantait.cz/clanky/novy-zakon-kyberbezpecnost-3-otazky</loc></url>
-  <url><loc>https://mantait.cz/clanky/kolik-stoji-rucni-prepisovani</loc></url>
-  <url><loc>https://mantait.cz/clanky/dotace-poslednich-6-mesicu</loc></url>
-  <url><loc>https://mantait.cz/clanky/ai-zamestnanec-co-je-a-co-neni</loc></url>
+  <url>
+    <loc>https://mantait.cz/clanky/novy-zakon-kyberbezpecnost-3-otazky</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/kolik-stoji-rucni-prepisovani</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/ai-zamestnanec-co-je-a-co-neni</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/dotace-poslednich-6-mesicu</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -1,457 +1,326 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Petr Kokoška - 10 let praxe v IT vedení a produktovém managementu. Z dodavatelské strany na stranu klienta. Manta IT - externí IT leadership.">
-  <meta property="og:title" content="O mně - Petr Kokoška - Manta IT">
-  <meta property="og:description" content="10 let praxe v IT vedení a produktovém managementu. Z dodavatelské strany na stranu klienta.">
-  <meta property="og:type" content="profile">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kdo jsem - Petr Kokoška, Manta IT</title>
+<meta name="description" content="Deset let jsem stavěl systémy pro velké značky u dodavatelů. Teď tu práci dělám pro firmy do dvou set lidí, které vlastní IT oddělení nemají a mít nechtějí.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sluzba.css?v=f3e20f0">
+<style>
+/* =========================================================================
+   Kdo jsem -- prvky, ktere jsou jen tady.
+
+   Kolo neni dekorace. Vzdalenost od stredu nese informaci: co odvedu sam
+   a co zaridim pres lidi, ktere znam. Proto ma dva polomery a legendu,
+   a proto na uzkem displeji nezmensuje, ale meni se v seznam -- kruh
+   o sirce telefonu uz by nic nesdeloval.
+   ========================================================================= */
+
+.hero-siroky{padding:120px var(--okraj) clamp(26px,3vw,40px);
+  max-width:var(--sirka);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(28px,5vw,72px);align-items:end}
+.hero-siroky h1{max-width:14ch}
+.hero-siroky .lead{max-width:46ch;margin-top:0}
+
+/* ---------- Kolo ---------- */
+.kolo-slovo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(28px,5vw,72px);align-items:start}
+.kolo-slovo p{color:var(--tlum);max-width:48ch}
+.kolo-slovo p + p{margin-top:14px}
+
+.legenda{display:grid;gap:12px;margin-top:26px}
+.legenda div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+  font-size:15px;color:var(--tlum)}
+.tecka{width:11px;height:11px;border-radius:50%;margin-top:6px;flex:none;
+  border:1.5px solid var(--akcent)}
+.tecka.plna{background:var(--akcent)}
+
+/* ---------- Konstelace ----------
+   Vzdalenost od stredu neni dekorace: blizsi paprsky delam vlastnima rukama,
+   vzdalenejsi zaridim pres lidi, ktere znam. Proto dva polomery a legenda.
+   Pod 1100 px se z toho stava seznam -- konstelace zmensena na sirku telefonu
+   uz nesdeluje nic. */
+.kolo{position:relative;width:100%;aspect-ratio:1200/410;margin:44px 0 0}
+
+.kolo-linky{position:absolute;inset:0;width:100%;height:100%}
+.kolo-linky line{stroke:color-mix(in srgb,var(--tlum) 42%,transparent);stroke-width:1;fill:none;
+  stroke-dasharray:400;stroke-dashoffset:400;
+  animation:vykresli 1s var(--krivka) forwards;
+  animation-delay:calc(.15s + var(--i) * .06s)}
+@keyframes vykresli{to{stroke-dashoffset:0}}
+
+.paprsek{position:absolute;width:max-content;max-width:224px;text-wrap:balance;
+  background:var(--papir);border:1px solid var(--linka);border-radius:10px;
+  padding:13px 17px;font-size:15px;line-height:1.35;
+  display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;
+  animation:prichod .6s var(--krivka) backwards;
+  animation-delay:calc(.3s + var(--i) * .06s);
+  transition:border-color .2s var(--krivka-klid),box-shadow .2s var(--krivka-klid)}
+.paprsek.vpravo{transform:translate(14px,-50%)}
+.paprsek.vlevo {transform:translate(calc(-100% - 14px),-50%);
+  grid-template-columns:1fr auto;text-align:right}
+.paprsek.vlevo .tecka-obal{order:2}
+.paprsek.nahore{transform:translate(-50%,calc(-100% - 14px))}
+.tecka-obal{display:grid;place-items:center}
+
+.kolo-stred{position:absolute;left:50%;top:50%;width:150px;height:150px;
+  transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;margin:0;
+  border:1px solid var(--linka);background:var(--papir-tmav);
+  animation:prichod .7s var(--krivka) backwards}
+.kolo-stred img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.04)}
+
+/* ---------- Pribeh ---------- */
+.pribeh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(30px,5vw,80px);align-items:start}
+.pribeh p{color:var(--tlum);max-width:52ch}
+.pribeh p + p{margin-top:16px}
+.veta{font-family:var(--display);font-size:clamp(23px,2.6vw,36px);letter-spacing:-.03em;
+  line-height:1.15;max-width:20ch;color:var(--inkoust)}
+
+.jmena{margin-top:38px;padding-top:26px;border-top:1px solid var(--linka)}
+.jmena-popis{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tlum)}
+.jmena-radek{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:16px;
+  font-family:var(--display);font-size:clamp(16px,1.5vw,20px);letter-spacing:-.02em}
+
+@media (max-width:1000px){
+  .hero-siroky,.kolo-slovo,.pribeh{grid-template-columns:1fr;align-items:start}
+  .hero-siroky .lead{margin-top:20px}
+}
+@media (max-width:1100px){
+  .kolo{aspect-ratio:auto;display:grid;gap:10px;margin-top:34px}
+  .kolo-linky,.kolo-stred{display:none}
+  /* .vlevo a .nahore maji vyssi specificitu, takze samotne .paprsek{transform:none}
+     je neprebije a polozky by se v seznamu prekryvaly */
+  .paprsek{position:static;width:auto;max-width:none;padding:15px 17px;font-size:15px}
+  .paprsek,.paprsek.vpravo,.paprsek.vlevo,.paprsek.nahore{transform:none;
+    grid-template-columns:auto 1fr;text-align:left}
+  .paprsek.vlevo .tecka-obal{order:0}
+}
+@media (max-width:760px){
+  .hero-siroky{padding-top:104px}
+  .menu{display:none}
+}
+@media (hover:hover) and (pointer:fine){
+  .paprsek:hover{border-color:var(--inkoust);box-shadow:0 6px 22px rgba(16,20,19,.07)}
+}
+@media (prefers-reduced-motion:reduce){
+  .paprsek,.kolo-stred{animation:none}
+  .kolo-linky line{animation:none;stroke-dashoffset:0}
+}
+</style>
+  <link rel="canonical" href="https://mantait.cz/o-mne">
+  <meta property="og:title" content="Kdo jsem - Petr Kokoška, Manta IT">
+  <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky u dodavatelů. Teď tu práci dělám pro firmy do dvou set lidí.">
+  <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/o-mne">
   <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://mantait.cz/o-mne">
-  <link rel="alternate" hreflang="cs" href="https://mantait.cz/o-mne">
-  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/o-mne">
-  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/o-mne">
-  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/o-mne">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>O mně - Petr Kokoška - Manta IT</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=e30f4c2">
-
-  <!-- Structured data: Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://mantait.cz/o-mne#petr",
-    "name": "Petr Kokoška",
-    "jobTitle": "Externí IT ředitel a zakladatel Manta IT",
-    "email": "petr.kokoska@mantait.cz",
-    "telephone": "+420732329431",
-    "url": "https://mantait.cz/o-mne",
-    "image": "https://mantait.cz/petr-kokoska.jpg",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Manta IT",
-      "url": "https://mantait.cz/"
-    },
-    "description": "Deset let praxe v IT vedení a produktovém managementu. Z dodavatelské strany na stranu klienta. Externí IT ředitel pro firmy bez vlastního IT vedení.",
-    "knowsAbout": [
-      "Projektové řízení",
-      "Product Owner",
-      "Product Discovery",
-      "Řízení dodavatelů",
-      "Systémová integrace",
-      "E-commerce platformy",
-      "ERP",
-      "CRM",
-      "AI assessment",
-      "IT strategie"
-    ],
-    "alumniOf": [
-      {"@type": "Organization", "name": "Grandit IT"},
-      {"@type": "Organization", "name": "Blueghost"}
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/petrkokoska/",
-      "https://github.com/Manta-IT"
-    ]
-  }
-  </script>
-
-  <!-- Structured data: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Co jsem dělal před Manta IT?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Grandit IT (2015-2022) a Blueghost (2022-2025) jako Product Owner a Senior Project Manager na straně dodavatele. Souběžně působím jako externí interim IT ředitel pro klienty Manta IT."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kolik let praxe mám v IT projektech?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "10+ let v řízení IT projektů, product ownership a digitální transformaci."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Jak se mě dá oslovit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "30minutový orientační hovor online nebo u vás. Napište přes formulář na mantait.cz/kontakt nebo na petr.kokoska@mantait.cz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Pracuji jako externí, nebo zaměstnanec?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Externí spolupráce na paušálu. Vedu IT u 2-3 firem paralelně, prakticky jako jejich vlastní IT vedení, jen na fakturu."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Structured data: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Manta IT", "item": "https://mantait.cz/"},
-      {"@type": "ListItem", "position": 2, "name": "O mně", "item": "https://mantait.cz/o-mne"}
-    ]
-  }
-  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
-  <!-- Cloudflare Web Analytics (cookieless) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
 <body>
-<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Domů</a>
-    <a href="/#sluzby" class="nav-link">Služby</a>
-    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
-    <a href="/o-mne" class="nav-link active" aria-current="page">O mně</a>
-    <a href="/kontakt" class="nav-link">Kontakt</a>
-    <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/o-mne" hreflang="sk" lang="sk">SK</a><a href="/en/o-mne" hreflang="en" lang="en">EN</a></div>
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
   </div>
-  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<main id="obsah">
+<header class="hero-siroky" id="hero">
+  <h1>
+    <span class="radek"><span class="r1">Deset let jsem byl</span></span>
+    <span class="radek"><b class="r2">na druhé straně.</b></span>
+  </h1>
+  <p class="lead vstup z2">Systémy pro velké značky jsem stavěl u dodavatelů, kteří je
+  firmám prodávají. Znám ceny, termíny i to, co se v nabídkách zamlčuje. Tuhle znalost
+  teď nosím firmám, které si vlastního technologického ředitele nezaplatí.</p>
+</header>
 
-<!-- ═══ PAGE HEADER ═══ -->
-<section class="page-header">
-  <div class="page-header-inner">
-    <span class="label">O mně</span>
-    <h1>Z dodavatelské strany <em>na stranu klienta.</em></h1>
-    <p class="page-header-sub">
-      Deset let praxe v IT a produktovém managementu na straně dodavatelů.
-      Dnes vedu IT pro firmy, které na to nemají vlastního člověka na plný úvazek.
-    </p>
+<!-- ============ KOLO ============ -->
+<section>
+  <div class="obsah">
+    <div class="kolo-slovo">
+      <h2>Sedm věcí,<br>které umím zařídit.</h2>
+      <div>
+        <p>Tři čtvrtiny z nich odvedu sám. U zbytku znám lidi, kteří to udělají líp
+        než já, a ohlídám je. Vám je to jedno, protože jednáte pořád se mnou.</p>
+        <p>Proto nemá smysl ptát se, kolik nás je. Podstatné je, jestli to dopadne.</p>
+
+        <div class="legenda">
+          <div><span class="tecka plna"></span><span>Odvedu sám. Sedím u toho,
+          píšu to, vedu to.</span></div>
+          <div><span class="tecka"></span><span>Zařídím přes lidi, které znám,
+          a ohlídám termín i cenu.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kolo">
+      <svg class="kolo-linky" viewBox="0 0 1200 410" aria-hidden="true">
+        <line x1="600.0" y1="140.0" x2="600.0" y2="95.0" style="--i:0"/>
+        <line x1="675.8" y1="190.7" x2="799.1" y2="139.7" style="--i:1"/>
+        <line x1="655.8" y1="282.1" x2="708.3" y2="338.6" style="--i:3"/>
+        <line x1="544.2" y1="282.1" x2="491.7" y2="338.6" style="--i:4"/>
+        <line x1="524.2" y1="190.7" x2="400.9" y2="139.7" style="--i:6"/>
+        <line x1="681.4" y1="231.5" x2="947.8" y2="262.8" style="--i:2"/>
+        <line x1="518.6" y1="231.5" x2="252.2" y2="262.8" style="--i:5"/>
+      </svg>
+
+        <div class="paprsek nahore" style="left:50.00%;top:20.00%;--i:0">
+          <span class="tecka-obal"><span class="tecka plna"></span></span>Poradím, co má smysl
+        </div>
+
+        <div class="paprsek vpravo" style="left:67.59%;top:32.86%;--i:1">
+          <span class="tecka-obal"><span class="tecka plna"></span></span>Postavím, co se koupit nedá
+        </div>
+
+        <div class="paprsek vpravo" style="left:59.76%;top:84.91%;--i:3">
+          <span class="tecka-obal"><span class="tecka plna"></span></span>Propojím, co dnes děláte ručně
+        </div>
+
+        <div class="paprsek vlevo" style="left:40.24%;top:84.91%;--i:4">
+          <span class="tecka-obal"><span class="tecka plna"></span></span>Naučím firmu používat AI
+        </div>
+
+        <div class="paprsek vlevo" style="left:32.41%;top:32.86%;--i:6">
+          <span class="tecka-obal"><span class="tecka plna"></span></span>Srovnám systémy do celku
+        </div>
+
+        <div class="paprsek vpravo" style="left:80.06%;top:64.46%;--i:2">
+          <span class="tecka-obal"><span class="tecka"></span></span>Seženu lidi na to, co nedělám sám
+        </div>
+
+        <div class="paprsek vlevo" style="left:19.94%;top:64.46%;--i:5">
+          <span class="tecka-obal"><span class="tecka"></span></span>Dovedu vás k dotaci
+        </div>
+
+      <figure class="kolo-stred">
+        <img src="/petr-kokoska.jpg" alt="Petr Kokoška, zakladatel Manta IT" width="400" height="400">
+      </figure>
+    </div>
   </div>
 </section>
 
-
-<!-- ═══ BIO ═══ -->
-<section id="o-mne">
-
-  <div class="bio-inner">
-
-    <div class="bio-photo">
-      <img src="petr-kokoska.jpg" alt="Petr Kokoška, zakladatel Manta IT" class="bio-img" width="800" height="800">
+<!-- ============ PRIBEH ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah pribeh">
+    <div>
+      <h2>Vím, kolik ty systémy<br>opravdu stojí.</h2>
+      <p class="veta" style="margin-top:26px">Manta je převodovka mezi IT světem a firmou,
+      která IT nemá.</p>
     </div>
+    <div>
+      <p>Deset let jsem pracoval u dodavatelů, kteří dodávají velkým značkám. Vedl jsem
+      projekty pro Český rozhlas, Radioteku, Primu, Czech News Center, UniHobby,
+      Pro-Domu a Almeco. Rozpočty,
+      termíny, výběrová řízení, hádky o rozsah.</p>
+      <p>Naučil jsem se u toho, kolik práce reálně stojí, jak dlouho opravdu
+      trvá a co znamená, když dodavatel řekne, že to je složité.</p>
+      <p>Firmy do dvou set lidí potřebují přesně tuhle práci. Jen si ji nemůžou koupit
+      v téhle podobě, protože nemají, koho by tím pověřily, a na plný úvazek to nemá smysl.
+      Proto dělám Mantu.</p>
 
-    <div class="bio-content">
-
-      <p class="bio-lead">
-        Deset let jsem vedl IT projekty z pozice dodavatele - jako Product Owner,
-        Senior Project Manager a v posledních letech jako Head of IT na straně klienta.
-        E-commerce platformy, mediální systémy, integrace mezi ERP a CRM,
-        modernizace zastaralých aplikací.
-      </p>
-
-      <p class="bio-para">
-        Z té dvojí perspektivy jsem si všiml jedné věci. Projekty se nezadrhávaly
-        na technologii. Zadrhávaly se na řízení. Vedení firmy nestíhalo hlídat
-        detaily a uprostřed chyběl někdo, kdo věci dotáhne do provozu - ne jen
-        navrhne na papíře a odejde.
-      </p>
-
-      <p class="bio-para">
-        Proto jsem založil Manta IT. Vedu IT pro firmy, které potřebují někoho,
-        kdo se o ně postará a hájí jejich zájem. Řízení dodavatelů,
-        hlídání rozsahu i dohled nad výsledkem beru jako svou práci - postarám se,
-        aby věci skutečně fungovaly, ne abyste si je řešili sami.
-      </p>
-
-      <p class="bio-pullquote">
-        <em>Postavím se vedle vás, převezmu vedení vašeho IT a zůstanu,
-        dokud věci neběží přesně tak, jak mají.</em>
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ═══ REFERENCES ═══ -->
-<section id="references">
-
-  <div class="ref-header">
-    <span class="label">Co mám za sebou</span>
-    <h2>Deset let praxe.<br>Vedení projektů, řízení dodavatelů, mapování zadání.</h2>
-    <p class="ref-sub">
-      Projekty z let 2015 - 2026 napříč e-commerce, médii, retailem a R&amp;D.
-      Řídil jsem je jako projektový manažer a product owner v dodavatelských
-      agenturách, od 2026 pracuji pod vlastní značkou. Starší projekty mohu
-      jmenovat, novější jsou pod NDA - detaily rád proberu osobně.
-    </p>
-  </div>
-
-  <div class="ref-list">
-
-    <div class="ref-item">
-      <div class="ref-item-role">Product Owner &middot; Senior PM</div>
-      <h3 class="ref-item-name">Almeco - B2B e-commerce platforma pro distributora ingrediencí</h3>
-      <p class="ref-item-desc">
-        Návrh proprietární platformy pro provoz více eshopů ve sdíleném systému
-        (sdílení skladů a katalogu), integrace s několika účetními jednotkami v ERP.
-        Návrh architektury na míru.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Project Manager</div>
-      <h3 class="ref-item-name">Pro-Doma - zakázkový e-shop pro lídra ve stavebnictví</h3>
-      <p class="ref-item-desc">
-        Vedení dodávky nového e-shopu na míru s úzkým propojením na interní systémy klienta.
-        Spolupráce s in-house vývojovým týmem klienta.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Project Manager</div>
-      <h3 class="ref-item-name">UniHobby - e-shop pro největší hobbymarket v ČR</h3>
-      <p class="ref-item-desc">
-        Celoroční rozvoj aplikace na základě požadavků různých oddělení.
-        Řízení paralelních vývojových týmů, koordinace velkých úprav a rozšíření.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Project Manager &middot; Product Owner</div>
-      <h3 class="ref-item-name">Radiotéka - audio platforma a e-shop Českého rozhlasu</h3>
-      <p class="ref-item-desc">
-        Aplikace Audiokniha do kapsy, e-shop pro digitální a fyzické zboží,
-        re-selling digitálního obsahu distributorům, automatizace reportingu
-        autorským svazům.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Senior Project Manager</div>
-      <h3 class="ref-item-name">Czech News Center - digitální platforma velkého vydavatelství</h3>
-      <p class="ref-item-desc">
-        Systémové integrace s interními systémy (distribuce, marketing, finance, účetnictví),
-        pokročilý sales reporting, péče o zákazníky. Řízení projektu v korporátním prostředí
-        napříč více odděleními.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Project Manager R&amp;D</div>
-      <h3 class="ref-item-name">Prima - HbbTV aplikace pro mediální skupinu</h3>
-      <p class="ref-item-desc">
-        Řízení vývoje BE i FE aplikací - VOD, ads, paywall, e-commerce.
-        Interaktivní televizní vrstva nad standardním vysíláním.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Project Manager R&amp;D</div>
-      <h3 class="ref-item-name">PDF na HTML konvertor a online čtečka</h3>
-      <p class="ref-item-desc">
-        Řízení vývoje konvertoru obsahu PDF do HTML, včetně analýz vstupních dat,
-        konfigurace encodingu a vývoje online čtečky pro koncového uživatele.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Senior Project Manager &middot; Traffic Manager</div>
-      <h3 class="ref-item-name">Celofiremní kapacitní plánování v digitální agentuře</h3>
-      <p class="ref-item-desc">
-        Plánování kapacit pro vývojový a kreativní tým napříč 20+ projekty
-        současně a 10+ vývojáři. Zavádění procesů, evidence požadavků (Jira) a zavádění nových klientů.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Head of IT</div>
-      <h3 class="ref-item-name">Zastřešení IT v distribuční firmě</h3>
-      <p class="ref-item-desc">
-        Zastřešení vývoje SW, online služeb, webových prezentací a interních systémů.
-        Analýza a optimalizace procesů v obchodě, logistice a financích.
-        Zavádění AI nástrojů mezi zaměstnance.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Product Owner</div>
-      <h3 class="ref-item-name">Propojení Raynet CRM a Pohoda ERP</h3>
-      <p class="ref-item-desc">
-        Definice produktu, architektury a procesu. Výběr dodavatele,
-        testování, příprava návodů, školení obchodního týmu. Vše kromě samotného vývoje.
-      </p>
-    </div>
-
-    <div class="ref-item">
-      <div class="ref-item-role">Product Discovery &middot; Externí vedení</div>
-      <h3 class="ref-item-name">Dispatching systém pro logistickou síť autobusů</h3>
-      <p class="ref-item-desc">
-        Analýza dispatchingových procesů, sepsání specifikace nové aplikace,
-        výběr dodavatele a smluvní zprostředkování. Předání do realizace.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="ref-cases ref-cases-three">
-
-    <div class="ref-case">
-      <span class="ref-case-tag">Case study</span>
-      <h3>Zastřešení IT v distribuční firmě</h3>
-      <div class="ref-case-meta">
-        <div>
-          <span class="ref-meta-k">Období</span>
-          <span class="ref-meta-v">2025 - 2026</span>
+      <div class="jmena">
+        <span class="jmena-popis">Vedl jsem projekty pro</span>
+        <div class="jmena-radek">
+          <span>Český rozhlas</span><span>Radioteka</span><span>Prima</span><span>Czech News Center</span>
+          <span>UniHobby</span><span>Pro-Doma</span><span>Almeco</span>
         </div>
-        <div>
-          <span class="ref-meta-k">Role</span>
-          <span class="ref-meta-v">Head of IT</span>
-        </div>
-      </div>
-      <div class="ref-case-body">
-        <p><strong>Situace:</strong> Distribuční firma bez vlastního IT vedení. Roztříštěné systémy, vývoj rozprostřený mezi externími dodavateli, chybějící přehled o nákladech a plánu rozvoje. Procesy v obchodě, logistice a financích postavené historicky, bez sjednocení.</p>
-        <p><strong>Co jsem dodal:</strong> Zastřešení IT napříč firmou - vývoj software, online služeb, webových prezentací i interních systémů. Analýza a optimalizace procesů ve třech klíčových odděleních. Řízení a kontrola dodavatelů. Zavádění AI nástrojů mezi zaměstnance.</p>
-        <p><strong>Výsledek:</strong> Sjednocené IT řízení, jasné priority a plán rozvoje. Optimalizované procesy v obchodě i logistice. AI nástroje v rutinním provozu týmu.</p>
-      </div>
-    </div>
-
-    <div class="ref-case">
-      <span class="ref-case-tag">Case study</span>
-      <h3>Product Discovery dispatching systému (PlanetLine)</h3>
-      <div class="ref-case-meta">
-        <div>
-          <span class="ref-meta-k">Období</span>
-          <span class="ref-meta-v">2026</span>
-        </div>
-        <div>
-          <span class="ref-meta-k">Role</span>
-          <span class="ref-meta-v">Product Discovery &middot; Externí vedení</span>
-        </div>
-      </div>
-      <div class="ref-case-body">
-        <p><strong>Situace:</strong> Logistická firma provozující síť autobusů potřebovala nový dispatching systém. Stávající aplikace dosluhovala, vedení vědělo, že chce změnu, ale neměla pojmenované, co přesně bude nový systém umět ani s kým ho stavět.</p>
-        <p><strong>Co jsem dodal:</strong> Analýzu provozních procesů na straně dispatchingu, definici cílového stavu a sepsání kompletní specifikace nové aplikace. Výběr vhodného dodavatele, smluvní zprostředkování a předání projektu do realizace.</p>
-        <p><strong>Výsledek:</strong> Nová aplikace ve vývoji u vybraného dodavatele. Klient ví, co staví a proč. První projekt Manta IT po opuštění agentury.</p>
-      </div>
-    </div>
-
-    <div class="ref-case">
-      <span class="ref-case-tag">Probíhající case</span>
-      <h3>Modernizace B2B distributora (pod NDA)</h3>
-      <div class="ref-case-meta">
-        <div>
-          <span class="ref-meta-k">Období</span>
-          <span class="ref-meta-v">2026 - probíhá</span>
-        </div>
-        <div>
-          <span class="ref-meta-k">Role</span>
-          <span class="ref-meta-v">Externí IT vedení projektu</span>
-        </div>
-      </div>
-      <div class="ref-case-body">
-        <p><strong>Situace:</strong> Distribuční firma se zastaralými aplikacemi běžícími na vlastních serverech a napojením na bankovní portály. Vedení vědělo, že chce modernizaci, ale nemělo tým, který by ji uměl řídit. Náklady na dodavatele rostly bez jasného výstupu.</p>
-        <p><strong>Co řeším:</strong> Převzal jsem řízení modernizace - výběr a kontrolu dodavatelů, popis stávajících systémů, návrh nové technologie a propojení. Souběžně vedu analýzu procesu cenové kalkulace - redesign celého firemního postupu, ne jen jeho IT odraz.</p>
-        <p><strong>Aktuální stav:</strong> Průzkum dokončený, technický návrh schválený. Spouštíme realizaci. Plán je dodat první produkční verzi do konce roku.</p>
-        <p><strong>Čím je to doložené:</strong> Klient dostává měsíční zápis s rozhodnutími a stavem, přehled IT nákladů po položkách a výsledky kontrol dodavatelů. Nedostává větu "je to v pořádku" - dostává dokument.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══ CONTACT CTA ═══ -->
-<section id="kontakt-cta">
-  <div class="contact-inner">
-    <span class="label">Kontakt</span>
-    <h2 class="contact-headline">Začněme <em>rozhovorem.</em></h2>
-    <p class="contact-sub">Půl hodiny stačí. Online nebo u vás. Po hovoru víte, jestli má smysl jít dál.</p>
-
-    <div class="contact-cta-wrap">
-      <form class="form-box end-form" method="post" action="/api/kontakt">
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="lp-jmeno">Jméno a příjmení</label>
-          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
-        </div>
-        <div class="form-field">
-          <label for="lp-firma">Firma</label>
-          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
-        </div>
-        <div class="form-field">
-          <label for="lp-tel">Telefon</label>
-          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
-        </div>
-        <div class="form-field">
-          <label for="lp-mail">E-mail</label>
-          <input id="lp-mail" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field full">
-          <label for="lp-zprava">Co řešíte?</label>
-          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
-        </div>
-      </div>
-      <div class="hp-field" aria-hidden="true">
-        <label for="lp-web">Nevyplňujte</label>
-        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <button type="submit" class="btn">Odeslat zprávu</button>
-      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
-    </form>
-    </div>
-
-    <div class="contact-details">
-      <div class="contact-item">
-        <span class="contact-item-label">Email</span>
-        <a href="mailto:petr.kokoska@mantait.cz" class="contact-item-value">petr.kokoska@mantait.cz</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Telefon</span>
-        <a href="tel:+420732329431" class="contact-item-value">+420 732 329 431</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ JAK PRACUJU ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají, než začneme</h2>
 
-</main>
+    <details>
+      <summary>Jste na to sám?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, a je to záměr. Jednáte s jedním člověkem, který si pamatuje, co jste
+        řekli minule, a nic se nepřekládá přes tři lidi.</p>
+        <p>Když je práce nad moje ruce nebo ji někdo umí líp, seženu ho a ohlídám.
+        Termín i cena zůstávají na mně, takže vy řešíte pořád jen mě.</p>
+      </div>
+    </details>
 
-<!-- ═══ FOOTER ═══ -->
+    <details>
+      <summary>Co když onemocníte nebo skončíte?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Proto se všechno podstatné zapisuje: rozhodnutí, smlouvy, přístupy, náklady.
+        U vývoje dostáváte zdrojový kód a popis, jak to spustit.</p>
+        <p>Nechci závislého klienta. Chci firmu, která ví, co má a proč to má.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Pro jak velké firmy pracujete?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Nejčastěji pro firmy zhruba do dvou set lidí. Menší firmy zvládne obsloužit
+        jedna dobře vybraná dílčí zakázka, u větších už obvykle má smysl mít IT vedení
+        uvnitř a já jsem tam spíš druhý názor.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kde sídlíte a jezdíte za klienty?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>V Čerčanech u Benešova. Po Posázaví a do Prahy jezdím běžně, jinam podle
+        potřeby. Většinu práce ale odvedu na dálku a na místě jsem tam, kde to má smysl,
+        typicky na začátku a při zavádění.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Můžete převzít práci po jiném dodavateli?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, je to častý začátek spolupráce. Prvním krokem je zjistit, co reálně
+        existuje a v jakém je to stavu. Teprve pak se dá říct, co pokračuje
+        a co se musí postavit znovu.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Půl hodiny stačí, abyste věděli, jestli si sedneme.</h2>
+    <p>Řeknete mi, co ve firmě řešíte. Já vám řeknu, jestli je to práce pro mě,
+    nebo pro někoho jiného.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
 </footer>
 
-
+<script src="/sluzba.js?v=f3e20f0"></script>
 </body>
 </html>

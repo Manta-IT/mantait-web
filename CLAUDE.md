@@ -1,127 +1,188 @@
-# CLAUDE.md — web
+# CLAUDE.md -- web
 
-Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRINCIPLES.md`.
+Pravidla pro Claude Code pri praci na webu Manta IT. Drz se. Detail a "proc" je v `PRINCIPLES.md`.
+
+> **BEZI REDESIGN (T0825-7, srpen 2026).** Pravidla nize popisuji NOVY design
+> system. Produkce (`master`) zatim nese stary web (bezova paleta, EB Garamond)
+> a nasazuje se az CELY novy web najednou vcetne SK/EN -- do te doby se do
+> produkcnich stranek nesaha (rozhodnuti Petra 25. 8.). Nutna obsahova oprava
+> produkce pred releasem se dela ve stylu stavajiciho kodu (`style.css`), ne
+> podle novych design pravidel, a musi se prenest i do prototypu.
+> Zdroj pravdy redesignu: `../specs/web-redesign/STAV.md`, prototypy tamtez.
 
 ## Co to je
-15stránkový statický web pro Manta IT (značka Petra Kokošky). Žádný build step, žádný framework.
-- `index.html` -- rozcestník: 8 dlaždic "co řešíte" ve 3 vrstvách + skrytá devátá cesta
-- `reseni-*.html` (9x) -- detail stránky jednotlivých cest (ai, nova-aplikace, propojeni, nastroje, projekt, naklady, bezpecnost, web, vedeni-it)
-- `ukazka-reportu.html` -- ukázkový report z Mapy AI příležitostí (anonymizovaný klientský případ)
-- `o-mne.html` — Bio + reference + case studies
-- `weby.html` — Web Standard a Web Quick
-- `raynet.html` — Specializace na Raynet CRM
-- `kontakt.html` — kontaktní formulář (POST /api/kontakt, Worker odesílá přes Gmail API) + kontakty. Calendly ODSTRANĚNO: 2026-08-07 z indexu a kontaktu (Petr: "vypadá noobsky"), 2026-08-24 ze zbylých 30 stránek. Všechna CTA "Domluvit schůzku" nyní vedou na `/kontakt`.
-- `dotace-mas.html` — landing kampaně "Dotace na klíč pro digitalizaci" (OP TAK Technologie pro MAS II) s formulářem způsobilosti; obsah řídí mission control v parent workspace (`../deliverables/2026-08-07_dotacni-tazeni-mission-control.html`)
-- `clanky/` — obsahový hub (jen CZ): `manifest.json` = zdroj dat, `_template.html` = šablona, index + homepage highlights generuje `scripts/gen_clanky_index.py` (publikační checklist v `specs/blog/README.md`)
-- `sk/`, `en/` — jazykové mutace (19 stránek, ceny v EUR, dotační obsah vynechán); KAŽDÁ obsahová změna CZ stránky se promítá i sem (pravidla v `docs/dt13-spec.md`)
-- `style.css` — sdílený stylesheet (vždy editovat tady, nikdy inline)
-- `_redirects` -- Cloudflare redirecty (`/ai` -> `/reseni-ai`); stará `ai.html` smazána 2026-07-16
+
+Web Manta IT: staticke HTML + sdileny stylesheet, zadny framework, zadny build
+step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
+(20 CZ + 20 SK + 20 EN + 5 clanku). Novy web ma zatim 8 stranek v
+`../specs/web-redesign/prototypy/`:
+
+- `web-v2.html` -- homepage: hero, pruh clanku, reference s logy, co delam,
+  obory, cenik, kontakt se tremi cestami
+- `sluzba-vedeni-it.html` -- vedeni digitalni transformace (VZOR pro ostatni sluzby)
+- `sluzba-aplikace.html` -- aplikace na miru, antikampan na stary model vyvoje
+- `sluzba-propojeni.html` -- propojeni systemu, okruh
+- `sluzba-bezpecnost.html` -- bezpecnost + self-check zakona
+- `sluzba-ai-zamestnanec.html` -- AI zamestnanec, hranol + ranni hlaseni
+- `kdo-jsem.html` -- bio + konstelace kategorii
+- `clanky.html` -- rozcestnik clanku
+- sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`,
+  `obrazky/` (SVG + generatory), `loga/`, `bump.py` (verzovani `?v=`)
+
+Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
+`clanky/` (manifest.json = zdroj dat), `kontakt`, `weby`, `raynet`,
+`case-kalkulacka`, `ukazka-reportu`, `soukromi`, `dekujeme`, `_redirects`,
+`sk/`, `en/` (ceny v EUR, dotacni obsah vynechan).
 
 ## Workflow
-1. Editace `.html` přímo. CSS jen v `style.css`.
-2. Preview: `python scripts/serve.py` v adresáři `web/` → `http://localhost:8773/` (umí extensionless URL jako Cloudflare Pages).
-3. Žádný build, žádný lint, žádný framework.
-4. Před každým commitem: projít každou z 15 stránek desktop (1280px) + 600px viewport, console errors check, ASCII grep clean.
+
+1. Redesign: editace v `../specs/web-redesign/prototypy/`, preview
+   `python -m http.server 8899` v te slozce. Po uprave sdileneho CSS/JS
+   spustit `python bump.py` (jinak testujes starou verzi z cache).
+2. Produkce (az po releasi): editace `.html` primo, CSS jen ve sdilenem
+   stylesheetu, preview `python scripts/serve.py` -> `http://localhost:8773/`.
+3. Testovat v prohlizeci, ne v kodu. Pro posouzeni hotoveho stavu vypnout
+   animace (`*{animation:none !important}`).
+4. Pred commitem: kazda stranka na 390/600/900/1440 px bez vodorovneho
+   scrollu, console errors 0, ASCII grep cisty.
 
 ## Deployment
 
-**Auto-deploy přes Cloudflare Workers Builds z `master` branch** (Worker `mantait-web`, worker.js = statické assety + POST /api/dotaznik a /api/kontakt přes Gmail API; ověřeno 22. 8. 2026 — dřívější zmínky o "Pages" byly nepřesné).
+**Auto-deploy pres Cloudflare Workers Builds z `master`** (Worker `mantait-web`,
+worker.js = staticke assety + POST /api/dotaznik a /api/kontakt pres Gmail API;
+overeno 22. 8. 2026).
 - Repo: `https://github.com/Manta-IT/mantait-web`
-- Push do `master` = automatický deploy do produkce (Cloudflare má vlastní pipeline napojenou na repo)
-- Doména: `mantait.cz` (DNS spravovaná na Cloudflare)
-- Build: žádný (static HTML/CSS)
-- **NESPOUŠTĚT wrangler manuálně** — Cloudflare Pages to dělá samo z GitHubu
+- Push do `master` = automaticky deploy do produkce
+- Domena: `mantait.cz` (DNS na Cloudflare)
+- **NESPOUSTET wrangler manualne**
+- `.assetsignore` drzi interni soubory mimo verejnost -- pri zmene struktury zkontrolovat
 
-**Workflow:**
+**Commit workflow:**
 ```bash
-# Po klonu repa - jednou:
-sh scripts/install-hooks.sh
-
-# Pak normalni commit (pre-commit hook auto-bumpne ?v=hash):
-git add -A
-git commit -m "fix: ..."
-git push origin master      # Cloudflare auto-deploy
-```
-
-Bez pre-commit hook (fallback):
-```bash
-python scripts/bump-cache.py    # manualni bump pred commitem
-git add -A
-git commit -m "fix: ..."
-git push origin master
+sh scripts/install-hooks.sh    # po klonu jednou; pre-commit auto-bumpne ?v=hash
+git add -A && git commit -m "fix: ..." && git push origin master
+# fallback bez hooku: python scripts/bump-cache.py pred commitem
 ```
 
 ## Cache strategy
 
-- **HTML stránky**: max-age=300 (5 min, must-revalidate) — drobné copy fixy se dostanou rychle
-- **style.css**: max-age=1 rok + immutable — browser nikdy nezhodnotí, hash v query (`?v=573b155`) ho donutí stáhnout novou verzi
-- **sitemap.xml**: max-age=3600 (1h)
-- Cloudflare CDN edge cache se auto-purgne při každém deployi (cca 30s globálně)
+- HTML: max-age=300; CSS: 1 rok + immutable, verze pres `?v=<hash>`;
+  sitemap.xml: 1h. Edge cache se purgne pri deployi.
+- `scripts/bump-cache.py` updatuje `?v=` ve vsech HTML -- pustit pred kazdym
+  commitem, ktery meni stylesheet.
 
-`scripts/bump-cache.py` updatuje `<link href="style.css?v=XXX">` ve všech HTML v rootu webu na aktuální git short hash. **Pust před každým commit který mění style.css.**
-
-## Závazná pravidla (porušení = chyba)
+## Zavazna pravidla (poruseni = chyba)
 
 ### Copywriting
-- **ASCII-only v typografii.** Žádné em-dash (—), smart quotes („" ‚'), ellipsis (…). Renderuje se rozbitě. Používej regular `-`, `"`, `'`, `...`. Česká diakritika se ale ZACHOVÁVÁ.
-- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: AI plán do 48 hodin (dřív "Mapa AI příležitostí"), Web Standard, Web Quick, Raynet, Pohoda, IT governance.
-- **Domluvit schůzku** jako primární CTA. Ne "hovor", ne "konzultace", ne "objednat" (falešný slib pro 30min hovor).
-- **Žádný humor typu Baťa cvičky.** Profesionální tón.
-- **Místo žargonu používej:** paušál (ne retainer), propojovací aplikace (ne middleware), zaškolím (ne naučím s), zavádění (ne adopce), pravidelný přehled (ne reporting), průzkum / mapování zadání (ne discovery v textu — Product Discovery jako název služby OK).
+
+- **ASCII-only v typografii.** Zadny em-dash, smart quotes, ellipsis --
+  jen `-`, `"`, `'`, `...`. Ceska diakritika se ZACHOVAVA.
+- **Bez IT zargonu v body copy.** Cilovka: majitele firem do ~250 lidi bez
+  vlastniho IT. Slovnik nahrad je v `PRINCIPLES.md`.
+- **Primarni CTA je "Napiste mi"** a vede na kontakt (od 25. 8., nahradilo
+  "Domluvit schuzku" z doby Calendly). Ne "hovor", ne "objednat".
+- **Zadne vymezovani vuci konkurenci** a slovo "bezkonkurencni" (Petr 24. 7.).
+  Utok na MECHANIKU stareho modelu je povoleny, jmenovani ci implikovani
+  konkurentu ne.
+- **Zadne straseni**: zadne kalkulacky ztrat, zadny odhad skod. Na strance
+  bezpecnosti stoji nase vlastni veta "straseni je spatny obchodni model".
+- **Vina neni mechanika**: zaostalost pojmenovat naplno, ale vinu hned sejmout
+  ("nikdo vam to nerekl") a presunout na rozhodnuti, ktere ctenar udela ted.
+- **U vlastnich cen "nejsem platce DPH"**, nikdy "bez DPH".
+- **U vyvoje povinna veta, ze kod vlastni klient.**
+- **Modelova cisla vzdy s vetou pod carou**, ktera je odlisi od dolozenych --
+  bez toho je to falesna presnost.
+- **Zadna konkretni castka dotace v claimu.** Dotace (pivot 25. 8.): zadost
+  zpracovavame a podavame my za 30 000 Kc (na plnou moc), sluzba konci podanim,
+  zadna druha faktura ani provize. Obe zjednoduseni jsou chybna: "zadost poda
+  kancelar" (bez soucinnosti zadatele nevznikne) i "podavate si ji vzdy sami"
+  (na plnou moc ne). Uzke misto je kvalifikovany podpis jednatele a pristup
+  do ISKP21+ -- resi se na zacatku. Dvojroli (specifikace + vlastni nabidka
+  dodavky) v FAQ nepotvrzovat ani nevylucovat, dokud Petr nerozhodne T0825-59.
+  Zdroj: `../leadgen/mas-baze/SPOLECNA-PRAVIDLA.md`, sekce "Kdo smi zadost
+  fyzicky odeslat".
+- **Zakazano kdekoli:** Ultramarin/UltraConfig, "Kokoska IT", MAS Humpolecko.
 
 ### Design
-- **`--text-faint #5d6a66` NIKDY jako text na světlém pozadí** (kontrast 3.2:1, fail WCAG). Použij `--text-muted` nebo `--text-secondary`.
-- **Body text minimum 15px**, ideál 16px. Drobné labely nikdy pod 12px.
-- **Italic EB Garamond** jen jako akcent v `<em>` v nadpisech (h1/h2) a jako standalone pull-quote. NIKDY jako subtitle pod kartami (čte se jako druhý titulek).
-- **Tap targets ≥ 44px** výška na CTA tlačítkách (Petr požaduje mobile UX).
-- **Vizuální rytmus pozadí:** `--bg` → `--bg-alt` → `--bg` → `--bg-alt` → `--bg-dark` → `--bg-alt` → footer. Tmavá sekce primárně pro IT governance + differentiator.
-- **EB Garamond** display (nadpisy, akcenty). **Inter** body/nav/CTA. Žádné třetí fonty.
-- **Breakpointy:** 600px (mobile), 900px (tablet), 1100px (nav collapse).
 
-### Struktura nabídky (nepřehazovat bez Petra)
-- **IT governance** = hlavní služba, od 50 000 Kč měsíčně (paušál). Pokrývá všech 5 pain pointů. Dlouhodobý retainer.
-- **Dílčí zakázky** (10 000 Kč/den): Projektové řízení, Product Discovery a Product Ownership, Zavádění a adopce nástrojů, IT revize (individuálně).
-- **Produktové služby** (pevná cena):
-  - AI plán do 48 hodin 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu; případný AI agent/automatizace dodán Mantou do týdne za orientačně 50 000 Kč (ostatní kroky 10 000 Kč/den); přejmenováno z "Mapa AI příležitostí" + sníženo z 11 900 rozhodnutím Petra 2026-07-24, předtím z 15 000 dne 2026-07-17)
-  - Web Standard 16 900 Kč (do 2 týdnů)
-  - Web Quick 8 900 Kč (do týdne)
-- **Specializace:** Raynet (od 15 000 Kč).
+- **Paleta:** papir `#FBFBF9`, inkoust `#101413`, zelena `#0B6E4F` jako JEDINY
+  akcent. `--vada #9A3F2B` vyhradne pro data, ktera varuji (nikdy dekorace,
+  nikdy CTA). Pet spektralnich odstinu vyhradne pro kanaly hranolu na strance
+  AI zamestnance, nikde jinde. *(Paleta schvalena Petrem 25. 8. 2026.)*
+- **Pismo:** Outfit (display), Manrope (text), JetBrains Mono JEN pro strojova
+  data (stitky, casy, cisla, zdroje) -- nikdy na prodejni text. Zadny serif.
+- **Polomery:** `--r-s` 8 px drobne prvky, `--r` 10 px tlacitka a pole,
+  `--r-l` 14 px velke panely. Jedna hodnota na vsem je zakazany extrem.
+- **Pohyb:** jedna krivka `cubic-bezier(.23,1,.32,1)`; stisk do 160 ms, hover
+  180-250 ms, stagger po 60 ms. Hover vzdy v
+  `@media (hover:hover) and (pointer:fine)`.
+- **Vychozi stav v CSS je vzdy KONCOVY.** Zavreny stav nasazuje skript tridou
+  `pripravena`; odkryva sdilena funkce `odkryj()` v `sluzba.js` (observer +
+  tvrdy casovac 5 s -- bez nej zustane v uspane zalozce prazdno).
+- **Zadna dorustajici cisla** (nabihat smi jen diagram, ktery ukazuje pocet).
+- **Zadne node diagramy** (Petr zakazal jmenovite).
+- **Zadne tri stejne karty vedle sebe**; kazda sekce jina skladba; nikde dve
+  tmave sekce po sobe.
+- **Kontrast vsude WCAG AA minimum** (cilovka 50+); body text min. 15 px,
+  drobne popisky min. 12 px; tap targets >= 44 px.
+- **Ilustrace:** SVG kreslene generatorem (`prototypy/obrazky/generuj.py`),
+  jeden mechanismus blok/linka/kruh. Test soudrznosti: kazdy tvar musi jit
+  pojmenovat slovem z nasi prace. Kreslit s vedomim nejmensiho mista pouziti
+  (linky 1,5 px pri zmenseni 4x zmizi).
+
+### Struktura nabidky (neprehazovat bez Petra)
+
+Cenik na homepage (stav 25. 8., prototyp):
+- **AI plan do 48 hodin** -- 9 900 Kc pevne
+- **Aplikace a systemy na miru** -- od 50 000 Kc, pevna cena za rozsah; kod vlastni klient
+- **AI zamestnanec** -- 89 000 Kc, provoz od 8 000 Kc mesicne
+- **Vedeni IT (digitalni transformace)** -- od 50 000 Kc mesicne; VZOR stranky je `sluzba-vedeni-it.html`
+- **Dilci zakazky** -- 10 000 Kc/den
+- **Web** -- 16 900 / 8 900 Kc podle rozsahu
+- **Dotace na klic** -- 30 000 Kc pevne, konci podanim zadosti
+
+Pozice (Petr 25. 8.): nejsme IT manager na spravu pocitacu, jsme technologicky
+lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
 
 ### SEO / GEO
-- `<link rel="canonical">` musí přesně odpovídat URL v sitemap.xml (oba **bez přípony `.html`**, např. `/reseni-ai`; soubory na disku příponu mají, Cloudflare Pages extensionless URL řeší sám).
-- `robots.txt` allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, anthropic-ai, CCBot.
-- `llms.txt` v root webu — udržuj aktuální, hlavně ceny a názvy služeb.
-- Per-page meta: `og:title`, `og:description`, `og:type`, `og:locale=cs_CZ`, `og:url`, `og:site_name`, `twitter:card=summary_large_image`, canonical.
-- JSON-LD: každá page má alespoň jedno relevantní schema (ProfessionalService/Person/Service/FAQPage).
 
-### Změny obsahu
-- **Reference (Grandit IT éra 2015-2022)**: NDA expirované, jména projektů + loga + screenshoty OK (čeká na podklady od Petra).
-- **Reference (Blueghost éra 2022-2025)**: NDA platí, anonymně.
-- **Reference (Manta IT — MHA, PlanetLine)**: pod NDA, obecný popis + tag "Case study under NDA". MHA jen anonymně ("B2B distribuční firma") dokud Petr nedodá text NDA.
-- **ZÁKAZ (Petr 2026-08-07): Ultra Marine, UltraConfig.cz a VŠECHNY projekty spojené s Ultramarínem se NIKDY neuvádějí** — na webu, v CV, nikde. Detail v memory `feedback-ultramarin-nikdy-reference`. (Přepisuje starší pravidlo "UltraConfig.cz NDA neplatí".)
-- **Rezervace schůzky**: Calendly je z webu pryč (24. 8. 2026) a nevrací se — všechna CTA vedou na `/kontakt`, kde formulář posílá poptávku přes Worker a Gmail API. Konverze se měří na `/dekujeme`. Nezavádět externí rezervační widget bez Petrova pokynu.
+- `<link rel="canonical">` presne odpovida sitemap.xml, oba bez pripony `.html`.
+- `robots.txt` allow AI crawlerum (GPTBot, ClaudeBot, PerplexityBot,
+  Google-Extended, anthropic-ai, CCBot). POZOR na CF Managed robots (pentest 7. 8.).
+- `llms.txt` udrzovat aktualni (ceny, nazvy sluzeb).
+- Per-page OG meta + JSON-LD (ProfessionalService/Person/Service/FAQPage).
+  FAQPage se na novych strankach generuje samo z viditelnych otazek (`sluzba.js`).
+- Definition-first hero: prvni veta rekne jednou vetou, co to je.
 
-## Kontext a souvislosti
-- **Parent workspace:** `../` (`ventures/manta-it/`) — branding, lead gen, market research.
-- **Reports/research:** `web/docs/research/` (seo-research.md, competitor-research.md). Čti při strategických úvahách.
-- **Detail pravidel:** `web/PRINCIPLES.md` (design + copywriting + SEO bible).
-- **Stav a TODO:** `web/STATUS.md`.
+### Reference
 
-## Před commitem checklist
-1. ASCII grep: `grep -P '[\x{2010}-\x{2015}\x{2018}-\x{201F}\x{2026}]' web/*.html` → 0 hitů
-2. Console errors: otevřít každou stránku v Chrome, DevTools → 0 errors
-3. Mobile: viewport 600px, žádný horizontal scroll, čitelné texty
-4. CTA "Domluvit schůzku": klik vede na `/kontakt`, formulář odešle a přesměruje na `/dekujeme`
-5. Nav active state: na každé stránce zvýrazněna ta aktuální položka
-6. Anchor scroll: kotvy s `scroll-margin-top: 84px` neskáčou pod nav
+- **Seznam (Petr 25. 8., uvadet vsechny):** Cesky rozhlas, Radioteka, Prima,
+  Czech News Center, UniHobby, Pro-Doma, Almeco. Loga stazena v
+  `../specs/web-redesign/prototypy/loga/`, v pasu jako jednobarevne siluety
+  (`grayscale(1) brightness(0)`), hover rozsviti.
+- Formulace "Projekty, ktere jsem vedl" (ne "systemy, ktere jsem ridil" --
+  slo o praci u dodavatelu, kontext je na Kdo jsem).
+- Manta IT klienti (MHA, PlanetLine): pod NDA, MHA jen anonymne.
+- **ZAKAZ (Petr 7. 8.):** Ultra Marine, UltraConfig.cz a vse ultramarinske
+  se NIKDY neuvadi -- web, CV, nikde.
+- Zadne fake reviews, zadne fake reference.
 
-## Co NEDĚLAT
-- Nevkládat inline CSS do HTML (vše do `style.css`).
-- Nepřidávat JS framework. Vanilla nebo nic.
-- Nevolat externí JS kromě Google Fonts, Google Ads (gtag) a Cloudflare Web Analytics.
-- Negenerovat fake reviews ani fake reference.
-- Nezvyšovat ceny bez Petrova explicitního pokynu.
-- Nepoužívat `--text-faint` jako barvu textu.
-- Nepřepisovat "Domluvit schůzku" na "Objednat" / "Konzultaci".
-- Nevkládat hidden metadata, hidden SEO triky.
-- Nepřidávat anglicismy do body copy.
+## Pred commitem checklist
+
+1. ASCII grep: `grep -P '[\x{2010}-\x{2015}\x{2018}-\x{201F}\x{2026}]' *.html` -> 0 hitu
+2. Console errors: 0 na kazde strance
+3. 390/600/900/1440 px: zadny vodorovny scroll
+4. CTA "Napiste mi" vede na kontakt, formular odesle a presmeruje na /dekujeme
+5. Nav active state na kazde strance
+6. FAQ schema se generuje (JSON-LD v DOM)
+
+## Co NEDELAT
+
+- Nepridavat JS framework ani build step. Vanilla nebo nic.
+- Nevolat externi JS krome Google Fonts, Google Ads (gtag) a Cloudflare Web Analytics.
+- Nezvysovat ani nesnizovat ceny bez Petrova pokynu.
+- Nezavadet externi rezervacni widget (Calendly odstraneno 8/2026, nevraci se;
+  duvody v `PRINCIPLES.md`).
+- Nevkladat hidden metadata ani SEO triky.
+- Nepridavat anglicismy do body copy.
+- Nesahat do produkce pred releasem redesignu (viz banner nahore).

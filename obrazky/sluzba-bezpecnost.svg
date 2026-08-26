@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Sítem projde, co má, a zastaví se, co nemá" fill="none">
+<title>Sítem projde, co má, a zastaví se, co nemá</title>
+  <circle cx="70" cy="34" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M70 42v18" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="110" cy="34" r="5" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M110 42v18" stroke="#9A3F2B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="150" cy="34" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M150 42v18" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="190" cy="34" r="5" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M190 42v18" stroke="#9A3F2B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="230" cy="34" r="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M230 42v18" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M40 62h240l-30 46H70z" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M86 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M118 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M150 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M182 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M246 70v30" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M106 100l8 8m0-8l-8 8" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M186 100l8 8m0-8l-8 8" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M70 112v26" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="70" cy="148" r="6" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M150 112v26" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="150" cy="148" r="6" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M230 112v26" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="230" cy="148" r="6" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>

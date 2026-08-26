@@ -1,242 +1,685 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Řeknete, co potřebujete. Postavím to. - Manta IT</title>
-  <meta name="description" content="Aplikace na míru pro vaši firmu. Nemusíte umět napsat zadání ani rozumět technologii. Popíšete, co potřebujete, a dostanete hotovou aplikaci.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aplikace na míru: nápad ze šuplíku do provozu - Manta IT</title>
+<meta name="description" content="Odkládal jste svůj nápad, protože na něj nebyly peníze ani čas? Obojí se změnilo. Zadání psát nemusíte, první funkční verzi otevřete do týdne, kód je váš. Od 50 000 Kč.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sluzba.css?v=f3e20f0">
   <link rel="canonical" href="https://mantait.cz/reseni-nova-aplikace">
-  <link rel="alternate" hreflang="cs" href="https://mantait.cz/reseni-nova-aplikace">
-  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/reseni-nova-aplikace">
-  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/reseni-nova-aplikace">
-  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/reseni-nova-aplikace">
-  <meta property="og:title" content="Řeknete, co potřebujete. Postavím to. - Manta IT">
-  <meta property="og:description" content="Aplikace na míru pro vaši firmu. Popíšete, co potřebujete, a dostanete ji hotovou. Pevná cena dopředu, první verze do týdne.">
+  <meta property="og:title" content="Aplikace na míru: nápad ze šuplíku do provozu - Manta IT">
+  <meta property="og:description" content="Zadání psát nemusíte. První funkční verzi otevřete do týdne, kód je váš.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/reseni-nova-aplikace">
   <meta property="og:site_name" content="Manta IT">
   <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=03a0b57">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Aplikace na míru",
-    "description": "Vývoj aplikací a propojení systémů na míru pro firmy. Klient popíše, co potřebuje, Manta IT dodá hotové řešení v provozu za pevnou cenu.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Manta IT",
-      "url": "https://mantait.cz"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Česká republika"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "CZK",
-      "price": "50000",
-      "description": "Aplikace na míru, pevná cena po prvním hovoru"
-    }
+    "name": "Aplikace a systémy na míru",
+    "description": "Zadání psát nemusíte. První funkční verzi otevřete do týdne, kód je váš.",
+    "serviceType": "Aplikace a systémy na míru",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}},
+    "offers": {"@type": "Offer", "price": "50000", "priceCurrency": "CZK",
+      "description": "od uvedené částky"}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
-  <!-- Cloudflare Web Analytics (cookieless) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
 <body>
-<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
-<nav>
-  <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Domů</a>
-    <a href="/#sluzby" class="nav-link active" aria-current="page">Služby</a>
-    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
-    <a href="/o-mne" class="nav-link">O mně</a>
-    <a href="/kontakt" class="nav-link">Kontakt</a>
-    <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/reseni-nova-aplikace" hreflang="sk" lang="sk">SK</a><a href="/en/reseni-nova-aplikace" hreflang="en" lang="en">EN</a></div>
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
   </div>
-  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<div class="back" id="obsah"><a href="/">Zpět na výběr</a></div>
-
-<!-- HERO -->
-<section class="d-hero">
+<header class="hero" id="hero">
   <div>
-    <div class="d-eyebrow">Řešíte: potřebujeme vlastní aplikaci</div>
-    <h1>Řeknete, co potřebujete. <em>Postavím to.</em></h1>
-    <p class="lead">Víte, co ve firmě potřebujete, ale neumíte to napsat jazykem, kterému
-    rozumí programátoři. A nemáte půl roku na to, aby vám někdo vysvětloval, proč to nejde.
-    Zadání psát nemusíte, stačí odpovídat na moje otázky. Z odpovědí vzniká aplikace,
-    kterou vidíte růst od prvních dní. Postavím ji, nasadím a předám do provozu.</p>
+    <a href="/#obory" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Všechno, s čím pomůžu
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Ten nápad, co máte</span></span>
+      <span class="radek"><b class="r2">roky v šuplíku.</b></span>
+    </h1>
+    <p class="lead vstup z2">Odkládal jste ho, protože na něj nebyly peníze ani čas.
+    Peníze proto, že se platil celý tým a jeho domlouvání. Čas proto, že první
+    výsledek přišel po měsících. Ani jedno už dnes neplatí.
+    Řeknete mi, co má umět. Postavím to.</p>
   </div>
-  <div class="d-card">
-    <div class="pricetag">od 50 000 Kč</div>
-    <div class="priceunit">Přesnou částku řeknu po prvním hovoru a už se nezmění. Určuje ji, kolik toho aplikace umí, kolik systémů se propojuje a kolik lidí v ní bude pracovat.</div>
-    <div class="simple">
-      <div class="big">Nemusíte tomu rozumět.</div>
-      <div class="small">Vy znáte svoje podnikání. Technologii vezmu na sebe.</div>
-    </div>
-    <a href="/kontakt" class="cta">Napsat, co potřebuju</a>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
-  </div>
-</section>
 
-<!-- METRIKY -->
-<div class="lp-facts">
-  <div class="lp-fact"><b>Zlomek ceny</b><span>proti běžné agenturní zakázce na totéž</span></div>
-  <div class="lp-fact"><b>Týdny místo měsíců</b><span>poslední aplikace běžela u klienta 20 dní od objednávky</span></div>
-  <div class="lp-fact"><b>1. týden</b><span>první funkční verze, kterou si otevřete a proklikáte</span></div>
-  <div class="lp-fact"><b>Bez specifikace</b><span>zadání vzniká z vašich odpovědí na moje otázky</span></div>
-</div>
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">od 50 000 Kč</div>
+    <div class="cenovka-pod">pevná cena za dohodnutý rozsah, řeknu ji po prvním hovoru a už se nezmění</div>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Chci to probrat
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
 
-<!-- PROCES -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Jak to probíhá</span>
-    <h2>Zadání vzniká za pochodu. Vy jen odpovídáte.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">1</div>
-        <h3>Popíšete, co potřebujete</h3>
-        <p>Běžnými větami, jak to říkáte kolegům. Podklady pošlete tak, jak je máte,
-        klidně v Excelu. Na zbytek se doptám, zadání z vašich odpovědí poskládám sám
-        a řeknu pevnou cenu.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">2</div>
-        <h3>První verzi máte do týdne</h3>
-        <p>Ne prezentaci ani nákres. Funkční aplikaci, kterou si otevřete a proklikáte.
-        Napíšete, co nesedí, a druhý den máte upravenou verzi.</p>
-      </div>
-      <div class="step final">
-        <div class="step-n">3</div>
-        <h3>Nasadím a zaškolím</h3>
-        <p>Aplikaci dostanu k vám do firmy, založím účty a domluvím se s vaším IT.
-        Vy o tom nemusíte vědět víc, než že to funguje.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ PROC TO LEZELO V SUPLIKU ============ -->
+<section>
+  <div class="obsah">
+    <h2>Proč to leželo v šuplíku.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Ne proto, že by ten nápad
+    byl špatný. Proto, že cesta od nápadu k funkční věci vedla přes čtvery ruce
+    a každé z nich jste platil.</p>
 
-<!-- CO DOSTANETE -->
-<section class="get">
-  <span class="label">Co dostanete</span>
-  <h2>Hotovou věc, ne projekt.</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Cena řečená dopředu</h3><p>Pevná částka za dohodnutý rozsah. Co je nad rámec, má cenu předem a vy se rozhodnete.</p></div>
+    <div class="retez">
+      <div class="clanek">
+        <div class="clanek-kdo">Vy</div>
+        <h3>Musíte napsat, co chcete</h3>
+        <p>Jenže dokud to nevidíte, nevíte to přesně. Píšete tedy zadání
+        o věci, kterou si teprve představujete.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Projektový manažer</div>
+        <h3>Přeloží to dovnitř</h3>
+        <p>Vaše věty převede do úkolů. Co si pod nimi představoval, zjistíte
+        až u předání.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Designér a vývojář</div>
+        <h3>Postaví, co pochopili</h3>
+        <p>Každý z nich má jinou představu o tomtéž slově. Oba mají technicky
+        pravdu, protože zadání to nerozlišovalo.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Zpátky u vás</div>
+        <h3>Vidíte to poprvé</h3>
+        <p>Většinou po měsících. Opravit se to dá, ale už to má cenu víceprací
+        a termín se posune.</p>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>Doladění v ceně</h3><p>Když při používání narazíte, že něco chybí nebo se to má chovat jinak, opravím to. To není vícepráce, to je součást předání.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">03</span>
-      <div><h3>Jeden člověk na všechno</h3><p>Píšete jednomu člověku, který to postaví. Nikam se to nepřekládá.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">04</span>
-      <div><h3>Aplikace, která je vaše</h3><p>Běží u vás nebo tam, kde chcete. Neplatíte měsíční poplatek za to, že vůbec běží, a nejste uvázaní na jednom dodavateli.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">05</span>
-      <div><h3>Nejste na mně závislí</h3><p>Při předání dostanete zdrojový kód a popis, jak aplikaci spustit. Kdykoli ji může převzít jiný programátor, aniž by začínal od nuly. Nemáte u mě nic v zástavě.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">06</span>
-      <div><h3>Provoz zařídím, nebo předám</h3><p>Hosting, doménu, servis i zabezpečení vezmu na sebe, nebo je předám vašemu člověku. Vyberete si, co vám vyhovuje, a rozhodnutí můžete kdykoli změnit.</p></div>
-    </div>
+
+    <p class="retez-zaver">Za tenhle přenos platíte vy. A přitom vzniká jen proto,
+    že mezi vámi a kódem stojí lidé.</p>
   </div>
 </section>
 
-<!-- CO VSECHNO TO MUZE BYT -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Co všechno to může být</span>
-    <h2>Podle toho, co vás tlačí.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">&nbsp;</div>
-        <h3>Vnitropodniková aplikace</h3>
-        <p>Nacenění zakázek, evidence, plánování výroby, cokoli, co dnes držíte
-        v tabulkách nebo v hlavě jednoho člověka. <a href="/case-kalkulacka">Podívejte se na případ z praxe</a>.</p>
+<!-- ============ CO TO JE A CO TO NENI ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Co to je. A co to není.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Většina zklamání ze softwaru
+    vzniká tím, že si dvě strany pod stejným slovem představily jinou věc.
+    Tady je hranice napsaná dopředu.</p>
+
+    <div class="parova-hlava">
+      <span>Není to</span><span class="mezera"></span><span>Je to</span>
+    </div>
+    <div class="parova">
+      <div class="par">
+        <span class="par-dnes">Nový systém pro celou firmu.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jedna konkrétní agenda, kterou dnes držíte v tabulkách a v hlavě jednoho člověka.</span>
       </div>
-      <div class="step">
-        <div class="step-n">&nbsp;</div>
-        <h3>Propojení systémů</h3>
-        <p>Když přepisujete data mezi účetnictvím, e-shopem a CRM.
-        <a href="/reseni-propojeni">Jak to řeším</a>.</p>
+      <div class="par">
+        <span class="par-dnes">Účetnictví ani mzdy.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">To, co je vaše specialita a co v krabici nekoupíte. Regulované agendy patří certifikovanému programu.</span>
       </div>
-      <div class="step final">
-        <div class="step-n">&nbsp;</div>
-        <h3>Web nebo e-shop</h3>
-        <p>Nejmenší z těch věcí, ale platí pro něj to samé.
-        <a href="/reseni-web">Web na míru</a>.</p>
+      <div class="par">
+        <span class="par-dnes">Ukázka ani prototyp.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Provoz s vašimi daty a vašimi lidmi. Demo, které vypadá hotově, neumí přijmout objednávku.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Předplatné za uživatele.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jedna platba za rozsah. Když do aplikace přibude šestý člověk, cena se nezmění.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Dodávka týmu.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jedny ruce. Neplatíte čas, který spolu stráví projektový manažer, designér, tester a vývojář.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Otevřený rozvoj na hodiny.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Rozsah, který má konec, cenu a datum, po kterém je práce uzavřená.</span>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Když jste u některého řádku zaváhal, je to přesně ta věc,
+    kterou si máme ujasnit v prvním hovoru. Ne až u předání.</p>
+  </div>
+</section>
+
+<!-- ============ ROZHODUJE VELIKOST ============ -->
+<section class="data" style="background:var(--papir)">
+  <div class="obsah">
+    <h2>Rozhoduje velikost,<br>ne štěstí.</h2>
+    <p class="data-popis">Software se nekazí náhodně. Kazí se podle toho, jak velký
+    kus se staví najednou. Ta samá studie, kterou se straší v prezentacích, má
+    i druhý nález, a ten se necituje skoro nikdy.</p>
+
+    <span class="stitek" style="margin-top:38px">Malý projekt</span>
+    <div class="sto" style="margin-top:0" role="img"
+         aria-label="Malý projekt: z každých sta jich devadesát dopadne podle plánu, deset nedopadne.">
+       <span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span>
+       <span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span>
+       <span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span>
+       <span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span>
+    </div>
+
+    <span class="stitek" style="margin-top:40px">Velký projekt</span>
+    <div class="sto" style="margin-top:0" role="img"
+         aria-label="Velký projekt: z každých sta jich deset dopadne podle plánu, devědesát nedopadne.">
+       <span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-ok"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span>
+       <span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span>
+       <span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span>
+       <span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span><span class="d d-konec"></span>
+    </div>
+
+    <div class="sto-legenda">
+      <span class="sto-polozka" data-sk="ok" tabindex="0">
+        <i class="d-ok"></i><b>90</b><span>ze sta malých projektů dopadne podle plánu</span></span>
+      <span class="sto-polozka" data-sk="konec" tabindex="0">
+        <i class="d-konec"></i><b>90</b><span>ze sta velkých projektů nedopadne podle plánu</span></span>
+    </div>
+
+    <p class="retez-zaver">Velký kus se nedá poctivě slíbit za pevnou cenu.
+    Malý ano. Proto se staví po kusech, které jdou hned používat.</p>
+
+    <p class="data-zdroj">Zdroj: <b>Standish Group, CHAOS</b>, cyklus 2020.
+    Malé projekty vycházejí kolem devadesáti procent, velké pod deset.
+    Metodiku toho výzkumu část odborné veřejnosti kritizuje a surová data nejsou
+    veřejná, proto ho uvádím s výhradou, ne jako hotovou pravdu. Rozdělení sta
+    čtverečků je zaokrouhlené na celá procenta.</p>
+  </div>
+</section>
+
+<!-- ============ MODELOVE ROZPOCTY ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Co se změnilo, je cena vstupenky.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Samotné programování dnes
+    trvá zlomek toho, co dřív. Zmizela ale hlavně ta část rozpočtu, která šla
+    na koordinaci mezi lidmi.</p>
+
+    <div class="rozpocty">
+      <div class="rozpocet">
+        <div>
+          <h3>Vnitropodniková aplikace</h3>
+          <p>Naceňování zakázek, evidence, plánování výroby. Věc, kterou dnes
+          držíte v tabulkách a v hlavě jednoho člověka.</p>
+        </div>
+        <div class="rozpocet-cena">
+          <span class="rozpocet-drive">rozpočet ve stovkách tisíc</span>
+          <span class="rozpocet-dnes">od 50 000 Kč</span>
+        </div>
+      </div>
+
+      <div class="rozpocet">
+        <div>
+          <h3>Web, který si sami spravujete</h3>
+          <p>Vlastní web s jednoduchou správou obsahu. Ne šablona, na kterou
+          se čeká čtvrt roku.</p>
+        </div>
+        <div class="rozpocet-cena">
+          <span class="rozpocet-drive">rozpočet v desítkách tisíc</span>
+          <span class="rozpocet-dnes">16 900 Kč</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="rozpocty-pozn">Levý údaj je řádový rozpočet, se kterým se takové věci
+    plánovaly. Není to nabídka konkrétní firmy a neporovnávám se s nikým jmenovitě.
+    Pravý údaj je moje cena, kterou najdete i v ceníku na hlavní stránce.</p>
+  </div>
+</section>
+
+<!-- ============ PROC PADESAT TISIC ============ -->
+<section>
+  <div class="obsah">
+    <h2>Proč to stojí padesát tisíc<br>a co s tím cenu hýbe.</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">Cena je za rozsah, ne za
+    hodiny. Kolik hodin to zabere, je moje starost, ne vaše. Rozsah se skládá ze
+    čtyř věcí a všechny čtyři si umíte odhadnout sami, i když o programování
+    nevíte nic.</p>
+
+    <div class="vyberko vyberko-3">
+      <div class="vyberko-radek">
+        <span>Co rozhoduje</span>
+        <span>Zakázka kolem padesáti tisíc</span>
+        <span>Co cenu zvedá</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Kolik obrazovek</span>
+        <span>Jedna tabulka, jeden formulář, jeden výstup.</span>
+        <span>Každá další role chce svůj vlastní pohled na tatáž data.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Kolik systémů se propojuje</span>
+        <span>Žádný. Data se zadávají přímo v aplikaci.</span>
+        <span>Každé napojení na účetnictví, sklad nebo e-shop znamená práci navíc a cizí pravidla, která neurčuju já.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Odkud se stěhují data</span>
+        <span>Začíná se na čistém.</span>
+        <span>Dvacet let historie ve dvanácti tabulkách, které se navzájem rozcházejí.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Kolik lidí a jaká práva</span>
+        <span>Pět lidí a všichni vidí všechno.</span>
+        <span>Role, schvalování, historie změn a doložení, kdo co kdy udělal.</span>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Když z hovoru vyjde dvojnásobek, řeknu dvojnásobek.
+    Neřeknu padesát a pak vícepráce.</p>
+
+    <p class="vyberko-pozn">Prostřední sloupec je orientační pásmo, ne ceník: přesnou
+    cenu řeknu až po hovoru. Padesát tisíc je spodní hranice zveřejněná v ceníku,
+    ne průměr zakázky. Nejsem plátce DPH, cena je konečná.</p>
+  </div>
+</section>
+
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Co si firmy jako vaše<br>nechávají stavět.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Žádné vize. Nástroje
+    na jednu konkrétní věc, která dnes běží v tabulkách a v hlavě jednoho člověka.
+    Projděte si to a hledejte svůj šuplík.</p>
+
+    <div class="doklady">
+      <div class="doklad">
+        <h3>Naceňování zakázek</h3>
+        <p>Cena se počítá proti platným ceníkům, ne podle toho, co si kdo pamatuje.
+        Nacenit umí každý obchodník, ne jen ten jeden člověk.</p>
+      </div>
+      <div class="doklad">
+        <h3>Evidence zakázek a výroby</h3>
+        <p>Kdo na čem dělá a co je hotové, vidíte bez obcházení dílny.
+        Zakázka se neztratí mezi mailem a nástěnkou.</p>
+      </div>
+      <div class="doklad">
+        <h3>Objednávky pro stálé zákazníky</h3>
+        <p>Zákazník, který objednává každý týden totéž, si objedná sám.
+        Bez telefonu, bez přepisování do systému.</p>
+      </div>
+      <div class="doklad">
+        <h3>Plánování směn a kapacit</h3>
+        <p>Kolik práce se vejde do příštího týdne, se dá spočítat,
+        ne odhadovat. Slíbený termín pak sedí.</p>
+      </div>
+      <div class="doklad">
+        <h3>Servisní záznamy v terénu</h3>
+        <p>Technik vyplní protokol v telefonu na místě.
+        Nic se nepřepisuje z propisky, nic se neztratí v autě.</p>
+      </div>
+      <div class="doklad">
+        <h3>Ranní přehled pro majitele</h3>
+        <p>Čísla firmy na jedné obrazovce: zakázky, fakturace, co hoří.
+        Místo skládání tří tabulek v neděli večer.</p>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Každá z nich vznikla z pár vět a hromady podkladů,
+    ne z napsaného zadání. Když jste v některé poznali tu svoji, je to přesně
+    ten případ, o kterém se máme bavit.</p>
+  </div>
+</section>
+
+<section>
+  <div class="obsah">
+    <h2>Nejtěžší část zadání<br>je ta, kterou nemusíte psát.</h2>
+
+    <div class="protiklad">
+      <div class="pole pole-ne">
+        <h3>Co po vás nebudu chtít</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Psát specifikaci nebo zadání.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Vědět, jak se to má naprogramovat.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Přerovnat data do nějakého formátu.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Uvolnit člověka na projekt na půl roku.</li>
+        </ul>
+      </div>
+      <div class="pole pole-ano">
+        <h3>Co od vás potřebuju</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Hodinu na první hovor.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Podklady tak, jak je máte. Klidně v Excelu.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Odpovědi na moje otázky, běžnými větami.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Půl hodiny týdně na to, co jsem mezitím postavil.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ PRUBEH ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Zadání vzniká za pochodu</h2>
+
+    <div class="osa">
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M10 9.5a2 2 0 1 1 2 2v1.2"/></svg></span>
+        <div class="etapa-kdy">První hovor</div>
+        <h3>Ptám se, vy odpovídáte</h3>
+        <p>Popíšete běžnými větami, co ve firmě nefunguje. Na zbytek se doptám. Z odpovědí složím zadání sám a řeknu pevnou cenu za dohodnutý rozsah.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14l2.5 2.5L16 11"/></svg></span>
+        <div class="etapa-kdy">Do týdne</div>
+        <h3>První verzi si proklikáte</h3>
+        <p>Ne prezentaci ani nákres. Funkční aplikaci, kterou otevřete v prohlížeči. Napíšete, co nesedí, a druhý den máte upravenou verzi.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="16" r="3.4"/><path d="M10.4 13.6 19 5h2v3h-3v3h-3"/></svg></span>
+        <div class="etapa-kdy">Další kola</div>
+        <h3>Doladění je v ceně</h3>
+        <p>Když při používání narazíte, že něco chybí nebo se to má chovat jinak, opravím to. To nejsou vícepráce, to je součást předání.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7.5h.01M7 17h.01"/></svg></span>
+        <div class="etapa-kdy">Nasazení</div>
+        <h3>Předám do provozu a zaškolím</h3>
+        <p>Aplikaci nasadím tam, kde ji chcete mít, založím účty a domluvím se s vaším IT. Provoz vezmu na sebe, nebo ho předám vašemu člověku. Vyberete si.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ PRIPAD Z PRAXE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Naposledy to vypadalo takhle.</h2>
+
+    <div class="pripad">
+      <div class="pripad-text">
+        <h3>Výrobní firma, naceňování zakázek</h3>
+        <p>Zakázky naceňovali v aplikaci, která vznikla před deseti lety a od té doby
+        ji nikdo neupravoval. Obsluhovat ji uměl jeden člověk ve firmě.</p>
+        <p>Klientka neposlala žádné zadání. Jen odpovědi na moje otázky a dvanáct
+        ceníků tak, jak je vedla v Excelu. Dnes v nové aplikaci pracuje pět lidí
+        a ceny se počítají proti platným ceníkům.</p>
+        <p>Hladce to celé nešlo. Dvanáct ceníků se na třech místech rozcházelo
+        a rozhodnout, který platí, jsem nemohl já. Trvalo to čtyři dny, které
+        nikdo neplánoval, a vešly se do dohodnuté ceny. Kdyby se to řešilo až
+        v provozu, počítaly by se špatné ceny a nikdo by to týdny nepoznal.</p>
+        <p><a href="/case-kalkulacka" style="color:var(--akcent)">Celý případ z praxe</a></p>
+      </div>
+      <div class="pripad-cisla">
+        <div class="cislo"><b>20 dní</b><span>od objednávky do ostrého provozu</span></div>
+        <div class="cislo"><b>40 000 Kč</b><span>strop, který se nezvedl, i když se doladilo víc; zakázka běžela za staršího ceníku, dnes začínám na 50 000</span></div>
+        <div class="cislo"><b>5 lidí</b><span>v aplikaci místo jednoho</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ZAVER -->
-<section class="end">
-  <div class="end-in">
-    <h2>Napište mi, co máte <em>v hlavě.</em></h2>
-    <p>Nemusí to být zadání. Stačí pár vět o tom, co ve firmě nefunguje
-    nebo co byste potřebovali umět. Řeknu vám, jestli to jde, jak dlouho to potrvá
-    a kolik to bude stát.</p>
-    <form class="form-box end-form" method="post" action="/api/kontakt">
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="lp-jmeno">Jméno a příjmení</label>
-          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
+<!-- ============ A CO KDYZ VAS PREJEDE AUTOBUS ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>A co když vás<br>přejede autobus.</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">Tuhle otázku nahlas skoro
+    nikdo nepoloží. Položí si ji cestou z jednání a rozhodne se podle ní. Tak
+    ji položím sám. To riziko existuje a nezmizí tím, že mi uvěříte. Zmizí jen
+    tím, co máte v ruce.</p>
+
+    <div class="doklady">
+      <div class="doklad">
+        <h3>Kód dostáváte průběžně</h3>
+        <p>Po každém kole máte v ruce to, co je hotové, i s popisem, jak to spustit.
+        Kdyby se práce zastavila uprostřed, nezůstane vám prázdné místo.</p>
+      </div>
+      <div class="doklad">
+        <h3>Přístupy patří vaší firmě</h3>
+        <p>Hosting, doména i databáze běží na účtech vedených na vaši firmu.
+        I když provoz vezmu na sebe, nedržím nic, o co byste musel prosit.</p>
+      </div>
+      <div class="doklad">
+        <h3>Data si vyvezete kdykoli</h3>
+        <p>Leží v běžné databázi, ne v uzavřeném formátu. Součástí předání je
+        export, který otevře i tabulkový editor.</p>
+      </div>
+      <div class="doklad">
+        <h3>Popis pro programátora, který u toho nebyl</h3>
+        <p>Co která část dělá a jak se aplikace nasadí znovu od nuly.
+        Navázat na ni jde bez archeologie.</p>
+      </div>
+      <div class="doklad">
+        <h3>Běžné nástroje, ne moje vynálezy</h3>
+        <p>Aplikace stojí na věcech, které zná každý druhý programátor.
+        Nemusíte hledat specialistu na můj způsob práce.</p>
+      </div>
+      <div class="doklad">
+        <h3>Zaškolení a krátké video</h3>
+        <p>Pro lidi, kteří do aplikace teprve nastoupí. Aby znalost neseděla
+        zase jen v jedné hlavě.</p>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">To hlavní ale nedostáváte ode mě.</p>
+
+    <p class="lead" style="max-width:62ch">Zakázku zadáváte fyzické osobě. Autorský
+    zákon na to pamatuje v paragrafu 58 odst. 7: počítačový program vytvořený
+    na objednávku se považuje za zaměstnanecké dílo a objednatel se považuje
+    za zaměstnavatele. Majetková práva k tomu programu tedy vykonáváte vy.
+    Není to moje vstřícnost, je to výchozí stav.</p>
+
+    <p class="vyberko-pozn">Zákon č. 121/2000 Sb., o právu autorském, paragraf 58
+    odst. 7. Manta IT podniká jako fyzická osoba, IČO 04158351. Zákon dává výkon
+    majetkových práv; předání souborů, dokumentace a exportů je nad rámec zákona
+    moje smluvní podmínka.</p>
+  </div>
+</section>
+
+<!-- ============ CO Z TOHO ROSTE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Hotová aplikace je začátek,<br>ne konec.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Jakmile agenda běží
+    v systému, otevírají se kroky, které předtím nešly vůbec.</p>
+
+    <div class="rust">
+      <div class="rust-krok">
+        <h3>Agenda má systém</h3>
+        <p>Věc, kterou uměl jeden člověk, teď dělá kdokoli. Dovolená ani
+        výpověď už agendu nezastaví.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Data jdou propojit</h3>
+        <p>Co je v systému, dá se napojit na účetnictví, sklad nebo e-shop.
+        Z tabulky se to napojit nedalo.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Stroj má kam sáhnout</h3>
+        <p>Automatizace i AI zaměstnanec potřebují systémy, ne šanony.
+        Tahle aplikace jim staví podlahu.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Druhá věc je levnější než první</h3>
+        <p>Další schopnost se nacení stejně jako první zakázka, pevnou cenou
+        za dohodnutý rozsah. Nezačíná se od nuly, protože základ i kód už máte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VYSLEDKY V CISLECH ============ -->
+<section class="vysledky">
+  <div class="obsah">
+    <h2>Co se stane, když řeknete ano.</h2>
+    <p class="vysledky-lead">Co uvidíte a kdy.</p>
+
+    <div class="cisla">
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 51 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="8" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="16" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="24" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="4" style="--i:4" x="32" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="5" style="--i:5" x="40" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="6" style="--i:6" x="48" y="0" width="3" height="34" rx="1.5" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">7<span class="cislo-jednotka">dní</span></b>
+        <span class="cislo-popis">Než si otevřete první funkční verzi. Ne prezentaci, aplikaci.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 38 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="2" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="8" y="2" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="16" y="2" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="24" y="2" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="4" style="--i:4" x="32" y="2" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="5" style="--i:5" x="0" y="10" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="6" style="--i:6" x="8" y="10" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="7" style="--i:7" x="16" y="10" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="8" style="--i:8" x="24" y="10" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="9" style="--i:9" x="32" y="10" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="10" style="--i:10" x="0" y="18" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="11" style="--i:11" x="8" y="18" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="12" style="--i:12" x="16" y="18" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="13" style="--i:13" x="24" y="18" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="14" style="--i:14" x="32" y="18" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="15" style="--i:15" x="0" y="26" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="16" style="--i:16" x="8" y="26" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="17" style="--i:17" x="16" y="26" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="18" style="--i:18" x="24" y="26" width="6" height="6" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="19" style="--i:19" x="32" y="26" width="6" height="6" rx="1.5" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">20<span class="cislo-jednotka">dní</span></b>
+        <span class="cislo-popis">Od objednávky do ostrého provozu u poslední aplikace. Skutečná zakázka, ne odhad.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 40 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="40" height="26" rx="4" fill="none" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2"/><path data-i="1" style="--i:1" d="M4 30L36 4" stroke="#12A06B" stroke-width="2" stroke-linecap="round"/></svg>
+        <b class="cislo-hodnota">0<span class="cislo-jednotka">víceprací</span></b>
+        <span class="cislo-popis">Za doladění toho, co v aplikaci už je. To není vícepráce, to je předání.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 44 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="44" height="26" rx="4" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">100<span class="cislo-jednotka">% kódu</span></b>
+        <span class="cislo-popis">Je vaše. Práva k programu na objednávku vykonáváte vy, ze zákona, ne z mojí vstřícnosti.</span>
+      </div>
+    </div>
+
+    <p class="cisla-pozn">Dvacet dní je měření z odvedené zakázky. Týden na první verzi platí pro běžný rozsah; u složitější aplikace to řeknu dopředu. Nula víceprací je moje smluvní podmínka, ne měření. Sto procent kódu plyne ze zákona č. 121/2000 Sb., paragraf 58 odst. 7, protože Manta IT podniká jako fyzická osoba.</p>
+  </div>
+</section>
+
+<!-- ============ KDY NE ============ -->
+<section class="varovani">
+  <div class="obsah">
+    <span class="stitek">Kdy říkám ne</span>
+    <div class="varovani-delene">
+      <div class="varovani-uvod">
+        <h2>Kdy vám vývoj nedoporučím</h2>
+        <p>Postavit něco na míru je někdy ta dražší cesta. Poznám to obvykle při prvním hovoru a řeknu to dřív, než pošlu nabídku.</p>
+      </div>
+      <div>
+        <div class="varovani-polozka">
+          <h3>Když to někdo prodává hotové</h3>
+          <p>Když existuje systém, který to umí, koupit ho je levnější než ho stavět. Vybrat a zavést ho umím jako dílčí zakázku za 10 000 Kč za den.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-firma">Firma</label>
-          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
+        <div class="varovani-polozka">
+          <h3>Když ještě nevíte, co má dělat</h3>
+          <p>Když se ve firmě neshodnete, jak ten proces má vlastně probíhat, aplikace ten spor nevyřeší, jen ho zabetonuje. Prvním krokem je pak <a href="/reseni-mapa-firmy" style="color:var(--akcent)">Mapa firmy</a> za 39 000 Kč, ne vývoj.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-tel">Telefon</label>
-          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
+        <div class="varovani-polozka">
+          <h3>Když jde o účetnictví nebo mzdy</h3>
+          <p>Regulované agendy nechte na certifikovaném softwaru. Na míru se dělá to, co je vaše specialita a co v krabici nekoupíte.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-mail">E-mail</label>
-          <input id="lp-mail" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field full">
-          <label for="lp-zprava">Co řešíte?</label>
-          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
+        <div class="varovani-polozka">
+          <h3>Když si to chcete nejdřív zkusit sám</h3>
+          <p>Dnes existují nástroje, kterým popíšete, co chcete, a za odpoledne vám postaví běžící aplikaci. Na ověření nápadu nebo na pomocníka pro jednoho člověka je to skvělé a nebudu vás od toho zrazovat. Zasekne se to většinou až u přihlašování, práv, nasazení a případů, které vás nenapadly. Když se to stane, ozvěte se a navážu na to.</p>
         </div>
       </div>
-      <div class="hp-field" aria-hidden="true">
-        <label for="lp-web">Nevyplňujte</label>
-        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+  </div>
+</section>
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Kdo vlastní zdrojový kód?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Vy, a nemusíte se o to hlásit. Zakázku zadáváte fyzické osobě a autorský zákon na to pamatuje v paragrafu 58 odst. 7: počítačový program vytvořený na objednávku se považuje za zaměstnanecké dílo a objednatel se považuje za zaměstnavatele. Majetková práva tedy vykonáváte vy.</p>
+        <p>Nad rámec zákona je moje podmínka, že při předání dostanete i samotné soubory: zdrojový kód, popis, jak aplikaci spustit, a export dat. Kdykoli ji může převzít jiný programátor, aniž by začínal od nuly. Nemáte u mě nic v zástavě.</p>
       </div>
-      <button type="submit" class="btn">Odeslat zprávu</button>
-      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
-    </form>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
+    </details>
+
+    <details>
+      <summary>Jak můžete říct pevnou cenu, když neexistuje zadání?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Cenu řeknu až po prvním hovoru, ne dopředu. Do té doby se ptám tak dlouho, dokud nevím, kolik toho aplikace má umět, kolik systémů se propojuje a kolik lidí v ní bude pracovat. Teprve pak pošlu částku a ta se už nemění.</p>
+        <p>Co je nad dohodnutý rozsah, má cenu předem a vy se rozhodnete, jestli do toho jít.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co se počítá jako vícepráce a co ne?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Doladění toho, co v aplikaci už je, se neúčtuje. Když při používání zjistíte, že se něco má chovat jinak, opravím to.</p>
+        <p>Vícepráce je nová schopnost, o které se dřív nemluvilo. Tu nacením zvlášť a stavím ji, až když ji schválíte. Stejně se nacení i rozšíření za rok: pevnou cenou za dohodnutý rozsah, ne novým projektem od nuly.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Píše ten kód umělá inteligence? A není takový kód děravý?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, používám ji, a bylo by hloupé to zapírat. Zároveň to není důvod výsledku věřit.</p>
+        <p>Nejrozsáhlejší veřejné měření, které znám, testovalo přes sto padesát modelů na osmdesáti úlohách. V pětačtyřiceti procentech případů prošel do výsledku známý bezpečnostní nedostatek a za dva roky se to číslo nezlepšilo. Nedůvěřují tomu ani lidé, kteří to používají denně.</p>
+        <p>Proto se nic nenasazuje bez toho, že to projdu. Rozsah je malý, takže se to projít dá. Aplikace běží uvnitř firmy nebo za přihlášením, ne otevřená do internetu. A když jde o platby, osobní údaje nebo přístup zvenčí, řeknu to dopředu a počítá se s tím v ceně.</p>
+        <p>Zdroj čísla: Veracode, měření z 24. 3. 2026.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kdy se platí?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ve dvou částech: při objednávce a po předání do provozu. Žádná faktura mezi tím a žádná po ní.</p>
+        <p>Neplatíte měsíční poplatek za to, že aplikace vůbec běží. Nejsem plátce DPH, cena je konečná.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Potřebuju k tomu vlastní IT oddělení?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ne. Většina firem, pro které tohle dělám, žádné nemá.</p>
+        <p>Aplikace se otevírá v prohlížeči, takže se u vás nic neinstaluje. Nasazení, účty i zaškolení dělám já. Když máte externího správce sítě, domluvím se s ním přímo, abyste to nemusel překládat vy.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kde to poběží a kdo se o to bude starat?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Podle toho, co vám vyhovuje. Hosting, doménu, servis i zabezpečení vezmu na sebe, nebo je předám vašemu člověku. Rozhodnutí můžete kdykoli změnit.</p>
+        <p>Aplikace může běžet i u vás ve firmě, když data nemají opustit vaši síť.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jak dlouho to trvá?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>První funkční verzi otevřete do týdne od objednávky. Jak dlouho potrvá zbytek, záleží na rozsahu. Poslední aplikace běžela u klienta dvacátý den od objednávky.</p>
+        <p>Připomínky obvykle zapracuji do druhého dne, takže se nečeká na kola schvalování.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Napište mi, co máte v hlavě.</h2>
+    <p>Nemusí to být zadání. Stačí pár vět o tom, co ve firmě nefunguje. Řeknu vám, jestli to jde, jak dlouho to potrvá a kolik to bude stát.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
 </footer>
 
+<script src="/sluzba.js?v=f3e20f0"></script>
 </body>
 </html>

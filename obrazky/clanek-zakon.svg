@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="V kalendáři je vyznačený jeden den, do kterého se to musí stihnout" fill="none">
+<title>V kalendáři je vyznačený jeden den, do kterého se to musí stihnout</title>
+  <rect x="96" y="40" width="128" height="120" rx="5" fill="#FBFBF9" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M96 66h128" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M124 32v16" stroke="#101413" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M196 32v16" stroke="#101413" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="110" y="80" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="132" y="80" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="154" y="80" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="176" y="80" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="198" y="80" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="110" y="104" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="132" y="104" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="154" y="104" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="176" y="104" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="198" y="104" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="110" y="128" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="132" y="128" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="154" y="128" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="176" y="128" width="14" height="14" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.4" opacity="1"/>
+  <rect x="198" y="128" width="14" height="14" rx="3" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="1.4" opacity="1"/>
+</svg>

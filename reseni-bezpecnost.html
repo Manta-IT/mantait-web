@@ -1,184 +1,696 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budete vědět, na čem jste - Manta IT</title>
-  <meta name="description" content="Nezávislé posouzení bezpečnosti, audit zálohování a krizový plán pro případ, že se něco stane - dřív, než bude pozdě.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nový zákon o kybernetické bezpečnosti a vaše firma - Manta IT</title>
+<meta name="description" content="Nový zákon o kybernetické bezpečnosti, č. 264/2025 Sb., se netýká jen bank a elektráren. Zjistím, jestli dopadá na vaši firmu, ohlásím službu u NÚKIB a dovedu vás do souladu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sluzba.css?v=f3e20f0">
   <link rel="canonical" href="https://mantait.cz/reseni-bezpecnost">
-  <link rel="alternate" hreflang="cs" href="https://mantait.cz/reseni-bezpecnost">
-  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/reseni-bezpecnost">
-  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/reseni-bezpecnost">
-  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/reseni-bezpecnost">
-  <meta property="og:title" content="Budete vědět, na čem jste - Manta IT">
-  <meta property="og:description" content="Nezávislé posouzení bezpečnosti, audit zálohování a krizový plán pro případ, že se něco stane - dřív, než bude pozdě.">
+  <meta property="og:title" content="Nový zákon o kybernetické bezpečnosti a vaše firma - Manta IT">
+  <meta property="og:description" content="Zákon č. 264/2025 Sb. se netýká jen bank a elektráren. Zjistím, jestli dopadá na vaši firmu, ohlásím službu u NÚKIB a dovedu vás do souladu.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/reseni-bezpecnost">
   <meta property="og:site_name" content="Manta IT">
   <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=03a0b57">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Posouzení bezpečnosti a záloh",
-    "description": "Nezávislé posouzení bezpečnosti, audit zálohování a krizový plán pro případ, že se něco stane - dřív, než bude pozdě.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Manta IT",
-      "url": "https://mantait.cz"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Česká republika"
-    }
+    "name": "Bezpečnost a nový zákon",
+    "description": "Zákon č. 264/2025 Sb. se netýká jen bank a elektráren. Zjistím, jestli dopadá na vaši firmu, ohlásím službu u NÚKIB a dovedu vás do souladu.",
+    "serviceType": "Bezpečnost a nový zákon",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
-  <!-- Cloudflare Web Analytics (cookieless) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
 <body>
-<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
-<nav>
-  <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Domů</a>
-    <a href="/#sluzby" class="nav-link active" aria-current="page">Služby</a>
-    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
-    <a href="/o-mne" class="nav-link">O mně</a>
-    <a href="/kontakt" class="nav-link">Kontakt</a>
-    <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/reseni-bezpecnost" hreflang="sk" lang="sk">SK</a><a href="/en/reseni-bezpecnost" hreflang="en" lang="en">EN</a></div>
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
   </div>
-  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<div class="back" id="obsah"><a href="/">Zpět na výběr</a></div>
-
-<!-- HERO -->
-<section class="d-hero">
+<header class="hero" id="hero">
   <div>
-    <div class="d-eyebrow">Řešíte: bezpečnost a data</div>
-    <h1>Budete vědět, <em>na čem jste.</em></h1>
-    <p class="lead">Zálohování, GDPR, ochrana před útoky. Tyhle věci si firmy řeší, ale často bez nezávislé kontroly. Zajistím nezávislé posouzení bezpečnosti, audit zálohování a krizový plán pro případ, že se něco stane.</p>
+    <a href="/#obory" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Všechno, s čím pomůžu
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Budete vědět,</span></span>
+      <span class="radek"><b class="r2">na čem jste.</b></span>
+    </h1>
+    <p class="lead vstup z2">Nový zákon o kybernetické bezpečnosti, číslo 264/2025 Sb., se netýká jen bank a elektráren. Zjistím, jestli dopadá na vaši firmu, a když ano, dovedu vás do souladu.</p>
   </div>
-  <div class="d-card">
-    <div class="pricetag">individuálně</div>
-    <div class="priceunit">podle velikosti firmy a rozsahu</div>
-    <div class="simple">
-      <div class="big">Dříve než bude pozdě.</div>
-      <div class="small">Když se něco stane, je pozdě zjišťovat, co chybělo. Zjistíme to teď, v klidu.</div>
-    </div>
-    <a href="/kontakt" class="cta">Domluvit schůzku</a>
-    <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
-  </div>
-</section>
 
-<!-- PROCES -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Jak to probíhá</span>
-    <h2>Jak bezpečnost posoudím.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">1</div>
-        <h3>Projdu, jak jste na tom</h3>
-        <p>Zálohování, přístupy, ochrana dat, dodržování pravidel. Nezávisle, bez přikrášlování.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">2</div>
-        <h3>Najdu slabá místa</h3>
-        <p>Řeknu, kde hrozí riziko a co by reálně znamenal výpadek nebo útok.</p>
-      </div>
-      <div class="step final">
-        <div class="step-n">3</div>
-        <h3>Připravím plán</h3>
-        <p>Konkrétní kroky k nápravě a krizový plán pro případ, že se něco stane.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">Podle rozsahu</div>
+    <div class="cenovka-pod">ověřit, jestli se vás zákon týká, je práce na jeden až dva dny; počítá se po dnech a rozsah řeknu po prvním hovoru</div>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Chci to probrat
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
 
-<!-- CO DOSTANETE -->
-<section class="get">
-  <span class="label">Co dostanete</span>
-  <h2>Klid, že to máte pod kontrolou.</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Nezávislé posouzení</h3><p>Pohled zvenku, bez zájmu něco vám prodat.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>Audit zálohování</h3><p>Jistota, že data opravdu zálohujete a že se dají obnovit.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">03</span>
-      <div><h3>Pojmenovaná rizika</h3><p>Co reálně hrozí a co se stane, když se to podcení.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">04</span>
-      <div><h3>Krizový plán</h3><p>Kdo co dělá, když dojde k výpadku nebo útoku. Připravený dopředu.</p></div>
+<!-- ============ CO TO JE A CO TO NENI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Zákon nepředepisuje žádný produkt.</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">Vyhlášky mluví
+    o postupech, dokumentech, rolích a o tom, co musíte umět doložit. Proto se
+    soulad nedá koupit a nainstalovat. Neptejte se, co si máte pořídit, ale kdo
+    co bude dělat.</p>
+
+    <div class="protiklad">
+      <div class="pole pole-ne">
+        <h3>Co to není</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Software ani zařízení. Žádná z vyhlášek nejmenuje jediný produkt, který byste si měli koupit.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Certifikát ISO 27001. Je dobrovolný, platí se zvlášť a zákon jím nesplníte, i když se velká část práce překrývá.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Penetrační test. To je samostatná služba a v mírnějším režimu ji zákon nepožaduje.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>GDPR. To chrání osobní údaje, tenhle zákon řeší odolnost služby a hlášení incidentů.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Právní stanovisko s razítkem. U holdingu nebo u hraničního zařazení patří ke stolu advokát a řeknu to předem.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Správa vašich počítačů. Kdo IT spravuje a kdo hlídá soulad, mají být dva různí lidé.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Jednorázové razítko. Přehled opatření se aktualizuje jednou ročně a uchovává čtyři roky.</li>
+        </ul>
+      </div>
+      <div class="pole pole-ano">
+        <h3>Co to je</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Písemné posouzení, jestli poskytujete regulovanou službu. Dostanete ho i tehdy, když vyjde, že ne.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Určení režimu, tedy jestli pro vás platí mírnější vyhláška, nebo ta přísnější.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ohlášení služby přes Portál NÚKIB a příprava všech podkladů k němu.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Porovnání toho, co ve firmě máte, proti tomu, co vyhláška pro váš režim chce.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Plán zavedení s pořadím, termíny, odpovědnou osobou a cenou.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dodatky ke smlouvám s dodavateli a podklady, ze kterých se vyplňují dotazníky od odběratelů.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ZAVER -->
-<section class="end">
-  <div class="end-in">
-    <h2>Zjistíme to <em>v klidu teď.</em></h2>
-    <p>Řekněte mi, čeho se bojíte. Já vám řeknu, jak na tom jste a co dořešit. V klidu, bez incidentu za zády.</p>
-    <form class="form-box end-form" method="post" action="/api/kontakt">
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="lp-jmeno">Jméno a příjmení</label>
-          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Poznáte to za pět minut.</h2>
+    <p class="lead" style="margin-top:18px;max-width:60ch">Česko přebírá evropskou
+    směrnici NIS2 zákonem č. 264/2025 Sb., účinným od 1. listopadu 2025. Dohled má
+    úřad NÚKIB a firma, na kterou zákon dopadá, se musí ohlásit sama. Úřad obsílky
+    nerozesílá, povinnost vzniká ze zákona.</p>
+
+    <form class="otazky" id="test">
+      <fieldset class="otazka">
+        <legend class="jen-ctecka">Otázka 1</legend>
+        <span class="otazka-c" aria-hidden="true">1</span>
+        <div>
+          <div class="otazka-nadpis"><h3>Podnikáte v odvětví, které zákon jmenuje?</h3></div>
+          <p>Zákon jmenuje patnáct odvětví: veřejná správa, energetika, výroba, potravinářství, chemický průmysl, vodní hospodářství, odpadové hospodářství, doprava, digitální infrastruktura a digitální služby, finanční trh, zdravotnictví, věda a výzkum a vzdělávání, poštovní a kurýrní služby, obranný průmysl a vesmírný průmysl. Buď tam své odvětví najdete, nebo ne.</p>
+          <p>Které konkrétní služby jsou v tom odvětví regulované, stanoví vyhláška č. 408/2025 Sb. Kód CZ-NACE je v ní jen vodítko, ne odpověď.</p>
+          <div class="volby">
+            <label class="volba"><input type="radio" name="o1" value="ano"><span>Ano</span></label>
+            <label class="volba"><input type="radio" name="o1" value="ne"><span>Ne</span></label>
+            <label class="volba"><input type="radio" name="o1" value="nevim"><span>Nevím</span></label>
+          </div>
         </div>
-        <div class="form-field">
-          <label for="lp-firma">Firma</label>
-          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
+      </fieldset>
+
+      <fieldset class="otazka">
+        <legend class="jen-ctecka">Otázka 2</legend>
+        <span class="otazka-c" aria-hidden="true">2</span>
+        <div>
+          <div class="otazka-nadpis"><h3>Jste dost velcí?</h3></div>
+          <p>Velikost se posuzuje podle evropského doporučení, které zákon přebírá. Střední podnik má padesát až dvě stě čtyřicet devět zaměstnanců. Do toho počtu se ale sčítají i lidé z vlastnicky propojených firem, a to v plném rozsahu; z partnerských firem poměrnou částí.</p>
+          <p>Teprve pak se dívá na peníze, a to na roční obrat <b>nebo</b> na bilanční sumu. Firma s malým obratem a velkým majetkem si podle obratu odpoví špatně.</p>
+          <div class="volby">
+            <label class="volba"><input type="radio" name="o2" value="ano"><span>Ano</span></label>
+            <label class="volba"><input type="radio" name="o2" value="ne"><span>Ne</span></label>
+            <label class="volba"><input type="radio" name="o2" value="nevim"><span>Nevím</span></label>
+          </div>
         </div>
-        <div class="form-field">
-          <label for="lp-tel">Telefon</label>
-          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
+      </fieldset>
+
+      <fieldset class="otazka">
+        <legend class="jen-ctecka">Otázka 3</legend>
+        <span class="otazka-c" aria-hidden="true">3</span>
+        <div>
+          <div class="otazka-nadpis"><h3>Dodáváte někomu, na koho zákon dopadá?</h3></div>
+          <p>Tahle otázka nerozhoduje o tom, jestli jste regulovaní. Dodavatel regulované firmy regulovaným subjektem není a sám se neohlašuje.</p>
+          <p>Rozhoduje o něčem jiném a často dřívějším: regulovaná firma musí hlídat bezpečnost svých dodavatelů a čtrnáct kategorií smluvních ujednání na vás přenese dodatkem ke smlouvě. Ten dodatek přijde od zákazníka, ne od úřadu.</p>
+          <div class="volby">
+            <label class="volba"><input type="radio" name="o3" value="ano"><span>Ano</span></label>
+            <label class="volba"><input type="radio" name="o3" value="ne"><span>Ne</span></label>
+            <label class="volba"><input type="radio" name="o3" value="nevim"><span>Nevím</span></label>
+          </div>
         </div>
-        <div class="form-field">
-          <label for="lp-mail">E-mail</label>
-          <input id="lp-mail" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field full">
-          <label for="lp-zprava">Co řešíte?</label>
-          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
-        </div>
-      </div>
-      <div class="hp-field" aria-hidden="true">
-        <label for="lp-web">Nevyplňujte</label>
-        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <button type="submit" class="btn">Odeslat zprávu</button>
-      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
+      </fieldset>
     </form>
-    <div class="reassure">30 minut. Online nebo u vás. Bez závazku.</div>
+
+    <div class="vysledek" id="vysledek" role="status" aria-live="polite">
+      <span class="vysledek-znak" aria-hidden="true">?</span>
+      <div>
+        <h3>Odpovězte na tři otázky výše</h3>
+        <p>Výsledek se dopočítá sám. Jedna z možných odpovědí je, že se vás zákon
+        netýká a nemusíte řešit nic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KDE SE POSOUZENI ZLOMI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Pět míst, kde se posouzení<br>nejčastěji zlomí.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Odpověď na otázku,
+    jestli zákon dopadá na vaši firmu, se nekazí na výpočtu. Kazí se na tom,
+    co do něj člověk zadá.</p>
+
+    <div class="parova-hlava">
+      <span>Co si firma řekne</span><span class="mezera"></span><span>Jak to čte zákon</span>
+    </div>
+    <div class="parova">
+      <div class="par">
+        <span class="par-dnes">Rozhoduje to, čím se živíme.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Zákon se ptá na všechno, co děláte. I na činnost, která je pro vás vedlejší a kterou byste sami nezmínili.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Máme padesát lidí, takže jsme na hraně.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Do počtu se sčítají i lidé z vlastnicky propojených firem, a to v plném rozsahu. Z partnerských poměrnou částí.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Dodáváme regulované firmě, tak jsme regulovaní taky.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Nejste. Dodavatel regulovaného subjektu regulovaným subjektem není. Požadavky ale dostanete, a to smlouvou.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Máme dvě činnosti a jedna je ta mírnější.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Platí ta přísnější. Když má firma víc regulovaných služeb v různých režimech, řídí se tím vyšším.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Nikdo nám nic neposlal, takže se nás to netýká.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Povinnost vzniká ze zákona, ne z dopisu. Úřad obsílky nerozesílá.</span>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Kolik z těch pěti vět jste si za poslední minutu
+    řekl? Není to vaše chyba. Ta pravidla vyšla v listopadu 2025 a nikdo je
+    firmám nerozeslal.</p>
+    <p class="vyberko-pozn">Velikost se posuzuje podle doporučení Evropské komise
+    2003/361/ES, které zákon přebírá. Konkrétní regulované služby v jednotlivých
+    odvětvích stanoví vyhláška č. 408/2025 Sb.</p>
+  </div>
+</section>
+
+<!-- ============ LHUTA ============ -->
+<section class="lhuta">
+  <div class="obsah">
+    <h2>Lhůta neběží od data v novinách.<br>Běží od vás.</h2>
+    <p class="lhuta-lead">Na ohlášení máte šedesát dnů ode dne, kdy podmínky
+    splníte. Firmám, které je splňovaly hned při účinnosti zákona, uplynula lhůta
+    31. prosince 2025. Kdo je splní později, růstem, novou činností nebo změnou
+    ve skupině, začíná těch šedesát dnů počítat od té chvíle.</p>
+
+    <div class="retez">
+      <div class="clanek">
+        <div class="clanek-kdo">Den nula</div>
+        <h3>Splníte podmínky</h3>
+        <p>Odvětví, regulovaná služba a velikost vám sednou. Může to být den
+        účinnosti zákona, ale taky den, kdy jste nabrali padesátého člověka
+        nebo koupili sesterskou firmu.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Do 60 dnů</div>
+        <h3>Ohlásíte službu</h3>
+        <p>Podává se přes Portál NÚKIB a firma to zvládne sama. Těžká část
+        nejsou kliky, ale podklady a to, co se do nich napíše.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Potom</div>
+        <h3>Přijde rozhodnutí o registraci</h3>
+        <p>Od jeho doručení běží druhá lhůta. Každé firmě jiná, podle toho,
+        kdy se ohlásila.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">Do roka od rozhodnutí</div>
+        <h3>Opatření jsou zavedená</h3>
+        <p>Ne slíbená a rozpracovaná, ale zavedená a doložitelná. Tohle je ta
+        část, která zabere čas, protože jsou v ní i smlouvy s dodavateli.</p>
+      </div>
+    </div>
+
+    <p class="lhuta-pozn">Zákon č. 264/2025 Sb., účinný od 1. listopadu 2025.
+    Lhůtu šedesáti dnů i konec první vlny k 31. 12. 2025 uvádí NÚKIB. Lhůtu
+    jednoho roku od doručení rozhodnutí o registraci shodně uvádějí advokátní
+    zdroje. Žádný z těch údajů není odhad.</p>
+  </div>
+</section>
+
+<!-- ============ DVA REZIMY ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Režimy jsou dva a liší se hlavně tím,<br>kdo to musí řídit.</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">O tom, kolik práce
+    zákon znamená, nerozhoduje jeho název, ale zařazení vaší služby. Do toho
+    přísnějšího míří provozovatelé, na kterých visí chod celých odvětví.</p>
+
+    <div class="vyberko vyberko-3">
+      <div class="vyberko-radek">
+        <span>Co zákon chce</span>
+        <span>Mírnější režim<br>vyhl. č. 410/2025 Sb.</span>
+        <span>Přísnější režim<br>vyhl. č. 409/2025 Sb.</span>
+      </div>
+      <div class="vyberko-radek vitez">
+        <span>Kdo za to ve firmě odpovídá</span>
+        <span>Určená osoba se školením. Vlastní školení absolvuje i statutární orgán.</span>
+        <span>Manažer kybernetické bezpečnosti s doloženou kvalifikací a praxí.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Přehled bezpečnostních opatření</span>
+        <span>Tabulka se stavem, popisem, termínem, prioritou a odpovědností. Ročně aktualizovat, čtyři roky uchovat.</span>
+        <span>Totéž a k tomu celý systém řízení bezpečnosti informací.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Smlouvy s dodavateli</span>
+        <span>Čtrnáct kategorií bezpečnostních ujednání.</span>
+        <span>Osmnáct kategorií.</span>
+      </div>
+    </div>
+
+    <p class="vyberko-pozn">Do kterého režimu vaše služba patří, určuje vyhláška
+    č. 408/2025 Sb., ne velikost firmy. Tuhle otázku spolu vyřešíme jako první,
+    protože od ní se odvíjí všechno ostatní.</p>
+    <p class="doklady-zaver" style="margin-top:28px">Když vám vyjde ten mírnější,
+    není to úleva. Je to jenom rozsah, který jde uřídit vedle běžného provozu.</p>
+  </div>
+</section>
+
+<!-- ============ CO JE DNES STANDARD ============ -->
+<section>
+  <div class="obsah">
+    <h2>Tohle je dnes běžný standard.<br>Kolik z toho máte?</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Zákon stranou. Tohle
+    jsou věci, které dnes běžně mají firmy vaší velikosti, když se o ně někdo
+    stará. Projděte si to a počítejte.</p>
+
+    <div class="doklady">
+      <div class="doklad">
+        <h3>Obnovu zálohy někdo vyzkoušel</h3>
+        <p>Ne že záloha běží, ale že se z ní data dají vrátit a víte za jak
+        dlouho. To jsou dvě různé věci.</p>
+      </div>
+      <div class="doklad">
+        <h3>Přihlášení má druhý zámek</h3>
+        <p>K heslu se přidává potvrzení v telefonu. Ukradené heslo pak samo
+        o sobě nestačí.</p>
+      </div>
+      <div class="doklad">
+        <h3>Víte, kdo má k čemu přístup</h3>
+        <p>Existuje seznam, ne dojem. Kdo odešel, ztratil přístupy týž den,
+        ne až si toho někdo všiml.</p>
+      </div>
+      <div class="doklad">
+        <h3>Sdílená hesla skončila</h3>
+        <p>Každý má svoje přihlášení. Heslo v tabulce na sdíleném disku
+        je pryč, protože se nedá odebrat jednomu člověku.</p>
+      </div>
+      <div class="doklad">
+        <h3>Smlouva s dodavatelem myslí na incident</h3>
+        <p>Je napsané, kdo komu volá, do kdy reaguje a co se děje s vašimi
+        daty, když spolupráce skončí.</p>
+      </div>
+      <div class="doklad">
+        <h3>Postup pro špatný den existuje</h3>
+        <p>Jedna stránka: co se vypne, komu se volá, odkud se obnovuje.
+        Sepsaná v klidu, ne vymýšlená v panice.</p>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Dvě a míň? Nejste výjimka. Dvoufázové ověření má
+    podle Českého statistického úřadu necelá třetina malých firem v Česku.
+    Nikdo vám neřekl, že tohle je dnes standard, protože vám všichni prodávali
+    jednotlivé věci, ne pořádek.</p>
+    <p class="vyberko-pozn">Není to náš seznam. Zálohy, oddělené administrátorské
+    účty, roční přezkum přístupových oprávnění, vícefaktorové ověření
+    i bezpečnostní ujednání ve smlouvách s dodavateli vyjmenovává vyhláška
+    č. 410/2025 Sb. pro mírnější režim. Do těch šesti vět je přepsal jen jazyk,
+    kterým se o tom mluví ve firmě. Podíl firem s dvoufázovým ověřením: ČSÚ,
+    Informační společnost v číslech, malé podniky 32,3 %.</p>
+  </div>
+</section>
+
+<!-- ============ PRUBEH ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Jak to proběhne</h2>
+
+    <div class="osa">
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M10 9.5a2 2 0 1 1 2 2v1.2"/></svg></span>
+        <div class="etapa-kdy">První týden</div>
+        <h3>Postavíme najisto, jestli se vás to týká</h3>
+        <p>Projdeme odvětví, velikost skupiny a vaše největší odběratele. Výsledkem může být i věta, že se vás zákon netýká a nemusíte řešit nic. To je taky dobrý výsledek.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5 21 21"/></svg></span>
+        <div class="etapa-kdy">Potom</div>
+        <h3>Projdu, jak na tom jste</h3>
+        <p>Zálohování, přístupy, ochrana dat, smlouvy s dodavateli. Nezávisle, bez příkrášlování a bez zájmu vám něco prodat.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10M4 12h13M4 17h7"/><path d="M18 5.5 19.5 7 22 4"/></svg></span>
+        <div class="etapa-kdy">Do měsíce</div>
+        <h3>Dostanete plán s pořadím</h3>
+        <p>Co je potřeba doplnit, v jakém pořadí a co to bude stát. Zvlášť to, co musí být kvůli zákonu, a zvlášť to, co je rozumné udělat tak jako tak.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3.5v6c0 5-3.5 7.8-8 8.5-4.5-.7-8-3.5-8-8.5v-6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+        <div class="etapa-kdy">Do 60 dnů</div>
+        <h3>Ohlásíme službu</h3>
+        <p>Ohlášení přes Portál NÚKIB včetně podkladů. Od doručení rozhodnutí o registraci pak běží rok na zavedení opatření, takže tou dobou už má plán běžet, ne se teprve psát.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/><path d="M12 14v3"/></svg></span>
+        <div class="etapa-kdy">Do roka od rozhodnutí</div>
+        <h3>Opatření jsou zavedená</h3>
+        <p>Zavádí se přes vaše stávající dodavatele, podle plánu a v pořadí, které jsme si odsouhlasili. Ne slíbená, ale doložitelná.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CO ZUSTANE NA STOLE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Co vám zůstane na stole.</h2>
+
+    <div class="pripad">
+      <div class="pripad-text">
+        <h3>Pět dokumentů, ne prezentace</h3>
+        <p><b>Písemné posouzení.</b> Jestli poskytujete regulovanou službu, podle
+        kterého odvětví a v jakém režimu. Dostanete ho i tehdy, když vyjde, že se
+        vás zákon netýká. Ten případ je dobré mít na papíře nejvíc ze všech.</p>
+        <p><b>Podklady k ohlášení.</b> Vyplněné a připravené k odeslání přes
+        Portál NÚKIB.</p>
+        <p><b>Přehled bezpečnostních opatření.</b> Tabulka se stavem, popisem,
+        termínem, prioritou a odpovědnou osobou u každé položky.</p>
+        <p><b>Plán zavedení.</b> Co, v jakém pořadí, do kdy, kdo a za kolik.
+        Zvlášť to, co chce zákon, a zvlášť to, co je rozumné udělat tak jako tak.</p>
+        <p><b>Bezpečnostní dodatky ke smlouvám.</b> Ve znění, které dodavatel
+        podepíše, ne ve znění, které vypadá dobře v šanonu.</p>
+      </div>
+      <div class="pripad-cisla">
+        <div class="cislo"><b>Vyhláška</b><span>Přehled opatření není náš formát. Vyžaduje ho vyhláška č. 410/2025 Sb.</span></div>
+        <div class="cislo"><b>1x ročně</b><span>Tak často se aktualizuje. Soulad se udržuje průběžně.</span></div>
+        <div class="cislo"><b>4 roky</b><span>Tak dlouho se uchovává. Proto ho předávám v podobě, kterou udržíte i beze mě.</span></div>
+      </div>
+    </div>
+
+    <p class="doklady-zaver">Všechno v editovatelné podobě, ne v uzamčeném PDF.
+    Když se za rok rozhodnete, že si to povedete sami nebo s někým jiným, nic
+    vám v tom nebrání.</p>
+  </div>
+</section>
+
+<!-- ============ PROC TU NESTOJI JEDNA CASTKA ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Proč tu nestojí jedna částka.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Rozsah téhle práce se
+    liší podle toho, kolik máte činností, jestli jste ve skupině a co už máte
+    hotové. Proto se počítá po dnech. Den je 10 000 Kč a nejsem plátce DPH,
+    takže je to konečná.</p>
+
+    <div class="naklady">
+      <div class="naklad">
+        <span class="naklad-jmeno">Porovnání firmy proti vyhlášce</span>
+        <span class="naklad-pruh"><i style="--w:100%"></i></span>
+        <span class="naklad-castka">2-4 dny</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Dodatky ke smlouvám s dodavateli</span>
+        <span class="naklad-pruh"><i style="--w:75%"></i></span>
+        <span class="naklad-castka">1-3 dny</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Posouzení a zařazení služby</span>
+        <span class="naklad-pruh"><i style="--w:50%"></i></span>
+        <span class="naklad-castka">1-2 dny</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Plán zavedení</span>
+        <span class="naklad-pruh"><i style="--w:50%"></i></span>
+        <span class="naklad-castka">1-2 dny</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Ohlášení a podklady k němu</span>
+        <span class="naklad-pruh"><i style="--w:25%"></i></span>
+        <span class="naklad-castka">1 den</span>
+      </div>
+    </div>
+
+    <p class="naklady-zaver">Než začnu, dostanete počet dnů písemně. Když se
+    během práce ukáže, že jich bude potřeba víc, řeknu to dřív, než je vyčerpám,
+    ne až na faktuře.</p>
+    <p class="vyberko-pozn">Rozsah dnů je modelový, ne ceník. Skutečný počet
+    řeknu po prvním hovoru, kdy vím, kolik máte činností a jak vypadá vlastnická
+    struktura. Když z posouzení vyjde, že se vás zákon netýká, účtuje se jen ten
+    jeden den, který to zabralo, a tím to končí. Zavedení opatření samo o sobě
+    v téhle ceně není; dělá se přes vaše stávající dodavatele a co bude stát,
+    víte z plánu dřív, než se do toho pustíte.</p>
+  </div>
+</section>
+<!-- ============ CO Z TOHO ROSTE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Soulad není šanon pro úřad.<br>Je to obchodní doklad.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Regulované firmy musí
+    nově hlídat i své dodavatele. Bezpečnostní dotazníky proto začaly chodit
+    firmám, na které zákon přímo nedopadá. Připravená firma na nich vydělá.</p>
+
+    <div class="rust">
+      <div class="rust-krok">
+        <h3>Pořádek je sepsaný</h3>
+        <p>Přístupy, zálohy, smlouvy a postupy nejsou v hlavách, ale
+        v dokumentech, které se dají ukázat.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Dotazník vyplníte za odpoledne</h3>
+        <p>Když zákazník pošle bezpečnostní dotazník, odpovědi se opíší
+        z hotových podkladů. Bez auditu pod tlakem.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Podpis se nezdrží</h3>
+        <p>Doložené zabezpečení přestane být bod, na kterém smlouva
+        s velkým zákazníkem visí týdny.</p>
+      </div>
+      <div class="rust-krok">
+        <h3>Platí to pro každého dalšího</h3>
+        <p>Co doložíte jednomu, doložíte všem. Další dotazník už je jenom
+        rutina.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VYSLEDKY V CISLECH ============ -->
+<section class="vysledky">
+  <div class="obsah">
+    <h2>Co z toho budete vědět.</h2>
+    <p class="vysledky-lead">Nechci vás strašit. Chci postavit najisto, jestli se vás zákon týká. Jedna z možných odpovědí je, že ne.</p>
+
+    <div class="cisla">
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 28 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="6" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="12" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="18" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="4" style="--i:4" x="24" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="5" style="--i:5" x="0" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="6" style="--i:6" x="6" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="7" style="--i:7" x="12" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="8" style="--i:8" x="18" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="9" style="--i:9" x="24" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="10" style="--i:10" x="0" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="11" style="--i:11" x="6" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="12" style="--i:12" x="12" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="13" style="--i:13" x="18" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="14" style="--i:14" x="24" y="12" width="4" height="4" rx="1" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">15<span class="cislo-jednotka">odvětví</span></b>
+        <span class="cislo-popis">Tolik jich zákon jmenuje. Buď tam své najdete, nebo ne.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 70 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="6" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="12" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="18" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="4" style="--i:4" x="24" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="5" style="--i:5" x="30" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="6" style="--i:6" x="36" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="7" style="--i:7" x="42" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="8" style="--i:8" x="48" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="9" style="--i:9" x="54" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="10" style="--i:10" x="60" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="11" style="--i:11" x="66" y="0" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="12" style="--i:12" x="0" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="13" style="--i:13" x="6" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="14" style="--i:14" x="12" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="15" style="--i:15" x="18" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="16" style="--i:16" x="24" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="17" style="--i:17" x="30" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="18" style="--i:18" x="36" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="19" style="--i:19" x="42" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="20" style="--i:20" x="48" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="21" style="--i:21" x="54" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="22" style="--i:22" x="60" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="23" style="--i:23" x="66" y="6" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="24" style="--i:24" x="0" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="25" style="--i:24" x="6" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="26" style="--i:24" x="12" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="27" style="--i:24" x="18" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="28" style="--i:24" x="24" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="29" style="--i:24" x="30" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="30" style="--i:24" x="36" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="31" style="--i:24" x="42" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="32" style="--i:24" x="48" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="33" style="--i:24" x="54" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="34" style="--i:24" x="60" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="35" style="--i:24" x="66" y="12" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="36" style="--i:24" x="0" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="37" style="--i:24" x="6" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="38" style="--i:24" x="12" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="39" style="--i:24" x="18" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="40" style="--i:24" x="24" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="41" style="--i:24" x="30" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="42" style="--i:24" x="36" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="43" style="--i:24" x="42" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="44" style="--i:24" x="48" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="45" style="--i:24" x="54" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="46" style="--i:24" x="60" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="47" style="--i:24" x="66" y="18" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="48" style="--i:24" x="0" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="49" style="--i:24" x="6" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="50" style="--i:24" x="12" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="51" style="--i:24" x="18" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="52" style="--i:24" x="24" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="53" style="--i:24" x="30" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="54" style="--i:24" x="36" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="55" style="--i:24" x="42" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="56" style="--i:24" x="48" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="57" style="--i:24" x="54" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="58" style="--i:24" x="60" y="24" width="4" height="4" rx="1" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="59" style="--i:24" x="66" y="24" width="4" height="4" rx="1" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">60<span class="cislo-jednotka">dnů</span></b>
+        <span class="cislo-popis">Na ohlášení, a to ode dne, kdy podmínky splníte. Ne od data v novinách.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 80 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="8" width="80" height="18" rx="3" fill="none" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="1.6"/><rect data-i="1" style="--i:1" x="0" y="8" width="64" height="18" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">4 825<span class="cislo-jednotka">ohlášených</span></b>
+        <span class="cislo-popis">Tolik organizací se ohlásilo do února 2026. Úřad jich čeká zhruba šest tisíc.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 40 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="40" height="26" rx="4" fill="none" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2"/><path data-i="1" style="--i:1" d="M4 30L36 4" stroke="#12A06B" stroke-width="2" stroke-linecap="round"/></svg>
+        <b class="cislo-hodnota">0<span class="cislo-jednotka">krabic</span></b>
+        <span class="cislo-popis">Vyhlášky nepředepisují žádný produkt. Předepisují postupy, dokumenty a role.</span>
+      </div>
+    </div>
+
+    <p class="cisla-pozn">Zákon č. 264/2025 Sb. nabyl účinnosti 1. listopadu 2025. Lhůtu šedesáti dnů, počet ohlášených organizací k 8. únoru 2026 i očekávaných zhruba šest tisíc uvádí NÚKIB. Patnáct odvětví jmenuje zákon, konkrétní regulované služby v nich stanoví vyhláška č. 408/2025 Sb. Žádné z těch čísel není odhad.</p>
+  </div>
+</section>
+
+<!-- ============ KDY NE ============ -->
+<section class="varovani">
+  <div class="obsah">
+    <span class="stitek">Kdy ne</span>
+    <div class="varovani-delene">
+      <div class="varovani-uvod">
+        <h2>Kdy vám řeknu, že řešit nemusíte nic</h2>
+        <p>Strašení je špatný obchodní model. Když se vás zákon netýká, dozvíte se to jako první a účtuji jen ten den, který ověření zabralo.</p>
+      </div>
+      <div>
+        <div class="varovani-polozka">
+          <h3>Když nesplňujete ani jednu ze tří otázek</h3>
+          <p>Malá firma mimo jmenovaná odvětví, která nedodává regulovanému zákazníkovi, do zákona nespadá. Zálohování si přesto zkontrolujte, ale to je jiná věc než soulad.</p>
+        </div>
+        <div class="varovani-polozka">
+          <h3>Když už máte audit od někoho jiného</h3>
+          <p>Druhý audit vám nic nepřinese. Smysl má projít závěry toho stávajícího a doplnit, co v něm chybí, a to je práce na dny.</p>
+        </div>
+        <div class="varovani-polozka">
+          <h3>Když čekáte, že vám prodám krabici</h3>
+          <p>Soulad se nekupuje jako software. Je to hlavně pořádek ve smlouvách, přístupech a v tom, kdo co dělá, když nastane incident.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Do kdy to musíme mít hotové?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Na ohlášení máte šedesát dnů ode dne, kdy podmínky splníte. Firmám, které je splňovaly hned při účinnosti zákona 1. listopadu 2025, uplynula lhůta 31. prosince 2025. Do února 2026 se ohlásilo 4 825 organizací, přičemž NÚKIB jich čeká zhruba šest tisíc.</p>
+        <p>Druhá lhůta běží zvlášť: bezpečnostní opatření musí být zavedená nejpozději rok od doručení rozhodnutí o registraci. Firma se ohlašuje sama, úřad ji neosloví, a proto spousta dotčených firem o povinnosti zatím neví.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Lhůta nám prošla. Není už pozdě?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Pozdě není. Povinnost trvá dál a splnit se dá kdykoliv. Zmeškanou lhůtu už nevrátíte, ale dá se uzavřít, a čím dřív, tím lépe: doba, po kterou povinnosti neplníte, hraje roli.</p>
+        <p>Ředitel NÚKIB Lukáš Kintr to v únoru 2026 řekl takto: "Naším cílem není trestat, ale především pomoci." Je to úřad, kdo to říká, ne já.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jaký je rozdíl mezi mírnějším a přísnějším režimem?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Mírnější režim popisuje vyhláška č. 410/2025 Sb., přísnější č. 409/2025 Sb. Největší rozdíl je v tom, kdo to musí řídit: v mírnějším stačí určená odpovědná osoba se školením, v přísnějším zákon vyžaduje manažera kybernetické bezpečnosti s doloženou kvalifikací.</p>
+        <p>Liší se i rozsah smluv s dodavateli, tedy čtrnáct kategorií ujednání proti osmnácti. Do kterého režimu vaše služba patří, se pozná ze zařazení ve vyhlášce č. 408/2025 Sb., ne z velikosti firmy.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>NÚKIB má na webu kalkulačku zdarma. Proč bych za tohle platil?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Když z ní vyjde jednoznačný výsledek a vy mu věříte, máte hotovo a nic ode mě nepotřebujete. Odkaz na ni vám pošlu sám.</p>
+        <p>Platí se za to, aby ta odpověď byla obhajitelná a písemná a aby počítala s celou vlastnicky propojenou skupinou a se všemi vašimi činnostmi, ne jen s hlavní. Právě na tom se posouzení nejčastěji láme.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co se stane, když nás někdo napadne? Do kdy se to musí hlásit?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Na první hlášení máte 24 hodin od zjištění, do 72 hodin se upřesňuje a do 30 dnů se podává závěrečná zpráva.</p>
+        <p>Prakticky to znamená, že někdo ve firmě musí incident vůbec zaznamenat a vědět, komu to říct. To je otázka nastavení, ne rozpočtu, a řeší se předem, ne až ten den. Nepřetržitý dohled nad provozem je samostatná služba a v uvedení do souladu není.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Které vyhlášky k tomu zákonu patří?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Šest, všechny z roku 2025. Č. 334/2025 Sb. upravuje Portál NÚKIB a úkony přes něj, č. 408/2025 Sb. určuje regulované služby v jednotlivých odvětvích, č. 409/2025 Sb. stanoví bezpečnostní opatření pro vyšší režim a č. 410/2025 Sb. pro nižší.</p>
+        <p>Zbylé dvě, č. 411/2025 Sb. a 412/2025 Sb., míří na informační systémy veřejné správy a na cloud ve veřejné správě. Pro běžnou firmu jsou podstatné tři: 408, a pak podle režimu buď 409, nebo 410.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Přijde nám dopis, když se nás zákon týká?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ne. Povinnost vzniká ze zákona, ne z dopisu. Kdo čeká na obsílku, zjistí to pozdě.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Zákon na nás nedopadá, ale zákazník po nás chce doložené zabezpečení. Co s tím?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Tohle je dnes nejčastější případ ze všech. Regulovaný zákazník přenáší požadavky smluvně na dodavatele, takže se vás to týká obchodně, i když ne právně.</p>
+        <p>Připravená firma v tu chvíli podepíše a jede dál. Nepřipravená řeší audit pod tlakem a s termínem, který si nezvolila.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jsme malá firma bez vlastního IT. Zvládneme to vůbec?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, protože většina povinností nejsou technologie, ale pořádek: kdo má k čemu přístup, co je ve smlouvách s dodavateli, kdo co dělá při incidentu a jestli se zálohy dají obnovit.</p>
+        <p>Tohle za vás zařídím a předám v podobě, kterou udržíte i beze mě.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co obnáší audit zálohování?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Neověřuje se, jestli záloha běží. Ověřuje se, jestli se z ní data dají skutečně obnovit a za jak dlouho. To je rozdíl, na kterém padne překvapivě hodně firem.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jak to souvisí s GDPR?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Jsou to dvě různé povinnosti a jedna druhou nenahrazuje. GDPR řeší osobní údaje, zákon o kybernetické bezpečnosti řeší odolnost a hlášení incidentů.</p>
+        <p>Pořádek v přístupech a v dokumentaci se ale počítá do obojího, takže část práce uděláte jednou pro obě.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Zjistíme to v klidu teď.</h2>
+    <p>Řekněte mi, v čem podnikáte a komu dodáváte. Já vám řeknu, jestli na vás zákon dopadá a co z toho plyne.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
 </footer>
 
-
+<script src="/sluzba.js?v=f3e20f0"></script>
 </body>
 </html>

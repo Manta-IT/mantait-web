@@ -1,327 +1,763 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI zaměstnanec za čtvrtinu nákladů na člověka - Manta IT</title>
-  <meta name="description" content="Ne chatbot, do kterého musíte psát. Zaměstnanec s vlastní agendou: má přístupy, běží nepřetržitě, sám hledá práci a ráno podá hlášení. Od 89 000 Kč.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI zaměstnanec pro firmu - Manta IT</title>
+<meta name="description" content="Ne chatbot, do kterého musíte psát. Zaměstnanec s přístupy do vašich systémů, který běží nepřetržitě, sám hledá práci a ráno podá hlášení. Od 89 000 Kč.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sluzba.css?v=f3e20f0">
+<link rel="stylesheet" href="/hranol.css?v=f3e20f0">
   <link rel="canonical" href="https://mantait.cz/reseni-ai-zamestnanec">
-  <link rel="alternate" hreflang="cs" href="https://mantait.cz/reseni-ai-zamestnanec">
-  <link rel="alternate" hreflang="sk" href="https://mantait.cz/sk/reseni-ai-zamestnanec">
-  <link rel="alternate" hreflang="en" href="https://mantait.cz/en/reseni-ai-zamestnanec">
-  <link rel="alternate" hreflang="x-default" href="https://mantait.cz/reseni-ai-zamestnanec">
-  <meta property="og:title" content="AI zaměstnanec: první rok za čtvrtinu nákladů na člověka">
-  <meta property="og:description" content="Ne chatbot, do kterého musíte psát. Zaměstnanec s vlastní agendou, který sám ví, co je potřeba udělat.">
+  <meta property="og:title" content="AI zaměstnanec pro firmu - Manta IT">
+  <meta property="og:description" content="Ne chatbot, do kterého musíte psát. Zaměstnanec s přístupy do vašich systémů, který běží nepřetržitě a ráno podá hlášení.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/reseni-ai-zamestnanec">
   <meta property="og:site_name" content="Manta IT">
   <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=03a0b57">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "AI zaměstnanec",
-    "description": "Nepřetržitě běžící AI zaměstnanec s vlastní agendou a přístupy do firemních systémů. Nasazení u klienta na jeho serveru nebo v cloudu.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Manta IT",
-      "url": "https://mantait.cz"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Česká republika"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "CZK",
-      "price": "89000",
-      "description": "Zavedení AI zaměstnance, jednorázově. Provoz a správa 8 000 az 15 000 Kč měsíčně."
-    }
+    "description": "Ne chatbot, do kterého musíte psát. Zaměstnanec s přístupy do vašich systémů, který běží nepřetržitě a ráno podá hlášení.",
+    "serviceType": "AI zaměstnanec",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}},
+    "offers": {"@type": "Offer", "price": "89000", "priceCurrency": "CZK",
+      "description": "pevná cena"}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
   <script src="/gtag.js" defer></script>
-  <!-- Cloudflare Web Analytics (cookieless) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
 <body>
-<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
-<nav>
-  <a href="/" class="nav-brand">Manta<span>IT</span></a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otevřít menu">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Domů</a>
-    <a href="/#sluzby" class="nav-link active" aria-current="page">Služby</a>
-    <a href="/#cenik" class="nav-link">Kolik to stojí</a>
-    <a href="/o-mne" class="nav-link">O mně</a>
-    <a href="/kontakt" class="nav-link">Kontakt</a>
-    <div class="lang-switch"><span aria-current="true">CZ</span><a href="/sk/reseni-ai-zamestnanec" hreflang="sk" lang="sk">SK</a><a href="/en/reseni-ai-zamestnanec" hreflang="en" lang="en">EN</a></div>
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
   </div>
-  <a href="/kontakt" class="nav-cta">Domluvit schůzku</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<div class="back" id="obsah"><a href="/">Zpět na výběr</a></div>
-
-<!-- HERO -->
-<section class="d-hero">
+<header class="hero" id="hero">
   <div>
-    <div class="d-eyebrow">Řešíte: chceme AI, ale nevíme jak</div>
-    <h1>Zaměstnanec, který <em>nespí.</em></h1>
-    <p class="lead">Většina toho, čemu se dnes ve firmách říká AI, čeká, až se jí zeptáte.
-    Napíšete dotaz, dostanete odpověď, a práci pak stejně uděláte vy.
-    Tenhle zaměstnanec dostane přístupy do systémů, které mu určíte, běží nepřetržitě
-    a sám si hlídá, co je potřeba udělat. Ráno vám na stole leží hlášení, co udělal
-    a co po vás potřebuje rozhodnout.</p>
+    <a href="/#obory" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Všechno, s čím pomůžu
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Zaměstnanec,</span></span>
+      <span class="radek"><b class="r2">který nespí.</b></span>
+    </h1>
+    <p class="lead vstup z2">Ne chatbot, do kterého musíte psát. Má přístupy do vašich systémů,
+    běží nepřetržitě, sám vyhodnocuje, co je potřeba udělat, a ráno vám podá hlášení.
+    Běží buď u vás na serveru, kde vaše data firmu neopustí, nebo na infrastruktuře,
+    kterou spravuji já. Volba je vaše a dá se změnit.</p>
   </div>
-  <div class="d-card">
-    <div class="pricetag">89 000</div>
-    <div class="priceunit">jednorázově za zavedení. Provoz a správa pak 8 000 az 15 000 Kč měsíčně podle rozsahu.</div>
-    <div class="simple">
-      <div class="big">První rok za čtvrtinu nákladů na člověka.</div>
-      <div class="small">Zavedení a provoz vyjde první rok na 185 až 269 tisíc podle rozsahu. Zhruba čtvrtina toho, co stojí dobrý zaměstnanec - a pracuje i v noci.</div>
-    </div>
-    <a href="/kontakt" class="cta">Domluvit schůzku</a>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
-  </div>
-</section>
 
-<!-- PRVNI SCHOD -->
-<section class="get">
-  <span class="label">Nemusíte se rozhodovat hned</span>
-  <h2>Začneme malým krokem.</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Nejdřív <a href="/reseni-ai">AI plán do 48 hodin</a> za 9 900 Kč</h3><p>Dva hodinové workshopy a do 48 hodin víte, co u vás má smysl automatizovat, co to přinese a jestli se AI zaměstnanec vůbec vyplatí. Když z toho vyjde, že ne, řeknu to a končíme.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>Z plánu rovnou nasazení</h3><p>Když z plánu vyjde, že se to vyplatí, navazuju hned: zaměstnance postavím, napojím na vaše systémy a předám vám ho v provozu. Jak rychle umím dodat hotovou věc, ukazuje <a href="/case-kalkulacka">případ z praxe</a>: od objednávky do ostrého provozu 20 dní, dnes v tom pracuje pět lidí.</p></div>
-    </div>
-  </div>
-</section>
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">89 000 Kč</div>
+    <div class="cenovka-pod">jednorázově za zavedení, provoz od 8 000 Kč měsíčně</div>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Chci to probrat
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
 
-<!-- CIM SE LISI OD CHATU -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Čím se liší od ChatGPT</span>
-    <h2>Nečeká na zadání. Má vlastní agendu.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">1</div>
-        <h3>Nemusíte s ním psát</h3>
-        <p>Do chatu musíte přijít, formulovat dotaz a pak s výsledkem něco udělat.
-        Tenhle zaměstnanec sám ví, co má dnes udělat, protože zná vaše pravidla
-        a vidí, co se ve firmě děje. Vy s ním mluvíte, jen když chcete.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">2</div>
-        <h3>Doopravdy jedná</h3>
-        <p>Napíše, založí, vyplní a zapíše to tam, kam to patří. Má přístupy
-        do vašich systémů, takže práce mu opravdu odejde ze stolu. Ne vám.</p>
-      </div>
-      <div class="step final">
-        <div class="step-n">3</div>
-        <h3>Pamatuje si a učí se</h3>
-        <p>Zná vaše zákazníky, vaše ceny i to, co jste mu vytkli minulý týden.
-        Čím déle běží, tím míň mu musíte vysvětlovat.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ HRANOL: CO DELA S POSTOU ============ -->
+<section class="hranol-sekce">
+  <div class="obsah">
+    <h2>Jedna zpráva v poště,<br>pět hotových věcí.</h2>
+    <p class="hranol-lead">Přijatá pošta je jednotvárná: text, příloha, odesílatel.
+    Užitečné je až to, co z ní vznikne. Tohle dělá s každou zprávou, která přijde,
+    i ve tři ráno.</p>
 
-<!-- DEN, MINUTU ZA MINUTOU -->
-<section class="get">
-  <span class="label">Jeden jeho pracovní den</span>
-  <h2>Než v sedm odemknete, má za sebou půl dne.</h2>
-  <p class="ref-note">Takhle vypadal den u modelové obchodní firmy o dvaceti lidech.
-  Čísla jsou ukázka, ne slib. U vás bude dělat to, co si určíte.</p>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">2:10</span>
-      <div><h3>Uklízí, dokud firma spí</h3><p>Prošel 214 firem v CRM, u 63 doplnil chybějící IČO, adresu nebo obor podnikání z veřejných rejstříků. U 9 našel, že firma změnila jednatele, a označil je k prověření. Sloučil 4 dvojité záznamy stejné firmy.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">3:40</span>
-      <div><h3>Bere poptávky, které přišly po zavíračce</h3><p>Z pošty vytáhl 6 nových poptávek, přečetl přílohy, vyplnil z nich formulář a založil je v systému. U 2 poznal, že jde o stávajícího zákazníka, a připojil je k jeho historii. Jednu označil jako spam.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">5:20</span>
-      <div><h3>Hlídá, co uvázlo</h3><p>Našel 11 nabídek, na které zákazník týden nereagoval, a připravil ke každé připomenutí ve stylu, jakým píše obchodník, který ji poslal. Čekají na jeho odsouhlasení.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">6:45</span>
-      <div><h3>Kontroluje čísla</h3><p>Porovnal ceny v nabídkách proti platnému ceníku. U 3 našel nesoulad: dvakrát stará cena, jednou sleva nad rámec pravidel. Označil je a napsal, čeho si všiml.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">7:30</span>
-      <div><h3>Rozděluje práci</h3><p>Každý obchodník má na dnešek úkoly seřazené podle toho, co spěchá a kde jsou peníze. Vedoucí má přehled, kdo má kolik rozdělané práce.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">7:55</span>
-      <div><h3>Vaše hlášení</h3><p>Jedna stránka: co se včera stalo, co odbavil, kde narazil, a tři věci, které potřebuje rozhodnout od vás. Nic víc.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">13:12</span>
-      <div><h3>Nepřestává, ani když jdete na oběd</h3><p>Poptávka, která přišla ve 13:12, je založená ve 13:13. Ve 14:40 zjistil, že se e-mail zákazníkovi vrátil jako nedoručený, a napsal to obchodníkovi, který ho posílal.</p></div>
-    </div>
-    <div class="get-item">
-      <span class="mark">18:30</span>
-      <div><h3>Uzavírá den</h3><p>Doplnil, co se přes den změnilo, připravil podklady na zítřek a vypsal, co zůstalo otevřené. Zítra ve dvě ráno začne znovu.</p></div>
-    </div>
-  </div>
-</section>
+    <div class="hranol">
+      <svg class="hranol-drahy" viewBox="0 0 1200 440" aria-hidden="true"
+           preserveAspectRatio="xMidYMid meet">
+        <path class="klid" d="M 96 220 L 470 220"/>
+        <path class="klid" d="M 566 220 C 726 220 800 56 1006 56"/>
+        <path class="klid" d="M 566 220 C 726 220 800 138 1006 138"/>
+        <path class="klid" d="M 566 220 L 1006 220"/>
+        <path class="klid" d="M 566 220 C 726 220 800 302 1006 302"/>
+        <path class="klid" d="M 566 220 C 726 220 800 384 1006 384"/>
+        <path class="zar z1" d="M 566 220 C 726 220 800 56 1006 56"/>
+        <path class="zar z2" d="M 566 220 C 726 220 800 138 1006 138"/>
+        <path class="zar z3" d="M 566 220 L 1006 220"/>
+        <path class="zar z4" d="M 566 220 C 726 220 800 302 1006 302"/>
+        <path class="zar z5" d="M 566 220 C 726 220 800 384 1006 384"/>
+        <path class="tok vstup-tok" d="M 96 220 L 470 220"/>
+        <path class="tok k1" d="M 566 220 C 726 220 800 56 1006 56"/>
+        <path class="tok k2" d="M 566 220 C 726 220 800 138 1006 138"/>
+        <path class="tok k3" d="M 566 220 L 1006 220"/>
+        <path class="tok k4" d="M 566 220 C 726 220 800 302 1006 302"/>
+        <path class="tok k5" d="M 566 220 C 726 220 800 384 1006 384"/>
+      </svg>
 
-<!-- PRED / PO -->
-<section class="lp-section">
-  <h2>Co to udělá s vaším týdnem</h2>
-  <div class="lp-table-wrap">
-    <table class="lp-table">
-      <tr><th>Dnes</th><th>S AI zaměstnancem</th></tr>
-      <tr><td>Objednávky přepisujete z e-mailu do systému ručně</td><td>Data doputují sama, ráno je jen zkontrolujete</td></tr>
-      <tr><td>Přehled pro vedení sestavujete v neděli večer</td><td>Hlášení čeká každé ráno hotové</td></tr>
-      <tr><td>Odpovědi na časté dotazy píšete pořád znovu</td><td>Koncepty čekají připravené, vy je jen odešlete</td></tr>
-      <tr><td>Upomínky a termíny hlídáte v hlavě</td><td>Hlídá je agent a včas se ozve</td></tr>
-    </table>
-  </div>
-</section>
+      <div class="kamen" aria-hidden="true">
+        <span class="deska"></span><span class="deska"></span><span class="deska"></span>
+      </div>
 
-<!-- CO TO STOJI -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Co to stojí</span>
-    <h2>Jedno zavedení. A pak už jen provoz.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">&nbsp;</div>
-        <h3>89 000 Kč za zavedení</h3>
-        <p>V ceně je průzkum, nastavení, napojení na vaše systémy i zaškolení lidí.
-        Za zavedení už žádná další faktura nepřijde.</p>
+      <div class="uzel uzel-vstup" style="top:50%">
+        <span class="puntik"></span>
+        <span><b>Přijatá pošta</b><small>poptávky, faktury, dotazy</small></span>
       </div>
-      <div class="step">
-        <div class="step-n">&nbsp;</div>
-        <h3>8 000 az 15 000 Kč měsíčně</h3>
-        <p>Provoz serveru a moje průběžná péče. Firma se mění, zadání se mění
-        a on se mění s ní. V ceně je i to, že vám průběžně přidávám, co si vymyslíte.</p>
+
+      <div class="uzel uzel-vystup" data-k="1" style="top:12.73%">
+        <span class="puntik p1"></span>
+        <span><b>Nabídka</b><small>z ceníku a z historie objednávek</small></span>
       </div>
-      <div class="step final">
-        <div class="step-n">&nbsp;</div>
-        <h3>Nemá dovolenou ani výpověď</h3>
-        <p>Neonemocní, neodejde ke konkurenci a nezapomene, co se naučil.
-        Když skončíme, dostanete jeho nastavení i paměť s sebou. U varianty
-        na vašem serveru běží dál i beze mě.</p>
+
+      <div class="uzel uzel-vystup" data-k="2" style="top:31.36%">
+        <span class="puntik p2"></span>
+        <span><b>Zápis do CRM</b><small>kontakt, firma, o co jde</small></span>
+      </div>
+
+      <div class="uzel uzel-vystup" data-k="3" style="top:50.00%">
+        <span class="puntik p3"></span>
+        <span><b>Odpověď zákazníkovi</b><small>potvrzení, že to někdo řeší</small></span>
+      </div>
+
+      <div class="uzel uzel-vystup" data-k="4" style="top:68.64%">
+        <span class="puntik p4"></span>
+        <span><b>Dokument do složky</b><small>příloha přejmenovaná a zařazená</small></span>
+      </div>
+
+      <div class="uzel uzel-vystup" data-k="5" style="top:87.27%">
+        <span class="puntik p5"></span>
+        <span><b>Ranní hlášení</b><small>co udělal a kde si nevěděl rady</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KDE POBEZI -->
-<section class="proc">
-  <div class="proc-in">
-    <span class="label">Kde poběží</span>
-    <h2>Vy rozhodujete, kam vidí.</h2>
-    <div class="proc-steps">
-      <div class="step">
-        <div class="step-n">A</div>
-        <h3>U vás ve firmě</h3>
-        <p>Na vašem serveru u vás ve firmě. S lokálním AI modelem data z firmy
-        vůbec neodcházejí. Pro firmy, které si na svých datech zakládají, nebo jim to ukládají
-        pravidla jejich oboru.</p>
+<!-- ============ CO TO JE A CO NE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Rozdíl proti chatbotu je v tom,<br>kdo koho oslovuje první.</h2>
+
+    <div class="protiklad">
+      <div class="pole pole-ne">
+        <h3>Chatbot, který už asi znáte</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Čeká, až se ho někdo zeptá.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Po zavření okna zapomene, o čem jste mluvili.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Nevidí do vašich systémů, zná jen to, co mu napíšete.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>Práci nedokončí, jen o ní napíše.</li>
+        </ul>
       </div>
-      <div class="step final">
-        <div class="step-n">B</div>
-        <h3>V cloudu</h3>
-        <p>Na serveru, který spravuji já. Levnější varianta, rychlejší nasazení,
-        žádný hardware na vaší straně. Přístupy zůstávají oddělené od všeho ostatního.</p>
+
+      <div class="pole pole-ano">
+        <h3>Co dostanete od nás</h3>
+        <ul>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Běží nepřetržitě a sám hledá, co je potřeba udělat.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pamatuje si všechno, co za dobu své práce viděl.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Má přístupy, které mu určíte. Ani o jeden víc.</li>
+          <li><span class="znamenko"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ráno máte na stole hlášení, co udělal a na co narazil.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CO DOSTANETE -->
-<section class="get">
-  <span class="label">Co dostanete</span>
-  <h2>Pustíte ho dál, až budete chtít vy.</h2>
-  <div class="get-list">
-    <div class="get-item">
-      <span class="mark">01</span>
-      <div><h3>Nejdřív se podíváme, co má dělat</h3><p>Než cokoli nasadím, projdeme, kde vám dnes utíká čas. Když AI nedává pro danou věc smysl, řeknu to.</p></div>
+<!-- ============ ZEBRIK: CELA MAPA TRHU ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Co to udělá,<br>když se ho nikdo nezeptá.</h2>
+    <p class="lead" style="margin-top:16px;max-width:60ch">Slovo agent dneska
+    používá skoro každý. Rozdíl mezi tím, co se pod ním prodává, je přitom větší
+    než rozdíl v ceně. Tahle jedna otázka ho odhalí za deset vteřin, ať už se
+    bavíte se mnou nebo s kýmkoliv jiným.</p>
+
+    <div class="vyberko vyberko-3">
+      <div class="vyberko-radek">
+        <span>Mechanika</span>
+        <span>Když se ho nikdo nezeptá</span>
+        <span>Kde je mez</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Předplatné asistenta pro lidi u stolu. Člověk otevře okno, něco tam
+        vloží, dostane odpověď a sám si ji přenese do systému.</span>
+        <span>Neudělá nic.</span>
+        <span>Práce se nezmenší, jen se přesune. Po zavření okna nezůstane nic.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Chatbot na webu. Odpovídá návštěvníkům z připravené znalostní báze.</span>
+        <span>Neudělá nic.</span>
+        <span>Mluví ven, ale dovnitř nesahá. Rutiny, která vám bere čas, se nedotkne.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Scénář poskládaný z bloků. Přijde e-mail, vezmi přílohu, ulož ji,
+        pošli upozornění. Pevná posloupnost kroků bez posouzení.</span>
+        <span>Rozjede se, ale jen po té trase, kterou má nakreslenou.</span>
+        <span>E-mail psaný volným textem nebo sken ho zastaví. A když ten, kdo to
+        poskládal, odejde z firmy, nikdo to neopraví.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Robot s nahranými kliky. Napodobuje člověka u obrazovky. Klikne,
+        zkopíruje, vloží.</span>
+        <span>Odjede svou trasu.</span>
+        <span>Změní se obrazovka a stojí. V Česku ho používají čtyři procenta podniků.</span>
+      </div>
+      <div class="vyberko-radek">
+        <span>Hotový produkt, který jednu agendu umí. Koupíte, nastavíte pár věcí
+        a používáte.</span>
+        <span>Dělá to, co umí ze škatule.</span>
+        <span>Když se trefíte, je to nejlevnější cesta a rozmluvím vám cokoliv
+        dražšího. Vaše výjimky ale neumí a firma se musí ohnout produktu.</span>
+      </div>
+      <div class="vyberko-radek vitez">
+        <span>Zaměstnanec s vlastními přístupy. Má svoje přihlašovací údaje, běží
+        pořád a sám vyhodnocuje, co je potřeba udělat.</span>
+        <span>Udělá práci a ráno o ní podá hlášení.</span>
+        <span>Bez dohledu se během pár měsíců rozpadne, protože se mění systémy
+        kolem něj. Proto je to paušál a proto v tom nejste sám.</span>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">02</span>
-      <div><h3>Nic neodešle bez vás</h3><p>Začíná se tím, že všechno jen připraví a čeká na vaše kliknutí. Teprve až uvidíte, že to dělá dobře, pustíte ho u konkrétních věcí dál. Rozhodujete o tom vy, ne on.</p></div>
+
+    <p class="vyberko-pozn">Čtyři procenta podniků používajících robotickou
+    automatizaci procesů jsou z povinného šetření ČSÚ o využívání ICT
+    v podnikatelském sektoru, data za rok 2025, zveřejněno 22. 5. 2026.
+    Popisy ostatních mechanik jsou věcné, ne měřené.</p>
+  </div>
+</section>
+
+<!-- ============ JEDEN JEHO DEN ============ -->
+<section>
+  <div class="obsah">
+    <h2>Jeden jeho den</h2>
+    <p class="lead" style="margin-top:16px;max-width:54ch">Nepřetržitě neznamená,
+    že celý den něco dělá. Znamená, že když ve dvě v noci přijde poptávka,
+    neleží do rána.</p>
+
+    <div class="retez">
+      <div class="clanek">
+        <div class="clanek-kdo">02:14</div>
+        <h3>Přišla poptávka na čtyřicet kusů</h3>
+        <p>Založena do CRM, příloha zařazena, odesílateli odešlo potvrzení, že ji máme.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">06:40</div>
+        <h3>Hlášení odešlo</h3>
+        <p>Dodavatel v noci poslal nový ceník. Ceny jsou přepsané v kalkulaci, jedna
+        položka zdražila a čeká na vaše potvrzení.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">13:05</div>
+        <h3>Přišla faktura</h3>
+        <p>Spárovaná s objednávkou, sedí. Nabídka, kterou jste ráno v hlášení odsouhlasil,
+        je u zákazníka.</p>
+      </div>
+      <div class="clanek">
+        <div class="clanek-kdo">16:30</div>
+        <h3>Poptávka přišla jako sken</h3>
+        <p>Množství z ní nepřečetl. Nedělal si domněnky, odložil ji do složky k ručnímu
+        projití a napsal to do zítřejšího hlášení.</p>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">03</span>
-      <div><h3>Přístupy po částech</h3><p>Nedostane klíče od firmy. Dostane přístup jen tam, kde ho má mít, a vy to kdykoli změníte.</p></div>
+
+    <p class="retez-zaver">Ten poslední záznam je tam schválně. Když si něčím není
+    jistý, nehádá. Zastaví se a řekne to.</p>
+
+    <p class="vyberko-pozn">Modelový den u obchodní agendy, ne přepis skutečného
+    záznamu. Co přesně bude odbavovat u vás a v kolik chodí hlášení, se domlouvá
+    při zavedení.</p>
+  </div>
+</section>
+
+<!-- ============ KDE SMI JEDNAT SAM ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Kde smí jednat sám<br>a kde se zastaví</h2>
+    <p class="lead" style="margin-top:16px;max-width:58ch">Tuhle čáru posunujete vy
+    a není v ní nic technického. Je to tatáž otázka jako u nového člověka: co si smí
+    první měsíc dovolit sám a u čeho se má přijít zeptat.</p>
+
+    <div class="parova-hlava" style="margin-top:38px">
+      <span>Co udělá</span><span class="mezera"></span><span>Co se stane potom</span>
     </div>
-    <div class="get-item">
-      <span class="mark">04</span>
-      <div><h3>Vidíte, co dělal</h3><p>Každý krok je dohledatelný. Není to černá skříňka, ze které vypadávají rozhodnutí.</p></div>
+    <div class="parova" style="margin-top:0">
+      <div class="par">
+        <span class="par-dnes">Přečte poptávku, vytěží z ní údaje a založí ji do CRM.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jde sám, nikoho se neptá.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Přílohu přejmenuje a zařadí do složky, kam patří.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jde sám.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Cenu z ceníku dohledá a nabídku připraví až k podpisu.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Jde sám.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Odpoví odesílateli, že poptávka dorazila a kdo ji má na stole.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Tady je ta čára. U někoho jde ven sama, u někoho ji nejdřív čte člověk.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Odešle objednávku dodavateli.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Připraví a čeká na vás.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Změní cenu proti ceníku nebo proti minulé objednávce.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Připraví a čeká na vás.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Cokoliv, co jde ven na klíčového zákazníka.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Připraví a čeká na vás.</span>
+      </div>
+      <div class="par">
+        <span class="par-dnes">Cokoliv, co se týká lidí ve firmě.</span>
+        <span class="par-sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="par-pak">Nedělá vůbec.</span>
+      </div>
     </div>
-    <div class="get-item">
-      <span class="mark">05</span>
-      <div><h3>Ladím ho dál</h3><p>V měsíčním provozu je zahrnuté, že se mění zadání. Firma se vyvíjí, on se vyvíjí s ní.</p></div>
+
+    <p class="doklady-zaver">Na začátku je ta čára nízko a skoro nic nejde ven
+    bez potvrzení. Po měsíci, kdy vidíte, co dělá, ji můžete posunout nahoru.
+    Posouváte ji vy, ne já.</p>
+
+    <p class="lead" style="margin-top:20px;max-width:60ch">A jednu věc ta čára
+    nemění: dostane jen ty přístupy, které mu určíte. Kam nemá, tam není.
+    Není to nastavení v programu, je to seznam účtů, který dostanete na jednom
+    listu papíru.</p>
+  </div>
+</section>
+
+<!-- ============ KDY SE ZAPLATI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Jeden vzorec,<br>vaše dvě čísla.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Žádná návratnost
+    z prezentace. Kolik minut denně agenda bere, krát kolik lidí ji dělá, krát
+    dvacet jedna pracovních dní. Čísla dole jsou moje, vaše budou jiná.</p>
+
+    <div class="pripad">
+      <div class="pripad-text">
+        <h3>Modelový příklad: pošta a poptávky</h3>
+        <p>Dva lidé denně přepisují poptávky z mailu do systému, odpovídají
+        na potvrzení a zakládají přílohy. Každého to stojí kolem půl hodiny
+        denně. Nezní to jako problém, proto to nikdo neřeší.</p>
+        <p>Když z vašeho počtu nevyjde aspoň několik hodin měsíčně, řeknu vám,
+        ať si peníze necháte. Ten výpočet uděláme na první schůzce společně.</p>
+        <p>Přesný na minutu není a nemá být. Stačí, když z něj poznáte, jestli
+        se o tom vůbec vyplatí bavit.</p>
+      </div>
+      <div class="pripad-cisla">
+        <div class="cislo"><b>30 min</b><span>denně na jednoho člověka</span></div>
+        <div class="cislo"><b>2 lidé</b><span>kteří tu agendu dnes dělají</span></div>
+        <div class="cislo"><b>21 hodin</b><span>měsíčně, které agenda sebere</span></div>
+      </div>
+    </div>
+
+    <p class="vyberko-pozn">Třicet minut a dva lidé jsou modelový příklad, ne měření
+    u vás. Dvacet jedna pracovních dní je průměr běžného měsíce.</p>
+  </div>
+</section>
+
+<!-- ============ RANNI HLASENI ============ -->
+<section class="stul">
+  <div class="obsah">
+    <h2>Ráno máte na stole hlášení.</h2>
+    <p class="stul-lead">Tohle je ukázka, ne váš skutečný report. Vypadá ale přesně
+    takhle: co v noci udělal, co potřebuje od vás a na čem si vylámal zuby.</p>
+
+    <div class="scena">
+      <div class="desky">
+        <div class="desky-zada"></div>
+
+        <article class="papir">
+          <div class="papir-hlava">
+            <b>Ranní hlášení</b>
+            <span>úterý 6:40 &middot; noční směna</span>
+          </div>
+
+          <div class="papir-blok">
+            <b>Zpracoval jsem</b>
+            <div class="papir-radek"><span class="papir-cislo">14</span>
+              <span>poptávek z e-mailu založeno do CRM i s přílohami</span></div>
+            <div class="papir-radek"><span class="papir-cislo">9</span>
+              <span>cen od dodavatelů přepsáno do kalkulace</span></div>
+            <div class="papir-radek"><span class="papir-cislo">3</span>
+              <span>faktury spárovány s objednávkou</span></div>
+          </div>
+
+          <div class="papir-blok">
+            <b>Čeká na vás</b>
+            <div class="papir-radek"><span class="papir-znak">!</span>
+              <span>Kovoplast zdražil o 12 % proti minulé objednávce.
+              Nabídku jsem nedokončil, cenu má potvrdit člověk.</span></div>
+            <div class="papir-radek"><span class="papir-znak">!</span>
+              <span>Poptávka od Elektro Beneš nemá termín. Napsal jsem jim,
+              čekám na odpověď.</span></div>
+          </div>
+
+          <div class="papir-blok">
+            <b>Nestihl jsem</b>
+            <div class="papir-radek"><span class="papir-znak tlum">-</span>
+              <span class="tlum">Dvě poptávky přišly jako sken. Množství jsem z nich
+              nepřečetl, leží ve složce k ručnímu projití.</span></div>
+          </div>
+        </article>
+
+        <div class="desky-klopa"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ZAVER -->
-<section class="end">
-  <div class="end-in">
-    <h2>Začneme tím, kde vám <em>utíká čas.</em></h2>
-    <p>Řekněte mi, co u vás ve firmě dělají lidé pořád dokola. Podíváme se,
-    co z toho může dělat za ně, a co je lepší nechat na lidech.
-    Když to celé nedává smysl, dozvíte se to hned a nic vás to nestálo.</p>
-    <form class="form-box end-form" method="post" action="/api/kontakt">
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="lp-jmeno">Jméno a příjmení</label>
-          <input id="lp-jmeno" name="jmeno" type="text" autocomplete="name">
+<!-- ============ PRUBEH ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Od podpisu do provozu</h2>
+
+    <div class="osa">
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M10 9.5a2 2 0 1 1 2 2v1.2"/></svg></span>
+        <div class="etapa-kdy">První týden</div>
+        <h3>Sedneme si nad tím, co má dělat</h3>
+        <p>Projdeme agendu, kterou vám dnes bere nejvíc času. Vyberu z ní tu část, kde
+        se stroj nesplete, a řeknu, kterou naopak musí dělat člověk.</p>
+        <p class="vyberko-pozn">Od vás potřebuji: dvě hodiny s člověkem, který tu agendu
+        dnes dělá. Ne s vámi, s ním. On ví, kde jsou výjimky.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7.5h.01M7 17h.01"/></svg></span>
+        <div class="etapa-kdy">Druhý až třetí týden</div>
+        <h3>Postavím ho a napojím na systémy</h3>
+        <p>Dostane přístupy, které mu určíte. Běží buď u vás na serveru, kde data firmu
+        neopustí, nebo v cloudu, který spravuji já.</p>
+        <p class="vyberko-pozn">Od vás potřebuji: přístupy do systémů a rozhodnutí,
+        jestli má běžet u vás nebo u mě. Nikdo u toho nemusí sedět.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+        <div class="etapa-kdy">Čtvrtý týden</div>
+        <h3>Měsíc běží pod dohledem</h3>
+        <p>První měsíc čtu jeho hlášení s vámi a doháním, co dělá jinak, než jste čekali.
+        Tohle je součást ceny, ne příplatek.</p>
+        <p class="vyberko-pozn">Od vás potřebuji: pět minut denně na přečtení hlášení
+        a jednu zpětnou vazbu týdně. Víc ne.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3"/></svg></span>
+        <div class="etapa-kdy">Dál už jen provoz</div>
+        <h3>Hlídám ho a vylepšuji</h3>
+        <p>Za měsíční paušál sleduji, že běží, reaguji na změny ve vašich systémech
+        a přidávám mu práci, jak vás bude napadat.</p>
+        <p class="vyberko-pozn">Od vás potřebuji: nic. Když se něco změní ve vašich
+        systémech, všimnu si toho já, ne vy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Z CEHO JE PAUSAL ============ -->
+<section>
+  <div class="obsah">
+    <h2>Z čeho se skládá<br>těch osm tisíc měsíčně</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Provozní cena se obvykle
+    neříká, z čeho je. U mě je to takhle, spočítané na modelovém provozu třiceti
+    příchozích zpráv denně.</p>
+
+    <div class="naklady">
+      <div class="naklad">
+        <span class="naklad-jmeno">Server, kde to běží</span>
+        <span class="naklad-pruh"><i style="--w:6%"></i></span>
+        <span class="naklad-castka">&nbsp;&nbsp;500 Kč</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Provoz modelu</span>
+        <span class="naklad-pruh"><i style="--w:16%"></i></span>
+        <span class="naklad-castka">1 300 Kč</span>
+      </div>
+      <div class="naklad">
+        <span class="naklad-jmeno">Dohled, opravy po změnách ve vašich systémech
+        a drobná rozšíření</span>
+        <span class="naklad-pruh"><i style="--w:78%"></i></span>
+        <span class="naklad-castka">6 200 Kč</span>
+      </div>
+    </div>
+
+    <p class="naklady-zaver">Ta poslední položka je největší a je to tak správně.
+    Technika je dneska levná. Provozovat ji tak, aby se na ni dalo spolehnout,
+    levné není.</p>
+
+    <p class="lead" style="margin-top:20px;max-width:58ch">Když vaše agenda dělá
+    desetinásobek zpráv, mění se druhý řádek, ne celý paušál. Řekneme si to dopředu,
+    ne fakturou. A druhá agenda už neplatí těch 89 000 Kč znovu: přístupy i zázemí
+    stojí, další práce se přidává v rámci provozu.</p>
+
+    <p class="vyberko-pozn">Server stojí 130 až 500 Kč podle toho, jestli běží u vás
+    nebo u mě; v součtu je počítaná horní hranice. Třicet zpráv denně je modelový
+    provoz, ne měření u vás.
+    Cena provozu modelu je spočítaná z veřejného ceníku Anthropic ke 24. 6. 2026
+    a přepočtená kurzem ČNB k 25. 8. 2026 (20,659 Kč za dolar), tedy zhruba dvě
+    koruny na jednu zprávu. Ceny modelů se za poslední dva roky měnily zhruba
+    dvakrát ročně a pokaždé dolů.</p>
+  </div>
+</section>
+
+<!-- ============ VYSLEDKY V CISLECH ============ -->
+<section class="vysledky">
+  <div class="obsah">
+    <h2>Čtyři čísla,<br>která si můžete ověřit.</h2>
+    <p class="vysledky-lead">Dvě z nich jsou moje podmínky dodávky, jedno je spočítané
+    z veřejného ceníku a jedno popisuje, co s příchozí zprávou udělá. Které je které,
+    stojí pod nimi.</p>
+
+    <div class="cisla">
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 120 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="1" style="--i:1" x="25" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="2" style="--i:2" x="50" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="3" style="--i:3" x="75" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="4" style="--i:4" x="100" y="4" width="20" height="26" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">5<span class="cislo-jednotka">výstupů</span></b>
+        <span class="cislo-popis">Z jedné přijaté zprávy: nabídka, zápis do CRM, odpověď odesílateli, zařazený dokument a řádek v hlášení.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 34 34" aria-hidden="true"><circle data-i="0" style="--i:0" cx="17" cy="17" r="15" fill="none" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2"/><path data-i="1" style="--i:1" d="M17 8.5V17" stroke="#12A06B" stroke-width="3" stroke-linecap="round" fill="none"/><path data-i="2" style="--i:2" d="M17 17l6.5 3.4" stroke="#12A06B" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        <b class="cislo-hodnota">6:40<span class="cislo-jednotka">ráno</span></b>
+        <span class="cislo-popis">Čas, kdy je hlášení ve vaší schránce. Není to odhad, ten čas si při zavedení určíte vy.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 36 34" aria-hidden="true"><circle data-i="0" style="--i:0" cx="9" cy="17" r="8" fill="#12A06B"/><circle data-i="1" style="--i:1" cx="27" cy="17" r="8" fill="none" stroke="#12A06B" stroke-width="3"/></svg>
+        <b class="cislo-hodnota">2<span class="cislo-jednotka">Kč za zprávu</span></b>
+        <span class="cislo-popis">Kolik stojí zpracování jedné přijaté zprávy na modelu. Sečteno z veřejného ceníku, ne odhadnuto.</span>
+      </div>
+
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 27 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="1" style="--i:1" x="8" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="2" style="--i:2" x="16" y="0" width="3" height="34" rx="1.5" fill="color-mix(in srgb, #FBFBF9 30%, transparent)"/><rect data-i="3" style="--i:3" x="24" y="0" width="3" height="34" rx="1.5" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">4<span class="cislo-jednotka">týdny</span></b>
+        <span class="cislo-popis">První měsíc čtu jeho výstupy s vámi. To je v ceně, ne příplatek.</span>
+      </div>
+    </div>
+
+    <p class="cisla-pozn">Pět výstupů je popis mé mechaniky, ne měření u klienta: je to přesně to, co je o kus výš nakreslené. Dvě koruny na zprávu jsou spočítané z veřejného ceníku modelu ke 24. 6. 2026 a přepočtené kurzem ČNB k 25. 8. 2026, ale počet zpráv a jejich délka jsou modelové. Čas hlášení a čtyři týdny pod dohledem jsou moje podmínky dodávky. Co přesně bude odbavovat u vás, se domlouvá podle vaší agendy.</p>
+  </div>
+</section>
+
+<!-- ============ PRO KOHO TO NENI ============ -->
+<section class="varovani">
+  <div class="obsah">
+    <span class="stitek">Kdy ne</span>
+    <div class="varovani-delene">
+      <div class="varovani-uvod">
+        <h2>Kdy vám tohle nedoporučím</h2>
+        <p>Čtyři situace, ve kterých je levnější nedělat nic. Řeknu to na první schůzce,
+        ne až z faktury.</p>
+      </div>
+      <div>
+        <div class="varovani-polozka">
+          <h3>Když nemáte co automatizovat</h3>
+          <p>Pokud agendu zvládá jeden člověk za hodinu týdně, nemá to smysl.
+          Řeknu to rovnou a ušetřím vám peníze.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-firma">Firma</label>
-          <input id="lp-firma" name="firma" type="text" autocomplete="organization">
+        <div class="varovani-polozka">
+          <h3>Když data nejsou v systémech</h3>
+          <p>Když firma běží na papírech a v hlavách lidí, musí se nejdřív srovnat
+          podklady. To je jiná zakázka, jmenuje se <a href="/reseni-mapa-firmy" style="color:var(--akcent)">Mapa firmy</a>
+          a stojí 39 000 Kč.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-tel">Telefon</label>
-          <input id="lp-tel" name="telefon" type="tel" autocomplete="tel">
+        <div class="varovani-polozka">
+          <h3>Když má rozhodovat za vás</h3>
+          <p>Cenotvorbu, propouštění ani jednání s klíčovým zákazníkem stroji nedám.
+          Připraví podklad, rozhodnete vy.</p>
         </div>
-        <div class="form-field">
-          <label for="lp-mail">E-mail</label>
-          <input id="lp-mail" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field full">
-          <label for="lp-zprava">Co řešíte?</label>
-          <textarea id="lp-zprava" name="zprava" placeholder="Klidně jen dvě věty."></textarea>
+        <div class="varovani-polozka">
+          <h3>Když od toho čekáte zázrak i mimo tu jednu agendu</h3>
+          <p>Uvnitř úzce zadané práce, kde zná pravidla, je stroj rychlý a spolehlivý.
+          Mimo ni umí práci i zpomalit, a co hůř, lidi u toho mají pocit, že jsou
+          rychlejší. Proto se začíná jednou agendou a proto se ta agenda vybírá
+          společně. Širší zadání není ambicióznější, je jen míň spolehlivé.</p>
         </div>
       </div>
-      <div class="hp-field" aria-hidden="true">
-        <label for="lp-web">Nevyplňujte</label>
-        <input id="lp-web" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Opustí naše data firmu?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Nemusí. Ve variantě on-premise běží celý systém na vašem serveru a data
+        se nikam neodesílají. Tuhle variantu volí firmy, které pracují s citlivými
+        údaji nebo mají zákazníky, kteří to vyžadují smluvně.</p>
+        <p>Ve variantě v cloudu běží infrastruktura u mě. Je levnější na zavedení
+        a rychlejší na start, ale data opouštějí vaši síť. Kterou zvolit, probereme
+        podle toho, s čím pracujete.</p>
       </div>
-      <button type="submit" class="btn">Odeslat zprávu</button>
-      <p class="form-note">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
-    </form>
-    <div class="reassure">Odpovím do 24 hodin. Bez závazku.</div>
+    </details>
+
+    <details>
+      <summary>To už máme. Koupili jsme lidem předplatné AI asistenta.<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>To je dobrý první krok a nemá smysl ho rušit. Je to ale jiná věc. Předplatné
+        pomáhá člověku, který u toho sedí: otevře okno, něco tam vloží, dostane odpověď
+        a sám si ji přenese do systému. Práce se tím nezmenší, jen se přesune o krok dál.</p>
+        <p>Zaměstnanec s přístupy do vašich systémů tam nikoho u stolu nepotřebuje. Běží,
+        když nikdo není v práci, a ráno řekne, co udělal. Ty dvě věci se nevylučují, jen
+        řeší jinou polovinu problému.</p>
+        <p>Jestli u vás předplatné nikdo pravidelně nepoužívá, není to lenost lidí. Podle
+        průzkumu České asociace umělé inteligence a Hospodářské komory z ledna 2026 brzdí
+        zavádění AI u osmdesáti procent firem nedostatek lidí, kteří by věděli, co s tím.
+        To je přesně ta část, kterou tu řeším já.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co když udělá chybu?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Dostane jen ty přístupy, které mu určíte, a u kroků s následky
+        (odeslání objednávky, změna ceny, komunikace ven) čeká na potvrzení člověka.
+        Co udělal, je vidět v ranním hlášení.</p>
+        <p>První měsíc čtu jeho výstupy s vámi právě proto, aby se chyby našly dřív,
+        než něco způsobí.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co když nám přijde faktura na sto tisíc za provoz?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Nepřijde, protože na to je strop. Měsíční limit spotřeby se nastavuje při
+        zavedení, a když na něj narazí, zastaví se a ozve se. Nepokračuje dál s tím,
+        že si to vyfakturujeme potom.</p>
+        <p>Kolik ta spotřeba reálně dělá, je o kus výš na téhle stránce rozepsané
+        po položkách. U modelové agendy třiceti zpráv denně jsou to zhruba dvě koruny
+        na jednu zprávu.</p>
+        <p>A když se vaše agenda zvětší natolik, že se strop začne dotýkat, řekneme
+        si to dopředu a domluvíme se. Ne fakturou.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Musíme mu rozumět, abychom ho mohli používat?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ne. Vaši lidé s ním mluví česky, stejně jako by psali kolegovi.
+        Nastavení, přístupy a údržba jsou na mně.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Budeme mít problém s AI Actem?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ne, a ta část, která se týká označování, je moje práce, ne vaše. Podle článku 50
+        nese povinnost označit, že člověk komunikuje se strojem, ten, kdo systém dodává.
+        To zařídím já, u každé zprávy, která půjde ven.</p>
+        <p>Nejpřísnější část nařízení, tedy pravidla pro vysoce rizikové systémy, se
+        novelou z července 2026 odložila na prosinec 2027, u AI vestavěné do regulovaných
+        výrobků na srpen 2028. Agenda typu pošta a poptávky mezi vysoce rizikové systémy
+        stejně nepatří.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Musíme kvůli tomu někoho školit?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ano, a je to jediná povinnost AI Actu, která dopadá přímo na vás. Článek 4
+        platí od února 2025 a říká, že firma má zajistit dostatečnou úroveň znalostí
+        u lidí, kteří s AI systémem pracují jejím jménem. Žádný povinný certifikát,
+        žádný počet hodin, žádná osnova. Novela z července 2026 to ještě zmírnila
+        a přinesla úlevy malým podnikům.</p>
+        <p>Krátké zaškolení lidí, kteří s ním budou pracovat, a zápis o něm jsou součástí
+        zavedení. Pro mě je to malá věc, pro vás hotová povinnost.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>A zákon o kyberbezpečnosti?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ten na vás může dopadat úplně nezávisle na tom, jestli používáte AI. Platí
+        od 1. listopadu 2025 a jestli se vás týká, se pozná ze samoidentifikace; NÚKIB
+        na to má veřejný nástroj. Jestli vám vyjde, že ano, umím to ověřit v rámci
+        úvodní schůzky.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Znamená to, že někoho propustíme?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ne, a když to někdo slibuje, ptejte se ho na čísla. Tohle nenahrazuje
+        zaměstnance, nahrazuje rutinu, kterou ten zaměstnanec dneska dělá místo své
+        skutečné práce.</p>
+        <p>Rozdíl je vidět na tom, co zbyde. Přepisování z mailu do systému,
+        přejmenovávání příloh a psaní potvrzení ze zaměstnance nedělají lepšího
+        obchodníka ani lepšího technika. Zbytek jeho práce ano.</p>
+        <p>A personální věci stroji nedám v žádném případě. To je jedna z věcí, které
+        jsou trvale pod čarou v sekci o hranicích.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Co když s tím po roce chceme skončit?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Paušál je měsíční, bez závazku na dobu určitou. Když skončíte, dostanete
+        export dat i popis toho, jak byl nastavený, aby v tom mohl pokračovat někdo jiný.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kolik to reálně ušetří?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Záleží na tom, kolik času dnes ta agenda bere. Spočítat se to dá dopředu:
+        minuty denně krát počet lidí krát dvacet jedna pracovních dní. Když z toho
+        nevyjde aspoň několik hodin měsíčně, nedoporučím to.</p>
+        <p>Cena 89 000 Kč je záměrně postavená jako jeden měsíční náklad na dobrého
+        zaměstnance, zaplacený jednou. Hrubá mzda 66 500 Kč plus zákonné odvody
+        zaměstnavatele ve výši 33,8 procenta dělá 88 977 Kč celkových měsíčních
+        nákladů. Je to zhruba 1,3 násobek průměrné hrubé mzdy, která podle ČSÚ
+        za první čtvrtletí 2026 činila 50 282 Kč. Nejsem plátce DPH, cena je konečná.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Půl hodiny stačí na první rozhodnutí.</h2>
+    <p>Řeknete mi, co vám dnes bere nejvíc času. Já vám řeknu, jestli to stroj zvládne,
+    nebo jestli si máte nechat peníze.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-trust">Praha a celá ČR &middot; Cestuji za klientem &middot; Odpovím do 24 hodin</div>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; zapsán v živnostenském rejstříku &middot; &copy; 2026</div>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
 </footer>
 
+<script src="/sluzba.js?v=f3e20f0"></script>
 </body>
 </html>

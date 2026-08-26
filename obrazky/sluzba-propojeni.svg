@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Dva systémy spojené cestou, po které si samy předávají data" fill="none">
+<title>Dva systémy spojené cestou, po které si samy předávají data</title>
+  <rect x="26" y="56" width="88" height="88" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M42 78h56" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M42 90h40" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M42 102h48" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <rect x="206" y="56" width="88" height="88" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M222 78h56" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M222 90h40" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M222 102h48" stroke="#C3CAC4" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M114 100h92" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="132" cy="100" r="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="160" cy="100" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="188" cy="100" r="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M124 118q36 22 72 0" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M124 82q36 -22 72 0" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+</svg>

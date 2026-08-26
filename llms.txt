@@ -1,51 +1,48 @@
 # Manta IT
 
-> Externí IT vedení pro malé a střední české firmy bez vlastního IT ředitele. Zakladatel a jediný provozovatel je Petr Kokoška, 10 let praxe v IT projektovém řízení a product ownership. Hlavní službou je IT governance jako dlouhodobý paušál (od 50 000 Kč měsíčně), vedle toho produktové balíčky s pevnou cenou.
+> Externí IT vedení pro české firmy do zhruba 250 lidí, které nemají vlastního IT ředitele. Provozuje ho Petr Kokoška, deset let praxe na straně dodavatelů velkých značek. Není to správa počítačů: je to technologický lídr, který vede digitální transformaci firmy. Hlavní službou je dlouhodobé vedení IT jako měsíční paušál od 50 000 Kč, vedle toho balíčky s pevnou cenou.
 
-Cílovka: majitelé a CEO firem 50 až 300 lidí v ČR, kteří mají rozjeté IT (systémy, infrastrukturu, dodavatele), ale nemají vlastního IT ředitele. Web cíleně používá srozumitelnou češtinu bez IT žargonu.
+Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají rozjeté IT (systémy, infrastrukturu, dodavatele), ale nemají koho by tím pověřili. Web cíleně používá srozumitelnou češtinu bez IT žargonu. Petr není plátce DPH, uvedené ceny jsou konečné.
 
-## Hlavní stránky
+## Služby
 
-- [Domů](https://mantait.cz/): Přehled nabídky, problémy které řeším, IT governance, dílčí služby, průběh spolupráce.
-- [O mně](https://mantait.cz/o-mne): Petr Kokoška, 10 let praxe, reference projektů (e-commerce, mediální platformy, integrace ERP/CRM), case studies pod NDA.
-- [AI plán do 48 hodin](https://mantait.cz/reseni-ai) (9 900 Kč, dříve "Mapa AI příležitostí"): dva hodinové workshopy online, plán do 48 hodin od druhého workshopu - kde AI ve firmě pomůže, kde ne, čím začít a co to přinese. Případný AI agent nebo automatizace dodán do týdne, orientačně za 50 000 Kč. Ukázka plánu: https://mantait.cz/ukazka-reportu
-- [Aplikace na míru](https://mantait.cz/reseni-nova-aplikace) (od 50 000 Kč): Klient nepíše specifikaci, zadání vzniká průběžně z jeho odpovědí na otázky. Dostane hotovou aplikaci nasazenou v provozu. První funkční verze do týdne, další verze podle připomínek obvykle do druhého dne. Pevná cena za dohodnutý rozsah, doladění toho, co v aplikaci je, se neúčtuje. Zdrojový kód dostane klient při předání; hosting, servis, doménu i zabezpečení Manta IT buď zajistí, nebo předá. Případ z praxe: https://mantait.cz/case-kalkulacka (vnitropodniková aplikace na nacenění zakázek, od objednávky do ostrého provozu 20 dní).
-- [AI zaměstnanec](https://mantait.cz/reseni-ai-zamestnanec) (89 000 Kč jednorázově za zavedení, provoz a správa od 8 000 Kč měsíčně; cena je rámovaná jako jeden měsíční náklad na dobrého zaměstnance, zaplacený jednou): Nepřetržitě běžící AI s přístupy do firemních systémů, které mu klient určí. Na rozdíl od chatbota neceká na dotaz, sám vyhodnocuje co je potřeba udělat, má trvalou paměť a ráno podává hlášení. Dvě varianty nasazení: on-premise na serveru klienta (firemní data neopouštějí firmu) nebo v cloudu spravovaném Manta IT.
-- [Weby s AI](https://mantait.cz/weby): Web Standard (16 900 Kč, do 2 týdnů, jednoduchá správa obsahu) a Web Quick (8 900 Kč, do týdne, statický). Pro malé a střední firmy, řemeslníky.
-- [Raynet CRM](https://mantait.cz/raynet): Specializace na české CRM Raynet. Zavedení, propojení s účetnictvím (Pohoda), úpravy na míru, audit. Od 15 000 Kč.
-- [Dotace na klíč pro digitalizaci](https://mantait.cz/dotace-mas) (30 000 Kč): Kompletní zajištění dotace OP TAK Technologie pro MAS (CLLD) - výzva II. Stát vrací 50 % způsobilých výdajů. Celostátní strop programu je 1 499 999 Kč při rozpočtu projektu 250 tisíc až 2 999 999 Kč, ale závazná je výzva konkrétní místní akční skupiny: ta si stanovuje vlastní alokaci a někdy i vlastní, nižší strop na projekt (např. MAS Moravská brána max. rozpočet 1 413 000 Kč). Reálnou částku pro danou firmu proto nelze uvést bez znalosti území. Pro malé a střední podniky (do 250 zaměstnanců, alespoň 2 uzavřená účetní období), investice musí být v obci do 25 tisíc obyvatel v území místní akční skupiny s vyhlášenou výzvou. Podpora je v režimu de minimis (limit 300 tis. EUR / 3 roky za propojenou skupinu); jedno IČO smí mít jednu aktivní žádost. Manta IT dělá: ověření způsobilosti zdarma, konzultaci co pořídit, projektový záměr, sběr 2-3 cenových nabídek, řízení celého procesu a dohled nad dodávkou; žádost podává partnerská dotační kancelář. Z dotace jde zaplatit podnikový systém (ERP), skladový program a čtečky, e-shop nebo B2B portál napojený na sklad, automatizace a robotizace provozu, servery, sítě, zálohování a kyberbezpečnost, výrobní stroje s digitálním řízením.
-- [Poslední velké kolo dotací na technologie je o polovinu menší](https://mantait.cz/clanky/dotace-technologie-pro-mas-2026) (8. 8. 2026): Odborný článek s ověřenými daty. Alokace výzvy II je 540 mil. Kč proti až 1 miliardě v předchozí výzvě. Příjem plných žádostí 1. 9. 2026 až 1. 9. 2027, projekt musí být fyzicky dokončen do 31. 8. 2028. MPO uvádí, že zájem převyšuje alokace výzev OP TAK a nové výzvy se očekávají až po roce 2028. Podle ČSÚ mělo v roce 2025 ERP systém 49,7 % firem s 10 a více zaměstnanci; podle AMSP ČR 40 % podnikatelů neví o možnostech státní podpory.
-- [Přehled všech článků](https://mantait.cz/clanky/): Články pro majitele firem - dotace, kybernetická bezpečnost, AI v provozu, provozní IT.
-- [Dopadne na vás nový zákon o kybernetické bezpečnosti? Tři otázky, které to prozradí](https://mantait.cz/clanky/novy-zakon-kyberbezpecnost-3-otazky) (22. 8. 2026): Nový zákon přebírá směrnici NIS2, lhůta pro registraci u NÚKIB běží do 1. 1. 2027. Rozhoduje odvětví, velikost firmy (orientačně od 50 zaměstnanců) a role v dodavatelském řetězci.
-- [Kolik stojí hodina ručního přepisování dat? Spočítejte si to](https://mantait.cz/clanky/kolik-stoji-rucni-prepisovani) (22. 8. 2026): Návod na výpočet nákladů ručního přepisování (minuty denně x lidé x 21 dní) a čísla z reálné anonymizované zakázky (42 hodin měsíčně u dvou lidí).
-- [Posledních šest měsíců velkých dotací na technologie](https://mantait.cz/clanky/dotace-poslednich-6-mesicu) (22. 8. 2026): Časová osa firmy, která začne dnes, proti firmě, která počká do jara 2027 - uzávěrky MAS padají průběžně a peníze v územích ubývají.
-- [AI zaměstnanec: co to reálně je a co není](https://mantait.cz/clanky/ai-zamestnanec-co-je-a-co-neni) (22. 8. 2026): Definice AI zaměstnance (běží nepřetržitě, přístupy do systémů, ranní hlášení), co dělat nemá (nerozhoduje za vás), soulad s AI Act čl. 50 a průběh zavedení.
-- [Kontakt](https://mantait.cz/kontakt): Kontaktní formulář, email petr.kokoska@mantait.cz, telefon +420 732 329 431.
+- [Domů](https://mantait.cz/): Přehled nabídky, ceník všech služeb, kontakt se třemi cestami (napsat, nechat si zavolat, poslat termín).
+- [Dlouhodobé vedení IT](https://mantait.cz/reseni-vedeni-it) (od 50 000 Kč měsíčně): Převzetí technologické stránky firmy jako celku, tedy systémy, dodavatelé, rozpočet, bezpečnost i běžící projekty. Rozhodovací role, ne poradní. Každý měsíc přijde písemný zápis, rozpad IT nákladů po položkách, kontrola dodavatelů a stav zálohování. Od dodavatelů se neberou provize. Vlastního IT člověka má podle ČSÚ jedna malá firma z deseti.
+- [Aplikace a systémy na míru](https://mantait.cz/reseni-nova-aplikace) (od 50 000 Kč, pevná cena za dohodnutý rozsah): Klient nepíše specifikaci, zadání vzniká z jeho odpovědí na otázky. První funkční verzi otevře do týdne, připomínky se obvykle zapracují do druhého dne. Doladění toho, co v aplikaci už je, se neúčtuje. Zdrojový kód je klientův, i s popisem, jak aplikaci spustit. Případ z praxe: https://mantait.cz/case-kalkulacka (aplikace na naceňování zakázek, od objednávky do provozu 20 dní, strop 40 000 Kč se nezvedl).
+- [Propojení systémů a automatizace](https://mantait.cz/reseni-propojeni) (podle rozsahu): Účetnictví, sklad, e-shop a CRM si předávají data samy, místo ručního přepisování. Běžně se pracuje s Pohodou, u Raynet CRM je Manta IT od července 2026 oficiální integrační partner. Cenu určuje počet systémů a objem dat.
+- [Bezpečnost a nový zákon](https://mantait.cz/reseni-bezpecnost) (podle rozsahu, počítá se po dnech, den 10 000 Kč): Posouzení, jestli na firmu dopadá zákon č. 264/2025 Sb. o kybernetické bezpečnosti (účinný od 1. 11. 2025), ohlášení regulované služby u NÚKIB a dovedení do souladu. Lhůta na ohlášení je 60 dnů ode dne, kdy firma podmínky splní; komu seděly už při účinnosti zákona, tomu uplynula 31. 12. 2025. Opatření musí být zavedená do roka od doručení rozhodnutí o registraci. Mírnější režim popisuje vyhláška č. 410/2025 Sb., přísnější č. 409/2025 Sb., zařazení služeb vyhláška č. 408/2025 Sb. Dodavatel regulované firmy regulovaným subjektem NENÍ a sám se neohlašuje, ale dostane bezpečnostní požadavky smlouvou od odběratele.
+- [AI zaměstnanec](https://mantait.cz/reseni-ai-zamestnanec) (89 000 Kč za zavedení, provoz od 8 000 Kč měsíčně): Nepřetržitě běžící AI s přístupy do firemních systémů, které mu klient určí. Nečeká na dotaz jako chatbot, sám vyhodnocuje, co je potřeba udělat, má trvalou paměť a ráno podává hlášení včetně toho, co nestihl. Dvě varianty: on-premise na serveru klienta (data neopustí firmu) nebo v cloudu spravovaném Manta IT. První měsíc běží pod dohledem a je to v ceně.
+- [Mapa firmy: procesy a toky dat](https://mantait.cz/reseni-mapa-firmy) (39 000 Kč pevně, dva týdny): Vysledování, kudy ve firmě teče práce a data, strojová kontrola skutečných exportů (duplicity, prázdná povinná pole, ceníky bez platnosti), seznam nálezů seřazený podle peněz a návrh, kde má který údaj žít napevno a kdo ho smí měnit. Součástí ceny je jedna oprava, kterou klient vybere a která odejde nasazená, ne popsaná. Kupuje se ve chvíli, kdy AI plán ukáže, že zatím není na čem stavět; cena AI plánu se pak odečítá. Firmě to sebere zhruba šest hodin.
+- [AI plán do 48 hodin](https://mantait.cz/#cenik) (9 900 Kč): Dva hodinové workshopy online, do 48 hodin od druhého plán, kde AI pomůže, kde ne a čím začít. U části firem z něj vyjde, že se zatím nemá na čem stavět; pak pokračuje Mapa firmy.
+- [Dotace na digitalizaci](https://mantait.cz/dotace-mas) (30 000 Kč pevně): Ověření nároku, projektový záměr, cenové nabídky i vyplnění žádosti do OP TAK Technologie pro MAS. Jedna částka, žádná provize z dotace, služba končí podáním žádosti; administrace projektu potom v ceně není. Žádost se podává na plnou moc, k čemuž klient potřebuje kvalifikovaný elektronický podpis jednatele a přístup do ISKP21+. Konkrétní alokaci i strop na projekt určuje každá místní akční skupina zvlášť, takže částku nelze uvést bez znalosti území.
+- [Weby](https://mantait.cz/weby): Web Standard (16 900 Kč, do 2 týdnů, jednoduchá správa obsahu) a Web Quick (8 900 Kč, do týdne).
+- [Raynet CRM](https://mantait.cz/raynet) (od 15 000 Kč): Zavedení, propojení s účetnictvím, úpravy na míru, audit.
+- [Dílčí zakázky](https://mantait.cz/#cenik) (10 000 Kč za den): Vedení projektu, mapování zadání, výběr dodavatele, zavádění nástrojů, revize nákladů.
 
-## Co je hlavní službou
+## Kdo to dělá
 
-IT governance je dlouhodobá role externího IT ředitele. Pokrývá:
-- Propojení systémů a automatizaci procesů
-- Kontrolu nákladů, audit dodavatelů, pravidelný reporting
-- Průzkum a realizaci nových systémů
-- Výběr a zavedení nových nástrojů včetně zaškolení personálu
-- Stabilizaci a vedení rozjetých projektů
-- Posouzení bezpečnosti, zálohování a krizový plán pro případ incidentu
+- [Kdo jsem](https://mantait.cz/o-mne): Petr Kokoška. Deset let vedl projekty u dodavatelů, kteří dodávají velkým značkám: Český rozhlas, Radiotéka, Prima, Czech News Center, UniHobby, Pro-Doma, Almeco. Tři čtvrtiny práce odvede sám, zbytek zařídí přes lidi, které zná, a ohlídá termín i cenu. Sídlí v Čerčanech u Benešova, pracuje po celé ČR.
 
-## Dílčí služby bez paušálu
+## Články
 
-- Projektové řízení: 10 000 Kč za den
-- Product Discovery a Product Ownership: 10 000 Kč za den
-- Zavádění nástrojů: 10 000 Kč za den
-- IT revize: individuálně dle rozsahu
+- [Přehled článků](https://mantait.cz/clanky/): O IT jazykem majitele firmy.
+- [Poslední velké kolo dotací na technologie je o polovinu menší](https://mantait.cz/clanky/dotace-technologie-pro-mas-2026): Alokace výzvy II je 540 mil. Kč proti až miliardě v předchozí. Příjem plných žádostí 1. 9. 2026 až 1. 9. 2027, projekt fyzicky dokončen do 31. 8. 2028.
+- [Dopadne na vás nový zákon o kybernetické bezpečnosti?](https://mantait.cz/clanky/novy-zakon-kyberbezpecnost-3-otazky): Tři otázky k samoidentifikaci. Rozhoduje odvětví a velikost; dodávky regulované firmě rozhodují o smluvních požadavcích, ne o regulaci.
+- [Kolik stojí hodina ručního přepisování dat?](https://mantait.cz/clanky/kolik-stoji-rucni-prepisovani): Návod na výpočet (minuty denně krát lidé krát 21 dní) a čísla z anonymizované zakázky.
+- [Posledních šest měsíců velkých dotací na technologie](https://mantait.cz/clanky/dotace-poslednich-6-mesicu): Časová osa firmy, která začne dnes, proti té, která počká.
+- [AI zaměstnanec: co to reálně je a co není](https://mantait.cz/clanky/ai-zamestnanec-co-je-a-co-neni): Definice, hranice a soulad s AI Act čl. 50.
 
-## Co Manta IT NENÍ
+## Co Manta IT není
 
-- Není to velká vývojářská agentura s týmem. Aplikace, propojení systémů i AI agenty staví a nasazuje Petr Kokoška sám, s pevnou cenou dohodnutou předem.
-- Není to jednorázová analýza - výstupem je zavedené řešení v provozu
-- Není to napojení na konkrétního dodavatele
+- Není to helpdesk ani správa počítačů. Reset hesla a výměna tiskárny jsou jiná služba a dělá je někdo jiný.
+- Není to velká agentura s týmem. Aplikace, propojení i AI zaměstnance staví Petr Kokoška sám, za cenu dohodnutou předem.
+- Není to dodavatel systémů. Kdo píše zadání a srovnává nabídky, nebere provizi od toho, kdo vyhraje.
+- Není to jednorázová analýza. Výstupem je zavedené řešení v provozu.
 
-## Klíčové fráze
+## Kontakt
+
+Formulář je na hlavní stránce (https://mantait.cz/#napiste) a nabízí tři cesty: napsat, co klient řeší; nechat si zavolat; nebo poslat termín schůzky. E-mail petr.kokoska@mantait.cz, telefon +420 732 329 431. Sukova 311, 257 22 Čerčany, IČO 04158351.
+
+## Klíčová fráze
 
 "Vy řídíte firmu. Já vaše IT."
-"IT má firmu posouvat. Ne zaměstnávat vedení."
