@@ -118,7 +118,7 @@
   padding:clamp(20px,2.4vw,28px);background:var(--papir)}
 .schod:nth-child(1){margin-top:44px}
 .schod:nth-child(2){margin-top:22px}
-.schod-kdy{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+.schod-kdy{font-family:var(--mono);font-size:12px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--tlum)}
 .schod h3{margin-top:10px}
 .schod-cena{font-family:var(--display);font-size:clamp(20px,2vw,27px);
@@ -159,7 +159,7 @@
 .bydliste{margin-top:clamp(30px,3.6vw,44px);overflow-x:auto;
   padding:3px 0;margin-bottom:-3px}
 .bydliste-tab{width:100%;min-width:720px;border-collapse:collapse}
-.bydliste-tab th{text-align:left;font-family:var(--mono);font-weight:400;font-size:11.5px;
+.bydliste-tab th{text-align:left;font-family:var(--mono);font-weight:400;font-size:12px;
   letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);
   padding:0 18px 12px 0;vertical-align:bottom}
 .bydliste-tab td{padding:16px 18px 16px 0;border-top:1px solid var(--linka);
@@ -187,4 +187,39 @@
   .schod:nth-child(1),.schod:nth-child(2){margin-top:0}
   .vypis-radek{grid-template-columns:1fr;gap:4px}
   .vypis-cislo{text-align:left}
+}
+
+/* ===== Kde data bydli: uzke okno =====
+   Ctyri sloupce meri 720 px, takze v okne o 390 px tabulka pretekala na
+   dvojnasobek. Radek se stava kartou a hlavicka sloupce popiskem uvnitr
+   (data-hlavicka na kazde bunce). Pravidla musi byt v tomhle souboru:
+   v sluzba.css je prebijel min-width:720px o par radku vys. */
+@media (max-width:900px){
+  .bydliste{overflow:visible}
+  .bydliste-tab,.bydliste-tab tbody{display:block;width:100%;min-width:0}
+  /* Radek je flex sloupec, ne block. Bunka prepnuta na display:block si uvnitr
+     tabulky dal drzi sirku podle obsahu (59 px u slova "Zakaznik"), takze
+     delici cara pod nadpisem karty koncila v tretine sirky. Jako flex polozka
+     se roztahne sama a na tabulkovem layoutu uz nezavisi. */
+  .bydliste-tab tr{display:flex;flex-direction:column;width:100%;min-width:0}
+  .bydliste-tab td{display:block;width:auto;min-width:0}
+  .bydliste-tab thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .bydliste-tab tr{
+    border:1px solid var(--linka);border-radius:var(--r);background:var(--papir);
+    padding:16px 18px;margin-bottom:12px;
+  }
+  .bydliste-tab td{border:0;padding:0}
+  .bydliste-tab td:first-child{
+    /* width:auto prebiji sirku 20 %, kterou ma bunka pro siroke okno; jako
+       nadpis karty by jinak merila 59 px a cara pod ni koncila v petine. */
+    width:auto;
+    font-family:var(--display);font-size:19px;letter-spacing:-.02em;
+    padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--linka);
+  }
+  .bydliste-tab td:not(:first-child){padding-top:12px}
+  .bydliste-tab td:not(:first-child)::before{
+    content:attr(data-hlavicka);display:block;
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--tlum);margin-bottom:5px;
+  }
 }

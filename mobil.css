@@ -1,0 +1,150 @@
+/* Mobilni navigace Manta IT.
+   Vlastni soubor, protoze homepage a clanky maji zbytek CSS inline a sdilene
+   pravidlo by se k nim nedostalo. Nacita se spolu s nav-mobil.js.
+
+   Promenne (--papir, --inkoust, --akcent, --obrys, --linka, --r, --okraj,
+   --krivka) definuji stranky ve svem :root; tady se jen pouzivaji. */
+
+/* ===== Mobilni navigace =====
+   Do 27. 8. se .menu pod 900 px jen vypnulo a nic ho nenahradilo -- na telefonu
+   tedy web zadnou navigaci nemel. Panel resi zaroven druhou vec: stranka sluzby
+   ma na mobilu pres dvacet obrazovek, takze krome menu nabizi i obsah stranky.
+   Na sirokem okne takovy prvek smysl nema a nezobrazuje se. */
+.nav-prepinac{display:none}
+
+@media (max-width:900px){
+  .nav-prepinac{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--text);font-size:15px;font-weight:600;color:var(--inkoust);
+    background:transparent;border:1px solid var(--obrys);border-radius:var(--r);
+    padding:0 14px;min-height:44px;cursor:pointer;
+    transition:border-color .2s var(--krivka-klid),background .2s var(--krivka-klid);
+  }
+  .nav-prepinac:active{transform:scale(.97)}
+  .nav-carky{width:16px;height:12px;position:relative;flex:none}
+  .nav-carky::before,.nav-carky::after{
+    content:'';position:absolute;left:0;right:0;height:1.6px;background:currentColor;
+    border-radius:1px;transition:transform .26s var(--krivka),opacity .18s var(--krivka-klid);
+  }
+  .nav-carky::before{top:2px}
+  .nav-carky::after{bottom:2px}
+  [aria-expanded="true"] .nav-carky::before{transform:translateY(3.2px) rotate(45deg)}
+  [aria-expanded="true"] .nav-carky::after{transform:translateY(-3.2px) rotate(-45deg)}
+
+  /* Lista drzi CTA jen dokud je misto; na uzkem telefonu ustoupi panelu,
+     kde je stejny odkaz jako prvni polozka. */
+  body > nav .nav-cta{display:none}
+
+  .nav-panel{
+    position:fixed;top:72px;left:0;right:0;bottom:0;z-index:39;
+    background:var(--papir);border-top:1px solid var(--linka);
+    padding:28px var(--okraj) 40px;overflow-y:auto;overscroll-behavior:contain;
+    display:flex;flex-direction:column;gap:30px;
+    opacity:0;visibility:hidden;transform:translateY(-10px);
+    transition:opacity .24s var(--krivka-klid),transform .28s var(--krivka),visibility .24s;
+  }
+  .nav-panel.otevreny{opacity:1;visibility:visible;transform:none}
+
+  .nav-panel .panel-menu{display:flex;flex-direction:column;gap:2px}
+  .nav-panel .panel-menu a{
+    font-family:var(--display);font-size:26px;font-weight:400;letter-spacing:-.03em;
+    text-decoration:none;color:var(--inkoust);padding:11px 0;min-height:44px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-panel .panel-menu a[aria-current]{color:var(--akcent)}
+  .nav-panel .panel-menu .sipka-ven{width:16px;height:16px;stroke:var(--obrys);fill:none;stroke-width:1.6}
+
+  .nav-panel .panel-cta{
+    background:var(--inkoust);color:var(--papir);font-weight:600;font-size:16px;
+    border-radius:var(--r);min-height:52px;display:flex;align-items:center;
+    justify-content:center;text-decoration:none;
+  }
+
+  /* Obsah stranky. Jen kdyz ma stranka aspon tri sekce -- na kratke strance
+     by to byl seznam, ktery neusetri ani jedno posunuti. */
+  .nav-panel .panel-obsah{border-top:1px solid var(--linka);padding-top:22px}
+  .nav-panel .panel-obsah .stitek{margin-bottom:14px}
+  .nav-panel .panel-obsah ol{list-style:none;counter-reset:s;display:flex;flex-direction:column}
+  .nav-panel .panel-obsah a{
+    counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:baseline;
+    padding:10px 0;min-height:44px;text-decoration:none;color:var(--tlum);font-size:15px;line-height:1.35;
+  }
+  .nav-panel .panel-obsah a::before{
+    content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--obrys);
+  }
+  .nav-panel .panel-obsah a.tady{color:var(--inkoust)}
+  .nav-panel .panel-obsah a.tady::before{color:var(--akcent)}
+
+  body.panel-otevreny{overflow:hidden}
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce){
+  .nav-panel{transition:opacity .01ms,visibility .01ms;transform:none}
+  .nav-carky::before,.nav-carky::after{transition:none}
+}
+
+@media (max-width:900px){
+  /* Znacka je odkaz na homepage, takze potrebuje plnou vysku dotyku;
+     merila 104x30. Vyska se pridava odsazenim, ne fixnim rozmerem, aby
+     lista zustala vysoka 72 px. */
+  body > nav .znacka{min-height:44px;align-items:center}
+}
+
+/* ===== Vycty na uzkem okne =====
+   Sekce typu "Tohle je dnes bezne" ma sest az devet polozek, kazdou s nadpisem,
+   odstavcem a poznamkou. Na sirokem okne je to mrizka, kterou oko preleti a cte
+   jen to, co ho zaujme. V jednom sloupci z tehoz vznikne dve az tri obrazovky
+   textu ke cteni po jednom -- a to nikdo nedela.
+
+   Na mobilu se proto ukazuji nadpisy a podrobnost se rozbali klepnutim. Ctenar
+   uvidi cely rozsah na jedne obrazovce a otevre, co ho zajima. Trida
+   `skladatelne` prichazi ze skriptu, takze bez JS zustane vsechno rozbalene. */
+@media (max-width:900px){
+  .doklady.skladatelne{display:block;border-top:1px solid var(--linka)}
+  .doklady.skladatelne .doklad{
+    display:block;border:0;border-bottom:1px solid var(--linka);
+    border-radius:0;padding:0;margin:0;background:transparent;
+  }
+  .doklady.skladatelne .doklad > h3{
+    margin:0;padding:16px 34px 16px 0;min-height:44px;
+    display:flex;align-items:center;cursor:pointer;position:relative;
+    font-size:17px;line-height:1.3;
+  }
+  .doklady.skladatelne .doklad > h3::after{
+    content:'';position:absolute;right:4px;top:50%;width:9px;height:9px;
+    border-right:1.6px solid var(--obrys);border-bottom:1.6px solid var(--obrys);
+    transform:translateY(-70%) rotate(45deg);
+    transition:transform .24s var(--krivka);
+  }
+  .doklady.skladatelne .doklad.otevreny > h3::after{transform:translateY(-25%) rotate(-135deg)}
+  .doklady.skladatelne .doklad > div{
+    display:grid;grid-template-rows:0fr;
+    transition:grid-template-rows .3s var(--krivka);
+  }
+  .doklady.skladatelne .doklad.otevreny > div{grid-template-rows:1fr}
+  /* Zadny padding na obalu: pri nulove vysce se odsazeni porad pocita, takze
+     ze slozene polozky prosakoval prvni radek odstavce. Odsazeni nese az
+     posledni prvek uvnitr. */
+  .doklady.skladatelne .doklad > div > .doklad-telo{overflow:hidden}
+  .doklady.skladatelne .doklad > div > .doklad-telo > :last-child{margin-bottom:18px}
+
+  /* Pocitadlo. Jen tam, kde text vybizi k secteni -- jinde by to byla sablona. */
+  .pocitadlo{
+    display:flex;align-items:baseline;gap:10px;margin-top:20px;
+    padding:16px 18px;border:1px solid var(--linka);border-radius:var(--r);
+    background:var(--papir-tmav);
+  }
+  .pocitadlo b{font-family:var(--display);font-size:27px;font-weight:400;letter-spacing:-.03em}
+  .pocitadlo span{font-size:14px;color:var(--tlum);line-height:1.35}
+  .doklady.skladatelne .doklad > h3 .mam{
+    margin-left:auto;margin-right:14px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.08em;color:var(--obrys);border:1px solid var(--obrys);
+    border-radius:var(--r-s);padding:5px 10px;min-height:32px;display:flex;align-items:center;
+  }
+  .doklad.mame > h3 .mam{color:var(--akcent);border-color:var(--akcent);background:var(--akcent-sv)}
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce){
+  .doklady.skladatelne .doklad > div{transition:none}
+  .doklady.skladatelne .doklad > h3::after{transition:none}
+}

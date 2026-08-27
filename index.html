@@ -196,7 +196,7 @@ h1 b{font-weight:600;color:var(--akcent)}
 .akce-cta{display:grid;gap:10px;justify-items:stretch;min-width:min(260px,100%)}
 .akce-pruh .btn-hlavni{background:var(--papir);color:var(--inkoust)}
 .akce-pruh .sipka{background:color-mix(in srgb,var(--inkoust) 12%,transparent)}
-.akce-vedlejsi{font-size:14px;color:color-mix(in srgb,var(--papir) 62%,transparent);
+.akce-vedlejsi{min-height:44px;align-items:center;font-size:14px;color:color-mix(in srgb,var(--papir) 62%,transparent);
   text-align:center;text-decoration:none}
 @media (max-width:860px){
   .akce-vnitrek{grid-template-columns:1fr}
@@ -242,7 +242,7 @@ h1 b{font-weight:600;color:var(--akcent)}
   border-radius:999px;padding:4px 9px;flex:none;
 }
 .ohlas span{overflow:hidden;text-overflow:ellipsis}
-.ohlasy-vse{
+.ohlasy-vse{min-height:44px;align-items:center;
   flex:none;font-size:14px;color:var(--tlum);text-decoration:none;
   display:inline-flex;align-items:center;gap:7px;
   transition:color .18s var(--krivka-klid), gap .2s var(--krivka);
@@ -488,6 +488,7 @@ textarea{min-height:104px;resize:vertical}
   .vstup,.radek > *{animation:none}
 }
 </style>
+  <link rel="stylesheet" href="/mobil.css?v=c6e92c4">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -657,7 +658,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-velky obor-tmavy" href="/reseni-vedeni-it">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">Dlouhodobé vedení IT</h3>
           <p class="obor-popis">Převezmu technologickou stránku firmy celou: systémy,
           dodavatele, rozpočet i bezpečnost. Vy se k IT vracíte jen na poradách.</p>
@@ -667,7 +668,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-stredni" href="/reseni-nova-aplikace">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">Aplikace a systémy na míru</h3>
           <p class="obor-popis">Nemusíte umět napsat zadání. Popíšete, co potřebujete,
           a dostanete hotovou aplikaci v provozu. Zdrojový kód je pak váš.</p>
@@ -677,7 +678,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-ai-zamestnanec">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">AI, která opravdu pracuje</h3>
           <p class="obor-popis">Ne chatbot. Zaměstnanec s přístupy, který běží
           nepřetržitě a ráno podá hlášení.</p>
@@ -687,7 +688,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-propojeni">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">Propojení a automatizace</h3>
           <p class="obor-popis">Data přestanou putovat ručně mezi systémy.
           Účetnictví, sklad a CRM si konečně rozumí.</p>
@@ -697,7 +698,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly" href="/reseni-mapa-firmy">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">Mapa firmy: kudy tečou data</h3>
           <p class="obor-popis">Než se dá něco postavit, musí být jasné, kde
           který údaj žije a kdo ho smí měnit.</p>
@@ -707,7 +708,7 @@ textarea{min-height:104px;resize:vertical}
 
       <a class="obor obor-maly obor-zvyrazneny" href="/reseni-bezpecnost">
         <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=d8f4f36" alt="" loading="lazy">
+          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=c6e92c4" alt="" loading="lazy">
           <h3 style="margin-top:10px">Bezpečnost a nový zákon</h3>
           <p class="obor-popis">Za pět minut zjistíte, jestli na vás dopadá zákon
           o kybernetické bezpečnosti a co po vás chce.</p>
@@ -1091,5 +1092,6 @@ new IntersectionObserver(([z]) => nav.classList.toggle('posunuto', !z.isIntersec
   else document.getElementById('akce')?.remove();
 })();
 </script>
+<script src="/mobil.js?v=c6e92c4"></script>
 </body>
 </html>

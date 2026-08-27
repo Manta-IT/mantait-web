@@ -40,11 +40,11 @@ section{padding:clamp(64px,8vw,116px) 0}
 .stitek{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--tlum);margin-bottom:20px}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:40;height:72px;
+body > nav{position:fixed;top:0;left:0;right:0;z-index:40;height:72px;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 var(--okraj);background:var(--papir);
   border-bottom:1px solid transparent;transition:border-color .25s var(--krivka-klid)}
-nav.posunuto{border-bottom-color:var(--linka)}
+body > nav.posunuto{border-bottom-color:var(--linka)}
 .znacka{font-family:var(--display);font-size:19px;font-weight:500;letter-spacing:-.02em;
   text-decoration:none;display:flex;align-items:center;gap:9px}
 .znak{width:22px;height:22px;border-radius:6px;background:var(--akcent);position:relative;flex:none;
@@ -635,7 +635,7 @@ footer{border-top:1px solid var(--linka);padding:34px 0;font-size:14px;color:var
 .naklad.zbytecny .naklad-pruh i{background:color-mix(in srgb,var(--vada) 34%,var(--papir))}
 .naklad.zbytecny .naklad-jmeno{color:var(--inkoust)}
 .naklad.zbytecny .naklad-castka{color:var(--vada)}
-.naklad-znacka{font-family:var(--mono);font-size:11.5px;color:var(--vada);
+.naklad-znacka{font-family:var(--mono);font-size:12px;color:var(--vada);
   letter-spacing:.06em;text-transform:uppercase}
 .naklady.pripravena .naklad-pruh i{width:0}
 .naklady-zaver{margin-top:26px;font-family:var(--display);
@@ -706,3 +706,32 @@ footer{border-top:1px solid var(--linka);padding:34px 0;font-size:14px;color:var
 /* Interaktivni prvky maji viditelnou hranici, dekorativni cary zustavaji jemne. */
 .volba span,.otazka{border-color:var(--obrys)}
 .otazka{border-color:var(--linka)}
+
+/* ===== Uzke okno: utvary, ktere v jednom sloupci nedavaji smysl =====
+   Do 27. 8. se oboji resilo tim, ze se to na mobilu vyplo nebo nechalo
+   pretect. Tady dostavaji vlastni podobu. */
+
+@media (max-width:900px){
+  /* Dvojice dnes -> potom. Sloupcova hlavicka nad dvema sloupci nema na uzkem
+     okne co popisovat, protoze sloupce uz vedle sebe nejsou. Misto vypnuti
+     (tak to bylo do 27. 8., a ctenar pak netusil, co ty dva stavy znamenaji)
+     se z ni stane jeden radek se sipkou a z kazde dvojice dvouradkova karta. */
+  .parova-hlava{
+    display:flex;align-items:baseline;gap:8px;grid-template-columns:none;
+    padding:0 0 14px;font-size:13px;line-height:1.35;
+  }
+  .parova-hlava .mezera{
+    width:auto;flex:none;color:var(--obrys);
+  }
+  .parova-hlava .mezera::before{content:'\2192'}   /* sipka doprava */
+
+  .par{
+    grid-template-columns:1fr;gap:10px;padding:18px 20px;
+  }
+  .par-sipka{
+    width:24px;height:24px;transform:rotate(90deg);   /* dolu, ne doprava */
+    margin:2px 0;
+  }
+  .par-dnes,.par-pak{font-size:16px}
+
+}
