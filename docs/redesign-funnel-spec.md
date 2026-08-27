@@ -1,5 +1,11 @@
 # Redesign webu Manta IT - interaktivni funnel
 
+> **PREKONANO 27. 8. 2026 redesignem.** "SOURCE OF TRUTH" nize plati jen pro
+> cervnovou etapu; brand tokeny, ktere dokument uvadi (EB Garamond + Inter,
+> bezova/zelena), jsou mimo identitu. Vizual urcuje skill `manta-brand`, obsah
+> a strukturu webu `web/PRINCIPLES.md`. Dokument zustava jako historie
+> rozhodovani.
+
 > Vytvoreno: 2026-06-01 | Status: KOSTRA (pred designem/implementaci)
 > Vznik: brainstorming Petr + Claude na zaklade feedbacku Petry Sebo (realna zakaznice) + Petrovy strategicke uvahy
 > Tento dokument je SOURCE OF TRUTH pro redesign. Copy zmeny z 2026-06-01 (lidsky ton, zruseni porovnavani) se do nej zapracuji.

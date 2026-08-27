@@ -1,5 +1,11 @@
 # Brand Design Brief — Manta IT logo
 
+> **PŘEKONÁNO 27. 8. 2026 redesignem.** Platný zdroj vizuálu je skill
+> `manta-brand` (papír #FBFBF9, inkoust #101413, jediný akcent zelená #0B6E4F,
+> Outfit + Manrope, značka = zelená dlaždice s výřezem, žádný serif a žádné
+> písmeno M). Paleta, písma i logo koncepty níže jsou stav do 26. 8. 2026 --
+> dokument zůstává jako historie rozhodování, nic nového se podle něj nestaví.
+
 > Vytvořeno 2026-05-26. Tohle byl brief poslaný frontend-design subagentovi pro 1. iteraci. Výsledek = `brand-lab.html` (5 konceptů). Petr v 1. kole nevybral žádný, **pokračujeme v dalších iteracích**.
 
 ## Brand context

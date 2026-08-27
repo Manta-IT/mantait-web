@@ -2,19 +2,19 @@
 
 Pravidla pro Claude Code pri praci na webu Manta IT. Drz se. Detail a "proc" je v `PRINCIPLES.md`.
 
-> **BEZI REDESIGN (T0825-7, srpen 2026).** Pravidla nize popisuji NOVY design
-> system. Produkce (`master`) zatim nese stary web (bezova paleta, EB Garamond)
-> a nasazuje se az CELY novy web najednou vcetne SK/EN -- do te doby se do
-> produkcnich stranek nesaha (rozhodnuti Petra 25. 8.). Nutna obsahova oprava
-> produkce pred releasem se dela ve stylu stavajiciho kodu (`style.css`), ne
-> podle novych design pravidel, a musi se prenest i do prototypu.
-> Zdroj pravdy redesignu: `../specs/web-redesign/STAV.md`, prototypy tamtez.
+> **REDESIGN NASAZENY 26. 8. 2026** (commit 5765313 a nasledujici). Produkce
+> uz bezi na novem design systemu popsanem nize. Devet stranek je prepsanych
+> od zakladu, zbytek zdedil novou paletu a pisma pres `style.css` -- ten je
+> mustek, ne cil: kazda takova stranka ceka na poradne prepsani.
+> Prototypy v `../specs/web-redesign/prototypy/` zustavaji zdrojem pravdy pro
+> tech devet stranek; meni se tam a prenasi skriptem `prenos.py`.
+> SK a EN verze jsou zatim na mustku a cekaji na preklad noveho obsahu.
 
 ## Co to je
 
 Web Manta IT: staticke HTML + sdileny stylesheet, zadny framework, zadny build
 step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
-(20 CZ + 20 SK + 20 EN + 5 clanku). Novy web ma zatim 8 stranek v
+(20 CZ + 20 SK + 20 EN + 5 clanku). Prepsanych je devet stranek, jejich zdroj je v
 `../specs/web-redesign/prototypy/`:
 
 - `web-v2.html` -- homepage: hero, pruh clanku, reference s logy, co delam,
@@ -26,6 +26,7 @@ step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
 - `sluzba-ai-zamestnanec.html` -- AI zamestnanec, hranol + ranni hlaseni
 - `kdo-jsem.html` -- bio + konstelace kategorii
 - `clanky.html` -- rozcestnik clanku
+- `sluzba-mapa-firmy.html` -- mapovani procesu a toku dat
 - sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`,
   `obrazky/` (SVG + generatory), `loga/`, `bump.py` (verzovani `?v=`)
 
@@ -39,7 +40,7 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
 1. Redesign: editace v `../specs/web-redesign/prototypy/`, preview
    `python -m http.server 8899` v te slozce. Po uprave sdileneho CSS/JS
    spustit `python bump.py` (jinak testujes starou verzi z cache).
-2. Produkce (az po releasi): editace `.html` primo, CSS jen ve sdilenem
+2. Produkce mimo tech devet stranek: editace `.html` primo, CSS jen ve sdilenem
    stylesheetu, preview `python scripts/serve.py` -> `http://localhost:8773/`.
 3. Testovat v prohlizeci, ne v kodu. Pro posouzeni hotoveho stavu vypnout
    animace (`*{animation:none !important}`).
@@ -111,6 +112,8 @@ git add -A && git commit -m "fix: ..." && git push origin master
   AI zamestnance, nikde jinde. *(Paleta schvalena Petrem 25. 8. 2026.)*
 - **Pismo:** Outfit (display), Manrope (text), JetBrains Mono JEN pro strojova
   data (stitky, casy, cisla, zdroje) -- nikdy na prodejni text. Zadny serif.
+- **Znacka:** zelena dlazdice s vyrezem, pomery v skillu `manta-brand`
+  (polomer 27,3 %, vyrez 36,4 %, odstup 27,3 %). Neodhadovat od oka.
 - **Polomery:** `--r-s` 8 px drobne prvky, `--r` 10 px tlacitka a pole,
   `--r-l` 14 px velke panely. Jedna hodnota na vsem je zakazany extrem.
 - **Pohyb:** jedna krivka `cubic-bezier(.23,1,.32,1)`; stisk do 160 ms, hover
@@ -185,4 +188,5 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
   duvody v `PRINCIPLES.md`).
 - Nevkladat hidden metadata ani SEO triky.
 - Nepridavat anglicismy do body copy.
-- Nesahat do produkce pred releasem redesignu (viz banner nahore).
+- Neopravovat tech devet prepsanych stranek primo v `web/` -- zmena se ztrati
+  pri dalsim `prenos.py`. Opravuje se prototyp, pak se prenese.
