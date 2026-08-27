@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="cs"><head><meta charset="utf-8"><title>Mobilni test</title>
+<!--
+  Zkusebna pro uzka okna. Vznikla 25. 8. jako jeden ramecek s hero-v1;
+  27. 8. prepsana na nastroj, protoze resize_window v Chromu viewport nemeni
+  (okno se zmensi, innerWidth zustane 1920) a jinak neslo mobil vubec videt.
+
+  Pouziti:  mobil-test.html?s=web-v2.html
+            mobil-test.html?s=sluzba-vedeni-it.html&w=390,600
+
+  Merici cast vraci nalezy pres window.zmer() -- vola se z konzole nebo
+  z automatizace, vysledek je JSON.
+-->
+<style>
+ body{margin:0;background:#2b2f2e;font:13px/1.5 system-ui;color:#cfd4d2}
+ .pas{display:flex;gap:26px;padding:26px;align-items:flex-start;overflow-x:auto}
+ .kus{flex:none}
+ .stitek{padding:0 0 8px 2px;font-variant-numeric:tabular-nums}
+ .ramecek{border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.4);background:#fff}
+ iframe{border:0;display:block;height:900px}
+ .volby{padding:20px 26px 0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+ .volby a{color:#9fd6bd;text-decoration:none;padding:4px 9px;border:1px solid #47504d;border-radius:8px}
+ .volby a:hover{border-color:#9fd6bd}
+</style></head><body>
+
+<div class="volby" id="volby"></div>
+<div class="pas" id="pas"></div>
+
+<script>
+const P = new URLSearchParams(location.search);
+const STRANKA = P.get('s') || '/';
+const SIRKY = (P.get('w') || '390,600').split(',').map(Number);
+const RAZITKO = () => '?t=' + Date.now();
+
+const STRANKY = ['/','/reseni-vedeni-it','/reseni-nova-aplikace','/reseni-propojeni',
+  '/reseni-bezpecnost','/reseni-ai-zamestnanec','/reseni-mapa-firmy','/o-mne','/clanky/',
+  '/dotace-mas','/kontakt','/weby'];
+
+volby.innerHTML = STRANKY.map(s =>
+  `<a href="?s=${s}&w=${SIRKY.join(',')}"${s === STRANKA ? ' style="border-color:#9fd6bd;color:#fff"' : ''}>${s}</a>`).join('');
+
+pas.innerHTML = SIRKY.map(w =>
+  `<div class="kus"><div class="stitek">${w} px</div>
+   <div class="ramecek" style="width:${w}px"><iframe data-w="${w}" src="${STRANKA}${RAZITKO()}" style="width:${w}px"></iframe></div></div>`).join('');
+
+/* Merici cast. Same-origin, takze se da sahnout dovnitr ramecku.
+   Hleda to, co na uzkem okne skutecne vadi -- ne to, co je jinak nez na desktopu. */
+window.zmer = function (sirka) {
+  const ram = [...document.querySelectorAll('iframe')].find(f => +f.dataset.w === (sirka || SIRKY[0]));
+  const d = ram.contentDocument, w = +ram.dataset.w;
+  const viditelny = e => { const s = d.defaultView.getComputedStyle(e);
+    return s.display !== 'none' && s.visibility !== 'hidden' && e.getClientRects().length; };
+
+  const pretekaji = [...d.querySelectorAll('body *')].filter(e => {
+    if (!viditelny(e)) return false;
+    const r = e.getBoundingClientRect();
+    // Vlastni posuvny pas (overflow-x:auto) je zamer, ne vada. Hleda se
+    // kdekoliv nad prvkem, ne jen o uroven vys: karty v pruhu clanku jsou
+    // o dve urovne hloub a hlasily se jako pretekajici.
+    let rodicPosouva = false;
+    for (let r = e.parentElement; r && r !== d.body; r = r.parentElement) {
+      if (/auto|scroll/.test(d.defaultView.getComputedStyle(r).overflowX)) { rodicPosouva = true; break; }
+    }
+    return !rodicPosouva && (r.right > w + 1 || r.left < -1);
+  }).map(e => ({ kdo: popis(e), vlevo: Math.round(e.getBoundingClientRect().left),
+                 vpravo: Math.round(e.getBoundingClientRect().right) }));
+
+  const maleCile = [...d.querySelectorAll('a,button,input,select,summary,label')].filter(e => {
+    if (!viditelny(e)) return false;
+    // Popisek nad polem: klepe se na pole. Odkaz uvnitr odstavce: vyjimka WCAG.
+    if (e.tagName === 'LABEL' && !e.querySelector('input,select,textarea')) return false;
+    if (e.tagName === 'A' && e.parentElement.closest('p')) return false;
+    const r = e.getBoundingClientRect();
+    return r.height && (r.height < 44 || r.width < 44);
+  }).map(e => ({ kdo: popis(e), rozmer: Math.round(e.getBoundingClientRect().width) + 'x' + Math.round(e.getBoundingClientRect().height) }));
+
+  const drobnyText = [...d.querySelectorAll('body *')].filter(e => {
+    if (!viditelny(e) || !e.textContent.trim() || e.children.length) return false;
+    return parseFloat(d.defaultView.getComputedStyle(e).fontSize) < 12;
+  }).map(e => ({ kdo: popis(e), px: d.defaultView.getComputedStyle(e).fontSize,
+                 text: e.textContent.trim().slice(0, 40) }));
+
+  // Co uzke okno vyplo. Schovat neco je legitimni, ale kdyz je toho hodne,
+  // je to znamka, ze mobil dostal osekanou desktopovou stranku.
+  // POZOR: prvek s atributem `hidden` je vychozi stav interaktivni casti
+  // (napr. vyber terminu se odkryje az po volbe cesty), ne mobilni vada --
+  // 27. 8. jsem kvuli tomu ohlasil rozbity kontaktni formular, ktery fungoval.
+  const schovane = [...d.querySelectorAll('body *')].filter(e =>
+    !e.hasAttribute('hidden') && !e.closest('[hidden]') &&
+    d.defaultView.getComputedStyle(e).display === 'none' && e.textContent.trim().length > 12
+  ).map(e => ({ kdo: popis(e), text: e.textContent.trim().slice(0, 60) }));
+
+  function popis(e) {
+    return e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') +
+      (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '');
+  }
+
+  return {
+    stranka: ram.getAttribute('src').split('?')[0], sirka: w,
+    vodorovnyScroll: d.documentElement.scrollWidth > w + 1
+      ? d.documentElement.scrollWidth + ' px misto ' + w : 'ne',
+    vyskaStranky: d.documentElement.scrollHeight,
+    pretekaji: pretekaji.slice(0, 12), pretekaCelkem: pretekaji.length,
+    maleCile: maleCile.slice(0, 12), maleCileCelkem: maleCile.length,
+    drobnyText: drobnyText.slice(0, 10), drobnyTextCelkem: drobnyText.length,
+    schovane: schovane.slice(0, 10), schovaneCelkem: schovane.length
+  };
+};
+
+/* Rozpad stranky na sekce s jejich vyskou v obrazovkach. Odpovida na otazku,
+   ktera cast delá z mobilu nekonecny sloupec -- to se z celkove vysky nepozna. */
+window.sekce = function (sirka) {
+  const ram = [...document.querySelectorAll('iframe')].find(f => +f.dataset.w === (sirka || SIRKY[0]));
+  const d = ram.contentDocument;
+  const OBRAZOVKA = 844;
+  return [...d.querySelectorAll('body > section, body > div > section, main > section, body > header, body > footer, .hlava')]
+    .map(e => {
+      const r = e.getBoundingClientRect();
+      const nadpis = e.querySelector('h1,h2,h3');
+      return {
+        kdo: e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') +
+             (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/)[0] : ''),
+        nadpis: nadpis ? nadpis.textContent.trim().replace(/\s+/g, ' ').slice(0, 55) : '',
+        vyskaPx: Math.round(r.height),
+        obrazovek: +(r.height / OBRAZOVKA).toFixed(1)
+      };
+    })
+    .filter(s => s.vyskaPx > 100)
+    .sort((a, b) => b.vyskaPx - a.vyskaPx);
+};
+
+/* Posune ramecek o n obrazovek dolu -- pro prohlizeni screenshotem. */
+window.posun = function (n, sirka) {
+  const ram = [...document.querySelectorAll('iframe')].find(f => +f.dataset.w === (sirka || SIRKY[0]));
+  ram.contentWindow.scrollTo(0, n * 844);
+  return 'na ' + Math.round(n * 844) + ' px';
+};
+
+/* Projede vsechny stranky v prvnim ramecku a vrati souhrn. Jeden ramecek
+   se prepina, aby to neotevrelo devet stranek naraz a nezahltilo pamet. */
+window.zmerVse = async function (sirka) {
+  sirka = sirka || SIRKY[0];
+  const ram = [...document.querySelectorAll('iframe')].find(f => +f.dataset.w === sirka);
+  const puvodni = ram.getAttribute('src').split('?')[0];
+  const vysledky = [];
+  for (const s of STRANKY) {
+    ram.src = s + RAZITKO();
+    await new Promise(r => { ram.onload = r; setTimeout(r, 4000); });
+    await new Promise(r => setTimeout(r, 900));   // cas na odkryj() a rozlozeni
+    const v = zmer(sirka);
+    vysledky.push({
+      stranka: s,
+      vyska: v.vyskaStranky,
+      scroll: v.vodorovnyScroll,
+      preteka: v.pretekaCelkem,
+      maleCile: v.maleCileCelkem,
+      drobnyText: v.drobnyTextCelkem,
+      schovano: v.schovaneCelkem,
+      coSeSchovalo: v.schovane.map(x => x.kdo).filter(k => !k.startsWith('script'))
+    });
+  }
+  ram.src = puvodni;
+  return vysledky;
+};
+</script>
+</body></html>

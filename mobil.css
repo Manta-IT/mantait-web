@@ -60,27 +60,6 @@
     justify-content:center;text-decoration:none;
   }
 
-  /* Obsah stranky. Jen kdyz ma stranka aspon tri sekce -- na kratke strance
-     by to byl seznam, ktery neusetri ani jedno posunuti. */
-  .nav-panel .panel-obsah{
-    /* Pojistka: obsah panelu je <nav>, takze ho chyti kazde siroke pravidlo
-       `nav{position:fixed}`. Nekolik stranek takove ma ve vlastnim CSS. */
-    position:static;inset:auto;height:auto;z-index:auto;display:block;
-    background:none;border:0;padding:0;
-    border-top:1px solid var(--linka);padding-top:22px;
-  }
-  .nav-panel .panel-obsah .stitek{margin-bottom:14px}
-  .nav-panel .panel-obsah ol{list-style:none;counter-reset:s;display:flex;flex-direction:column}
-  .nav-panel .panel-obsah a{
-    counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:baseline;
-    padding:10px 0;min-height:44px;text-decoration:none;color:var(--tlum);font-size:15px;line-height:1.35;
-  }
-  .nav-panel .panel-obsah a::before{
-    content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--obrys);
-  }
-  .nav-panel .panel-obsah a.tady{color:var(--inkoust)}
-  .nav-panel .panel-obsah a.tady::before{color:var(--akcent)}
-
   body.panel-otevreny{overflow:hidden}
 }
 

@@ -46,39 +46,6 @@
     panel.appendChild(kopieCta);
   }
 
-  /* 2. Obsah stranky. Stranka sluzby ma na mobilu pres dvacet obrazovek;
-        bez tohohle se v ni neda skocit nikam. Na kratke strance (pod tri
-        sekce) je to naopak seznam, ktery neusetri ani jedno posunuti. */
-  /* Jeden selektor, jinak se tytez nadpisy vracely vickrat a v poradi DOM
-     to pak necetlo shora dolu. */
-  const nadpisy = [...document.querySelectorAll('section h2')]
-    .filter(h => h.getClientRects().length);
-  if (nadpisy.length >= 3) {
-    const obsah = document.createElement('nav');
-    obsah.className = 'panel-obsah';
-    obsah.setAttribute('aria-label', 'Obsah stránky');
-    const seznam = document.createElement('ol');
-    nadpisy.forEach((h, i) => {
-      const cil = h.closest('section') || h;
-      if (!cil.id) cil.id = 'sekce-' + (i + 1);
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + cil.id;
-      /* Nadpisy jsou casto dvouradkove ("Tohle je dnes bezne.Kolik toho mate?"),
-         zlom se v textContent ztrati -- proto se doplnuje mezera. */
-      /* Nadpisy jsou v HTML zlomene <br>, takze v textContent vznikne
-         "bezne.Kolik" bez mezery. Zlom se bere z markupu, ne odhadem z pismen. */
-      const kopieH = h.cloneNode(true);
-      kopieH.querySelectorAll('br').forEach(br => br.replaceWith(' '));
-      a.textContent = kopieH.textContent.trim().replace(/\s+/g, ' ');
-      li.appendChild(a);
-      seznam.appendChild(li);
-    });
-    obsah.innerHTML = '<span class="stitek">Na této stránce</span>';
-    obsah.appendChild(seznam);
-    panel.appendChild(obsah);
-  }
-
   nav.insertBefore(prepinac, cta || null);
   document.body.appendChild(panel);
 
@@ -91,7 +58,6 @@
     prepinac.setAttribute('aria-expanded', 'true');
     panel.classList.add('otevreny');
     document.body.classList.add('panel-otevreny');
-    oznacTady();
   }
 
   prepinac.addEventListener('click', () =>
@@ -102,18 +68,6 @@
      a drzi body v overflow:hidden. */
   matchMedia('(min-width:901px)').addEventListener('change', e => { if (e.matches) zavri(); });
 
-  /* Ktera sekce je prave videt. Pocita se az pri otevreni, ne pri scrollu --
-     na dvacetiobrazovkove strance by to jinak bezelo poste zbytecne. */
-  function oznacTady() {
-    const odkazy = panel.querySelectorAll('.panel-obsah a');
-    let tady = null;
-    odkazy.forEach(a => {
-      a.classList.remove('tady');
-      const cil = document.getElementById(a.getAttribute('href').slice(1));
-      if (cil && cil.getBoundingClientRect().top <= 120) tady = a;
-    });
-    if (tady) tady.classList.add('tady');
-  }
 })();
 
 /* ===== Vycty na uzkem okne: skladani =====
