@@ -154,3 +154,11 @@
   .doklady.skladatelne .doklad > div{transition:none}
   .doklady.skladatelne .doklad > h3::after{transition:none}
 }
+
+@media (max-width:900px){
+  /* Odkaz zpet nad nadpisem meril 173x22. Je to jediny samostatny odkaz
+     v hlavicce stranky sluzby, takze musi mit plnou vysku dotyku. */
+  .zpet{min-height:44px;display:inline-flex;align-items:center}
+  /* Tlacitka sebehodnoceni na mape firmy mela 41 px. */
+  .stopa-prepinac button{min-height:44px}
+}
