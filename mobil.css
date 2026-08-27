@@ -62,7 +62,13 @@
 
   /* Obsah stranky. Jen kdyz ma stranka aspon tri sekce -- na kratke strance
      by to byl seznam, ktery neusetri ani jedno posunuti. */
-  .nav-panel .panel-obsah{border-top:1px solid var(--linka);padding-top:22px}
+  .nav-panel .panel-obsah{
+    /* Pojistka: obsah panelu je <nav>, takze ho chyti kazde siroke pravidlo
+       `nav{position:fixed}`. Nekolik stranek takove ma ve vlastnim CSS. */
+    position:static;inset:auto;height:auto;z-index:auto;display:block;
+    background:none;border:0;padding:0;
+    border-top:1px solid var(--linka);padding-top:22px;
+  }
   .nav-panel .panel-obsah .stitek{margin-bottom:14px}
   .nav-panel .panel-obsah ol{list-style:none;counter-reset:s;display:flex;flex-direction:column}
   .nav-panel .panel-obsah a{
