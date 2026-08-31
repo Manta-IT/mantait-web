@@ -44,7 +44,7 @@ const FORMS = {
     reply: (d) => `Dobrý den,
 
 díky za vyplněný dotazník. Zařadím vás do databáze dodavatelů a ozvu se,
-jakmile budu mít zakázku, která sedí na váš profil.
+jakmile budu mít zakázku, která odpovídá vašemu profilu.
 
 Kdybyste chtěli cokoliv doplnit nebo probrat, stačí odpovědět na tento e-mail.
 
