@@ -11,72 +11,166 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=984dbf6">
   <style>
-    .dodavatele-obal { max-width: 880px; margin: 0 auto; padding: 48px 20px 80px; }
-    .dodavatele-obal h1 { margin-bottom: 8px; }
-    .dodavatele-obal .uvod { color: var(--mut, #555); margin-bottom: 32px; max-width: 62ch; }
-    .dodavatele-obal h2 { margin: 40px 0 16px; font-size: 1.1rem;
-      border-bottom: 1px solid rgba(0,0,0,.08); padding-bottom: 8px; }
-    .dodavatele-obal .pole { display: grid; grid-template-columns: 1fr 1fr;
-      gap: 18px 28px; }
-    .dodavatele-obal .pole > div { display: flex; flex-direction: column; gap: 6px; }
-    .dodavatele-obal .pole > .siroke { grid-column: 1 / -1; }
-    .dodavatele-obal label { font-weight: 600; font-size: .92rem; }
-    .dodavatele-obal input:not([type=checkbox]), .dodavatele-obal select,
-    .dodavatele-obal textarea { width: 100%; padding: 10px 12px;
-      border: 1px solid rgba(0,0,0,.2); border-radius: 8px; font: inherit; }
-    .dodavatele-obal textarea { min-height: 84px; }
-    .dodavatele-obal .pole small { opacity: .65; font-size: .8rem; }
-    .povinne { color: #B3261E; font-weight: 700; }
-    .legenda-povinne { margin: -20px 0 28px; font-size: .85rem; opacity: .75; }
-    @media (max-width: 640px) { .dodavatele-obal .pole { grid-template-columns: 1fr; } }
-    .zaskrtavaci-skupina { display: flex; flex-wrap: wrap; gap: 8px 16px; }
-    .zaskrtavaci { display: inline-flex; gap: 6px; align-items: center; font-weight: 400; }
-    .zaskrtavaci input { width: auto; }
-    .odeslani { margin-top: 32px; }
-  </style>
+:root {
+  --papir: #FBFBF9; --papir-tmav: #F1F2EF; --inkoust: #101413;
+  --akcent: #0B6E4F; --akcent-tm: #095C42; --akcent-sv: #E7F0EB;
+  --tlum: #5E6663; --linka: #E2E4DF; --obrys: #8B928C;
+  --vada: #9A3F2B;
+  --disp: 'Outfit', system-ui, sans-serif;
+  --ui: 'Manrope', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --kriv: cubic-bezier(.23, 1, .32, 1);
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--papir); color: var(--inkoust);
+  font: 400 15.5px/1.6 var(--ui); -webkit-font-smoothing: antialiased; }
+
+.horni-nav { display: flex; align-items: center; justify-content: space-between;
+  max-width: 1040px; margin: 0 auto; padding: 18px 24px; }
+.horni-nav .brand { display: inline-flex; align-items: center; gap: 11px;
+  color: var(--inkoust); text-decoration: none;
+  font: 600 17px var(--disp); letter-spacing: -.01em; }
+.znak { width: 30px; height: 30px; display: block; }
+.horni-nav .zpet-web { color: var(--tlum); text-decoration: none;
+  font: 500 13.5px var(--ui); border-bottom: 1px solid transparent;
+  transition: color 200ms var(--kriv); }
+@media (hover: hover) { .horni-nav .zpet-web:hover { color: var(--akcent); } }
+
+.hero { max-width: 1040px; margin: 0 auto; padding: 64px 24px 48px; }
+.hero h1 { font: 400 clamp(34px, 5vw, 52px)/1.06 var(--disp);
+  letter-spacing: -.03em; max-width: 17ch; }
+.hero h1 em { font-style: normal; color: var(--akcent); font-weight: 500; }
+.hero .perex { margin-top: 18px; max-width: 58ch; color: var(--tlum);
+  font-size: 16.5px; }
+.hero .meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px 22px;
+  font: 400 12.5px var(--mono); color: var(--tlum); }
+.hero .meta b { color: var(--akcent); font-weight: 500; }
+.povinne { color: var(--vada); font-weight: 700; }
+
+form { margin: 0; }
+.okruh { padding: 44px 0 52px; }
+.okruh:nth-of-type(even) { background: var(--papir-tmav); }
+.okruh .vnitrek { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.okruh header { display: flex; align-items: baseline; gap: 16px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--linka);
+  margin-bottom: 26px; }
+.okruh .cislo { font: 500 13px var(--mono); color: var(--akcent); }
+.okruh h2 { font: 500 22px/1.2 var(--disp); letter-spacing: -.02em; }
+.okruh .pod { margin-left: auto; color: var(--tlum); font-size: 13px;
+  text-align: right; max-width: 34ch; }
+
+.pole { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
+.pole > div { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.pole > .siroke { grid-column: 1 / -1; }
+label { font: 600 13.5px var(--ui); }
+input:not([type=checkbox]), select, textarea {
+  width: 100%; padding: 12px 14px; font: 400 15px var(--ui);
+  color: var(--inkoust); background: var(--papir);
+  border: 1px solid var(--obrys); border-radius: 10px;
+  transition: border-color 180ms var(--kriv), box-shadow 180ms var(--kriv); }
+.okruh:nth-of-type(even) input:not([type=checkbox]),
+.okruh:nth-of-type(even) select,
+.okruh:nth-of-type(even) textarea { background: #fff; }
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none; border-color: var(--akcent);
+  box-shadow: 0 0 0 3px var(--akcent-sv); }
+textarea { min-height: 92px; resize: vertical; }
+small { color: var(--tlum); font-size: 12.5px; }
+
+/* castka: pripona Kc primo v poli */
+.s-menou { position: relative; }
+.s-menou input { padding-right: 46px; }
+.s-menou .mena { position: absolute; right: 14px; bottom: 12px;
+  font: 400 12.5px var(--mono); color: var(--tlum); pointer-events: none; }
+
+/* multivyber: pilulky misto checkboxu (tap target >= 44 px) */
+.pilulky { display: flex; flex-wrap: wrap; gap: 8px; }
+.pilulka { position: relative; display: inline-flex; align-items: center;
+  min-height: 44px; padding: 10px 18px; cursor: pointer;
+  font: 500 14px var(--ui); color: var(--inkoust);
+  border: 1px solid var(--obrys); border-radius: 999px; background: var(--papir);
+  transition: background 180ms var(--kriv), border-color 180ms var(--kriv),
+    color 180ms var(--kriv), transform 120ms var(--kriv); }
+.okruh:nth-of-type(even) .pilulka { background: #fff; }
+.pilulka input { position: absolute; opacity: 0; pointer-events: none; }
+.pilulka:active { transform: scale(.97); }
+@media (hover: hover) { .pilulka:hover { border-color: var(--akcent); } }
+/* vyssi specificita nez `.okruh:nth-of-type(even) .pilulka` -- jinak bile
+   pozadi sudych sekci prebije zaskrtnuty stav (nalez pri kontrole) */
+.okruh .pilulky .pilulka:has(input:checked) { background: var(--akcent);
+  border-color: var(--akcent); color: var(--papir); }
+.pilulka:has(input:focus-visible) { box-shadow: 0 0 0 3px var(--akcent-sv); }
+
+/* zaver: inkoustovy blok */
+.zaver { background: var(--inkoust); color: var(--papir);
+  padding: 52px 0 56px; }
+.zaver .vnitrek { max-width: 1040px; margin: 0 auto; padding: 0 24px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 22px 40px; }
+.zaver p { max-width: 52ch; color: #C9CFCB; font-size: 14.5px; }
+.zaver .odeslat { margin-left: auto; padding: 15px 34px; cursor: pointer;
+  font: 600 16px var(--disp); color: var(--inkoust);
+  background: var(--papir); border: 0; border-radius: 10px;
+  transition: transform 200ms var(--kriv), box-shadow 200ms var(--kriv); }
+@media (hover: hover) { .zaver .odeslat:hover { transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0,0,0,.35); } }
+.zaver .odeslat:active { transform: translateY(0) scale(.98); }
+.zaver .odeslat:disabled { opacity: .65; cursor: default; transform: none; }
+.zaver .odeslat:focus-visible { outline: 2px solid var(--akcent-sv);
+  outline-offset: 3px; }
+.zaver .trust { flex-basis: 100%; font: 400 12px var(--mono); color: #8B928C; }
+
+footer { max-width: 1040px; margin: 0 auto; padding: 26px 24px 34px;
+  display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between;
+  color: var(--tlum); font-size: 12.5px; }
+footer .fb { font: 600 14px var(--disp); color: var(--inkoust); }
+footer .fb span { color: var(--akcent); }
+
+@media (max-width: 680px) {
+  .pole { grid-template-columns: 1fr; }
+  .okruh header { flex-wrap: wrap; }
+  .okruh .pod { margin-left: 0; text-align: left; max-width: none; }
+  .zaver .odeslat { margin-left: 0; width: 100%; }
+}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-brand">Manta IT</a>
+<nav class="horni-nav">
+  <a href="https://mantait.cz/" class="brand"><svg class="znak" viewBox="0 0 64 64" role="img" aria-label="Manta IT"><rect width="64" height="64" rx="17" fill="#0B6E4F"/><rect x="24" y="17" width="23" height="23" rx="6" fill="#FBFBF9"/></svg>Manta IT</a>
+  <a href="https://mantait.cz/" class="zpet-web">mantait.cz</a>
 </nav>
 
-<main class="dodavatele-obal">
-  <h1>Dotazník pro dodavatele</h1>
-  <p class="uvod">Stavím síť prověřených dodavatelů pro zakázky svých klientů.
-  Vyplnění zabere 5–10 minut. Údaje slouží jen k párování poptávek s vaší
-  firmou — nikam je neprodávám a nikomu nepředávám. Co nevíte přesně,
-  odhadněte.</p>
-  <p class="legenda-povinne"><span class="povinne">*</span> povinné pole</p>
+<header class="hero">
+  <h1>Dotazník pro <em>dodavatele</em></h1>
+  <p class="perex">Stavím síť prověřených dodavatelů pro zakázky svých
+  klientů. Údaje slouží jen k párování poptávek s vaší firmou — nikam je
+  neprodávám a nikomu nepředávám. Co nevíte přesně, odhadněte.</p>
+  <p class="meta"><b>6</b> okruhů &nbsp;·&nbsp; <b>5–10</b> minut
+  &nbsp;·&nbsp; zápis rovnou do naší databáze
+  &nbsp;·&nbsp; <span class="povinne">*</span> povinné pole</p>
+</header>
 
-  <form class="panel" method="post" action="/api/dodavatel" id="formularDodavatel">
-    <!-- honeypot; jmeno nesmi byt autofill token jako "website" (M2) -->
-    <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off"
-           style="position:absolute;left:-9999px" aria-hidden="true">
-<h2>O firmě</h2>
-<div class="pole"><div><label for="d-nazev">Název firmy <span class="povinne">*</span></label><input id="d-nazev" name="nazev" type="text" required></div><div><label for="d-ico">IČO <span class="povinne">*</span></label><input id="d-ico" name="ico" type="text" required></div><div><label for="d-web">Web <span class="povinne">*</span></label><input id="d-web" name="web" type="text" inputmode="url" required></div><div><label for="d-mesto">Město/sídlo</label><input id="d-mesto" name="mesto" type="text"></div><div><label for="d-kontakt_osoba">Kontaktní osoba <span class="povinne">*</span></label><input id="d-kontakt_osoba" name="kontakt_osoba" type="text" required></div><div><label for="d-kontakt_role">Role kontaktu</label><input id="d-kontakt_role" name="kontakt_role" type="text"></div><div><label for="d-email">E-mail <span class="povinne">*</span></label><input id="d-email" name="email" type="email" autocomplete="email" required></div><div><label for="d-telefon">Telefon</label><input id="d-telefon" name="telefon" type="text"></div><div><label for="d-linkedin">LinkedIn</label><input id="d-linkedin" name="linkedin" type="text" inputmode="url"></div></div>
-<h2>Co děláte</h2>
-<div class="pole"><div><label for="d-typ_dodavatele">Typ dodavatele <span class="povinne">*</span></label><select id="d-typ_dodavatele" name="typ_dodavatele" required><option value="" disabled selected>vyberte…</option><option value="vývojová agentura">vývojová agentura</option><option value="webové studio">webové studio</option><option value="freelancer">freelancer</option><option value="ERP dodavatel">ERP dodavatel</option><option value="designové studio">designové studio</option><option value="marketingová agentura">marketingová agentura</option><option value="dotační kancelář">dotační kancelář</option><option value="hosting/infrastruktura">hosting/infrastruktura</option><option value="jiné">jiné</option></select></div><div class="siroke"><label for="d-specializace">Specializace <span class="povinne">*</span></label><div class="zaskrtavaci-skupina" data-cil="specializace"><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="weby a e-shopy"> weby a e-shopy</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="aplikace na míru"> aplikace na míru</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="mobilní aplikace"> mobilní aplikace</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="integrace a API"> integrace a API</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="ERP/CRM implementace"> ERP/CRM implementace</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="UX/UI design"> UX/UI design</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="AI a automatizace"> AI a automatizace</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="správa a údržba"> správa a údržba</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="bezpečnost"> bezpečnost</label><label class="zaskrtavaci"><input type="checkbox" name="_specializace" value="data a BI"> data a BI</label></div><input type="hidden" id="d-specializace" name="specializace"></div><div class="siroke"><label for="d-technologie">Technologie/stack <span class="povinne">*</span></label><textarea id="d-technologie" name="technologie" required></textarea><small>Volný výčet: .NET, PHP/Laravel, React, Flutter…</small></div><div><label for="d-velikost_tymu">Velikost týmu (lidí) <span class="povinne">*</span></label><input id="d-velikost_tymu" name="velikost_tymu" type="number" min="0" required></div><div><label for="d-rok_zalozeni">Rok založení</label><input id="d-rok_zalozeni" name="rok_zalozeni" type="number" min="0"></div><div><label for="d-misto_prace">Režim práce</label><select id="d-misto_prace" name="misto_prace"><option value="" disabled selected>vyberte…</option><option value="remote">remote</option><option value="onsite">onsite</option><option value="hybridně">hybridně</option></select></div></div>
-<h2>Kapacita a zakázky</h2>
-<div class="pole"><div><label for="d-kapacita_md_mesic">Volná kapacita (MD/měsíc) <span class="povinne">*</span></label><input id="d-kapacita_md_mesic" name="kapacita_md_mesic" type="number" min="0" required><small>Orientačně — kolik člověkodní měsíčně jste schopni věnovat novým zakázkám.</small></div><div><label for="d-nastupnost_tydny">Nástupnost (týdny) <span class="povinne">*</span></label><input id="d-nastupnost_tydny" name="nastupnost_tydny" type="number" min="0" required><small>Za jak dlouho jste schopni reálně začít.</small></div><div><label for="d-min_zakazka_kc">Minimální zakázka (Kč)</label><input id="d-min_zakazka_kc" name="min_zakazka_kc" type="text" inputmode="numeric" class="kc"><small>Pod jakou velikost zakázky se vám nevyplatí jít.</small></div><div><label for="d-max_zakazka_kc">Největší zvládnutá zakázka (Kč)</label><input id="d-max_zakazka_kc" name="max_zakazka_kc" type="text" inputmode="numeric" class="kc"></div></div>
-<h2>Ceny</h2>
-<div class="pole"><div><label for="d-sazba_od">Hodinová sazba od (Kč) <span class="povinne">*</span></label><input id="d-sazba_od" name="sazba_od" type="text" inputmode="numeric" class="kc" required></div><div><label for="d-sazba_do">Hodinová sazba do (Kč)</label><input id="d-sazba_do" name="sazba_do" type="text" inputmode="numeric" class="kc"></div><div class="siroke"><label for="d-cenovy_model">Cenové modely <span class="povinne">*</span></label><div class="zaskrtavaci-skupina" data-cil="cenovy_model"><label class="zaskrtavaci"><input type="checkbox" name="_cenovy_model" value="fixní cena"> fixní cena</label><label class="zaskrtavaci"><input type="checkbox" name="_cenovy_model" value="time & materials"> time & materials</label><label class="zaskrtavaci"><input type="checkbox" name="_cenovy_model" value="retainer/paušál"> retainer/paušál</label><label class="zaskrtavaci"><input type="checkbox" name="_cenovy_model" value="body-shop"> body-shop</label></div><input type="hidden" id="d-cenovy_model" name="cenovy_model"></div><div><label for="d-platce_dph">Plátce DPH <span class="povinne">*</span></label><select id="d-platce_dph" name="platce_dph" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div><label for="d-splatnost_dni">Splatnost faktur (dní)</label><input id="d-splatnost_dni" name="splatnost_dni" type="number" min="0"></div></div>
-<h2>Kvalita a servis</h2>
-<div class="pole"><div><label for="d-predani_kodu">Vlastnictví kódu klientem <span class="povinne">*</span></label><select id="d-predani_kodu" name="predani_kodu" required><option value="" disabled selected>vyberte…</option><option value="ano vždy">ano vždy</option><option value="ano za příplatek">ano za příplatek</option><option value="ne">ne</option></select></div><div class="siroke"><label for="d-proces_kvality">Proces kvality</label><div class="zaskrtavaci-skupina" data-cil="proces_kvality"><label class="zaskrtavaci"><input type="checkbox" name="_proces_kvality" value="code review"> code review</label><label class="zaskrtavaci"><input type="checkbox" name="_proces_kvality" value="CI/CD"> CI/CD</label><label class="zaskrtavaci"><input type="checkbox" name="_proces_kvality" value="automatické testy"> automatické testy</label><label class="zaskrtavaci"><input type="checkbox" name="_proces_kvality" value="stagingové prostředí"> stagingové prostředí</label><label class="zaskrtavaci"><input type="checkbox" name="_proces_kvality" value="dokumentace"> dokumentace</label></div><input type="hidden" id="d-proces_kvality" name="proces_kvality"></div><div><label for="d-sla_nabizi">Nabízí SLA/servis <span class="povinne">*</span></label><select id="d-sla_nabizi" name="sla_nabizi" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div><label for="d-servis_od_kc">Servisní paušál od (Kč/měs)</label><input id="d-servis_od_kc" name="servis_od_kc" type="text" inputmode="numeric" class="kc"></div><div><label for="d-reakcni_doba_h">Reakční doba na chybu (h)</label><input id="d-reakcni_doba_h" name="reakcni_doba_h" type="number" min="0"></div><div><label for="d-hosting_nabizi">Zajistí hosting/provoz</label><select id="d-hosting_nabizi" name="hosting_nabizi"><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div></div>
-<h2>Reference a formality</h2>
-<div class="pole"><div class="siroke"><label for="d-reference">Reference (odkazy) <span class="povinne">*</span></label><textarea id="d-reference" name="reference" required></textarea><small>2–3 veřejné reference včetně URL.</small></div><div><label for="d-reference_kontakt">Referenční kontakt</label><input id="d-reference_kontakt" name="reference_kontakt" type="text"><small>Klient, kterému smíme zavolat (jméno + kontakt).</small></div><div><label for="d-nda_ochota">Ochota podepsat NDA <span class="povinne">*</span></label><select id="d-nda_ochota" name="nda_ochota" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ano s výhradami">ano s výhradami</option><option value="ne">ne</option></select></div><div><label for="d-pojisteni_odpovednosti">Pojištění odpovědnosti</label><select id="d-pojisteni_odpovednosti" name="pojisteni_odpovednosti"><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div class="siroke"><label for="d-pozn_partnera">Poznámka</label><textarea id="d-pozn_partnera" name="pozn_partnera"></textarea><small>Cokoliv, co o sobě chcete říct navíc.</small></div></div>
-    <div class="odeslani">
-      <button type="submit" class="nav-cta">Odeslat dotazník</button>
+<form method="post" action="/api/dodavatel" id="formularDodavatel">
+  <!-- honeypot; jmeno nesmi byt autofill token jako "website" (M2) -->
+  <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off"
+         style="position:absolute;left:-9999px" aria-hidden="true">
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">01</span><h2>O firmě</h2><p class="pod">Ať víme, s kým mluvíme.</p></header><div class="pole"><div><label for="d-nazev">Název firmy <span class="povinne">*</span></label><input id="d-nazev" name="nazev" type="text" required></div><div><label for="d-ico">IČO <span class="povinne">*</span></label><input id="d-ico" name="ico" type="text" required></div><div><label for="d-web">Web <span class="povinne">*</span></label><input id="d-web" name="web" type="text" inputmode="url" required></div><div><label for="d-mesto">Město/sídlo</label><input id="d-mesto" name="mesto" type="text"></div><div><label for="d-kontakt_osoba">Kontaktní osoba <span class="povinne">*</span></label><input id="d-kontakt_osoba" name="kontakt_osoba" type="text" required></div><div><label for="d-kontakt_role">Role kontaktu</label><input id="d-kontakt_role" name="kontakt_role" type="text"></div><div><label for="d-email">E-mail <span class="povinne">*</span></label><input id="d-email" name="email" type="email" autocomplete="email" required></div><div><label for="d-telefon">Telefon</label><input id="d-telefon" name="telefon" type="text"></div><div><label for="d-linkedin">LinkedIn</label><input id="d-linkedin" name="linkedin" type="text" inputmode="url"></div></div></div></section>
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">02</span><h2>Co děláte</h2><p class="pod">Podle tohohle vás párujeme se zakázkami.</p></header><div class="pole"><div><label for="d-typ_dodavatele">Typ dodavatele <span class="povinne">*</span></label><select id="d-typ_dodavatele" name="typ_dodavatele" required><option value="" disabled selected>vyberte…</option><option value="vývojová agentura">vývojová agentura</option><option value="webové studio">webové studio</option><option value="freelancer">freelancer</option><option value="ERP dodavatel">ERP dodavatel</option><option value="designové studio">designové studio</option><option value="marketingová agentura">marketingová agentura</option><option value="dotační kancelář">dotační kancelář</option><option value="hosting/infrastruktura">hosting/infrastruktura</option><option value="jiné">jiné</option></select></div><div class="siroke"><label>Specializace <span class="povinne">*</span></label><div class="pilulky" data-cil="specializace"><label class="pilulka"><input type="checkbox" name="_specializace" value="weby a e-shopy">weby a e-shopy</label><label class="pilulka"><input type="checkbox" name="_specializace" value="aplikace na míru">aplikace na míru</label><label class="pilulka"><input type="checkbox" name="_specializace" value="mobilní aplikace">mobilní aplikace</label><label class="pilulka"><input type="checkbox" name="_specializace" value="integrace a API">integrace a API</label><label class="pilulka"><input type="checkbox" name="_specializace" value="ERP/CRM implementace">ERP/CRM implementace</label><label class="pilulka"><input type="checkbox" name="_specializace" value="UX/UI design">UX/UI design</label><label class="pilulka"><input type="checkbox" name="_specializace" value="AI a automatizace">AI a automatizace</label><label class="pilulka"><input type="checkbox" name="_specializace" value="správa a údržba">správa a údržba</label><label class="pilulka"><input type="checkbox" name="_specializace" value="bezpečnost">bezpečnost</label><label class="pilulka"><input type="checkbox" name="_specializace" value="data a BI">data a BI</label></div><input type="hidden" id="d-specializace" name="specializace"></div><div class="siroke"><label for="d-technologie">Technologie/stack <span class="povinne">*</span></label><textarea id="d-technologie" name="technologie" required></textarea><small>Volný výčet: .NET, PHP/Laravel, React, Flutter…</small></div><div><label for="d-velikost_tymu">Velikost týmu (lidí) <span class="povinne">*</span></label><input id="d-velikost_tymu" name="velikost_tymu" type="number" min="0" required></div><div><label for="d-rok_zalozeni">Rok založení</label><input id="d-rok_zalozeni" name="rok_zalozeni" type="number" min="0"></div><div><label for="d-misto_prace">Režim práce</label><select id="d-misto_prace" name="misto_prace"><option value="" disabled selected>vyberte…</option><option value="remote">remote</option><option value="onsite">onsite</option><option value="hybridně">hybridně</option></select></div></div></div></section>
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">03</span><h2>Kapacita a zakázky</h2><p class="pod">Kolik unesete a od jaké velikosti se vám to vyplatí.</p></header><div class="pole"><div><label for="d-kapacita_md_mesic">Volná kapacita (MD/měsíc) <span class="povinne">*</span></label><input id="d-kapacita_md_mesic" name="kapacita_md_mesic" type="number" min="0" required><small>Orientačně — kolik člověkodní měsíčně jste schopni věnovat novým zakázkám.</small></div><div><label for="d-nastupnost_tydny">Nástupnost (týdny) <span class="povinne">*</span></label><input id="d-nastupnost_tydny" name="nastupnost_tydny" type="number" min="0" required><small>Za jak dlouho jste schopni reálně začít.</small></div><div><label for="d-min_zakazka_kc">Minimální zakázka (Kč)</label><div class="s-menou"><input id="d-min_zakazka_kc" name="min_zakazka_kc" type="text" inputmode="numeric" class="kc"><span class="mena">Kč</span></div><small>Pod jakou velikost zakázky se vám nevyplatí jít.</small></div><div><label for="d-max_zakazka_kc">Největší zvládnutá zakázka (Kč)</label><div class="s-menou"><input id="d-max_zakazka_kc" name="max_zakazka_kc" type="text" inputmode="numeric" class="kc"><span class="mena">Kč</span></div></div></div></div></section>
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">04</span><h2>Ceny</h2><p class="pod">Orientačně stačí — před zakázkou se vždy domlouváme konkrétně.</p></header><div class="pole"><div><label for="d-sazba_od">Hodinová sazba od (Kč) <span class="povinne">*</span></label><div class="s-menou"><input id="d-sazba_od" name="sazba_od" type="text" inputmode="numeric" class="kc" required><span class="mena">Kč</span></div></div><div><label for="d-sazba_do">Hodinová sazba do (Kč)</label><div class="s-menou"><input id="d-sazba_do" name="sazba_do" type="text" inputmode="numeric" class="kc"><span class="mena">Kč</span></div></div><div class="siroke"><label>Cenové modely <span class="povinne">*</span></label><div class="pilulky" data-cil="cenovy_model"><label class="pilulka"><input type="checkbox" name="_cenovy_model" value="fixní cena">fixní cena</label><label class="pilulka"><input type="checkbox" name="_cenovy_model" value="time & materials">time & materials</label><label class="pilulka"><input type="checkbox" name="_cenovy_model" value="retainer/paušál">retainer/paušál</label><label class="pilulka"><input type="checkbox" name="_cenovy_model" value="body-shop">body-shop</label></div><input type="hidden" id="d-cenovy_model" name="cenovy_model"></div><div><label for="d-platce_dph">Plátce DPH <span class="povinne">*</span></label><select id="d-platce_dph" name="platce_dph" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div><label for="d-splatnost_dni">Splatnost faktur (dní)</label><input id="d-splatnost_dni" name="splatnost_dni" type="number" min="0"></div></div></div></section>
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">05</span><h2>Kvalita a servis</h2><p class="pod">Jak stavíte a co se děje po předání.</p></header><div class="pole"><div><label for="d-predani_kodu">Vlastnictví kódu klientem <span class="povinne">*</span></label><select id="d-predani_kodu" name="predani_kodu" required><option value="" disabled selected>vyberte…</option><option value="ano vždy">ano vždy</option><option value="ano za příplatek">ano za příplatek</option><option value="ne">ne</option></select></div><div class="siroke"><label>Proces kvality</label><div class="pilulky" data-cil="proces_kvality"><label class="pilulka"><input type="checkbox" name="_proces_kvality" value="code review">code review</label><label class="pilulka"><input type="checkbox" name="_proces_kvality" value="CI/CD">CI/CD</label><label class="pilulka"><input type="checkbox" name="_proces_kvality" value="automatické testy">automatické testy</label><label class="pilulka"><input type="checkbox" name="_proces_kvality" value="stagingové prostředí">stagingové prostředí</label><label class="pilulka"><input type="checkbox" name="_proces_kvality" value="dokumentace">dokumentace</label></div><input type="hidden" id="d-proces_kvality" name="proces_kvality"></div><div><label for="d-sla_nabizi">Nabízí SLA/servis <span class="povinne">*</span></label><select id="d-sla_nabizi" name="sla_nabizi" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div><label for="d-servis_od_kc">Servisní paušál od (Kč/měs)</label><div class="s-menou"><input id="d-servis_od_kc" name="servis_od_kc" type="text" inputmode="numeric" class="kc"><span class="mena">Kč</span></div></div><div><label for="d-reakcni_doba_h">Reakční doba na chybu (h)</label><input id="d-reakcni_doba_h" name="reakcni_doba_h" type="number" min="0"></div><div><label for="d-hosting_nabizi">Zajistí hosting/provoz</label><select id="d-hosting_nabizi" name="hosting_nabizi"><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div></div></div></section>
+<section class="okruh"><div class="vnitrek"><header><span class="cislo">06</span><h2>Reference a formality</h2><p class="pod">Poslední okruh.</p></header><div class="pole"><div class="siroke"><label for="d-reference">Reference (odkazy) <span class="povinne">*</span></label><textarea id="d-reference" name="reference" required></textarea><small>2–3 veřejné reference včetně URL.</small></div><div><label for="d-reference_kontakt">Referenční kontakt</label><input id="d-reference_kontakt" name="reference_kontakt" type="text"><small>Klient, kterému smíme zavolat (jméno + kontakt).</small></div><div><label for="d-nda_ochota">Ochota podepsat NDA <span class="povinne">*</span></label><select id="d-nda_ochota" name="nda_ochota" required><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ano s výhradami">ano s výhradami</option><option value="ne">ne</option></select></div><div><label for="d-pojisteni_odpovednosti">Pojištění odpovědnosti</label><select id="d-pojisteni_odpovednosti" name="pojisteni_odpovednosti"><option value="" disabled selected>vyberte…</option><option value="ano">ano</option><option value="ne">ne</option></select></div><div class="siroke"><label for="d-pozn_partnera">Poznámka</label><textarea id="d-pozn_partnera" name="pozn_partnera"></textarea><small>Cokoliv, co o sobě chcete říct navíc.</small></div></div></div></section>
+  <div class="zaver">
+    <div class="vnitrek">
+      <p>Po odeslání vám přijde potvrzení e-mailem — odpovědí na něj můžete
+      cokoliv doplnit nebo opravit. Ozvu se, jakmile budu mít zakázku,
+      která sedí na váš profil.</p>
+      <button type="submit" class="odeslat">Odeslat dotazník</button>
+      <span class="trust">odpověď do 24 hodin &nbsp;·&nbsp; data jen pro párování poptávek</span>
     </div>
-  </form>
-</main>
-
-<footer>
-  <div class="footer-brand">Manta<span>IT</span> &middot; Petr Kokoška</div>
-  <div class="footer-meta">Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; &copy; 2026</div>
-</footer>
+  </div>
+</form>
 
 <script>
 // castky v Kc: zive formatovani tisicu mezerou uz pri psani
@@ -86,12 +180,9 @@ document.querySelectorAll('input.kc').forEach(function (el) {
     el.value = c.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   });
 });
-// multivyber: zaskrtnute checkboxy -> jedno hidden pole (carkou oddelene),
-// aby mail nesl `klic: a, b, c` presne pro parser dodavatele_prijem.py.
-// Kc pole se pred odeslanim odformatuji, at mail nese ciste cislo.
+// multivyber: pilulky -> jedno hidden pole (carkou oddelene) pro parser;
+// Kc pole se pred odeslanim odformatuji; zamek proti dvojimu odeslani
 document.getElementById('formularDodavatel').addEventListener('submit', function (e) {
-  // zamek proti vicenasobnemu odeslani: worker posila maily ~2-4 s a
-  // opakovane kliknuti behem cekani poslalo formular 4x (Petruv test 31. 8.)
   var tl = e.target.querySelector('button[type=submit]');
   if (tl.disabled) { e.preventDefault(); return; }
   tl.disabled = true;
@@ -99,13 +190,19 @@ document.getElementById('formularDodavatel').addEventListener('submit', function
   document.querySelectorAll('input.kc').forEach(function (el) {
     el.value = el.value.replace(/\s+/g, '');
   });
-  document.querySelectorAll('.zaskrtavaci-skupina').forEach(function (sk) {
+  document.querySelectorAll('.pilulky').forEach(function (sk) {
     var cil = document.getElementById('d-' + sk.dataset.cil);
     cil.value = Array.from(sk.querySelectorAll('input:checked'))
       .map(function (ch) { return ch.value; }).join(', ');
   });
 });
 </script>
+
+
+<footer>
+  <div class="fb">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; &copy; 2026</div>
+</footer>
 
 </body>
 </html>
