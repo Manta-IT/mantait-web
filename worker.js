@@ -19,6 +19,8 @@ const FORMS = {
   dodavatel: {
     subject: 'Dodavatel: onboarding',
     replySubject: 'Mám váš dotazník - Manta IT',
+    // vlastni potvrzeni v kontextu dodavatelu (Petruv test 31. 8.)
+    dekujeme: '/dodavatele-dekujeme',
     fields: ['nazev', 'ico', 'web', 'mesto', 'kontakt_osoba', 'kontakt_role',
              'email', 'telefon', 'linkedin', 'typ_dodavatele', 'specializace',
              'technologie', 'velikost_tymu', 'rok_zalozeni', 'misto_prace',
@@ -177,7 +179,7 @@ async function handleForm(request, env, formName) {
   const data = Object.fromEntries(await request.formData());
 
   // honeypot: bot vyplni skryte pole, clovek ne
-  if (data.website) return Response.redirect(new URL('/dekujeme', request.url), 303);
+  if (data.website) return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 
   const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele' }[formName] || '/kontakt';
   const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
@@ -215,7 +217,7 @@ async function handleForm(request, env, formName) {
       console.error('potvrzeni klientovi selhalo', e);
     }
   }
-  return Response.redirect(new URL('/dekujeme', request.url), 303);
+  return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 }
 
 // Pro scripts/test-mail.mjs -- overuje sestaveni MIME a odeslani proti
