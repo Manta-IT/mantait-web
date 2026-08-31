@@ -35,7 +35,10 @@ const FORMS = {
              'platce_dph', 'splatnost_dni', 'predani_kodu', 'proces_kvality',
              'sla_nabizi', 'servis_od_kc', 'reakcni_doba_h', 'hosting_nabizi',
              'reference', 'reference_kontakt', 'nda_ochota',
-             'pojisteni_odpovednosti', 'pozn_partnera'],
+             'pojisteni_odpovednosti', 'pozn_partnera',
+             // rozsireni 31. 8. (vyzkum RFI + Petr): sluzby, procesy, cloudy
+             'sluzby', 'cloudy', 'metodika_rizeni', 'role_tymu',
+             'nastroje_rizeni', 'subdodavky', 'jazyky', 'certifikace'],
     reply: (d) => `Dobrý den,
 
 díky za vyplněný dotazník. Zařadím vás do databáze dodavatelů a ozvu se,
