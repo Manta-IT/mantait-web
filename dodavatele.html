@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3d44684">
+  <link rel="stylesheet" href="style.css?v=dd62d2e">
   <style>
     .dodavatele-obal { max-width: 880px; margin: 0 auto; padding: 48px 20px 80px; }
     .dodavatele-obal h1 { margin-bottom: 8px; }
@@ -89,7 +89,13 @@ document.querySelectorAll('input.kc').forEach(function (el) {
 // multivyber: zaskrtnute checkboxy -> jedno hidden pole (carkou oddelene),
 // aby mail nesl `klic: a, b, c` presne pro parser dodavatele_prijem.py.
 // Kc pole se pred odeslanim odformatuji, at mail nese ciste cislo.
-document.getElementById('formularDodavatel').addEventListener('submit', function () {
+document.getElementById('formularDodavatel').addEventListener('submit', function (e) {
+  // zamek proti vicenasobnemu odeslani: worker posila maily ~2-4 s a
+  // opakovane kliknuti behem cekani poslalo formular 4x (Petruv test 31. 8.)
+  var tl = e.target.querySelector('button[type=submit]');
+  if (tl.disabled) { e.preventDefault(); return; }
+  tl.disabled = true;
+  tl.textContent = 'Odesílám…';
   document.querySelectorAll('input.kc').forEach(function (el) {
     el.value = el.value.replace(/\s+/g, '');
   });

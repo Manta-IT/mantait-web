@@ -174,7 +174,7 @@ async function sendMail(token, to, subject, text, replyTo) {
   if (!res.ok) throw new Error(`Gmail ${res.status}: ${await res.text()}`);
 }
 
-async function handleForm(request, env, formName) {
+async function handleForm(request, env, formName, ctx) {
   const form = FORMS[formName];
   const data = Object.fromEntries(await request.formData());
 
@@ -210,12 +210,12 @@ async function handleForm(request, env, formName) {
     return errorPage('Server odmítl zprávu odeslat.', { zpet });
   }
   if (email) {
-    // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit request
-    try {
-      await sendMail(token, email, form.replySubject, form.reply(data));
-    } catch (e) {
-      console.error('potvrzeni klientovi selhalo', e);
-    }
+    // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit
+    // request. waitUntil: bezi az PO odpovedi -- cekani na druhy mail drzelo
+    // redirect 2-4 s a svadelo k opakovanemu kliknuti (4 maily, 31. 8.).
+    const potvrzeni = sendMail(token, email, form.replySubject, form.reply(data))
+      .catch((e) => console.error('potvrzeni klientovi selhalo', e));
+    if (ctx) ctx.waitUntil(potvrzeni); else await potvrzeni;
   }
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 }
@@ -251,12 +251,12 @@ const PRESMEROVANI = new Map([
 const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
     const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
-      return handleForm(request, env, match[1]);
+      return handleForm(request, env, match[1], ctx);
     }
 
     // Bez koncoveho lomitka, at /kontakt a /kontakt/ konci stejne.
