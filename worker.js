@@ -21,6 +21,8 @@ const FORMS = {
     replySubject: 'Mám váš dotazník - Manta IT',
     // vlastni potvrzeni v kontextu dodavatelu (Petruv test 31. 8.)
     dekujeme: '/dodavatele-dekujeme',
+    // telo mailu cte stroj -> hodnoty na jeden radek (viz `lines` nize)
+    strojove: true,
     fields: ['nazev', 'ico', 'web', 'mesto', 'kontakt_osoba', 'kontakt_role',
              'email', 'telefon', 'linkedin', 'typ_dodavatele', 'specializace',
              'technologie', 'velikost_tymu', 'rok_zalozeni', 'misto_prace',
@@ -195,7 +197,15 @@ async function handleForm(request, env, formName, ctx) {
 
   const lines = form.fields
     .filter((f) => (data[f] || '').trim())
-    .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000)}`);
+    // `strojove`: telo mailu cte parser radek po radku (`klic: hodnota`).
+    // Novy radek uvnitr hodnoty by utocnikovi dovolil podvrhnout dalsi
+    // klice ("\nnazev: KOALA42" -> prepis ciziho radku v tabulce), proto
+    // se u strojovych formularu hodnoty srazi na jeden radek.
+    .map((f) => {
+      let v = String(data[f]).trim().slice(0, 2000);
+      if (form.strojove) v = v.replace(/[\r\n]+/g, ' ');
+      return `${f}: ${v}`;
+    });
   const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${request.headers.get('referer') || 'webu'}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {
