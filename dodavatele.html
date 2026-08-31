@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=dd62d2e">
+  <link rel="stylesheet" href="style.css?v=984dbf6">
   <style>
     .dodavatele-obal { max-width: 880px; margin: 0 auto; padding: 48px 20px 80px; }
     .dodavatele-obal h1 { margin-bottom: 8px; }
@@ -52,8 +52,8 @@
   <p class="legenda-povinne"><span class="povinne">*</span> povinné pole</p>
 
   <form class="panel" method="post" action="/api/dodavatel" id="formularDodavatel">
-    <!-- honeypot -->
-    <input type="text" name="website" tabindex="-1" autocomplete="off"
+    <!-- honeypot; jmeno nesmi byt autofill token jako "website" (M2) -->
+    <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off"
            style="position:absolute;left:-9999px" aria-hidden="true">
 <h2>O firmě</h2>
 <div class="pole"><div><label for="d-nazev">Název firmy <span class="povinne">*</span></label><input id="d-nazev" name="nazev" type="text" required></div><div><label for="d-ico">IČO <span class="povinne">*</span></label><input id="d-ico" name="ico" type="text" required></div><div><label for="d-web">Web <span class="povinne">*</span></label><input id="d-web" name="web" type="text" inputmode="url" required></div><div><label for="d-mesto">Město/sídlo</label><input id="d-mesto" name="mesto" type="text"></div><div><label for="d-kontakt_osoba">Kontaktní osoba <span class="povinne">*</span></label><input id="d-kontakt_osoba" name="kontakt_osoba" type="text" required></div><div><label for="d-kontakt_role">Role kontaktu</label><input id="d-kontakt_role" name="kontakt_role" type="text"></div><div><label for="d-email">E-mail <span class="povinne">*</span></label><input id="d-email" name="email" type="email" autocomplete="email" required></div><div><label for="d-telefon">Telefon</label><input id="d-telefon" name="telefon" type="text"></div><div><label for="d-linkedin">LinkedIn</label><input id="d-linkedin" name="linkedin" type="text" inputmode="url"></div></div>

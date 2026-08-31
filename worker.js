@@ -21,8 +21,12 @@ const FORMS = {
     replySubject: 'Mám váš dotazník - Manta IT',
     // vlastni potvrzeni v kontextu dodavatelu (Petruv test 31. 8.)
     dekujeme: '/dodavatele-dekujeme',
-    // telo mailu cte stroj -> hodnoty na jeden radek (viz `lines` nize)
+    // telo mailu cte stroj (parser dodavatele_prijem.py) -> tvrda validace
     strojove: true,
+    ciselna: ['velikost_tymu', 'rok_zalozeni', 'kapacita_md_mesic',
+              'nastupnost_tydny', 'min_zakazka_kc', 'max_zakazka_kc',
+              'sazba_od', 'sazba_do', 'splatnost_dni', 'servis_od_kc',
+              'reakcni_doba_h'],
     fields: ['nazev', 'ico', 'web', 'mesto', 'kontakt_osoba', 'kontakt_role',
              'email', 'telefon', 'linkedin', 'typ_dodavatele', 'specializace',
              'technologie', 'velikost_tymu', 'rok_zalozeni', 'misto_prace',
@@ -181,7 +185,10 @@ async function handleForm(request, env, formName, ctx) {
   const data = Object.fromEntries(await request.formData());
 
   // honeypot: bot vyplni skryte pole, clovek ne
-  if (data.website) return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
+  // dva honeypoty: `website` (stare stranky) + `kontrolni_udaj` (nove --
+  // "website" umi vyplnit autofill prohlizece i poctivemu cloveku a lead
+  // by se tise ztratil; OWASP review M2)
+  if (data.website || data.kontrolni_udaj) return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 
   const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele' }[formName] || '/kontakt';
   const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
@@ -195,17 +202,31 @@ async function handleForm(request, env, formName, ctx) {
     return chybaUzivatele('E-mailová adresa nevypadá platně.');
   }
 
+  // Serverova validace strojovych formularu (OWASP review M1): klientske
+  // type=number a formatovani jsou jen pohodli. ICO je parovaci klic
+  // upsertu -- nesmyslne ICO nikdy nesmi vzniknout jako klic.
+  if (form.strojove) {
+    if (!/^\d{8}$/.test((data.ico || '').trim())) {
+      return chybaUzivatele('IČO musí být přesně 8 číslic.');
+    }
+    for (const f of form.ciselna || []) {
+      const v = (data[f] || '').replace(/\s+/g, '');
+      if (v && !/^\d+([.,]\d+)?$/.test(v)) {
+        return chybaUzivatele('Pole „' + f + '" musí být číslo.');
+      }
+      if (v) data[f] = v;
+    }
+  }
+
   const lines = form.fields
     .filter((f) => (data[f] || '').trim())
     // `strojove`: telo mailu cte parser radek po radku (`klic: hodnota`).
     // Novy radek uvnitr hodnoty by utocnikovi dovolil podvrhnout dalsi
     // klice ("\nnazev: KOALA42" -> prepis ciziho radku v tabulce), proto
     // se u strojovych formularu hodnoty srazi na jeden radek.
-    .map((f) => {
-      let v = String(data[f]).trim().slice(0, 2000);
-      if (form.strojove) v = v.replace(/[\r\n]+/g, ' ');
-      return `${f}: ${v}`;
-    });
+    // radky se srazeji u VSECH formularu: u strojovych proti injekci klicu,
+    // u lidskych proti podvrzenym radkum v mailu (OWASP review L1)
+    .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000).replace(/[\r\n]+/g, ' ')}`);
   const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${request.headers.get('referer') || 'webu'}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {

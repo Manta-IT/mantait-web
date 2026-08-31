@@ -9,5 +9,7 @@
     "binding": "ASSETS"
   }
 }
-// Secret SENDGRID_API_KEY: nastavit v CF dashboardu (Workers -> mantait-web ->
-// Settings -> Variables -> Secret). Bez nej formulare vraci chybovou stranku.
+// Secrets v CF dashboardu (Workers -> mantait-web -> Settings -> Variables):
+// GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN (jen scope
+// gmail.send). Bez nich formulare vraci chybovou stranku. Stary
+// SENDGRID_API_KEY je mrtvy od 10. 8. -- pokud v dashboardu jeste je, smazat.
