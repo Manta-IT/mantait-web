@@ -38,7 +38,9 @@ const FORMS = {
              'pojisteni_odpovednosti', 'pozn_partnera',
              // rozsireni 31. 8. (vyzkum RFI + Petr): sluzby, procesy, cloudy
              'sluzby', 'cloudy', 'metodika_rizeni', 'role_tymu',
-             'nastroje_rizeni', 'subdodavky', 'jazyky', 'certifikace'],
+             'nastroje_rizeni', 'subdodavky', 'jazyky', 'certifikace',
+             // validace proti plnym RFI zdrojum (T0831-32)
+             'rytmus_komunikace', 'ai_ve_vyvoji', 'recenze_profily'],
     reply: (d) => `Dobrý den,
 
 díky za vyplněný dotazník. Zařadím vás do databáze dodavatelů a ozvu se,
