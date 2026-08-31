@@ -12,6 +12,32 @@ const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT
 const TEL = '+420 732 329 431';
 
 const FORMS = {
+  // Onboarding dodavatelu (T0831-17). Klice MUSI sedet na
+  // specs/dodavatele/sloupce.json (zdroj: formular) -- hlida
+  // scripts/dodavatele_formular.py --worker-check. Predmet MUSI sedet na
+  // PREDMET ve scripts/dodavatele_prijem.py (parser mailu -> Google Sheet).
+  dodavatel: {
+    subject: 'Dodavatel: onboarding',
+    replySubject: 'Mám váš dotazník - Manta IT',
+    fields: ['nazev', 'ico', 'web', 'mesto', 'kontakt_osoba', 'kontakt_role',
+             'email', 'telefon', 'linkedin', 'typ_dodavatele', 'specializace',
+             'technologie', 'velikost_tymu', 'rok_zalozeni', 'misto_prace',
+             'kapacita_md_mesic', 'nastupnost_tydny', 'min_zakazka_kc',
+             'max_zakazka_kc', 'sazba_od', 'sazba_do', 'cenovy_model',
+             'platce_dph', 'splatnost_dni', 'predani_kodu', 'proces_kvality',
+             'sla_nabizi', 'servis_od_kc', 'reakcni_doba_h', 'hosting_nabizi',
+             'reference', 'reference_kontakt', 'nda_ochota',
+             'pojisteni_odpovednosti', 'pozn_partnera'],
+    reply: (d) => `Dobrý den,
+
+díky za vyplněný dotazník. Zařadím vás do databáze dodavatelů a ozvu se,
+jakmile budu mít zakázku, která sedí na váš profil.
+
+Kdybyste chtěli cokoliv doplnit nebo probrat, stačí odpovědět na tento e-mail.
+
+Petr Kokoška
+Manta IT | mantait.cz`,
+  },
   dotaznik: {
     subject: 'Dotace MAS: ověření způsobilosti',
     replySubject: 'Mám váš dotazník - Manta IT',
@@ -153,7 +179,7 @@ async function handleForm(request, env, formName) {
   // honeypot: bot vyplni skryte pole, clovek ne
   if (data.website) return Response.redirect(new URL('/dekujeme', request.url), 303);
 
-  const zpet = formName === 'dotaznik' ? '/dotace-mas' : '/kontakt';
+  const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele' }[formName] || '/kontakt';
   const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
 
   const email = (data.email || '').trim();
@@ -225,7 +251,7 @@ const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
-    const match = pathname.match(/^\/api\/(dotaznik|kontakt)$/);
+    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       return handleForm(request, env, match[1]);
