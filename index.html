@@ -142,7 +142,11 @@ h1 b{font-weight:600;color:var(--akcent)}
 }
 .akce{margin-top:clamp(26px,3vw,38px);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 
-.portret{position:relative;justify-self:end;width:100%;max-width:400px;aspect-ratio:4/5}
+/* Odsazeni dole je misto pro .podpis: ten je absolutni, takze zadnou vysku
+   nezabira a bez rezervy visel 26 px do pruhu "Co se prave resi" pod herem.
+   70 px = odsazeni podpisu (46) + jeho radek (24). */
+.portret{position:relative;justify-self:end;width:100%;max-width:400px;
+  aspect-ratio:4/5;margin-bottom:70px}
 .portret img{
   width:100%;height:100%;object-fit:cover;border-radius:var(--r);display:block;
   /* Koncovy stav je barevny. Do 27. 8. byla fotka trvale cernobila a barvu
@@ -375,7 +379,9 @@ a.polozka{text-decoration:none;transition:padding-left .25s var(--krivka)}
 @media (max-width:900px){
   .hlava{min-height:auto}
   .hero{grid-template-columns:1fr;padding-top:96px;gap:40px}
-  .portret{justify-self:start;max-width:280px;margin-bottom:40px}
+  /* Odsazeni dole se dedi ze zakladu (70 px rezerva na podpis); zdejsi
+     40 px bylo min, nez podpis potrebuje. */
+  .portret{justify-self:start;max-width:280px}
   .menu{display:none}
   h1{max-width:100%}
   .cinnost{grid-template-columns:1fr;gap:36px}
@@ -513,7 +519,7 @@ textarea{min-height:104px;resize:vertical}
   .vstup,.radek > *{animation:none}
 }
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=064f591">
+  <link rel="stylesheet" href="/mobil.css?v=2e43bcf">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -554,7 +560,7 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=064f591" defer></script>
+  <script src="/gtag.js?v=2e43bcf" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
@@ -1146,6 +1152,6 @@ new IntersectionObserver(([z]) => nav.classList.toggle('posunuto', !z.isIntersec
   else document.getElementById('akce')?.remove();
 })();
 </script>
-<script src="/mobil.js?v=064f591"></script>
+<script src="/mobil.js?v=2e43bcf"></script>
 </body>
 </html>
