@@ -1,3 +1,21 @@
+## 2026-09-03 -- SEO audit nastrojem citovanost, opravy nasazene
+
+Prvni ostry beh `tools/citovanost` nad zivym webem (task T0903-21): 20 stranek
+ze sitemap, prumerne skore 93 -> 97 po nasazeni (commit 0dd0379).
+
+Opraveno: JSON-LD na sesti strankach (homepage, o-mne, clanky, bezpecnost,
+soukromi, ukazka-reportu), tri meta description pod 165 znaku, hreflang sk/en
+a prepinac jazyku pryc ze sesti starych stranek (`/sk/` a `/en/` vraci 301
+na homepage od 26. 8., odkaz vedl na presmerovani). JSON-LD pro devet prepsanych
+stranek generuje `prenos.py` (slovnik `LD`), meta description zije v prototypu.
+
+Zbyva a je to copy, ne technika (rozhoduje Petr): "definition-first" hero
+(prvni veta rika, co to je) na 13 strankach; FAQ na homepage a u clanku.
+Pozn.: tenhle STATUS od 25. 8. nezachycuje nasazeni redesignu 26. 8. --
+aktualni stav je v `../specs/web-redesign/STAV.md`.
+
+---
+
 ## 2026-08-25 -- bezi redesign, do produkce se zatim nesaha
 
 Kompletni redesign webu bezi v `../specs/web-redesign/` (task T0825-7). Osm stranek
