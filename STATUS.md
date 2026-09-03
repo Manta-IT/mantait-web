@@ -1,3 +1,36 @@
+## 2026-09-03 -- rozbity frontend: dva prvky skladane skriptem bez stylu
+
+Petr nahlasil "rozhazene prvky menu bez stylovani pod patickou". Stejna
+pricina u dvou vad: skript sklada prvek na konec `<body>`, ale jeho CSS na te
+strance neni.
+
+- `.nav-panel` (mobil.js) se sklada na kazde sirce okna, styly ale zily jen
+  uvnitr `@media (max-width:900px)`. Na desktopu holy seznam odkazu pod
+  obsahem, homepage merila 14 000 px misto 6 700.
+- `.consent-bar` (gtag.js) je stylovana jen ve `style.css`, ktery devet
+  prepsanych stranek nenacita. Od redesignu 26. 8. tam byla holy text se
+  systemovymi tlacitky -- videl ji kazdy navstevnik homepage a stranek sluzeb.
+- Skryta pricina, proc by oprava stejne nezabrala: `scripts/bump-cache.py`
+  bumpoval jen `style.css`. `mobil.css` mel 3. 9. porad `?v=0525000` z konce
+  srpna. Nove bere vsechna lokalni `.css` a `.js`, externi URL nechava.
+
+Ctvrta vec z tehoz hlaseni: `.podpis` pod fotkou je `position:absolute`, v toku
+nezabira vysku a nic pod nim na nej misto nedrzelo -- koncil 26 px uvnitr pruhu
+"Co se prave resi". Rezerva patri figure (`margin-bottom:70px`), ne paddingu
+hero: figure je grid item, takze se posune jen sloupec s fotkou.
+
+Commity 2e43bcf a c6a3ced, obe nasazeny a overeny na produkci. Opravy jsou
+i v `../specs/web-redesign/prototypy/` (mobil.css, web-v2.html), jinak by je
+prepsal dalsi `prenos.py`. Task T0903-24 (archiv).
+
+**Otevreny dluh z toho nalezu:** `mobil.js` a `mobil.css` se nacitaji jen na
+devíti prepsanych strankach. Zbylych 55 (cele `sk/`, cele `en/`, `reseni-ai`,
+`kontakt`, `weby`, clanky...) nema na telefonu zadnou navigaci -- `.menu` se
+pod 900 px vypina a nic ho nenahrazuje. Stav od 27. 8., ne dnesni regrese.
+Task T0903-25.
+
+---
+
 ## 2026-09-03 -- SEO audit nastrojem citovanost, opravy nasazene
 
 Prvni ostry beh `tools/citovanost` nad zivym webem (task T0903-21): 20 stranek

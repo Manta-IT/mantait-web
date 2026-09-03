@@ -190,3 +190,7 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
 - Nepridavat anglicismy do body copy.
 - Neopravovat tech devet prepsanych stranek primo v `web/` -- zmena se ztrati
   pri dalsim `prenos.py`. Opravuje se prototyp, pak se prenese.
+- **Totez plati pro sdilene CSS a JS**, ne jen pro stranky: `prenos.py` kopiruje
+  `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `stopa.css`, `mobil.css`
+  a `mobil.js` z prototypu do `web/`. Oprava jen v `web/` prezije do prvniho
+  prenosu. (Naslapnuto 3. 9. u `mobil.css`.)
