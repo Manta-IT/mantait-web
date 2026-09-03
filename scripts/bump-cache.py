@@ -43,9 +43,14 @@ def get_version() -> str:
 def bump_file(filepath: str, version: str) -> bool:
     with open(filepath, encoding='utf-8') as f:
         content = f.read()
-    pattern = re.compile(r'href="(/?)style\.css(?:\?v=[^"]*)?"')
+    # Vsechny lokalni stylesheety a skripty, ne jen style.css: mobil.css
+    # mel 3. 9. porad ?v=0525000 z konce srpna, takze oprava panelu by se
+    # ke ctenari nedostala.
+    pattern = re.compile(
+        r'(?:href|src)="(/?)([a-z0-9-]+\.(?:css|js))(?:\?v=[^"]*)?"')
     new_content, count = pattern.subn(
-        lambda m: f'href="{m.group(1)}style.css?v={version}"', content)
+        lambda m: f'{"href" if m.group(2).endswith(".css") else "src"}='
+                  f'"{m.group(1)}{m.group(2)}?v={version}"', content)
     if count == 0:
         return False
     if content != new_content:
