@@ -27,8 +27,8 @@ step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
 - `kdo-jsem.html` -- bio + konstelace kategorii
 - `clanky.html` -- rozcestnik clanku
 - `sluzba-mapa-firmy.html` -- mapovani procesu a toku dat
-- sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`,
-  `obrazky/` (SVG + generatory), `loga/`, `bump.py` (verzovani `?v=`)
+- sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `pisma.css`,
+  `pisma/` (woff2), `obrazky/` (SVG + generatory), `loga/`, `bump.py`
 
 Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
 `clanky/` (manifest.json = zdroj dat), `kontakt`, `weby`, `raynet`,
@@ -49,7 +49,9 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
 4. Pred commitem: kazda stranka na 390/600/900/1440 px bez vodorovneho
    scrollu, console errors 0, ASCII grep cisty.
 5. `python scripts/kontrola_webu.py` (bezi i v pre-commit hooku): interni
-   odkazy existuji, typografie, zakazana slova, ceny homepage = detail.
+   odkazy existuji, typografie, zakazana slova, ceny homepage = detail,
+   registr `sluzby.json` vs stranka vs `llms.txt` vs JSON-LD nazev,
+   `_redirects` vs zaloha ve worker.js.
    Nalez zastavi commit. Po pushi VZDY overit zivy web -- 8. 9. 2026 jeden
    Cloudflare build nedobehl a pomohl az dalsi commit.
 5. Clanky (`clanky/`): NIKDY rucne. Koncept vznika v manta-it
@@ -61,6 +63,12 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
    `<!-- CLANKY:START/END -->` a generuje se. `gen_clanky_index.py` je pryc.
 
 ## Deployment
+
+**Presmerovani zive drzi `_redirects`, ne `worker.js`.** `wrangler.jsonc` nema
+`run_worker_first`, takze staticke assety (a mezi nimi `_redirects`) se
+vyhodnocuji driv nez Worker -- zmereno 8. 9. 2026. Mapa `PRESMEROVANI` ve
+worker.js je jen zaloha a musi se souborem souhlasit; hlida to
+`scripts/kontrola_webu.py`.
 
 **Auto-deploy pres Cloudflare Workers Builds z `master`** (Worker `mantait-web`,
 worker.js = staticke assety + POST /api/dotaznik a /api/kontakt pres Gmail API;
@@ -80,10 +88,14 @@ git add -A && git commit -m "fix: ..." && git push origin master
 
 ## Cache strategy
 
-- HTML: max-age=300; CSS: 1 rok + immutable, verze pres `?v=<hash>`;
-  sitemap.xml: 1h. Edge cache se purgne pri deployi.
-- `scripts/bump-cache.py` updatuje `?v=` ve vsech HTML -- pustit pred kazdym
-  commitem, ktery meni stylesheet.
+- HTML: default Workers (max-age=0, must-revalidate -- podmineny dotaz vraci
+  304); CSS, JS, pisma, obrazky a loga: 1 rok + immutable, verze pres
+  `?v=<otisk obsahu>`; sitemap.xml 1h. Edge cache se purgne pri deployi.
+- **Hlavicky se v `_headers` NEPREPISUJI, spojuji se carkou.** Proto ma
+  Cache-Control jen konkretni pravidla (`/*.css`, `/pisma/*`, ...), nikdy `/*`.
+- `scripts/bump-cache.py` bere `?v=` z OTISKU OBSAHU souboru, ne z HEAD.
+  Diky tomu je po commitu pracovni strom cisty (do 8. 9. v nem zustavalo
+  51 souboru s hashem predchoziho commitu).
 
 ## Zavazna pravidla (poruseni = chyba)
 
@@ -191,11 +203,18 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
 4. CTA "Napiste mi" vede na kontakt, formular odesle a presmeruje na /dekujeme
 5. Nav active state na kazde strance
 6. FAQ schema se generuje (JSON-LD v DOM)
+7. `node scripts/test-kontakt.mjs` (tri cesty kontaktu a vyber terminu)
+8. axe-core bez nalezu na 390 i 1440 px -- **zadna animace nesmi zacinat na
+   `opacity:0`** u textu nad ohybem: Chrome takovy prvek nepovazuje za
+   vykresleny a LCP ceka na dobehnuti animace
 
 ## Co NEDELAT
 
 - Nepridavat JS framework ani build step. Vanilla nebo nic.
-- Nevolat externi JS krome Google Fonts, Google Ads (gtag) a Cloudflare Web Analytics.
+- Nevolat externi JS krome Google Ads (gtag) a Cloudflare Web Analytics.
+  **Pisma jsou od 8. 9. 2026 self-hostovana** v `/pisma/` (variabilni woff2,
+  latin + latin-ext), deklarace v `pisma.css`, na kazde strance preload ctyr
+  rezu. Google Fonts se nevraci: blokovaly vykresleni 800 ms z ciziho puvodu.
 - Nezvysovat ani nesnizovat ceny bez Petrova pokynu.
 - Nezavadet externi rezervacni widget (Calendly odstraneno 8/2026, nevraci se;
   duvody v `PRINCIPLES.md`).
@@ -204,6 +223,6 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
 - Neopravovat tech devet prepsanych stranek primo v `web/` -- zmena se ztrati
   pri dalsim `prenos.py`. Opravuje se prototyp, pak se prenese.
 - **Totez plati pro sdilene CSS a JS**, ne jen pro stranky: `prenos.py` kopiruje
-  `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `stopa.css`, `mobil.css`
-  a `mobil.js` z prototypu do `web/`. Oprava jen v `web/` prezije do prvniho
+  `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `stopa.css`, `mobil.css`,
+  `mobil.js`, `pisma.css` a slozku `pisma/` z prototypu do `web/`. Oprava jen v `web/` prezije do prvniho
   prenosu. (Naslapnuto 3. 9. u `mobil.css`.)

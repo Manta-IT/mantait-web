@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Manta IT - technologický ředitel na vaší straně</title>
 <meta name="description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
-<link rel="preload" href="/pisma/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/pisma/outfit-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/pisma/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/pisma/manrope-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=8f0b871">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
 <style>
 /* =========================================================================
    Manta IT -- kompletni stranka, v2
@@ -675,7 +673,7 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/petr-kokoska.jpg" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
+      <img src="/obrazky/petr-kokoska.webp?v=62e4388" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
@@ -1063,7 +1061,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=dcbab85" alt="" loading="lazy" width="120" height="80">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=62e4388" alt="" loading="lazy" width="120" height="80">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
