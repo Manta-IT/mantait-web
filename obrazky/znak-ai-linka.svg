@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="Ze vstupu vznikne po jedné lince hotový výrobek" fill="none">
+<title>Ze vstupu vznikne po jedné lince hotový výrobek</title>
+  <rect x="8" y="28" width="26" height="24" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="2" opacity="1"/>
+  <path d="M34 40h18" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="60" cy="40" r="8" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2.5"/>
+  <path d="M68 40h18" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M82 34l6 6-6 6" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="88" y="20" width="24" height="40" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2" opacity="1"/>
+  <path d="M94 30l12 20M106 30l-12 20" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>
