@@ -31,6 +31,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Kolik stojí hodina ručního přepisování dat?](https://mantait.cz/clanky/kolik-stoji-rucni-prepisovani): Návod na výpočet (minuty denně krát lidé krát 21 dní) a čísla z anonymizované zakázky.
 - [Posledních šest měsíců velkých dotací na technologie](https://mantait.cz/clanky/dotace-poslednich-6-mesicu): Časová osa firmy, která začne dnes, proti té, která počká.
 - [AI zaměstnanec: co to reálně je a co není](https://mantait.cz/clanky/ai-zamestnanec-co-je-a-co-neni): Definice, hranice a soulad s AI Act čl. 50.
+- [Proč malé projekty vycházejí a velké skoro nikdy](https://mantait.cz/clanky/male-projekty-vychazeji-velke-ne): Menší projekty vycházejí mnohem lépe než velké, ukazují data i zkušenost z praxe. Zjistěte, co to znamená pro rozsah a zadání první verze vaší aplikace.
 
 ## Co Manta IT není
 

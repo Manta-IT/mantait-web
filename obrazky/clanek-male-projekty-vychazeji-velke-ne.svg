@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Jeden velký balík se cestou zlomí, řada malých schválených kroků dojde k cíli" fill="none">
+<title>Jeden velký balík se cestou zlomí, řada malých schválených kroků dojde k cíli</title>
+  <circle cx="282" cy="100" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M275 100l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="40" width="132" height="40" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M38 54h80" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M38 65h56" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M156 60h34" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M190 54l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M204 60h48" stroke="#C3CAC4" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.6"/>
+  <rect x="24" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="39" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M54 139h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="64" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="79" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M94 139h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="104" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="119" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M134 139h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="144" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="159" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M174 139h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="184" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="199" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M214 139h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="224" y="128" width="30" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="239" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M254 139h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M268 139q10 0 10-10v-15" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+</svg>

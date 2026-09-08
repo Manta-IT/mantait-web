@@ -1,52 +1,74 @@
 [
   {
-    "slug": "dotace-technologie-pro-mas-2026",
-    "title": "Poslední velké kolo dotací na technologie je o polovinu menší",
-    "description": "540 milionů korun ve výzvě Technologie pro MAS II proti až miliardě v předchozím kole. Co to znamená pro firmy do 250 zaměstnanců mimo velká města.",
-    "date_published": "2026-08-08",
-    "date_modified": "2026-08-25",
-    "highlight": true,
-    "cta_href": "/dotace-mas",
-    "og_image": null
+    "slug": "male-projekty-vychazeji-velke-ne",
+    "title": "Proč malé projekty vycházejí a velké skoro nikdy",
+    "description": "Menší projekty vycházejí mnohem lépe než velké, ukazují data i zkušenost z praxe. Zjistěte, co to znamená pro rozsah a zadání první verze vaší aplikace.",
+    "date_published": "2026-09-08",
+    "date_modified": "2026-09-08",
+    "highlight": false,
+    "cta_href": "/reseni-nova-aplikace",
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-male-projekty-vychazeji-velke-ne.svg"
   },
   {
     "slug": "novy-zakon-kyberbezpecnost-3-otazky",
     "title": "Dopadne na vás nový zákon o kybernetické bezpečnosti? Tři otázky, které to prozradí",
-    "description": "Zákon č. 264/2025 Sb. platí od listopadu 2025 a ohlásit se u NÚKIB mělo být do 60 dnů. Tři otázky, ze kterých poznáte, jestli se týká i vás.",
+    "description": "Ohlásit se u NÚKIB se mělo do 60 dnů. První vlně firem lhůta uplynula na konci roku 2025. Rozhoduje odvětví a velikost, dodavatelský řetězec je jiný příběh.",
     "date_published": "2026-08-22",
     "date_modified": "2026-08-26",
     "highlight": true,
     "cta_href": "/reseni-bezpecnost",
-    "og_image": null
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-zakon.svg"
   },
   {
     "slug": "kolik-stoji-rucni-prepisovani",
     "title": "Kolik stojí hodina ručního přepisování dat? Spočítejte si to",
-    "description": "Hodina denně strávená přepisováním mezi systémy je 21 hodin měsíčně na jednoho člověka. Návod na vlastní výpočet a čísla z reálné zakázky.",
+    "description": "Návod na výpočet: minuty denně krát lidé krát dvacet jedna dní. Plus čísla z reálné zakázky.",
     "date_published": "2026-08-22",
     "date_modified": "2026-08-22",
     "highlight": true,
     "cta_href": "/reseni-propojeni",
-    "og_image": null
-  },
-  {
-    "slug": "dotace-poslednich-6-mesicu",
-    "title": "Posledních šest měsíců velkých dotací na technologie. Co stihne firma, která začne dnes",
-    "description": "Žádosti běží do 1. září 2027 a nové výzvy stát ohlašuje až po roce 2028. Časová osa firmy, která začne teď, proti firmě, která počká do jara.",
-    "date_published": "2026-08-22",
-    "date_modified": "2026-08-22",
-    "highlight": false,
-    "cta_href": "/dotace-mas",
-    "og_image": null
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-prepisovani.svg"
   },
   {
     "slug": "ai-zamestnanec-co-je-a-co-neni",
     "title": "AI zaměstnanec: co to reálně je a co není",
-    "description": "Běží nepřetržitě, má přístupy do vašich systémů a ráno podává hlášení. Co takový agent umí, co dělat nemá a jak vypadá zavedení ve firmě.",
+    "description": "Běží nepřetržitě, má přístupy do systémů a ráno podá hlášení. Co dělat nemá a jak probíhá zavedení.",
     "date_published": "2026-08-22",
     "date_modified": "2026-08-22",
     "highlight": false,
     "cta_href": "/reseni-ai-zamestnanec",
-    "og_image": null
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai.svg"
+  },
+  {
+    "slug": "dotace-poslednich-6-mesicu",
+    "title": "Posledních šest měsíců velkých dotací na technologie",
+    "description": "Časová osa firmy, která začne dnes, proti firmě, která počká do jara. Uzávěrky padají průběžně.",
+    "date_published": "2026-08-22",
+    "date_modified": "2026-08-22",
+    "highlight": false,
+    "cta_href": "/dotace-mas",
+    "og_image": null,
+    "tema": "Dotace",
+    "obrazek": "clanek-dotace.svg"
+  },
+  {
+    "slug": "dotace-technologie-pro-mas-2026",
+    "title": "Dotace na technologie pro firmy mimo velká města: co platí ve výzvě II",
+    "description": "Stát vrací polovinu způsobilých výdajů, žádosti se podávají do září 2027. Kdo na dotaci dosáhne a o čem si každá místní akční skupina rozhoduje sama.",
+    "date_published": "2026-08-08",
+    "date_modified": "2026-08-25",
+    "highlight": true,
+    "cta_href": "/dotace-mas",
+    "og_image": null,
+    "tema": "Dotace",
+    "obrazek": "clanek-dotace.svg"
   }
 ]
