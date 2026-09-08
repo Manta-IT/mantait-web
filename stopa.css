@@ -17,14 +17,7 @@
    nez zadne tlacitko.
    ========================================================================= */
 
-.stopa-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
-.stopa-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(58% 62% at 22% 8%,
-    color-mix(in srgb,var(--akcent) 20%,transparent), transparent 64%)}
-.stopa-sekce .obsah{position:relative}
 .stopa-sekce h2{max-width:18ch}
-.stopa-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);
-  margin-top:16px;max-width:56ch}
 
 /* ---------- Prepinac udaju ---------- */
 .stopa-prepinac{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(30px,3.6vw,44px)}

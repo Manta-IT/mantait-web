@@ -10,25 +10,8 @@
    jsou v HTML skryte a odkryva je az skript.
    ========================================================================= */
 
-.petlidi-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
-.petlidi-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(58% 62% at 78% 6%,
-    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
-.petlidi-sekce .obsah{position:relative}
-.petlidi-sekce h2{max-width:16ch}
-.petlidi-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:56ch}
 
 /* ---------- Prepinac Pet predstav / Jedno zadani ---------- */
-.petlidi-prepinac{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);
-  padding:4px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
-.petlidi-prepinac[hidden]{display:none}
-.petlidi-prepinac button{
-  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;border-radius:999px;
-  background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
-  border:0;cursor:pointer;min-height:44px;
-  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
-.petlidi-prepinac button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
-.petlidi-prepinac button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
 
 /* ---------- Pet postav v rade ---------- */
 .postavy{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.4vw,18px);

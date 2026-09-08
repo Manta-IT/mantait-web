@@ -26,6 +26,8 @@
    cestuje svisle) a radky jdou pod sebe jako dvojice stitek / text.
    ========================================================================= */
 
+.hranice-lead{max-width:58ch}
+
 /* ---------- Hero: dve cenovky pod sebou v jednom ramecku ---------- */
 .cenovka-dve{display:grid}
 .cenovka-varianta{padding-bottom:16px}
@@ -37,13 +39,6 @@
 .cenovka-plan b{font-weight:600}
 
 /* ---------- Signature blok: hranice site ---------- */
-.hranice-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
-.hranice-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(58% 62% at 78% 6%,
-    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
-.hranice-sekce .obsah{position:relative}
-.hranice-sekce h2{max-width:16ch}
-.hranice-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:58ch}
 
 /* Prepinac: dve radia jako dve tlacitka */
 .podoby{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);padding:4px;

@@ -73,6 +73,33 @@ body > nav.posunuto{border-bottom-color:var(--linka)}
   transition:transform .2s var(--krivka)}
 .sipka svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8}
 
+/* ---------- Tmava sekce a pilulkovy prepinac (sdilene) ----------
+   Sest stranek melo tenhle blok zkopirovany pod vlastnim prefixem
+   (.petlidi-sekce, .petlet-sekce, .poptavka-sekce, .linka-sekce,
+   .hranice-sekce, .stopa-sekce) -- oprava se musela delat sestkrat, coz se
+   nikdy nestalo. Prefixovane tridy zustavaji na tychz prvcich pro to, co je
+   na kazde strance jine; spolecny zaklad je tady. */
+.tmava{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.tmava::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 62% at 78% 6%,
+    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
+.tmava .obsah{position:relative}
+.tmava h2{max-width:16ch}
+.tmava-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:56ch}
+
+/* Prepinac dvou pohledu. Vzdy role="tablist" a aria-selected, nikdy trida --
+   stav ma cist i ctecka, ne jen oko. */
+.pilulky{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);
+  padding:4px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
+.pilulky[hidden]{display:none}
+.pilulky button{
+  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;border-radius:999px;
+  background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  border:0;cursor:pointer;min-height:44px;
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.pilulky button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
+.pilulky button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
+
 /* ---------- Hero sluzby: kratsi nez na homepage, cena hned videt ---------- */
 .hero{padding:120px var(--okraj) clamp(26px,3vw,40px);max-width:var(--sirka);margin:0 auto;
   display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);

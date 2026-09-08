@@ -13,25 +13,8 @@
    podoby vedle sebe; prepinace jsou v HTML skryte a odkryva je az skript.
    ========================================================================= */
 
-.poptavka-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
-.poptavka-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(58% 62% at 78% 6%,
-    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
-.poptavka-sekce .obsah{position:relative}
-.poptavka-sekce h2{max-width:16ch}
-.poptavka-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:56ch}
 
 /* ---------- Prepinac Google 2020 / AI asistent 2026 ---------- */
-.poptavka-prepinac{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);
-  padding:4px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
-.poptavka-prepinac[hidden]{display:none}
-.poptavka-prepinac button{
-  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;border-radius:999px;
-  background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
-  border:0;cursor:pointer;min-height:44px;
-  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
-.poptavka-prepinac button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
-.poptavka-prepinac button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
 
 /* ---------- Dve sceny: obrazovka + popis ---------- */
 .sceny{margin-top:22px}
