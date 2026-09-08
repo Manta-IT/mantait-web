@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robot na zadání: z poptávky výkres, z popisu seznam firem - Manta IT</title>
+<meta name="description" content="Stroj, který vezme jeden vstup z vaší firmy a vyrobí z něj hotový kus: výkres z poptávky, seznam firem k oslovení, článek z hlasové zprávy. Spustíte ho, vyrobí, zastaví se. Cena podle rozsahu, pevná po zkušebním zadání.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sluzba.css?v=2fe6f90">
+<link rel="stylesheet" href="/robot.css?v=2fe6f90">
+<link rel="stylesheet" href="/mobil.css?v=2fe6f90">
+<script>document.documentElement.classList.add('js')</script>
+  <link rel="canonical" href="https://mantait.cz/reseni-robot-na-zadani">
+  <meta property="og:title" content="Robot na zadání: z poptávky výkres, z popisu seznam firem - Manta IT">
+  <meta property="og:description" content="Dáte zadání, robot vyrobí výkres, seznam firem nebo článek a skončí. Jeden vstup, jeden výrobek, člověk schvaluje.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/reseni-robot-na-zadani">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Robot na zadání",
+    "description": "Dáte zadání, robot vyrobí výkres, seznam firem nebo článek a skončí. Jeden vstup, jeden výrobek, člověk schvaluje.",
+    "serviceType": "Robot na zadání",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}}
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=2fe6f90" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#sluzby">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<header class="hero" id="hero">
+  <div>
+    <a href="/reseni-podnikova-ai" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Podniková AI
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Dáte mu zadání.</span></span>
+      <span class="radek"><b class="r2">Dostanete</b></span>
+      <span class="radek"><b class="r2">hotový kus.</b></span>
+    </h1>
+    <p class="lead vstup z2">Robot na zadání vezme jeden vstup, který ve firmě už máte,
+    a vyrobí z něj něco nového. Z poptávky v mailu výkres a výkaz materiálu. Ze dvou
+    řádků o tom, koho hledáte, seznam čtyřiceti firem s kontaktem. Z hlasové zprávy
+    z auta článek. Pak se zastaví a čeká na další zadání. Nemá přístupy nikam, kam ho
+    nepošlete, a nic neodesílá bez vás.</p>
+  </div>
+
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">podle rozsahu</div>
+    <div class="cenovka-pod">Rozsah dělají tři věci:</div>
+    <dl class="cenovka-slozky">
+      <div><dt>vyrábí</dt><dd>co robot vyrábí</dd></div>
+      <div><dt>z čeho</dt><dd>z čeho to vyrábí</dd></div>
+      <div><dt>jak často</dt><dd>jak často ho spouštíte</dd></div>
+    </dl>
+    <div class="cenovka-pod">Cenu řeknu pevnou po jednom zkušebním zadání, ne po hodinách.</div>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
+
+<!-- ============ JEDEN VSTUP, JEDEN VYROBEK ============ -->
+<section class="linka-sekce" id="linka-sekce">
+  <div class="obsah">
+    <h2>Jeden vstup,<br>jeden výrobek.</h2>
+    <p class="linka-lead">Tři modelové roboty. U každého je vlevo to, co mu dá člověk,
+    uprostřed to, co robot udělá, a vpravo to, co přijde zpět. Pod tím jeden řádek:
+    kde do toho člověk sáhne. Vždycky je takové místo.</p>
+
+    <fieldset class="zalozky" id="zalozky" hidden>
+      <legend class="jen-ctecka">Modelový robot</legend>
+      <label class="zalozka"><input type="radio" name="robot" value="vykres" checked><span>Výkres z poptávky</span></label>
+      <label class="zalozka"><input type="radio" name="robot" value="seznam"><span>Seznam firem z popisu</span></label>
+      <label class="zalozka"><input type="radio" name="robot" value="clanek"><span>Článek z poznámek</span></label>
+    </fieldset>
+
+    <div class="roboti" id="roboti">
+
+      <article class="robot aktivni" data-robot="vykres">
+        <h3 class="robot-nazev">Výkres z poptávky</h3>
+        <p class="robot-prokoho">pro koho: zámečnická nebo konstrukční firma</p>
+        <div class="prubeh">
+          <div class="vstup-blok">
+            <span class="stitek-mono">co dáte</span>
+            <p>Mail od zákazníka.</p>
+            <p class="citace">"Dobrý den, potřebujeme zábradlí na terasu, asi 12 metrů,
+            výška 1,1 m, nerez, kotvení do betonu. Fotka v příloze."</p>
+            <p class="priloha">Příloha: jedna fotka terasy.</p>
+          </div>
+          <div class="spoj spoj-1" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="robot-stred">
+            <div class="kruh">robot</div>
+            <ol class="kroky">
+              <li><b>1</b><span>vytáhne z mailu rozměry, materiál a způsob kotvení</span></li>
+              <li><b>2</b><span>doplní, co v mailu není, z vašich pravidel: rozteč sloupků, profil, výplň</span></li>
+              <li><b>3</b><span>vygeneruje výkres ze šablony ve vašem AutoCADu</span></li>
+              <li><b>4</b><span>spočítá výkaz materiálu a označí, co si domyslel</span></li>
+            </ol>
+          </div>
+          <div class="spoj spoj-2" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="vystup-blok">
+            <span class="stitek-mono">co dostanete</span>
+            <p>Výkres DWG + PDF náhled.</p>
+            <p>Výkaz materiálu: 9 sloupků 40x40, 3 pole madla, 24 m lanka, 9 kotev.</p>
+            <p class="domysleno">domyšleno: rozteč sloupků 1,5 m, výplň lanko.</p>
+          </div>
+        </div>
+        <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Konstruktér
+        výkres otevře, zkontroluje dva domyšlené údaje a schválí. Teprve pak jde
+        k zákazníkovi. Robot sám neposílá nic.</p>
+      </article>
+
+      <article class="robot" data-robot="seznam">
+        <h3 class="robot-nazev">Seznam firem z popisu</h3>
+        <p class="robot-prokoho">pro koho: firma, která hledá zákazníky</p>
+        <div class="prubeh">
+          <div class="vstup-blok">
+            <span class="stitek-mono">co dáte</span>
+            <p>Dva řádky od obchodníka.</p>
+            <p class="citace">"Strojírenské firmy do 50 lidí v Jihomoravském kraji, které
+            mají vlastní výrobu a web starší pěti let. Chci mluvit s jednatelem."</p>
+          </div>
+          <div class="spoj spoj-1" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="robot-stred">
+            <div class="kruh">robot</div>
+            <ol class="kroky">
+              <li><b>1</b><span>přeloží popis na kritéria: obor, kraj, velikost, vlastní výroba</span></li>
+              <li><b>2</b><span>projde veřejný rejstřík a weby firem, které kritéria splňují</span></li>
+              <li><b>3</b><span>u každé dohledá jméno jednatele a kontakt</span></li>
+              <li><b>4</b><span>u každé napíše jednu větu, proč do popisu sedí, a vyřadí ty, co nesedí</span></li>
+            </ol>
+          </div>
+          <div class="spoj spoj-2" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="vystup-blok">
+            <span class="stitek-mono">co dostanete</span>
+            <p>Tabulka 40 firem: název, IČO, web, jednatel, kontakt, důvod.</p>
+            <ul class="radky">
+              <li>Kovo Beneš s.r.o. / Blansko / 32 lidí / vlastní CNC výroba, web z 2018 / důvod: splňuje vše</li>
+              <li>Strojírna Horák a syn / Vyškov / 48 lidí / web 2016 / důvod: splňuje vše, kontakt jen obecný</li>
+            </ul>
+          </div>
+        </div>
+        <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Obchodník
+        seznam projde a škrtne, koho oslovit nechce. Robot nikomu nepíše a nic
+        neodesílá; oslovení je práce člověka.</p>
+      </article>
+
+      <article class="robot" data-robot="clanek">
+        <h3 class="robot-nazev">Článek z poznámek</h3>
+        <p class="robot-prokoho">pro koho: kdokoliv, kdo má co říct a nemá čas psát</p>
+        <div class="prubeh">
+          <div class="vstup-blok">
+            <span class="stitek-mono">co dáte</span>
+            <p>Hlasová zpráva, 4 minuty, nahraná v autě.</p>
+            <p class="citace">"...a to je přesně to, co lidem nikdo neřekne, že ta dotace
+            se dá podat i bez..."</p>
+          </div>
+          <div class="spoj spoj-1" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="robot-stred">
+            <div class="kruh">robot</div>
+            <ol class="kroky">
+              <li><b>1</b><span>přepíše hlas na text</span></li>
+              <li><b>2</b><span>vytáhne hlavní myšlenku a tři body, které ji nesou</span></li>
+              <li><b>3</b><span>napíše článek v tónu vašich starších textů, ne v tónu stroje</span></li>
+              <li><b>4</b><span>navrhne tři nadpisy a perex</span></li>
+            </ol>
+          </div>
+          <div class="spoj spoj-2" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="vystup-blok">
+            <span class="stitek-mono">co dostanete</span>
+            <p>Článek 600 slov + perex + tři nadpisy na výběr:</p>
+            <ul class="nadpisy">
+              <li>"Dotace bez dotační kanceláře"</li>
+              <li>"Co vám o dotaci nikdo neřekne"</li>
+              <li>"Podali jsme to sami. Tady je jak."</li>
+            </ul>
+            <p class="domysleno">dvě místa, kde si robot nebyl jistý, co jste říkal, označená v textu.</p>
+          </div>
+        </div>
+        <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Autor článek
+        přečte, opraví dvě označená místa a schválí. Zveřejnění je jeho klik, ne robotův.</p>
+      </article>
+
+    </div>
+
+    <p class="linka-pozn">Tři modelové roboty, ne hotové produkty. Firmy v seznamu jsou
+    smyšlené. Váš robot bude mít jiný vstup a jiný výrobek; kroky uprostřed se píšou pro
+    vás a dostanete je popsané česky.</p>
+  </div>
+</section>
+
+<!-- ============ TRI STROJE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Tři stroje, které si lidé pletou.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Všechny tři pracují s daty
+    vaší firmy. Liší se tím, jestli něco přenášejí, nebo vyrábějí, a jestli běží pořád,
+    nebo jen na zavolání.</p>
+
+    <div class="stroje-obal">
+      <div class="stroje">
+        <div class="stroj">
+          <h3>Propojení</h3>
+          <div><span class="stroj-stitek">Co dělá</span><p>přenáší data mezi systémy, které už máte</p></div>
+          <div><span class="stroj-stitek">Co z něj vypadne</span><p>stejná data na jiném místě</p></div>
+          <div><span class="stroj-stitek">Kdy běží</span><p>pořád, vždycky stejně</p></div>
+          <div><span class="stroj-stitek">Co stojí</span><p>podle počtu systémů</p></div>
+          <div><span class="stroj-stitek">Kam jít</span><p><a href="/reseni-propojeni">Propojení a automatizace</a></p></div>
+        </div>
+        <div class="stroj">
+          <h3>AI zaměstnanec</h3>
+          <div><span class="stroj-stitek">Co dělá</span><p>pracuje nepřetržitě, má přístupy, ráno hlásí</p></div>
+          <div><span class="stroj-stitek">Co z něj vypadne</span><p>vyřízená agenda</p></div>
+          <div><span class="stroj-stitek">Kdy běží</span><p>pořád, sám se rozhoduje, co je na řadě</p></div>
+          <div><span class="stroj-stitek">Co stojí</span><p>zavedení 89 000 Kč + provoz od 8 000 Kč měsíčně</p></div>
+          <div><span class="stroj-stitek">Kam jít</span><p><a href="/reseni-ai-zamestnanec">AI zaměstnanec</a></p></div>
+        </div>
+        <div class="stroj robot-sloupec">
+          <h3><span class="stroj-tady">jste tady</span>Robot na zadání</h3>
+          <div><span class="stroj-stitek">Co dělá</span><p>vezme zadání, vyrobí něco nového, skončí</p></div>
+          <div><span class="stroj-stitek">Co z něj vypadne</span><p>výkres, seznam, článek, nabídka</p></div>
+          <div><span class="stroj-stitek">Kdy běží</span><p>jen když ho spustíte</p></div>
+          <div><span class="stroj-stitek">Co stojí</span><p>podle rozsahu</p></div>
+          <div><span class="stroj-stitek">Kam jít</span><p>jste tady</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="stroje-veta">Otázka, která to rozhodne: má to pracovat i ve chvíli, kdy
+    nikdo nic nezadal? Když ano, je to zaměstnanec. Když ne, je to robot. A když z toho
+    nemá vzniknout nic nového, jen se to má přestat opisovat, je to propojení.</p>
+  </div>
+</section>
+
+<!-- ============ PROC TO NIKDO NEPOSTAVIL ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Proč to u vás<br>ještě nikdo nepostavil.</h2>
+    <div class="delene">
+      <div>
+        <p>Většina firem, které AI používají, ji používá tak, že si někdo otevře okno
+        a něco do něj napíše. To je práce člověka s nástrojem: výsledek si musí sám
+        přenést do výkresu, do tabulky, do článku. Robot je ta samá schopnost, jen
+        postavená napevno: vstup je vždycky stejného druhu, výrobek taky, a člověk nic
+        nepřenáší.</p>
+        <p>Postavit to není drahé ani dlouhé. Je to práce někoho, kdo tomu rozumí, umí to
+        napsat tak, aby to běželo bez něj, a popsat, co to umí a co ne. Lidé, kteří tomu
+        nerozumějí, si to nepostaví, a nikdo jim to nemá za zlé. Já to postavím rychle
+        a popíšu vám hranice.</p>
+      </div>
+      <div>
+        <div class="cisla-svisle">
+          <div><b>13</b><span>% českých firem: generativní AI na psaní textů, 2025</span></div>
+          <div><b>18</b><span>% českých firem: AI jako celek, 2025</span></div>
+          <div><b>54</b><span>% firem nad 250 lidí: AI jako celek, 2025</span></div>
+        </div>
+        <p class="dolozeny">Generativní AI na psaní textů používalo v roce 2025 třináct
+        procent českých firem. AI jako celek osmnáct procent, u firem nad 250 lidí
+        padesát čtyři. Velká firma měla lidi, kteří jí to postavili. To je celý rozdíl.</p>
+        <span class="zdroj-mono">ČSÚ, Využívání ICT v podnikatelském sektoru, data za rok 2025, publikováno 22. 5. 2026.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CO PRESNE DOSTANETE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Co přesně dostanete.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Ne přístup k nástroji. Stroj,
+    který u vás běží, a k němu tři papíry.</p>
+    <div class="vystupy">
+      <div class="vystup"><span class="vystup-c">01</span><div>
+        <h3>Robot v provozu na vašich datech</h3>
+        <p>Napojený na to, odkud bere vstup (schránka, složka, formulář), a na to, kam
+        dává výrobek (AutoCAD, tabulka, složka s články). Vyzkoušený na vašich skutečných
+        zadáních, ne na ukázce.</p></div></div>
+      <div class="vystup"><span class="vystup-c">02</span><div>
+        <h3>Popis, co umí a co ne</h3>
+        <p>Dvě stránky česky. Jaký vstup bere a jaký ne, co si smí domyslet a co musí
+        nechat prázdné, kde se zastaví a čeká. Tenhle papír je důležitější než robot:
+        podle něj vaši lidé poznají, kdy mu věřit.</p></div></div>
+      <div class="vystup"><span class="vystup-c">03</span><div>
+        <h3>Návod pro člověka, který ho spouští</h3>
+        <p>Kde se dá vstup, jak se pozná, že robot doběhl, kde je výrobek a co dělat,
+        když je označené "domyšleno". Jedna stránka.</p></div></div>
+      <div class="vystup"><span class="vystup-c">04</span><div>
+        <h3>Kde běží a kdo ho spouští</h3>
+        <p>Buď na vašem serveru, když máte lokální Podnikovou AI, nebo v cloudu, kde ven
+        jde jen vstup a výrobek. Spouští ho ten, kdo dnes dělá tu práci ručně:
+        přeposláním mailu, vložením souboru do složky, nebo tlačítkem. Robot čeká, dokud
+        to neudělá.</p></div></div>
+      <div class="vystup"><span class="vystup-c">05</span><div>
+        <h3>Seznam toho, co se má hlídat</h3>
+        <p>Co se může změnit (zákazník začne posílat poptávky jinak, změní se ceník, změní
+        se šablona výkresu) a co se pak s robotem udělá. Většina změn je úprava pravidel,
+        ne stavba znovu.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KDE ZUSTAVA CLOVEK ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Kde zůstává člověk.<br>Vždycky někde.</h2>
+    <div class="delene">
+      <div>
+        <p>Robot vyrábí, a co se vyrábí, může být špatně. Proto má každý robot, kterého
+        postavím, jedno místo, kde se zastaví a čeká na člověka. To místo není záplata.
+        Je to součást zadání a určujete ho vy.</p>
+        <p>A robot sám říká, kde si nebyl jistý. Co si domyslel, označí. Co nenašel, nechá
+        prázdné a napíše to. Nikdy nedoplní číslo, aby výrobek vypadal hotově.</p>
+        <p class="zaver-odst">Když chcete stroj, který tahle tři místa obejde a rozhoduje
+        sám, není to robot. Je to <a href="/reseni-ai-zamestnanec">AI zaměstnanec</a>,
+        a tam má hranici, kterou určujete stejně vy.</p>
+      </div>
+      <div>
+        <ol class="mista">
+          <li><span class="mista-c">1</span><div>
+            <h3>Schválení před odesláním <span class="ceka">čeká</span></h3>
+            <p>Nic, co jde k zákazníkovi, k úřadu nebo na web, neodejde bez kliknutí
+            člověka. To je pravidlo, které neposunuju.</p></div></li>
+          <li><span class="mista-c">2</span><div>
+            <h3>Výjimky</h3>
+            <p>Vstup, který robot nepoznal (poptávka bez rozměrů, hlasová zpráva v hluku,
+            popis cílovky, který sedí na tři tisíce firem), se vrátí člověku s větou, co
+            chybí. Robot nehádá.</p></div></li>
+          <li><span class="mista-c">3</span><div>
+            <h3>Změna pravidel</h3>
+            <p>Když se změní ceník, šablona nebo způsob, jak zákazníci píšou, mění se
+            pravidla robota, a to děláte vy nebo já podle návodu. Robot si pravidla sám
+            nemění.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CO ZNAMENA PODLE ROZSAHU ============ -->
+<section>
+  <div class="obsah">
+    <h2>Co znamená "podle rozsahu".</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Cenu robota dělají tři věci
+    a všechny tři se dají říct dopředu. Po jednom zkušebním zadání dostanete pevnou
+    částku za stavbu, ne odhad hodin.</p>
+
+    <div class="slozky">
+      <div class="slozka">
+        <span class="slozka-stitek">co vyrábí</span>
+        <p>Tabulka je levnější než výkres. Článek je levnější než nabídka s cenou, protože
+        u nabídky se musí robot napojit na ceník a hlídat, co si nesmí domyslet. Čím víc
+        pravidel má výrobek, tím víc práce je v tom je napsat a vyzkoušet.</p>
+      </div>
+      <div class="slozka">
+        <span class="slozka-stitek">z čeho</span>
+        <p>Jeden druh vstupu (mail od zákazníka) je levnější než tři (mail, telefonní
+        zápis, formulář z webu). A vstup, který už máte v pořádku, je levnější než vstup,
+        který se nejdřív musí uklidit. Když z AI plánu vyjde, že vstup není z čeho brát,
+        jde se nejdřív přes <a href="/reseni-mapa-firmy">Přípravu firmy</a>.</p>
+      </div>
+      <div class="slozka">
+        <span class="slozka-stitek">jak často</span>
+        <p>Robot, který běží dvakrát měsíčně, nepotřebuje dohled. Robot, který běží
+        dvacetkrát denně, potřebuje někoho, kdo si všimne, když se změní vstup. To je
+        provoz a domluví se zvlášť.</p>
+      </div>
+      <div class="slozka provoz">
+        <span class="slozka-stitek">provoz</span>
+        <p>Stavba je jednorázová. Provoz se platí jen u robota, který běží často:
+        u cloudové podoby za to, co robot při běhu spotřebuje, plus dohled; u lokální
+        podoby běží na vašem serveru z Podnikové AI a platí se jen dohled. Robot, který
+        stojí, nestojí nic.</p>
+      </div>
+    </div>
+
+    <p class="rozsah-pozn">Řád ceny nesděluji dřív, než vidím zadání, protože bych ho
+    hádal. Zkušební zadání je jedna vaše skutečná poptávka nebo jeden popis cílovky;
+    po něm je cena pevná.</p>
+  </div>
+</section>
+
+<!-- ============ KDY NE ============ -->
+<section class="varovani">
+  <div class="obsah">
+    <span class="stitek">Buďme si upřímní</span>
+    <div class="varovani-delene">
+      <div class="varovani-uvod">
+        <h2>Kdy vám robota nedoporučím</h2>
+        <p>Robot dává smysl tam, kde stejný druh vstupu chodí pořád dokola a pokaždé
+        z něj někdo ručně dělá totéž. Tady jsou čtyři případy, kdy to tak není.</p>
+      </div>
+      <div>
+        <div class="varovani-polozka">
+          <h3>Když vstup neexistuje v datech</h3>
+          <p>Poptávky, které si obchodník pamatuje z telefonu. Ceník, který má v hlavě
+          jeden člověk. Z toho robot nevyrobí nic, protože nemá co vzít. Nejdřív
+          <a href="/reseni-mapa-firmy">Příprava firmy</a>, a to je jiná a levnější
+          zakázka, než stavět robota na písku.</p>
+        </div>
+        <div class="varovani-polozka">
+          <h3>Když je to práce na hodinu, jednou</h3>
+          <p>Jeden článek, jeden seznam firem, jeden výkres. To udělám nebo si to uděláte
+          za hodinu s nástrojem, který stojí pár set korun měsíčně. Robot se staví na
+          věc, která se opakuje; jinak je to nejdražší způsob, jak udělat jednu věc.</p>
+        </div>
+        <div class="varovani-polozka">
+          <h3>Když chcete, aby rozhodoval sám</h3>
+          <p>Aby sám odpověděl zákazníkovi, sám poslal nabídku, sám zveřejnil článek. To
+          robot nedělá a nebude. Když to potřebujete, je to
+          <a href="/reseni-ai-zamestnanec">AI zaměstnanec</a>, a i ten má čáru, za
+          kterou se zastaví.</p>
+        </div>
+        <div class="varovani-polozka">
+          <h3>Když se vstup pokaždé liší</h3>
+          <p>Robot umí jeden druh zadání dobře. Když každá poptávka vypadá jinak a polovina
+          z nich je vlastně jiná práce, robot bude polovinu vracet člověku. Pak je lepší
+          nejdřív sjednotit, jak zadání chodí, a robota stavět až na to.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTYRI VECI ============ -->
+<section class="vysledky">
+  <div class="obsah">
+    <h2>Čtyři věci, které platí u každého robota.</h2>
+    <p class="vysledky-lead">Ne odhady úspor. Pravidla stavby, na která se podepíšu.</p>
+    <div class="cisla">
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 100 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="26" height="26" rx="3" fill="#12A06B"/><path data-i="1" style="--i:1" d="M30 17h40" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2" stroke-linecap="round"/><rect data-i="2" style="--i:2" x="74" y="4" width="26" height="26" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">1<span class="cislo-jednotka">vstup, 1 výrobek</span></b>
+        <span class="cislo-popis">Robot dělá jednu věc. Když má dělat dvě, jsou to dva roboty, a ten druhý je levnější, protože stojí na stejném zázemí.</span>
+      </div>
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 100 34" aria-hidden="true"><path data-i="0" style="--i:0" d="M0 17h38" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2" stroke-linecap="round"/><circle data-i="1" style="--i:1" cx="50" cy="17" r="8" fill="#12A06B"/><path data-i="2" style="--i:2" d="M62 17h38" stroke="color-mix(in srgb, #FBFBF9 30%, transparent)" stroke-width="2" stroke-linecap="round"/></svg>
+        <b class="cislo-hodnota">1<span class="cislo-jednotka">místo pro člověka</span></b>
+        <span class="cislo-popis">Nic, co jde ven, neodejde bez kliknutí. Určujete ho vy, nikdy ho neruším.</span>
+      </div>
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 52 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="2" width="22" height="30" rx="3" fill="#12A06B"/><rect data-i="1" style="--i:1" x="29" y="2" width="22" height="30" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">2<span class="cislo-jednotka">strany popisu</span></b>
+        <span class="cislo-popis">Co umí a co ne, česky. Podle nich vaši lidé poznají, kdy mu věřit.</span>
+      </div>
+      <div class="cislo-blok">
+        <svg class="cislo-vizual" viewBox="0 0 70 34" aria-hidden="true"><rect data-i="0" style="--i:0" x="0" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="1" style="--i:1" x="25" y="4" width="20" height="26" rx="3" fill="#12A06B"/><rect data-i="2" style="--i:2" x="50" y="4" width="20" height="26" rx="3" fill="#12A06B"/></svg>
+        <b class="cislo-hodnota">3<span class="cislo-jednotka">týdny do prvního výrobku</span></b>
+        <span class="cislo-popis">Od zadání k robotovi, který u vás vyrobil první skutečný kus. Termín z nabídky, ne průměr.</span>
+      </div>
+    </div>
+    <p class="cisla-pozn">Tři týdny jsou termín z nabídky pro robota běžné velikosti; u výkresu se šablonou, která ještě neexistuje, řeknu jiný dopředu. Ostatní tři jsou pravidla stavby.</p>
+  </div>
+</section>
+
+<!-- ============ OSA ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Od zadání k prvnímu výrobku</h2>
+    <p class="stitek" style="margin:16px 0 0">Návrh průběhu pro robota běžné velikosti.</p>
+    <div class="osa">
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h6M14 4h6M4 8h6M14 8h6M4 12h6M14 12h6M4 16h6M14 16h6M4 20h6M14 20h6"/></svg></span>
+        <div class="etapa-kdy">Týden 1, půl dne</div>
+        <h3>Zadání a zkušební vstupy</h3>
+        <p>Sedneme si s člověkem, který tu práci dnes dělá ručně. Ukáže mi pět
+        skutečných zadání z poslední doby a k nim to, co z nich vyrobil. Od vás
+        potřebuji: toho člověka na půl dne a těch pět dvojic vstup a výrobek. Výstup:
+        popis, co robot bude a nebude dělat, a pevná cena.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12h5M17 12h5"/><circle cx="12" cy="12" r="5"/></svg></span>
+        <div class="etapa-kdy">Týden 2</div>
+        <h3>Stavba na vašich vzorcích</h3>
+        <p>Postavím robota a vyzkouším ho na těch pěti zadáních. Porovnám, co vyrobil,
+        s tím, co vyrobil váš člověk, a upravím pravidla. Od vás potřebuji: hodinu na to,
+        aby se váš člověk podíval na první výrobky a řekl, co je jinak.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12h7M15 12h7"/><circle cx="11" cy="12" r="2"/></svg></span>
+        <div class="etapa-kdy">Týden 3</div>
+        <h3>Zkušební provoz na živých zadáních</h3>
+        <p>Robot běží na tom, co chodí právě teď. Každý výrobek schvaluje váš člověk a já
+        jsem u toho. Tady se ukáže, co si robot domýšlí a kde má být přísnější. Od vás
+        potřebuji: toho člověka, aby dělal svou práci jako dřív, jen s robotem vedle sebe.</p>
+      </div>
+      <div class="etapa">
+        <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M9 16h7"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div class="etapa-kdy">Konec třetího týdne</div>
+        <h3>Předání</h3>
+        <p>Robot běží, popis a návod leží u vás, člověk ví, kde se robot zastaví. Od vás
+        potřebuji: hodinu nad předáním. Pak už robota spouštíte sami.</p>
+      </div>
+    </div>
+    <p class="cesta-pozn">Celkem to sebere vaší firmě zhruba den práce jednoho člověka,
+    rozložený do tří týdnů. U výkresu, ke kterému ještě neexistuje šablona, přibývá týden
+    na šablonu; řeknu to v etapě 1, ne až z faktury.</p>
+  </div>
+</section>
+
+<!-- ============ KDE ROBOT STOJI NA MAPE ============ -->
+<section>
+  <div class="obsah">
+    <h2>Kde robot stojí na mapě.</h2>
+    <p class="lead" style="margin-top:16px;max-width:56ch">Robot je menší zakázka vedle
+    cesty. Nekupuje se první a nekupuje se sám.</p>
+    <div class="mapa-radky">
+      <div class="mapa-radek">
+        <span class="mapa-poloha">před</span>
+        <div>
+          <h3><a href="/#cenik">AI plán do 48 hodin, 9 900 Kč</a></h3>
+          <p>Řekne, jestli je na tu vaši věc robot, AI zaměstnanec, nebo nic. Robot dostane
+          smysl u té části agend, které mají jasný vstup a jasný výrobek. Cena plánu se
+          z robota odečte.</p>
+        </div>
+      </div>
+      <div class="mapa-radek">
+        <span class="mapa-poloha">před</span>
+        <div>
+          <h3><a href="/reseni-mapa-firmy">Příprava firmy</a></h3>
+          <p>Když vstup není z čeho brát (poptávky v hlavách, ceník ve dvou souborech),
+          jde se nejdřív tam. Robot postavený na neuklizeném vstupu vrací polovinu zadání
+          zpátky.</p>
+        </div>
+      </div>
+      <div class="mapa-radek">
+        <span class="mapa-poloha">vedle</span>
+        <div>
+          <h3><a href="/reseni-propojeni">Propojení a automatizace</a></h3>
+          <p>Když z toho nemá vzniknout nic nového, jen se má přestat opisovat, je to
+          propojení, ne robot. Často se dělají spolu: propojení robotovi přiveze vstup
+          a odveze výrobek.</p>
+        </div>
+      </div>
+      <div class="mapa-radek">
+        <span class="mapa-poloha">nad</span>
+        <div>
+          <h3><a href="/reseni-podnikova-ai">Podniková AI</a></h3>
+          <p>Rozhodnutí, kde data žijí, jestli u vás na serveru, nebo v cloudu. Robot to
+          rozhodnutí přebírá; sám ho nedělá. Lokální robot běží na stejném stroji jako
+          lokální AI zaměstnanec.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Co když udělá chybu?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Udělá. Proto nic, co jde ven, neodejde bez kliknutí vašeho člověka, a proto robot sám označí, co si domyslel a kde si nebyl jistý. Chyba, kterou člověk najde při schválení, je pro mě zadání: upravím pravidla, aby se nestala podruhé. Chyba, kterou by robot poslal ven sám, se stát nemůže, protože sám nic neposílá.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Kdo to spouští?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Ten, kdo dnes dělá tu práci ručně. Přepošle mail do schránky robota, vloží soubor do složky, nebo zmáčkne tlačítko; podle toho, co je u vás nejpřirozenější. Nikdo se nemusí učit nový program. Robot čeká, dokud to neudělá, a když ho nikdo nespustí, nic se neděje a nic to nestojí.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Můžu ho pak měnit sám?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Pravidla ano. Co si smí domyslet, jaké hodnoty bere z ceníku, jak má vypadat výkaz, to je v souboru s pravidly, který je napsaný česky a je součástí návodu. Stavbu robota, tedy to, jak čte vstup a jak vyrábí výrobek, měním já, protože tam se dá rozbít víc, než je vidět. Když se u vás změní vstup nebo výrobek, je to obvykle hodina práce, ne stavba znovu.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Běží to na mých datech? Kam odcházejí?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Robot čte jen to, co mu dáte, a píše jen tam, kam ho pošlete. U lokální podoby Podnikové AI běží na vašem serveru a nic neodchází. U cloudové odchází jeden vstup (jedna poptávka, jedna hlasová zpráva) a vrací se jeden výrobek; vaše databáze, ceník ani historie nikam nejdou. Které z toho platí pro vás, se rozhodne na hubu Podnikové AI, ne tady.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Kolik stojí, když ho spustím dvěstěkrát za měsíc?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Stavba stojí pořád stejně. U cloudové podoby přibývá to, co robot při běhu spotřebuje, a to se dá říct dopředu na jeden běh, takže si dvěstěkrát vynásobíte sami. U lokální podoby přibývá jen elektřina. A u robota, který běží takhle často, doporučím dohled: někdo si musí všimnout, když se vstup začne měnit, dřív než to pozná zákazník.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Nestačí na to nástroj, který máme předplacený?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Na jeden kus stačí a je to dobrá věc. Rozdíl je v tom, kdo přenáší výsledek: u nástroje ho člověk zkopíruje do výkresu, do tabulky, do článku, a pokaždé to udělá trochu jinak. Robot má vstup a výrobek napevno a pokaždé to udělá stejně. Když tu práci děláte dvakrát měsíčně, nechte si nástroj. Když dvacetkrát týdně, je to na robota.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Co když zákazníci začnou posílat poptávky jinak?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Robot to pozná dřív než vy: vstup, který nesedí, vrátí člověku s větou, co chybí. Když se to začne opakovat, je to změna pravidel, obvykle hodina práce. Na to je v předání seznam toho, co se má hlídat. Robot, který začne tiše vracet polovinu zadání, je robot, o kterém se má vědět, a proto to vrací nahlas.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Pošlete mi jedno zadání.</h2>
+    <p>Jednu poptávku, jeden popis cílovky, jednu hlasovou zprávu. A k tomu, co z toho
+    u vás dnes někdo vyrobil ručně. Do týdne vám řeknu, jestli na to robot je, co by
+    vyrobil a za kolik. Když na to robot není, řeknu vám, co je to místo něj, a nic si
+    neobjednáváte.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
+</footer>
+
+<script src="/sluzba.js?v=2fe6f90"></script>
+<script>
+/* Jeden vstup, jeden vyrobek: zalozky prepinaji tri modelove roboty.
+   Bez skriptu jsou videt vsechny tri pod sebou i s nazvy; zalozky jsou v HTML
+   skryte. Prepnuti nic neprehrava -- prubeh bezi jednou pri doscrollovani
+   (odkryj) a pak stoji. */
+(function(){
+  const sekce = document.getElementById('linka-sekce');
+  const zalozky = document.getElementById('zalozky');
+  const roboti = [...document.querySelectorAll('#roboti .robot')];
+  if (!sekce || !zalozky || roboti.length < 2) return;
+  zalozky.hidden = false;
+
+  function vyber(klic){
+    roboti.forEach(r => r.classList.toggle('aktivni', r.dataset.robot === klic));
+  }
+  zalozky.addEventListener('change', e => {
+    if (e.target.name === 'robot') vyber(e.target.value);
+  });
+  vyber(zalozky.querySelector('input[name="robot"]:checked').value);
+  odkryj(sekce, .3);
+})();
+</script>
+<script src="/mobil.js?v=2fe6f90"></script>
+</body>
+</html>

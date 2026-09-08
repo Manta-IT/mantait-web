@@ -680,7 +680,7 @@ textarea{min-height:104px;resize:vertical}
   min-height:36px;transition:color .2s var(--krivka-klid),background .2s var(--krivka-klid)}
 .akce-temata button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=4b84551">
+  <link rel="stylesheet" href="/mobil.css?v=2fe6f90">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -736,7 +736,7 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=4b84551" defer></script>
+  <script src="/gtag.js?v=2fe6f90" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
@@ -1029,7 +1029,7 @@ textarea{min-height:104px;resize:vertical}
     {id:'zakon', zalozka:'Zákon o kybernetické bezpečnosti', h2:'Nový zákon o kybernetické bezpečnosti. Dopadá i na vás?',
      popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Sám tuhle dodávku nedělám, doporučím prověřeného partnera. A průběžně sem píšu, co se kolem zákona mění.',
      udaje:[['3','otázky stačí k odpovědi'],['5 minut','a víte, kam patříte'],['0 Kč','za doporučení partnera']],
-     cta:['Projít tři otázky','sluzba-bezpecnost.html'], vedlejsi:['Co po firmách zákon chce','/clanky/novy-zakon-kyberbezpecnost-3-otazky'], plati:true},
+     cta:['Projít tři otázky','/reseni-bezpecnost'], vedlejsi:['Co po firmách zákon chce','/clanky/novy-zakon-kyberbezpecnost-3-otazky'], plati:true},
   ].filter(t=>t.plati);
   if(!TEMATA.length){ document.getElementById('akce')?.remove(); return; }
   const $ = id => document.getElementById(id);
@@ -1063,46 +1063,46 @@ textarea{min-height:104px;resize:vertical}
 const KROKY = [
   {id:'priprava', c:'1', nazev:'Příprava firmy', x:120, y:165, nad:true, role:'Krok 1: než se cokoliv koupí nebo postaví',
    text:'Musí být jasné, kudy tečou data, kdo co dělá a co lidem denně bere čas. Za dva týdny mapa, nálezy podle peněz a jedna oprava nasazená v ceně. Nejčastěji běží souběžně se zadáním.',
-   cena:'39 000 Kč', pozn:'pevná cena, dva týdny', odkaz:'sluzba-mapa-firmy.html',
+   cena:'39 000 Kč', pozn:'pevná cena, dva týdny', odkaz:'/reseni-mapa-firmy',
    varianty:['Mapa dat a procesů','+ pravidla, kdo co smí'], pred:[], po:['zadani','vyber','ai']},
   {id:'zadani', c:'2', nazev:'Zadání nové služby', x:340, y:165, nad:false, role:'Krok 2: co přesně se má stát',
    text:'Spouštíte novou službu a systémy už máte? Vydlabu ze všech, kdo do toho mluví, jedno zadání: co, jak, proč, kam. Schválené, podepsané, s návazností na to, co ve firmě běží. Dodavatel pak staví to, co chcete, ne to, co si domyslel.',
-   cena:'podle rozsahu', pozn:'konec předáním zadání', odkaz:'#napiste',
+   cena:'podle rozsahu', pozn:'konec předáním zadání', odkaz:'/reseni-zadani',
    varianty:['Schválené zadání','+ výběr dodavatele','+ vedení dodávky'], pred:['priprava'], po:['vyber','aplikace']},
   {id:'vyber', c:'3', nazev:'Výběr systému', x:580, y:124, nad:true, cesta:'koupit hotové', role:'Krok 3, cesta A: koupit, co už existuje',
    text:'Docházka, HR, sklad, CRM, kamery. Něco z toho už někdo postavil a stačí vybrat správně. Projdu, co na trhu je, a doporučím, co sedí vaší velikosti a vašim lidem. Bez provize od dodavatele.',
-   cena:'podle rozsahu', pozn:'konec doporučením', odkaz:'#napiste',
+   cena:'podle rozsahu', pozn:'konec doporučením', odkaz:'/reseni-vyber-systemu',
    varianty:['Doporučení a poptávka','+ zavedení','+ migrace dat','+ zaškolení'], pred:['zadani'], po:['propojeni']},
   {id:'aplikace', c:'3', nazev:'Aplikace na míru', x:580, y:256, nad:false, cesta:'nebo postavit', role:'Krok 3, cesta B: postavit, co nikdo neprodává',
    text:'Když to, co potřebujete, nikdo neprodává. První funkční verze do týdne, další podle připomínek. Zdrojový kód je váš. Se zadáním v ruce jdete rovnou sem.',
-   cena:'od 50 000 Kč', pozn:'pevná cena za rozsah', odkaz:'sluzba-aplikace.html',
+   cena:'od 50 000 Kč', pozn:'pevná cena za rozsah', odkaz:'/reseni-nova-aplikace',
    varianty:['Aplikace v provozu','+ napojení na systémy'], pred:['zadani'], po:['propojeni']},
   {id:'propojeni', c:'4', nazev:'Propojení a automatizace', x:820, y:165, nad:true, role:'Krok 4: aby si systémy rozuměly',
    text:'Účetnictví, sklad, e-shop a CRM si předávají data samy. Nikdo nic nepřepisuje a čísla sedí všude stejně. Dává smysl až ve chvíli, kdy je co propojovat.',
-   cena:'podle rozsahu', pozn:'pevná cena po prvním hovoru', odkaz:'sluzba-propojeni.html',
+   cena:'podle rozsahu', pozn:'pevná cena po prvním hovoru', odkaz:'/reseni-propojeni',
    varianty:['Propojení bez kódu','Propojovací aplikace'], pred:['vyber','aplikace'], po:['ai']},
   {id:'ai', c:'5', nazev:'Podniková AI', x:1060, y:165, nad:false, role:'Krok 5: AI nad vlastními daty',
    text:'AI, která zná vaše data a nepouští je ven. U vás na serveru, nebo v cloudu, když to dává smysl. Součástí je zaškolení lidí, ne jen instalace. Stojí na tom, že data tečou a jsou v pořádku.',
-   cena:'podle varianty', pozn:'lokální nebo cloud', odkaz:'sluzba-ai-zamestnanec.html',
+   cena:'podle varianty', pozn:'lokální nebo cloud', odkaz:'/reseni-ai-zamestnanec',
    varianty:['Lokální AI','Cloudová AI'], pred:['priprava','propojeni'], po:[]},
 ];
 
 const VEDENI = {id:'vedeni', nazev:'Dlouhodobé vedení IT', role:'Celá cesta na paušál',
   text:'Všech pět kroků, v pořadí, které dává smysl, a bez toho, abyste je museli objednávat zvlášť. Co pořídit, co postavit, co propojit a kdy. Vy se k IT vracíte jen na poradách.',
-  cena:'od 50 000 Kč měsíčně', pozn:'vyjde levněji než kroky zvlášť', odkaz:'sluzba-vedeni-it.html',
+  cena:'od 50 000 Kč měsíčně', pozn:'vyjde levněji než kroky zvlášť', odkaz:'/reseni-vedeni-it',
   varianty:['Vedení a směr','Dohled nad dodavateli','Rozpočet a bezpečnost'], pred:[], po:[]};
 
 const PRODUKTY = [
   {nazev:'AI plán do 48 hodin', znak:'ai-plan', cena:'9 900 Kč', vazba:'S čím vám AI ve firmě pomůže a čím začít.', patri:['ai','priprava'],
    vic:'Dva hodinové workshopy online. Do 48 hodin od druhého máte plán: kde AI pomůže, kde ne a čím začít. Když z něj vyjde, že se zatím nemá na čem stavět, pokračujeme Přípravou firmy a cenu plánu odečtu.', odkaz:'#napiste', cta:'Chci plán'},
   {nazev:'AI agent', znak:'ai-agent', cena:'89 000 Kč + provoz', vazba:'Pracuje nepřetržitě, má přístupy, ráno hlásí.', patri:['ai'],
-   vic:'Zavedení včetně infrastruktury, u vás na serveru nebo v cloudu. Dostane přístupy do vašich systémů, agendu, kterou má odbavovat, a každé ráno podá hlášení. Provoz od 8 000 Kč měsíčně. Dává smysl až po AI plánu.', odkaz:'sluzba-ai-zamestnanec.html', cta:'Jak agent pracuje'},
-  {nazev:'AI linka na zadání', znak:'ai-linka', pracovni:true, cena:'podle rozsahu', vazba:'Dáte vstup, vyrobí výkres, seznam firem nebo článek a skončí.', patri:['ai','propojeni'],
-   vic:'Jedno zadání, jeden výstup: výkres z poptávky, seznam firem k oslovení, článek z poznámek. Spustíte ji, doběhne a skončí, nikdo u toho nesedí. Cena podle toho, co linka vyrábí a z čeho.', odkaz:'#napiste', cta:'Popsat, co má vyrábět'},
+   vic:'Zavedení včetně infrastruktury, u vás na serveru nebo v cloudu. Dostane přístupy do vašich systémů, agendu, kterou má odbavovat, a každé ráno podá hlášení. Provoz od 8 000 Kč měsíčně. Dává smysl až po AI plánu.', odkaz:'/reseni-ai-zamestnanec', cta:'Jak agent pracuje'},
+  {nazev:'Robot na zadání', znak:'ai-linka', pracovni:true, cena:'podle rozsahu', vazba:'Dáte zadání, vyrobí výkres, seznam firem nebo článek a skončí.', patri:['ai','propojeni'],
+   vic:'Jedno zadání, jeden výstup: výkres z poptávky, seznam firem k oslovení, článek z poznámek. Spustíte ji, doběhne a skončí, nikdo u toho nesedí. Cena podle toho, co robot vyrábí a z čeho.', odkaz:'/reseni-robot-na-zadani', cta:'Jak robot pracuje'},
   {nazev:'Raynet CRM', znak:'raynet', cena:'od 15 000 Kč', vazba:'Zavedení a propojení s účetnictvím.', patri:['vyber','propojeni'],
    vic:'Zavedení CRM, propojení s účetnictvím a úpravy na míru vašemu obchodu. Od července 2026 jsem oficiální integrační partner Raynetu.', odkaz:'raynet.html', cta:'Raynet u vás'},
   {nazev:'Web pro dobu AI', znak:'web', cena:'35 000 Kč', vazba:'Optimalizace pro vyhledávače i AI asistenty, které dnes posílají poptávky.', patri:['aplikace'],
-   vic:'Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stavím ho stejně jako ten svůj.', odkaz:'weby.html', cta:'Co web umí'},
+   vic:'Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stojí pětinu ceny drahých řešení.', odkaz:'/weby', cta:'Co web umí'},
   {nazev:'Dotace na digitalizaci', znak:'dotace', cena:'30 000 Kč', vazba:'Ověření nároku až vyplnění žádosti. Končí podáním.', patri:['vyber','aplikace'],
    vic:'Ověření nároku, projektový záměr, cenové nabídky i vyplnění žádosti. Jedna částka, žádná druhá faktura ani provize z dotace. Služba končí podáním žádosti.', odkaz:'dotace-mas.html', cta:'Jestli na dotaci dosáhnu'},
 ];
@@ -1169,7 +1169,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=906b01d" alt="" loading="lazy">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=2fe6f90" alt="" loading="lazy">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic"><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
@@ -1207,6 +1207,6 @@ function zvyrazni(id){
 vykresliProdukty();
 vyber('priprava');
 </script>
-<script src="/mobil.js?v=4b84551"></script>
+<script src="/mobil.js?v=2fe6f90"></script>
 </body>
 </html>

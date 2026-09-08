@@ -148,7 +148,7 @@ Cenik na homepage (stav 25. 8., prototyp):
 - **AI zamestnanec** -- 89 000 Kc, provoz od 8 000 Kc mesicne
 - **Vedeni IT (digitalni transformace)** -- od 50 000 Kc mesicne; VZOR stranky je `sluzba-vedeni-it.html`
 - **Dilci zakazky** -- 10 000 Kc/den
-- **Web** -- 16 900 / 8 900 Kc podle rozsahu
+- **Web pro dobu AI** -- 35 000 Kc pevna cena (od 8. 9. 2026 nahrazuje Web Standard/Quick)
 - **Dotace na klic** -- 30 000 Kc pevne, konci podanim zadosti
 
 Pozice (Petr 25. 8.): nejsme IT manager na spravu pocitacu, jsme technologicky

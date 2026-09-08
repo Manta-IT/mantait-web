@@ -1,0 +1,170 @@
+/* =========================================================================
+   Web pro dobu AI -- prvky, ktere jsou jen na teto strance.
+
+   Signature blok je ODKUD DNES PRICHAZI POPTAVKA: tataz potreba, tyz clovek,
+   dve obrazovky. Google 2020 = deset radku odkazu, tri z nich jsou "vas web"
+   (zelena tecka). AI asistent 2026 = jedna odpoved a tri dlazdice zdroju;
+   treti dlazdice je bud vasefirma.cz, nebo carkovany obrys "vas web".
+   Tvar bloku je obrazovka + popis vedle, protoze rozdil "hledam" / "ptam se"
+   se ma videt, ne cist. Pod scenou devet veci, ktere web musi umet -- nativni
+   details s name="umet", takze je otevrena vzdy jen jedna.
+
+   Bez skriptu jsou obe obrazovky pod sebou i s nazvy a treti dlazdice ma obe
+   podoby vedle sebe; prepinace jsou v HTML skryte a odkryva je az skript.
+   ========================================================================= */
+
+.poptavka-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.poptavka-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 62% at 78% 6%,
+    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
+.poptavka-sekce .obsah{position:relative}
+.poptavka-sekce h2{max-width:16ch}
+.poptavka-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:56ch}
+
+/* ---------- Prepinac Google 2020 / AI asistent 2026 ---------- */
+.poptavka-prepinac{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);
+  padding:4px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
+.poptavka-prepinac[hidden]{display:none}
+.poptavka-prepinac button{
+  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;border-radius:999px;
+  background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  border:0;cursor:pointer;min-height:44px;
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.poptavka-prepinac button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
+.poptavka-prepinac button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
+
+/* ---------- Dve sceny: obrazovka + popis ---------- */
+.sceny{margin-top:22px}
+.scena-p{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(22px,3.4vw,48px);align-items:start}
+.scena-p + .scena-p{margin-top:28px}
+/* Se skriptem lezi obe sceny v jedne bunce a prolinaji se krizem, 250 ms. */
+.js .sceny{display:grid}
+.js .scena-p{grid-area:1/1;opacity:0;visibility:hidden;margin-top:0;
+  transition:opacity .25s var(--krivka),visibility 0s linear .25s}
+.js .scena-p.aktivni{opacity:1;visibility:visible;transition-delay:0s}
+.scena-nazev{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--akcent-sv);margin-bottom:10px}
+.js .scena-nazev{display:none}
+
+.obrazovka{border:1px solid color-mix(in srgb,var(--papir) 18%,transparent);border-radius:var(--r-l);
+  background:color-mix(in srgb,var(--papir) 4%,transparent);padding:clamp(18px,2.4vw,28px);
+  transition:opacity .6s var(--krivka-klid),transform .7s var(--krivka)}
+.dotaz{display:flex;align-items:center;gap:12px;padding:11px 16px;border-radius:var(--r);
+  border:1px solid color-mix(in srgb,var(--papir) 26%,transparent);
+  font-family:var(--mono);font-size:13.5px;line-height:1.45;color:var(--papir)}
+.dotaz::before{content:'';width:8px;height:8px;border-radius:2px;flex:none;background:var(--akcent)}
+
+/* Google: deset radku, kazdy tecka + titulek + popis. Ctvrty az sesty jsou vas web. */
+.radky{list-style:none;margin-top:18px;display:grid;gap:10px}
+.radky li{display:grid;grid-template-columns:10px minmax(0,1fr) auto;grid-template-rows:auto auto;gap:5px 12px;align-items:center}
+.radky .tecka{grid-row:1/3;width:10px;height:10px;border-radius:50%;
+  border:1.6px solid color-mix(in srgb,var(--papir) 34%,transparent)}
+.radky .rad-t,.radky .rad-d{display:block;height:8px;border-radius:4px;background:color-mix(in srgb,var(--papir) 34%,transparent)}
+.radky .rad-t{width:var(--s,62%);grid-column:2;grid-row:1}
+.radky .rad-d{grid-column:2;grid-row:2;height:6px;width:calc(var(--s,62%) + 22%);background:color-mix(in srgb,var(--papir) 16%,transparent)}
+.radky em{grid-column:3;grid-row:1/3;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--akcent-sv);visibility:hidden}
+.radky li.vas .tecka{background:#12A06B;border-color:#12A06B}
+.radky li.vas .rad-t{background:color-mix(in srgb,var(--papir) 78%,transparent)}
+.radky li.vas em{visibility:visible}
+
+/* AI asistent: jedna odpoved a tri dlazdice zdroju. */
+.odpoved-ai{margin-top:18px;font-size:clamp(15.5px,1.2vw,17px);line-height:1.55;color:color-mix(in srgb,var(--papir) 84%,transparent);max-width:58ch}
+.zdroje{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.zdroje > span{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:var(--r-s);
+  border:1px solid color-mix(in srgb,var(--papir) 26%,transparent);
+  font-family:var(--mono);font-size:12.5px;color:var(--papir)}
+.zdroje > span::before{content:'';width:9px;height:9px;border-radius:2px;background:#12A06B}
+.zdroje .zdroj-neni{border-style:dashed;border-color:color-mix(in srgb,var(--papir) 40%,transparent);
+  color:color-mix(in srgb,var(--papir) 58%,transparent)}
+.zdroje .zdroj-neni::before{background:transparent;border:1.6px dashed color-mix(in srgb,var(--papir) 44%,transparent)}
+/* Se skriptem je videt jen jedna podoba treti dlazdice, podle stavu umi=ano/ne. */
+.js .obrazovka[data-umi="ne"] .zdroj-je{display:none}
+.js .obrazovka[data-umi="ano"] .zdroj-neni{display:none}
+.umi-prepinac{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:20px;padding-top:16px;
+  border-top:1px solid color-mix(in srgb,var(--papir) 14%,transparent);
+  font-size:14px;color:color-mix(in srgb,var(--papir) 66%,transparent)}
+.umi-prepinac[hidden]{display:none}
+.umi-prepinac span{display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
+.umi-prepinac button{font-family:var(--text);font-size:14px;font-weight:600;min-height:38px;min-width:44px;padding:0 16px;
+  border-radius:999px;border:0;cursor:pointer;background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.umi-prepinac button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
+.umi-prepinac button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
+
+.scena-popis p{font-size:clamp(17px,1.4vw,20px);line-height:1.5;max-width:30ch;color:var(--papir)}
+.poptavka-pozn{margin-top:20px;font-size:14px;color:color-mix(in srgb,var(--papir) 52%,transparent);max-width:66ch}
+
+/* Odkryti: obrazovky prijedou. Vychozi stav v CSS je koncovy. */
+.poptavka-sekce.pripravena .obrazovka{opacity:0;transform:translateY(14px)}
+
+/* ---------- Devet veci, ktere web musi umet ---------- */
+.umet-nadpis{margin-top:clamp(44px,5vw,68px);font-size:clamp(22px,2.2vw,30px);max-width:24ch}
+.umet{margin-top:18px;max-width:860px}
+.umet details{border-bottom-color:color-mix(in srgb,var(--papir) 16%,transparent)}
+.umet details:first-of-type{border-top-color:color-mix(in srgb,var(--papir) 16%,transparent)}
+.umet summary{padding:16px 0;font-size:clamp(17px,1.3vw,20px);min-height:44px;gap:16px;justify-content:flex-start}
+.umet summary::before{content:counter(umet,decimal-leading-zero);counter-increment:umet;
+  font-family:var(--mono);font-size:12px;color:var(--akcent-sv);margin-right:14px;letter-spacing:.06em}
+.umet{counter-reset:umet}
+.umet summary .znak-plus{margin-left:auto}
+.umet summary .znak-plus::before,.umet summary .znak-plus::after{background:var(--akcent-sv)}
+.umet summary:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
+.umet .odpoved{color:color-mix(in srgb,var(--papir) 72%,transparent);padding:0 0 18px 38px;font-size:15.5px}
+.umet-zaver{margin-top:24px;font-size:15.5px;max-width:62ch;color:color-mix(in srgb,var(--papir) 78%,transparent)}
+
+/* ---------- Vyhledavani se zmenilo: text a pruh ctyr cisel ---------- */
+.zmena{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:26px}
+.zmena > div > p{color:var(--tlum);margin-top:14px;max-width:56ch}
+.zmena .zaver-odst{color:var(--inkoust);margin-top:22px}
+.pruh-cisel{border-left:2px solid var(--akcent);padding-left:clamp(18px,2vw,28px);display:grid;gap:clamp(20px,2.4vw,30px)}
+.udaj b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(30px,3vw,42px);letter-spacing:-.04em;line-height:1}
+.udaj p{font-size:15px;line-height:1.45;margin-top:8px;max-width:38ch}
+.udaj-zdroj{display:block;margin-top:6px;font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--tlum)}
+.zmena-pozn{margin-top:26px;font-size:14.5px;color:var(--tlum);max-width:70ch}
+
+/* ---------- Co dostanete a do kdy ---------- */
+.dostanete{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,56px);align-items:start;margin-top:clamp(28px,3.4vw,40px)}
+.seznam-check{list-style:none;border-top:1px solid var(--linka)}
+.seznam-check li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;
+  padding:14px 0;border-bottom:1px solid var(--linka);font-size:15.5px;color:var(--tlum);max-width:64ch}
+.seznam-check li svg{width:20px;height:20px;margin-top:3px;stroke:var(--akcent);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.seznam-check li b{color:var(--inkoust);font-weight:600}
+.ramecky{display:grid;gap:14px}
+.ramecek{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:22px 24px}
+.ramecek h3{font-size:clamp(18px,1.5vw,22px)}
+.ramecek p{font-size:15px;color:var(--tlum);margin-top:8px}
+.ramecek .lhuta-mono{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--akcent);margin-bottom:8px}
+
+/* ---------- Co v cene neni: prosty seznam ---------- */
+.neni{list-style:none;margin-top:30px;max-width:760px;border-top:1px solid var(--linka)}
+.neni li{padding:16px 0;border-bottom:1px solid var(--linka);font-size:15.5px;color:var(--tlum)}
+.neni li b{display:block;color:var(--inkoust);font-family:var(--display);font-weight:400;font-size:clamp(18px,1.4vw,21px);letter-spacing:-.02em;margin-bottom:4px}
+
+/* ---------- Zaver: radek pod CTA a tri vazby ---------- */
+.zaver .zaver-radek{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;
+  color:color-mix(in srgb,var(--papir) 58%,transparent);margin:18px auto 0}
+.vazby{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:34px;
+  font-size:14.5px;color:color-mix(in srgb,var(--papir) 58%,transparent)}
+.vazby a{color:var(--papir);text-decoration-color:color-mix(in srgb,var(--papir) 40%,transparent);text-underline-offset:3px}
+.cenovka-odkaz{display:block;text-align:center;margin-top:10px;font-size:14px;color:var(--tlum);text-underline-offset:3px;min-height:44px;line-height:44px}
+
+@media (hover:hover) and (pointer:fine){
+  .vazby a:hover,.cenovka-odkaz:hover{color:var(--akcent)}
+  .zaver .vazby a:hover{color:var(--akcent-sv)}
+}
+@media (max-width:900px){
+  .scena-p,.zmena,.dostanete{grid-template-columns:1fr}
+  .scena-popis p{max-width:52ch}
+  .pruh-cisel{border-left:0;border-top:1px solid var(--linka);padding-left:0;padding-top:22px}
+}
+@media (max-width:600px){
+  .radky li{grid-template-columns:10px minmax(0,1fr)}
+  .radky em{grid-column:2;grid-row:3}
+  .umet .odpoved{padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .scena-p{transition:none}
+  .poptavka-sekce.pripravena .obrazovka{opacity:1;transform:none;transition:none}
+}

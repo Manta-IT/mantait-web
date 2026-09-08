@@ -1,0 +1,182 @@
+/* =========================================================================
+   Vyber systemu -- prvky, ktere jsou jen na teto strance.
+
+   Signature blok je CENA V NABIDCE, CENA ZA PET LET: tri modelove nabidky na
+   dochazkovy system vedle sebe. V poloze "V nabidce" ukazuji cenu tak, jak ji
+   dodavatel napsal (A nejlevnejsi). Po prepnuti na "Za pet let" se pod kazdou
+   odkryji radky, ktere v nabidce nebyly (castka v tonu --vada-sv, jedina
+   cervena v bloku), a karty se plynule prerovnaji do obraceneho poradi
+   (C nejlevnejsi, A nejdrazsi). Poradi je cely argument: nabidka odpovida na
+   "kolik to stoji ted", ctenar potrebuje "kolik to bude stat". Proto se tady
+   vyjimecne pouzivaji tri karty vedle sebe -- obsah jsou tri nabidky a to,
+   ktera je kde, nese sdeleni.
+
+   Poradi drzi CSS `order` z promennych --o-nab / --o-pet na karte; plynuly
+   presun dela FLIP ve skriptu stranky (400 ms, pri prefers-reduced-motion
+   bez pohybu). Radky se odkryji rovnou, bez animace.
+
+   Bez skriptu: vsechny tri karty v poradi A, B, C, radky jsou v <details>,
+   ktere jdou otevrit rucne, veta pod kartami i stitek nejlevnejsi karty jsou
+   videt. Prepinac je v HTML skryty a odkryva ho az skript.
+   ========================================================================= */
+
+.petlet-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.petlet-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 62% at 78% 6%,
+    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
+.petlet-sekce .obsah{position:relative}
+.petlet-sekce h2{max-width:16ch}
+.petlet-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:56ch}
+
+/* ---------- Prepinac V nabidce / Za pet let ---------- */
+.petlet-prepinac{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);
+  padding:4px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent)}
+.petlet-prepinac[hidden]{display:none}
+.petlet-prepinac button{
+  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;border-radius:999px;
+  background:transparent;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  border:0;cursor:pointer;min-height:44px;
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.petlet-prepinac button[aria-selected="true"]{background:var(--papir);color:var(--inkoust)}
+.petlet-prepinac button:focus-visible{outline:2px solid var(--akcent-sv);outline-offset:3px}
+
+/* ---------- Tri nabidky ---------- */
+.nabidky-tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+  margin-top:clamp(28px,3.4vw,40px);align-items:stretch}
+.nab{order:var(--o-nab);display:flex;flex-direction:column;
+  border:1px solid color-mix(in srgb,var(--papir) 16%,transparent);border-radius:var(--r-l);
+  background:color-mix(in srgb,var(--papir) 4%,transparent);
+  padding:clamp(20px,2.4vw,28px);
+  transition:opacity .5s var(--krivka-klid),transform .6s var(--krivka),border-color .3s var(--krivka-klid)}
+.za-pet-let .nab{order:var(--o-pet)}
+.nab-nazev{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--papir) 62%,transparent);display:block}
+.nab-cena{display:block;font-family:var(--display);font-weight:400;font-size:clamp(30px,3vw,42px);
+  letter-spacing:-.035em;line-height:1;margin-top:14px;white-space:nowrap}
+.nab-cena small{font-family:var(--text);font-size:.4em;letter-spacing:0;font-weight:500;
+  margin-left:.35em;color:color-mix(in srgb,var(--papir) 64%,transparent)}
+.nab-pozn{display:block;margin-top:10px;font-size:14px;line-height:1.45;
+  color:color-mix(in srgb,var(--papir) 64%,transparent)}
+
+/* Stitek a ramecek nejlevnejsi karty za pet let. Zelena na tmavem: tyz ton
+   jako mikro-diagramy v bloku vysledky (#12A06B, kontrast 5,5:1). */
+.nab-stitek{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:#12A06B;
+  padding:5px 10px;border-radius:999px;border:1px solid #12A06B;align-self:flex-start}
+.nab.nejlevnejsi{border-color:#12A06B;box-shadow:inset 0 0 0 1px #12A06B}
+.js .petlet-sekce:not(.za-pet-let) .nab-stitek{display:none}
+.js .petlet-sekce:not(.za-pet-let) .nab.nejlevnejsi{
+  border-color:color-mix(in srgb,var(--papir) 16%,transparent);box-shadow:none}
+
+/* Radky za pet let. Sdilene details ze sluzba.css maji svetle linky a velky
+   summary -- tady v karte se to zmensi. */
+.nab-radky{margin-top:18px;border:0}
+.nab-radky:first-of-type{border-top:0}
+.nab-radky summary{padding:12px 0;font-size:15px;color:color-mix(in srgb,var(--papir) 80%,transparent);
+  border-top:1px solid color-mix(in srgb,var(--papir) 16%,transparent)}
+.nab-radky .znak-plus::before,.nab-radky .znak-plus::after{background:#12A06B}
+.js .petlet-sekce:not(.za-pet-let) .nab-radky{display:none}
+.js .za-pet-let .nab-radky > summary{display:none}
+.nab-tabulka{overflow-x:auto;border-top:1px solid color-mix(in srgb,var(--papir) 16%,transparent)}
+.nab-tabulka table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.4}
+.nab-tabulka td{padding:9px 0;vertical-align:top;
+  border-bottom:1px solid color-mix(in srgb,var(--papir) 12%,transparent)}
+.nab-tabulka td:first-child{color:color-mix(in srgb,var(--papir) 78%,transparent);padding-right:12px}
+.nab-tabulka td:last-child{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap}
+.nab-znacka{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--vada-sv);margin-top:3px}
+.nab-tabulka tr.nebylo td:last-child{color:var(--vada-sv)}
+.nab-drobne{color:color-mix(in srgb,var(--papir) 52%,transparent)}
+.nab-soucet{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  margin-top:14px;font-size:14px;color:color-mix(in srgb,var(--papir) 70%,transparent)}
+.nab-soucet b{font-family:var(--display);font-weight:500;font-size:clamp(20px,1.8vw,24px);
+  letter-spacing:-.03em;color:var(--papir);white-space:nowrap}
+
+.petlet-veta{margin-top:clamp(26px,3vw,36px);font-family:var(--display);
+  font-size:clamp(19px,1.9vw,26px);letter-spacing:-.025em;line-height:1.3;max-width:40ch}
+.js .petlet-sekce:not(.za-pet-let) .petlet-veta{display:none}
+.petlet-pozn{margin-top:22px;font-size:14px;color:color-mix(in srgb,var(--papir) 58%,transparent);max-width:70ch}
+
+/* Odkryti: karty prijedou zespodu po sobe. Vychozi stav v CSS je koncovy. */
+.petlet-sekce.pripravena .nab{opacity:0;transform:translateY(18px)}
+.nab:nth-child(2){transition-delay:.06s}
+.nab:nth-child(3){transition-delay:.12s}
+
+@media (max-width:900px){
+  .nabidky-tri{grid-template-columns:1fr}
+  .petlet-prepinac{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .petlet-prepinac[hidden]{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .petlet-sekce.pripravena .nab{opacity:1;transform:none}
+}
+
+/* ---------- Dodavatel odpoved zna: delena skladba, dva bloky s piktogramem ---------- */
+.delene{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:8px}
+.delene-uvod p{color:var(--tlum);margin-top:18px;max-width:40ch}
+.duvod{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;padding:22px 0;border-top:1px solid var(--linka)}
+.duvod:first-child{border-top:0;padding-top:0}
+.duvod-znak{width:44px;height:44px;border-radius:var(--r-s);background:var(--papir-tmav);border:1px solid var(--linka);display:grid;place-items:center;flex:none}
+.duvod-znak svg{width:24px;height:24px;stroke:var(--akcent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.duvod p{font-size:15.5px;color:var(--tlum);margin-top:8px;max-width:54ch}
+.delene-zaver{margin-top:26px;font-family:var(--display);font-size:clamp(19px,2vw,26px);letter-spacing:-.025em;line-height:1.25;max-width:36ch}
+
+/* ---------- Cislovane polozky pod sebou (Co merim, Co lezi na stole) ---------- */
+.polozky{margin-top:clamp(30px,3.6vw,44px);border-top:1px solid var(--linka);list-style:none}
+.polozka{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;
+  padding:22px 0;border-bottom:1px solid var(--linka)}
+.polozka-c{font-family:var(--mono);font-size:13px;color:var(--akcent);padding-top:4px;min-width:2ch}
+.polozka h3{font-size:clamp(18px,1.5vw,22px)}
+.polozka p{font-size:15.5px;color:var(--tlum);margin-top:8px;max-width:64ch}
+.polozka-svizual{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+.polozka-svizual svg{width:72px;height:auto;stroke:var(--akcent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:4px}
+.polozky-zaver{margin-top:26px;font-family:var(--display);font-size:clamp(19px,2vw,26px);letter-spacing:-.025em;line-height:1.25;max-width:38ch}
+.polozky-pozn{margin-top:22px;font-size:15px;color:var(--tlum);max-width:66ch}
+
+/* ---------- Dve dolozena cisla ---------- */
+.dolozene{margin-top:clamp(30px,3.6vw,44px);border-top:1px solid var(--linka)}
+.dolozeny{display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,.68fr);gap:clamp(18px,3vw,44px);
+  padding:clamp(24px,3vw,36px) 0;border-bottom:1px solid var(--linka);align-items:start}
+.dolozeny-cislo{font-family:var(--display);font-size:clamp(40px,5vw,76px);letter-spacing:-.04em;line-height:.95}
+.dolozeny-cislo small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+.dolozeny p{color:var(--tlum);max-width:62ch}
+.dolozeny-zdroj{margin-top:14px;font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--tlum);max-width:74ch}
+.dolozene-zaver{margin-top:26px;font-family:var(--display);font-size:clamp(19px,2vw,26px);letter-spacing:-.025em;line-height:1.25;max-width:38ch}
+
+/* ---------- Raynet: odstavec vlevo, tri pravidla vpravo ---------- */
+.raynet-delene{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:26px}
+.raynet-delene > p{color:var(--tlum);max-width:52ch}
+.pravidla{list-style:none;border-top:1px solid var(--linka)}
+.pravidla li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding:16px 0;
+  border-bottom:1px solid var(--linka);font-size:15.5px;align-items:start}
+.pravidla li::before{content:counter(pravidlo,decimal-leading-zero);counter-increment:pravidlo;
+  font-family:var(--mono);font-size:13px;color:var(--akcent);padding-top:3px}
+.pravidla{counter-reset:pravidlo}
+.raynet-odkaz{margin-top:16px;font-size:15px;color:var(--tlum)}
+
+/* ---------- Kde tenhle krok stoji v ceste: tri sloupce pred / tady / po ---------- */
+.cesta-tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(28px,3.4vw,40px)}
+.cesta-sloupec{border-top:2px solid var(--linka);padding-top:18px}
+.cesta-sloupec.tady{border-top-color:var(--akcent)}
+.cesta-stitek{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tlum);display:block}
+.cesta-sloupec.tady .cesta-stitek{color:var(--akcent)}
+.cesta-krok{margin-top:16px}
+.cesta-krok + .cesta-krok{margin-top:22px;padding-top:18px;border-top:1px solid var(--linka)}
+.cesta-krok h3{font-size:clamp(18px,1.5vw,22px)}
+.cesta-krok h3 a{text-decoration-color:var(--linka);text-underline-offset:4px}
+.cesta-krok p{font-size:15px;color:var(--tlum);margin-top:8px}
+.cesta-cena{display:block;margin-top:8px;font-family:var(--mono);font-size:12.5px;color:var(--akcent)}
+.volitelne{list-style:none;margin-top:22px;padding-top:14px;border-top:1px solid var(--linka)}
+.volitelne li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:8px 0;font-size:14.5px;color:var(--tlum)}
+.volitelne li::before{content:'+';font-family:var(--mono);color:var(--akcent);font-size:15px;line-height:1.5}
+.volitelne b{font-weight:600;color:var(--inkoust)}
+.volitelne-pozn{margin-top:14px;font-size:13.5px;color:var(--tlum)}
+.cesta-pozn{margin-top:26px;font-size:15px;color:var(--tlum);max-width:66ch}
+
+@media (max-width:900px){
+  .delene,.raynet-delene,.cesta-tri{grid-template-columns:1fr}
+  .dolozeny{grid-template-columns:1fr;gap:12px}
+  .polozka-svizual{grid-template-columns:1fr}
+  .polozka-svizual svg{order:-1;margin-top:0}
+}

@@ -11,7 +11,7 @@
 # Pet zanikajicich cest. V nove strukture jsou to radky v ceniku, ne stranky.
 /reseni-ai         /              301
 /reseni-naklady    /reseni-vedeni-it  301
-/reseni-nastroje   /reseni-vedeni-it  301
+/reseni-nastroje   /reseni-vyber-systemu  301
 /reseni-projekt    /reseni-vedeni-it  301
 /reseni-web        /weby          301
 

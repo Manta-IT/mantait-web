@@ -25,7 +25,7 @@ vypada jeji vlastni web.
 - Cilovka: majitele ne-tech firem, 50+, nesnasi zargon.
 - Sluzeb pet: vedeni IT, aplikace na miru, propojeni a automatizace,
   bezpecnost a novy zakon, AI zamestnanec. K tomu clanky (obsahovy hub),
-  dotace na klic (30 000 Kc, konci podanim) a web (16 900 / 8 900 Kc).
+  dotace na klic (30 000 Kc, konci podanim) a web pro dobu AI (35 000 Kc, od 8. 9. 2026).
 - Mereni: pocet poptavek pres formular (/dekujeme). GA4 se nezaklada.
 
 ## Otevrene otazky

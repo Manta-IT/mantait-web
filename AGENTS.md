@@ -19,7 +19,7 @@ Pravidla pro Claude Code při práci na webu Manta IT. Drž se. Detail je v `PRI
 - `index.html` — Hero, pain, IT governance, dílčí služby, průběh, produktové služby, specializace, differentiator, kontakt
 - `o-mne.html` — Bio + reference + case studies
 - `ai.html` — AI Assessment a AI Assessment Lite
-- `weby.html` — Web Standard a Web Quick
+- `weby.html` — Web pro dobu AI (35 000 Kč)
 - `raynet.html` — Specializace na Raynet CRM
 - `kontakt.html` — Calendly embed + kontakty
 - `style.css` — sdílený stylesheet (vždy editovat tady, nikdy inline)
@@ -91,8 +91,7 @@ git push origin master
 - **Dílčí zakázky** (10 000 Kč/den): Projektové řízení, Product Discovery a Product Ownership, Zavádění a adopce nástrojů, IT revize (individuálně).
 - **Produktové služby** (pevná cena):
   - AI plán do 48 hodin 9 900 Kč (2x 1h workshop online, plán do 48 hodin od druhého workshopu, případný AI agent/automatizace do týdne za orientačně 50 000 Kč; dřív "Mapa AI příležitostí", předtím AI Assessment / Lite)
-  - Web Standard 16 900 Kč (do 2 týdnů)
-  - Web Quick 8 900 Kč (do týdne)
+  - Web pro dobu AI 35 000 Kč (do 2 týdnů; od 8. 9. 2026 nahrazuje Standard/Quick)
 - **Specializace:** Raynet (od 15 000 Kč).
 
 ### SEO / GEO
