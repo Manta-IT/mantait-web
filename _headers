@@ -4,22 +4,44 @@
 # ze ctyr bezicich kampani. Domeny google-analytics zustavaji, i kdyz GA4 na
 # webu neni -- gtag je pouziva i pro Ads signaly a tichy vypadek mereni je
 # drazsi nez direktiva navic.
+# 8. 9. 2026: pisma jsou self-hostovana (/pisma/), takze fonts.googleapis.com
+# ze style-src a fonts.gstatic.com z font-src vypadly. Zustava jen data: pro
+# inline SVG masky.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.googleadservices.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.google.com https://www.google.cz; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.googleadservices.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.google.com https://www.google.cz https://cloudflareinsights.com; form-action 'self' mailto:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.googleadservices.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.google.com https://www.google.cz; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.googleadservices.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.google.com https://www.google.cz https://cloudflareinsights.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
 
-/*.html
-  Cache-Control: public, max-age=300, must-revalidate
+# HTML zamerne BEZ Cache-Control: hlavicky vic sedicich pravidel se v _headers
+# NEprepisuji, spojuji se carkou (docs Workers static assets). Pravidlo /* +
+# pravidlo /*.css by tedy poslalo "max-age=300, ..., max-age=31536000" a
+# vysledek by zavisel na prohlizeci. HTML proto zustava na defaultu Workers
+# (max-age=0, must-revalidate) -- podmineny dotaz vraci 304 a nasazena oprava
+# je venku hned. Puvodni pravidlo /*.html nesedelo nikdy: produkcni URL jsou
+# bez pripony (/reseni-zadani), nalez 8. 9. 2026.
 
-/style.css
+# Verzovane statiky (?v=<hash> v HTML). Rok + immutable: zmena obsahu se
+# projevi zmenou ?v=, ne expiraci. Do 8. 9. to platilo jen pro style.css,
+# takze sluzba.css, mobil.css, per-stranka CSS, oba skripty i vsechny SVG
+# jely na max-age=0 a stahovaly se pri kazde navsteve znovu.
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/pisma/*
+  Cache-Control: public, max-age=31536000, immutable
+/obrazky/*
+  Cache-Control: public, max-age=31536000, immutable
+/loga/*
   Cache-Control: public, max-age=31536000, immutable
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
-
 /og-image.png
+  Cache-Control: public, max-age=2592000
+/petr-kokoska.jpg
   Cache-Control: public, max-age=2592000

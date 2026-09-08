@@ -1,45 +1,43 @@
 #!/bin/sh
 # Pre-commit hook pro Manta IT web
-# Auto-bump cache version (?v=hash) na style.css pri zmenach v CSS nebo HTML
 #
-# Instalace (jednou):
-#   cp scripts/pre-commit .git/hooks/pre-commit
-#   chmod +x .git/hooks/pre-commit
+# Instalace (jednou):  sh scripts/install-hooks.sh
 #
-# Nebo na Windows (Git Bash):
-#   cp scripts/pre-commit .git/hooks/pre-commit
+# Dve veci, v tomhle poradi:
+#   1. bump `?v=` na otisk obsahu CSS/JS  (aby lide dostali novou verzi)
+#   2. strojova kontrola obsahu           (aby nevysla rozbita)
 #
-# Hook se spousti pred kazdym 'git commit', bumpne ?v= ve vsech HTML
-# a restaguje JEN ty HTML, ktere uz byly stagovane -- aby se do commitu
-# nepribalily nesouvisejici rozdelane zmeny z working tree.
+# 8. 9. 2026: krok 2 tu byl az za `exit 0`, takze se od instalace hooku nikdy
+# nespustil -- kontrola odkazu, typografie a zakazanych slov nebezela.
 
-# Skip pokud commit nesahne na style.css ani HTML
 changed=$(git diff --cached --name-only --diff-filter=ACM)
 
-echo "$changed" | grep -qE '\.(css|html)$' || exit 0
+# Kontrola obsahu bezi vzdycky, i kdyz commit sahne jen na worker.js nebo
+# skripty: nalez muze vzniknout i zmenou registru sluzeb nebo llms.txt.
+python scripts/kontrola_webu.py
+if [ $? -ne 0 ]; then
+  echo "[pre-commit] kontrola_webu.py nasla chyby, abortuju commit"
+  exit 1
+fi
 
-echo "[pre-commit] CSS nebo HTML zmena -> bump cache version"
+# Bump jen kdyz commit sahne na CSS nebo HTML.
+echo "$changed" | grep -qE '\.(css|js|html)$' || exit 0
 
-# Bumpni cache (pouzije aktualni HEAD hash; pro upcoming commit se to v praxi
-# lisi o 1 commit, ale to nevadi - hlavni je ze se zmeni ?v= mezi releasy)
+echo "[pre-commit] CSS/JS/HTML zmena -> bump cache version"
 python scripts/bump-cache.py
 if [ $? -ne 0 ]; then
   echo "[pre-commit] bump-cache.py selhal, abortuju commit"
   exit 1
 fi
 
-# Restaguj jen HTML, ktere uz ve stagi byly (bump je mohl upravit)
-echo "$changed" | grep -E '\.html$' | while IFS= read -r f; do
-  [ -f "$f" ] && git add "$f"
+# Restaguj HTML, ktere bump zmenil. Bez omezeni na "uz stagovane" by se do
+# commitu pribalily cizi rozdelane zmeny -- proto jen soubory, ktere se
+# lisi od indexu A ZAROVEN v nem uz jsou.
+git diff --name-only --diff-filter=ACM -- '*.html' | while IFS= read -r f; do
+  if echo "$changed" | grep -qxF "$f"; then
+    git add "$f"
+  fi
 done
 
 echo "[pre-commit] hotovo, pokracuje commit"
 exit 0
-
-# Strojova kontrola obsahu (odkazy, typografie, zakazana slova, ceny).
-# Nalez zastavi commit -- opravit, ne obejit. Vyjimky jsou v tom skriptu.
-python scripts/kontrola_webu.py
-if [ $? -ne 0 ]; then
-  echo "[pre-commit] kontrola_webu.py nasla chyby, abortuju commit"
-  exit 1
-fi

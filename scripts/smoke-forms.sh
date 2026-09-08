@@ -21,7 +21,7 @@ check "POST bez e-mailu i telefonu neprojde" \
 check "POST s nevalidnim e-mailem neprojde" \
   "curl -s -o /dev/null -w '%{http_code}' -X POST -d 'email=neplatny' $B/api/dotaznik" "502"
 check "honeypot tise presmeruje na dekovacku" \
-  "curl -s -o /dev/null -w '%{redirect_url}' -X POST -d 'website=bot&email=a@b.cz' $B/api/dotaznik" "$B/dekujeme"
+  "curl -s -o /dev/null -w '%{redirect_url}' -X POST -d 'kontrolni_udaj=bot&email=a@b.cz' $B/api/dotaznik" "$B/dekujeme"
 check "chybejici API klic je hlasita chyba, ne tichy propad" \
   "curl -s -X POST -d 'email=t@example.com' $B/api/dotaznik | grep -c 'Odesilani e-mailu neni'" "1"
 

@@ -89,9 +89,13 @@ Petr Kokoška
 Manta IT | mantait.cz | ${TEL}`;
       }
       if (d.cesta === 'termin') {
+        // Tenhle mail jde na adresu z formulare, tedy potencialne na adresu
+        // obeti. Bez srazeni a stropu by utocnik psal odstavce cizim lidem
+        // z nasi domeny s platnym SPF i DKIM (OWASP review 8. 9., H2).
+        const t = String(d.termin || '').replace(/[\r\n]+/g, ' ').trim().slice(0, 60);
         return `Dobrý den,
 
-termín ${d.termin || 'jste vybrali'} jsem si poznamenal a potvrdím vám ho
+termín ${t || 'jste vybrali'} jsem si poznamenal a potvrdím vám ho
 mailem i s odkazem na hovor. Kdyby se čas nehodil, napište jiný.
 
 Petr Kokoška
@@ -126,7 +130,12 @@ function errorPage(msg, { status = 502, zpet = '/kontakt' } = {}) {
 <a href="tel:+420732329431">${TEL}</a> -- odpovím stejně rychle.</p>
 <p><a href="${zpet}">Zpět na stránku</a></p>
 </main></body></html>`,
-    { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
+    { status, headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'X-Content-Type-Options': 'nosniff',
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+      'Content-Security-Policy': "default-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'",
+    } },
   );
 }
 
@@ -188,6 +197,11 @@ async function sendMail(token, to, subject, text, replyTo) {
 
 async function handleForm(request, env, formName, ctx) {
   const form = FORMS[formName];
+  // Nejdelsi poctivy formular (dodavatele) ma pod 8 kB. 64 kB je strop, po
+  // kterem uz nejde o vyplneny formular, ale o zatez na isolate.
+  if (Number(request.headers.get('content-length') || 0) > 64 * 1024) {
+    return errorPage('Odeslaná data jsou příliš velká.', { status: 413, zpet: '/#napiste' });
+  }
   const data = Object.fromEntries(await request.formData());
 
   // honeypot: bot vyplni skryte pole, clovek ne
@@ -233,7 +247,7 @@ async function handleForm(request, env, formName, ctx) {
     // radky se srazeji u VSECH formularu: u strojovych proti injekci klicu,
     // u lidskych proti podvrzenym radkum v mailu (OWASP review L1)
     .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000).replace(/[\r\n]+/g, ' ')}`);
-  const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${request.headers.get('referer') || 'webu'}`;
+  const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${(request.headers.get('referer') || 'webu').replace(/[\r\n]+/g, ' ').slice(0, 200)}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {
     return errorPage('Odesílání e-mailu není na serveru nastavené.', { zpet });
@@ -268,16 +282,21 @@ export { b64, b64url, hlavicka, accessToken, sendMail };
    neztrati ani pozice ve vyhledavani, ani clovek, ktery prisel ze stareho
    odkazu nebo z rozeslaneho mailu.
 
-   Proc tady a ne v `_redirects`: web bezi jako Worker se statickymi assety,
-   ne jako Pages. Zpracovani `_redirects` se u Workers lisi podle nastaveni,
-   takze pravidlo, na kterem zavisi zive URL, patri do kodu, kde je jiste.
-   Soubor `_redirects` zustava jako citelny seznam tehoz. */
+   POZOR, zmereno 8. 9. 2026 na produkci: co vidi navstevnik, urcuje
+   `_redirects`, ne tenhle kod. `wrangler.jsonc` nema `run_worker_first`,
+   takze staticke assety (a mezi nimi `_redirects`) se vyhodnocuji DRIV nez
+   Worker; sem se dostane jen cesta, pro kterou zadny asset ani zadne
+   pravidlo v `_redirects` neexistuje. Puvodni komentar tvrdil opak a mapa
+   se za tu dobu tise rozesla se souborem ve dvou cilech (/reseni-ai vedlo
+   na /, /reseni-nastroje na vedeni IT). Menit se tedy musi `_redirects`;
+   tahle mapa je jen zaloha pro pripad, ze by asset layer vypadl, a MUSI
+   s tim souborem souhlasit -- hlida to scripts/kontrola_webu.py. */
 const PRESMEROVANI = new Map([
   ['/ai', '/'],
   // Pet zanikajicich cest: v nove strukture jsou to radky v ceniku, ne stranky.
-  ['/reseni-ai', '/'],
+  ['/reseni-ai', '/reseni-podnikova-ai'],
   ['/reseni-naklady', '/reseni-vedeni-it'],
-  ['/reseni-nastroje', '/reseni-vedeni-it'],
+  ['/reseni-nastroje', '/reseni-vyber-systemu'],
   ['/reseni-projekt', '/reseni-vedeni-it'],
   ['/reseni-web', '/weby'],
   // Novy web ma formular primo na hlavni strance.
@@ -287,12 +306,49 @@ const PRESMEROVANI = new Map([
 // Pracovni verze brandu nemaji byt verejne vubec.
 const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
 
+/* Brzda na odesilani formularu. Endpoint posila postu z Petrovy schranky:
+   bez limitu staci skript, aby za par minut vycerpal denni kvotu Gmailu a
+   zastavil VESKEROU odchozi postu, vcetne cold mailu kampane (OWASP review
+   8. 9., C1).
+
+   ponytail: pamet je per isolate, ne sdilena -- distribuovany provoz nebo
+   novy isolate limit obejde. Zastavi to naivni flood z jedne adresy, coz je
+   vetsina. Tvrda obrana je WAF rate limiting rule v Cloudflare dashboardu
+   (Security -> WAF, `http.request.uri.path contains "/api/"`, 5 req / 1 min,
+   Managed Challenge) nebo Turnstile na formulare -- oboje je Petrovo
+   rozhodnuti, tohle bezi mezitim a nic nestoji. */
+const BRZDA = new Map();
+const BRZDA_OKNO = 60000;
+const BRZDA_POCET = 5;
+
+function pustDal(klic) {
+  const ted = Date.now();
+  const casy = (BRZDA.get(klic) || []).filter((c) => ted - c < BRZDA_OKNO);
+  if (casy.length >= BRZDA_POCET) { BRZDA.set(klic, casy); return false; }
+  casy.push(ted);
+  BRZDA.set(klic, casy);
+  if (BRZDA.size > 5000) BRZDA.clear();   // strop pameti isolate
+  return true;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
     const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+      // Cizi stranka nesmi odeslat formular jmenem navstevnika. Origin muze
+      // chybet (curl) nebo byt retezec "null" (sandboxovany ramec) -- oboji
+      // je "neni to nase stranka", ale jen "null" by shodilo new URL().
+      const origin = request.headers.get('origin');
+      if (origin && origin !== new URL(request.url).origin) {
+        return new Response('Forbidden', { status: 403 });
+      }
+      if (!pustDal(request.headers.get('cf-connecting-ip') || 'neznamy')) {
+        console.log(JSON.stringify({ event: 'form.rate_limited', form: match[1] }));
+        return errorPage('Formulář jste odeslali několikrát po sobě. Zkuste to prosím za minutu.',
+                         { status: 429, zpet: '/#napiste' });
+      }
       return handleForm(request, env, match[1], ctx);
     }
 

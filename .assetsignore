@@ -15,6 +15,13 @@ scripts/
 .playwright-mcp/
 .gitignore
 .assetsignore
+# Secrets pro lokalni beh Workeru. Dnes je mimo produkci jen proto, ze je
+# v .gitignore a CI ho nevidi -- jediny rucni `wrangler deploy` z tohohle
+# adresare by refresh token se scope gmail.send vystavil verejne.
+.dev.vars
+.wrangler/
+.claude/
+oprava textů/
 wrangler.jsonc
 worker.js
 brand-lab*.html
