@@ -40,12 +40,18 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
 1. Redesign: editace v `../specs/web-redesign/prototypy/`, preview
    `python -m http.server 8899` v te slozce. Po uprave sdileneho CSS/JS
    spustit `python bump.py` (jinak testujes starou verzi z cache).
+   Prenos do produkce: `python ../specs/web-redesign/prenos.py [--jen=a.html,b.html]`
+   (bez --jen prepise VSECHNY mapovane stranky z prototypu; od 8. 9. je jich 12).
 2. Produkce mimo tech devet stranek: editace `.html` primo, CSS jen ve sdilenem
    stylesheetu, preview `python scripts/serve.py` -> `http://localhost:8773/`.
 3. Testovat v prohlizeci, ne v kodu. Pro posouzeni hotoveho stavu vypnout
    animace (`*{animation:none !important}`).
 4. Pred commitem: kazda stranka na 390/600/900/1440 px bez vodorovneho
    scrollu, console errors 0, ASCII grep cisty.
+5. `python scripts/kontrola_webu.py` (bezi i v pre-commit hooku): interni
+   odkazy existuji, typografie, zakazana slova, ceny homepage = detail.
+   Nalez zastavi commit. Po pushi VZDY overit zivy web -- 8. 9. 2026 jeden
+   Cloudflare build nedobehl a pomohl az dalsi commit.
 5. Clanky (`clanky/`): NIKDY rucne. Koncept vznika v manta-it
    (`workspace/_clanky/<slug>/`, workflow `workflows/clanek/`), render a
    kontrola `scripts/clanek_kontrola.py`, publikace (html, manifest.json,

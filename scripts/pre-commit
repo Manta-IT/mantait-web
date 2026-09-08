@@ -35,3 +35,11 @@ done
 
 echo "[pre-commit] hotovo, pokracuje commit"
 exit 0
+
+# Strojova kontrola obsahu (odkazy, typografie, zakazana slova, ceny).
+# Nalez zastavi commit -- opravit, ne obejit. Vyjimky jsou v tom skriptu.
+python scripts/kontrola_webu.py
+if [ $? -ne 0 ]; then
+  echo "[pre-commit] kontrola_webu.py nasla chyby, abortuju commit"
+  exit 1
+fi
