@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aplikace na míru: nápad ze šuplíku do provozu - Manta IT</title>
-<meta name="description" content="Odkládali jste nápad, protože na něj nebyly peníze ani čas? Obojí se změnilo. Zadání psát nemusíte, první funkční verzi otevřete do týdne, kód je váš. Od 50 000 Kč.">
+<meta name="description" content="Aplikace na míru: první verzi otevřete do týdne, pevná cena po hovoru, zdrojový kód vlastníte vy. Napište mi, co dnes drží jeden člověk v Excelu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/sluzba.css?v=2e6ceab">
-  <link rel="stylesheet" href="/mobil.css?v=2e6ceab">
+<link rel="stylesheet" href="/sluzba.css?v=4b84551">
+  <link rel="stylesheet" href="/mobil.css?v=4b84551">
   <link rel="canonical" href="https://mantait.cz/reseni-nova-aplikace">
   <meta property="og:title" content="Aplikace na míru: nápad ze šuplíku do provozu - Manta IT">
   <meta property="og:description" content="Zadání psát nemusíte. První funkční verzi otevřete do týdne, kód je váš.">
@@ -35,7 +35,7 @@
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=2e6ceab" defer></script>
+  <script src="/gtag.js?v=4b84551" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
@@ -204,6 +204,7 @@
 
     <p class="retez-zaver">Velký kus se nedá poctivě slíbit za pevnou cenu.
     Malý ano. Proto se staví po kusech, které jdou hned používat.</p>
+    <p style="max-width:60ch">Tenhle způsob práce se v oboru nazývá agilní vývoj: místo jednoho velkého předání na konci dostáváte funkční část každý týden a rovnou ji používáte. První kolo bývá to, čemu se říká MVP, nejmenší verze, která už reálně pomáhá, ne prázdná kostra. Před ním stojí analýza požadavků: hovor, ve kterém zjistím, kolik lidí bude s aplikací pracovat, jaké systémy má propojovat a kde dnes vázne nejvíc. Z odpovědí sestavím specifikaci zadání sám, ne vy, a teprve podle ní padne pevná cena.</p>
 
     <p class="data-zdroj">Zdroj: <b>Standish Group, CHAOS</b>, cyklus 2020.
     Malé projekty vycházejí kolem devadesáti procent, velké pod deset.
@@ -388,7 +389,7 @@
         <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14l2.5 2.5L16 11"/></svg></span>
         <div class="etapa-kdy">Do týdne</div>
         <h3>První verzi si proklikáte</h3>
-        <p>Ne prezentaci ani nákres. Funkční aplikaci, kterou otevřete v prohlížeči. Napíšete, co nesedí, a druhý den máte upravenou verzi.</p>
+        <p>Ne prezentaci ani nákres. Funkční aplikaci, kterou otevřete v prohlížeči. Napíšete, co nesedí, a druhý den máte upravenou verzi. Vzhled a ovládání (UX/UI) ladíme rovnou v běžící aplikaci, ne na obrázku, který si každý představí jinak.</p>
       </div>
       <div class="etapa">
         <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="16" r="3.4"/><path d="M10.4 13.6 19 5h2v3h-3v3h-3"/></svg></span>
@@ -400,7 +401,7 @@
         <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7.5h.01M7 17h.01"/></svg></span>
         <div class="etapa-kdy">Nasazení</div>
         <h3>Předám do provozu a zaškolím</h3>
-        <p>Aplikaci nasadím tam, kde ji chcete mít, založím účty a domluvím se s vaším IT. Provoz vezmu na sebe, nebo ho předám vašemu člověku. Vyberete si.</p>
+        <p>Aplikaci nasadím tam, kde ji chcete mít, založím účty a domluvím se s vaším IT. Provoz vezmu na sebe, nebo ho předám vašemu člověku. Vyberete si. Nasazení může být cloudové řešení (aplikace běží na serveru mimo firmu a otevřete ji z prohlížeče odkudkoli), nebo on-premise na vašem vlastním serveru, když to chce bezpečnost nebo interní pravidla. Obojí propojím s tím, co už máte, přes API, tedy rozhraní, kterým si dva programy předávají data bez ručního přepisování.</p>
       </div>
     </div>
   </div>
@@ -669,6 +670,42 @@
       </div>
     </details>
 
+    <details>
+      <summary>Co znamená vývoj aplikace na míru?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Znamená to, že aplikaci nestavím z hotových šablon, ale podle toho, jak funguje váš provoz. Popíšete běžnými větami, co dnes drží jeden člověk v Excelu nebo v hlavě, na zbytek se doptám a z odpovědí složím zadání sám. Výsledkem je program, který dělá přesně to, co potřebujete, ne to, na co se hotový software zrovna hodí.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kdy se vyplatí aplikace na míru místo hotového řešení?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Hotové řešení se vyplatí tam, kde vaše agenda odpovídá tomu, co řeší většina firem: účetnictví, docházka, e-mail. Aplikace na míru dává smysl, jakmile proces ve firmě sedí jen v hlavě jednoho člověka nebo v Excelu, který si nikdo netroufá upravit. Pokud existuje hotový systém, který vaši agendu už umí, řeknu vám to při prvním hovoru; koupit ho bývá levnější než ho stavět.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jak probíhá vývoj aplikace na míru krok za krokem?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Začíná se hovorem, na kterém zjistím, co má aplikace umět, kolik lidí v ní bude pracovat a co se má propojit. Podle toho pošlu pevnou cenu za dohodnutý rozsah a pustím se do práce po menších kolech, ne v jednom velkém kroku. Po každém kole dostanete funkční část, kterou rovnou používáte a ke které můžete napsat, co nesedí.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Kdo vlastní zdrojový kód aplikace?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Vy. Zakázku zadáváte fyzické osobě a autorský zákon (121/2000 Sb., § 58 odst. 7) počítá s tím, že se objednatel počítačového programu považuje za zaměstnavatele: majetková práva k programu tak vykonáváte vy, aniž byste si je museli vyjednávat. Při předání navíc dostanete zdrojový kód, popis nasazení a export dat, takže aplikaci může kdykoli převzít jiný programátor.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jaké firmy nabízejí vývoj aplikací na míru?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Dodavatelů řešení na míru je na trhu víc a liší se hlavně tím, kolik lidí prochází mezi vaším zadáním a hotovým kódem. U mě zadání i kód prochází jednou osobou, takže odpadá přenos informace mezi obchodníkem, analytikem a programátorem. Jestli je to pro vás výhoda, nejlíp poznáte v prvním hovoru: napište mi, co u vás dnes drží jeden člověk v Excelu.</p>
+      </div>
+    </details>
+
+
   </div>
 </section>
 <!-- ============ ZAVER ============ -->
@@ -691,7 +728,7 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=2e6ceab"></script>
-<script src="/mobil.js?v=2e6ceab"></script>
+<script src="/sluzba.js?v=4b84551"></script>
+<script src="/mobil.js?v=4b84551"></script>
 </body>
 </html>

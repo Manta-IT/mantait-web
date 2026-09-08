@@ -200,9 +200,14 @@ h1 b{font-weight:600;color:var(--akcent)}
    uzaverky. Neblika a nehybe se cely -- pohyb je jen tam, kde nese informaci
    (bezici cas). Pod reduced-motion se tep zastavi a zustane plny bod. */
 .akce-pruh{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.akce-pruh{padding:clamp(44px,5vw,76px) 0}
 .akce-pruh::before{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(52% 60% at 88% 0%,
-    color-mix(in srgb, var(--akcent) 26%, transparent), transparent 62%)}
+  background:
+    radial-gradient(60% 90% at 90% 0%, color-mix(in srgb, var(--akcent) 58%, transparent), transparent 64%),
+    radial-gradient(50% 70% at 8% 110%, color-mix(in srgb, var(--akcent) 34%, transparent), transparent 62%),
+    linear-gradient(180deg, color-mix(in srgb, var(--papir) 4%, transparent), transparent 30%)}
+.akce-pruh::after{content:'';position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 18px 40px -20px rgba(0,0,0,.7), inset 0 -18px 40px -20px rgba(0,0,0,.7)}
 .akce-vnitrek{position:relative;max-width:var(--sirka);margin:0 auto;
   padding:clamp(26px,3.2vw,40px) var(--okraj);
   display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3vw,44px);
@@ -518,8 +523,164 @@ textarea{min-height:104px;resize:vertical}
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
   .vstup,.radek > *{animation:none}
 }
+/* ---------- Cesta: nabidka jako poradi kroku ---------- */
+#cyklus button:not(.btn):not(.produkt){background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;border-radius:0}
+#cyklus .produkt{background:none;border:0;font:inherit;color:inherit;border-radius:0}
+.cesta-uvod{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,80px);align-items:end}
+.cesta-uvod p{color:var(--tlum);max-width:46ch;font-size:clamp(17px,1.25vw,19px)}
+.cesta-uvod h2{max-width:16ch}
+/* Ram = Dlouhodobe vedeni IT. Obklopuje mapu; "Chci resit vse" ji pohlti do tmave. */
+.ramec{margin-top:clamp(36px,4vw,56px);border:1px solid var(--linka);border-radius:var(--r-l);
+  padding:clamp(18px,2.4vw,30px);background:var(--papir);
+  transition:background .7s var(--krivka),color .7s var(--krivka),border-color .7s var(--krivka)}
+.ramec-hlava{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:center;margin-bottom:clamp(16px,2vw,24px)}
+.ramec-hlava h3{font-size:clamp(20px,1.7vw,24px)}
+.ramec-hlava p{margin-top:6px;font-size:15px;color:var(--tlum);max-width:60ch;transition:color .7s var(--krivka)}
+.ramec-cena{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--akcent);margin-left:10px}
+.ramec.pausal{background:var(--inkoust);color:var(--papir);border-color:var(--inkoust)}
+.ramec.pausal .ramec-hlava p{color:color-mix(in srgb,var(--papir) 68%,transparent)}
+.ramec.pausal .ramec-cena{color:color-mix(in srgb,var(--akcent) 60%,var(--papir))}
+.ramec.pausal .btn-hlavni{background:var(--papir);color:var(--inkoust)}
+.ramec.pausal .btn-hlavni .sipka{background:color-mix(in srgb,var(--inkoust) 12%,transparent)}
+@media (max-width:760px){ .ramec-hlava{grid-template-columns:1fr} }
+
+.schema{position:relative;border:1px solid var(--linka);border-radius:var(--r);background:var(--papir);overflow:hidden;
+  transition:background .7s var(--krivka),border-color .7s var(--krivka)}
+.schema svg{display:block;width:100%;height:auto}
+.ramec.pausal .schema{background:transparent;border-color:color-mix(in srgb,var(--papir) 16%,transparent)}
+.cara{fill:none;stroke:var(--inkoust);stroke-width:1.5;stroke-linecap:round;transition:stroke .5s var(--krivka),stroke-width .5s var(--krivka)}
+.cara.ziva{stroke:var(--akcent);stroke-width:3}
+.cara-stin{fill:none;stroke:var(--akcent);stroke-width:12;stroke-linecap:round;opacity:.07;transition:opacity .7s var(--krivka)}
+.ramec.pausal .cara{stroke:color-mix(in srgb,var(--papir) 55%,transparent)}
+.ramec.pausal .cara.ziva{stroke:var(--akcent)}
+.ramec.pausal .cara-stin{opacity:.22}
+
+/* Uzel: cislo v kolecku. Hover = napeti (zvetseni, rozsviceni cesty), klik = stav (zelena vypln). */
+.uzel{cursor:pointer}
+.uzel .kolo{transform-box:fill-box;transform-origin:center;transition:transform .55s var(--krivka)}
+.uzel circle{fill:var(--papir);stroke:var(--inkoust);stroke-width:1.5;
+  transition:fill .45s var(--krivka),stroke .45s var(--krivka),stroke-width .45s var(--krivka),r .55s var(--krivka),opacity .45s var(--krivka)}
+.uzel .uzel-c{font:600 14px/1 var(--display);fill:var(--inkoust);transition:fill .45s var(--krivka)}
+.uzel .uzel-nazev{font:500 15px/1 var(--text);fill:var(--inkoust);transition:fill .45s var(--krivka)}
+.uzel circle.kruh-vyber{opacity:0;fill:none;stroke:var(--akcent);stroke-width:1.5}
+.uzel.vybrany circle{fill:var(--akcent);stroke:var(--akcent)}
+.uzel.vybrany .uzel-c{fill:var(--papir)}
+.uzel.vybrany .uzel-nazev{fill:var(--akcent);font-weight:700}
+.uzel.vybrany circle.kruh-vyber{opacity:1;r:25}
+.uzel.pred circle:not(.kruh-vyber){stroke:var(--akcent);stroke-dasharray:4 3;stroke-width:2}
+.uzel.po circle:not(.kruh-vyber){stroke:var(--akcent);stroke-width:2.5}
+.uzel .pred-stitek{font:400 11px/1 var(--mono);fill:var(--tlum);letter-spacing:.08em;text-transform:uppercase;transition:fill .45s var(--krivka)}
+.uzel.pred .pred-stitek,.uzel.po .pred-stitek{fill:var(--akcent)}
+@media (hover:hover) and (pointer:fine){
+  .uzel:hover .kolo{transform:scale(1.22)}
+  .uzel:hover circle.kruh-vyber{opacity:.55;r:23}
+  .uzel.vybrany:hover circle.kruh-vyber{opacity:1;r:26}
+}
+/* Pohlcena mapa: vsechno je soucasti pausalu */
+.ramec.pausal .uzel circle{fill:var(--akcent);stroke:var(--akcent)}
+.ramec.pausal .uzel .uzel-c{fill:var(--papir)}
+.ramec.pausal .uzel .uzel-nazev{fill:var(--papir)}
+.ramec.pausal .uzel .pred-stitek{fill:color-mix(in srgb,var(--papir) 60%,transparent)}
+.ramec.pausal .uzel circle.kruh-vyber{stroke:var(--papir)}
+
+/* Panel s detailem zvoleneho kroku */
+.detail{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,64px);margin-top:clamp(28px,3vw,44px);padding-top:clamp(24px,3vw,36px);border-top:1px solid var(--linka);align-items:start}
+.detail-role{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--akcent)}
+.detail h3{margin-top:10px}
+.detail-text{margin-top:14px;color:var(--tlum);max-width:56ch}
+.detail-vazby{margin-top:18px;display:grid;gap:8px;font-size:15px}
+.detail-vazby span{color:var(--tlum)}
+.detail-vazby b{font-weight:600}
+.detail-vazby button{font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--obrys)}
+.detail-vazby button:hover{text-decoration-color:var(--akcent)}
+.varianty{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.varianta{font-size:14px;padding:8px 13px;border:1px solid var(--linka);border-radius:999px;color:var(--inkoust)}
+.varianta.zaklad{background:var(--akcent-sv);border-color:transparent;color:var(--akcent);font-weight:600}
+.detail-cena{font-family:var(--display);font-size:clamp(22px,2vw,30px);letter-spacing:-.03em;line-height:1}
+.detail-cena small{display:block;font-family:var(--mono);font-size:12px;color:var(--tlum);margin-top:6px;letter-spacing:.02em}
+.detail-akce{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.detail.prepnuto .detail-levy{animation:vjezd .45s var(--krivka)}
+@keyframes vjezd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Mensi zakazky vedle cesty: radek se znakem, rozbali se na klik */
+.zvlast{margin-top:clamp(48px,5vw,72px)}
+.zvlast-hlava{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.zvlast-hlava p{color:var(--tlum);font-size:15px;max-width:52ch}
+.zvlast-pozn{margin-top:18px;font-size:14px;color:var(--tlum);max-width:64ch}
+.produkty{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--linka)}
+.produkt{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;gap:4px 18px;align-items:start;align-content:start;
+  padding:20px;border-bottom:1px solid var(--linka);text-align:left;width:100%;
+  transition:background .45s var(--krivka);cursor:pointer}
+.produkt:nth-child(3n+2),.produkt:nth-child(3n){border-left:1px solid var(--linka)}
+.produkt-znak{grid-row:1/3;width:96px;height:64px;display:block;object-fit:contain;transition:transform .45s var(--krivka)}
+.produkt-nazev{font-family:var(--display);font-size:19px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.produkt-cena{font-family:var(--mono);font-size:12.5px;color:var(--tlum);white-space:nowrap;font-weight:400}
+.produkt-vazba{font-size:14px;color:var(--tlum)}
+.produkt-vic{grid-column:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--krivka),margin .5s var(--krivka)}
+.produkt-vic > div{overflow:hidden}
+.produkt-vic p{font-size:15px;color:var(--inkoust);max-width:44ch}
+.produkt-vic a{display:inline-block;margin-top:10px;font-size:15px;font-weight:600;color:var(--akcent);text-decoration:underline;text-underline-offset:4px;text-decoration-color:color-mix(in srgb,var(--akcent) 40%,transparent)}
+.produkt[aria-expanded="true"] .produkt-vic{grid-template-rows:1fr;margin-top:10px}
+#cyklus .produkt[aria-expanded="true"]{background:var(--papir)}
+#cyklus .produkt.patri{background:var(--akcent-sv)}
+.produkt.patri .produkt-vazba::before{content:'K tomuto kroku. ';color:var(--akcent);font-weight:600}
+@media (hover:hover) and (pointer:fine){
+  .produkt:hover .produkt-nazev{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--obrys)}
+  .produkt:hover .produkt-znak{transform:translateY(-2px)}
+}
+.pracovni{font-family:var(--mono);font-size:11px;color:var(--tlum);border:1px dashed var(--obrys);border-radius:var(--r-s);padding:2px 6px;vertical-align:middle;white-space:nowrap}
+
+/* Mobil: krivka pryc, kroky jako svisly seznam ve stejnem stavu */
+.seznam{display:none}
+@media (max-width:760px){
+  .cesta-uvod{grid-template-columns:1fr}
+  .schema{display:none}
+  .seznam{display:block;border-top:1px solid var(--linka)}
+  .ramec.pausal .seznam button{border-color:color-mix(in srgb,var(--papir) 16%,transparent)}
+  .ramec.pausal .seznam i{border-color:var(--akcent);background:var(--akcent);color:var(--papir)}
+  .seznam button{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;width:100%;text-align:left;padding:16px 0;border-bottom:1px solid var(--linka);min-height:56px}
+  .seznam i{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--inkoust);display:grid;place-items:center;font:600 13px/1 var(--display);font-style:normal}
+  .seznam .vybrany i{background:var(--akcent);border-color:var(--akcent);color:var(--papir)}
+  .seznam .pausal i{background:var(--akcent-sv);border-color:var(--akcent);color:var(--akcent)}
+  .seznam small{font-family:var(--mono);font-size:11px;color:var(--tlum);letter-spacing:.06em;text-transform:uppercase}
+  .seznam .vybrany{font-weight:700}
+  .detail{grid-template-columns:1fr}
+  .produkty{grid-template-columns:1fr}
+  .produkt:nth-child(n){border-left:0;padding-left:0;padding-right:0}
+  .produkt-nazev{flex-direction:column;align-items:flex-start;gap:2px}
+  .produkt-znak{width:72px;height:48px}
+}
+
+/* Pruh aktualnich temat: dve temata, zalozky + sipky po stranach */
+.akce-temata{display:flex;gap:6px;margin-bottom:16px;align-items:center}
+.akce-pocet{font:400 12px/1 var(--mono);color:color-mix(in srgb,var(--papir) 55%,transparent);margin-left:8px;letter-spacing:.06em}
+.akce-sipka{position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--papir) 28%,transparent);
+  background:color-mix(in srgb,var(--inkoust) 40%,transparent);color:var(--papir);backdrop-filter:blur(6px);
+  transition:background .25s var(--krivka-klid),border-color .25s var(--krivka-klid),transform .3s var(--krivka)}
+.akce-sipka svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.akce-sipka-l{left:clamp(8px,1.4vw,22px)}
+.akce-sipka-p{right:clamp(8px,1.4vw,22px)}
+@media (hover:hover) and (pointer:fine){
+  .akce-sipka:hover{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
+  .akce-sipka-l:hover{transform:translateY(-50%) translateX(-2px)}
+  .akce-sipka-p:hover{transform:translateY(-50%) translateX(2px)}
+}
+@media (max-width:860px){ .akce-sipka{display:none} }
+.akce-slajdy{display:grid}
+.akce-slajd{grid-area:1/1;visibility:hidden}
+.akce-slajd.aktivni{visibility:visible}
+.akce-vnitrek.dopredu .akce-slajd.aktivni,.akce-vnitrek.dopredu .akce-cta{animation:zprava .55s var(--krivka)}
+.akce-vnitrek.dozadu .akce-slajd.aktivni,.akce-vnitrek.dozadu .akce-cta{animation:zleva .55s var(--krivka)}
+@keyframes zprava{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes zleva{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.akce-temata button{background:transparent;font:600 13px/1 var(--text);color:color-mix(in srgb,var(--papir) 62%,transparent);
+  padding:9px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent);
+  min-height:36px;transition:color .2s var(--krivka-klid),background .2s var(--krivka-klid)}
+.akce-temata button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=2e6ceab">
+  <link rel="stylesheet" href="/mobil.css?v=4b84551">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -575,7 +736,7 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=2e6ceab" defer></script>
+  <script src="/gtag.js?v=4b84551" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
@@ -631,26 +792,19 @@ textarea{min-height:104px;resize:vertical}
 
 <!-- ============ AKCNI POZICE ============ -->
 <section class="akce-pruh" id="akce">
-  <div class="akce-vnitrek">
+  <button class="akce-sipka akce-sipka-l" id="akce-zpet" aria-label="Předchozí téma"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="akce-sipka akce-sipka-p" id="akce-dal" aria-label="Další téma"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="akce-vnitrek" id="akce-vnitrek">
     <div>
+      <div class="akce-temata" role="tablist" aria-label="Aktuální témata" id="akce-temata"></div>
       <span class="akce-stitek"><span class="akce-tep"></span>Právě běží</span>
-      <h2>Dotace na technologie končí letos na podzim.</h2>
-      <p class="akce-popis">Výzva Technologie pro MAS je poslední velké kolo, ve kterém
-      stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají
-      průběžně a další srovnatelný program zatím ohlášený není. Žádost zpracuju a podám
-      za vás, jedna částka a žádná druhá faktura.</p>
-      <div class="akce-cas">
-        <div class="akce-udaj"><b id="akce-dnu">Pár</b><span>dnů do poslední uzávěrky</span></div>
-        <div class="akce-udaj"><b>50 %</b><span>ceny vrací stát</span></div>
-        <div class="akce-udaj"><b>30 000 Kč</b><span>za zpracování i podání</span></div>
-      </div>
+      <div class="akce-slajdy" id="akce-slajdy"></div>
     </div>
     <div class="akce-cta">
-      <a href="/dotace-mas" class="btn btn-hlavni">
-        Chci vědět, jestli na to dosáhnu
+      <a href="#" class="btn btn-hlavni" id="akce-cta"><span id="akce-cta-text"></span>
         <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a href="/clanky/dotace-technologie-pro-mas-2026" class="akce-vedlejsi">Co přesně ta výzva je</a>
+      <a href="#" class="akce-vedlejsi" id="akce-vedlejsi"></a>
     </div>
   </div>
 </section>
@@ -723,183 +877,65 @@ textarea{min-height:104px;resize:vertical}
   </div>
 </section>
 
-<!-- ============ OBORY ============ -->
-<section id="obory" style="background:var(--papir-tmav)">
+<!-- ============ CESTA (nabidka) ============ -->
+<section id="cyklus" style="background:var(--papir-tmav)">
   <!-- alias pro starou navigaci a odkazy z mailu, ktere miri na /#sluzby -->
   <span id="sluzby" aria-hidden="true"></span>
-  <div class="obsah">
-    <h2 style="max-width:20ch">S čím za mnou firmy chodí.</h2>
-    <div class="obory">
-
-      <a class="obor obor-velky obor-tmavy" href="/reseni-vedeni-it">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-vedeni-it.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">Dlouhodobé vedení IT</h3>
-          <p class="obor-popis">Převezmu technologickou stránku firmy celou: systémy,
-          dodavatele, rozpočet i bezpečnost. Vy se k IT vracíte jen na poradách.</p>
-        </div>
-        <span class="obor-cena">od 50 000 Kč měsíčně <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
-      <a class="obor obor-stredni" href="/reseni-nova-aplikace">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-aplikace.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">Aplikace a systémy na míru</h3>
-          <p class="obor-popis">Nemusíte umět napsat zadání. Popíšete, co potřebujete,
-          a dostanete hotovou aplikaci v provozu. Zdrojový kód je pak váš.</p>
-        </div>
-        <span class="obor-cena">od 50 000 Kč <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
-      <a class="obor obor-maly" href="/reseni-ai-zamestnanec">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-ai-zamestnanec.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">AI, která opravdu pracuje</h3>
-          <p class="obor-popis">Ne chatbot. Zaměstnanec s přístupy, který běží
-          nepřetržitě a ráno podá hlášení.</p>
-        </div>
-        <span class="obor-cena">od 89 000 Kč <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
-      <a class="obor obor-maly" href="/reseni-propojeni">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-propojeni.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">Propojení a automatizace</h3>
-          <p class="obor-popis">Data přestanou putovat ručně mezi systémy.
-          Účetnictví, sklad a CRM si konečně rozumí.</p>
-        </div>
-        <span class="obor-cena tlumena">podle rozsahu <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
-      <a class="obor obor-maly" href="/reseni-mapa-firmy">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-mapa-firmy.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">Mapa firmy: kudy tečou data</h3>
-          <p class="obor-popis">Než se dá něco postavit, musí být jasné, kde
-          který údaj žije a kdo ho smí měnit.</p>
-        </div>
-        <span class="obor-cena">39 000 Kč <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
-      <a class="obor obor-maly obor-zvyrazneny" href="/reseni-bezpecnost">
-        <div>
-          <img class="obor-obraz" src="/obrazky/sluzba-bezpecnost.svg?v=2e6ceab" alt="" loading="lazy">
-          <h3 style="margin-top:10px">Bezpečnost a nový zákon</h3>
-          <p class="obor-popis">Za pět minut zjistíte, jestli na vás dopadá zákon
-          o kybernetické bezpečnosti a co po vás chce.</p>
-        </div>
-        <span class="obor-cena">Projít tři otázky <span class="obor-sipka">&rarr;</span></span>
-      </a>
-
+  <span id="cenik" aria-hidden="true"></span>
+  <div class="obsah" style="padding-top:0;padding-bottom:0">
+    <div class="cesta-uvod">
+      <h2>Jedna cesta. Vezměte si krok, nebo celou.</h2>
+      <p>Každý krok má svůj začátek, konec a cenu a objednáte si ho zvlášť, v pořadí,
+      které dává smysl u vás. Mapa jen říká, co na co navazuje. Nebo celou cestu
+      na paušál a k IT se vracet jen na poradách.</p>
     </div>
-  </div>
-</section>
 
-<!-- ============ CENIK ============ -->
-<section id="cenik">
-  <div class="obsah">
-    <h2 style="max-width:24ch">Ceny jsou tady, ne až v nabídce.</h2>
-
-    <div class="cenik">
-      <a class="polozka" href="/ukazka-reportu">
+    <div class="ramec" id="ramec">
+      <div class="ramec-hlava">
         <div>
-          <div class="polozka-nazev">AI plán do 48 hodin</div>
-          <p class="polozka-popis">Dva hodinové workshopy online. Do 48 hodin od druhého
-          máte plán, kde vám AI pomůže, kde ne a čím začít. U části firem z plánu vyjde,
-          že se zatím nemá na čem stavět. Pak pokračujeme Mapou firmy a cena plánu se
-          z ní odečte.</p>
+          <h3>Dlouhodobé vedení IT <span class="ramec-cena">od 50 000 Kč měsíčně</span></h3>
+          <p>Před projektem, při něm i po něm. Celá mapa na paušál: řeknu, co z ní dělat,
+          v jakém pořadí a proč, a pak to dotáhnu.</p>
         </div>
-        <div class="polozka-cena">9 900 Kč<small>pevná cena</small></div>
-      </a>
-
-      <a class="polozka" href="/reseni-mapa-firmy">
-        <div>
-          <div class="polozka-nazev">Mapa firmy: procesy a data</div>
-          <p class="polozka-popis">Za dva týdny vysleduju, kudy u vás tečou práce a data.
-          Mapa, strojová kontrola vašich exportů, nálezy podle peněz a jedna oprava
-          nasazená v ceně. Když jdete z AI plánu, jeho cenu odečtu.</p>
-        </div>
-        <div class="polozka-cena">39 000 Kč<small>pevná cena</small></div>
-      </a>
-
-      <a class="polozka" href="/reseni-nova-aplikace">
-        <div>
-          <div class="polozka-nazev">Aplikace na míru</div>
-          <p class="polozka-popis">První funkční verze do týdne, další podle připomínek
-          obvykle do druhého dne. Doladění toho, co v aplikaci je, neúčtuju.</p>
-        </div>
-        <div class="polozka-cena">od 50 000 Kč<small>pevná cena za rozsah</small></div>
-      </a>
-
-      <a class="polozka" href="/reseni-ai-zamestnanec">
-        <div>
-          <div class="polozka-nazev">AI zaměstnanec</div>
-          <p class="polozka-popis">Zavedení včetně infrastruktury, u vás na serveru
-          nebo v cloudu. Cena odpovídá jednomu měsíčnímu nákladu na dobrého člověka.</p>
-        </div>
-        <div class="polozka-cena">89 000 Kč<small>provoz od 8 000 Kč měsíčně</small></div>
-      </a>
-
-      <a class="polozka" href="/reseni-propojeni">
-        <div>
-          <div class="polozka-nazev">Propojení a automatizace</div>
-          <p class="polozka-popis">Účetnictví, sklad, e-shop a CRM si předávají data
-          samy. Cenu určuje počet systémů a objem dat, řeknu ji po prvním hovoru.</p>
-        </div>
-        <div class="polozka-cena">podle rozsahu<small>pevná cena po prvním hovoru</small></div>
-      </a>
-
-      <a class="polozka" href="/reseni-vedeni-it">
-        <div>
-          <div class="polozka-nazev">Dlouhodobé vedení IT</div>
-          <p class="polozka-popis">Paušál. Pokud řešíte víc věcí najednou, vyjde levněji
-          než jednotlivé zakázky a nezůstanete bez nikoho, až se vynoří další.</p>
-        </div>
-        <div class="polozka-cena">od 50 000 Kč<small>měsíčně</small></div>
-      </a>
-
-      <div class="polozka">
-        <div>
-          <div class="polozka-nazev">Dílčí zakázky</div>
-          <p class="polozka-popis">Vedení projektu, mapování zadání, výběr dodavatele,
-          zavádění nástrojů, revize nákladů.</p>
-        </div>
-        <div class="polozka-cena">10 000 Kč<small>za den</small></div>
+        <button class="btn btn-hlavni" id="vse" aria-pressed="false" data-krok="vedeni"><span id="vse-text">Chci řešit vše</span>
+          <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
       </div>
-
-      <a class="polozka" href="/raynet">
-        <div>
-          <div class="polozka-nazev">Raynet CRM</div>
-          <p class="polozka-popis">Zavedení, propojení s účetnictvím a úpravy na míru.
-          Od července 2026 jsem jejich oficiální integrační partner.</p>
-        </div>
-        <div class="polozka-cena">od 15 000 Kč<small>podle rozsahu</small></div>
-      </a>
-
-      <a class="polozka" href="/weby">
-        <div>
-          <div class="polozka-nazev">Web</div>
-          <p class="polozka-popis">Web Standard do dvou týdnů s jednoduchou správou obsahu,
-          Web Quick do týdne.</p>
-        </div>
-        <div class="polozka-cena">16 900 / 8 900 Kč<small>podle rozsahu</small></div>
-      </a>
-
-      <a class="polozka" href="/dotace-mas">
-        <div>
-          <div class="polozka-nazev">Dotace na digitalizaci</div>
-          <p class="polozka-popis">Ověření nároku, projektový záměr, cenové nabídky
-          i vyplnění žádosti. Jedna částka, služba končí podáním.</p>
-        </div>
-        <div class="polozka-cena">30 000 Kč<small>pevná cena</small></div>
-      </a>
+      <div class="schema">
+        <svg viewBox="0 0 1200 330" id="krivka" aria-label="Kroky nabídky a jejich pořadí" role="group"></svg>
+      </div>
+      <div class="seznam" id="seznam"></div>
     </div>
 
-    <p class="cenik-pozn">Nejsem plátce DPH, ceny jsou konečné. U položek "od" a "podle rozsahu"
-    dostanete přesnou cenu do jednoho pracovního dne od chvíle, kdy budu vědět, o co jde.</p>
+    <div class="detail" id="detail">
+      <div class="detail-levy">
+        <span class="detail-role" id="d-role"></span>
+        <h3 id="d-nazev"></h3>
+        <p class="detail-text" id="d-text"></p>
+        <div class="varianty" id="d-varianty"></div>
+        <div class="detail-vazby" id="d-vazby"></div>
+      </div>
+      <div>
+        <div class="detail-cena" id="d-cena"></div>
+        <div class="detail-akce">
+          <a class="btn btn-hlavni" id="d-odkaz" href="#">Detail služby
+            <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a class="btn btn-vedlejsi" href="#napiste">Napište mi</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="zvlast">
+      <div class="zvlast-hlava">
+        <h3>Menší zakázky vedle cesty</h3>
+        <p>Nejsou krokem mapy, ale mají v ní své místo. Každá má pevný rozsah a napsaný konec.
+        Klikněte, co vás zajímá.</p>
+      </div>
+      <div class="produkty" id="produkty"></div>
+      <p class="zvlast-pozn">Nejsem plátce DPH, ceny jsou konečné. U položek "od" a "podle rozsahu"
+      řeknu přesnou částku po prvním hovoru.</p>
+    </div>
   </div>
 </section>
-
 
 <!-- ============ KONTAKT ============ -->
 <section class="kontakt" id="napiste">
@@ -980,193 +1016,197 @@ textarea{min-height:104px;resize:vertical}
 </section>
 
 <script>
-/* Clanky do pruhu pod hero. Data jsou zatim v souboru; na ostrem webu
-   je dodava tyz manifest, ze ktereho se generuje rozcestnik clanku. */
-(function ohlasy(){
-  const cil = document.getElementById('ohlasy');
-  if (!cil) return;
-  const CLANKY = [
-    {stitek:'Bezpečnost', titulek:'Dopadne na vás nový zákon?', href:'clanky.html'},
-    {stitek:'Dotace', titulek:'Poslední kolo dotací',       href:'clanky.html'},
-    {stitek:'Automatizace', titulek:'Co stojí přepisování',    href:'clanky.html'},
-  ];
-  CLANKY.forEach(c => {
-    const a = document.createElement('a');
-    a.className = 'ohlas';
-    a.href = c.href;
-    a.innerHTML = '<b></b><span></span>';
-    a.querySelector('b').textContent = c.stitek;
-    a.querySelector('span').textContent = c.titulek;
-    cil.appendChild(a);
-  });
-})();
-
-/* Hranice navigace az po odscrollovani hero. Zadny posluchac na scroll. */
-const nav = document.getElementById('nav');
-new IntersectionObserver(([z]) => nav.classList.toggle('posunuto', !z.isIntersecting),
-  {rootMargin:'-72px 0px 0px 0px'}).observe(document.getElementById('hero'));
-
-/* ---------- Kontakt: tri cesty a vyber terminu ----------
-   Zamer: clovek nema vyplnovat vic, nez kolik sam chce. Kdyz chce jen zavolat,
-   vidi dve pole. Kdyz chce termin, neprochazi kalendar, ale klikne na den
-   v tydnu a dostane tri nejblizsi data -- vetsina lidi vi "hodi se mi utery",
-   ne "hodi se mi 9. zari". */
-(function kontakt(){
-  const form   = document.getElementById('formular');
-  if (!form) return;
-  const cesty  = [...document.querySelectorAll('.cesta')];
-  const poleC  = document.getElementById('poleCesta');
-  const bZprava= document.getElementById('blokZprava');
-  const bTermin= document.getElementById('blokTermin');
-  const zprava = document.getElementById('k-zprava');
-  const mail   = document.getElementById('k-mail');
-  const tel    = document.getElementById('k-tel');
-  const pozn   = document.getElementById('poznamka');
-  const odeslat= document.getElementById('odeslat');
-
-  const DNY = ['pondělí','úterý','středa','čtvrtek','pátek'];
-  const CASTI = [
-    {k:'rano',   t:'ráno',      p:'8:00 - 10:00'},
-    {k:'dopo',   t:'dopoledne', p:'10:00 - 12:00'},
-    {k:'odpo',   t:'odpoledne', p:'13:00 - 16:00'},
-    {k:'podvecer',t:'podvečer', p:'16:00 - 18:00'},
-  ];
-  const MESICE = ['ledna','února','března','dubna','května','června',
-                  'července','srpna','září','října','listopadu','prosince'];
-
-  let vybranyDen = null, vybraneDatum = null, vybranaCast = null;
-
-  function bublina(text, stisknuto){
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'bublina';
-    b.setAttribute('aria-pressed', stisknuto ? 'true' : 'false');
-    b.textContent = text;
-    return b;
-  }
-
-  // Tri nejblizsi vyskyty daneho dne v tydnu. Dnesek se nepocita --
-  // pozvanku na dnesek nikdo neceka.
-  function nejblizsi(indexDne){
-    const ven = [];
-    const d = new Date();
-    d.setHours(0,0,0,0);
-    d.setDate(d.getDate() + 1);
-    while (ven.length < 3){
-      if (d.getDay() === indexDne + 1) ven.push(new Date(d));
-      d.setDate(d.getDate() + 1);
-    }
-    return ven;
-  }
-
-  const elDny  = document.getElementById('dny');
-  const elKonk = document.getElementById('konkretniDny');
-  const elCasti= document.getElementById('casti');
-  const elData = document.getElementById('datumy');
-  const elSouhrn = document.getElementById('souhrn');
-
-  DNY.forEach((jmeno, i) => {
-    const b = bublina(jmeno, false);
-    b.addEventListener('click', () => {
-      const uzVybrany = vybranyDen === i;
-      elDny.querySelectorAll('.bublina').forEach(x => x.setAttribute('aria-pressed','false'));
-      if (uzVybrany){
-        vybranyDen = null; vybraneDatum = null;
-        elData.classList.remove('otevreno');
-        souhrn();
-        return;
-      }
-      b.setAttribute('aria-pressed','true');
-      vybranyDen = i; vybraneDatum = null;
-      elKonk.replaceChildren();
-      nejblizsi(i).forEach((datum, k) => {
-        const popis = datum.getDate() + '. ' + MESICE[datum.getMonth()] +
-                      (k === 0 ? ' (nejbližší)' : '');
-        const d = bublina(popis, false);
-        d.addEventListener('click', () => {
-          elKonk.querySelectorAll('.bublina').forEach(x => x.setAttribute('aria-pressed','false'));
-          d.setAttribute('aria-pressed','true');
-          vybraneDatum = datum;
-          souhrn();
-        });
-        elKonk.appendChild(d);
-      });
-      elData.classList.add('otevreno');
-      souhrn();
-    });
-    elDny.appendChild(b);
-  });
-
-  CASTI.forEach(c => {
-    const b = bublina(c.t, false);
-    b.title = c.p;
-    b.addEventListener('click', () => {
-      const uz = vybranaCast === c.k;
-      elCasti.querySelectorAll('.bublina').forEach(x => x.setAttribute('aria-pressed','false'));
-      vybranaCast = uz ? null : c.k;
-      if (!uz) b.setAttribute('aria-pressed','true');
-      souhrn();
-    });
-    elCasti.appendChild(b);
-  });
-
-  function souhrn(){
-    const poleT = document.getElementById('poleTermin');
-    if (!vybraneDatum && vybranyDen === null && !vybranaCast){
-      elSouhrn.classList.remove('videt'); poleT.value = ''; return;
-    }
-    const cast = CASTI.find(c => c.k === vybranaCast);
-    let kdy;
-    if (vybraneDatum){
-      kdy = DNY[vybranyDen] + ' ' + vybraneDatum.getDate() + '. ' + MESICE[vybraneDatum.getMonth()];
-    } else if (vybranyDen !== null){
-      kdy = 'kterékoli ' + DNY[vybranyDen];
-    } else {
-      kdy = 'kterýkoli den';
-    }
-    const casText = cast ? cast.t + ' (' + cast.p + ')' : 'kdykoliv během dne';
-    elSouhrn.innerHTML = 'Poznamenám si <b>' + kdy + '</b>, ' + casText +
-      '. Když se čas nehodí, stačí v pozvánce navrhnout jiný.';
-    elSouhrn.classList.add('videt');
-    poleT.value = kdy + ', ' + casText;
-  }
-
-  const NASTAVENI = {
-    zprava:  {zprava:true,  termin:false, pozn:'Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail.', tlacitko:'Odeslat zprávu'},
-    zavolat: {zprava:false, termin:false, pozn:'Zavolám vám do jednoho pracovního dne. Stačí jméno a číslo.',   tlacitko:'Chci, abyste zavolal'},
-    termin:  {zprava:false, termin:true,  pozn:'Termín si poznamenám a potvrdím vám ho mailem. Když čas nesedne, navrhnete jiný.', tlacitko:'Chci tenhle termín'},
-  };
-
-  function prepni(klic){
-    const n = NASTAVENI[klic];
-    cesty.forEach(c => c.setAttribute('aria-selected', String(c.dataset.cesta === klic)));
-    poleC.value = klic;
-    bZprava.hidden = !n.zprava;
-    bTermin.hidden = !n.termin;
-    zprava.required = n.zprava;
-    tel.required  = (klic === 'zavolat');
-    mail.required = (klic === 'termin');
-    pozn.firstChild.textContent = n.pozn + ' Jak nakládám s údaji, popisují ';
-    odeslat.firstChild.textContent = n.tlacitko + ' ';
-  }
-
-  cesty.forEach(c => c.addEventListener('click', () => prepni(c.dataset.cesta)));
-  prepni('zprava');
-})();
-
-
-/* Odpocet do uzaverky. Datum je jedine misto, ktere se meni, kdyz se vyzva
-   posune -- cislo dnu se dopocita samo, takze na strance nezustane vcerejsek.
-   Bez skriptu zustane pomlcka a zbytek pruhu dava smysl i tak. */
-(function odpocet(){
-  const el = document.getElementById('akce-dnu');
-  if (!el) return;
+(function(){
+  // Aktualni temata: kazde ma landing (zpravodaj) a kategorii clanku.
+  // Rotuje se, dokud navstevnik nesahne na zalozku. Bez pohybu = bez rotace.
   const UZAVERKA = '2026-10-31';
   const dnu = Math.ceil((new Date(UZAVERKA + 'T23:59:59') - new Date()) / 86400000);
-  if (dnu > 0) el.textContent = dnu;
-  else document.getElementById('akce')?.remove();
+  const TEMATA = [
+    {id:'dotace', zalozka:'Dotace na technologie', h2:'Dotace na technologie končí letos na podzim.',
+     popis:'Výzva Technologie pro MAS je poslední velké kolo, ve kterém stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají průběžně a další srovnatelný program zatím ohlášený není. Žádost zpracuju a podám za vás, jedna částka a žádná druhá faktura.',
+     udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],['30 000 Kč','za zpracování i podání']],
+     cta:['Chci vědět, jestli na to dosáhnu','/dotace-mas'], vedlejsi:['Co přesně ta výzva je','/clanky/dotace-technologie-pro-mas-2026'], plati: dnu>0},
+    {id:'zakon', zalozka:'Zákon o kybernetické bezpečnosti', h2:'Nový zákon o kybernetické bezpečnosti. Dopadá i na vás?',
+     popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Sám tuhle dodávku nedělám, doporučím prověřeného partnera. A průběžně sem píšu, co se kolem zákona mění.',
+     udaje:[['3','otázky stačí k odpovědi'],['5 minut','a víte, kam patříte'],['0 Kč','za doporučení partnera']],
+     cta:['Projít tři otázky','sluzba-bezpecnost.html'], vedlejsi:['Co po firmách zákon chce','/clanky/novy-zakon-kyberbezpecnost-3-otazky'], plati:true},
+  ].filter(t=>t.plati);
+  if(!TEMATA.length){ document.getElementById('akce')?.remove(); return; }
+  const $ = id => document.getElementById(id);
+  let i = 0, rucne = false;
+  function ukaz(n, smer){
+    const v = $('akce-vnitrek'); v.classList.remove('dopredu','dozadu'); void v.offsetWidth;
+    if(smer) v.classList.add(smer);
+    i = (n + TEMATA.length) % TEMATA.length; const t = TEMATA[i];
+    $('akce-temata').innerHTML = TEMATA.map((x,j)=>`<button role="tab" aria-selected="${j===i}" data-tema="${j}">${x.zalozka}</button>`).join('')
+      + `<span class="akce-pocet">${i+1} / ${TEMATA.length}</span>`;
+    $('akce-slajdy').querySelectorAll('.akce-slajd').forEach((el,j)=>el.classList.toggle('aktivni', j===i));
+    $('akce-cta').href = t.cta[1]; $('akce-cta-text').textContent = t.cta[0];
+    $('akce-vedlejsi').href = t.vedlejsi[1]; $('akce-vedlejsi').textContent = t.vedlejsi[0];
+  }
+  $('akce-temata').addEventListener('click', e=>{ const b=e.target.closest('[data-tema]'); if(b){ rucne=true; ukaz(+b.dataset.tema, +b.dataset.tema>i?'dopredu':'dozadu'); } });
+  $('akce-dal').addEventListener('click', ()=>{ rucne=true; ukaz(i+1,'dopredu'); });
+  $('akce-zpet').addEventListener('click', ()=>{ rucne=true; ukaz(i-1,'dozadu'); });
+  $('akce-slajdy').innerHTML = TEMATA.map(t=>`<div class="akce-slajd"><h2>${t.h2}</h2><p class="akce-popis">${t.popis}</p>
+    <div class="akce-cas">${t.udaje.map(([b,s])=>`<div class="akce-udaj"><b>${b}</b><span>${s}</span></div>`).join('')}</div></div>`).join('');
+  ukaz(0);
+  if(TEMATA.length<2){ $('akce-dal').hidden = $('akce-zpet').hidden = true; }
+  if(TEMATA.length>1 && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    let stop=false; const s=$('akce'); s.addEventListener('pointerenter',()=>stop=true); s.addEventListener('pointerleave',()=>stop=false);
+    setInterval(()=>{ if(!rucne && !stop) ukaz(i+1,'dopredu'); }, 9000);
+  }
 })();
 </script>
-<script src="/mobil.js?v=2e6ceab"></script>
+<script>
+// Kroky v poradi cesty. x,y = poloha na schematu (viewBox 1200x330).
+// Krok 3 ma dve cesty: koupit hotove, nebo postavit. pred/po = vazby.
+const KROKY = [
+  {id:'priprava', c:'1', nazev:'Příprava firmy', x:120, y:165, nad:true, role:'Krok 1: než se cokoliv koupí nebo postaví',
+   text:'Musí být jasné, kudy tečou data, kdo co dělá a co lidem denně bere čas. Za dva týdny mapa, nálezy podle peněz a jedna oprava nasazená v ceně. Nejčastěji běží souběžně se zadáním.',
+   cena:'39 000 Kč', pozn:'pevná cena, dva týdny', odkaz:'sluzba-mapa-firmy.html',
+   varianty:['Mapa dat a procesů','+ pravidla, kdo co smí'], pred:[], po:['zadani','vyber','ai']},
+  {id:'zadani', c:'2', nazev:'Zadání nové služby', x:340, y:165, nad:false, role:'Krok 2: co přesně se má stát',
+   text:'Spouštíte novou službu a systémy už máte? Vydlabu ze všech, kdo do toho mluví, jedno zadání: co, jak, proč, kam. Schválené, podepsané, s návazností na to, co ve firmě běží. Dodavatel pak staví to, co chcete, ne to, co si domyslel.',
+   cena:'podle rozsahu', pozn:'konec předáním zadání', odkaz:'#napiste',
+   varianty:['Schválené zadání','+ výběr dodavatele','+ vedení dodávky'], pred:['priprava'], po:['vyber','aplikace']},
+  {id:'vyber', c:'3', nazev:'Výběr systému', x:580, y:124, nad:true, cesta:'koupit hotové', role:'Krok 3, cesta A: koupit, co už existuje',
+   text:'Docházka, HR, sklad, CRM, kamery. Něco z toho už někdo postavil a stačí vybrat správně. Projdu, co na trhu je, a doporučím, co sedí vaší velikosti a vašim lidem. Bez provize od dodavatele.',
+   cena:'podle rozsahu', pozn:'konec doporučením', odkaz:'#napiste',
+   varianty:['Doporučení a poptávka','+ zavedení','+ migrace dat','+ zaškolení'], pred:['zadani'], po:['propojeni']},
+  {id:'aplikace', c:'3', nazev:'Aplikace na míru', x:580, y:256, nad:false, cesta:'nebo postavit', role:'Krok 3, cesta B: postavit, co nikdo neprodává',
+   text:'Když to, co potřebujete, nikdo neprodává. První funkční verze do týdne, další podle připomínek. Zdrojový kód je váš. Se zadáním v ruce jdete rovnou sem.',
+   cena:'od 50 000 Kč', pozn:'pevná cena za rozsah', odkaz:'sluzba-aplikace.html',
+   varianty:['Aplikace v provozu','+ napojení na systémy'], pred:['zadani'], po:['propojeni']},
+  {id:'propojeni', c:'4', nazev:'Propojení a automatizace', x:820, y:165, nad:true, role:'Krok 4: aby si systémy rozuměly',
+   text:'Účetnictví, sklad, e-shop a CRM si předávají data samy. Nikdo nic nepřepisuje a čísla sedí všude stejně. Dává smysl až ve chvíli, kdy je co propojovat.',
+   cena:'podle rozsahu', pozn:'pevná cena po prvním hovoru', odkaz:'sluzba-propojeni.html',
+   varianty:['Propojení bez kódu','Propojovací aplikace'], pred:['vyber','aplikace'], po:['ai']},
+  {id:'ai', c:'5', nazev:'Podniková AI', x:1060, y:165, nad:false, role:'Krok 5: AI nad vlastními daty',
+   text:'AI, která zná vaše data a nepouští je ven. U vás na serveru, nebo v cloudu, když to dává smysl. Součástí je zaškolení lidí, ne jen instalace. Stojí na tom, že data tečou a jsou v pořádku.',
+   cena:'podle varianty', pozn:'lokální nebo cloud', odkaz:'sluzba-ai-zamestnanec.html',
+   varianty:['Lokální AI','Cloudová AI'], pred:['priprava','propojeni'], po:[]},
+];
+
+const VEDENI = {id:'vedeni', nazev:'Dlouhodobé vedení IT', role:'Celá cesta na paušál',
+  text:'Všech pět kroků, v pořadí, které dává smysl, a bez toho, abyste je museli objednávat zvlášť. Co pořídit, co postavit, co propojit a kdy. Vy se k IT vracíte jen na poradách.',
+  cena:'od 50 000 Kč měsíčně', pozn:'vyjde levněji než kroky zvlášť', odkaz:'sluzba-vedeni-it.html',
+  varianty:['Vedení a směr','Dohled nad dodavateli','Rozpočet a bezpečnost'], pred:[], po:[]};
+
+const PRODUKTY = [
+  {nazev:'AI plán do 48 hodin', znak:'ai-plan', cena:'9 900 Kč', vazba:'S čím vám AI ve firmě pomůže a čím začít.', patri:['ai','priprava'],
+   vic:'Dva hodinové workshopy online. Do 48 hodin od druhého máte plán: kde AI pomůže, kde ne a čím začít. Když z něj vyjde, že se zatím nemá na čem stavět, pokračujeme Přípravou firmy a cenu plánu odečtu.', odkaz:'#napiste', cta:'Chci plán'},
+  {nazev:'AI agent', znak:'ai-agent', cena:'89 000 Kč + provoz', vazba:'Pracuje nepřetržitě, má přístupy, ráno hlásí.', patri:['ai'],
+   vic:'Zavedení včetně infrastruktury, u vás na serveru nebo v cloudu. Dostane přístupy do vašich systémů, agendu, kterou má odbavovat, a každé ráno podá hlášení. Provoz od 8 000 Kč měsíčně. Dává smysl až po AI plánu.', odkaz:'sluzba-ai-zamestnanec.html', cta:'Jak agent pracuje'},
+  {nazev:'AI linka na zadání', znak:'ai-linka', pracovni:true, cena:'podle rozsahu', vazba:'Dáte vstup, vyrobí výkres, seznam firem nebo článek a skončí.', patri:['ai','propojeni'],
+   vic:'Jedno zadání, jeden výstup: výkres z poptávky, seznam firem k oslovení, článek z poznámek. Spustíte ji, doběhne a skončí, nikdo u toho nesedí. Cena podle toho, co linka vyrábí a z čeho.', odkaz:'#napiste', cta:'Popsat, co má vyrábět'},
+  {nazev:'Raynet CRM', znak:'raynet', cena:'od 15 000 Kč', vazba:'Zavedení a propojení s účetnictvím.', patri:['vyber','propojeni'],
+   vic:'Zavedení CRM, propojení s účetnictvím a úpravy na míru vašemu obchodu. Od července 2026 jsem oficiální integrační partner Raynetu.', odkaz:'raynet.html', cta:'Raynet u vás'},
+  {nazev:'Web pro dobu AI', znak:'web', cena:'35 000 Kč', vazba:'Optimalizace pro vyhledávače i AI asistenty, které dnes posílají poptávky.', patri:['aplikace'],
+   vic:'Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stavím ho stejně jako ten svůj.', odkaz:'weby.html', cta:'Co web umí'},
+  {nazev:'Dotace na digitalizaci', znak:'dotace', cena:'30 000 Kč', vazba:'Ověření nároku až vyplnění žádosti. Končí podáním.', patri:['vyber','aplikace'],
+   vic:'Ověření nároku, projektový záměr, cenové nabídky i vyplnění žádosti. Jedna částka, žádná druhá faktura ani provize z dotace. Služba končí podáním žádosti.', odkaz:'dotace-mas.html', cta:'Jestli na dotaci dosáhnu'},
+];
+
+const S = {vybrany:'priprava'};
+const $ = id => document.getElementById(id);
+const krok = id => id==='vedeni' ? VEDENI : KROKY.find(k=>k.id===id);
+const K = Object.fromEntries(KROKY.map(k=>[k.id,k]));
+
+function vykresliKrivku(){
+  const svg = $('krivka');
+  const P = K.priprava, Z = K.zadani, V = K.vyber, A = K.aplikace, R = K.propojeni, I = K.ai;
+  const hrana = (a,b) => `M${a.x} ${a.y} C ${(a.x+b.x)/2} ${a.y}, ${(a.x+b.x)/2} ${b.y}, ${b.x} ${b.y}`;
+  const hrany = [[P,Z],[Z,V],[Z,A],[V,R],[A,R],[R,I]];
+  let s = hrany.map(([a,b])=>`<path class="cara-stin" d="${hrana(a,b)}"/>`).join('');
+  s += hrany.map(([a,b])=>`<path class="cara" data-od="${a.id}" data-do="${b.id}" d="${hrana(a,b)}"/>`).join('');
+  KROKY.forEach(k=>{
+    const dy = k.nad ? -34 : 46;
+    s += `<g class="uzel ${S.vybrany===k.id?'vybrany':''}" role="button" tabindex="0" data-krok="${k.id}" aria-label="${k.nazev}, krok ${k.c}">
+      <g class="kolo">
+        <circle class="kruh-vyber" cx="${k.x}" cy="${k.y}" r="16"/>
+        <circle cx="${k.x}" cy="${k.y}" r="16"/>
+        <text class="uzel-c" x="${k.x}" y="${k.y+5}" text-anchor="middle">${k.c}</text>
+      </g>
+      <text class="uzel-nazev" x="${k.x}" y="${k.y+dy}" text-anchor="middle">${k.nazev}</text>
+      <text class="pred-stitek" x="${k.x}" y="${k.y+dy+(k.nad?-19:19)}" text-anchor="middle">${k.cesta||''}</text>
+    </g>`;
+  });
+  svg.innerHTML = s;
+  svg.querySelectorAll('.uzel').forEach(g=>{
+    g.addEventListener('pointerenter', ()=>zvyrazni(g.dataset.krok));
+    g.addEventListener('pointerleave', ()=>zvyrazni(null));
+  });
+  const pausal = S.vybrany==='vedeni';
+  $('ramec').classList.toggle('pausal', pausal);
+  $('vse').setAttribute('aria-pressed', pausal);
+  $('vse-text').textContent = pausal ? 'Zpět na jednotlivé kroky' : 'Chci řešit vše';
+}
+
+function vykresliSeznam(){
+  const pausal = S.vybrany==='vedeni';
+  $('seznam').innerHTML = KROKY.map(k=>`<button class="${S.vybrany===k.id?'vybrany':''} ${pausal?'pausal':''}" data-krok="${k.id}"><i>${k.c}</i><span>${k.nazev}</span><small>${k.cesta||''}</small></button>`).join('');
+}
+
+function vykresliDetail(){
+  const k = krok(S.vybrany);
+  $('d-role').textContent = k.role;
+  $('d-nazev').textContent = k.nazev;
+  $('d-text').textContent = k.text;
+  $('d-varianty').innerHTML = k.varianty.map((v,i)=>`<span class="varianta ${i===0?'zaklad':''}">${v}</span>`).join('');
+  const odkazy = ids => ids.map(id=>`<button data-krok="${id}">${krok(id).nazev}</button>`).join(', ');
+  let v = '';
+  if(k.pred.length) v += `<div><span>Před tím: </span>${odkazy(k.pred)}</div>`;
+  if(k.po.length)   v += `<div><span>Otevírá cestu k: </span>${odkazy(k.po)}</div>`;
+  if(k.id!=='vedeni') v += `<div><span>Nebo </span><button data-krok="vedeni">celá cesta na paušál</button></div>`;
+  else v += `<div><span>V ceně: </span>${odkazy(KROKY.map(x=>x.id))}</div>`;
+  $('d-vazby').innerHTML = v;
+  $('d-cena').innerHTML = `${k.cena}<small>${k.pozn}</small>`;
+  $('d-odkaz').href = k.odkaz;
+  const det = $('detail'); det.classList.remove('prepnuto'); void det.offsetWidth; det.classList.add('prepnuto');
+  const pr = $('produkty');
+  pr.querySelectorAll('.produkt').forEach((el,i)=>el.classList.toggle('patri', PRODUKTY[i].patri.includes(k.id)));
+}
+
+function vykresliProdukty(){
+  $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=906b01d" alt="" loading="lazy">
+    <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
+    <span class="produkt-vazba">${p.vazba}</span>
+    <div class="produkt-vic"><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
+  </button>`).join('');
+  $('produkty').addEventListener('click', e=>{
+    if(e.target.closest('a')) return;
+    const b = e.target.closest('.produkt'); if(!b) return;
+    const otevrit = b.getAttribute('aria-expanded')!=='true';
+    $('produkty').querySelectorAll('.produkt').forEach(x=>x.setAttribute('aria-expanded','false'));
+    b.setAttribute('aria-expanded', otevrit);
+  });
+}
+
+function vyber(id){ S.vybrany = (id==='vedeni' && S.vybrany==='vedeni') ? 'priprava' : id; vykresliKrivku(); vykresliSeznam(); vykresliDetail(); }
+
+document.addEventListener('click', e=>{
+  const k = e.target.closest('[data-krok]'); if(k){ vyber(k.dataset.krok); }
+});
+document.addEventListener('keydown', e=>{
+  if(e.key!=='Enter' && e.key!==' ') return;
+  const k = e.target.closest('[data-krok]'); if(k){ e.preventDefault(); vyber(k.dataset.krok); }
+});
+// hover: co ma byt pred timhle krokem (carkovane) a kam vede (zelene hrany)
+const svgEl = $('krivka');
+function zvyrazni(id){
+  const k = id ? krok(id) : null;
+  svgEl.querySelectorAll('.uzel').forEach(el=>{
+    const pred = !!k && k.pred.includes(el.dataset.krok), po = !!k && k.po.includes(el.dataset.krok);
+    el.classList.toggle('pred', pred); el.classList.toggle('po', po);
+    el.querySelector('.pred-stitek').textContent = pred ? 'před tím' : (po ? 'potom' : (krok(el.dataset.krok).cesta||''));
+  });
+  svgEl.querySelectorAll('.cara').forEach(c=>c.classList.toggle('ziva', !!k && (c.dataset.od===id || c.dataset.do===id)));
+}
+
+vykresliProdukty();
+vyber('priprava');
+</script>
+<script src="/mobil.js?v=4b84551"></script>
 </body>
 </html>
