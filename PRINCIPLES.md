@@ -5,9 +5,10 @@ Pro tlustá pravidla viz `CLAUDE.md`. Tento dokument vysvětluje **proč**.
 
 Zdroje: 4 subagent reporty (UX, copywriting, SEO/GEO, competitor) + Petrova rozhodnutí napříč 9 iteracemi designu (květen 2026) + redesign srpen 2026 (`../specs/web-redesign/STAV.md`).
 
-> **POZOR: běží redesign (T0825-7).** Design pravidla níže popisují NOVÝ systém.
-> Produkce nese starý design (béžová + EB Garamond) až do nasazení celého webu
-> najednou. Historie starého systému je v changelogu dole.
+> **Redesign nasazen 26. 8. 2026, nabídka jako cyklus firmy 8. 9. 2026.**
+> Produkce běží na novém systému popsaném níže; stránky na můstku `style.css`
+> zdědily paletu a písma a čekají na přepsání. Historie starého systému je
+> v changelogu dole.
 
 ---
 

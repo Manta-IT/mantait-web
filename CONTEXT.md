@@ -8,14 +8,21 @@ to real deal. Presvedci ho provedeni samotneho webu ("i ten web vypada, ze
 sakra vime, co delame"). Firma prodavajici digitalizaci se dokazuje tim, jak
 vypada jeji vlastni web.
 
-## Stav (25. 8. 2026)
+## Stav (8. 9. 2026)
 
-- **Produkce:** 65 stranek (20 CZ + 20 SK + 20 EN + 5 clanku), live na
-  mantait.cz, Cloudflare Worker, deploy z `master`. Nese jeste STARY design.
-- **Redesign (T0825-7):** 8 novych stranek v `../specs/web-redesign/prototypy/`,
-  homepage Petr schvalil, zbytek ceka na schvaleni. Nasazuje se cely web
-  najednou vcetne jazyku -- do te doby se do produkce nesaha.
-  Stav a rozhodnuti: `../specs/web-redesign/STAV.md`.
+- **Produkce:** novy design system nasazeny 26. 8. 2026 (commit 5765313),
+  nabidka jako cyklus firmy od 8. 9. (8dd3d2c, c585dc7). 12 stranek
+  prepsanych od zakladu, zdroj je `../specs/web-redesign/prototypy/`,
+  prenos `../specs/web-redesign/prenos.py`. Zbytek (dotace-mas, raynet,
+  dodavatele, clanky, ...) jede na mustku `style.css` a ceka na prepsani.
+- **SK a EN** jsou od 8. 9. odpojene: `/sk/*` a `/en/*` 301 na `/`, bez
+  hreflang, mimo sitemap. Soubory zustavaji v repu do prekladu.
+- **Zanikle cesty** (`reseni-ai`, `reseni-naklady`, `reseni-nastroje`,
+  `reseni-projekt`, `reseni-web`, `kontakt`) jsou 301 v `_redirects`.
+- Clanky: `clanky/manifest.json` je zdroj hubu, publikace jen skriptem
+  (`scripts/clanek_publikuj.py`). Formular dodavatelu `/dodavatele` od 31. 8.
+- Deploy: Cloudflare Workers Builds z `master`. Stav a rozhodnuti redesignu:
+  `../specs/web-redesign/STAV.md`, nabidky: `../specs/web-nabidka/design.md`.
 
 ## Pozice a obsah
 
@@ -23,16 +30,16 @@ vypada jeji vlastni web.
 - Pozice (korekce Petra 25. 8.): technologicky lidr, ktery vede digitalni
   transformaci firem do ~250 lidi -- ne IT manager na spravu pocitacu.
 - Cilovka: majitele ne-tech firem, 50+, nesnasi zargon.
-- Sluzeb pet: vedeni IT, aplikace na miru, propojeni a automatizace,
-  bezpecnost a novy zakon, AI zamestnanec. K tomu clanky (obsahovy hub),
-  dotace na klic (30 000 Kc, konci podanim) a web pro dobu AI (35 000 Kc, od 8. 9. 2026).
+- Nabidka jako cyklus firmy (od 8. 9. 2026): sedm kroku radu 1 (Priprava
+  firmy, Zadani, Vyber systemu, Aplikace na miru, Propojeni, Podnikova AI,
+  Vedeni IT) + produkty radu 3 (AI plan 9 900, AI zamestnanec 89 000, Robot
+  na zadani, Web pro dobu AI 35 000, Dotace na klic 30 000). Bezpecnost je
+  tema v pruhu, ne sluzba. Zdroj: `../specs/web-nabidka/design.md`, ceny
+  hlida `scripts/kontrola_webu.py` (registr `sluzby.json`).
 - Mereni: pocet poptavek pres formular (/dekujeme). GA4 se nezaklada.
 
 ## Otevrene otazky
 
-- **Pet zanikajicich cest** (`reseni-ai`, `reseni-naklady`, `reseni-nastroje`,
-  `reseni-projekt`, `reseni-web`): presmerovat, nebo nechat zit? URL muzou
-  mit navstevnost.
 - **Pozvanky do kalendare** z vyberu terminu (T0825-36) -- ceka na Petruv
   OAuth a mapovani casti dne.
 - Benchmark cen konkurence (Digitisk 648-793 tis.) se NIKDY neuvadi jako
