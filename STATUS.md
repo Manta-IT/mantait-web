@@ -1,3 +1,22 @@
+## 2026-09-08 -- entitni signaly, obsah z mapy temat, registrace
+
+Nasazeno (commity 4b84551, 2e6ceab, 4fca259): JSON-LD homepage ma sameAs (LinkedIn
+company/manta-it, Raynet partnerska stranka), ICO, alternateName a disambiguatingDescription
+(kolize s Manta/IBM v AI odpovedich); og-image a logo-mantait.png prekresleny do nove
+znacky; 5 stranek doplneno o obsah z mapy temat nastroje citovanost (raynet, weby,
+bezpecnost, aplikace, propojeni: odstavce + FAQ + nove titulky; schvaleno Petrem).
+
+Registrace: Search Console (5. 9., DNS), Seznam Webmaster (meta tag v prenos.py), Bing
+Webmaster (import z GSC), Firmy.cz (ceka schvaleni), Google Business Profile (ceka
+overeni), Bing Places (PIN postou, T0908-16).
+
+Linka clanku (jina session, workflows/clanek/): 6 tasku Clanek: z mapy temat
+(T0908-38..43). Commity clanku male-projekty zustaly lokalne nepushnute (T0908-30,
+rozhoduje Petr). Pozor: web/ repo sdili vic sessions -- pushovat jen vlastni commity
+(cherry-pick na docasnou vetev z origin/master).
+
+---
+
 ## 2026-09-03 -- rozbity frontend: dva prvky skladane skriptem bez stylu
 
 Petr nahlasil "rozhazene prvky menu bez stylovani pod patickou". Stejna
