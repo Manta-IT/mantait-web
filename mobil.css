@@ -51,6 +51,11 @@
    viditelne pravidlo musi byt tady, ne jen uvnitr media dotazu. */
 .nav-panel{display:none}
 
+/* Skladaci vycty: prvky, ktere sklada mobil.js. Mimo uzke okno se nesklada,
+   takze spinac je jen text nadpisu a znacka "mame" se neukazuje vubec. */
+.doklad-spinac{all:unset;display:inline}
+.doklad > h3 .mam{display:none}
+
 @media (max-width:900px){
   .nav-prepinac{
     display:inline-flex;align-items:center;gap:9px;
@@ -130,9 +135,20 @@
     border-radius:0;padding:0;margin:0;background:transparent;
   }
   .doklady.skladatelne .doklad > h3{
-    margin:0;padding:16px 34px 16px 0;min-height:44px;
-    display:flex;align-items:center;cursor:pointer;position:relative;
+    margin:0;padding:0 34px 0 0;min-height:44px;
+    display:flex;align-items:center;position:relative;
     font-size:17px;line-height:1.3;
+  }
+  /* Odsazeni nese spinac, ne nadpis: klikaci plocha ma byt cely radek. */
+  .doklady.skladatelne .doklad > h3 .doklad-spinac{
+    all:unset;flex:1;cursor:pointer;min-height:44px;
+    display:flex;align-items:center;padding:16px 0;
+  }
+  .doklady.skladatelne .doklad > h3 .doklad-spinac:focus-visible{
+    outline:2px solid var(--akcent);outline-offset:-2px;
+  }
+  .doklady.skladatelne .doklad > h3 .mam:focus-visible{
+    outline:2px solid var(--akcent);outline-offset:2px;
   }
   .doklady.skladatelne .doklad > h3::after{
     content:'';position:absolute;right:4px;top:50%;width:9px;height:9px;
@@ -161,8 +177,10 @@
   .pocitadlo b{font-family:var(--display);font-size:27px;font-weight:400;letter-spacing:-.03em}
   .pocitadlo span{font-size:14px;color:var(--tlum);line-height:1.35}
   .doklady.skladatelne .doklad > h3 .mam{
-    margin-left:auto;margin-right:14px;font-family:var(--mono);font-size:12px;
-    letter-spacing:.08em;color:var(--obrys);border:1px solid var(--obrys);
+    display:flex;margin-left:auto;margin-right:14px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.08em;color:var(--tlum);border:1px solid var(--obrys);
+    /* text --obrys je na papiru 3,07:1, AA chce u 12 px 4,5:1 (axe 8. 9.).
+       --tlum ma 5,7:1; ramecek smi zustat na 3:1, to je prah pro obrysy. */
     border-radius:var(--r-s);padding:5px 10px;min-height:32px;display:flex;align-items:center;
   }
   .doklad.mame > h3 .mam{color:var(--akcent);border-color:var(--akcent);background:var(--akcent-sv)}

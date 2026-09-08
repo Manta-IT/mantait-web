@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Manta IT - technologický ředitel na vaší straně</title>
 <meta name="description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/pisma/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/outfit-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=8f0b871">
 <style>
 /* =========================================================================
    Manta IT -- kompletni stranka, v2
@@ -187,8 +189,14 @@ h1 b{font-weight:600;color:var(--akcent)}
 .podpis b{color:var(--inkoust);font-weight:600;font-size:15px}
 
 .vstup{animation:prichod .7s var(--krivka) backwards}
-@keyframes prichod{from{opacity:0;transform:translateY(20px)}}
-.z1{animation-delay:.04s}.z2{animation-delay:.10s}
+/* Zamerne BEZ opacity:0. Prvek s nulovou pruhlednosti Chrome nepovazuje za
+   vykresleny, takze hero text nebyl kandidat na LCP driv nez po dobehnuti
+   animace: mereni 8. 9. ukazalo element render delay 990 ms na odstavci,
+   jehoz bajty dorazily za 63 ms. FCP, LCP i Speed Index jsou 45 % skore.
+   Posun zustava, prolnuti zmizelo -- kdyz bude Petr chtit prolnuti zpatky,
+   stoji to zhruba deset bodu Performance na mobilu. */
+@keyframes prichod{from{transform:translateY(20px)}}
+.z2{animation-delay:.10s}
 .z3{animation-delay:.16s}.z4{animation-delay:.22s}
 
 /* ---------- Akcni pozice: co prave bezi a ma konec ----------
@@ -239,50 +247,6 @@ h1 b{font-weight:600;color:var(--akcent)}
   .akce-tep{animation:none}
 }
 
-/* ---------- Ohlasy: pruh s clanky na konci prvni obrazovky ---------- */
-.ohlasy{border-top:1px solid var(--linka);background:var(--papir-tmav)}
-.ohlasy-vnitrek{
-  max-width:var(--sirka);margin:0 auto;padding:26px var(--okraj);
-  display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);
-}
-.ohlasy-popis{font-family:var(--mono);font-size:12.5px;color:var(--tlum);flex:none}
-.ohlasy-radek{
-  display:flex;gap:8px;flex:1;min-width:0;
-  overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;
-  /* prechod na prave hrane: pruh pokracuje, neni useknuty */
-  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);
-          mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);
-  /* Svisly prostor pro posun na hoveru. `overflow-x:auto` dela podle
-     specifikace z `overflow-y` taky `auto`, takze bez teto rezervy se
-     pilulce pri translateY(-1px) orizne horni hrana i s rameckem.
-     Zaporny margin to vizualne srovna zpatky. */
-  padding:3px 26px 3px 0;
-  margin:-3px 0;
-}
-.ohlasy-radek::-webkit-scrollbar{display:none}
-.ohlas{
-  flex:0 0 auto;max-width:none;scroll-snap-align:start;
-  display:flex;align-items:center;gap:11px;
-  background:var(--papir);border:1px solid var(--linka);
-  border-radius:999px;padding:9px 18px 9px 12px;
-  text-decoration:none;font-size:14.5px;line-height:1.35;
-  transition:border-color .18s var(--krivka-klid), transform .2s var(--krivka);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.ohlas b{font-family:var(--mono);
-  font-family:var(--display);font-size:12px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--akcent);background:var(--akcent-sv);
-  border-radius:999px;padding:4px 9px;flex:none;
-}
-.ohlas span{overflow:hidden;text-overflow:ellipsis}
-.ohlasy-vse{min-height:44px;align-items:center;
-  flex:none;font-size:14px;color:var(--tlum);text-decoration:none;
-  display:inline-flex;align-items:center;gap:7px;
-  transition:color .18s var(--krivka-klid), gap .2s var(--krivka);
-}
-.ohlasy-vse svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7}
-
 /* ---------- Pas referenci ---------- */
 .pas-obal{border-top:1px solid var(--linka);padding:0}
 .pas{
@@ -328,59 +292,6 @@ section{padding:clamp(72px,9vw,132px) 0}
 }
 .krok p{font-size:15px;color:var(--tlum);margin-top:5px;max-width:40ch}
 
-/* Obory: nestejne velke dlazdice, ne mrizka stejnych karet */
-.obory{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:44px}
-.obor{
-  border:1px solid var(--linka);border-radius:var(--r);
-  padding:26px 24px;background:var(--papir);
-  display:flex;flex-direction:column;justify-content:space-between;gap:26px;
-  transition:border-color .2s var(--krivka-klid), transform .3s var(--krivka);
-}
-.obor-velky{grid-column:span 3}
-.obor-stredni{grid-column:span 3}
-.obor-maly{grid-column:span 2}
-.obor-tmavy{background:var(--inkoust);color:var(--papir);border-color:var(--inkoust)}
-.obor-zvyrazneny{background:var(--akcent-sv);border-color:color-mix(in srgb, var(--akcent) 26%, transparent)}
-.obor-tmavy .obor-popis{color:color-mix(in srgb, var(--papir) 66%, transparent)}
-.obor-popis{font-size:15px;color:var(--tlum);margin-top:10px;max-width:34ch}
-a.obor{text-decoration:none}
-.obor-cena{font-family:var(--display);font-size:15px;color:var(--akcent);
-  display:inline-flex;align-items:center;gap:7px}
-.obor-sipka{transition:transform .2s var(--krivka);display:inline-block}
-.obor-tmavy .obor-cena{color:var(--papir)}
-.obor-maly .obor-cena.tlumena{color:var(--tlum)}
-/* Ilustrace nahradila ikonu. Ikona jen znacila kategorii, ilustrace rovnou
-   ukazuje, co ta sluzba dela -- a je kreslena tymz jazykem jako zbytek webu
-   (blok, linka, kruh), takze se nerozejde s obrazky uvnitr detailu. */
-.obor-obraz{display:block;width:100%;height:clamp(96px,9vw,124px);
-  object-fit:contain;object-position:left center;margin-bottom:6px;
-  transition:transform .35s var(--krivka)}
-.obor-tmavy .obor-obraz{filter:brightness(.96)}
-.obor-znak{
-  width:34px;height:34px;border-radius:9px;background:var(--akcent-sv);
-  display:grid;place-items:center;flex:none;
-}
-.obor-tmavy .obor-znak{background:color-mix(in srgb, var(--papir) 14%, transparent)}
-.obor-znak svg{width:17px;height:17px;stroke:var(--akcent);fill:none;stroke-width:1.6}
-.obor-tmavy .obor-znak svg{stroke:var(--papir)}
-
-/* Cenik: radky s cenou vpravo, zadna tabulka s linkou pod kazdym radkem */
-.cenik{margin-top:40px;border-top:1px solid var(--linka)}
-.polozka{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:20px;align-items:baseline;
-  padding:22px 0;border-bottom:1px solid var(--linka);
-}
-a.polozka{text-decoration:none;transition:padding-left .25s var(--krivka)}
-.polozka-nazev{font-family:var(--display);font-size:clamp(18px,1.5vw,22px);letter-spacing:-.02em}
-.polozka-popis{font-size:15px;color:var(--tlum);margin-top:6px;max-width:52ch}
-.polozka-cena{
-  font-family:var(--display);font-size:clamp(17px,1.4vw,20px);font-weight:500;
-  white-space:nowrap;text-align:right;
-}
-.polozka-cena small{display:block;font-family:var(--mono);font-size:12.5px;font-weight:400;color:var(--tlum);margin-top:4px}
-.cenik-pozn{margin-top:20px;font-size:14px;color:var(--tlum);max-width:64ch}
-
 @media (max-width:900px){
   .hlava{min-height:auto}
   .hero{grid-template-columns:1fr;padding-top:96px;gap:40px}
@@ -390,12 +301,6 @@ a.polozka{text-decoration:none;transition:padding-left .25s var(--krivka)}
   .menu{display:none}
   h1{max-width:100%}
   .cinnost{grid-template-columns:1fr;gap:36px}
-  .obory{grid-template-columns:1fr}
-  .obor-velky,.obor-stredni,.obor-maly{grid-column:span 1}
-  .ohlasy-vnitrek{flex-direction:column;align-items:flex-start;gap:12px}
-  .ohlasy-radek{width:100%}
-  .polozka{grid-template-columns:1fr;gap:8px}
-  .polozka-cena{text-align:left}
 }
 @media (max-width:520px){
   .akce{flex-direction:column;align-items:stretch}
@@ -410,16 +315,8 @@ a.polozka{text-decoration:none;transition:padding-left .25s var(--krivka)}
   .btn-hlavni:hover .sipka{transform:translateX(3px);background:color-mix(in srgb, var(--papir) 26%, transparent)}
   .btn-vedlejsi:hover{border-color:var(--inkoust);background:var(--papir-tmav)}
   .portret:hover img{transform:scale(1.012)}
-  .ohlas:hover{border-color:var(--inkoust);transform:translateY(-1px)}
-  .ohlasy-vse:hover{color:var(--inkoust);gap:10px}
   .pas:hover .pas-jmena img{opacity:.2}
   .pas .pas-jmena img:hover{opacity:.82;transform:translateY(-2px)}
-  a.polozka:hover{padding-left:10px}
-  a.polozka:hover .polozka-nazev{color:var(--akcent)}
-  .obor:hover{border-color:var(--inkoust);transform:translateY(-2px)}
-  a.obor:hover .obor-sipka{transform:translateX(4px)}
-  a.obor:hover .obor-obraz{transform:scale(1.03)}
-  .obor-tmavy:hover{border-color:var(--akcent)}
 }
 
 
@@ -680,7 +577,7 @@ textarea{min-height:104px;resize:vertical}
   min-height:36px;transition:color .2s var(--krivka-klid),background .2s var(--krivka-klid)}
 .akce-temata button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=eda56ef">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -736,9 +633,9 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=eda56ef" defer></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
 
@@ -746,13 +643,18 @@ textarea{min-height:104px;resize:vertical}
   <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
   <div class="menu">
     <a href="#cinnost">Co dělám</a>
-    <a href="#obory">S čím pomůžu</a>
+    <a href="#cyklus">S čím pomůžu</a>
     <a href="#cenik">Kolik to stojí</a>
     <a href="/o-mne">Kdo jsem</a>
     <a href="/clanky/">Články</a>
   </div>
   <a href="#napiste" class="nav-cta">Napište mi</a>
 </nav>
+
+<!-- Orientacni bod pro ctecky obrazovky. Bez <main> nemel navstevnik
+     s ctecku kam preskocit navigaci -- na kazde strance to bylo 40 az
+     88 prvku mimo jakykoliv landmark (axe "region", 8. 9. 2026). -->
+<main>
 
 <div class="hlava" id="hero">
   <header class="hero">
@@ -773,22 +675,10 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/petr-kokoska.jpg" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800">
+      <img src="/petr-kokoska.jpg" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
-
-  <!-- Co se prave resi: misto dekorace zive odkazy na clanky.
-       Panel je posledni vec v prvni obrazovce, takze dava duvod scrollovat. -->
-  <div class="ohlasy">
-    <div class="ohlasy-vnitrek">
-      <span class="ohlasy-popis">Co se právě řeší</span>
-      <div class="ohlasy-radek" id="ohlasy"></div>
-      <a class="ohlasy-vse" href="/clanky/">Všechny články
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
 
 <!-- ============ AKCNI POZICE ============ -->
 <section class="akce-pruh" id="akce">
@@ -813,13 +703,13 @@ textarea{min-height:104px;resize:vertical}
     <div class="pas">
       <span class="pas-popis">Vedl jsem projekty pro</span>
       <div class="pas-jmena">
-        <img src="/loga/cesky-rozhlas.png" alt="Český rozhlas" style="--v:20px" loading="lazy">
-        <img src="/loga/radioteka.svg" alt="Radioteka" style="--v:18px" loading="lazy">
-        <img src="/loga/prima.svg" alt="Prima" style="--v:17px" loading="lazy">
-        <img src="/loga/cnc.svg" alt="Czech News Center" style="--v:34px" loading="lazy">
-        <img src="/loga/unihobby.svg" alt="UniHobby" style="--v:20px" loading="lazy">
-        <img src="/loga/prodoma.svg" alt="Pro-Doma" style="--v:22px" loading="lazy">
-        <img src="/loga/almeco.svg" alt="Almeco" style="--v:24px" loading="lazy">
+        <img src="/loga/cesky-rozhlas.png" alt="Český rozhlas" style="--v:20px" loading="lazy" width="698" height="104">
+        <img src="/loga/radioteka.svg" alt="Radioteka" style="--v:18px" loading="lazy" width="253" height="43">
+        <img src="/loga/prima.svg" alt="Prima" style="--v:17px" loading="lazy" width="1000" height="457">
+        <img src="/loga/cnc.svg" alt="Czech News Center" style="--v:34px" loading="lazy" width="261" height="80">
+        <img src="/loga/unihobby.svg" alt="UniHobby" style="--v:20px" loading="lazy" width="185" height="40">
+        <img src="/loga/prodoma.svg" alt="Pro-Doma" style="--v:22px" loading="lazy" width="246" height="48">
+        <img src="/loga/almeco.svg" alt="Almeco" style="--v:24px" loading="lazy" width="284" height="100">
       </div>
     </div>
   </section>
@@ -882,6 +772,7 @@ textarea{min-height:104px;resize:vertical}
   <!-- alias pro starou navigaci a odkazy z mailu, ktere miri na /#sluzby -->
   <span id="sluzby" aria-hidden="true"></span>
   <span id="cenik" aria-hidden="true"></span>
+    <span id="obory" aria-hidden="true"></span>
   <div class="obsah" style="padding-top:0;padding-bottom:0">
     <div class="cesta-uvod">
       <h2>Jedna cesta. Vezměte si krok, nebo celou.</h2>
@@ -962,6 +853,8 @@ textarea{min-height:104px;resize:vertical}
 
     <form class="panel" id="formular" method="post" action="/api/kontakt">
       <input type="hidden" name="cesta" id="poleCesta" value="zprava">
+      <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off"
+             style="position:absolute;left:-9999px" aria-hidden="true">
 
       <div class="pole">
         <div>
@@ -1014,6 +907,7 @@ textarea{min-height:104px;resize:vertical}
     </form>
   </div>
 </section>
+</main>
 
 <script>
 (function(){
@@ -1169,17 +1063,21 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=73a0b05" alt="" loading="lazy">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=dcbab85" alt="" loading="lazy" width="120" height="80">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
-    <div class="produkt-vic"><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
+    <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
   </button>`).join('');
   $('produkty').addEventListener('click', e=>{
     if(e.target.closest('a')) return;
     const b = e.target.closest('.produkt'); if(!b) return;
     const otevrit = b.getAttribute('aria-expanded')!=='true';
-    $('produkty').querySelectorAll('.produkt').forEach(x=>x.setAttribute('aria-expanded','false'));
+    $('produkty').querySelectorAll('.produkt').forEach(x=>{
+      x.setAttribute('aria-expanded','false');
+      x.querySelector('.produkt-vic').inert = true;
+    });
     b.setAttribute('aria-expanded', otevrit);
+    b.querySelector('.produkt-vic').inert = !otevrit;
   });
 }
 
@@ -1207,6 +1105,104 @@ function zvyrazni(id){
 vykresliProdukty();
 vyber('priprava');
 </script>
-<script src="/mobil.js?v=eda56ef"></script>
+<script>
+/* Tri cesty kontaktu a vyber terminu.
+
+   Do 8. 9. 2026 tenhle kod na strance CHYBEL: tlacitka "Zavolejte mi" a
+   "Pošlete mi termín" byla v HTML, mela styl i role, ale nikdo je neposlouchal.
+   Klik nedelal nic, `cesta` odesla vzdy jako "zprava" a `termin` prazdny --
+   navstevnik, ktery si chtel vybrat cas, odesel s dojmem rozbiteho formulare.
+   Nalez technickeho review 8. 9., overeny na produkci.
+
+   Podoba vyberu je popsana v HTML nad blokem #blokTermin: zadny kalendar,
+   tri kliky (den v tydnu -> tri nejblizsi data -> cast dne). */
+/* Hranice navigace po odscrollovani hero. Na strankach sluzeb to dela
+   sluzba.js, homepage ten skript nenacita -- trida .posunuto tu tedy byla
+   nastylovana, ale nikdy nenasazena (nalez 8. 9.). */
+(function nav(){
+  const n = document.getElementById('nav'), hero = document.getElementById('hero');
+  if (!n || !hero) return;
+  new IntersectionObserver(([z]) => n.classList.toggle('posunuto', !z.isIntersecting),
+    {rootMargin:'-72px 0px 0px 0px'}).observe(hero);
+})();
+
+(function kontakt(){
+  const $ = id => document.getElementById(id);
+  const cesty = [...document.querySelectorAll('.cesta[data-cesta]')];
+  const pole = $('poleCesta'), blokZprava = $('blokZprava'), blokTermin = $('blokTermin');
+  if (!cesty.length || !pole) return;
+
+  const DNY = ['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'];
+  const CASTI = ['dopoledne', 'odpoledne'];
+  const stav = {den: null, datum: null, cast: null};
+
+  function vyberCestu(klic){
+    cesty.forEach(c => c.setAttribute('aria-selected', String(c.dataset.cesta === klic)));
+    pole.value = klic;
+    // Zprava ma smysl u vsech cest ("co resim"), termin jen u treti.
+    blokTermin.hidden = klic !== 'termin';
+    if (klic !== 'termin') { stav.den = stav.datum = stav.cast = null; zapis(); }
+  }
+
+  /* Tri nejblizsi vyskyty daneho dne v tydnu, od zitrka dal. */
+  function nejblizsi(denVTydnu){
+    const ven = [], d = new Date();
+    d.setHours(0,0,0,0);
+    d.setDate(d.getDate() + 1);
+    while (ven.length < 3) {
+      if (d.getDay() === denVTydnu) ven.push(new Date(d));
+      d.setDate(d.getDate() + 1);
+    }
+    return ven;
+  }
+
+  const format = d => `${d.getDate()}. ${d.getMonth() + 1}.`;
+
+  function bubliny(kam, polozky, jeVybrana, priKliku){
+    kam.innerHTML = '';
+    polozky.forEach(p => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'bublina';
+      b.textContent = p.popis;
+      b.setAttribute('aria-pressed', String(jeVybrana(p)));
+      b.addEventListener('click', () => priKliku(p));
+      kam.appendChild(b);
+    });
+  }
+
+  function zapis(){
+    const hotovo = stav.datum && stav.cast;
+    $('souhrn').classList.toggle('videt', !!hotovo);
+    if (!hotovo) { $('poleTermin').value = ''; return; }
+    const text = `${DNY[stav.den]} ${format(stav.datum)} ${stav.cast}`;
+    $('souhrn').innerHTML = 'Ozvu se vám <b></b> a potvrdím to mailem.';
+    $('souhrn').querySelector('b').textContent = text;
+    $('poleTermin').value = text;
+  }
+
+  function prekresli(){
+    bubliny($('dny'), [1,2,3,4,5].map(n => ({n, popis: DNY[n]})),
+      p => p.n === stav.den,
+      p => { stav.den = p.n; stav.datum = null; prekresli(); });
+
+    $('datumy').classList.toggle('otevreno', stav.den !== null);
+    bubliny($('konkretniDny'), stav.den === null ? [] :
+      nejblizsi(stav.den).map(d => ({d, popis: format(d)})),
+      p => stav.datum && p.d.getTime() === stav.datum.getTime(),
+      p => { stav.datum = p.d; prekresli(); });
+
+    bubliny($('casti'), CASTI.map(c => ({c, popis: c})),
+      p => p.c === stav.cast,
+      p => { stav.cast = p.c; prekresli(); });
+
+    zapis();
+  }
+
+  cesty.forEach(c => c.addEventListener('click', () => vyberCestu(c.dataset.cesta)));
+  prekresli();
+})();
+</script>
+<script src="/mobil.js?v=1bc92b7"></script>
 </body>
 </html>

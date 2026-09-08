@@ -120,27 +120,37 @@
         telo.appendChild(obal);
       }
 
+      /* Text nadpisu jde do vlastniho tlacitka. h3 s role="button" bral ctecce
+         nadpis (a "mame" uvnitr nej byl zanoreny ovladaci prvek) -- takhle
+         zustane nadpis nadpisem a obe akce jsou poctiva tlacitka. */
+      let spinac = h.querySelector(':scope > .doklad-spinac');
+      if (!spinac) {
+        spinac = document.createElement('button');
+        spinac.type = 'button';
+        spinac.className = 'doklad-spinac';
+        while (h.firstChild) spinac.appendChild(h.firstChild);
+        h.appendChild(spinac);
+      }
+
       if (scita) {
-        const znacka = document.createElement('span');
+        const znacka = document.createElement('button');
+        znacka.type = 'button';
         znacka.className = 'mam';
+        znacka.setAttribute('aria-pressed', 'false');
         znacka.textContent = 'máme';
         h.appendChild(znacka);
         znacka.addEventListener('click', e => {
           e.stopPropagation();          /* odskrtnuti nerozbaluje podrobnost */
-          p.classList.toggle('mame');
+          const zapnuto = p.classList.toggle('mame');
+          znacka.setAttribute('aria-pressed', String(zapnuto));
           prepocitej();
         });
       }
 
-      h.addEventListener('click', () => {
+      spinac.addEventListener('click', () => {
         if (!uzke.matches) return;
         p.classList.toggle('otevreny');
-        h.setAttribute('aria-expanded', p.classList.contains('otevreny'));
-      });
-      h.setAttribute('role', 'button');
-      h.setAttribute('tabindex', '0');
-      h.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); h.click(); }
+        spinac.setAttribute('aria-expanded', p.classList.contains('otevreny'));
       });
     });
 
@@ -153,9 +163,17 @@
     function nastav() {
       skupina.classList.toggle('skladatelne', uzke.matches);
       if (pocitadlo) pocitadlo.hidden = !uzke.matches;
-      if (!uzke.matches) polozky.forEach(p => {
-        p.classList.remove('otevreny');
-        p.querySelector(':scope > h3')?.removeAttribute('aria-expanded');
+      polozky.forEach(p => {
+        const s = p.querySelector(':scope > h3 > .doklad-spinac');
+        if (!s) return;
+        if (uzke.matches) {
+          s.setAttribute('aria-expanded', p.classList.contains('otevreny'));
+        } else {
+          /* Na sirokem okne se neskláda: spinac nema co ohlasovat a polozka
+             musi zustat otevrena. */
+          s.removeAttribute('aria-expanded');
+          p.classList.remove('otevreny');
+        }
       });
     }
     nastav();

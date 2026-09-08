@@ -88,7 +88,13 @@ h1 b{font-weight:600;color:var(--akcent)}
 @keyframes vyjezd{from{transform:translateY(105%)}}
 .lead{margin-top:24px;font-size:clamp(17px,1.3vw,20px);color:var(--tlum);max-width:52ch}
 .vstup{animation:prichod .7s var(--krivka) backwards}
-@keyframes prichod{from{opacity:0;transform:translateY(20px)}}
+/* Zamerne BEZ opacity:0. Prvek s nulovou pruhlednosti Chrome nepovazuje za
+   vykresleny, takze hero text nebyl kandidat na LCP driv nez po dobehnuti
+   animace: mereni 8. 9. ukazalo element render delay 990 ms na odstavci,
+   jehoz bajty dorazily za 63 ms. FCP, LCP i Speed Index jsou 45 % skore.
+   Posun zustava, prolnuti zmizelo -- kdyz bude Petr chtit prolnuti zpatky,
+   stoji to zhruba deset bodu Performance na mobilu. */
+@keyframes prichod{from{transform:translateY(20px)}}
 .z2{animation-delay:.10s}.z3{animation-delay:.16s}
 
 .cenovka{border:1px solid var(--linka);border-radius:var(--r-l);padding:26px 28px;background:var(--papir-tmav)}

@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zadání nové služby: jedno, které podepíší všichni - Manta IT</title>
 <meta name="description" content="Spouštíte novou službu a musí navázat na to, co ve firmě běží? Sepíšu jedno zadání, které podepíše majitel, obchod, sklad, účetní i IT dodavatel, a připravím z něj poptávku dodavateli. Cena podle rozsahu, končí předáním.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/sluzba.css?v=eda56ef">
-<link rel="stylesheet" href="/petlidi.css?v=eda56ef">
-<link rel="stylesheet" href="/mobil.css?v=eda56ef">
+<link rel="preload" href="/pisma/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/outfit-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=8f0b871">
+<link rel="stylesheet" href="/sluzba.css?v=0c0906e">
+<link rel="stylesheet" href="/petlidi.css?v=19bafeb">
+<link rel="stylesheet" href="/mobil.css?v=64b4033">
 <script>document.documentElement.classList.add('js')</script>
   <link rel="canonical" href="https://mantait.cz/reseni-zadani">
   <meta property="og:title" content="Zadání nové služby: jedno, které podepíší všichni - Manta IT">
@@ -35,9 +37,9 @@
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=eda56ef" defer></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
 
@@ -52,6 +54,11 @@
   </div>
   <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
+
+<!-- Orientacni bod pro ctecky obrazovky. Bez <main> nemel navstevnik
+     s ctecku kam preskocit navigaci -- na kazde strance to bylo 40 az
+     88 prvku mimo jakykoliv landmark (axe "region", 8. 9. 2026). -->
+<main>
 
 <header class="hero" id="hero">
   <div>
@@ -233,13 +240,13 @@
     ho tehdy přál dostat.</p>
     <div class="loga-radek">
       <span>Vedl jsem projekty pro</span>
-      <img src="/loga/cesky-rozhlas.png" alt="Český rozhlas" style="--v:20px" loading="lazy">
-      <img src="/loga/radioteka.svg" alt="Radioteka" style="--v:18px" loading="lazy">
-      <img src="/loga/prima.svg" alt="Prima" style="--v:17px" loading="lazy">
-      <img src="/loga/cnc.svg" alt="Czech News Center" style="--v:34px" loading="lazy">
-      <img src="/loga/unihobby.svg" alt="UniHobby" style="--v:20px" loading="lazy">
-      <img src="/loga/prodoma.svg" alt="Pro-Doma" style="--v:22px" loading="lazy">
-      <img src="/loga/almeco.svg" alt="Almeco" style="--v:24px" loading="lazy">
+      <img src="/loga/cesky-rozhlas.png" alt="Český rozhlas" style="--v:20px" loading="lazy" width="698" height="104">
+      <img src="/loga/radioteka.svg" alt="Radioteka" style="--v:18px" loading="lazy" width="253" height="43">
+      <img src="/loga/prima.svg" alt="Prima" style="--v:17px" loading="lazy" width="1000" height="457">
+      <img src="/loga/cnc.svg" alt="Czech News Center" style="--v:34px" loading="lazy" width="261" height="80">
+      <img src="/loga/unihobby.svg" alt="UniHobby" style="--v:20px" loading="lazy" width="185" height="40">
+      <img src="/loga/prodoma.svg" alt="Pro-Doma" style="--v:22px" loading="lazy" width="246" height="48">
+      <img src="/loga/almeco.svg" alt="Almeco" style="--v:24px" loading="lazy" width="284" height="100">
     </div>
   </div>
 </section>
@@ -586,6 +593,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="obsah pata">
     <span>Petr Kokoška, Manta IT</span>
@@ -593,7 +602,7 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=eda56ef"></script>
+<script src="/sluzba.js?v=fd536a6"></script>
 <script>
 /* Pet lidi: prepinac postav a poloha Pet predstav / Jedno zadani.
    Bez skriptu je videt vsech pet vet i jedno zadani pod sebou. */
@@ -620,6 +629,6 @@
   odkryj(sekce, .3);
 })();
 </script>
-<script src="/mobil.js?v=eda56ef"></script>
+<script src="/mobil.js?v=1bc92b7"></script>
 </body>
 </html>
