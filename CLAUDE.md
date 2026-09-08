@@ -46,6 +46,13 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
    animace (`*{animation:none !important}`).
 4. Pred commitem: kazda stranka na 390/600/900/1440 px bez vodorovneho
    scrollu, console errors 0, ASCII grep cisty.
+5. Clanky (`clanky/`): NIKDY rucne. Koncept vznika v manta-it
+   (`workspace/_clanky/<slug>/`, workflow `workflows/clanek/`), render a
+   kontrola `scripts/clanek_kontrola.py`, publikace (html, manifest.json,
+   hub na obou mistech, sitemap, llms.txt, commit, push, overeni)
+   `scripts/clanek_publikuj.py <slug>`. `manifest.json` je zdroj pravdy hubu;
+   seznam v `clanky/index.html` i v prototypu je mezi znackami
+   `<!-- CLANKY:START/END -->` a generuje se. `gen_clanky_index.py` je pryc.
 
 ## Deployment
 

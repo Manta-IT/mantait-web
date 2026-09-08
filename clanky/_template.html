@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=2e6ceab">
+  <link rel="stylesheet" href="/style.css?v=bb1bc26">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=2e6ceab" defer></script>
+  <script src="/gtag.js?v=bb1bc26" defer></script>
 
   <script type="application/ld+json">
   {
@@ -38,9 +38,11 @@
     "about": ["{{TEMA_1}}", "{{TEMA_2}}"]
   }
   </script>
-  <!-- FAQPage JSON-LD: jen kdyz ma clanek skutecnou FAQ sekci (zrcadli details/summary) -->
+{{FAQ_JSONLD}}  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
 <body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
 
 <nav>
   <a href="/" class="nav-brand">Manta IT</a>
@@ -54,37 +56,16 @@
     <a href="/clanky/" class="nav-link">Články</a>
     <a href="/kontakt" class="nav-link">Kontakt</a>
   </div>
-  <a href="{{CTA_HREF}}" class="nav-cta">{{CTA_NAV_TEXT}}</a>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
 </nav>
 
-<main>
+<main id="obsah">
 
-<!-- HERO: definition-first lead - musi sam o sobe odpovidat, o cem clanek je -->
-<section class="hero">
-  <span class="hero-eyebrow">{{EYEBROW}}</span>
-  <h1>{{H1 s <em>akcentem.</em>}}</h1>
-  <p class="hero-lead">{{LEAD - 2-4 vety, samostatne citovatelna odpoved}}</p>
-  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno {{DATUM_CESKY}}</p>
-</section>
-
-<!-- TELO: sekce lp-section, kazde cislo s inline zdrojem (rel="nofollow" + datum) -->
-<section class="lp-section">
-  <span class="label">{{LABEL}}</span>
-  <h2>{{NADPIS s <em>akcentem.</em>}}</h2>
-  <p>{{TEXT - min. 1 kontextovy interni odkaz na /reseni-* nebo /dotace-mas}}</p>
-</section>
-
-<!-- ZAVER + CTA blok na JEDNU nejrelevantnejsi stranku -->
-<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
-  <span class="label">Další krok</span>
-  <h2>{{ZAVER_NADPIS}}</h2>
-  <p>{{ZAVER_TEXT}}</p>
-  <div class="lp-price">
-    <p><b>{{CTA_VETA}}</b></p>
-    <p style="margin-top: 18px;"><a href="{{CTA_HREF}}" class="btn">{{CTA_TLACITKO}}</a></p>
-  </div>
-</section>
-
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+{{TELO}}
 </main>
 
 <footer>
