@@ -1,0 +1,235 @@
+/* =========================================================================
+   Podnikova AI (hub nad AI zamestnancem a Robotem na zadani) -- prvky,
+   ktere jsou jen na teto strance.
+
+   Signature blok je HRANICE SITE: jeden obrazek se dvema ramecky ("vase
+   firma" = hranice vasi site, "datove centrum") a jedinym zelenym blokem
+   "AI", ktery mezi nimi meni misto. Prepinac Lokalni / Cloudova jsou dve
+   nativni radia stylovana jako dve tlacitka (klavesnice zdarma). Pri
+   prepnuti blok AI prejede pres hranici (400 ms, jedna krivka webu), po
+   dojezdu se zleva doprava vykresli linka "dotaz a odpoved" (200 ms) a sest
+   radku pod obrazkem se prolne (180 ms). Zadna smycka: pohyb jen pri
+   prepnuti, pri doscrollovani stoji obrazek ve vychozim stavu Lokalni.
+
+   Proc tenhle tvar: nejvetsi obava trhu je "data ven nesmi" (Randstad 80 %).
+   Stranka proto neukazuje tvrzeni, ale hranici -- a ctenar si sam prepne, co
+   je uvnitr a co venku. Stejny obrazek pro obe podoby, meni se jen poloha
+   jednoho bloku a sest radku: z toho je videt, ze jde o jedno rozhodnuti,
+   ne o dva produkty. Jedna zelena (blok AI), zadna cervena: nic v obrazku
+   neni vada, jen rozdil.
+
+   Bez skriptu: v CSS je vykresleny stav Lokalni; sest radku je videt v obou
+   znenich pod sebou s mono stitkem Lokalni / Cloudova. Prepinac je v HTML
+   skryty a odkryva ho az skript. Posun bloku meri skript (vzdalenost dvou
+   mist) a preda ji CSS pres --dx/--dy, aby to fungovalo i pod 900 px, kde se
+   obrazek preklopi na svisly (firma nahore, datove centrum pod ni, blok AI
+   cestuje svisle) a radky jdou pod sebe jako dvojice stitek / text.
+   ========================================================================= */
+
+/* ---------- Hero: dve cenovky pod sebou v jednom ramecku ---------- */
+.cenovka-dve{display:grid}
+.cenovka-varianta{padding-bottom:16px}
+.cenovka-varianta + .cenovka-varianta{padding-top:16px;border-top:1px solid var(--linka)}
+.cenovka-stitek{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--akcent);margin-bottom:6px}
+.cenovka-dve .cenovka-castka{font-size:clamp(21px,1.9vw,26px);line-height:1.2;letter-spacing:-.02em}
+.cenovka-plan{padding-top:14px;border-top:1px solid var(--linka);font-size:14px;color:var(--inkoust);line-height:1.5}
+.cenovka-plan b{font-weight:600}
+
+/* ---------- Signature blok: hranice site ---------- */
+.hranice-sekce{background:var(--inkoust);color:var(--papir);position:relative;overflow:hidden}
+.hranice-sekce::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 62% at 78% 6%,
+    color-mix(in srgb,var(--akcent) 22%,transparent), transparent 64%)}
+.hranice-sekce .obsah{position:relative}
+.hranice-sekce h2{max-width:16ch}
+.hranice-lead{color:color-mix(in srgb,var(--papir) 64%,transparent);margin-top:16px;max-width:58ch}
+
+/* Prepinac: dve radia jako dve tlacitka */
+.podoby{display:inline-flex;gap:2px;margin-top:clamp(30px,3.6vw,44px);padding:4px;
+  border:1px solid color-mix(in srgb,var(--papir) 22%,transparent);border-radius:999px}
+.podoby[hidden]{display:none}
+.podoba{position:relative}
+.podoba input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.podoba span{display:flex;align-items:center;justify-content:center;
+  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 22px;min-height:44px;
+  border-radius:999px;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.podoba input:checked + span{background:var(--papir);color:var(--inkoust)}
+.podoba input:focus-visible + span{outline:2px solid var(--akcent-sv);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){
+  .podoba input:not(:checked):hover + span{color:var(--papir)}
+}
+
+/* Obrazek: dva ramecky a jeden blok */
+.schema{margin-top:clamp(26px,3vw,36px);display:grid;
+  grid-template-columns:minmax(0,1.3fr) clamp(120px,13vw,170px) minmax(0,.7fr);align-items:stretch}
+.ramecek{position:relative;border:1px solid color-mix(in srgb,var(--papir) 34%,transparent);
+  border-radius:var(--r-l);padding:clamp(48px,4.6vw,58px) clamp(18px,2.2vw,28px) clamp(18px,2.2vw,28px);
+  transition:opacity .5s var(--krivka-klid),transform .6s var(--krivka)}
+.ramecek-popis{position:absolute;top:16px;left:clamp(18px,2.2vw,28px);
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--papir) 78%,transparent)}
+.ramecek-hranice{position:absolute;top:16px;right:clamp(18px,2.2vw,28px);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--papir) 52%,transparent)}
+.firma{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(16px,2.4vw,32px);align-items:center}
+.systemy{display:grid;gap:10px}
+.blok{border:1px solid color-mix(in srgb,var(--papir) 30%,transparent);border-radius:var(--r-s);
+  padding:12px 14px;font-size:14.5px;color:color-mix(in srgb,var(--papir) 84%,transparent)}
+.misto{width:clamp(88px,9vw,116px);aspect-ratio:1;border-radius:var(--r);
+  border:1px dashed color-mix(in srgb,var(--papir) 34%,transparent);display:grid;place-items:center}
+.ai-blok{width:100%;height:100%;border-radius:var(--r);background:var(--akcent);color:var(--papir);
+  display:grid;place-items:center;font-family:var(--display);font-size:clamp(20px,2vw,26px);
+  letter-spacing:-.02em;position:relative;z-index:2;
+  transition:transform .4s var(--krivka)}
+.hranice.cloudova .ai-blok{transform:translate(var(--dx,0px),var(--dy,0px))}
+.centrum{display:grid;place-items:center}
+
+/* Linka dotaz a odpoved: vykresli se az po dojezdu bloku */
+.hr-spoj{align-self:center;display:grid;gap:8px;justify-items:center;padding:0 6px}
+.hr-spoj i{display:block;width:100%;height:1px;background:color-mix(in srgb,var(--papir) 60%,transparent);
+  transform:scale(0);transform-origin:left center;transition:transform .2s var(--krivka)}
+.hr-spoj span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  white-space:nowrap;color:color-mix(in srgb,var(--papir) 66%,transparent);
+  opacity:0;transition:opacity .18s var(--krivka-klid)}
+.hranice.cloudova .hr-spoj i{transform:scale(1);transition-delay:.4s}
+.hranice.cloudova .hr-spoj span{opacity:1;transition-delay:.55s}
+
+/* Sest radku, ktere se prepisou */
+.hr-radky{margin:clamp(28px,3.4vw,40px) 0 0;border-top:1px solid color-mix(in srgb,var(--papir) 16%,transparent);
+  transition:opacity .5s var(--krivka-klid),transform .6s var(--krivka)}
+.hr-radek{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:8px clamp(16px,2.4vw,32px);
+  padding:16px 0;border-bottom:1px solid color-mix(in srgb,var(--papir) 16%,transparent)}
+.hr-radek dt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--papir) 62%,transparent);padding-top:3px}
+.hr-radek dd{margin:0;display:grid;gap:12px}
+.hr-radek p{font-size:16px;line-height:1.5;max-width:64ch;color:color-mix(in srgb,var(--papir) 86%,transparent)}
+.hr-radek .var{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--akcent-sv);margin-bottom:4px}
+/* Se skriptem: obe zneni lezi pres sebe (vyska radku = delsi z nich, nic neposkakuje),
+   videt je jen jedno a stitky Lokalni / Cloudova nejsou potreba. */
+.js .hr-radek dd{gap:0}
+.js .hr-radek p{grid-area:1/1;transition:opacity .18s var(--krivka-klid) .1s,visibility 0s linear 0s}
+.js .hr-radek .var{display:none}
+.js .hranice:not(.cloudova) .clo,
+.js .hranice.cloudova .lok{opacity:0;visibility:hidden;
+  transition:opacity .18s var(--krivka-klid),visibility 0s linear .18s}
+.hranice-pozn{margin-top:22px;font-family:var(--mono);font-size:12.5px;line-height:1.6;
+  color:color-mix(in srgb,var(--papir) 58%,transparent);max-width:74ch}
+
+/* Odkryti pri doscrollovani: ramecky a radky prijedou, blok AI stoji. */
+.hranice-sekce.pripravena .ramecek,.hranice-sekce.pripravena .hr-radky{opacity:0;transform:translateY(14px)}
+.hranice-sekce.pripravena .centrum{transition-delay:.12s}
+.hranice-sekce.pripravena .hr-radky{transition-delay:.2s}
+
+@media (max-width:900px){
+  .schema{grid-template-columns:1fr}
+  .hr-spoj{height:clamp(64px,12vw,88px);grid-template-columns:auto auto;align-items:center;
+    justify-content:center;gap:12px;padding:6px 0}
+  .hr-spoj i{width:1px;height:100%;transform-origin:center top}
+  .hr-radek{grid-template-columns:1fr;gap:6px}
+  .hr-radek dt{padding-top:0}
+}
+@media (max-width:600px){
+  .podoby{display:flex}
+  .podoba{flex:1}
+  .ramecek-hranice{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .hranice-sekce.pripravena .ramecek,.hranice-sekce.pripravena .hr-radky{opacity:1;transform:none}
+  .hranice.cloudova .hr-spoj i,.hranice.cloudova .hr-spoj span,.js .hr-radek p{transition-delay:0s}
+}
+
+/* ---------- Tri veci, ktere jste o AI slyseli ---------- */
+.zdroj{display:block;font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--tlum);max-width:80ch}
+.obavy-perex + .zdroj{margin-top:14px}
+.obavy{margin-top:clamp(34px,4vw,54px);border-top:1px solid var(--linka)}
+.obava{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(22px,4vw,64px);
+  padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--linka)}
+.obava-jak{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tlum);
+  display:block;margin-bottom:12px}
+.obava-slysite{font-family:var(--display);font-size:clamp(24px,2.6vw,36px);letter-spacing:-.03em;line-height:1.15;max-width:15ch}
+.obava-co p{font-size:15.5px;color:var(--tlum);max-width:60ch}
+.obava-co p + p{margin-top:16px}
+.obava-co b{display:block;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tlum);margin-bottom:6px}
+.obava-co b.neplati{color:var(--akcent)}
+.obava-co .zdroj{margin-top:16px}
+
+/* ---------- Jedna strecha, tri kusy ---------- */
+.kusy{margin-top:clamp(30px,3.6vw,44px)}
+.kus{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);
+  padding:clamp(22px,2.6vw,32px) 0;border-top:1px solid var(--linka);align-items:start}
+.kus.dalsi{margin-left:clamp(16px,4vw,64px)}
+.kus-c{font-family:var(--mono);font-size:13px;color:var(--akcent);padding-top:7px;min-width:2ch}
+.kus-hlava{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.kus-stitek{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tlum);border:1px solid var(--obrys);border-radius:999px;padding:3px 9px;align-self:center}
+.kus h3{font-size:clamp(20px,1.8vw,26px)}
+.kus-cena{font-family:var(--mono);font-size:12.5px;color:var(--tlum)}
+.kus p{margin-top:10px;font-size:15.5px;color:var(--tlum);max-width:62ch}
+.kus-odkaz{display:inline-flex;align-items:center;gap:8px;margin-top:8px;min-height:44px;
+  font-size:15px;font-weight:600;color:var(--inkoust);text-decoration:none;
+  border-bottom:1px solid var(--inkoust);line-height:1.2;padding:0}
+.kus-odkaz svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;
+  transition:transform .2s var(--krivka)}
+.kusy-otazka{padding:20px 0 0;border-top:1px solid var(--linka);font-size:15.5px;color:var(--tlum);max-width:66ch}
+.kusy-otazka b{color:var(--inkoust);font-weight:600}
+.zaklad{margin-top:clamp(28px,3.4vw,40px);border-top:2px solid var(--inkoust);padding-top:22px;
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:start}
+.zaklad-stitek{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--inkoust);padding-top:4px;min-width:2ch}
+.zaklad p{font-size:15.5px;color:var(--tlum);max-width:66ch}
+.zaklad-bloky{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.zaklad-blok{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px 8px 12px;
+  border:1px solid var(--inkoust);border-radius:var(--r-s);font-size:15px;font-weight:600;
+  color:var(--inkoust);text-decoration:none;background:var(--papir);
+  transition:background .2s var(--krivka-klid),border-color .2s var(--krivka-klid)}
+.zaklad-blok svg{width:22px;height:22px;stroke:var(--akcent);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;flex:none}
+.zaklad-blok small{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--tlum)}
+@media (hover:hover) and (pointer:fine){
+  .kus-odkaz:hover{color:var(--akcent);border-color:var(--akcent)}
+  .kus-odkaz:hover svg{transform:translateX(3px)}
+  .zaklad-blok:hover{background:var(--akcent-sv);border-color:var(--akcent)}
+}
+
+/* ---------- Co je v cene: dva sloupce, jedna svisla linka ---------- */
+.cena-sloupce{margin-top:clamp(30px,3.6vw,44px);display:grid;grid-template-columns:1fr 1fr}
+.cena-sloupec{padding:0 clamp(22px,3vw,48px)}
+.cena-sloupec:first-child{padding-left:0;border-right:1px solid var(--linka)}
+.cena-sloupec:last-child{padding-right:0}
+.cena-sloupec h3{font-size:clamp(20px,1.8vw,26px);padding-bottom:14px}
+.polozka{padding:16px 0;border-top:1px solid var(--linka);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
+.polozka h4{font-family:var(--display);font-weight:400;font-size:17.5px;letter-spacing:-.02em;line-height:1.3}
+.polozka-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tlum);padding-top:4px}
+.polozka-tag.vcene{color:var(--akcent)}
+.polozka p{grid-column:1 / -1;font-size:15px;color:var(--tlum);max-width:50ch}
+.cena-spolecne{margin-top:clamp(28px,3.4vw,40px);padding-top:22px;border-top:1px solid var(--linka);
+  font-size:16px;max-width:72ch}
+.pozn-mono{margin-top:18px;font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--tlum);max-width:78ch}
+
+/* ---------- Instalace je pulka: delena skladba ---------- */
+.delene{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:26px}
+.delene > div > p{color:var(--tlum);margin-top:14px;max-width:54ch}
+.umeji-stitek{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tlum);margin-bottom:12px}
+.umeji{list-style:none;border-top:1px solid var(--linka)}
+.umeji li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--linka);font-size:16px}
+.umeji b{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--akcent);padding-top:4px}
+
+/* Rytmus pozadi podle navrhu: lide tonovana, nedoporucim papir, vysledky tmave.
+   Sdilena .varovani je tonovana; tady by dve tonovane sly po sobe. */
+.varovani{background:var(--papir)}
+
+/* ---------- Osa: stitek u etapy, ktera plati jen pro lokalni podobu ---------- */
+.jen-lokalni{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--akcent);border:1px solid var(--akcent);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.osa-pozn{margin-top:26px;font-size:15px;color:var(--tlum);max-width:66ch}
+
+@media (max-width:900px){
+  .obava,.zaklad,.delene,.cena-sloupce{grid-template-columns:1fr}
+  .obava-slysite{max-width:none}
+  .cena-sloupec{padding:0}
+  .cena-sloupec:first-child{border-right:0;border-bottom:1px solid var(--linka);padding-bottom:26px;margin-bottom:26px}
+}

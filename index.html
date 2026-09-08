@@ -680,7 +680,7 @@ textarea{min-height:104px;resize:vertical}
   min-height:36px;transition:color .2s var(--krivka-klid),background .2s var(--krivka-klid)}
 .akce-temata button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=2fe6f90">
+  <link rel="stylesheet" href="/mobil.css?v=73a0b05">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -736,7 +736,7 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=2fe6f90" defer></script>
+  <script src="/gtag.js?v=73a0b05" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "51f1cf8c4bcd47c3a0dbcbbbdb2f1c00"}'></script>
 </head>
@@ -1083,7 +1083,7 @@ const KROKY = [
    varianty:['Propojení bez kódu','Propojovací aplikace'], pred:['vyber','aplikace'], po:['ai']},
   {id:'ai', c:'5', nazev:'Podniková AI', x:1060, y:165, nad:false, role:'Krok 5: AI nad vlastními daty',
    text:'AI, která zná vaše data a nepouští je ven. U vás na serveru, nebo v cloudu, když to dává smysl. Součástí je zaškolení lidí, ne jen instalace. Stojí na tom, že data tečou a jsou v pořádku.',
-   cena:'podle varianty', pozn:'lokální nebo cloud', odkaz:'/reseni-ai-zamestnanec',
+   cena:'podle varianty', pozn:'lokální nebo cloud', odkaz:'/reseni-podnikova-ai',
    varianty:['Lokální AI','Cloudová AI'], pred:['priprava','propojeni'], po:[]},
 ];
 
@@ -1169,7 +1169,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=2fe6f90" alt="" loading="lazy">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=73a0b05" alt="" loading="lazy">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic"><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
@@ -1207,6 +1207,6 @@ function zvyrazni(id){
 vykresliProdukty();
 vyber('priprava');
 </script>
-<script src="/mobil.js?v=2fe6f90"></script>
+<script src="/mobil.js?v=73a0b05"></script>
 </body>
 </html>

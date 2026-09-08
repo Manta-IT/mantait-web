@@ -1,5 +1,5 @@
 /* =========================================================================
-   Mapa firmy -- prvky, ktere jsou jen na teto strance.
+   Priprava firmy (drive Mapa firmy) -- prvky, ktere jsou jen na teto strance.
 
    Signature blok je STOPA JEDNOHO UDAJE. Vedle hranolu (vejir) a okruhu
    (kruh) musel byt jiny tvar, jinak je z peti scen sablona. Stopa je primka
@@ -7,10 +7,11 @@
    misto je cela pointa sluzby, takze je jedine barevne (--vada).
 
    Je to zaroven jedine misto na celem webu, kde navstevnik neco PREPNE
-   (tri udaje: mnozstvi, cena, zakaznik). Chybejici interakce byla nalez
-   z kritiky Antigravity, viz STAV.md.
+   (tri udaje: mnozstvi, cena, zakaznik; od 8. 9. ctvrta stopa "Kdo to smi"
+   sleduje tutez slevu pres ruce lidi -- hodnota v mono je role, ne cislo).
+   Chybejici interakce byla nalez z kritiky Antigravity, viz STAV.md.
 
-   POJISTKA jako u vsech scen: bez JavaScriptu se zobrazi vsechny tri stopy
+   POJISTKA jako u vsech scen: bez JavaScriptu se zobrazi vsechny ctyri stopy
    pod sebou i s nadpisy a stranka nic neztrati. Prepinac je v HTML skryty
    a odkryva ho az skript -- tlacitko, ktere bez skriptu nic nedela, je horsi
    nez zadne tlacitko.
@@ -103,32 +104,44 @@
   .stanice-misto{border-top:0;padding:0 0 16px}
   .stanice-misto::before{left:-31px;top:-26px}
   .stanice:last-child .stanice-misto::after{display:none}
+  /* Ctyri volby na sirku telefonu: dve rady po dvou, ne ctyri ruzne dlouhe
+     pilulky v jedne rade s jednou zalomenou. */
+  .stopa-prepinac button{flex:1 1 calc(50% - 4px)}
 }
 @media (prefers-reduced-motion:reduce){
   .stopa-sekce.pripravena .stanice{opacity:1;transform:none}
 }
 
 /* =========================================================================
-   Schody nabidky: kde v ceste ctenar stoji a co ho co stoji.
-   Neni to retez (ten nese nasledek) -- schody nesou CENU.
+   Co na Priprave stoji: ctyri bloky na jednom sirokem podstavci.
+   Nahradilo schody s cenou (8. 9.): cenu kroku nesou jejich stranky a mapa
+   na homepage, tady se ukazuje jen to, ze Priprava je zaklad pod vsemi.
+   Blok Zadani je s podstavcem spojeny kratkou linkou (bezi soubezne).
+   Neni to diagram uzlu -- je to rada bloku na zakladu, staticka.
    ========================================================================= */
-.schody{margin-top:clamp(32px,4vw,48px);display:grid;
-  grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
-.schod{border:1px solid var(--linka);border-radius:var(--r-l);
-  padding:clamp(20px,2.4vw,28px);background:var(--papir)}
-.schod:nth-child(1){margin-top:44px}
-.schod:nth-child(2){margin-top:22px}
-.schod-kdy{font-family:var(--mono);font-size:12px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--tlum)}
-.schod h3{margin-top:10px}
-.schod-cena{font-family:var(--display);font-size:clamp(20px,2vw,27px);
-  letter-spacing:-.03em;color:var(--akcent);margin-top:14px;display:block}
-.schod p{font-size:14.5px;color:var(--tlum);margin-top:8px}
-.schod.tady{background:var(--inkoust);color:var(--papir);border-color:var(--inkoust)}
-.schod.tady .schod-kdy{color:var(--akcent-sv)}
-.schod.tady .schod-cena{color:var(--papir)}
-.schod.tady p{color:color-mix(in srgb,var(--papir) 68%,transparent)}
-.schod-dal{font-size:14.5px;color:var(--tlum);margin-top:8px}
+.vazby-nadpis{display:block;margin-top:clamp(32px,4vw,48px);font-family:var(--mono);
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tlum)}
+.vazby-mapa{margin-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;row-gap:22px}
+.vazba{position:relative;display:block;border:1px solid var(--linka);border-radius:var(--r-l);
+  padding:clamp(18px,2.2vw,26px);background:var(--papir);color:inherit;text-decoration:none;
+  transition:border-color .2s var(--krivka-klid),transform .16s var(--krivka)}
+.vazba:active{transform:scale(.99)}
+.vazba h3{font-size:clamp(17px,1.4vw,20px)}
+.vazba p{font-size:14.5px;color:var(--tlum);margin-top:8px}
+/* Linka od bloku Zadani dolu na podstavec: jedina spojka v obrazku. */
+.vazba.soubezne::after{content:'';position:absolute;left:50%;bottom:-23px;
+  width:1px;height:23px;background:var(--akcent)}
+.podstavec{grid-column:1 / -1;display:flex;align-items:baseline;gap:18px;
+  border-radius:var(--r-l);padding:20px clamp(20px,2.4vw,28px);
+  background:var(--inkoust);color:var(--papir)}
+.podstavec-kdy{font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--akcent-sv)}
+.podstavec h3{font-size:clamp(19px,1.6vw,23px)}
+@media (hover:hover) and (pointer:fine){
+  .vazba:hover{border-color:var(--inkoust)}
+}
+.vazba:focus-visible{outline:2px solid var(--akcent);outline-offset:3px}
 
 .doklad-radek{margin-top:clamp(30px,3.4vw,42px);padding-top:22px;
   border-top:1px solid var(--linka);max-width:74ch}
@@ -171,6 +184,8 @@
 .pevne{display:inline-block;font-size:13.5px;padding:6px 12px;border-radius:var(--r-s);
   background:var(--akcent-sv);border:1px solid color-mix(in srgb,var(--akcent) 26%,transparent)}
 .kdo{font-family:var(--mono);font-size:13px;color:var(--tlum)}
+/* Tabulka Kdo co smi pouziva tytez tridy; cas cekani je jediny barevny prvek. */
+.ceka-cas{color:var(--vada)}
 
 /* =========================================================================
    Vystupy: cislovane polozky pod sebou, ne druha mrizka na jedne strance.
@@ -181,10 +196,17 @@
 .vystup-c{font-family:var(--mono);font-size:14px;color:var(--akcent);padding-top:3px}
 .vystup p{font-size:15.5px;color:var(--tlum);margin-top:7px;max-width:62ch}
 .vystup .zdroj{display:block;margin-top:8px;font-family:var(--mono);font-size:12px}
+/* Osm vystupu na stole: dva sloupce plnene po radcich, at sekce neni dvakrat
+   delsi nez zbytek. Druhy seznam (kam si to vezmete) zustava v jednom. */
+.vystupy.dva{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(24px,4vw,56px)}
 
 @media (max-width:900px){
-  .schody{grid-template-columns:1fr;gap:12px}
-  .schod:nth-child(1),.schod:nth-child(2){margin-top:0}
+  .vazby-mapa{grid-template-columns:1fr;gap:12px}
+  /* Podstavec jde nahoru jako zvyrazneny radek, pod nim seznam ctyr odkazu. */
+  .podstavec{order:-1;flex-wrap:wrap;gap:6px 18px}
+  .vazba.soubezne::after{display:none}
+  .vystupy.dva{display:block}
   .vypis-radek{grid-template-columns:1fr;gap:4px}
   .vypis-cislo{text-align:left}
 }
