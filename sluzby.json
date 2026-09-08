@@ -1,0 +1,16 @@
+{
+  "_": "Registr sluzeb pro odkazy z clanku a kontrolu konzistence. Nazvy a ceny = specs/web-nabidka/design.md. Klic = produkcni cesta bez lomitka.",
+  "reseni-mapa-firmy":      {"nazev": "Příprava firmy",          "veta": "Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.", "cena": "39 000 Kč"},
+  "reseni-zadani":          {"nazev": "Zadání nové služby",      "veta": "Jedno zadání, které podepíše majitel, obchod, sklad, účetní i IT dodavatel.",        "cena": "podle rozsahu"},
+  "reseni-vyber-systemu":   {"nazev": "Výběr systému",           "veta": "Docházka, sklad, CRM, ERP: tři systémy s cenou za pět let a doporučení.",             "cena": "podle rozsahu"},
+  "reseni-nova-aplikace":   {"nazev": "Aplikace na míru",        "veta": "Když to, co potřebujete, nikdo neprodává. První verze do týdne, kód je váš.",          "cena": "od 50 000 Kč"},
+  "reseni-propojeni":       {"nazev": "Propojení a automatizace", "veta": "Účetnictví, sklad, e-shop a CRM si předávají data samy.",                             "cena": "podle rozsahu"},
+  "reseni-podnikova-ai":    {"nazev": "Podniková AI",            "veta": "AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.",                  "cena": "podle varianty"},
+  "reseni-ai-zamestnanec":  {"nazev": "AI zaměstnanec",          "veta": "Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.",                     "cena": "89 000 Kč + provoz"},
+  "reseni-robot-na-zadani": {"nazev": "Robot na zadání",         "veta": "Dáte zadání, robot vyrobí výkres, seznam firem nebo článek a skončí.",                "cena": "podle rozsahu"},
+  "reseni-vedeni-it":       {"nazev": "Dlouhodobé vedení IT",    "veta": "Celá cesta na paušál. Vy se k IT vracíte jen na poradách.",                           "cena": "od 50 000 Kč měsíčně"},
+  "weby":                   {"nazev": "Web pro dobu AI",         "veta": "Firemní web, který sám získává poptávky, přes vyhledávače i AI asistenty.",           "cena": "35 000 Kč"},
+  "raynet":                 {"nazev": "Raynet CRM",              "veta": "Zavedení a propojení s účetnictvím, především s Pohodou.",                            "cena": "od 15 000 Kč"},
+  "dotace-mas":             {"nazev": "Dotace na digitalizaci",  "veta": "Ověření nároku až vyplnění žádosti. Jedna částka, končí podáním.",                    "cena": "30 000 Kč"},
+  "reseni-bezpecnost":      {"nazev": "Zákon o kybernetické bezpečnosti", "veta": "Za pět minut zjistíte, jestli na vás zákon dopadá a co po vás chce.",          "cena": ""}
+}

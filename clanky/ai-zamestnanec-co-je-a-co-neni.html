@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=6b1acab">
+  <link rel="stylesheet" href="/style.css?v=eda56ef">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=6b1acab" defer></script>
+  <script src="/gtag.js?v=eda56ef" defer></script>
 
   <script type="application/ld+json">
   {
@@ -40,6 +40,19 @@
   </script>
   <!-- Cloudflare Web Analytics (cookieless) -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{max-width:760px;margin:48px auto 72px;padding:0 24px}
+  .lp-souvisejici-label{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5E6663;margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid #E2E4DF}
+  .lp-souvisejici li{border-bottom:1px solid #E2E4DF}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;text-decoration:none;color:#101413}
+  .lp-souvisejici b{font-family:Outfit,system-ui,sans-serif;font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:#5E6663;grid-column:1}
+  .lp-souvisejici small{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;color:#0B6E4F;white-space:nowrap;grid-row:1;grid-column:2}
+  @media (hover:hover){.lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}}
+  @media (max-width:600px){.lp-souvisejici a{grid-template-columns:1fr}.lp-souvisejici small{grid-row:auto;grid-column:1}}
+  </style>
 </head>
 <body>
 <a href="#obsah" class="skip-link">Přeskočit na obsah</a>
@@ -121,7 +134,7 @@
   Data přitom mohou zůstat u vás: jedna z variant nasazení běží přímo na vašem
   serveru a firemní data neopouštějí firmu.</p>
   <p>Jestli si nejste jistí, kde by agent u vás pomohl nejdřív, na to je
-  <a href="/reseni-ai">AI plán do 48 hodin</a> - dva workshopy a víte, kde se
+  <a href="/reseni-podnikova-ai">AI plán do 48 hodin</a> - dva workshopy a víte, kde se
   automatizace vyplatí, co bude stát a kde nepomůže.</p>
 </section>
 
@@ -137,6 +150,14 @@
   </div>
 </section>
 
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-podnikova-ai"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+    <li><a href="/reseni-ai-zamestnanec"><b>AI zaměstnanec</b><small>89 000 Kč + provoz</small><span>Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.</span></a></li>
+    <li><a href="/reseni-robot-na-zadani"><b>Robot na zadání</b><small>podle rozsahu</small><span>Dáte zadání, robot vyrobí výkres, seznam firem nebo článek a skončí.</span></a></li>
+  </ul>
+</aside>
 </main>
 
 <footer>

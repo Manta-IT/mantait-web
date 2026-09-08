@@ -735,3 +735,18 @@ footer{border-top:1px solid var(--linka);padding:34px 0;font-size:14px;color:var
   .par-dnes,.par-pak{font-size:16px}
 
 }
+
+/* ---------- Navaznost: kde sluzba stoji v ceste (8. 9. 2026) ----------
+   Starsi stranky (vedeni IT, aplikace, propojeni, AI zamestnanec, bezpecnost)
+   nemely odkazy na okolni kroky mapy; uzivatelska cesta na nich koncila.
+   Jeden radek s odkazy, ne karty. Pod 700 px pod sebou. */
+.navaznost{background:var(--papir-tmav)}
+.navaznost h2{max-width:22ch}
+.navaznost-radky{margin-top:26px;border-top:1px solid var(--linka)}
+.navaznost-radek{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 24px;padding:16px 0;border-bottom:1px solid var(--linka);align-items:baseline}
+.navaznost-radek span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tlum)}
+.navaznost-radek p{font-size:16px;max-width:64ch}
+.navaznost-radek a{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:color-mix(in srgb,var(--akcent) 45%,transparent)}
+.navaznost-radek a:hover{text-decoration-color:var(--akcent)}
+.navaznost-pozn{margin-top:18px;font-size:15px;color:var(--tlum);max-width:64ch}
+@media (max-width:700px){.navaznost-radek{grid-template-columns:1fr}}

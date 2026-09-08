@@ -9,7 +9,11 @@
     "cta_href": "/reseni-nova-aplikace",
     "og_image": null,
     "tema": "Vývoj",
-    "obrazek": "clanek-male-projekty-vychazeji-velke-ne.svg"
+    "obrazek": "clanek-male-projekty-vychazeji-velke-ne.svg",
+    "sluzby": [
+      "reseni-nova-aplikace",
+      "reseni-zadani"
+    ]
   },
   {
     "slug": "novy-zakon-kyberbezpecnost-3-otazky",
@@ -21,7 +25,11 @@
     "cta_href": "/reseni-bezpecnost",
     "og_image": null,
     "tema": "Bezpečnost",
-    "obrazek": "clanek-zakon.svg"
+    "obrazek": "clanek-zakon.svg",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ]
   },
   {
     "slug": "kolik-stoji-rucni-prepisovani",
@@ -33,7 +41,11 @@
     "cta_href": "/reseni-propojeni",
     "og_image": null,
     "tema": "Automatizace",
-    "obrazek": "clanek-prepisovani.svg"
+    "obrazek": "clanek-prepisovani.svg",
+    "sluzby": [
+      "reseni-propojeni",
+      "reseni-mapa-firmy"
+    ]
   },
   {
     "slug": "ai-zamestnanec-co-je-a-co-neni",
@@ -45,7 +57,12 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "og_image": null,
     "tema": "AI",
-    "obrazek": "clanek-ai.svg"
+    "obrazek": "clanek-ai.svg",
+    "sluzby": [
+      "reseni-podnikova-ai",
+      "reseni-ai-zamestnanec",
+      "reseni-robot-na-zadani"
+    ]
   },
   {
     "slug": "dotace-poslednich-6-mesicu",
@@ -57,7 +74,11 @@
     "cta_href": "/dotace-mas",
     "og_image": null,
     "tema": "Dotace",
-    "obrazek": "clanek-dotace.svg"
+    "obrazek": "clanek-dotace.svg",
+    "sluzby": [
+      "dotace-mas",
+      "reseni-vyber-systemu"
+    ]
   },
   {
     "slug": "dotace-technologie-pro-mas-2026",
@@ -69,6 +90,10 @@
     "cta_href": "/dotace-mas",
     "og_image": null,
     "tema": "Dotace",
-    "obrazek": "clanek-dotace.svg"
+    "obrazek": "clanek-dotace.svg",
+    "sluzby": [
+      "dotace-mas",
+      "reseni-vyber-systemu"
+    ]
   }
 ]

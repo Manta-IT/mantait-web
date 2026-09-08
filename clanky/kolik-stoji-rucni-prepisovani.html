@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=6b1acab">
+  <link rel="stylesheet" href="/style.css?v=eda56ef">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=6b1acab" defer></script>
+  <script src="/gtag.js?v=eda56ef" defer></script>
 
   <script type="application/ld+json">
   {
@@ -40,6 +40,19 @@
   </script>
   <!-- Cloudflare Web Analytics (cookieless) -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{max-width:760px;margin:48px auto 72px;padding:0 24px}
+  .lp-souvisejici-label{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5E6663;margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid #E2E4DF}
+  .lp-souvisejici li{border-bottom:1px solid #E2E4DF}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;text-decoration:none;color:#101413}
+  .lp-souvisejici b{font-family:Outfit,system-ui,sans-serif;font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:#5E6663;grid-column:1}
+  .lp-souvisejici small{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;color:#0B6E4F;white-space:nowrap;grid-row:1;grid-column:2}
+  @media (hover:hover){.lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}}
+  @media (max-width:600px){.lp-souvisejici a{grid-template-columns:1fr}.lp-souvisejici small{grid-row:auto;grid-column:1}}
+  </style>
 </head>
 <body>
 <a href="#obsah" class="skip-link">Přeskočit na obsah</a>
@@ -124,6 +137,13 @@
   </div>
 </section>
 
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-propojeni"><b>Propojení a automatizace</b><small>podle rozsahu</small><span>Účetnictví, sklad, e-shop a CRM si předávají data samy.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+  </ul>
+</aside>
 </main>
 
 <footer>
