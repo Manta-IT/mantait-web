@@ -1,5 +1,21 @@
 [
   {
+    "slug": "propojeni-pohody-s-e-shopem-bankou-a-platbami",
+    "title": "Propojení Pohody s e-shopem, bankou a platbami",
+    "description": "Objednávky z e-shopu i platby z výpisu pořád přepisujete ručně do Pohody? Přehled, co se dá propojit samo a co to od firmy vyžaduje.",
+    "date_published": "2026-09-09",
+    "date_modified": "2026-09-09",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "raynet"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-propojeni-pohody-s-e-shopem-bankou-a-platbami.svg"
+  },
+  {
     "slug": "ohlasili-jste-se-u-nukib-co-se-deje-dalsich-12-mesicu",
     "title": "Ohlásili jste se u NÚKIB? Co vás čeká dalších 12 měsíců",
     "description": "Ohlásili jste se u NÚKIB a teď čekáte, co bude dál? Přichází rozhodnutí o registraci a od něj běží rok na zavedení opatření.",
