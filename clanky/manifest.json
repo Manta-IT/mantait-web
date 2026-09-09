@@ -1,5 +1,20 @@
 [
   {
+    "slug": "ohlasili-jste-se-u-nukib-co-se-deje-dalsich-12-mesicu",
+    "title": "Ohlásili jste se u NÚKIB? Co vás čeká dalších 12 měsíců",
+    "description": "Ohlásili jste se u NÚKIB a teď čekáte, co bude dál? Přichází rozhodnutí o registraci a od něj běží rok na zavedení opatření.",
+    "date_published": "2026-09-08",
+    "date_modified": "2026-09-09",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-ohlasili-jste-se-u-nukib-co-se-deje-dalsich-12-mesicu.svg"
+  },
+  {
     "slug": "male-projekty-vychazeji-velke-ne",
     "title": "Proč malé projekty vycházejí a velké skoro nikdy",
     "description": "Menší projekty vycházejí mnohem lépe než velké, ukazují data i zkušenost z praxe. Zjistěte, co to znamená pro rozsah a zadání první verze vaší aplikace.",

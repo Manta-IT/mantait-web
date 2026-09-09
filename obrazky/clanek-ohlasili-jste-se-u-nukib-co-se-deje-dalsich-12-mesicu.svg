@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta od ohlášení u NÚKIB přes rozhodnutí o registraci k roku na zavedení opatření" fill="none">
+<title>Cesta od ohlášení u NÚKIB přes rozhodnutí o registraci k roku na zavedení opatření</title>
+  <rect x="20" y="80" width="32" height="24" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M28 90h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M28 98h10" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M52 100h68" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="140" cy="100" r="11" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M90 100v-16" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="90" cy="78" r="4.5" fill="#9AA29E" stroke="#9AA29E" stroke-width="0"/>
+  <path d="M151 100h109" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="280" cy="100" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M273 100l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
