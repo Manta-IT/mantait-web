@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Z nejlevnějšího plánu cesta do účetnictví nevede, z vyšších dvou vede přes rozhodnutí" fill="none">
+<title>Z nejlevnějšího plánu cesta do účetnictví nevede, z vyšších dvou vede přes rozhodnutí</title>
+  <rect x="18" y="14" width="88" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 26h56" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M32 36h38" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <rect x="18" y="82" width="88" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 94h56" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M32 104h38" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <rect x="18" y="150" width="88" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 162h56" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M32 172h38" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <rect x="222" y="62" width="80" height="76" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M238 84h48" stroke="#0B6E4F" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+  <path d="M238 97h34" stroke="#0B6E4F" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+  <path d="M238 110h48" stroke="#0B6E4F" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+  <path d="M106 32h26" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M138 26l11 12m0-12l-11 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="164" cy="100" r="15" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="164" cy="100" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M106 100h43" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M106 168h28q16 0 16-16v-37" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M179 100h43" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

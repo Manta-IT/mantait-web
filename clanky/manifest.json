@@ -1,5 +1,21 @@
 [
   {
+    "slug": "co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit",
+    "title": "Co je Raynet CRM, kolik stojí a s čím ho propojíte",
+    "description": "Vybíráte CRM a nechcete objevovat překvapení až po podpisu? Ceny za uživatele, co který plán umí a kudy vedou data do účetnictví.",
+    "date_published": "2026-09-11",
+    "date_modified": "2026-09-11",
+    "highlight": false,
+    "cta_href": "/raynet",
+    "sluzby": [
+      "raynet",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit.svg"
+  },
+  {
     "slug": "propojeni-pohody-s-e-shopem-bankou-a-platbami",
     "title": "Propojení Pohody s e-shopem, bankou a platbami",
     "description": "Objednávky z e-shopu i platby z výpisu pořád přepisujete ručně do Pohody? Přehled, co se dá propojit samo a co to od firmy vyžaduje.",
