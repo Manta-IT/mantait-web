@@ -245,6 +245,58 @@ h1 b{font-weight:600;color:var(--akcent)}
   .akce-tep{animation:none}
 }
 
+/* ---------- Pruh clanku: konec prvni obrazovky, duvod scrollovat ---------- */
+.ohlasy{border-top:1px solid var(--linka);background:var(--papir-tmav)}
+.ohlasy-vnitrek{
+  max-width:var(--sirka);margin:0 auto;padding:26px var(--okraj);
+  display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);
+}
+.ohlasy-popis{font-family:var(--mono);font-size:12.5px;color:var(--tlum);flex:none}
+.ohlasy-radek{
+  display:flex;gap:8px;flex:1;min-width:0;
+  overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;
+  /* prechod na prave hrane: pruh pokracuje, neni useknuty */
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);
+          mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);
+  /* Svisly prostor pro posun na hoveru. `overflow-x:auto` dela podle
+     specifikace z `overflow-y` taky `auto`, takze bez teto rezervy se
+     pilulce pri translateY(-1px) orizne horni hrana i s rameckem. */
+  padding:3px 26px 3px 0;
+  margin:-3px 0;
+}
+.ohlasy-radek::-webkit-scrollbar{display:none}
+.ohlas{
+  flex:0 0 auto;max-width:none;scroll-snap-align:start;
+  display:flex;align-items:center;gap:11px;
+  background:var(--papir);border:1px solid var(--linka);
+  border-radius:999px;padding:9px 18px 9px 12px;
+  text-decoration:none;color:var(--inkoust);font-size:14.5px;line-height:1.35;
+  transition:border-color .18s var(--krivka-klid), transform .2s var(--krivka);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ohlas b{
+  font-family:var(--display);font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--akcent);background:var(--akcent-sv);
+  border-radius:999px;padding:4px 9px;flex:none;
+}
+.ohlas span{overflow:hidden;text-overflow:ellipsis}
+@media (hover:hover) and (pointer:fine){
+  .ohlas:hover{border-color:var(--akcent);transform:translateY(-1px)}
+  .ohlasy-vse:hover{color:var(--akcent);gap:10px}
+}
+.ohlasy-vse{
+  flex:none;min-height:44px;font-size:14px;color:var(--tlum);text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;
+  transition:color .18s var(--krivka-klid), gap .2s var(--krivka);
+}
+.ohlasy-vse svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7}
+@media (max-width:700px){
+  .ohlasy-vnitrek{flex-wrap:wrap;padding:18px var(--okraj);gap:12px}
+  .ohlasy-radek{order:3;flex-basis:100%}
+  .ohlasy-vse{margin-left:auto}
+}
+
 /* ---------- Pas referenci ---------- */
 .pas-obal{border-top:1px solid var(--linka);padding:0}
 .pas{
@@ -673,10 +725,34 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/obrazky/petr-kokoska.webp?v=d4749b3" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
+      <img src="/obrazky/petr-kokoska.webp?v=e3d9408" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
+
+  <!-- Co se prave resi: misto dekorace zive odkazy na clanky. Blok mezi
+       znackami generuje scripts/clanek_publikuj.py z clanky/manifest.json. -->
+  <div class="ohlasy">
+    <div class="ohlasy-vnitrek">
+      <span class="ohlasy-popis">Co se právě řeší</span>
+      <div class="ohlasy-radek">
+<!-- HP-CLANKY:START -->
+        <a class="ohlas" href="/clanky/propojeni-pohody-s-e-shopem-bankou-a-platbami">
+          <b>Automatizace</b><span>Propojení Pohody s e-shopem, bankou a platbami</span>
+        </a>
+        <a class="ohlas" href="/clanky/ohlasili-jste-se-u-nukib-co-se-deje-dalsich-12-mesicu">
+          <b>Bezpečnost</b><span>Ohlásili jste se u NÚKIB? Co vás čeká dalších 12 měsíců</span>
+        </a>
+        <a class="ohlas" href="/clanky/male-projekty-vychazeji-velke-ne">
+          <b>Vývoj</b><span>Proč malé projekty vycházejí a velké skoro nikdy</span>
+        </a>
+<!-- HP-CLANKY:END -->
+      </div>
+      <a class="ohlasy-vse" href="/clanky/">Všechny články
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
 
 <!-- ============ AKCNI POZICE ============ -->
 <section class="akce-pruh" id="akce">
@@ -1061,7 +1137,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=d4749b3" alt="" loading="lazy" width="120" height="80">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=e3d9408" alt="" loading="lazy" width="120" height="80">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
