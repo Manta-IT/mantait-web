@@ -80,7 +80,9 @@ section {
 
 /* ─── Typography ─── */
 .label {
-  font-size: 11px;
+  /* 12 px je minimum pravidla pro drobne popisky (cilovka 50+); do 11. 9. 2026
+     bylo 11 px a stitky sekci na mustkovych strankach ho porusovaly. */
+  font-size: 12px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--accent);
@@ -326,7 +328,7 @@ nav {
   min-height: calc(100vh - 200px);
 }
 .hero-left .hero-eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--accent);
@@ -1447,7 +1449,7 @@ nav {
   border: 1.5px solid var(--accent);
 }
 .ai-card-tag {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--accent);
