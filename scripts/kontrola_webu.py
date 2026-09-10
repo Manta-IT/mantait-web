@@ -41,6 +41,7 @@ VYJIMKY = [
     ('*', r'(licenc|ročně|měsíčně|dodavatel)[^.]{0,60}bez DPH'),   # cena dodavatele, ne nase
     ('*', r'bez DPH[^.]{0,40}(licenc|dodavatel)'),
     ('dotace-mas.html', r'provize z dotace'),                        # cenova informace, povolena vyjimka
+    ('index.html', r'provize z dotace'),                             # tatáž informace v ceniku produktu (od 11. 9. staticky)
     ('reseni-bezpecnost.html', r'prioritou a odpovědností'),         # popis tabulky ze zakona, ne slib
 ]
 CENY = {'reseni-mapa-firmy.html': '39 000', 'reseni-ai-zamestnanec.html': '89 000',

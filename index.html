@@ -725,7 +725,7 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/obrazky/petr-kokoska.webp?v=0b7bf42" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
+      <img src="/obrazky/petr-kokoska.webp?v=f7765dc" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
@@ -895,7 +895,48 @@ textarea{min-height:104px;resize:vertical}
         <p>Nejsou krokem mapy, ale mají v ní své místo. Každá má pevný rozsah a napsaný konec.
         Klikněte, co vás zajímá.</p>
       </div>
-      <div class="produkty" id="produkty"></div>
+      <!-- Rada produktu je staticke HTML, ne vystup skriptu: crawler bez JS na ni
+           jinak nevidi jediny odkaz (/weby byl sirotek, audit odkazu 8. 9. 2026).
+           Zdroj pravdy je tady; skript uz jen rozbaluje detail a zvyraznuje podle
+           vybraneho kroku (vazby nese data-patri). -->
+      <div class="produkty" id="produkty">
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="0" data-patri="ai priprava">
+          <img class="produkt-znak" src="/obrazky/znak-ai-plan.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>AI plán do 48 hodin</span><span class="produkt-cena">9 900 Kč</span></span>
+          <span class="produkt-vazba">S čím vám AI ve firmě pomůže a čím začít.</span>
+          <div class="produkt-vic" inert><div><p>Dva hodinové workshopy online. Do 48 hodin od druhého máte plán: kde AI pomůže, kde ne a čím začít. Když z něj vyjde, že se zatím nemá na čem stavět, pokračujeme Přípravou firmy a cenu plánu odečtu.</p><a href="#napiste">Chci plán &rarr;</a></div></div>
+        </button>
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="1" data-patri="ai">
+          <img class="produkt-znak" src="/obrazky/znak-ai-agent.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>AI agent</span><span class="produkt-cena">89 000 Kč + provoz</span></span>
+          <span class="produkt-vazba">Pracuje nepřetržitě, má přístupy, ráno hlásí.</span>
+          <div class="produkt-vic" inert><div><p>Zavedení včetně infrastruktury, u vás na serveru nebo v cloudu. Dostane přístupy do vašich systémů, agendu, kterou má odbavovat, a každé ráno podá hlášení. Provoz od 8 000 Kč měsíčně. Dává smysl až po AI plánu.</p><a href="/reseni-ai-zamestnanec">Jak agent pracuje &rarr;</a></div></div>
+        </button>
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="2" data-patri="ai propojeni">
+          <img class="produkt-znak" src="/obrazky/znak-ai-linka.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>Robot na zadání <span class="pracovni">pracovní název</span></span><span class="produkt-cena">podle rozsahu</span></span>
+          <span class="produkt-vazba">Dáte zadání, vyrobí výkres, seznam firem nebo článek a skončí.</span>
+          <div class="produkt-vic" inert><div><p>Jedno zadání, jeden výstup: výkres z poptávky, seznam firem k oslovení, článek z poznámek. Spustíte ji, doběhne a skončí, nikdo u toho nesedí. Cena podle toho, co robot vyrábí a z čeho.</p><a href="/reseni-robot-na-zadani">Jak robot pracuje &rarr;</a></div></div>
+        </button>
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="3" data-patri="vyber propojeni">
+          <img class="produkt-znak" src="/obrazky/znak-raynet.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>Raynet CRM</span><span class="produkt-cena">od 15 000 Kč</span></span>
+          <span class="produkt-vazba">Zavedení a propojení s účetnictvím.</span>
+          <div class="produkt-vic" inert><div><p>Zavedení CRM, propojení s účetnictvím a úpravy na míru vašemu obchodu. Od července 2026 jsem oficiální integrační partner Raynetu.</p><a href="/raynet">Raynet u vás &rarr;</a></div></div>
+        </button>
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="4" data-patri="aplikace">
+          <img class="produkt-znak" src="/obrazky/znak-web.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>Web pro dobu AI</span><span class="produkt-cena">35 000 Kč</span></span>
+          <span class="produkt-vazba">Optimalizace pro vyhledávače i AI asistenty, které dnes posílají poptávky.</span>
+          <div class="produkt-vic" inert><div><p>Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stojí pětinu ceny drahých řešení.</p><a href="/weby">Co web umí &rarr;</a></div></div>
+        </button>
+        <button class="produkt" type="button" aria-expanded="false" data-produkt="5" data-patri="vyber aplikace">
+          <img class="produkt-znak" src="/obrazky/znak-dotace.svg?v=f7765dc" alt="" loading="lazy" width="120" height="80">
+          <span class="produkt-nazev"><span>Dotace na digitalizaci</span><span class="produkt-cena">30 000 Kč</span></span>
+          <span class="produkt-vazba">Ověření nároku, projektový záměr a srovnané nabídky.</span>
+          <div class="produkt-vic" inert><div><p>Ověření nároku, projektový záměr a srovnané cenové nabídky od dodavatelů. Jedna částka, žádná provize z dotace. Žádost sestaví a podá dotační kancelář, se kterou na projektu spolupracuju.</p><a href="/dotace-mas">Jestli na dotaci dosáhnu &rarr;</a></div></div>
+        </button>
+      </div>
       <p class="zvlast-pozn">Nejsem plátce DPH, ceny jsou konečné. U položek "od" a "podle rozsahu"
       řeknu přesnou částku po prvním hovoru.</p>
     </div>
@@ -1060,21 +1101,6 @@ const VEDENI = {id:'vedeni', nazev:'Dlouhodobé vedení IT', role:'Celá cesta n
   cena:'od 50 000 Kč měsíčně', pozn:'vyjde levněji než kroky zvlášť', odkaz:'/reseni-vedeni-it',
   varianty:['Vedení a směr','Dohled nad dodavateli','Rozpočet a bezpečnost'], pred:[], po:[]};
 
-const PRODUKTY = [
-  {nazev:'AI plán do 48 hodin', znak:'ai-plan', cena:'9 900 Kč', vazba:'S čím vám AI ve firmě pomůže a čím začít.', patri:['ai','priprava'],
-   vic:'Dva hodinové workshopy online. Do 48 hodin od druhého máte plán: kde AI pomůže, kde ne a čím začít. Když z něj vyjde, že se zatím nemá na čem stavět, pokračujeme Přípravou firmy a cenu plánu odečtu.', odkaz:'#napiste', cta:'Chci plán'},
-  {nazev:'AI agent', znak:'ai-agent', cena:'89 000 Kč + provoz', vazba:'Pracuje nepřetržitě, má přístupy, ráno hlásí.', patri:['ai'],
-   vic:'Zavedení včetně infrastruktury, u vás na serveru nebo v cloudu. Dostane přístupy do vašich systémů, agendu, kterou má odbavovat, a každé ráno podá hlášení. Provoz od 8 000 Kč měsíčně. Dává smysl až po AI plánu.', odkaz:'/reseni-ai-zamestnanec', cta:'Jak agent pracuje'},
-  {nazev:'Robot na zadání', znak:'ai-linka', pracovni:true, cena:'podle rozsahu', vazba:'Dáte zadání, vyrobí výkres, seznam firem nebo článek a skončí.', patri:['ai','propojeni'],
-   vic:'Jedno zadání, jeden výstup: výkres z poptávky, seznam firem k oslovení, článek z poznámek. Spustíte ji, doběhne a skončí, nikdo u toho nesedí. Cena podle toho, co robot vyrábí a z čeho.', odkaz:'/reseni-robot-na-zadani', cta:'Jak robot pracuje'},
-  {nazev:'Raynet CRM', znak:'raynet', cena:'od 15 000 Kč', vazba:'Zavedení a propojení s účetnictvím.', patri:['vyber','propojeni'],
-   vic:'Zavedení CRM, propojení s účetnictvím a úpravy na míru vašemu obchodu. Od července 2026 jsem oficiální integrační partner Raynetu.', odkaz:'raynet.html', cta:'Raynet u vás'},
-  {nazev:'Web pro dobu AI', znak:'web', cena:'35 000 Kč', vazba:'Optimalizace pro vyhledávače i AI asistenty, které dnes posílají poptávky.', patri:['aplikace'],
-   vic:'Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stojí pětinu ceny drahých řešení.', odkaz:'/weby', cta:'Co web umí'},
-  {nazev:'Dotace na digitalizaci', znak:'dotace', cena:'30 000 Kč', vazba:'Ověření nároku, projektový záměr a srovnané nabídky.', patri:['vyber','aplikace'],
-   vic:'Ověření nároku, projektový záměr a srovnané cenové nabídky od dodavatelů. Jedna částka, žádná provize z dotace. Žádost sestaví a podá dotační kancelář, se kterou na projektu spolupracuju.', odkaz:'dotace-mas.html', cta:'Jestli na dotaci dosáhnu'},
-];
-
 const S = {vybrany:'priprava'};
 const $ = id => document.getElementById(id);
 const krok = id => id==='vedeni' ? VEDENI : KROKY.find(k=>k.id===id);
@@ -1132,16 +1158,10 @@ function vykresliDetail(){
   $('d-odkaz').href = k.odkaz;
   const det = $('detail'); det.classList.remove('prepnuto'); void det.offsetWidth; det.classList.add('prepnuto');
   const pr = $('produkty');
-  pr.querySelectorAll('.produkt').forEach((el,i)=>el.classList.toggle('patri', PRODUKTY[i].patri.includes(k.id)));
+  pr.querySelectorAll('.produkt').forEach(el=>el.classList.toggle('patri', el.dataset.patri.split(' ').includes(k.id)));
 }
 
 function vykresliProdukty(){
-  $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=0b7bf42" alt="" loading="lazy" width="120" height="80">
-    <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
-    <span class="produkt-vazba">${p.vazba}</span>
-    <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
-  </button>`).join('');
   $('produkty').addEventListener('click', e=>{
     if(e.target.closest('a')) return;
     const b = e.target.closest('.produkt'); if(!b) return;
