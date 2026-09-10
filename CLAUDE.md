@@ -56,7 +56,7 @@ Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
    Cloudflare build nedobehl a pomohl az dalsi commit.
 5. Clanky (`clanky/`): NIKDY rucne. Koncept vznika v manta-it
    (`workspace/_clanky/<slug>/`, workflow `workflows/clanek/`), render a
-   kontrola `scripts/clanek_kontrola.py`, publikace (html, manifest.json,
+   kontrola `scripts/stroj/clanek_kontrola.py`, publikace (html, manifest.json,
    hub na obou mistech, sitemap, llms.txt, commit, push, overeni)
    `scripts/clanek_publikuj.py <slug>`. `manifest.json` je zdroj pravdy hubu;
    seznam v `clanky/index.html` i v prototypu je mezi znackami
@@ -118,15 +118,22 @@ git add -A && git commit -m "fix: ..." && git push origin master
 - **U vyvoje povinna veta, ze kod vlastni klient.**
 - **Modelova cisla vzdy s vetou pod carou**, ktera je odlisi od dolozenych --
   bez toho je to falesna presnost.
-- **Zadna konkretni castka dotace v claimu.** Dotace (pivot 25. 8.): zadost
-  zpracovavame a podavame my za 30 000 Kc (na plnou moc), sluzba konci podanim,
-  zadna druha faktura ani provize. Obe zjednoduseni jsou chybna: "zadost poda
-  kancelar" (bez soucinnosti zadatele nevznikne) i "podavate si ji vzdy sami"
-  (na plnou moc ne). Uzke misto je kvalifikovany podpis jednatele a pristup
-  do ISKP21+ -- resi se na zacatku. Dvojroli (specifikace + vlastni nabidka
-  dodavky) v FAQ nepotvrzovat ani nevylucovat, dokud Petr nerozhodne T0825-59.
-  Zdroj: `../leadgen/mas-baze/SPOLECNA-PRAVIDLA.md`, sekce "Kdo smi zadost
-  fyzicky odeslat".
+- **Zadna konkretni castka dotace v claimu.** Dotace (Petr 10. 9., prepisuje
+  pivot 25. 8.): hlavni zprava je SPOLUPRACE S DOTACNIMI KANCELARAMI. Nas dil
+  je zamer po projektove, produktove, technicke a architektonicke strance plus
+  srovnane nabidky za 30 000 Kc; zadost sestavi a poda kancelar, kterou k
+  projektu prizveme, nebo ta, se kterou uz klient pracuje. Duvod: kancelare
+  jsou partnersky kanal i cilova skupina outreach a web ctou driv nez mail --
+  "podame to za vas" z nas dela konkurenci a podkopava cenu vsem. NIKDE nepsat
+  "zadost vyplnime i podame", "na klic", "na plnou moc podame", ani vymezovani
+  ("co by kancelar umela lip"). Ze u maleho projektu kancelar nemusi byt
+  potreba, smi jen nenapadne prosvitat (jedna polveta v ceniku); rozhodnuti,
+  kdo poda, pada v obchodnim hovoru, ne na strance. Odmena kancelare se na webu
+  neuvadi. Uzke misto zustava kvalifikovany podpis jednatele a pristup do
+  ISKP21+. Zdroj: memory `feedback-dotace-spoluprace-s-kancelarami`, task
+  T0910-61, `../leadgen/mas-baze/SPOLECNA-PRAVIDLA.md` (pravni realita, kdo smi
+  odeslat). Dvojroli (specifikace + vlastni nabidka dodavky) v FAQ nepotvrzovat
+  ani nevylucovat, dokud Petr nerozhodne T0825-59.
 - **Zakazano kdekoli:** Ultramarin/UltraConfig, "Kokoska IT", MAS Humpolecko.
 
 ### Design

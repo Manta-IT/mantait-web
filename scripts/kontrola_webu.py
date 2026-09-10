@@ -30,7 +30,12 @@ TYPO = {'em-dash': '—', 'en-dash': '–', 'smart quotes': '[“”„‘’]',
 ZAKAZ = [r'\bproviz\w*', r'\bručím\b', r'\bručení\b', r'odpovědnost\w*', r'Kokoška IT', r'Ultramar\w*',
          r'Web Standard', r'Web Quick', r'16 900', r'8 900\b', r'AI linka', r'\bdiscovery\b',
          r'\bscope\b', r'\bstack\b', r'onboarding', r'middleware', r'\bCMS\b', r'\bROI\b',
-         r'bez DPH', r'na rozdíl od (agentur|konkurence)']
+         r'bez DPH', r'na rozdíl od (agentur|konkurence)',
+         # Dotace: hlavni zprava je spoluprace s kancelarami (Petr 10. 9., T0910-61).
+         # "podame to za vas" z nas dela konkurenci kancelari, ktere jsou zaroven
+         # partnersky kanal i cilova skupina outreach -- a ty web ctou driv nez mail.
+         r'(žádost|ji)\s+(vyplníme|zpracujeme)\s+i\s+podáme', r'na plnou moc\s+(ji\s+)?podáme',
+         r'podáme ji za vás', r'[Dd]otace na klíč', r'od záměru po podání žádosti']
 # (soubor nebo '*', regex na kontext) -> povolene. Duvod v komentari.
 VYJIMKY = [
     ('*', r'(licenc|ročně|měsíčně|dodavatel)[^.]{0,60}bez DPH'),   # cena dodavatele, ne nase

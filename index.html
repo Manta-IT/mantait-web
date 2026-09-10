@@ -725,7 +725,7 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/obrazky/petr-kokoska.webp?v=ccef354" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
+      <img src="/obrazky/petr-kokoska.webp?v=0b7bf42" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
@@ -991,8 +991,8 @@ textarea{min-height:104px;resize:vertical}
   const dnu = Math.ceil((new Date(UZAVERKA + 'T23:59:59') - new Date()) / 86400000);
   const TEMATA = [
     {id:'dotace', zalozka:'Dotace na technologie', h2:'Dotace na technologie končí letos na podzim.',
-     popis:'Výzva Technologie pro MAS je poslední velké kolo, ve kterém stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají průběžně a další srovnatelný program zatím ohlášený není. Žádost zpracuju a podám za vás, jedna částka a žádná druhá faktura.',
-     udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],['30 000 Kč','za zpracování i podání']],
+     popis:'Výzva Technologie pro MAS je poslední velké kolo, ve kterém stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají průběžně a další srovnatelný program zatím ohlášený není. Ověřím nárok, napíšu záměr a seženu nabídky; žádost dotáhneme s dotační kanceláří.',
+     udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],['30 000 Kč','za ověření, záměr a nabídky']],
      cta:['Chci vědět, jestli na to dosáhnu','/dotace-mas'], vedlejsi:['Co přesně ta výzva je','/clanky/dotace-technologie-pro-mas-2026'], plati: dnu>0},
     {id:'zakon', zalozka:'Zákon o kybernetické bezpečnosti', h2:'Nový zákon o kybernetické bezpečnosti. Dopadá i na vás?',
      popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Uvedení do souladu sám nedodávám, tahle stránka je tu, abyste věděli, na čem jste. Průběžně sem píšu, co se kolem zákona mění.',
@@ -1071,8 +1071,8 @@ const PRODUKTY = [
    vic:'Zavedení CRM, propojení s účetnictvím a úpravy na míru vašemu obchodu. Od července 2026 jsem oficiální integrační partner Raynetu.', odkaz:'raynet.html', cta:'Raynet u vás'},
   {nazev:'Web pro dobu AI', znak:'web', cena:'35 000 Kč', vazba:'Optimalizace pro vyhledávače i AI asistenty, které dnes posílají poptávky.', patri:['aplikace'],
    vic:'Správa obsahu, rychlost a optimalizace pro vyhledávače i AI asistenty. Čím dál víc poptávek dnes přichází přes AI, ne přes Google, a tenhle web s tím počítá od začátku. Stojí pětinu ceny drahých řešení.', odkaz:'/weby', cta:'Co web umí'},
-  {nazev:'Dotace na digitalizaci', znak:'dotace', cena:'30 000 Kč', vazba:'Ověření nároku až vyplnění žádosti. Končí podáním.', patri:['vyber','aplikace'],
-   vic:'Ověření nároku, projektový záměr, cenové nabídky i vyplnění žádosti. Jedna částka, žádná druhá faktura ani provize z dotace. Služba končí podáním žádosti.', odkaz:'dotace-mas.html', cta:'Jestli na dotaci dosáhnu'},
+  {nazev:'Dotace na digitalizaci', znak:'dotace', cena:'30 000 Kč', vazba:'Ověření nároku, projektový záměr a srovnané nabídky.', patri:['vyber','aplikace'],
+   vic:'Ověření nároku, projektový záměr a srovnané cenové nabídky od dodavatelů. Jedna částka, žádná provize z dotace. Žádost sestaví a podá dotační kancelář, se kterou na projektu spolupracuju.', odkaz:'dotace-mas.html', cta:'Jestli na dotaci dosáhnu'},
 ];
 
 const S = {vybrany:'priprava'};
@@ -1137,7 +1137,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=ccef354" alt="" loading="lazy" width="120" height="80">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=0b7bf42" alt="" loading="lazy" width="120" height="80">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>

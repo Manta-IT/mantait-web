@@ -11,6 +11,6 @@
   "reseni-vedeni-it":       {"nazev": "Dlouhodobé vedení IT",    "veta": "Celá cesta na paušál. Vy se k IT vracíte jen na poradách.",                           "cena": "od 50 000 Kč měsíčně"},
   "weby":                   {"nazev": "Web pro dobu AI",         "veta": "Firemní web, který sám získává poptávky, přes vyhledávače i AI asistenty.",           "cena": "35 000 Kč"},
   "raynet":                 {"nazev": "Raynet CRM",              "veta": "Zavedení a propojení s účetnictvím, především s Pohodou.",                            "cena": "od 15 000 Kč"},
-  "dotace-mas":             {"nazev": "Dotace na digitalizaci",  "veta": "Ověření nároku až vyplnění žádosti. Jedna částka, končí podáním.",                    "cena": "30 000 Kč"},
+  "dotace-mas":             {"nazev": "Dotace na digitalizaci",  "veta": "Ověření nároku, projektový záměr a srovnané nabídky.",                    "cena": "30 000 Kč"},
   "reseni-bezpecnost":      {"nazev": "Zákon o kybernetické bezpečnosti", "veta": "Za pět minut zjistíte, jestli na vás zákon dopadá a co po vás chce.",          "cena": ""}
 }
