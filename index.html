@@ -725,7 +725,7 @@ textarea{min-height:104px;resize:vertical}
     </div>
 
     <figure class="portret vstup z4">
-      <img src="/obrazky/petr-kokoska.webp?v=e3d9408" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
+      <img src="/obrazky/petr-kokoska.webp?v=ccef354" alt="Petr Kokoška, zakladatel Manta IT" width="800" height="800" fetchpriority="high">
       <figcaption class="podpis"><b>Petr Kokoška</b> Manta IT</figcaption>
     </figure>
   </header>
@@ -995,8 +995,8 @@ textarea{min-height:104px;resize:vertical}
      udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],['30 000 Kč','za zpracování i podání']],
      cta:['Chci vědět, jestli na to dosáhnu','/dotace-mas'], vedlejsi:['Co přesně ta výzva je','/clanky/dotace-technologie-pro-mas-2026'], plati: dnu>0},
     {id:'zakon', zalozka:'Zákon o kybernetické bezpečnosti', h2:'Nový zákon o kybernetické bezpečnosti. Dopadá i na vás?',
-     popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Sám tuhle dodávku nedělám, doporučím prověřeného partnera. A průběžně sem píšu, co se kolem zákona mění.',
-     udaje:[['3','otázky stačí k odpovědi'],['5 minut','a víte, kam patříte'],['0 Kč','za doporučení partnera']],
+     popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Uvedení do souladu sám nedodávám, tahle stránka je tu, abyste věděli, na čem jste. Průběžně sem píšu, co se kolem zákona mění.',
+     udaje:[['3','otázky stačí k odpovědi'],['5 minut','a víte, kam patříte'],['60 dnů','na ohlášení, když se vás týká']],
      cta:['Projít tři otázky','/reseni-bezpecnost'], vedlejsi:['Co po firmách zákon chce','/clanky/novy-zakon-kyberbezpecnost-3-otazky'], plati:true},
   ].filter(t=>t.plati);
   if(!TEMATA.length){ document.getElementById('akce')?.remove(); return; }
@@ -1137,7 +1137,7 @@ function vykresliDetail(){
 
 function vykresliProdukty(){
   $('produkty').innerHTML = PRODUKTY.map((p,i)=>`<button class="produkt" type="button" aria-expanded="false" data-produkt="${i}">
-    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=e3d9408" alt="" loading="lazy" width="120" height="80">
+    <img class="produkt-znak" src="/obrazky/znak-${p.znak}.svg?v=ccef354" alt="" loading="lazy" width="120" height="80">
     <span class="produkt-nazev"><span>${p.nazev}${p.pracovni?' <span class="pracovni">pracovní název</span>':''}</span><span class="produkt-cena">${p.cena}</span></span>
     <span class="produkt-vazba">${p.vazba}</span>
     <div class="produkt-vic" inert><div><p>${p.vic}</p><a href="${p.odkaz}">${p.cta} &rarr;</a></div></div>
