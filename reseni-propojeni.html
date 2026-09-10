@@ -273,6 +273,7 @@
         <div class="etapa-kdy">Do pár dní</div>
         <h3>Navrhnu způsob a řeknu cenu</h3>
         <p>Vyberu, kudy data potečou a čím. Běžně pracuji s Pohodou a jsem oficiální integrační partner <a href="/raynet" style="color:var(--akcent)">Raynet CRM</a>, takže tyhle cesty mám prošlapané. Raynet má REST API a webhooky, tedy rozhraní, přes které si programy předávají data bez ručního přepisu a hlásí změnu hned, když nastane; napojení stavím na něm, ne na kopírování souborů.</p>
+        <p>U Pohody stojí propojení na jejím vlastním rozhraní, kterým program data vydává i přijímá. Na její straně k tomu obvykle patří vyhrazená kopie programu a server, na kterém propojení poběží. Obchodní případ založený v Raynetu se pak v Pohodě objeví jako podklad k fakturaci a úhrada zapsaná v Pohodě se vrátí zpátky do Raynetu k danému kontaktu. Jakmile synchronizaci dat jednou nastavím, běží dál sama a nikdo mezi programy nic nepřepisuje. Co všechno se má přenášet a kterým směrem, vyjasníme hned na začátku.</p>
       </div>
       <div class="etapa">
         <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v11a3.5 3.5 0 0 0 7 0V3"/><path d="M8 3h9"/><path d="M9.5 11h6"/></svg></span>
@@ -367,8 +368,11 @@
           <h3>ABRA Flexi a Helios iNuvio</h3>
           <span class="stitek" style="display:block;margin:8px 0 0">podle systému</span>
         </div>
-        <p>Obojí data vydat umí. U Heliosu se vrstva pro propojení licencuje zvlášť
+        <div>
+          <p>Obojí data vydat umí. U Heliosu se vrstva pro propojení licencuje zvlášť
         podle počtu lidí, kteří přes ni budou zapisovat. Import dat jde oběma směry: kontakty a obchodní případy z Raynetu se objeví v Heliosu jako podklad pro fakturaci, a naopak. Kolik účtů přes rozhraní skutečně potřebujete, prověřím při mapování, ať neplatíte za víc, než použijete.</p>
+          <p style="margin-top:12px">Helios i Raynet mají popis svého rozhraní (API dokumentaci) veřejně dostupný, takže si před nabídkou ověřím, co vaše konkrétní verze umí dnes, ne co se prodávalo před lety. Jako oficiální integrační partner Raynet CRM mám navíc přímý přístup k jeho technické podpoře, takže když se rozhraní na jejich straně změní, řeší se to rychleji. Propojení Raynetu s jiným podnikovým systémem (ERP), ať už je to Helios, Pohoda nebo něco jiného, stojí na stejném principu: data si programy předají samy přes rozhraní.</p>
+        </div>
       </div>
       <div class="doklad">
         <div>
@@ -584,6 +588,7 @@
       <summary>Kde propojení poběží?<span class="znak-plus"></span></summary>
       <div class="odpoved">
         <p>Buď u vás, nebo v cloudu, který spravuji. Když jde o citlivá data, má smysl první varianta a data pak firmu neopustí. Osobní údaje zákazníků přenáším jen tam, kde je daná agenda potřebuje, ne plošně do všech napojených systémů; kde a jak dlouho se data drží, řeší smlouva o zpracování osobních údajů s dodavatelem CRM.</p>
+        <p>Rozhraní samo o sobě nic navíc nekopíruje. Přenese jen ty údaje, o které propojení požádá, a jen do systému, který je k práci potřebuje. Kdo smí která data v CRM číst a měnit, se nastavuje přímo v něm a propojení se tím řídí. Smlouvu o zpracování osobních údajů tím nenahrazuji, jen posílám data cestou, kterou jste si v CRM nastavili.</p>
       </div>
     </details>
 
