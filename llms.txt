@@ -40,6 +40,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Propojení Pohody s e-shopem, bankou a platbami](https://mantait.cz/clanky/propojeni-pohody-s-e-shopem-bankou-a-platbami): Objednávky z e-shopu i platby z výpisu pořád přepisujete ručně do Pohody? Přehled, co se dá propojit samo a co to od firmy vyžaduje.
 - [Co je Raynet CRM, kolik stojí a s čím ho propojíte](https://mantait.cz/clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit): Vybíráte CRM a nechcete objevovat překvapení až po podpisu? Ceny za uživatele, co který plán umí a kudy vedou data do účetnictví.
 - [Správa IT, nebo vedení IT: co malá firma potřebuje](https://mantait.cz/clanky/sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje): Hledáte správu IT, ale počítače vám fungují? Zjistěte, proč malá firma potřebuje technologické vedení, jak obě role oddělit a kdy se vám externí lídr vyplatí.
+- [Dotace na digitalizaci 2026: co je mimo MAS a co stihnete](https://mantait.cz/clanky/dotace-na-digitalizaci-podniku-2026-co-je-mimo-mas-a-co): Hledáte dotace na digitalizaci 2026 mimo MAS? Zjistěte, které výzvy OP TAK ještě stihnete, jaké mají limity a kdy se vyplatí místní akční skupina.
 
 ## Co Manta IT není
 
