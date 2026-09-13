@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -138,6 +138,11 @@
   <url>
     <loc>https://mantait.cz/clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit</loc>
     <lastmod>2026-09-11</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje</loc>
+    <lastmod>2026-09-12</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

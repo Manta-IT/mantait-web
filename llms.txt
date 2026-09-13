@@ -39,6 +39,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Ohlásili jste se u NÚKIB? Co vás čeká dalších 12 měsíců](https://mantait.cz/clanky/ohlasili-jste-se-u-nukib-co-se-deje-dalsich-12-mesicu): Ohlásili jste se u NÚKIB a teď čekáte, co bude dál? Přichází rozhodnutí o registraci a od něj běží rok na zavedení opatření.
 - [Propojení Pohody s e-shopem, bankou a platbami](https://mantait.cz/clanky/propojeni-pohody-s-e-shopem-bankou-a-platbami): Objednávky z e-shopu i platby z výpisu pořád přepisujete ručně do Pohody? Přehled, co se dá propojit samo a co to od firmy vyžaduje.
 - [Co je Raynet CRM, kolik stojí a s čím ho propojíte](https://mantait.cz/clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit): Vybíráte CRM a nechcete objevovat překvapení až po podpisu? Ceny za uživatele, co který plán umí a kudy vedou data do účetnictví.
+- [Správa IT, nebo vedení IT: co malá firma potřebuje](https://mantait.cz/clanky/sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje): Hledáte správu IT, ale počítače vám fungují? Zjistěte, proč malá firma potřebuje technologické vedení, jak obě role oddělit a kdy se vám externí lídr vyplatí.
 
 ## Co Manta IT není
 

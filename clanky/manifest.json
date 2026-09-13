@@ -1,5 +1,21 @@
 [
   {
+    "slug": "sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje",
+    "title": "Správa IT, nebo vedení IT: co malá firma potřebuje",
+    "description": "Hledáte správu IT, ale počítače vám fungují? Zjistěte, proč malá firma potřebuje technologické vedení, jak obě role oddělit a kdy se vám externí lídr vyplatí.",
+    "date_published": "2026-09-12",
+    "date_modified": "2026-09-13",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-vyber-systemu"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje.svg"
+  },
+  {
     "slug": "co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit",
     "title": "Co je Raynet CRM, kolik stojí a s čím ho propojíte",
     "description": "Vybíráte CRM a nechcete objevovat překvapení až po podpisu? Ceny za uživatele, co který plán umí a kudy vedou data do účetnictví.",
