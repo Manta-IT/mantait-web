@@ -1,5 +1,21 @@
 [
   {
+    "slug": "zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na",
+    "title": "Zůstali jste na Windows 10? Nové funkce 365 už nepřijdou",
+    "description": "Držíte ve firmě počítače na starším systému a odkládáte nákup nových? Kancelářský balík na nich zastavuje nové funkce a bezpečnostní rizika začínají růst.",
+    "date_published": "2026-09-12",
+    "date_modified": "2026-09-17",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na.svg"
+  },
+  {
     "slug": "chatbot-na-webu-a-texty-od-ai-co-po-vas-od-srpna-chce-ai-act",
     "title": "Chatbot a texty od AI: co po vás od srpna chce AI Act",
     "description": "Máte na webu chatbota nebo generujete články pomocí umělé inteligence? Článek 50 AI Actu je účinný. Zjistěte, jak označit výstupy bez zbytečného vývoje.",

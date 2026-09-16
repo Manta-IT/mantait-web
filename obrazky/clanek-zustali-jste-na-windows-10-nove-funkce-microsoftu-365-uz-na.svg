@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Rozcestí mezi starým operačním systémem se zastavenými aktualizacemi a postupnou obměnou techniky" fill="none">
+<title>Rozcestí mezi starým operačním systémem se zastavenými aktualizacemi a postupnou obměnou techniky</title>
+  <rect x="24" y="78" width="64" height="44" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M34 94h44" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M34 104h28" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M88 100h34" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="136" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <path d="M147 90q15 -35 38 -35h12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M197 49l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M209 55h11" stroke="#9A3F2B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <rect x="220" y="33" width="80" height="44" rx="4" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="1.8" opacity="1"/>
+  <path d="M232 49h56" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M232 59h36" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M147 110q15 35 38 35h10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="195" y="131" width="26" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M200 142h16" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M200 148h10" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M221 145h10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="231" y="131" width="26" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M236 142h16" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M236 148h10" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M257 145h10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="267" y="127" width="34" height="36" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M279 145l4 5 9-11" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
