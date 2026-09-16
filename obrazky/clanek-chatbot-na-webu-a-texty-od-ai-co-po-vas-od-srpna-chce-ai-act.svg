@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma označení výstupů umělé inteligence na firemním webu podle článku 50 AI Actu" fill="none">
+<title>Schéma označení výstupů umělé inteligence na firemním webu podle článku 50 AI Actu</title>
+  <rect x="24" y="36" width="72" height="54" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 48h42" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M32 56h24" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="60" y="58" width="28" height="24" rx="3" fill="#FBFBF9" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M65 70h18" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="110" width="72" height="54" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 122h56" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M32 130h48" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M32 138h52" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M32 146h34" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M96 63h20q10 0 10 10v17q0 10 10 10h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M96 137h20q10 0 10 -10v-17q0 -10 10 -10h10" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M154 100l4 4 8-8" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M174 100h42" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="216" y="50" width="80" height="100" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="224" y="60" width="64" height="20" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M230 70h52" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M224 90h64" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M224 98h56" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M224 106h60" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M224 114h42" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M224 134h28" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+</svg>
