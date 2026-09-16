@@ -30,7 +30,11 @@ step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
 - sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `pisma.css`,
   `pisma/` (woff2), `obrazky/` (SVG + generatory), `loga/`, `bump.py`
 
-Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize),
+Produkce navic: `dotace-mas.html` (POZOR na pivot sluzby 25. 8., viz nize;
+tabulka uzemi a mapa `?mas=` v hero jsou mezi znackami `MAS:START/END`
+GENEROVANE z `../leadgen/mas-baze/<slug>/parametry.yml` skriptem
+`python -X utf8 ../scripts/stroj/mas_parametry.py --web [--publikuj]` -- rucne
+needitovat; denni sken vyzev to obnovuje a pushuje sam),
 `clanky/` (manifest.json = zdroj dat), `kontakt`, `weby`, `raynet`,
 `case-kalkulacka`, `ukazka-reportu`, `soukromi`, `dekujeme`, `_redirects`,
 `sk/`, `en/` (ceny v EUR, dotacni obsah vynechan).
