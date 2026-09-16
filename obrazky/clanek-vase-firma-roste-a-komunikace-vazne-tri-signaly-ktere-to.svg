@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Tři samostatné komunikační kanály sjednocené přes rozhodovací uzel do společného bloku CRM a zakázek" fill="none">
+<title>Tři samostatné komunikační kanály sjednocené přes rozhodovací uzel do společného bloku CRM a zakázek</title>
+  <rect x="20" y="32" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M28 42h24" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M28 50h16" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="20" y="86" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M28 96h24" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M28 104h16" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="20" y="140" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M28 150h24" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M28 158h16" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M64 40h32" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M96 37l6 6m0-6l-6 6" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M106 40h20" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.5"/>
+  <path d="M64 92q16 0 24 -16h12" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M100 73l6 6m0-6l-6 6" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M110 76h18" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.5"/>
+  <path d="M64 160h32" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M96 157l6 6m0-6l-6 6" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M106 160h20" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.5"/>
+  <path d="M64 50h30q24 0 36 20l16 20" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M64 100h78" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M64 150h30q24 0 36 -20l16 -20" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="158" cy="100" r="16" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M173 93h59" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M174 100h58" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M173 107h59" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="232" y="54" width="68" height="92" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="240" y="62" width="52" height="34" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M246 73h38" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M246 81h26" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="240" y="104" width="52" height="34" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M246 115h28" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M246 123h20" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M278 116l4 5 7-8" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

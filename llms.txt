@@ -44,6 +44,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [AI marketing pro malou firmu: kde začít bez oddělení](https://mantait.cz/clanky/ai-marketing-pro-malou-firmu-kde-zacit-kdyz-nemate): Nemáte marketingové oddělení ani specialistu na plný úvazek? Zjistěte, jak může malá firma využít AI pro obsah, segmentaci a získávání poptávek.
 - [Povinné e-faktury ve Francii: co čeká české dodavatele](https://mantait.cz/clanky/francie-spustila-povinne-e-faktury-co-to-znamena-pro-ceske): Francie zavádí povinné elektronické faktury pro všechny plátce DPH. Zjistěte, jaké technické nároky to přináší a jak připravit vaše firemní systémy.
 - [Proč se AI pilot ve firmě nikdy nedostane do provozu](https://mantait.cz/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu): Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.
+- [Firma roste a komunikace vázne? Tři varovné signály](https://mantait.cz/clanky/vase-firma-roste-a-komunikace-vazne-tri-signaly-ktere-to): Když firma roste, nepropojená komunikace začne brzdit zakázky. Poznejte tři varovné signály a zjistěte, proč místo nových lidí pomůže propojení systémů.
 
 ## Co Manta IT není
 

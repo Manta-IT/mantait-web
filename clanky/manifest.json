@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vase-firma-roste-a-komunikace-vazne-tri-signaly-ktere-to",
+    "title": "Firma roste a komunikace vázne? Tři varovné signály",
+    "description": "Když firma roste, nepropojená komunikace začne brzdit zakázky. Poznejte tři varovné signály a zjistěte, proč místo nových lidí pomůže propojení systémů.",
+    "date_published": "2026-09-12",
+    "date_modified": "2026-09-16",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "raynet"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-vase-firma-roste-a-komunikace-vazne-tri-signaly-ktere-to.svg"
+  },
+  {
     "slug": "proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu",
     "title": "Proč se AI pilot ve firmě nikdy nedostane do provozu",
     "description": "Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.",
