@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma přechodu od izolovaného testování AI k napojení na firemní procesy a systémy" fill="none">
+<title>Schéma přechodu od izolovaného testování AI k napojení na firemní procesy a systémy</title>
+  <rect x="25" y="45" width="80" height="110" rx="4" fill="#E7EAE6" stroke="#9AA29E" stroke-width="1.5" opacity="1"/>
+  <rect x="35" y="55" width="60" height="20" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M43 65h26" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M43 71h38" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="35" y="82" width="60" height="36" rx="3" fill="#FBFBF9" stroke="#9AA29E" stroke-width="1.5" opacity="1"/>
+  <path d="M43 96h30" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M43 104h42" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="35" y="125" width="60" height="20" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M43 135h34" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M43 141h22" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M65 75v7" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3" opacity="1"/>
+  <path d="M65 118v7" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3" opacity="1"/>
+  <path d="M95 100h47" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="18" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M152 100l6 6 11-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M178 100h47" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="215" y="45" width="80" height="110" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="225" y="55" width="60" height="20" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M233 65h32" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M233 71h22" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="225" y="82" width="60" height="36" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M233 96h30" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M233 104h42" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="225" y="125" width="60" height="20" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M233 135h36" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M233 141h26" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M255 75v7" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M255 118v7" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+</svg>

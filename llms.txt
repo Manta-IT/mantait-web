@@ -43,6 +43,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Dotace na digitalizaci 2026: co je mimo MAS a co stihnete](https://mantait.cz/clanky/dotace-na-digitalizaci-podniku-2026-co-je-mimo-mas-a-co): Hledáte dotace na digitalizaci 2026 mimo MAS? Zjistěte, které výzvy OP TAK ještě stihnete, jaké mají limity a kdy se vyplatí místní akční skupina.
 - [AI marketing pro malou firmu: kde začít bez oddělení](https://mantait.cz/clanky/ai-marketing-pro-malou-firmu-kde-zacit-kdyz-nemate): Nemáte marketingové oddělení ani specialistu na plný úvazek? Zjistěte, jak může malá firma využít AI pro obsah, segmentaci a získávání poptávek.
 - [Povinné e-faktury ve Francii: co čeká české dodavatele](https://mantait.cz/clanky/francie-spustila-povinne-e-faktury-co-to-znamena-pro-ceske): Francie zavádí povinné elektronické faktury pro všechny plátce DPH. Zjistěte, jaké technické nároky to přináší a jak připravit vaše firemní systémy.
+- [Proč se AI pilot ve firmě nikdy nedostane do provozu](https://mantait.cz/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu): Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.
 
 ## Co Manta IT není
 

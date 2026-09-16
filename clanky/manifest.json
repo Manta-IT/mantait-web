@@ -1,5 +1,21 @@
 [
   {
+    "slug": "proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu",
+    "title": "Proč se AI pilot ve firmě nikdy nedostane do provozu",
+    "description": "Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.",
+    "date_published": "2026-09-12",
+    "date_modified": "2026-09-16",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "sluzby": [
+      "reseni-ai-zamestnanec",
+      "reseni-podnikova-ai"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu.svg"
+  },
+  {
     "slug": "francie-spustila-povinne-e-faktury-co-to-znamena-pro-ceske",
     "title": "Povinné e-faktury ve Francii: co čeká české dodavatele",
     "description": "Francie zavádí povinné elektronické faktury pro všechny plátce DPH. Zjistěte, jaké technické nároky to přináší a jak připravit vaše firemní systémy.",

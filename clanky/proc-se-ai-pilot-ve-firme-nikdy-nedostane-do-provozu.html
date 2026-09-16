@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proč se AI pilot ve firmě nikdy nedostane do provozu - Manta IT</title>
+<meta name="description" content="Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu">
+  <meta property="og:title" content="Proč se AI pilot ve firmě nikdy nedostane do provozu">
+  <meta property="og:description" content="Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Proč se AI pilot ve firmě nikdy nedostane do provozu",
+    "description": "Máte ve firmě běžící AI pilot, ale do reálné práce se nedaří nástroj zapojit? Zjistěte, proč testy na úzkých datech selhávají a jak AI dostat do provozu.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-12",
+    "dateModified": "2026-09-12",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI ve firmě", "Nasazení AI"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI ve firmě</span>
+  <h1>Proč se firemní AI pilot <em>nikdy nedostane do provozu.</em></h1>
+  <p class="hero-lead">AI pilot je zkušební nasazení nástrojů umělé inteligence v odděleném prostředí, které má ověřit jejich přínos pro firmu. Většina těchto pokusů však v běžném provozu nikdy neskončí. Zůstávají v šuplíku jako technologická zajímavost, protože v nich chybí vazba na skutečné firemní procesy, dohled nad náklady i určený vlastník agendy.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 12. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu.svg" alt="Schéma přechodu od izolovaného testování AI k napojení na firemní procesy a systémy." width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Past pilotu</span>
+  <h2>Proč ukázka funguje, ale nasazení <em>doopravdy narazí.</em></h2>
+  <p>V technologické debatě vystihl podstatu tohoto problému Ben Schein z cloudové společnosti Domo: "U firemních nástrojů umělé inteligence je snadné rozjet pilot, ale těžké přejít do běžného provozu. Testy často vypadají levně, protože běží na úzkých datech s několika málo uživateli. Skutečné náklady se však objeví až při nasazení, ve chvíli, kdy schopnosti modelu propojíte se skutečnými pracovními postupy a podnikovými systémy za nimi." (<a href="https://www.cio.com/article/4207238/beware-of-the-ai-pilot-trap.html" rel="nofollow">Joanne Carew, CIO.com, 2026</a>). Rozhodující otázka proto nezní, zda model zvládne ukázku v testovacím okně, ale zda vydrží každodenní kontakt se skutečným provozem.</p>
+  <p>Naren Gangavarapu z Australian Cruise Group nazývá tento stav v tomtéž článku "AI divadlem". Kolem zkušebních verzí vzniká velká podívaná, ačkoliv reálně fungujících nasazení v produkčních systémech firem je minimum. Tlak na vedení firem zkoušet cokoliv s nálepkou umělé inteligence vede k tomu, že vznikají izolované experimenty bez jasného obchodního cíle.</p>
+  <p>V české firmě do 250 zaměstnanců vypadá takový scénář velmi podobně. Nadšený kolega nebo externí dodavatel předvede vedení rychlou ukázku v chatovacím rozhraní. Model přečte cvičnou fakturu, sepíše vzorový e-mail nebo vytvoří přehled z tabulky. Vedení je nadšené, jenže ve chvíli, kdy má systém běžet každé ráno bez dozoru, číst skutečné zprávy ze schránky a zapisovat data do účetnictví, práce se zastaví.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Účet za provoz</span>
+  <h2>Kde se náklady na volání modelů <em>vymknou kontrole.</em></h2>
+  <p>Samostatné modely neutrácí peníze lidskou rychlostí. Člověk v prohlížeči napíše za hodinu několik dotazů a spotřebu vnímá. Když však necháte běžet automatický skript nebo autonomního agenta, volá programovací rozhraní nepřetržitě. Jakmile v systému chybí sledování spotřeby a cenový strop, částka na faktuře překvapí i zkušené vývojáře.</p>
+  <p>John D'Emic z technologické platformy Revenium popsal pro magazín CIO případ přímo z vlastní praxe. Vývojář v květnu otevřel na svém počítači pracovní relaci s umělou inteligencí a nechal ji otevřenou po dobu 4 dnů. Než relaci ukončil, systém odeslal 4 819 volání a vygeneroval účet ve výši 3 762 USD bez jakéhokoliv varování (<a href="https://www.cio.com/article/4207238/beware-of-the-ai-pilot-trap.html" rel="nofollow">Joanne Carew, CIO.com, 2026</a>). Jedna jediná zapomenutá relace tak stála více než měsíční rozpočet celého týmu na softwarové nástroje.</p>
+  <p>Podobné riziko přináší i rychlé skládání aplikací bez vývojářských základů. Dmitriy Anderson ze společnosti Leroy Merlin South Africa upozorňuje, že nezáleží na tom, zda někdo poskládá prototyp za 15 až 20 minut, pokud je výsledkem nekvalitní kód bez vyřešené bezpečnosti a ochrany dat (<a href="https://www.cio.com/article/4207238/beware-of-the-ai-pilot-trap.html" rel="nofollow">Joanne Carew, CIO.com, 2026</a>). Analytická společnost Gartner z těchto důvodů odhaduje, že velká část firemních projektů generativní umělé inteligence skončí po fázi ověření odložená právě kvůli neuhlídaným nákladům.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Firemní procesy</span>
+  <h2>Rozhoduje reálný proces, <em>ne krása předvedené ukázky.</em></h2>
+  <p>Vedení menší firmy si nemůže dovolit utrácet statisíce za slepé pokusy. Zahraniční zkušenost ukazuje, že pilotní projekty často selhávají kvůli špatné posloupnosti kroků. Týmy nejprve postaví technologickou hračku a teprve dodatečně zjišťují, zda k ní mají potřebná oprávnění a přístupy.</p>
+  <p>Anil Inamdar z divize Instaclustr společnosti NetApp připomíná, že samotný jazykový model bývá nejlevnější částí celého záměru: "Mnoho týmů je zvyklých nejdříve stavět a na svolení se ptát až později. Po měsících práce pak zjistí, že neprojdou bezpečnostní kontrolou ani auditem soukromí dat bez bolestivého a drahého přepracování." (<a href="https://www.cio.com/article/4207238/beware-of-the-ai-pilot-trap.html" rel="nofollow">Joanne Carew, CIO.com, 2026</a>). Podle Inamdara projekty obvykle neumírají na špatný výsledek, ale na absenci jakéhokoliv měřitelného výsledku. Pokud si firma nestanoví termín, do kterého musí systém prokázat přínos, platí měsíce udržování projektu, který nikdo nechce zastavit.</p>
+  <p>V českém prostředí to znamená jednoduché pravidlo: rozhodnutí o zapojení umělé inteligence nemá vycházet z toho, jak hezky vypadá demo. Musí stát na tom, kde přesně systém sáhne do každodenní práce a kdo ve firmě schvaluje konečné výstupy. Než začnete nastavovat jazykový model, potřebujete mít pořádek ve vlastních datech. Smysl má začít důkladnou <a href="/reseni-mapa-firmy">přípravou firmy a mapou procesů</a>, která ukáže, kudy tečou informace a kde lidé ztrácejí nejvíce času.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Nasazení v praxi</span>
+  <h2>Jak postavit systém, který <em>do skutečného provozu dojede.</em></h2>
+  <p>Funkční zapojení umělé inteligence se od nekonečného pilotu liší třemi vlastnostmi. První je volba jediné jasně vymezené agendy. Nesnažte se vytvořit univerzálního asistenta pro celou firmu. Vyberte jednu konkrétní činnost, například třídění příchozích poptávek, porovnávání dodacích listů s objednávkami nebo přípravu konceptů odpovědí na časté dotazy.</p>
+  <p>Druhou vlastností je přímé napojení na firemní nástroje. V běžném pilotu lidé ručně kopírují texty do okna v prohlížeči a výsledek přenášejí zpět. Takový postup po dvou týdnech přestane všechny bavit. Skutečně fungující systém má řízený přístup přímo do firemní pošty, účetnictví nebo zákaznického systému a pracuje s daty na místě.</p>
+  <p>Třetí vlastností je přísný lidský dohled a pevné stropy nákladů. Žádný systém nesmí bez kontroly odesílat zprávy ven ani svévolně měnit záznamy. Příprava konceptů běží automaticky, ale konečné schválení a odeslání zůstává v rukou vašeho zaměstnance.</p>
+  <p>Přesně na těchto zásadách stavím <a href="/reseni-ai-zamestnanec">samostatného AI zaměstnance</a>. Systém nečeká na dotazy jako pasivní chatbot. Každé ráno předloží přehledné hlášení o tom, co zpracoval, na co narazil a co čeká na vaše potvrzení. Řešení běží buď na vašem vlastním serveru, kde data vůbec neopustí firmu, nebo v zabezpečeném cloudu. Zavedení stojí 89 000 Kč s měsíčním provozem od 8 000 Kč, přičemž nejsem plátce DPH a celý první měsíc provozu běží pod mým osobním technickým dohledem.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Kdy má smysl <em>přejít od testů k praxi.</em></h2>
+  <p>Pokud vám vyhovuje, že si kolegové občas soukromě vyzkouší jazykový model pro inspiraci, a ve firmě nemáte žádnou opakující se agendu, žádný systém nenasazujte. Byla by to zbytečná investice času i rozpočtu.</p>
+  <p>Pokud však chcete rutinní administrativu a zpracování dokladů vyřešit spolehlivě a nechcete platit drahé experimenty, které skončí v koši, rád se podívám na vaše procesy.</p>
+  <div class="lp-price">
+    <p><b>Nastavím pro vaši firmu samostatného AI zaměstnance, který převezme určenou agendu, bezpečně se propojí s vašimi systémy a první měsíc poběží pod mým přímým dohledem.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-ai-zamestnanec" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-ai-zamestnanec"><b>AI zaměstnanec</b><small>89 000 Kč + provoz</small><span>Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.</span></a></li>
+    <li><a href="/reseni-podnikova-ai"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7"></script>
+</body>
+</html>
