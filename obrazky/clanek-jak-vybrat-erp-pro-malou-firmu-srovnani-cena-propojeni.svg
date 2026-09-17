@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta firmy od roztříštěných tabulek přes jedno rozhodnutí k propojenému systému" fill="none">
+<title>Cesta firmy od roztříštěných tabulek přes jedno rozhodnutí k propojenému systému</title>
+  <rect x="24" y="30" width="54" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 43h38" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M32 51h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="18" y="83" width="60" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M26 96h44" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M26 104h28" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="136" width="54" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 149h38" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M32 157h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M40 64v15" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <path d="M37 74l3 5 3-5" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M58 83v-15" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <path d="M55 73l3-5 3 5" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M40 117v15" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <path d="M37 127l3 5 3-5" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M58 136v-15" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <path d="M55 126l3-5 3 5" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M24 47C8 47 8 153 24 153" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3" opacity="1"/>
+  <path d="M18 147l6 6-2-8" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M78 47C105 47 122 88 145 94" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+  <path d="M78 100h66" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+  <path d="M78 153C105 153 122 112 145 106" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+  <circle cx="160" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <circle cx="160" cy="100" r="5" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5"/>
+  <path d="M176 100h58" stroke="#0B6E4F" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M226 95l8 5-8 5" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="236" y="38" width="68" height="124" rx="6" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2" opacity="1"/>
+  <rect x="244" y="48" width="52" height="28" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M252 59h36" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M252 66h22" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="244" y="86" width="52" height="28" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M252 97h36" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M252 104h22" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="244" y="124" width="52" height="28" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M252 135h36" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M252 142h22" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M270 76v10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M270 114v10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

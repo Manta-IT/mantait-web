@@ -47,6 +47,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Firma roste a komunikace vázne? Tři varovné signály](https://mantait.cz/clanky/vase-firma-roste-a-komunikace-vazne-tri-signaly-ktere-to): Když firma roste, nepropojená komunikace začne brzdit zakázky. Poznejte tři varovné signály a zjistěte, proč místo nových lidí pomůže propojení systémů.
 - [Chatbot a texty od AI: co po vás od srpna chce AI Act](https://mantait.cz/clanky/chatbot-na-webu-a-texty-od-ai-co-po-vas-od-srpna-chce-ai-act): Máte na webu chatbota nebo generujete články pomocí umělé inteligence? Článek 50 AI Actu je účinný. Zjistěte, jak označit výstupy bez zbytečného vývoje.
 - [Zůstali jste na Windows 10? Nové funkce 365 už nepřijdou](https://mantait.cz/clanky/zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na): Držíte ve firmě počítače na starším systému a odkládáte nákup nových? Kancelářský balík na nich zastavuje nové funkce a bezpečnostní rizika začínají růst.
+- [Jak vybrat ERP pro malou firmu: srovnání a cena](https://mantait.cz/clanky/jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni): Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.
 
 ## Co Manta IT není
 

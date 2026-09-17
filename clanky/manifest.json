@@ -145,6 +145,21 @@
     "obrazek": "clanek-co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit.svg"
   },
   {
+    "slug": "jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni",
+    "title": "Jak vybrat ERP pro malou firmu: srovnání a cena",
+    "description": "Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.",
+    "date_published": "2026-09-09",
+    "date_modified": "2026-09-18",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni.svg"
+  },
+  {
     "slug": "propojeni-pohody-s-e-shopem-bankou-a-platbami",
     "title": "Propojení Pohody s e-shopem, bankou a platbami",
     "description": "Objednávky z e-shopu i platby z výpisu pořád přepisujete ručně do Pohody? Přehled, co se dá propojit samo a co to od firmy vyžaduje.",

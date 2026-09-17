@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -178,6 +178,11 @@
   <url>
     <loc>https://mantait.cz/clanky/zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na</loc>
     <lastmod>2026-09-12</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni</loc>
+    <lastmod>2026-09-09</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
