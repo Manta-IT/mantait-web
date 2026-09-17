@@ -1,5 +1,22 @@
 [
   {
+    "slug": "ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se",
+    "title": "AI je všude, jen ne ve výsledovce. Jak spočítat návratnost",
+    "description": "Většina firem zavedla AI, ale konkrétní zisk nebo úsporu nevidí. Návod pro majitele, jak si na papíře spočítat, jestli se vám technologie skutečně vyplácí.",
+    "date_published": "2026-09-13",
+    "date_modified": "2026-09-18",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "sluzby": [
+      "reseni-ai-zamestnanec",
+      "reseni-mapa-firmy",
+      "reseni-podnikova-ai"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se.svg"
+  },
+  {
     "slug": "zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na",
     "title": "Zůstali jste na Windows 10? Nové funkce 365 už nepřijdou",
     "description": "Držíte ve firmě počítače na starším systému a odkládáte nákup nových? Kancelářský balík na nich zastavuje nové funkce a bezpečnostní rizika začínají růst.",

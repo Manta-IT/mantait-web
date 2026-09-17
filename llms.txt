@@ -48,6 +48,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Chatbot a texty od AI: co po vás od srpna chce AI Act](https://mantait.cz/clanky/chatbot-na-webu-a-texty-od-ai-co-po-vas-od-srpna-chce-ai-act): Máte na webu chatbota nebo generujete články pomocí umělé inteligence? Článek 50 AI Actu je účinný. Zjistěte, jak označit výstupy bez zbytečného vývoje.
 - [Zůstali jste na Windows 10? Nové funkce 365 už nepřijdou](https://mantait.cz/clanky/zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na): Držíte ve firmě počítače na starším systému a odkládáte nákup nových? Kancelářský balík na nich zastavuje nové funkce a bezpečnostní rizika začínají růst.
 - [Jak vybrat ERP pro malou firmu: srovnání a cena](https://mantait.cz/clanky/jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni): Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.
+- [AI je všude, jen ne ve výsledovce. Jak spočítat návratnost](https://mantait.cz/clanky/ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se): Většina firem zavedla AI, ale konkrétní zisk nebo úsporu nevidí. Návod pro majitele, jak si na papíře spočítat, jestli se vám technologie skutečně vyplácí.
 
 ## Co Manta IT není
 

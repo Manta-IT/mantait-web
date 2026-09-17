@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma výpočtu návratnosti AI od lidských hodin po měsíční provoz a úsporu" fill="none">
+<title>Schéma výpočtu návratnosti AI od lidských hodin po měsíční provoz a úsporu</title>
+  <rect x="28" y="63" width="76" height="74" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M40 81h52" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M40 93h38" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M40 105h44" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M104 100h36" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="20" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="160" cy="100" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M180 100h36" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="216" y="63" width="76" height="74" rx="4" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M228 81h52" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M228 93h36" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="228" y="107" width="52" height="20" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M248 117l4 4 8-8" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
