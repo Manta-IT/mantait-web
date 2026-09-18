@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Dvě cesty od jednoho rozhodnutí: jedna velká platba na začátku a řada malých plateb podél pěti let se srovnávají ve stejném bodě" fill="none">
+<title>Dvě cesty od jednoho rozhodnutí: jedna velká platba na začátku a řada malých plateb podél pěti let se srovnávají ve stejném bodě</title>
+  <circle cx="30" cy="100" r="14" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M44 92q20 -12 40 -12" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="84" y="50" width="44" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M128 66h60" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M188 66h30" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="218" cy="66" r="9" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M44 108q20 12 40 12" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="84" y="128" width="22" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M106 139h12" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="118" y="128" width="22" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M140 139h12" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="152" y="128" width="22" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M174 139h12" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="186" y="128" width="22" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M208 139h10" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="218" cy="139" r="9" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M218 75v55" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+</svg>

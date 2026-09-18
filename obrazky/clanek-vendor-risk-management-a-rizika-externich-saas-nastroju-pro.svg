@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma prověřování rizik u externích cloudových nástrojů a toku klientských dat" fill="none">
+<title>Schéma prověřování rizik u externích cloudových nástrojů a toku klientských dat</title>
+  <rect x="24" y="68" width="64" height="64" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.8" opacity="1"/>
+  <path d="M36 86h40" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M36 96h28" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M36 106h36" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M88 100h34" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="138" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M132 100l4 4 8-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M154 100h34" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="188" y="68" width="64" height="64" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.8" opacity="1"/>
+  <path d="M200 86h40" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M200 96h28" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M200 106h36" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M252 100h30" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+  <path d="M284 94l12 12m0-12l-12 12" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M298 100h14" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.5"/>
+</svg>

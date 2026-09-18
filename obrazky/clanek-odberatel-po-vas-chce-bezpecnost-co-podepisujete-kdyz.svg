@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Bezpečnostní požadavky velkého odběratele rozdělené na stávající opatření dodavatele a nový rozpočet IT" fill="none">
+<title>Bezpečnostní požadavky velkého odběratele rozdělené na stávající opatření dodavatele a nový rozpočet IT</title>
+  <rect x="24" y="45" width="64" height="110" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="34" y="57" width="44" height="48" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M40 70h32" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M40 77h24" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M40 84h28" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M40 91h18" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M88 100h36" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="124" y="65" width="52" height="70" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <circle cx="150" cy="100" r="15" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M161 89h11q8 0 8-8v-14q0-8 8-8h28" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="216" y="35" width="80" height="56" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M272 49l4 5 8-9" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M228 55h36" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M228 63h46" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M228 71h38" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M161 111h11q8 0 8 8v14q0 8 8 8h28" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="216" y="109" width="80" height="56" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M228 127h54" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M228 135h38" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M228 143h46" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M228 151h30" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+</svg>

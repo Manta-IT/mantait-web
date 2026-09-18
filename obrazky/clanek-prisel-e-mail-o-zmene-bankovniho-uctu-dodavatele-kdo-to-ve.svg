@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="E-mail o změně účtu prochází jediným bodem rozhodnutí, ověřovací telefonát cestu nezastaví a platba míří na špatný účet" fill="none">
+<title>E-mail o změně účtu prochází jediným bodem rozhodnutí, ověřovací telefonát cestu nezastaví a platba míří na špatný účet</title>
+  <rect x="18" y="70" width="48" height="40" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M30 84h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M30 93h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M74 90h26" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M92 90l8 -5m-8 5l8 5" stroke="#101413" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="130" cy="90" r="16" fill="#FBFBF9" stroke="#101413" stroke-width="1.8"/>
+  <path d="M146 90h34" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="196" cy="90" r="10" fill="#FBFBF9" stroke="#9AA29E" stroke-width="1.6"/>
+  <path d="M206 90h32" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="238" y="70" width="46" height="40" rx="4" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <path d="M254 84l16 16m0-16l-16 16" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

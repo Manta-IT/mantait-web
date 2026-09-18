@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma postupu hlášení zneužívané zranitelnosti od včasného varování do 24 hodin přes CSIRT a ENISA po opravu produktu" fill="none">
+<title>Schéma postupu hlášení zneužívané zranitelnosti od včasného varování do 24 hodin přes CSIRT a ENISA po opravu produktu</title>
+  <rect x="20" y="55" width="52" height="90" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="26" y="63" width="40" height="32" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M31 74h26" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M31 81h18" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="26" y="105" width="40" height="32" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M31 116h30" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M31 123h20" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M72 100h26" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M94 96l4 4-4 4" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="114" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="114" cy="100" r="6" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5"/>
+  <path d="M130 100h46" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M153 93v14" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M172 96l4 4-4 4" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="176" y="55" width="66" height="90" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="182" y="62" width="54" height="33" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M188 73h38" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M188 80h26" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M209 95v10" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2" opacity="1"/>
+  <rect x="182" y="105" width="54" height="33" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M188 116h42" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M188 123h28" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M242 100h24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M262 96l4 4-4 4" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="266" y="74" width="34" height="52" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M275 99l4 5 9-10" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M273 114h20" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

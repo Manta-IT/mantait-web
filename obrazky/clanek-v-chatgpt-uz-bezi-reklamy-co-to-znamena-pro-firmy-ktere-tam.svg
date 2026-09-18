@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Reklama vložená mezi řádky odpovědi v chatovacím okně" fill="none">
+<title>Reklama vložená mezi řádky odpovědi v chatovacím okně</title>
+  <rect x="16" y="82" width="46" height="24" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M26 90h26" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M26 98h18" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M62 94h30" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="108" cy="94" r="13" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M120 88q40 -34 90 -34" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="220" y="40" width="60" height="24" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M230 48h30" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M230 56h20" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M120 100q40 34 80 34" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M200 134h20" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M226 128l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="250" y="122" width="50" height="24" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M258 130h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M258 138h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

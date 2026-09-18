@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma posunu termínů evropského nařízení o umělé inteligenci a architektura lidského dohledu" fill="none">
+<title>Schéma posunu termínů evropského nařízení o umělé inteligenci a architektura lidského dohledu</title>
+  <rect x="24" y="36" width="72" height="46" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.6" opacity="1"/>
+  <path d="M34 52h52" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M34 62h34" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M96 59h22q16 0 16 16v12" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+  <rect x="24" y="118" width="72" height="46" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.6" opacity="1"/>
+  <path d="M34 134h52" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M34 144h36" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M96 141h22q16 0 16-16v-12" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="150" cy="100" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <path d="M143 100l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M168 100h40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="208" y="76" width="64" height="48" rx="4" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M218 93h44" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M218 103h28" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M272 100h20" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="300" cy="100" r="8" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="2"/>
+  <path d="M297 97l6 6m0-6l-6 6" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

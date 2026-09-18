@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Jeden centrální uzel drží pohromadě poštu, chat i sdílené soubory a jeho výpadek zastaví všechny cesty najednou." fill="none">
+<title>Jeden centrální uzel drží pohromadě poštu, chat i sdílené soubory a jeho výpadek zastaví všechny cesty najednou.</title>
+  <rect x="140" y="24" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="1.8" opacity="1"/>
+  <path d="M154 34l12 12m0-12l-12 12" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M148 56L55 112" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M160 56L160 112" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M172 56L265 112" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="20" y="140" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#9AA29E" stroke-width="1.6" opacity="1"/>
+  <rect x="138" y="140" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#9AA29E" stroke-width="1.6" opacity="1"/>
+  <rect x="256" y="140" width="44" height="28" rx="4" fill="#E7EAE6" stroke="#9AA29E" stroke-width="1.6" opacity="1"/>
+  <path d="M30 150h24" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M30 159h16" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M148 150h24" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M148 159h16" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M266 150h24" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M266 159h16" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>
