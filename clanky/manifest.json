@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data",
+    "title": "Když skončí váš dodavatel, skončí s ním i vaše data?",
+    "description": "Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.",
+    "date_published": "2026-09-13",
+    "date_modified": "2026-09-19",
+    "highlight": false,
+    "cta_href": "/reseni-nova-aplikace",
+    "sluzby": [
+      "reseni-nova-aplikace",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data.svg"
+  },
+  {
     "slug": "ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se",
     "title": "AI je všude, jen ne ve výsledovce. Jak spočítat návratnost",
     "description": "Většina firem zavedla AI, ale konkrétní zisk nebo úsporu nevidí. Návod pro majitele, jak si na papíře spočítat, jestli se vám technologie skutečně vyplácí.",

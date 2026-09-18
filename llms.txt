@@ -49,6 +49,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Zůstali jste na Windows 10? Nové funkce 365 už nepřijdou](https://mantait.cz/clanky/zustali-jste-na-windows-10-nove-funkce-microsoftu-365-uz-na): Držíte ve firmě počítače na starším systému a odkládáte nákup nových? Kancelářský balík na nich zastavuje nové funkce a bezpečnostní rizika začínají růst.
 - [Jak vybrat ERP pro malou firmu: srovnání a cena](https://mantait.cz/clanky/jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni): Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.
 - [AI je všude, jen ne ve výsledovce. Jak spočítat návratnost](https://mantait.cz/clanky/ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se): Většina firem zavedla AI, ale konkrétní zisk nebo úsporu nevidí. Návod pro majitele, jak si na papíře spočítat, jestli se vám technologie skutečně vyplácí.
+- [Když skončí váš dodavatel, skončí s ním i vaše data?](https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data): Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.
 
 ## Co Manta IT není
 

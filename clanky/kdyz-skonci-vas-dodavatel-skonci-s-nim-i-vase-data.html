@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Když skončí váš dodavatel, skončí s ním i vaše data? - Manta IT</title>
+<meta name="description" content="Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data">
+  <meta property="og:title" content="Když skončí váš dodavatel, skončí s ním i vaše data?">
+  <meta property="og:description" content="Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Když skončí váš dodavatel, skončí s ním i vaše data?",
+    "description": "Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["Vývoj", "Zálohování dat"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Zálohy a data</span>
+  <h1>Když skončí váš dodavatel, <em>skončí s ním i vaše data?</em></h1>
+  <p class="hero-lead">Záloha uložená výhradně u dodavatele, který vám systém provozuje, je nebezpečná provozní past. Většina firem žije v přesvědčení, že když měsíčně platí fakturu za cloud, o bezpečí dat se nemusí starat. Pokud však poskytovatel ukončí provoz, disky s vašimi daty sice dál fyzicky existují, ale vy se k nim nedostanete.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 13. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data.svg" alt="Schéma oddělení firemních dat a kódu aplikace od cizí infrastruktury." width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Případ z praxe</span>
+  <h2>Americká televize přišla o archiv <em>kvůli krachu prostředníka.</em></h2>
+  <p>V srpnu 2026 proběhl technologickými médii případ, který přesně ukazuje, jak křehká je závislost na jediném dodavateli. Veřejnoprávní televizní stanice Nine PBS ze Saint Louis ztratila přístup k archivu pokrývajícímu 70 let televizní historie. Důvodem nebyl požár, havárie disků ani útok vyděračského softwaru. Důvod byl čistě obchodní: zkrachoval poskytovatel cloudového úložiště, u kterého měla stanice data uložená.</p>
+  <p>Jak popsal technologický magazín <a href="https://www.tomshardware.com/software/cloud-storage/nine-pbs-loses-access-to-70-years-of-data-after-contracted-cloud-storage-vendor-goes-defunct-public-tv-channel-sues-iron-mountain-data-center-which-hosts-archival-materials-to-ensure-preservation" rel="nofollow">Tom's Hardware, 13. srpna 2026</a>: "Televizní stanice Nine PBS se obává, že přijde o více než 70 let archivních materiálů a vysílání poté, co její smluvní dodavatel cloudového úložiště ukončil činnost." Stanice ukládala přibližně 50 TB dat u společnosti Open Source Storage. Když tato firma na jaře skončila v platební neschopnosti, ze dne na den přestala komunikovat a odstřihla klientské přístupy.</p>
+  <p>Data přitom nezmizela. Fyzicky leží na serverech v datovém centru Iron Mountain v Denveru. Disky jsou v pořádku, bity jsou netknuté, ale provozovatel datacentra odmítl stanici data vydat. Smlouvu na pronájem serverů totiž neuzavřela televizní stanice, nýbrž zkrachovalý dodavatel. Provozovatel datacentra se bál žaloby za neoprávněné nakládání s cizím majetkem. Televize musela podat žalobu u soudu, aby dosáhla soudního příkazu k vydání vlastních souborů.</p>
+  <p>Technický rozbor na serveru <a href="https://induwara.lk/blog/2026-08-14-pbs-loses-70-years-of-tv-history-after-cloud-stora" rel="nofollow">induwara.lk, 14. srpna 2026</a> vystihl podstatu celého problému: fyzická trvanlivost dat, dostupnost systémů a právní kontrola nad úložištěm jsou tři naprosto rozdílné věci. Většina firem platí za první dvě, ale na tu třetí zapomíná.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Riziko pro české firmy</span>
+  <h2>Konec dodavatele vypadá <em>v Česku úplně stejně.</em></h2>
+  <p>V českých firmách do 250 zaměstnanců se s touto situací setkávám opakovaně. Typický scénář je jednoduchý: firma si před lety nechala vyvinout systém pro řízení zakázek, sklad nebo zákaznický portál. Vývoj tehdy dodala malá IT firma nebo programátor na volné noze. Systém léta spolehlivě běží, měsíčně odchází paušál za hosting a vedení firmy má pocit, že je vše vyřešeno.</p>
+  <p>Jenže dodavatel může kdykoli ukončit podnikání, odejít do důchodu, prodat firmu nebo se dostat do exekuce. V té chvíli nastává tvrdé vystřízlivění. Zjistíte, že administrátorský účet k virtuálnímu serveru zná pouze dodavatel, doména je registrovaná na jeho jméno a hostingová společnost odmítá komunikovat s kýmkoli jiným než s původním plátcem.</p>
+  <p>Nikdo vám to v minulosti neřekl, ale spoléhat na to, že dodavatel bude existovat věčně, se nevyplácí. Chybou není samotný outsourcing vývoje nebo správy. Závažnou chybou je stav, kdy dodavatel drží vaše data jako rukojmí, aniž byste k nim měli samostatnou cestu.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Prověrka připravenosti</span>
+  <h2>Tři otázky, které <em>položte svému IT.</em></h2>
+  <p>Abyste se nedostali do situace, kdy budete o vlastní firemní informace bojovat u soudu, položte svému internímu týmu nebo externímu správci tři konkrétní otázky. Chtějte jasné a věcné odpovědi, ne teoretická ujištění.</p>
+  <p>První otázka: Kde přesně jsou naše data fyzicky uložena a na koho je vedená smlouva? Potřebujete znát konkrétního poskytovatele infrastruktury a mít jistotu, že klientský účet je psaný na vaši firmu, nikoli na externí agenturu. Pokud je smluvním partnerem hostingu dodavatel, v krizové chvíli jste pro provozovatele serveru cizí člověk.</p>
+  <p>Druhá otázka: Dokážeme si stáhnout úplnou zálohu v otevřeném formátu bez asistence dodavatele? Měli byste mít nastavený automatický export databáze i nahraných souborů na nezávislé úložiště, ke kterému máte přístup pouze vy. Pokud ke stažení zálohy potřebujete součinnost dodavatele, data ve skutečnosti plně nevlastníte.</p>
+  <p>Třetí otázka: Kdy naposledy někdo vyzkoušel obnovu systému na jiném, čistém serveru? Záloha, kterou nikdo nikdy neotestoval, je pouhé zbožné přání. Teprve při cvičném spuštění zjistíte, zda exportu nechybí šifrovací klíče, konfigurační parametry nebo vazby mezi tabulkami.</p>
+  <p>Při práci pro klienty v podobě služby pro <a href="/reseni-vedeni-it">dlouhodobé vedení IT</a> kontroluji tyto přístupy a postupy obnovy každý měsíc, protože v krizové situaci už na záchranné práce bývá pozdě.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Vývoj bez závislosti</span>
+  <h2>Aplikace na míru <em>musí patřit vám.</em></h2>
+  <p>Když pro klienty stavím <a href="/reseni-nova-aplikace">aplikace na míru</a>, postupuji tak, aby klient nebyl vázán na moji osobu ani na žádnou konkrétní infrastrukturu. Vše stavím na principu naprosté otevřenosti a samostatnosti klienta.</p>
+  <p>Zdrojový kód aplikace od prvního dne patří klientovi. K hotovému řešení předávám podrobnou technickou dokumentaci a srozumitelný návod, jak aplikaci spustit na jakémkoli běžném serveru. Pokud bych zítra z jakéhokoli důvodu nebyl k dispozici, vezmete kód, předáte jej jinému vývojáři a ten může během jednoho dne navázat na rozdělanou práci.</p>
+  <p>Zakázky dodávám za předem dohodnutou pevnou cenu, vývoj aplikace začíná od 50 000 Kč (nejsem plátce DPH). První funkční verzi předávám k vyzkoušení do jednoho týdne od odsouhlasení zadání. Získáte tak nástroj přesně pro potřeby vaší firmy, aniž byste se dostali do závislosti na jednom programátorovi.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Jak vyřešit bezpečí <em>vašich firemních systémů.</em></h2>
+  <p>Pokud používáte pouze standardní krabicový software od velkých prověřených dodavatelů s přímou smlouvou a pravidelně si ukládáte vlastní nezávislé zálohy, nemusíte na současném stavu nic měnit.</p>
+  <p>Pokud však ve firmě provozujete důležitý systém na míru, ke kterému nemáte zdrojový kód, administrátorské přístupy ani otestované zálohy, má smysl tento stav vyřešit dříve, než nastanou provozní potíže.</p>
+  <div class="lp-price">
+    <p><b>Nastavím novou aplikaci s čistým předáním kódu i dokumentace, abyste měli svá data vždy pod vlastní kontrolou.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-nova-aplikace" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-nova-aplikace"><b>Aplikace na míru</b><small>od 50 000 Kč</small><span>Když to, co potřebujete, nikdo neprodává. První verze do týdne, kód je váš.</span></a></li>
+    <li><a href="/reseni-vedeni-it"><b>Dlouhodobé vedení IT</b><small>od 50 000 Kč měsíčně</small><span>Celá cesta na paušál. Vy se k IT vracíte jen na poradách.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7"></script>
+</body>
+</html>
