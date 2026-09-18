@@ -47,7 +47,11 @@ CENY = {'reseni-mapa-firmy.html': '39 000', 'reseni-ai-zamestnanec.html': '89 00
 nalezy = []
 
 def text_bez_tagu(html):
-    html = re.sub(r'<script.*?</script>', ' ', html, flags=re.S)
+    # Retezce v inline skriptech jsou taky text ven (karty cyklu na homepage --
+    # 19. 9. tam prezilo "Bez provize od dodavatele", protoze skripty se zahazovaly).
+    skripty = ' '.join(re.findall(r'<script.*?</script>', html, flags=re.S))
+    literaly = ' . '.join(re.findall(r"'([^'\n]{12,})'", skripty))
+    html = re.sub(r'<script.*?</script>', ' ', html, flags=re.S) + ' ' + literaly
     html = re.sub(r'<style.*?</style>', ' ', html, flags=re.S)
     return re.sub(r'<[^>]+>', ' ', html)
 
