@@ -1,0 +1,65 @@
+/* =========================================================================
+   Kalkulacka dopadu AI (/kalkulacka). Stavi na sluzba.css -- odtud bere
+   tokeny, navigaci, hero, FAQ, zaver i paticku. Tady je jen to, co jinde
+   na webu neni: ctyri posuvniky a panel s vysledkem.
+
+   Hero je tu jednosloupcovy: na strankach sluzeb drzi druhy sloupec cenovku,
+   tady zadna neni a prazdna polovina by vypadala jako chyba.
+   ========================================================================= */
+.kalk-hero{grid-template-columns:minmax(0,1fr)}
+
+.kalk{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(32px,5vw,64px);align-items:start}
+.kalk-uvod{margin:16px 0 34px;color:var(--tlum);max-width:46ch}
+
+/* ---------- Vstupy ---------- */
+.kalk-pole{padding:18px 0;border-top:1px solid var(--linka);
+  display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center}
+.kalk-pole label{font-size:15.5px;grid-column:1}
+.kalk-echo{grid-column:2;font-family:var(--mono);font-size:13px;color:var(--tlum);
+  white-space:nowrap;text-align:right}
+.kalk-echo span{font-size:17px;color:var(--inkoust)}
+.kalk-pole input[type=range]{grid-column:1 / -1;width:100%;height:44px;
+  accent-color:var(--akcent);cursor:pointer}
+.kalk-pole input[type=range]:focus-visible{outline:2px solid var(--akcent);outline-offset:4px}
+
+/* ---------- Vysledek ---------- */
+.kalk-vysledek{background:var(--papir-tmav);border-radius:var(--r-l);
+  padding:clamp(24px,3vw,36px);position:sticky;top:96px}
+.kalk-popis{display:block;font-size:14px;color:var(--tlum)}
+.kalk-cislo{display:block;font-family:var(--display);font-weight:500;
+  font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;line-height:1.1;margin:2px 0 18px}
+.kalk-hlavni .kalk-cislo:last-child{color:var(--akcent);margin-bottom:0}
+
+.kalk-radky{margin:26px 0 0;border-top:1px solid var(--linka)}
+.kalk-radky > div{display:flex;justify-content:space-between;gap:16px;
+  padding:11px 0;border-bottom:1px solid var(--linka)}
+.kalk-radky dt{font-size:15px;color:var(--tlum)}
+.kalk-radky dd{font-family:var(--mono);font-size:15px;white-space:nowrap}
+
+.kalk-navratnost{margin-top:18px;font-family:var(--display);font-size:20px;
+  letter-spacing:-.02em;color:var(--akcent)}
+/* Vada ma vyhradne datovy vyznam: tohle je misto, kde cislo varuje. */
+.kalk-navratnost.zaporne,.kalk-radky .zaporne{color:var(--vada)}
+.kalk-pozn{margin:14px 0 22px;font-size:13px;line-height:1.5;
+  color:color-mix(in srgb,var(--inkoust) 62%,transparent)}
+
+/* ---------- Vzorec na tmave sekci ---------- */
+.vzorec{list-style:none;margin-top:32px;display:grid;gap:18px;max-width:72ch}
+.vzorec li{padding-left:22px;position:relative;
+  color:color-mix(in srgb,var(--papir) 72%,transparent);font-size:16px}
+.vzorec li::before{content:'';position:absolute;left:0;top:11px;width:9px;height:1.6px;
+  background:var(--papir)}
+.vzorec b{color:var(--papir);font-weight:600}
+
+/* ---------- Meze ---------- */
+.kalk-meze{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:clamp(28px,4vw,64px);align-items:start}
+.meze-radky{display:grid;gap:20px}
+.meze-radky p{font-size:16px;color:var(--tlum);max-width:60ch}
+.meze-radky b{color:var(--inkoust);font-weight:600}
+
+@media (max-width:900px){
+  .kalk,.kalk-meze{grid-template-columns:1fr}
+  .kalk-vysledek{position:static}
+}
