@@ -50,6 +50,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Jak vybrat ERP pro malou firmu: srovnání a cena](https://mantait.cz/clanky/jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni): Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.
 - [AI je všude, jen ne ve výsledovce. Jak spočítat návratnost](https://mantait.cz/clanky/ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se): Většina firem zavedla AI, ale konkrétní zisk nebo úsporu nevidí. Návod pro majitele, jak si na papíře spočítat, jestli se vám technologie skutečně vyplácí.
 - [Když skončí váš dodavatel, skončí s ním i vaše data?](https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data): Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.
+- [Odběratel po vás chce bezpečnost: co podepisujete](https://mantait.cz/clanky/odberatel-po-vas-chce-bezpecnost-co-podepisujete-kdyz): Velký odběratel vám poslal bezpečnostní přílohu ke smlouvě. Zjistěte, co z požadavků zvládnete hned, co přinese nové náklady a jak ohlídat rozpočet.
 
 ## Co Manta IT není
 

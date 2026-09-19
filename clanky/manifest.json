@@ -1,5 +1,21 @@
 [
   {
+    "slug": "odberatel-po-vas-chce-bezpecnost-co-podepisujete-kdyz",
+    "title": "Odběratel po vás chce bezpečnost: co podepisujete",
+    "description": "Velký odběratel vám poslal bezpečnostní přílohu ke smlouvě. Zjistěte, co z požadavků zvládnete hned, co přinese nové náklady a jak ohlídat rozpočet.",
+    "date_published": "2026-09-13",
+    "date_modified": "2026-09-20",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-odberatel-po-vas-chce-bezpecnost-co-podepisujete-kdyz.svg"
+  },
+  {
     "slug": "kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data",
     "title": "Když skončí váš dodavatel, skončí s ním i vaše data?",
     "description": "Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.",
