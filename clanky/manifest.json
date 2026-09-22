@@ -1,5 +1,21 @@
 [
   {
+    "slug": "predplatne-nebo-licence-naporad-spocitejte-to-na-pet-let-ne",
+    "title": "Předplatné, nebo licence napořád? Počítejte na pět let",
+    "description": "Majitel firmy srovnává cenu softwaru na faktuře, ne cenu za dobu, po kterou poběží. Spočítejte pětiletý součet dřív, než podepíšete smlouvu.",
+    "date_published": "2026-09-17",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-predplatne-nebo-licence-naporad-spocitejte-to-na-pet-let-ne.svg"
+  },
+  {
     "slug": "ctyri-otazky-nez-firme-koupite-dalsi-nastroj-nebo-doplnek",
     "title": "Čtyři otázky, než firmě koupíte další nástroj nebo doplněk",
     "description": "Kupujete nový firemní nástroj bez porovnání a bez zápisu? Čtyři otázky rozhodnou, jestli vám za rok nezůstane jen účet, který nikdo nepoužívá.",
