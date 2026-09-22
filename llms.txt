@@ -69,6 +69,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Hackli vašeho dodavatele. E-maily odešly z vaší adresy](https://mantait.cz/clanky/hackli-vaseho-dodavatele-e-maily-zakaznikum-odesly-z-vasi): Útočníci pronikli k externímu dodavateli a vašim zákazníkům poslali phishing z vaší domény. Zjistěte, jak ohlídat přístupy a co mít vyřešené ve smlouvách.
 - [Pošlete to hned, jsem na jednání: když nepíše šéf](https://mantait.cz/clanky/poslete-to-hned-jsem-na-jednani-kdyz-e-mail-od-sefa-nepise): E-mail vypadá přesně jako od jednatele, má správný tón i podpis. Podvodníci dnes s pomocí AI napodobí šéfa a čekají, že účetní pošle platbu.
 - [EU otevřela miliony na kyberbezpečnost. Vy na ně nedosáhnete](https://mantait.cz/clanky/eu-dava-96-milionu-eur-na-kyberbezpecnost-proc-na-ne-vase): Nová evropská výzva cílí i na malé firmy, ale žádost podává konsorcium, ne jednotlivý podnik. Co je pro vaši firmu dostupné místo toho.
+- [AI vydělává jen firmám, které nejdřív předělaly proces](https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich): Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.
 
 ## Co Manta IT není
 

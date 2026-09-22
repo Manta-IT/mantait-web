@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta, na které AI vstupuje do procesu až za rozcestím rozhodnutí, ne na jeho začátku" fill="none">
+<title>Cesta, na které AI vstupuje do procesu až za rozcestím rozhodnutí, ne na jeho začátku</title>
+  <rect x="20" y="82" width="40" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M60 100H148" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="164" cy="100" r="16" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M156 100l5 6 12-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M180 100H236" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="236" y="84" width="32" height="32" rx="4" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M244 96h16" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M244 104h10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

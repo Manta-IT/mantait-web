@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI vydělává jen firmám, které nejdřív předělaly proces - Manta IT</title>
+<meta name="description" content="Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich">
+  <meta property="og:title" content="AI vydělává jen firmám, které nejdřív předělaly proces">
+  <meta property="og:description" content="Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI vydělává jen firmám, které nejdřív předělaly proces",
+    "description": "Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI", "Automatizace"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI a výsledky</span>
+  <h1>AI vydělává jen firmám, které nejdřív <em>předělaly proces.</em></h1>
+  <p class="hero-lead">Úspěšné nasazení umělé inteligence je především předělaná práce, ne nakoupený nástroj. Ukazuje to čerstvý průzkum mezi 1 719 manažery a odborníky po celém světě, který zveřejnila McKinsey (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, Sheryl Estrada, 2. 9. 2026</a>). Skoro každá firma AI používá. Jen málokterá z ní vidí peníze.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 18. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich.svg" alt="Cesta, na které AI vstupuje do procesu až za rozcestím rozhodnutí, ne na jeho začátku" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Čísla</span>
+  <h2>Skoro <em>všichni používají, málokdo vydělává.</em></h2>
+  <p>Devět z deseti firem v průzkumu AI běžně používá aspoň v jedné části provozu a 44 procent ji škáluje napříč celou firmou (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>). Osmdesát procent lidí říká, že jim AI zrychlila vlastní práci, polovina, že jim pomáhá lépe se rozhodovat.</p>
+  <p>Na hospodářský výsledek to ale sedí jen u 37 procent firem a číslo je stejné jako loni (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>). AI přitom tvoří víc než desetinu IT rozpočtu u 28 procent firem a 60 procent chce příští rok investovat víc (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>).</p>
+  <p>Pětina firem navíc přiznává, že jí náklady na provoz AI už dnes brzdí další nasazení (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>). Kdo koupí nástroj a kolem něj nezmění nic dalšího, platí dvakrát: za licenci i za to, že ji nikdo pořádně nevyužije.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Rozdíl</span>
+  <h2>Co dělá <em>šestiprocentní menšinu jinak.</em></h2>
+  <p>Firmy, kterým AI zvedla EBIT aspoň o pět procent, tvoří podle průzkumu jen šest procent vzorku. Skoro tři čtvrtiny z nich přestavěly celé pracovní postupy, loni to bylo 55 procent (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>). Zbytek AI jen přilepil na postup, který má firma léta beze změny.</p>
+  <p>Přestavěný postup obvykle znamená, že se změnilo, kdo rozhoduje a v kterém kroku AI vůbec dostane slovo, ne to, že vedle starého formuláře přibylo okénko na chatování.</p>
+  <p>Roli hraje i velikost firmy: mezi podniky nad miliardu dolarů obratu škáluje AI napříč provozem 54 procent, u menších firem jen třetina (<a href="https://fortune.com/2026/09/02/companies-getting-the-most-from-ai-rethinking-how-work-gets-done-cfo/" rel="nofollow">Fortune, 2. 9. 2026</a>). Na přestavbu procesu má malá firma míň lidí, ne míň důvodů to udělat.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Pro českou firmu</span>
+  <h2>Co to znamená pro firmu <em>do 250 lidí.</em></h2>
+  <p>Firma bez vlastního IT ředitele koupí licenci nejčastěji proto, že ji nabídl dodavatel nebo ji zkusila konkurence. Nikdo přitom nezměnil, kudy prochází zakázka od poptávky po fakturu, takže nový nástroj čte stejně roztříštěná data, jaká předtím přepisoval člověk.</p>
+  <p>U výrobní firmy s deseti lidmi v administrativě to v praxi znamená rozhodnutí, ve kterém systému žije jeden platný ceník a kdo smí založit novou zakázku, ne to, jestli koupí zrovna tenhle nebo jiný nástroj.</p>
+  <p>Než se AI vůbec pustí k datům, musí být jasné, kudy ve firmě teče práce a kdo co smí založit a schválit. To se dá zjistit dřív, než se cokoliv kupuje nebo staví (<a href="/reseni-mapa-firmy">mapa firmy</a>).</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Kde začít</span>
+  <h2>Který proces <em>předělat jako první.</em></h2>
+  <p>Nejlepší kandidát se opakuje často, má jasného majitele a přímo se dotýká peněz, tedy nabídek, faktur nebo objednávek. Proces, který se řeší jednou za čtvrtletí, se nevyplatí předělávat jako první, i kdyby to vypadalo dobře na papíře.</p>
+  <p>Než se pustíte dál, ověřte tři věci: jestli existuje jeden platný zdroj pro každý typ dat, jestli má každé rozhodnutí jasně určeného vlastníka a jestli export z hlavního systému neobsahuje duplicity a prázdná povinná pole. Bez toho AI jen zrychlí chaos, ne práci.</p>
+  <p>Propojení účetnictví, skladu a objednávek je krok, který firma udělá jednou a AI pak dostane data, se kterými se dá pracovat (<a href="/reseni-propojeni">propojení systémů</a>).</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Když vám nástroj funguje a jen ho lidé nepoužívají, nepotřebujete dalšího agenta, ale zaškolení a jasně řečené, kdo ho má používat a kdy.</p>
+  <div class="lp-price">
+    <p><b>Předělám vám proces dřív, než k němu AI pustím, a pak nastavím AI zaměstnance, který v něm skutečně pracuje.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-ai-zamestnanec" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-ai-zamestnanec"><b>AI zaměstnanec</b><small>89 000 Kč + provoz</small><span>Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+    <li><a href="/reseni-propojeni"><b>Propojení a automatizace</b><small>podle rozsahu</small><span>Účetnictví, sklad, e-shop a CRM si předávají data samy.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7"></script>
+</body>
+</html>
