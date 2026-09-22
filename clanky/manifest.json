@@ -111,6 +111,22 @@
     "obrazek": "clanek-eu-resi-zavislost-na-americkem-cloudu-co-znamena-cloudova.svg"
   },
   {
+    "slug": "vypadl-microsoft-365-a-firma-stala-co-ma-mit-majitel",
+    "title": "Vypadl Microsoft 365 a firma stála. Co mít připravené",
+    "description": "V pondělí nešla pošta, Teams ani OneDrive. Co má mít majitel firmy sepsané, aby ho příští výpadek dodavatele nenechal stát bez slova.",
+    "date_published": "2026-09-17",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-vypadl-microsoft-365-a-firma-stala-co-ma-mit-majitel.svg"
+  },
+  {
     "slug": "anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si",
     "title": "AI startovací balíček od Anthropicu: kde končí a co dál",
     "description": "Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.",
