@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kyberneticke-pojisteni-mate-skodu-vam-celou-nepokryje",
+    "title": "Kybernetické pojištění máte. Škodu vám celou nepokryje",
+    "description": "Jen pětina šéfů firem věří, že jim kybernetické pojištění zaplatí škodu celou. Zjistěte, co pojistka obvykle nepokryje a co rozhoduje o výši plnění.",
+    "date_published": "2026-09-16",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-kyberneticke-pojisteni-mate-skodu-vam-celou-nepokryje.svg"
+  },
+  {
     "slug": "dodavatele-zdrazuji-software-kvuli-ai-i-kdyz-ho",
     "title": "Dodavatelé zdražují software kvůli AI, i když ho nechcete",
     "description": "Ceny softwaru rostou kvůli AI funkcím, které možná vůbec nepoužíváte. Přehled, kde se zdražuje nejvíc a jak si náklady na dodavatele pohlídat.",
