@@ -227,6 +227,21 @@
     "obrazek": "clanek-sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje.svg"
   },
   {
+    "slug": "propojeni-banky-s-ucetnictvim-vypisy-parovani-plateb",
+    "title": "Propojení banky s účetnictvím: výpisy a párování plateb",
+    "description": "Účetní pořád ručně stahuje výpisy a páruje platby s fakturami? Ukazuji, co zvládne Pohoda sama a kdy už je na místě propojení na míru.",
+    "date_published": "2026-09-11",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-propojeni-banky-s-ucetnictvim-vypisy-parovani-plateb.svg"
+  },
+  {
     "slug": "co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit",
     "title": "Co je Raynet CRM, kolik stojí a s čím ho propojíte",
     "description": "Vybíráte CRM a nechcete objevovat překvapení až po podpisu? Ceny za uživatele, co který plán umí a kudy vedou data do účetnictví.",

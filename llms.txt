@@ -55,6 +55,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Technika zdražuje kvůli AI. Co to udělá s IT rozpočtem](https://mantait.cz/clanky/technika-zdrazuje-kvuli-ai-co-to-udela-s-vasim-it-rozpoctem): AI datacentra skupují paměti a výrobci zvedají ceny techniky. Zjistěte, jak se zdražení promítne do obnovy počítačů a plánu firemního rozpočtu.
 - [EU odložila pravidla pro AI: co platí hned a co počká](https://mantait.cz/clanky/eu-odlozila-tvrda-pravidla-pro-ai-o-sestnact-mesicu-co): Evropská unie odložila tvrdá pravidla pro vysoce rizikovou AI o šestnáct měsíců. Zjistěte, které povinnosti platí už dnes a proč nečekat s úpravou systémů.
 - [Dodavatel končí podporu systému. Upgrade není jediná volba](https://mantait.cz/clanky/dodavatel-konci-podporu-vaseho-systemu-upgrade-u-nej-neni): Dodavatel vám oznámil konec podpory a nabízí drahý upgrade? Zjistěte, jak spočítat náklady na pět let dopředu a kdy má smysl systém raději vyměnit.
+- [Propojení banky s účetnictvím: výpisy a párování plateb](https://mantait.cz/clanky/propojeni-banky-s-ucetnictvim-vypisy-parovani-plateb): Účetní pořád ručně stahuje výpisy a páruje platby s fakturami? Ukazuji, co zvládne Pohoda sama a kdy už je na místě propojení na míru.
 
 ## Co Manta IT není
 
