@@ -544,6 +544,22 @@
     "obrazek": "clanek-co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit.svg"
   },
   {
+    "slug": "ai-ve-firme-cim-zacit-a-co-se-vyplati-nasadit-prvni",
+    "title": "AI ve firmě: čím začít a co se vyplatí nasadit první",
+    "description": "Umělá inteligence dnes umí psát texty, číst faktury i odpovídat zákazníkům. Kde ve firmě do 250 lidí začít, aby to fungovalo a ne jen vypadalo chytře.",
+    "date_published": "2026-09-10",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/#cenik",
+    "sluzby": [
+      "reseni-podnikova-ai",
+      "reseni-ai-zamestnanec"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai-ve-firme-cim-zacit-a-co-se-vyplati-nasadit-prvni.svg"
+  },
+  {
     "slug": "jak-vybrat-erp-pro-malou-firmu-srovnani-cena-propojeni",
     "title": "Jak vybrat ERP pro malou firmu: srovnání a cena",
     "description": "Firma přerostla jednoduché účetnictví, ale nevíte, jestli potřebuje ERP. Ukážu, jak to poznat, spočítat cenu a vybrat systém bez chyb.",
