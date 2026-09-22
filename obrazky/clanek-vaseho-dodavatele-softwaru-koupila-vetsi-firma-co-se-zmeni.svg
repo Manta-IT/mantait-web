@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Větší firma se shora přesouvá nad menšího dodavatele, napojení na firmu zůstává stejné" fill="none">
+<title>Větší firma se shora přesouvá nad menšího dodavatele, napojení na firmu zůstává stejné</title>
+  <rect x="150" y="95" width="110" height="65" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M166 112h64" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M166 123h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M166 134h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="28" y="128" width="52" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M80 144 H150" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="14" y="18" width="82" height="46" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M54 64 V122" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="54" cy="128" r="7" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>
