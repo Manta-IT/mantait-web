@@ -1,5 +1,20 @@
 [
   {
+    "slug": "dodavatele-zdrazuji-software-kvuli-ai-i-kdyz-ho",
+    "title": "Dodavatelé zdražují software kvůli AI, i když ho nechcete",
+    "description": "Ceny softwaru rostou kvůli AI funkcím, které možná vůbec nepoužíváte. Přehled, kde se zdražuje nejvíc a jak si náklady na dodavatele pohlídat.",
+    "date_published": "2026-09-15",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-dodavatele-zdrazuji-software-kvuli-ai-i-kdyz-ho.svg"
+  },
+  {
     "slug": "vendor-risk-management-a-rizika-externich-saas-nastroju-pro",
     "title": "Rizika externích SaaS nástrojů a co ukázal Trezor",
     "description": "Používáte desítky cloudových služeb a newsletterů? Případ úniku dat u Trezoru ukazuje, jak snadno selže dodavatel a proč potřebujete audit externích nástrojů.",
