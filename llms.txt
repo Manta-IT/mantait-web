@@ -73,6 +73,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Vašeho dodavatele softwaru koupili. Co se změní do roka](https://mantait.cz/clanky/vaseho-dodavatele-softwaru-koupila-vetsi-firma-co-se-zmeni): Menší dodavatel docházky, skladu nebo CRM změnil majitele a nový vlastník slibuje kontinuitu. Co si ověřit hned a co dát do smlouvy, než přijde zdražení.
 - [Kolik vás reálně bude stát AI a automatizace? Čísla z praxe](https://mantait.cz/clanky/kolik-vas-realne-bude-stat-ai-a-automatizace-cisla-z-praxe): Cena z ceníku je jen část účtu. Zjistěte, z čeho se skládá skutečná cena AI a automatizace a kde firmy nejčastěji přeplácí.
 - [AI startovací balíček od Anthropicu: kde končí a co dál](https://mantait.cz/clanky/anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si): Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.
+- [Office 2021 končí. Co ve firmě přestane dostávat záplaty](https://mantait.cz/clanky/office-2021-a-dalsi-produkty-microsoftu-konci-letos-na): Koupili jste do firmy kancelářské programy s licencí napořád a myslíte, že máte vystaráno? Na podzim končí bezpečnostní opravy a hrozí zranitelnosti.
 
 ## Co Manta IT není
 

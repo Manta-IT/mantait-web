@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Časová osa ukončení podpory kancelářských aplikací a rozhodnutí mezi jednorázovým nákupem a řízeným předplatným" fill="none">
+<title>Časová osa ukončení podpory kancelářských aplikací a rozhodnutí mezi jednorázovým nákupem a řízeným předplatným</title>
+  <rect x="20" y="72" width="56" height="56" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="30" y="82" width="36" height="36" rx="3" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M37 94h22" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M37 101h16" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M37 108h18" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M76 100h42" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="134" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M150 100h42" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M194 94l12 12m0-12l-12 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M208 100h20" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.5"/>
+  <path d="M134 84q0-34 30-34h40" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="204" y="32" width="72" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M216 46h48" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M216 55h32" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M134 116q0 34 30 34h16" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="180" y="138" width="22" height="24" rx="3" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <circle cx="191" cy="150" r="3" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M202 150h12" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="214" y="138" width="22" height="24" rx="3" fill="#E7EAE6" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <circle cx="225" cy="150" r="3" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M236 150h12" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M248 150h18" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="280" cy="150" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M273 150l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
