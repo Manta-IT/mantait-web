@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma toku podvodných e-mailů od kompromitovaného dodavatele k zákazníkům přes legitimní doménu firmy" fill="none">
+<title>Schéma toku podvodných e-mailů od kompromitovaného dodavatele k zákazníkům přes legitimní doménu firmy</title>
+  <rect x="126" y="46" width="68" height="108" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <circle cx="160" cy="76" r="16" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M153 76l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="70" width="52" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M50 86l11 19H39z" stroke="#9A3F2B" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+  <path d="M50 92v5m0 3.5v0.8" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="244" y="70" width="52" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M254 86h32" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M254 94h22" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M254 102h28" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M76 112h168" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M238 108l6 4-6 4" stroke="#9A3F2B" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Od zjištění zranitelnosti po tři navazující termíny hlášení na časové ose" fill="none">
+<title>Od zjištění zranitelnosti po tři navazující termíny hlášení na časové ose</title>
+  <path d="M30 140 H280" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="30" cy="140" r="7" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M100 140 V115" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="86" y="90" width="28" height="24" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M91 98h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M91 105h11" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M175 140 V115" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="161" y="90" width="28" height="24" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M166 98h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M166 105h11" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M260 140 V115" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <rect x="246" y="90" width="28" height="24" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M251 98h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M251 105h11" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

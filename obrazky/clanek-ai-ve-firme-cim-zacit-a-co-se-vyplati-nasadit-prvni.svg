@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Rozcestí mezi možnostmi nasazení AI, ze kterého vede přímá cesta k jednomu jasně vymezenému prvnímu kroku" fill="none">
+<title>Rozcestí mezi možnostmi nasazení AI, ze kterého vede přímá cesta k jednomu jasně vymezenému prvnímu kroku</title>
+  <rect x="85" y="16" width="30" height="38" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M91 26h18" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M91 33h14" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M91 40h16" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M100 82V54" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <rect x="18" y="84" width="38" height="32" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M18 94h38" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 94v22" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M23 100h6" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M23 107h7" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M39 100h11" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M39 107h8" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M82 100H56" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <rect x="80" y="146" width="30" height="16" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M86 154h18" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="92" y="166" width="30" height="16" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M98 174h18" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M100 118V146" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="100" cy="100" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <circle cx="100" cy="100" r="4" fill="#101413" stroke="#101413" stroke-width="1.5"/>
+  <path d="M118 100h74" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M152 95l6 5-6 5" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="192" y="68" width="98" height="64" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2" opacity="1"/>
+  <circle cx="268" cy="86" r="9" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M264 86l3 3.5 6-7" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M206 86h40" stroke="#0B6E4F" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M206 103h70" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M206 113h50" stroke="#C3CAC4" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Dokument vede přes AI k rozcestí: ověřeno člověkem, nebo nikým nečteno" fill="none">
+<title>Dokument vede přes AI k rozcestí: ověřeno člověkem, nebo nikým nečteno</title>
+  <rect x="20" y="70" width="60" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M30 84h40" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M30 94h30" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M30 104h34" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M80 100h40" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="136" cy="100" r="16" fill="#E7EAE6" stroke="#101413" stroke-width="1.8"/>
+  <path d="M152 100q20 0 30-25" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M152 100q20 0 30 25" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="210" cy="60" r="18" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M201 60l6 7 12-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M228 60h60" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="288" y="44" width="24" height="32" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <circle cx="210" cy="140" r="18" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M210 132v10M210 146v2" stroke="#9A3F2B" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M228 140h60" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="288" y="124" width="24" height="32" rx="3" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+</svg>

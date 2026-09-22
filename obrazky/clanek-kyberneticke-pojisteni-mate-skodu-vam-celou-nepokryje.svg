@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Firma uprostřed, kolem ní menší kruh pojistného krytí, který nesahá až k okraji vnějšího kruhu skutečné škody" fill="none">
+<title>Firma uprostřed, kolem ní menší kruh pojistného krytí, který nesahá až k okraji vnějšího kruhu skutečné škody</title>
+  <circle cx="160" cy="100" r="68" fill="none" stroke="#9AA29E" stroke-width="1.8"/>
+  <circle cx="160" cy="100" r="42" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <rect x="140" y="90" width="40" height="20" rx="3" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M148 96h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M148 104h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>
