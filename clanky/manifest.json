@@ -1,5 +1,22 @@
 [
   {
+    "slug": "dodavatel-konci-podporu-vaseho-systemu-upgrade-u-nej-neni",
+    "title": "Dodavatel končí podporu systému. Upgrade není jediná volba",
+    "description": "Dodavatel vám oznámil konec podpory a nabízí drahý upgrade? Zjistěte, jak spočítat náklady na pět let dopředu a kdy má smysl systém raději vyměnit.",
+    "date_published": "2026-09-13",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "reseni-vyber-systemu",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-dodavatel-konci-podporu-vaseho-systemu-upgrade-u-nej-neni.svg"
+  },
+  {
     "slug": "eu-odlozila-tvrda-pravidla-pro-ai-o-sestnact-mesicu-co",
     "title": "EU odložila pravidla pro AI: co platí hned a co počká",
     "description": "Evropská unie odložila tvrdá pravidla pro vysoce rizikovou AI o šestnáct měsíců. Zjistěte, které povinnosti platí už dnes a proč nečekat s úpravou systémů.",
