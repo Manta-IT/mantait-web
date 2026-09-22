@@ -1,5 +1,21 @@
 [
   {
+    "slug": "ctyri-otazky-nez-firme-koupite-dalsi-nastroj-nebo-doplnek",
+    "title": "Čtyři otázky, než firmě koupíte další nástroj nebo doplněk",
+    "description": "Kupujete nový firemní nástroj bez porovnání a bez zápisu? Čtyři otázky rozhodnou, jestli vám za rok nezůstane jen účet, který nikdo nepoužívá.",
+    "date_published": "2026-09-17",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-ctyri-otazky-nez-firme-koupite-dalsi-nastroj-nebo-doplnek.svg"
+  },
+  {
     "slug": "v-chatgpt-uz-bezi-reklamy-co-to-znamena-pro-firmy-ktere-tam",
     "title": "V ChatGPT už běží reklamy. Co to znamená pro vaši firmu",
     "description": "Zákazníci vidí v ChatGPT vedle odpovědi i placené umístění. Co se dnes dá ověřit a co změna cesty k zákazníkovi znamená pro českou firmu.",

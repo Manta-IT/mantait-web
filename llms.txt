@@ -63,6 +63,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Nový server na příští rok? Objednejte letos, ne v lednu](https://mantait.cz/clanky/novy-server-na-pristi-rok-objednejte-letos-dodaci-lhuty-se): Plánujete výměnu serveru nebo přesun do cloudu na rok 2027? Dodací lhůty vzrostly na měsíce a rozhodovat se musí už teď, ne v rozpočtu na leden.
 - [Přišel e-mail o změně účtu dodavatele. Kdo to smí schválit?](https://mantait.cz/clanky/prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve): Dodavatel vám napíše, že mění bankovní účet. Bez telefonátu na staré číslo z toho může být nejdražší firemní podvod roku.
 - [V ChatGPT už běží reklamy. Co to znamená pro vaši firmu](https://mantait.cz/clanky/v-chatgpt-uz-bezi-reklamy-co-to-znamena-pro-firmy-ktere-tam): Zákazníci vidí v ChatGPT vedle odpovědi i placené umístění. Co se dnes dá ověřit a co změna cesty k zákazníkovi znamená pro českou firmu.
+- [Čtyři otázky, než firmě koupíte další nástroj nebo doplněk](https://mantait.cz/clanky/ctyri-otazky-nez-firme-koupite-dalsi-nastroj-nebo-doplnek): Kupujete nový firemní nástroj bez porovnání a bez zápisu? Čtyři otázky rozhodnou, jestli vám za rok nezůstane jen účet, který nikdo nepoužívá.
 
 ## Co Manta IT není
 
