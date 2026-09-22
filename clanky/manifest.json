@@ -1,5 +1,21 @@
 [
   {
+    "slug": "hackli-vaseho-dodavatele-e-maily-zakaznikum-odesly-z-vasi",
+    "title": "Hackli vašeho dodavatele. E-maily odešly z vaší adresy",
+    "description": "Útočníci pronikli k externímu dodavateli a vašim zákazníkům poslali phishing z vaší domény. Zjistěte, jak ohlídat přístupy a co mít vyřešené ve smlouvách.",
+    "date_published": "2026-09-18",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-hackli-vaseho-dodavatele-e-maily-zakaznikum-odesly-z-vasi.svg"
+  },
+  {
     "slug": "eu-resi-zavislost-na-americkem-cloudu-co-znamena-cloudova",
     "title": "EU rámec cloudové suverenity: co to znamená pro vaši firmu",
     "description": "Vaše maily, data i účetnictví běží u amerického poskytovatele. EU zavádí rámec cloudové suverenity. Zjistěte, koho se týká a co si z něj vzít.",

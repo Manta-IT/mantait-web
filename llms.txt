@@ -66,6 +66,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Čtyři otázky, než firmě koupíte další nástroj nebo doplněk](https://mantait.cz/clanky/ctyri-otazky-nez-firme-koupite-dalsi-nastroj-nebo-doplnek): Kupujete nový firemní nástroj bez porovnání a bez zápisu? Čtyři otázky rozhodnou, jestli vám za rok nezůstane jen účet, který nikdo nepoužívá.
 - [Předplatné, nebo licence napořád? Počítejte na pět let](https://mantait.cz/clanky/predplatne-nebo-licence-naporad-spocitejte-to-na-pet-let-ne): Majitel firmy srovnává cenu softwaru na faktuře, ne cenu za dobu, po kterou poběží. Spočítejte pětiletý součet dřív, než podepíšete smlouvu.
 - [EU rámec cloudové suverenity: co to znamená pro vaši firmu](https://mantait.cz/clanky/eu-resi-zavislost-na-americkem-cloudu-co-znamena-cloudova): Vaše maily, data i účetnictví běží u amerického poskytovatele. EU zavádí rámec cloudové suverenity. Zjistěte, koho se týká a co si z něj vzít.
+- [Hackli vašeho dodavatele. E-maily odešly z vaší adresy](https://mantait.cz/clanky/hackli-vaseho-dodavatele-e-maily-zakaznikum-odesly-z-vasi): Útočníci pronikli k externímu dodavateli a vašim zákazníkům poslali phishing z vaší domény. Zjistěte, jak ohlídat přístupy a co mít vyřešené ve smlouvách.
 
 ## Co Manta IT není
 
