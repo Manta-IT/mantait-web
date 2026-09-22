@@ -52,6 +52,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Když skončí váš dodavatel, skončí s ním i vaše data?](https://mantait.cz/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data): Co se stane s firemními daty, když cloudový dodavatel zkrachuje? Tři praktické otázky pro majitele firem a návod, jak mít zálohy pod vlastní kontrolou.
 - [Odběratel po vás chce bezpečnost: co podepisujete](https://mantait.cz/clanky/odberatel-po-vas-chce-bezpecnost-co-podepisujete-kdyz): Velký odběratel vám poslal bezpečnostní přílohu ke smlouvě. Zjistěte, co z požadavků zvládnete hned, co přinese nové náklady a jak ohlídat rozpočet.
 - [Technika zdražuje kvůli AI. Co to udělá s IT rozpočtem](https://mantait.cz/clanky/technika-zdrazuje-kvuli-ai-co-to-udela-s-vasim-it-rozpoctem): AI datacentra skupují paměti a výrobci zvedají ceny techniky. Zjistěte, jak se zdražení promítne do obnovy počítačů a plánu firemního rozpočtu.
+- [EU odložila pravidla pro AI: co platí hned a co počká](https://mantait.cz/clanky/eu-odlozila-tvrda-pravidla-pro-ai-o-sestnact-mesicu-co): Evropská unie odložila tvrdá pravidla pro vysoce rizikovou AI o šestnáct měsíců. Zjistěte, které povinnosti platí už dnes a proč nečekat s úpravou systémů.
 
 ## Co Manta IT není
 
