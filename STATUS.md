@@ -267,3 +267,5 @@ Cenovy blocker UZAVREN 2026-07-16: Petr rozhodl 15 000 Kc za Mapu AI prilezitost
 -> Vyhodnoceni: CONTEXT.md je silne zastarala (popisuje mrtvy 1-page dark/gold design, plne nahrazeny). Rozhodnuto dle recency: web JE LIVE. CONTEXT.md neupravovat (mimo scope sync), ale je flagged jako stale.
 ! (UZAVRENO 2026-07-16) Konflikt o cenach ai.html: rozhodnuto -- AI Assessment / Lite nahrazeny sluzbou Mapa AI prilezitosti za 15 000 Kc, ai.html smazana.
 ! (UZAVRENO 2026-07-16) Leftover polozky "Cloudflare setup / nasazeni" ze stareho STATUS/TODO: web je davno nasazeny, polozky splnene de facto, odstraneny.
+
+- 2026-09-17: revize iniciativy (T0917-64): 6 Petrem schvalenych clanku linka nikdy nezverejnila (role marketak/growth je sezrala, 2 bez slugu) -- opraveno v taskstore, vraceny do fronty; publikovano 17. 9. chatbot-ai-act + windows-10, fronta 15 (2/den, do ~25. 9.); rozhled iniciativy nove vidi publikace (DENIK cte i archiv). Gesto Napsat/Prepsat na plose, brana textu hlida pomlcku k efektu.
