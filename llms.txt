@@ -61,6 +61,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Dodavatelé zdražují software kvůli AI, i když ho nechcete](https://mantait.cz/clanky/dodavatele-zdrazuji-software-kvuli-ai-i-kdyz-ho): Ceny softwaru rostou kvůli AI funkcím, které možná vůbec nepoužíváte. Přehled, kde se zdražuje nejvíc a jak si náklady na dodavatele pohlídat.
 - [Kybernetické pojištění máte. Škodu vám celou nepokryje](https://mantait.cz/clanky/kyberneticke-pojisteni-mate-skodu-vam-celou-nepokryje): Jen pětina šéfů firem věří, že jim kybernetické pojištění zaplatí škodu celou. Zjistěte, co pojistka obvykle nepokryje a co rozhoduje o výši plnění.
 - [Nový server na příští rok? Objednejte letos, ne v lednu](https://mantait.cz/clanky/novy-server-na-pristi-rok-objednejte-letos-dodaci-lhuty-se): Plánujete výměnu serveru nebo přesun do cloudu na rok 2027? Dodací lhůty vzrostly na měsíce a rozhodovat se musí už teď, ne v rozpočtu na leden.
+- [Přišel e-mail o změně účtu dodavatele. Kdo to smí schválit?](https://mantait.cz/clanky/prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve): Dodavatel vám napíše, že mění bankovní účet. Bez telefonátu na staré číslo z toho může být nejdražší firemní podvod roku.
 
 ## Co Manta IT není
 

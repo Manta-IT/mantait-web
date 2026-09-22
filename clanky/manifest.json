@@ -1,5 +1,21 @@
 [
   {
+    "slug": "prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve",
+    "title": "Přišel e-mail o změně účtu dodavatele. Kdo to smí schválit?",
+    "description": "Dodavatel vám napíše, že mění bankovní účet. Bez telefonátu na staré číslo z toho může být nejdražší firemní podvod roku.",
+    "date_published": "2026-09-17",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve.svg"
+  },
+  {
     "slug": "novy-server-na-pristi-rok-objednejte-letos-dodaci-lhuty-se",
     "title": "Nový server na příští rok? Objednejte letos, ne v lednu",
     "description": "Plánujete výměnu serveru nebo přesun do cloudu na rok 2027? Dodací lhůty vzrostly na měsíce a rozhodovat se musí už teď, ne v rozpočtu na leden.",
