@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyber Resilience Act: hlášení zranitelností do 24 hodin - Manta IT</title>
+<meta name="description" content="Prodáváte software nebo zařízení s digitální částí? Od 11. září 2026 musíte hlásit zneužívané zranitelnosti do 24 hodin. Zjistěte, co to pro firmu znamená.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/cyber-resilience-act-a-povinne-hlaseni-zneuzivanych">
+  <meta property="og:title" content="Cyber Resilience Act: hlášení zranitelností do 24 hodin">
+  <meta property="og:description" content="Prodáváte software nebo zařízení s digitální částí? Od 11. září 2026 musíte hlásit zneužívané zranitelnosti do 24 hodin. Zjistěte, co to pro firmu znamená.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/cyber-resilience-act-a-povinne-hlaseni-zneuzivanych">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cyber Resilience Act: hlášení zranitelností do 24 hodin",
+    "description": "Prodáváte software nebo zařízení s digitální částí? Od 11. září 2026 musíte hlásit zneužívané zranitelnosti do 24 hodin. Zjistěte, co to pro firmu znamená.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/cyber-resilience-act-a-povinne-hlaseni-zneuzivanych"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["Bezpečnost", "Cyber Resilience Act"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Bezpečnost produktů</span>
+  <h1>Cyber Resilience Act: hlášení zranitelností <em>do 24 hodin.</em></h1>
+  <p class="hero-lead">Evropský akt o kybernetické odolnosti je nařízení, které od 11. září 2026 ukládá výrobcům softwaru i zařízení s digitální částí povinnost ohlásit každou aktivně zneužívanou zranitelnost do 24 hodin od jejího zjištění. Většina konstrukčních požadavků a certifikací začne platit až v prosinci 2027, ale ohlašovací povinnost pro zranitelnosti a bezpečnostní incidenty platí už nyní. Pro české firmy dodávající digitální produkty na evropský trh to znamená nutnost zavést rychlý technický postup, aby v případě zneužití neztrácely drahocenný čas.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 13. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-cyber-resilience-act-a-povinne-hlaseni-zneuzivanych.svg" alt="Schéma postupu hlášení zneužívané zranitelnosti od včasného varování do 24 hodin přes CSIRT a ENISA po opravu produktu." width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Nová pravidla</span>
+  <h2>První ostrá lhůta: hodiny běží <em>mnohem dříve než zbytek nařízení.</em></h2>
+  <p>Evropská unie schválila nařízení č. 2024/2847, které stanovuje jednotné požadavky na digitální produkty uváděné na trh (<a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" rel="nofollow">Úřední věstník EU, 20. listopadu 2024</a>). Důležitá je časová osa celého předpisu. Většina povinností, včetně technické dokumentace a posuzování shody, začne platit až 11. prosince 2027. Článek 14 však dostal výjimku a je účinný už od 11. září 2026.</p>
+  <p>Zahraniční technologické komentáře shrnují novou praxi jednoznačně: "Od 11. září 2026 ukládá Cyber Resilience Act povinné hlášení. Aktivně zneužívaná zranitelnost ve vašem produktu vám dává 24 hodin na včasné varování, 72 hodin na podrobné oznámení a 14 dnů na závěrečnou zprávu" (<a href="https://dev.to/julesrobineau/cyber-resilience-act-the-reporting-clock-starts-on-september-11-208o" rel="nofollow">Dev.to, Jules Robineau, 7. září 2026</a>). Zpráva se podává přes jednotnou evropskou platformu současně národnímu týmu CSIRT a agentuře ENISA. V České republice tuto koordinační roli plní vládní CERT a národní CSIRT.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Koho se týká</span>
+  <h2>Software na prodej i chytré stroje: <em>kdo je vlastně výrobcem.</em></h2>
+  <p>Mnoho jednatelů žije v představě, že evropská bezpečnostní nařízení míří pouze na banky, nemocnice nebo energetické giganty. Tyto subjekty řeší směrnice NIS2 a navazující legislativa. Cyber Resilience Act se dívá na trh z úplně jiného úhlu. Míří na každého, kdo vyvíjí, vyrábí nebo nechává vyrobit produkt s digitálními prvky a uvádí jej pod svým jménem na evropský trh.</p>
+  <p>Do této skupiny patří výrobci průmyslových řídicích jednotek, chytrých čidel, krabicového softwaru, mobilních aplikací i klientských systémů napojených na hardware. Pokud vaše firma prodává software jako produkt nebo dodává zařízení s vlastním firmwarem, zákon vás považuje za výrobce. Pravidla se naopak nevztahují na čistě interní systémy, které firma staví výhradně pro svou vlastní potřebu. Když pro klienta navrhuji <a href="/reseni-nova-aplikace">aplikace na míru</a> určené pro vnitřní provoz skladu či účtárny, produktem na trhu se nestávají.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Co se hlásí</span>
+  <h2>Aktivní zneužití: proč nemusíte hlásit <em>každou drobnou chybu.</em></h2>
+  <p>Zákonodárci naštěstí nepožadují hlášení každého běžného záznamu z vašeho chybového trackeru. Článek 14 přesně vymezuje dvě události, které spouštějí zákonné hodiny. První je aktivně zneužívaná zranitelnost a druhou je závažný bezpečnostní incident ovlivňující bezpečnost produktu.</p>
+  <p>Aktivně zneužívanou zranitelností se rozumí bezpečnostní slabina, u které existuje spolehlivý důkaz, že ji útočník v reálném systému skutečně bez oprávnění zneužil. Běžná chyba odhalená při interním testování před vydáním verze ani opravený nedostatek v kódu pod tuto definici nespadají. Pokud se však dozvíte, že chybu ve vašem prodaném softwaru někdo venku zneužívá k průniku, spouští se třístupňový proces.</p>
+  <p>Do 24 hodin od chvíle, kdy se o zneužití dozvíte, musíte podat včasné varování s označením produktu a povahou problému. Do 72 hodin následuje podrobné oznámení s vyhodnocením dopadů a popisem prvních nápravných kroků. Závěrečnou zprávu o příčinách a bezpečnostní opravě pak odevzdáváte nejpozději do 14 dnů od chvíle, kdy je oprava k dispozici.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Příprava firmy</span>
+  <h2>Tři kroky, které musíte <em>mít hotové před incidentem.</em></h2>
+  <p>Ve firmě do 250 lidí není nutné stavět složitý aparát ani propadat panice (<a href="https://mantait.cz/" rel="nofollow">Petr Kokoška, 13. září 2026</a>). Lhůta dvaceti čtyř hodin ale neumožňuje svolávat mimořádné porady a hledat formuláře na internetu. Všechno závisí na jednoduché technické připravenosti.</p>
+  <p>Prvním krokem je vytvoření zřetelného kontaktního místa pro bezpečnostní hlášení. Na webu i v dokumentaci produktu uveďte bezpečnostní e-mailovou adresu, na kterou vám mohou výzkumníci nebo zákazníci nález poslat. Druhým krokem je určení technického člověka, který dokáže během několika hodin vyhodnotit, zda jde o planý poplach, nebo o skutečné zneužití. Třetím krokem je předem připravená šablona hlášení a přehled toho, kde a jak se hlášení pro CSIRT odesílá.</p>
+  <p>V praxi často vidím, že menší technologické firmy nemají mezi vedením a externími vývojáři nikoho, kdo by technická rizika řídil systematicky. Právě proto při <a href="/reseni-vedeni-it">dlouhodobém vedení IT</a> hlídám technologické procesy a dohlížím na to, aby dodavatelé kódu dodržovali bezpečnostní standardy.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Kde začít <em>dnes.</em></h2>
+  <p>Pokud vaše firma žádný software ani zařízení s digitální částí neprodává a technologie využíváte pouze pro vnitřní chod kanceláře, Cyber Resilience Act pro vás neznamená žádnou práci a tuto prověrku nepotřebujete.</p>
+  <p>Pokud naopak vyvíjíte nebo prodáváte vlastní software či hardware a chcete mít jistotu, jaká bezpečnostní pravidla na vás dopadají a jak nastavit procesy s dodavateli vývoje, projděte si <a href="/reseni-bezpecnost">tři otázky k bezpečnosti</a> nebo mi napište.</p>
+  <div class="lp-price">
+    <p><b>Prověřím technologické procesy vašich produktů a nastavím pravidla pro hlášení bezpečnostních událostí.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-bezpecnost" class="btn">Prověřit firmu</a></p>
+  </div>
+</section>
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-bezpecnost"><b>Zákon o kybernetické bezpečnosti</b><span>Za pět minut zjistíte, jestli na vás zákon dopadá a co po vás chce.</span></a></li>
+    <li><a href="/reseni-vedeni-it"><b>Dlouhodobé vedení IT</b><small>od 50 000 Kč měsíčně</small><span>Celá cesta na paušál. Vy se k IT vracíte jen na poradách.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7"></script>
+</body>
+</html>
