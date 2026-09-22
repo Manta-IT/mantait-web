@@ -190,6 +190,23 @@
     "obrazek": "clanek-kyberneticke-pojisteni-mate-skodu-vam-celou-nepokryje.svg"
   },
   {
+    "slug": "kolik-vas-realne-bude-stat-ai-a-automatizace-cisla-z-praxe",
+    "title": "Kolik vás reálně bude stát AI a automatizace? Čísla z praxe",
+    "description": "Cena z ceníku je jen část účtu. Zjistěte, z čeho se skládá skutečná cena AI a automatizace a kde firmy nejčastěji přeplácí.",
+    "date_published": "2026-09-15",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-mapa-firmy",
+    "sluzby": [
+      "reseni-mapa-firmy",
+      "reseni-podnikova-ai",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-kolik-vas-realne-bude-stat-ai-a-automatizace-cisla-z-praxe.svg"
+  },
+  {
     "slug": "dodavatele-zdrazuji-software-kvuli-ai-i-kdyz-ho",
     "title": "Dodavatelé zdražují software kvůli AI, i když ho nechcete",
     "description": "Ceny softwaru rostou kvůli AI funkcím, které možná vůbec nepoužíváte. Přehled, kde se zdražuje nejvíc a jak si náklady na dodavatele pohlídat.",

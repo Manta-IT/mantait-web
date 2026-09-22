@@ -71,6 +71,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [EU otevřela miliony na kyberbezpečnost. Vy na ně nedosáhnete](https://mantait.cz/clanky/eu-dava-96-milionu-eur-na-kyberbezpecnost-proc-na-ne-vase): Nová evropská výzva cílí i na malé firmy, ale žádost podává konsorcium, ne jednotlivý podnik. Co je pro vaši firmu dostupné místo toho.
 - [AI vydělává jen firmám, které nejdřív předělaly proces](https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich): Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.
 - [Vašeho dodavatele softwaru koupili. Co se změní do roka](https://mantait.cz/clanky/vaseho-dodavatele-softwaru-koupila-vetsi-firma-co-se-zmeni): Menší dodavatel docházky, skladu nebo CRM změnil majitele a nový vlastník slibuje kontinuitu. Co si ověřit hned a co dát do smlouvy, než přijde zdražení.
+- [Kolik vás reálně bude stát AI a automatizace? Čísla z praxe](https://mantait.cz/clanky/kolik-vas-realne-bude-stat-ai-a-automatizace-cisla-z-praxe): Cena z ceníku je jen část účtu. Zjistěte, z čeho se skládá skutečná cena AI a automatizace a kde firmy nejčastěji přeplácí.
 
 ## Co Manta IT není
 
