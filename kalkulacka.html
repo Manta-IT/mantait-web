@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalkulačka dopadu AI: co vám to přinese - Manta IT</title>
+<meta name="description" content="Spočítejte si, kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí. Čtyři údaje, které o své firmě víte, a model, který je celý vidět.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
+<link rel="stylesheet" href="/sluzba.css?v=bd246ec">
+<link rel="stylesheet" href="/kalkulacka.css?v=e005f0e">
+<link rel="stylesheet" href="/mobil.css?v=50ff103">
+<script>document.documentElement.classList.add('js')</script>
+  <link rel="canonical" href="https://mantait.cz/kalkulacka">
+  <meta property="og:title" content="Kalkulačka dopadu AI: co vám to přinese - Manta IT">
+  <meta property="og:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí. Čtyři údaje a model, který je celý vidět.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/kalkulacka">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kalkulačka dopadu AI: co vám to přinese - Manta IT">
+  <meta name="twitter:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#sluzby">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main>
+
+<header class="hero kalk-hero" id="hero">
+  <div>
+    <a href="/reseni-podnikova-ai" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Podniková AI
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Co vám AI</span></span>
+      <span class="radek"><b class="r2">reálně přinese.</b></span>
+    </h1>
+    <p class="lead">Kalkulačka dopadu AI je jednoduchý model, který z hodin strávených
+    opakovanou prací spočítá, kolik vám jedna agenda převzatá strojem vrátí za rok
+    a za jak dlouho se zaplatí. Nejtěžší na rozhodování o AI není cena, ale to, že si
+    firma neumí říct, co z toho bude. Tohle je nejmenší poctivý výpočet, který na
+    tu otázku odpovídá: čtyři údaje, které o své firmě víte, a vzorec, který je
+    celý vidět.</p>
+  </div>
+</header>
+
+<!-- ============ KALKULACKA ============ -->
+<section class="kalk-sekce" id="kalkulacka">
+  <div class="obsah kalk">
+    <div class="kalk-vstupy">
+      <span class="stitek">Jedna agenda u vás</span>
+      <h2>Čtyři údaje.</h2>
+      <p class="kalk-uvod">Vezměte si jednu činnost, která se u vás dělá pořád dokola:
+      přepisování objednávek, odpovědi na typové dotazy, hledání v dokumentech,
+      podklady pro fakturaci. Jenom jednu, ne celou firmu.</p>
+
+      <div class="kalk-pole">
+        <label for="vstup-lidi">Kolik lidí ji dělá</label>
+        <input type="range" id="vstup-lidi" min="1" max="30" step="1" value="5">
+        <output class="kalk-echo"><span id="echo-lidi">5</span> lidí</output>
+      </div>
+
+      <div class="kalk-pole">
+        <label for="vstup-hodinyTydne">Kolik hodin týdně na ni padne jednomu</label>
+        <input type="range" id="vstup-hodinyTydne" min="1" max="30" step="1" value="8">
+        <output class="kalk-echo"><span id="echo-hodinyTydne">8</span> hodin týdně</output>
+      </div>
+
+      <div class="kalk-pole">
+        <label for="vstup-sazba">Hodinový náklad na jednoho z nich</label>
+        <input type="range" id="vstup-sazba" min="200" max="1500" step="10" value="420">
+        <output class="kalk-echo"><span id="echo-sazba">420</span> Kč za hodinu</output>
+      </div>
+
+      <div class="kalk-pole">
+        <label for="vstup-podil">Kolik z té práce stroj převezme</label>
+        <input type="range" id="vstup-podil" min="0" max="70" step="5" value="40">
+        <output class="kalk-echo"><span id="echo-podil">40</span> % práce</output>
+      </div>
+    </div>
+
+    <!-- Cisla v HTML odpovidaji vychozimu nastaveni posuvniku vyse. Bez skriptu
+         tedy stranka ukazuje platny priklad, jen se neprepocitava. -->
+    <aside class="kalk-vysledek" aria-live="polite">
+      <div class="kalk-hlavni">
+        <span class="kalk-popis">Za rok se uvolní</span>
+        <strong class="kalk-cislo"><span id="vystup-hodiny">720</span> hodin</strong>
+        <span class="kalk-popis">to je při vašem nákladu</span>
+        <strong class="kalk-cislo"><span id="vystup-uspora">302 400</span> Kč</strong>
+      </div>
+      <dl class="kalk-radky">
+        <div>
+          <dt>Zavedení a provoz první rok</dt>
+          <dd><span id="vystup-naklad">185 000</span> Kč</dd>
+        </div>
+        <div>
+          <dt>Rozdíl za první rok</dt>
+          <dd><span id="vystup-rozdil">+117 400</span> Kč</dd>
+        </div>
+        <div>
+          <dt>Rozdíl za každý další rok</dt>
+          <dd><span id="vystup-dalsirok">+206 400</span> Kč</dd>
+        </div>
+      </dl>
+      <p class="kalk-navratnost" id="vystup-navratnost">vrátí se za 6 měsíců</p>
+      <p class="kalk-pozn">Modelový odhad z vašich čísel, ne nabídka. Zavedení od 89 000 Kč
+      a provoz od 8 000 Kč měsíčně jsou ceny ze stránky podnikové AI. Nejsem plátce DPH,
+      ceny jsou konečné.</p>
+      <a href="/#napiste" class="btn btn-hlavni">
+        Napište mi
+        <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ Z CEHO SE TO POCITA ============ -->
+<section class="tmava">
+  <div class="obsah">
+    <span class="stitek">Vzorec</span>
+    <h2>Z čeho se to počítá.</h2>
+    <p class="tmava-lead">Celý model je jedno násobení a jedno dělení. Schválně,
+    ať si ho můžete přepočítat na papíře a nemusíte mi věřit.</p>
+    <ul class="vzorec">
+      <li><b>Uvolněné hodiny za rok</b> = lidé &times; hodiny týdně &times; 45 týdnů
+        &times; podíl, který stroj převezme. Pětačtyřicet týdnů, ne dvaapadesát:
+        dovolená, svátky a nemoc. To je náš model, ne údaj odjinud.</li>
+      <li><b>Koruny za rok</b> = uvolněné hodiny &times; hodinový náklad. Výchozích
+        420 Kč vychází z průměrné hrubé mzdy 50 282 Kč (ČSÚ, 1. čtvrtletí 2026)
+        plus odvody zaměstnavatele, na 160 hodin v měsíci. Máte-li jinou mzdovou
+        úroveň, posuňte si to.</li>
+      <li><b>Náklad prvního roku</b> = zavedení 89 000 Kč a provoz 8 000 Kč měsíčně.
+        Od druhého roku zůstává jen provoz.</li>
+      <li><b>Návratnost</b> = zavedení děleno tím, co měsíčně zbude po zaplacení
+        provozu. Když nezbude nic, kalkulačka napíše, že se to nevrátí. To je
+        pro vás nejcennější výsledek, jaký umí dát.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CO KALKULACKA NEUMI ============ -->
+<section>
+  <div class="obsah kalk-meze">
+    <div>
+      <span class="stitek">Meze</span>
+      <h2>Co kalkulačka neumí.</h2>
+    </div>
+    <div class="meze-radky">
+      <p><b>Uvolněné hodiny nejsou samy o sobě peníze.</b> Stanou se jimi, až ty lidi
+      pustíte k práci, která se dosud nestíhala. Když po zavedení všechno zůstane
+      stejné, ušetří se čas a nic víc.</p>
+      <p><b>Neví, jestli je vaše agenda na stroj.</b> Práce, kde se rozhoduje podle
+      věcí, které nikde nejsou zapsané, se nepřevezme ani ze čtyřiceti procent.
+      Tohle rozhodnutí je obsahem AI plánu do 48 hodin, ne posuvníku.</p>
+      <p><b>Nepočítá zavádění lidí a výpadky.</b> První měsíce se lidé učí strojům
+      zadávat a kontrolovat je. V modelu je ten čas schovaný v tom, že podíl
+      převzaté práce je jen část, ne celek.</p>
+      <p><b>Nejsou to doložená čísla z trhu.</b> Je to váš odhad protažený vzorcem.
+      Doložená v něm jsou jen dvě čísla: průměrná mzda a moje ceny.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Otázky</span>
+    <h2>Než to začnete brát vážně.</h2>
+    <details>
+      <summary>Proč mi kalkulačka u malé agendy říká, že se to nevrátí?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Protože se to nevrátí. Jedna hodina týdně u jednoho člověka je za rok míň
+        peněz, než stojí provoz. Na takovou agendu se podniková AI nestaví samostatně:
+        buď se přidá k větší, která už běží na stejném zázemí, nebo se nechá být.
+        Radši to uvidíte tady než po roce provozu.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Jaký podíl práce si mám nastavit?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Když nevíte, nechte čtyřicet procent. U agend typu přepisování mezi systémy
+        a odpovědi na typové dotazy bývá reálný podíl vyšší, u práce, kde se rozhoduje
+        podle kontextu, výrazně nižší. Sedmdesát procent je horní hranice posuvníku
+        schválně: sto procent nikde neslibuji a nevidím.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Mám tenhle výpočet ukázat majiteli nebo bance?<span class="znak-plus"></span></summary>
+      <div class="odpoved">
+        <p>Jako podklad k rozhovoru ano, jako doklad ne. Jsou to vaše odhady protažené
+        jednoduchým vzorcem. Čísla, která obstojí před majitelem, vzniknou až z AI
+        plánu, kde se u každé agendy měří skutečný objem a skutečná chybovost.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ZAVER ============ -->
+<section class="zaver">
+  <div class="obsah">
+    <h2>Vyšlo vám to. Co dál.</h2>
+    <p>Napište mi tři činnosti, které se u vás dělají pořád dokola. Za 48 hodin
+    vám u každé řeknu, jestli je na ni stroj, jaký podíl práce převezme a co
+    by to stálo. To už nejsou posuvníky, ale čísla z vaší firmy.</p>
+    <a href="/#napiste" class="btn btn-hlavni">
+      Napište mi
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p>Odpovím do jednoho pracovního dne a odepisuju já, ne asistentka.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
+</footer>
+
+<script src="/sluzba.js?v=7b17979"></script>
+<script type="module" src="/kalkulacka.js?v=908afc9"></script>
+<script src="/mobil.js?v=ef67676"></script>
+</body>
+</html>

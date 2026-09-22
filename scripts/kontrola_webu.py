@@ -24,7 +24,8 @@ KOREN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
            'reseni-propojeni.html', 'reseni-bezpecnost.html', 'reseni-ai-zamestnanec.html',
            'reseni-mapa-firmy.html', 'reseni-zadani.html', 'reseni-vyber-systemu.html',
-           'reseni-robot-na-zadani.html', 'reseni-podnikova-ai.html', 'weby.html',
+           'reseni-robot-na-zadani.html', 'reseni-podnikova-ai.html', 'kalkulacka.html',
+           'weby.html',
            'o-mne.html', 'raynet.html', 'dotace-mas.html', 'clanky/index.html']
 TYPO = {'em-dash': '—', 'en-dash': '–', 'smart quotes': '[“”„‘’]', 'ellipsis': '…'}
 ZAKAZ = [r'\bproviz\w*', r'\bručím\b', r'\bručení\b', r'odpovědnost\w*', r'Kokoška IT', r'Ultramar\w*',
