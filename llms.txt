@@ -72,6 +72,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [AI vydělává jen firmám, které nejdřív předělaly proces](https://mantait.cz/clanky/firmy-kterym-ai-vydelava-nejdriv-zmenily-jak-se-u-nich): Většina firem AI jen koupila. Těm, kterým vydělává, nejdřív změnily proces práce a až pak nasadily nástroj. Jak na to i u vás do 250 lidí.
 - [Vašeho dodavatele softwaru koupili. Co se změní do roka](https://mantait.cz/clanky/vaseho-dodavatele-softwaru-koupila-vetsi-firma-co-se-zmeni): Menší dodavatel docházky, skladu nebo CRM změnil majitele a nový vlastník slibuje kontinuitu. Co si ověřit hned a co dát do smlouvy, než přijde zdražení.
 - [Kolik vás reálně bude stát AI a automatizace? Čísla z praxe](https://mantait.cz/clanky/kolik-vas-realne-bude-stat-ai-a-automatizace-cisla-z-praxe): Cena z ceníku je jen část účtu. Zjistěte, z čeho se skládá skutečná cena AI a automatizace a kde firmy nejčastěji přeplácí.
+- [AI startovací balíček od Anthropicu: kde končí a co dál](https://mantait.cz/clanky/anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si): Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.
 
 ## Co Manta IT není
 

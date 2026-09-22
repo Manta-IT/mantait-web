@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI startovací balíček od Anthropicu: kde končí a co dál - Manta IT</title>
+<meta name="description" content="Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si">
+  <meta property="og:title" content="AI startovací balíček od Anthropicu: kde končí a co dál">
+  <meta property="og:description" content="Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI startovací balíček od Anthropicu: kde končí a co dál",
+    "description": "Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-17",
+    "dateModified": "2026-09-17",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI", "Automatizace"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI ve firmě</span>
+  <h1>Hotový AI balíček pro firmy <em>končí u vašich dat.</em></h1>
+  <p class="hero-lead">AI startovací balíček je hotové předplatné za pár stovek korun měsíčně, které bez jediného řádku kódu píše texty, maily a přehledy. Anthropic ho pod značkou Claude for Small Business dotáhl na víc než 900 000 instalací a přidává vlny bezplatných workshopů, které mají majitele malých firem naučit s nástrojem pracovat (<a href="https://www.businessinsider.com/anthropic-ai-starter-pack-for-small-businesses-2026-9" rel="nofollow">Business Insider, září 2026</a>). Otázka pro českou firmu nezní, jestli podobný balíček pořídit, ale kde přesně přestává stačit.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 17. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si.svg" alt="Malá firma stojí na rozcestí mezi hotovým AI balíčkem a vlastními systémy, do kterých balíček nevidí." width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Rychlý nástup</span>
+  <h2>Proč se AI balíčky <em>množí právě teď</em></h2>
+  <p>Podíl malých amerických firem, které aktivně používají nějakou formu generativní AI, vzrostl ze 23 % v roce 2023 na 58 % v roce 2025 (<a href="https://www.uschamber.com/technology/empowering-small-business-the-impact-of-technology-on-u-s-small-business" rel="nofollow">U.S. Chamber of Commerce, 2025</a>). Podobná rychlost lákala dodavatele jako Anthropic, který vedle velkých korporací cílí i na segment se stovkami tisíc menších podniků. V Česku se taková čísla systematicky nesbírají, ale trend je stejný: majitel firmy dnes narazí na nabídku AI předplatného skoro při každém hledání nástroje pro tým.</p>
+  <p>Anthropic k tomu přidává školení: desítky bezplatných workshopů po amerických městech a stovky dalších, které povedou vyškolení partneři přímo v místních komunitách. Cíl je jasný, dostat hotový nástroj do co nejvíc firem, které si sami žádný AI tým nikdy nepostaví.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Kde balíček přestává stačit</span>
+  <h2>Co hotové předplatné <em>neumí</em></h2>
+  <p>Claude for Small Business a podobné balíčky umí napsat odpověď zákazníkovi, sepsat zápis z porady nebo připravit přehled z čísel, která do něj člověk ručně vloží. Nesahá ale do účetnictví, skladu ani CRM, protože k nim nemá přístup a ani ho mít nesmí bez dalšího nastavení. Jakmile firma chce, aby AI sama viděla stav skladu, párovala platby nebo hlídala splatnosti, končí práce s hotovým předplatným a začíná práce s <a href="/reseni-propojeni">propojením systémů</a>, které si každá firma nastavuje jinak podle toho, s čím pracuje.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Dva různé účely</span>
+  <h2>Kdy stačí předplatné <em>za pár set korun</em></h2>
+  <p>Pro firmu, která potřebuje rychleji psát texty, odpovídat na e-maily nebo si nechat shrnout dlouhý dokument, je hotové předplatné za pár set korun měsíčně dobrý první krok. Řeší to, co si člověk stejně dělal sám v hlavě, jen rychleji.</p>
+  <p>Jakmile ale firma chce, aby AI běžela nepřetržitě, sama vyhodnocovala, co je potřeba udělat, a měla přístup do systémů, které firma používá, potřebuje jiný typ nasazení. <a href="/reseni-ai-zamestnanec">AI se stálým přístupem do systémů</a> a trvalou pamětí je jiný řád investice než předplatné. Kdo takový rozsah nepotřebuje, zůstane u textového asistenta, a to je v pořádku.</p>
+  <p>Rozdíl mezi oběma cestami nepozná firma podle ceny, ale podle toho, kam AI vůbec smí sáhnout. Textový asistent zůstává mimo firemní data, protože k nim ani nemá klíč. AI s přístupem do systémů klíč dostane, a proto je potřeba předem přesně určit, k čemu a s jakým oprávněním.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Zákaznický odpor</span>
+  <h2>Když AI ve firmě <em>vidí i zákazník</em></h2>
+  <p>Část amerických majitelů firem, kteří balíček nasadili, hlásí i nečekanou cenu za jeho použití: kritiku od vlastních zákazníků. Steve Zumoff, majitel tiki baru Spork Island Trading Co. v Pittsburghu, dostal na Google profil podniku několik jednohvězdičkových recenzí poté, co si nechal AI navrhnout ceduli před vchodem (<a href="https://www.businessinsider.com/anthropic-ai-starter-pack-for-small-businesses-2026-9" rel="nofollow">Business Insider, září 2026</a>). Malé firmy se tak ocitají mezi tlakem dodavatelů, ať AI nasadí, a částí zákazníků, které použití AI odrazuje.</p>
+  <p>V Česku řeší podobnou otázku článek 50 AI Actu, který firmám ukládá, aby obsah vytvořený AI <a href="/clanky/chatbot-na-webu-a-texty-od-ai-co-po-vas-od-srpna-chce-ai-act">otevřeně označily</a>. Otevřenost vychází levněji než riziko, že na to zákazník přijde sám.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud firma jen občas potřebuje pomoct s textem, hotové předplatné klidně vydrží roky a nic dalšího řešit nemusí. Když ale má AI sahat do systémů, kde firma vede zakázky, sklad nebo peníze, hodí se probrat, kudy k datům vede nejkratší a nejbezpečnější cesta a kdo výsledek před odesláním zkontroluje, když jde ven pod jménem firmy.</p>
+  <div class="lp-price">
+    <p><b>Nastavím AI se stálým přístupem do vašich systémů a rozsah přístupu určíte vy.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-ai-zamestnanec" class="btn">Napište mi</a></p>
+  </div>
+</section>
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-ai-zamestnanec"><b>AI zaměstnanec</b><small>89 000 Kč + provoz</small><span>Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.</span></a></li>
+    <li><a href="/reseni-podnikova-ai"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7"></script>
+</body>
+</html>

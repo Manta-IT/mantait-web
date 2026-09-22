@@ -95,6 +95,22 @@
     "obrazek": "clanek-eu-resi-zavislost-na-americkem-cloudu-co-znamena-cloudova.svg"
   },
   {
+    "slug": "anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si",
+    "title": "AI startovací balíček od Anthropicu: kde končí a co dál",
+    "description": "Nabídky hotových AI balíčků míří přímo na malé firmy. Kdy stačí předplatné za pár stovek korun a kde už je potřeba přístup do firemních dat.",
+    "date_published": "2026-09-17",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "sluzby": [
+      "reseni-ai-zamestnanec",
+      "reseni-podnikova-ai"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-anthropic-prodava-ai-startovaci-balicek-malym-firmam-co-si.svg"
+  },
+  {
     "slug": "predplatne-nebo-licence-naporad-spocitejte-to-na-pet-let-ne",
     "title": "Předplatné, nebo licence napořád? Počítejte na pět let",
     "description": "Majitel firmy srovnává cenu softwaru na faktuře, ne cenu za dobu, po kterou poběží. Spočítejte pětiletý součet dřív, než podepíšete smlouvu.",
