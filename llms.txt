@@ -57,6 +57,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Dodavatel končí podporu systému. Upgrade není jediná volba](https://mantait.cz/clanky/dodavatel-konci-podporu-vaseho-systemu-upgrade-u-nej-neni): Dodavatel vám oznámil konec podpory a nabízí drahý upgrade? Zjistěte, jak spočítat náklady na pět let dopředu a kdy má smysl systém raději vyměnit.
 - [Propojení banky s účetnictvím: výpisy a párování plateb](https://mantait.cz/clanky/propojeni-banky-s-ucetnictvim-vypisy-parovani-plateb): Účetní pořád ručně stahuje výpisy a páruje platby s fakturami? Ukazuji, co zvládne Pohoda sama a kdy už je na místě propojení na míru.
 - [Cyber Resilience Act: hlášení zranitelností do 24 hodin](https://mantait.cz/clanky/cyber-resilience-act-a-povinne-hlaseni-zneuzivanych): Prodáváte software nebo zařízení s digitální částí? Od 11. září 2026 musíte hlásit zneužívané zranitelnosti do 24 hodin. Zjistěte, co to pro firmu znamená.
+- [Rizika externích SaaS nástrojů a co ukázal Trezor](https://mantait.cz/clanky/vendor-risk-management-a-rizika-externich-saas-nastroju-pro): Používáte desítky cloudových služeb a newsletterů? Případ úniku dat u Trezoru ukazuje, jak snadno selže dodavatel a proč potřebujete audit externích nástrojů.
 
 ## Co Manta IT není
 

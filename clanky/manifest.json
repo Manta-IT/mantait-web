@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vendor-risk-management-a-rizika-externich-saas-nastroju-pro",
+    "title": "Rizika externích SaaS nástrojů a co ukázal Trezor",
+    "description": "Používáte desítky cloudových služeb a newsletterů? Případ úniku dat u Trezoru ukazuje, jak snadno selže dodavatel a proč potřebujete audit externích nástrojů.",
+    "date_published": "2026-09-13",
+    "date_modified": "2026-09-22",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-vendor-risk-management-a-rizika-externich-saas-nastroju-pro.svg"
+  },
+  {
     "slug": "cyber-resilience-act-a-povinne-hlaseni-zneuzivanych",
     "title": "Cyber Resilience Act: hlášení zranitelností do 24 hodin",
     "description": "Prodáváte software nebo zařízení s digitální částí? Od 11. září 2026 musíte hlásit zneužívané zranitelnosti do 24 hodin. Zjistěte, co to pro firmu znamená.",
