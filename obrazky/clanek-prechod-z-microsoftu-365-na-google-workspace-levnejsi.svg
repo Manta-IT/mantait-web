@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Váhy porovnávající dva balíčky kancelářského softwaru, na jedné misce skryté náklady navíc." fill="none">
+<title>Váhy porovnávající dva balíčky kancelářského softwaru, na jedné misce skryté náklady navíc.</title>
+  <circle cx="160" cy="55" r="7" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="2"/>
+  <path d="M160 62v13" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M70 75h180" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M70 75v22" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M250 75v22" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="50" y="97" width="40" height="6" rx="2" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="230" y="97" width="40" height="6" rx="2" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="55" y="79" width="30" height="15" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="55" y="63" width="30" height="15" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="235" y="79" width="30" height="15" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="235" y="63" width="30" height="15" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="233" y="51" width="8" height="10" rx="1.6" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <rect x="243" y="51" width="8" height="10" rx="1.6" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <rect x="253" y="51" width="8" height="10" rx="1.6" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+</svg>

@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -303,6 +303,11 @@
   <url>
     <loc>https://mantait.cz/clanky/vypadl-microsoft-365-a-firma-stala-co-ma-mit-majitel</loc>
     <lastmod>2026-09-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/prechod-z-microsoftu-365-na-google-workspace-levnejsi</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
