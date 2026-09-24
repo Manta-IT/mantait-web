@@ -7,11 +7,22 @@
 // domenu s pomlckou oznacoval za pokus vydavat se za mantait.cz a pripsal
 // prijemci varovani "zprava muze byt nebezpecna". Posta k webovemu formulari
 // musi chodit z tehoz jmena jako web, jinak je podezrela uz z principu.
+import PORTAL from './_pristup/portal.js';
+import { overToken, validujDavku, vlozVodoznak } from './pristup.js';
+
 const NOTIFY_TO = 'petr.kokoska@mantait.cz';
 const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };
 const TEL = '+420 732 329 431';
 
 const FORMS = {
+  // Zadost o pristup k prototypu Podnikove AI (T0924-471, tracer brany).
+  // Predmet a pole `text` cte tools/podnikova-ai-pristup/zadosti.py -- menit jen spolu.
+  // Bez `reply`: PRAVE 1 mail Petrovi s Reply-To zadatele, potvrzeni by byl text ven bez copy.
+  pristup: {
+    subject: 'Pristup: podnikova-ai',
+    fields: ['email', 'text'],
+    dekujeme: '/podnikova-ai-dekujeme',
+  },
   // Onboarding dodavatelu (T0831-17). Klice MUSI sedet na
   // specs/dodavatele/sloupce.json (zdroj: formular) -- hlida
   // scripts/dodavatele_formular.py --worker-check. Predmet MUSI sedet na
@@ -228,7 +239,7 @@ async function handleForm(request, env, formName, ctx) {
   // by se tise ztratil; OWASP review M2)
   if (data.website || data.kontrolni_udaj) return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 
-  const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele' }[formName] || '/kontakt';
+  const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele', pristup: '/podnikova-ai/#pristup' }[formName] || '/kontakt';
   const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
 
   const email = (data.email || '').trim();
@@ -282,7 +293,7 @@ async function handleForm(request, env, formName, ctx) {
   }
   if (robot) {
     console.log(JSON.stringify({ event: 'form.robot', form: formName }));
-  } else if (email) {
+  } else if (email && form.reply) {
     // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit
     // request. waitUntil: bezi az PO odpovedi -- cekani na druhy mail drzelo
     // redirect 2-4 s a svadelo k opakovanemu kliknuti (4 maily, 31. 8.).
@@ -291,6 +302,60 @@ async function handleForm(request, env, formName, ctx) {
     if (ctx) ctx.waitUntil(potvrzeni); else await potvrzeni;
   }
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
+}
+
+const ODKAZ_NEPLATI = '<!doctype html><html lang="cs"><meta charset="utf-8"><title>Odkaz neplatí</title>'
+  + '<body><h1>Odkaz neplatí</h1><p>Platnost odkazu vypršela nebo byl zrušen.</p></body></html>';
+
+// Osobni odkaz /p/<token> na prototyp. `_headers` se na odpovedi Workeru
+// neaplikuje, proto hlavicky nastavuje primo tady.
+async function handlePristup(request, env, retezec) {
+  if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
+  const zrusene = new Set(String(env.PRISTUP_ZRUSENE || '').split(',').map((s) => s.trim()).filter(Boolean));
+  const dnes = new Date().toISOString().slice(0, 10);
+  const token = await overToken(retezec, env.PRISTUP_KLIC, dnes, zrusene);
+  if (!token) {
+    return new Response(ODKAZ_NEPLATI, { status: 403, headers: {
+      'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex',
+    } });
+  }
+  console.log(JSON.stringify({ event: 'pristup.otevreno', z: token.z }));
+  return new Response(vlozVodoznak(PORTAL, token, retezec), { headers: {
+    'Content-Type': 'text/html; charset=utf-8',
+    'Cache-Control': 'private, no-store',
+    'X-Robots-Tag': 'noindex',
+    'X-Content-Type-Options': 'nosniff',
+    'Referrer-Policy': 'no-referrer',   // token je v URL
+    'Content-Security-Policy': "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; "
+      + "img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+  } });
+}
+
+// Davka udalosti mereni z portalu -> D1. Bez env.DB (produkce do nastaveni
+// D1 Petrem) 503, nic se netvari jako ulozene.
+async function handleMereni(request, env) {
+  if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+  const origin = request.headers.get('origin');
+  if (origin && origin !== new URL(request.url).origin) return new Response('Forbidden', { status: 403 });
+  if (Number(request.headers.get('content-length') || 0) > 16 * 1024) return new Response('Too large', { status: 413 });
+  let telo;
+  try {
+    telo = JSON.parse(await request.text());
+  } catch {
+    return new Response('Bad request', { status: 400 });
+  }
+  const d = validujDavku(telo);
+  if (!d) return new Response('Bad request', { status: 400 });
+  const zrusene = new Set(String(env.PRISTUP_ZRUSENE || '').split(',').map((s) => s.trim()).filter(Boolean));
+  const token = await overToken(d.t, env.PRISTUP_KLIC, new Date().toISOString().slice(0, 10), zrusene);
+  if (!token) return new Response('Forbidden', { status: 403 });
+  if (!env.DB) return new Response('Service unavailable', { status: 503 });
+  const prijato = Date.now();
+  await env.DB.batch(d.u.map((x) => env.DB
+    .prepare('INSERT INTO udalosti (z, v, o, ts, prijato) VALUES (?, ?, ?, ?, ?)')
+    .bind(token.z, x.v, x.o, x.ts, prijato)));
+  console.log(JSON.stringify({ event: 'mereni.prijato', z: token.z, pocet: d.u.length }));
+  return new Response(null, { status: 204 });
 }
 
 // Pro scripts/test-mail.mjs -- overuje sestaveni MIME a odeslani proti
@@ -358,7 +423,7 @@ function pustDal(klic) {
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
-    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel)$/);
+    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel|pristup)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       // Cizi stranka nesmi odeslat formular jmenem navstevnika. Origin muze
@@ -375,6 +440,11 @@ export default {
       }
       return handleForm(request, env, match[1], ctx);
     }
+
+    // Osobni odkaz a mereni nepodlehaji brzde pustDal (ta hlida posilani mailu).
+    const p = pathname.match(/^\/p\/([A-Za-z0-9_.-]{1,512})$/);
+    if (p) return handlePristup(request, env, p[1]);
+    if (pathname === '/mereni') return handleMereni(request, env);
 
     // Bez koncoveho lomitka, at /kontakt a /kontakt/ konci stejne.
     const cesta = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;

@@ -31,3 +31,8 @@ specs/
 .superpowers/
 clanky/_template.html
 _mobil-test.html
+# Prototyp Podnikove AI je jen za osobnim tokenem (/p/<token> ve worker.js).
+# Bez tohoto radku by byl cely portal verejne na /_pristup/portal.js.
+_pristup/
+# Logika brany je modul Workeru, ne verejny asset (jako worker.js).
+pristup.js
