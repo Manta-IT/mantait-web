@@ -1,0 +1,71 @@
+{
+ "_": "GENEROVANO z _meta/predpisy/ (scripts/stroj/predpisy.py vygeneruj), needitovat",
+ "predpisy": [
+  {
+   "id": "W01",
+   "vzor": "\\bproviz\\w*",
+   "kontext": null,
+   "proc": "provize na webu v zadne podobe (Petr 19. 9.)"
+  },
+  {
+   "id": "W02",
+   "vzor": "web standard|web quick|16 900|8 900\\b",
+   "kontext": null,
+   "proc": "stara nabidka webu (od 8. 9. Web pro dobu AI 35 000)"
+  },
+  {
+   "id": "W03",
+   "vzor": "ai linka|\\bdiscovery\\b|\\bscope\\b|\\bstack\\b|onboarding|middleware|\\bcms\\b|\\broi\\b",
+   "kontext": null,
+   "proc": "interni zargon"
+  },
+  {
+   "id": "Z01",
+   "vzor": "kokoska it",
+   "kontext": null,
+   "proc": "nazev Kokoska IT nebyl nikdy verejny -- zadny rebrand narativ"
+  },
+  {
+   "id": "Z02",
+   "vzor": "ultra ?mar\\w*|ultraconfig",
+   "kontext": null,
+   "proc": "Ultramarin/UltraConfig se nikde neuvadi (zakaz Petra, bez vyjimky)"
+  },
+  {
+   "id": "Z26",
+   "vzor": "planet ?line",
+   "kontext": null,
+   "proc": "PlanetLine se jako reference nikdy neuvadi (Petr 17. 9. 2026)"
+  },
+  {
+   "id": "Z05",
+   "vzor": "\\brucim\\b|\\brucime\\b|\\bruceni\\b|(prevezmu|prebiram|nesu) (zod|od)povednost",
+   "kontext": null,
+   "proc": "rucim/odpovednost jako slib -- pravni garance, kterou jedna osoba nedava"
+  },
+  {
+   "id": "Z05",
+   "vzor": "(zod|od)povednost",
+   "kontext": "prioritou a odpovednosti",
+   "proc": "odpovednost -- over, ze to neni slib"
+  },
+  {
+   "id": "Z07",
+   "vzor": "bez dph",
+   "kontext": "(licenc|rocne|mesicne|dodavatel)[^.]{0,60}bez dph|bez dph[^.]{0,40}(licenc|dodavatel)",
+   "proc": "u vlastni ceny \"nejsem platce DPH\", nikdy \"bez DPH\" (u ceny dodavatele smi)"
+  },
+  {
+   "id": "Z20",
+   "vzor": "na rozdil od (agentur|konkurence)",
+   "kontext": null,
+   "proc": "vymezovani vuci konkurenci"
+  },
+  {
+   "id": "W10",
+   "vzor": "(zadost|ji)\\s+(vyplnime|zpracujeme)\\s+i\\s+podame|na plnou moc\\s+(ji\\s+)?podame|podame ji za vas|dotace na klic|od zameru po podani zadosti",
+   "kontext": null,
+   "proc": "na webu se netvrdi, kdo zadost podava -- rozhoduje se v obchodnim hovoru"
+  }
+ ]
+}

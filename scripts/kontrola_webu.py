@@ -14,11 +14,10 @@ Co hlida (jen soubory na disku, zadny server):
  6. presmerovani: `_redirects` a zalozni mapa ve worker.js sedi, cile
     existuji a nevedou na dalsi presmerovani
 
-Nalez = exit 1 = commit se zastavi. Vyjimky, ktere jsou v poradku (cena
-dodavatele "bez DPH", tabulka
-ze zakona), jsou ve VYJIMKY -- rozsiruj je jen s duvodem v komentari.
+Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
+v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
 """
-import io, json, os, re, sys
+import io, json, os, re, sys, unicodedata
 
 KOREN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
@@ -28,21 +27,19 @@ STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
            'weby.html',
            'o-mne.html', 'raynet.html', 'dotace-mas.html', 'clanky/index.html']
 TYPO = {'em-dash': '—', 'en-dash': '–', 'smart quotes': '[“”„‘’]', 'ellipsis': '…'}
-ZAKAZ = [r'\bproviz\w*', r'\bručím\b', r'\bručení\b', r'odpovědnost\w*', r'Kokoška IT', r'Ultramar\w*',
-         r'Web Standard', r'Web Quick', r'16 900', r'8 900\b', r'AI linka', r'\bdiscovery\b',
-         r'\bscope\b', r'\bstack\b', r'onboarding', r'middleware', r'\bCMS\b', r'\bROI\b',
-         r'bez DPH', r'na rozdíl od (agentur|konkurence)',
-         # Dotace: hlavni zprava je spoluprace s kancelarami (Petr 10. 9., T0910-61).
-         # "podame to za vas" z nas dela konkurenci kancelari, ktere jsou zaroven
-         # partnersky kanal i cilova skupina outreach -- a ty web ctou driv nez mail.
-         r'(žádost|ji)\s+(vyplníme|zpracujeme)\s+i\s+podáme', r'na plnou moc\s+(ji\s+)?podáme',
-         r'podáme ji za vás', r'[Dd]otace na klíč', r'od záměru po podání žádosti']
-# (soubor nebo '*', regex na kontext) -> povolene. Duvod v komentari.
-VYJIMKY = [
-    ('*', r'(licenc|ročně|měsíčně|dodavatel)[^.]{0,60}bez DPH'),   # cena dodavatele, ne nase
-    ('*', r'bez DPH[^.]{0,40}(licenc|dodavatel)'),
-    ('reseni-bezpecnost.html', r'prioritou a odpovědností'),         # popis tabulky ze zakona, ne slib
-]
+# 3. Zakazana slova: jedine misto je ../_meta/predpisy/ (vrstvy akce-web, hlas-manta-it,
+# domena-dotace-mas; T0923-104). Web je samostatny repo, cte vygenerovanou kopii
+# scripts/predpisy.json (`python -X utf8 scripts/stroj/predpisy.py vygeneruj` v rootu workspace;
+# scripts/ je v .assetsignore, takze interni pravidla se na web nenasazuji).
+# Kazde pravidlo nese vlastni `kontext` (vyjimku) -- do 24. 9. platila vyjimka "cena
+# dodavatele bez DPH" pro VSECHNA slova v okoli a schovala napr. "provize" vedle licence.
+PREDPISY = json.load(io.open(os.path.join(KOREN, 'scripts', 'predpisy.json'), encoding='utf-8'))['predpisy']
+
+def srovnej(t):
+    """Mala pismena bez diakritiky -- v tomhle tvaru jsou vzory predpisu."""
+    t = unicodedata.normalize('NFKD', t.replace('\u00a0', ' ').lower())
+    return ''.join(z for z in t if not unicodedata.combining(z))
+
 CENY = {'reseni-mapa-firmy.html': '39 000', 'reseni-ai-zamestnanec.html': '89 000',
         'weby.html': '35 000', 'dotace-mas.html': '30 000'}
 nalezy = []
@@ -76,9 +73,6 @@ def soubor_pro(url, odkud):
         return plna + '.html'
     return plna  # neexistuje -> nalez
 
-def povoleno(soubor, kontext):
-    return any((f == '*' or f == soubor) and re.search(v, kontext, flags=re.I) for f, v in VYJIMKY)
-
 for s in STRANKY:
     cesta = os.path.join(KOREN, s)
     if not os.path.exists(cesta):
@@ -93,13 +87,14 @@ for s in STRANKY:
     for k, v in TYPO.items():
         n = len(re.findall(v, html))
         if n: nalezy.append((s, 'typografie ' + k, str(n)))
-    t = text_bez_tagu(html)
-    for z in ZAKAZ:
-        for m in re.finditer(z, t, flags=re.I):
-            ctx = t[max(0, m.start()-70):m.end()+70].replace('\n', ' ')
-            ctx = re.sub(r'\s+', ' ', ctx).strip()
-            if not povoleno(s, ctx):
-                nalezy.append((s, 'slovo ' + m.group(0), ctx))
+    t = re.sub(r'\s+', ' ', srovnej(text_bez_tagu(html)))
+    for p in PREDPISY:
+        for m in re.finditer(p['vzor'], t):
+            ctx = t[max(0, m.start()-80):m.end()+80].strip()
+            # vyjimka omlouva jen nalez, ktery sama pokryva (jako predpisy.omluveno)
+            if not (p.get('kontext') and any(k.start() <= m.start() and k.end() >= m.end()
+                                             for k in re.finditer(p['kontext'], t))):
+                nalezy.append((s, '%s %s' % (p['id'], m.group(0)), ctx))
 
 idx = io.open(os.path.join(KOREN, 'index.html'), encoding='utf-8').read()
 for s, c in CENY.items():
