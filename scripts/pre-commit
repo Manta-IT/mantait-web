@@ -42,7 +42,7 @@ fi
 # Stranky, ktere se lisi JEN ?v= (bump odvozeny z obsahu CSS/JS, zadna cizi prace), jdou
 # do commitu vzdy. 24. 9.: bez toho zustavaly necommitnute a blokovaly nasazeni-produkce,
 # ve worktree dilny se ztratily a produkce odkazovala na stare CSS/JS (62 stranek).
-python scripts/bump-cache.py --jen-bumpy | while IFS= read -r f; do
+python scripts/bump-cache.py --jen-bumpy | tr -d '\r' | while IFS= read -r f; do
   git add "$f"
 done
 
