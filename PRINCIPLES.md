@@ -84,7 +84,7 @@ z webu i "IT má firmu posouvat. Ne zaměstnávat vedení." (ta smí zůstat v l
 
 ### Výjimky — brand názvy zachovat
 - AI plán do 48 hodin, AI zaměstnanec
-- Web Standard, Web Quick
+- Web pro dobu AI (od 8. 9. 2026; Web Standard / Quick zrušeny)
 - IT governance (Petr o tom rozhodl, je to název hlavní služby)
 - Product Discovery a Product Ownership (název dílčí služby)
 - Raynet, Pohoda, Excel, Outlook, Jira (vlastní jména)
@@ -188,7 +188,7 @@ při zmenšení 4x zmizí. Změna palety = přegenerovat celou sadu, ne kreslit 
 | AI zaměstnanec | 89 000 Kč, provoz od 8 000 Kč měsíčně | hranol; protiklad proti chatbotu |
 
 Ceník na homepage navíc: AI plán do 48 hodin 9 900 Kč; dílčí zakázky
-10 000 Kč/den; web 16 900 / 8 900 Kč; dotace na digitalizaci podle rozpočtu projektu (ceník v iniciativě, na webu generovaný; končí podáním).
+10 000 Kč/den; Web pro dobu AI 35 000 Kč (web/sluzby.json); dotace na digitalizaci podle rozpočtu projektu (ceník v iniciativě, na webu generovaný; končí podáním).
 
 Pět stránek sdílí kostru (`sluzba.css`/`sluzba.js`), ale prostředek se liší --
 pět stránek se stejnou skladbou a vyměněnými slovy by četlo jako generované.
@@ -279,8 +279,8 @@ rozsvítí). Formulace pásu: "Projekty, které jsem vedl".
 
 Calendly bylo z webu odstraněno ve dvou krocích: 7. 8. 2026 z indexu a kontaktu
 (Petr: "vypadá noobsky"), 24. 8. 2026 ze zbylých 30 stránek včetně placené
-landing page /reseni-ai. Plánované event types (Web Standard briefing, Raynet
-konzultace a další) nevzniknou.
+landing page /reseni-ai. Plánované event types (briefing webu, konzultace
+Raynetu a další) nevzniknou.
 
 Všechna CTA vedou na kontakt (od 25. 8. znějí "Napište mi"). Důvody:
 - Externí widget přidával blokující CSS a JS z cizí domény na každou stránku.

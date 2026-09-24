@@ -72,7 +72,7 @@ git push origin master
 ### Copywriting
 - **Claim** (od 2026-07-24): "Vy řídíte firmu. Já vaše IT." Starý claim "Konzultanti doporučují. Já přebírám řízení." je ZRUŠEN -- nikde nepoužívat. Žádné vymezování vůči konkurenci, žádné "ručím/odpovědnost" v copy.
 - **ASCII-only.** Žádné em-dash (—), smart quotes („" ‚'), ellipsis (…). Renderuje se rozbitě. Používej regular `-`, `"`, `'`, `...`.
-- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb: AI Assessment, AI Assessment Lite, Web Standard, Web Quick, Raynet, Pohoda, IT governance.
+- **Bez IT žargonu v body copy.** Cílovka jsou ne-tech SMB majitelé (50+ let, brýle na blízko). Výjimka jen pro brand názvy služeb (PRINCIPLES.md, Výjimky): AI plán do 48 hodin, AI zaměstnanec, Web pro dobu AI, Raynet, Pohoda, IT governance.
 - **Domluvit schůzku** jako primární CTA. Ne "hovor", ne "konzultace", ne "objednat" (falešný slib pro 30min hovor).
 - **Žádný humor typu Baťa cvičky.** Profesionální tón.
 - **Místo žargonu používej:** paušál (ne retainer), propojovací aplikace (ne middleware), zaškolím (ne naučím s), zavádění (ne adopce), pravidelný přehled (ne reporting), průzkum / mapování zadání (ne discovery v textu — Product Discovery jako název služby OK).
@@ -105,7 +105,7 @@ git push origin master
 - **Reference (Grandit IT éra 2015-2022)**: NDA expirované, jména projektů + loga + screenshoty OK (čeká na podklady od Petra).
 - **Reference (Blueghost éra 2022-2025)**: NDA platí, anonymně.
 - **Reference (Manta IT — MHA, PlanetLine, Ultra Marine)**: pod NDA, obecný popis + tag "Case study under NDA". UltraConfig.cz NDA neplatí.
-- **Calendly**: aktuálně všechny CTA vedou na obecný 30min event (`https://calendly.com/petr-kokoska-mantait/30min`). Po Calendly Pro upgrade Petr vytvoří event types pro AI Assessment / AI Assessment Lite / Web Standard / Web Quick / IT governance — pak nahradit (TODO komentáře v HTML).
+- **Calendly** z webu odstraněno (7. 8. a 24. 8. 2026, PRINCIPLES.md) -- CTA vede na formulář "Napište mi", žádné event types nevzniknou.
 
 ## Kontext a souvislosti
 - **Parent workspace:** `../` (`ventures/manta-it/`) — branding, lead gen, market research.
