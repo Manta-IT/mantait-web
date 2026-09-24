@@ -189,6 +189,27 @@ for zdroj in mapa:
     if zdroj not in pravidla and not zdroj.startswith(prefixy):
         nalezy.append(('worker.js', 'presmerovani chybi v _redirects', zdroj))
 
+# --- 7. skripty neblokuji vykresleni ------------------------------------
+# sluzba.js a mobil.js bez `defer` drzely LCP nad 2,5 s na 32 z 36 stranek
+# (audit CWV 17. 9., T0917-114). S `defer` bezi az po parsovani, takze inline
+# skript, ktery vola odkryj() ze sluzba.js, musi byt type="module" (ten se
+# odklada taky a bezi az po nem) -- jinak ReferenceError a scena se neodkryje.
+for dirpath, _, soubory in os.walk(KOREN):
+    if 'node_modules' in dirpath or os.sep + '.' in dirpath:
+        continue
+    for jmeno in soubory:
+        if not jmeno.endswith('.html') or jmeno.startswith('_mobil-test'):  # testovaci harness
+            continue
+        cesta = os.path.join(dirpath, jmeno)
+        s = os.path.relpath(cesta, KOREN).replace('\\', '/')
+        html = io.open(cesta, encoding='utf-8').read()
+        for tag in re.findall(r'<script[^>]*src="/?(?:sluzba|mobil)\.js[^>]*>', html):
+            if ' defer' not in tag:
+                nalezy.append((s, 'skript bez defer', tag))
+        for tag, telo in re.findall(r'(<script[^>]*>)(.*?)</script>', html, flags=re.S):
+            if 'odkryj(' in telo and 'type="module"' not in tag:
+                nalezy.append((s, 'odkryj() v klasickem skriptu', tag))
+
 for n in nalezy:
     print('  %-28s %-24s %s' % n)
 print('[kontrola_webu] %d nalezu, %d stranek' % (len(nalezy), len(STRANKY)))
