@@ -195,6 +195,24 @@ async function sendMail(token, to, subject, text, replyTo) {
   if (!res.ok) throw new Error(`Gmail ${res.status}: ${await res.text()}`);
 }
 
+/* Roboti z kontaktniho formulare (T0923-92). 20.-23. 9. prislo pet zprav, ktere
+   proslo honeypotem: jmeno jen prijmeni, cizi gmail/hotmail, zadna firma ani
+   telefon a sablona "Kontaktujte me prosim e-mailem -- manta it." nebo prosba
+   o newsletter ("confirm my subscription"). Je to subscription bombing: adresa
+   patri obeti a nase potvrzeni by ji zasypavalo. Robot proto nedostane
+   potvrzeni a notifikace jde bez Reply-To s jinym predmetem -- stav kampane
+   (scripts/stav_kampane.py) formular pozna jen podle Reply-To, takze z toho
+   nevznikne triaz, task ani kvantum. Mail ale do schranky dorazi: kdyby se
+   filtr spletl, clovek se neztrati, jen neni ve fronte. */
+const ROBOT_SUBJECT = 'Robot z kontaktního formuláře (bez odpovědi)';
+const ROBOT_TEXT =/subscri|newsletter|news and updates|email updates|company news|kontaktujte mě prosím e-mailem\s*[—–-]/i;
+
+function jeRobot(formName, data) {
+  if (formName !== 'kontakt') return false;
+  const ma = (f) => String(data[f] || '').trim() !== '';
+  return !ma('telefon') && !ma('firma') && ROBOT_TEXT.test(String(data.zprava || ''));
+}
+
 async function handleForm(request, env, formName, ctx) {
   const form = FORMS[formName];
   // Nejdelsi poctivy formular (dodavatele) ma pod 8 kB. 64 kB je strop, po
@@ -247,7 +265,9 @@ async function handleForm(request, env, formName, ctx) {
     // radky se srazeji u VSECH formularu: u strojovych proti injekci klicu,
     // u lidskych proti podvrzenym radkum v mailu (OWASP review L1)
     .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000).replace(/[\r\n]+/g, ' ')}`);
-  const body = `${form.subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${(request.headers.get('referer') || 'webu').replace(/[\r\n]+/g, ' ').slice(0, 200)}`;
+  const robot = jeRobot(formName, data);
+  const subject = robot ? ROBOT_SUBJECT : form.subject;
+  const body = `${subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${(request.headers.get('referer') || 'webu').replace(/[\r\n]+/g, ' ').slice(0, 200)}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {
     return errorPage('Odesílání e-mailu není na serveru nastavené.', { zpet });
@@ -255,12 +275,14 @@ async function handleForm(request, env, formName, ctx) {
   let token;
   try {
     token = await accessToken(env);
-    await sendMail(token, NOTIFY_TO, form.subject, body, email || undefined);
+    await sendMail(token, NOTIFY_TO, subject, body, robot ? undefined : email || undefined);
   } catch (e) {
     console.error('notifikace selhala', e);
     return errorPage('Server odmítl zprávu odeslat.', { zpet });
   }
-  if (email) {
+  if (robot) {
+    console.log(JSON.stringify({ event: 'form.robot', form: formName }));
+  } else if (email) {
     // potvrzeni klientovi je nice-to-have: lead uz mame, tohle nesmi shodit
     // request. waitUntil: bezi az PO odpovedi -- cekani na druhy mail drzelo
     // redirect 2-4 s a svadelo k opakovanemu kliknuti (4 maily, 31. 8.).
