@@ -74,8 +74,13 @@
   // Konverze: odeslany formular. Worker po ulozeni presmeruje na /dekujeme,
   // takze konverzi hlasi ta stranka. Bez tohoto se formularovy lead nemeri
   // vubec a kampan se vyhodnoti jako nulova (nalez oponentury 2026-08-11).
+  // `zdroj` odlisi lead z /kalkulacka (Worker ho posila jen overeny, T0924-185).
   if (/^\/dekujeme/.test(location.pathname)) {
-    gtag('event', 'conversion', { send_to: CONVERSION, value: 1.0, currency: 'CZK' });
+    var zdroj = new URLSearchParams(location.search).get('zdroj');
+    gtag('event', 'conversion', {
+      send_to: CONVERSION, value: 1.0, currency: 'CZK',
+      zdroj: zdroj && /^[a-z0-9-]{1,40}$/.test(zdroj) ? zdroj : 'web'
+    });
   }
 
   // Konverze: klik na telefon.
