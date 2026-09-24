@@ -13,6 +13,11 @@ Co hlida (jen soubory na disku, zadny server):
     nazev sedi se jmenem sluzby v JSON-LD (META v prenos.py)
  6. presmerovani: `_redirects` a zalozni mapa ve worker.js sedi, cile
     existuji a nevedou na dalsi presmerovani
+ 7. skripty neblokuji vykresleni: `sluzba.js`/`mobil.js` maji `defer`,
+    `odkryj()` bezi jen v `type="module"`
+ 8. ikony v hlavicce: kazda stranka s `<head` ma cely blok ikon
+    (favicon.svg, favicon-32.png, apple-touch-icon, manifest) a assety
+    z bloku existuji na disku
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
@@ -204,6 +209,30 @@ for dirpath, _, soubory in os.walk(KOREN):
         for tag, telo in re.findall(r'(<script[^>]*>)(.*?)</script>', html, flags=re.S):
             if 'odkryj(' in telo and 'type="module"' not in tag:
                 nalezy.append((s, 'odkryj() v klasickem skriptu', tag))
+
+# --- 8. ikony v hlavicce -------------------------------------------------
+IKONY_HLAVICKA = (('href="/favicon.svg"', 'favicon.svg'),
+                   ('href="/favicon-32.png"', 'favicon-32.png'),
+                   ('rel="apple-touch-icon"', 'apple-touch-icon.png'),
+                   ('rel="manifest"', 'site.webmanifest'))
+for dirpath, _, soubory in os.walk(KOREN):
+    if 'node_modules' in dirpath or os.sep + '.' in dirpath:
+        continue
+    for jmeno in soubory:
+        if not jmeno.endswith('.html') or jmeno.startswith('_mobil-test') or jmeno.startswith('brand-lab'):
+            continue
+        cesta = os.path.join(dirpath, jmeno)
+        s = os.path.relpath(cesta, KOREN).replace('\\', '/')
+        html = io.open(cesta, encoding='utf-8').read()
+        if '<head' not in html:
+            continue
+        for retezec, co in IKONY_HLAVICKA:
+            if retezec not in html:
+                nalezy.append((s, 'ikony chybi v hlavicce', co))
+
+for jmeno in ('favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'site.webmanifest'):
+    if not os.path.exists(os.path.join(KOREN, jmeno)):
+        nalezy.append(('web', 'ikona neexistuje', jmeno))
 
 for n in nalezy:
     print('  %-28s %-24s %s' % n)
