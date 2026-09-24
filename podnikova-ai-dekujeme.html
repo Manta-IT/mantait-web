@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Podekovani po zadosti o pristup k prototypu Podnikove AI -- neindexovat -->
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Potvrzení přijetí žádosti o přístup do ukázky Podnikové AI.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Žádost přijata - Manta IT</title>
+  <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/pisma.css?v=e45c8d6">
+  <style>
+:root {
+  --papir: #FBFBF9; --inkoust: #101413;
+  --akcent: #0B6E4F; --tlum: #5E6663;
+  --disp: 'Outfit', system-ui, sans-serif;
+  --ui: 'Manrope', system-ui, sans-serif;
+  --kriv: cubic-bezier(.23, 1, .32, 1);
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--papir); color: var(--inkoust);
+  font: 400 15.5px/1.6 var(--ui); -webkit-font-smoothing: antialiased; }
+
+.horni-nav { display: flex; align-items: center; justify-content: space-between;
+  max-width: 1040px; margin: 0 auto; padding: 18px 24px; }
+.horni-nav .brand { display: inline-flex; align-items: center; gap: 11px;
+  color: var(--inkoust); text-decoration: none;
+  font: 600 17px var(--disp); letter-spacing: -.01em; }
+.znak { width: 30px; height: 30px; display: block; }
+.horni-nav .zpet-web { color: var(--tlum); text-decoration: none;
+  font: 500 13.5px var(--ui); border-bottom: 1px solid transparent;
+  transition: color 200ms var(--kriv); }
+@media (hover: hover) { .horni-nav .zpet-web:hover { color: var(--akcent); } }
+
+.hero { max-width: 1040px; margin: 0 auto; padding: 64px 24px 48px; }
+.hero h1 { font: 400 clamp(34px, 5vw, 52px)/1.06 var(--disp);
+  letter-spacing: -.03em; max-width: 17ch; }
+.hero h1 em { font-style: normal; color: var(--akcent); font-weight: 500; }
+.hero .perex { margin-top: 18px; max-width: 58ch; color: var(--tlum);
+  font-size: 16.5px; }
+
+footer { max-width: 1040px; margin: 0 auto; padding: 26px 24px 34px;
+  display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between;
+  color: var(--tlum); font-size: 12.5px; }
+footer .fb { font: 600 14px var(--disp); color: var(--inkoust); }
+footer .fb span { color: var(--akcent); }
+</style>
+</head>
+<body>
+
+<nav class="horni-nav">
+  <a href="https://mantait.cz/" class="brand"><svg class="znak" viewBox="0 0 64 64" role="img" aria-label="Manta IT"><rect width="64" height="64" rx="17" fill="#0B6E4F"/><rect x="24" y="17" width="23" height="23" rx="6" fill="#FBFBF9"/></svg>Manta IT</a>
+  <a href="https://mantait.cz/" class="zpet-web">mantait.cz</a>
+</nav>
+
+<header class="hero">
+  <!-- COPY-PLACEHOLDER: text podekovani ceka na growth (manta-copy + humanizer), T0924-472 -->
+  <h1>Žádost mám, <em>díky</em>.</h1>
+  <p class="perex">Přečtu si, o co vám jde, a přístup do ukázky vám pošlu osobně e-mailem.</p>
+</header>
+
+
+<footer>
+  <div class="fb">Manta<span>IT</span> &middot; Petr Kokoška</div>
+  <div>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; &copy; 2026</div>
+</footer>
+
+</body>
+</html>

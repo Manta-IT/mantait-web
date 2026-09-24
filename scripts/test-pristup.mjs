@@ -2,7 +2,7 @@
 // odkaz /p/<token> s vodoznakem, mereni do D1. Cely Worker, Gmail a D1 podvrzene.
 //   node web/scripts/test-pristup.mjs
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import worker from '../worker.js';
 import { podpisToken, vlozVodoznak } from '../pristup.js';
 
@@ -20,6 +20,7 @@ globalThis.fetch = async (url, init) => {
   const predmet = /^Subject: (.*)$/m.exec(hlavicky)[1];
   const telo = zbytek.join('\r\n\r\n');
   odeslane.push({
+    to: /^To: (.*)$/m.exec(hlavicky)?.[1],
     replyTo: /^Reply-To: (.*)$/m.exec(hlavicky)?.[1],
     predmet: predmet.startsWith('=?UTF-8?B?')
       ? new TextDecoder().decode(Uint8Array.from(atob(predmet.slice(10, -2)), (c) => c.charCodeAt(0)))
@@ -111,6 +112,43 @@ try {
   assert.equal((await mereni({ t: cizi, u: u1 })).status, 403);
   assert.equal((await mereni({ t: platny, u: u1 }, bezDb)).status, 503);
   assert.equal(radky.length, 1, 'odmitnute davky nic nezapsaly');
+
+  // T0924-472 (rez 2): kriteria 1 a 12
+  const zadost = (pole, ip = String(Math.random())) => worker.fetch(req('/api/pristup', {
+    method: 'POST', body: new URLSearchParams(pole), headers: { 'cf-connecting-ip': ip },
+  }), env, null);
+  const TEXT = 'Tajny zamer 7731: AI nad objednavkami';
+
+  // a) zadost -> 303 na dekujeme, prave 1 mail Petrovi s Reply-To zadatele
+  odeslane.length = 0;
+  res = await zadost({ email: 'jan@firma.cz', text: TEXT, kontrolni_udaj: '' });
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/podnikova-ai-dekujeme'));
+  assert.equal(odeslane.length, 1, 'a) PRAVE 1 mail');
+  assert.equal(odeslane[0].to, 'petr.kokoska@mantait.cz');
+  assert.equal(odeslane[0].predmet, 'Pristup: podnikova-ai');
+  assert.equal(odeslane[0].replyTo, 'jan@firma.cz');
+
+  // b) honeypot -> 303, 0 mailu
+  odeslane.length = 0;
+  res = await zadost({ email: 'jan@firma.cz', text: TEXT, kontrolni_udaj: 'bot' });
+  assert.equal(res.status, 303);
+  assert.equal(odeslane.length, 0, 'b) honeypot bez mailu');
+
+  // c) brzda: 6 zadosti ze stejne IP -> 5x 303, 6. = 429
+  const ip = 'brzda-' + Math.random();
+  for (let i = 0; i < 5; i++) {
+    assert.equal((await zadost({ email: 'jan@firma.cz', text: TEXT }, ip)).status, 303, `c) zadost ${i + 1}`);
+  }
+  res = await zadost({ email: 'jan@firma.cz', text: TEXT }, ip);
+  assert.equal(res.status, 429, 'c) 6. zadost');
+  assert.ok((await res.text()).includes('/podnikova-ai/#pristup'), 'c) zpet na formular');
+
+  // d) povinna pole -> 400, 0 mailu
+  odeslane.length = 0;
+  assert.equal((await zadost({ email: 'jan@firma.cz', text: '  ' })).status, 400, 'd) chybi text');
+  assert.equal((await zadost({ text: TEXT })).status, 400, 'd) chybi email');
+  assert.equal(odeslane.length, 0, 'd) bez mailu');
 } finally {
   console.log = puvodniLog;
 }
@@ -121,6 +159,16 @@ assert.ok(logy.some((l) => l.includes('"mereni.prijato"')));
 for (const l of logy) {
   assert.ok(!l.includes('jan@firma.cz') && !l.includes('Jan Novák'), `log bez osobnich udaju: ${l}`);
 }
+// e) log zadosti: udalost ano, e-mail ani text ne
+assert.ok(logy.some((l) => l.includes('"event":"pristup.zadost"')), 'e) pristup.zadost');
+for (const l of logy) assert.ok(!l.includes('Tajny zamer 7731'), `e) log bez textu zadosti: ${l}`);
+
+// f) formular na vysvetlovaci strance a podekovani
+const prototyp = readFileSync(new URL('../../specs/podnikova-ai/prototyp/index.html', import.meta.url), 'utf8');
+for (const s of ['action="/api/pristup"', 'name="email"', 'name="text"', 'name="kontrolni_udaj"']) {
+  assert.ok(prototyp.includes(s), `f) index.html obsahuje ${s}`);
+}
+assert.ok(existsSync(new URL('../podnikova-ai-dekujeme.html', import.meta.url)), 'f) dekujeme stranka');
 
 // staticke: portal neni verejny asset a odpovida zdroji
 assert.match(readFileSync(new URL('../.assetsignore', import.meta.url), 'utf8'), /^_pristup\/$/m);
