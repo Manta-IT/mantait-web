@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer-core';
+import puppeteer from './_puppeteer.mjs';
 import { readFileSync } from 'fs';
 const axe = readFileSync('node_modules/axe-core/axe.min.js', 'utf8');
 const URLS = ['/', '/reseni-podnikova-ai', '/navrh-aplikace', '/reseni-mapa-firmy', '/weby',

@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer-core';
+import puppeteer from './_puppeteer.mjs';
 const b = await puppeteer.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:'new',args:['--no-sandbox']});
 const p = await b.newPage(); await p.setViewport({width:390,height:844});
 const chyby=[]; p.on('pageerror',e=>chyby.push(e.message));

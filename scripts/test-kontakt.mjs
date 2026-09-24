@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer-core';
+import puppeteer from './_puppeteer.mjs';
 const b = await puppeteer.launch({
   executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
   headless: 'new', args: ['--no-sandbox'],
