@@ -112,7 +112,9 @@
 /* ---------- Reference, radek log ---------- */
 .loga-radek{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,3vw,40px);margin-top:26px}
 .loga-radek span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tlum)}
-.loga-radek img{height:var(--v,20px);width:auto;opacity:.75;filter:grayscale(1)}
+.loga-radek img{height:var(--v,20px);width:auto;opacity:.75;filter:grayscale(1) brightness(0)}
+/* Prima ma bile pismo v cervenem poli: silueta by z ni udelala cerny blok (T0924-199). */
+.loga-radek img[alt="Prima"]{filter:grayscale(1)}
 
 /* ---------- Co lezi na stole ---------- */
 .vystupy{margin-top:clamp(30px,3.6vw,44px);border-top:1px solid var(--linka)}

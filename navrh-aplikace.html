@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Návrh aplikace: z nápadu zadání a klikací prototyp - Manta IT</title>
+<meta name="description" content="Řeknete mi nápad, za pár dní si proklikáte první verzi aplikace. Povedu vás návrhem až ke kompletnímu zadání s prototypem, designem, provozem i návratností. Od 30 000 Kč podle velikosti aplikace, zadání je vaše.">
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
+<link rel="stylesheet" href="/petlidi.css?v=e4ce408">
+<link rel="stylesheet" href="/mobil.css?v=64b4033">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ================= Navrh aplikace: prvky jen teto stranky ================= */
+::selection{background:var(--akcent);color:var(--papir)}
+.pozn-model{margin-top:14px;font-size:13px;color:var(--tlum)}
+.tmava .pozn-model{color:color-mix(in srgb,var(--papir) 62%,transparent)}
+.kontakty-rychle{margin-top:14px;display:grid;gap:6px;font-size:14.5px}
+.kontakty-rychle a{color:var(--inkoust);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--obrys)}
+.kontakty-rychle span{color:var(--tlum)}
+
+/* ---------- Dashboard majitele ---------- */
+.app{background:var(--papir);color:var(--inkoust);border-radius:var(--r-l);overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.3);font-size:14px}
+.app-lista{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--papir-tmav);border-bottom:1px solid var(--linka)}
+.app-lista i{width:9px;height:9px;border-radius:50%;background:var(--obrys);opacity:.45}
+.app-lista .adresa{margin-left:10px;flex:1;max-width:340px;padding:5px 12px;border-radius:var(--r-s);background:var(--papir);
+  font-family:var(--mono);font-size:12px;color:var(--tlum)}
+.app-telo{display:grid;grid-template-columns:200px minmax(0,1fr)}
+.app-menu{padding:18px 12px;border-right:1px solid var(--linka);display:grid;align-content:start;gap:2px}
+.app-menu .firma{display:flex;align-items:center;gap:9px;padding:4px 8px 16px;font-weight:700}
+.app-menu .firma b{width:26px;height:26px;border-radius:7px;background:var(--inkoust);color:var(--papir);display:grid;place-items:center;font:600 13px var(--display)}
+.app-menu span{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--r-s);color:var(--tlum)}
+.app-menu span svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.app-menu .akt{background:var(--akcent-sv);color:var(--akcent);font-weight:600}
+.app-obsah{padding:20px 22px 24px;display:grid;gap:16px}
+.app-hlava{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.app-hlava h3{font-size:20px}
+.app-hlava small{display:block;color:var(--tlum);font-size:13px;margin-top:2px}
+.segment{display:flex;padding:3px;border-radius:var(--r);background:var(--papir-tmav)}
+.segment span{padding:6px 12px;border-radius:7px;font-size:12.5px;font-weight:600;color:var(--tlum)}
+.segment .akt{background:var(--papir);color:var(--inkoust);box-shadow:0 1px 3px rgba(16,20,19,.12)}
+.ukazatele{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ukazatel{padding:14px 16px;border:1px solid var(--linka);border-radius:var(--r)}
+.ukazatel small{color:var(--tlum);font-size:12.5px}
+.ukazatel b{display:block;margin-top:6px;font-family:var(--display);font-weight:500;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ukazatel em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--akcent)}
+.ukazatel em.zle{color:var(--vada)}
+.dvojice{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:12px}
+.panel-a{border:1px solid var(--linka);border-radius:var(--r);padding:14px 16px}
+.panel-a h4{font-size:14px;display:flex;justify-content:space-between;gap:8px}
+.panel-a h4 span{font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--tlum)}
+.graf{width:100%;height:auto;margin-top:10px;display:block}
+.graf .osa{stroke:var(--linka);stroke-width:1}
+.graf .sl{fill:var(--akcent-sv)}
+.graf .sl.ted{fill:var(--akcent)}
+.graf .cil{stroke:var(--inkoust);stroke-width:1.2;stroke-dasharray:4 4;fill:none}
+.graf text{font-family:var(--mono);font-size:10px;fill:var(--tlum)}
+.hori{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
+.hori li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;font-size:13.5px}
+.hori li i{width:8px;height:8px;border-radius:50%;margin-top:6px;background:var(--vada)}
+.hori li i.ok{background:var(--akcent)}
+.hori li small{display:block;color:var(--tlum);font-size:12.5px}
+.tab-z{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+.tab-z td{padding:8px 4px;border-top:1px solid var(--linka)}
+.tab-z td:last-child{text-align:right;font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+.tab-z .pruh{display:block;height:5px;border-radius:3px;background:var(--akcent);margin-top:4px}
+.dash-pod{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);margin-top:34px}
+.dash-pod h3{font-size:18px;color:var(--papir)}
+.dash-pod p{margin-top:6px;font-size:15.5px;color:color-mix(in srgb,var(--papir) 70%,transparent)}
+
+/* ---------- Ukazky dalsich casti aplikaci ---------- */
+.ukazky{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:clamp(18px,2.4vw,28px);margin-top:34px;align-items:start}
+.ukazky-dole{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);gap:clamp(18px,2.4vw,28px);margin-top:clamp(18px,2.4vw,28px);align-items:start}
+.kus{display:grid;gap:12px}
+.kus figcaption h3{font-size:18px}
+.kus figcaption p{font-size:15px;color:var(--tlum);margin-top:4px;max-width:52ch}
+.okno{background:var(--papir);border:1px solid var(--linka);border-radius:var(--r-l);overflow:hidden;
+  box-shadow:0 18px 44px rgba(16,20,19,.10),0 1px 3px rgba(16,20,19,.08);font-size:13.5px;color:var(--inkoust)}
+.okno-hlava{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--linka)}
+.okno-hlava b{font-size:15px}
+.tl-m{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:var(--r-s);background:var(--inkoust);color:var(--papir);font-size:12.5px;font-weight:600;white-space:nowrap}
+.tl-m.vedl{background:transparent;color:var(--inkoust);border:1px solid var(--obrys)}
+.lide{width:100%;border-collapse:collapse}
+.lide th{text-align:left;font-weight:600;font-size:12px;color:var(--tlum);padding:10px 16px;border-bottom:1px solid var(--linka)}
+.lide td{padding:11px 16px;border-bottom:1px solid var(--linka);vertical-align:middle}
+.lide tr:last-child td{border-bottom:0}
+.osoba{display:flex;align-items:center;gap:10px}
+.osoba i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:600 12px var(--display);font-style:normal;background:var(--papir-tmav);color:var(--inkoust)}
+.osoba small{display:block;color:var(--tlum);font-size:12px}
+.role-s{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600;background:var(--papir-tmav)}
+.role-s.hl{background:var(--akcent-sv);color:var(--akcent)}
+.prepinac{display:inline-block;width:34px;height:20px;border-radius:999px;background:var(--linka);position:relative;vertical-align:middle}
+.prepinac::after{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--papir);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.prepinac.zap{background:var(--akcent)}
+.prepinac.zap::after{left:17px}
+.detail-z{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.fotky{display:grid;grid-template-columns:1.4fr 1fr;gap:6px;padding:12px 16px 0}
+.fotky figure{margin:0;position:relative;border-radius:var(--r-s);overflow:hidden;aspect-ratio:4/3;background:var(--papir-tmav)}
+.fotky img{width:100%;height:100%;object-fit:cover;display:block}
+.fotky figcaption{position:absolute;left:8px;bottom:8px;padding:3px 8px;border-radius:6px;background:rgba(16,20,19,.72);color:var(--papir);font-size:11.5px;font-family:var(--mono)}
+.osa-z{list-style:none;margin:0;padding:14px 16px 16px;display:grid;gap:10px}
+.osa-z li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;font-size:13px}
+.osa-z li i{width:10px;height:10px;border-radius:50%;border:2px solid var(--akcent);background:var(--papir)}
+.osa-z li.hot i{background:var(--akcent)}
+.osa-z li time{font-family:var(--mono);font-size:11.5px;color:var(--tlum)}
+.telefon{width:min(270px,100%);margin:0 auto;border-radius:34px;padding:10px;background:var(--inkoust);box-shadow:0 22px 50px rgba(16,20,19,.28)}
+.telefon-obr{border-radius:26px;background:var(--papir);overflow:hidden;padding:18px 14px 16px;display:grid;gap:10px;font-size:13px}
+.telefon-obr .stav-r{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--tlum)}
+.telefon-obr .obr-h{font-size:17px}
+.ukol{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;padding:12px;border-radius:14px;background:var(--papir-tmav)}
+.ukol b{font-size:14px}
+.ukol small{display:block;color:var(--tlum);font-size:12px}
+.ukol i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--papir);font-style:normal}
+.ukol i svg{width:17px;height:17px;stroke:var(--akcent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.velke-tl{padding:14px;border-radius:14px;background:var(--akcent);color:var(--papir);font-weight:700;text-align:center;font-size:14.5px}
+.offline{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--tlum)}
+.offline::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--akcent)}
+.schval{list-style:none;margin:0;padding:0}
+.schval li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--linka)}
+.schval li:last-child{border-bottom:0}
+.schval b{font-size:13.5px}
+.schval small{display:block;color:var(--tlum);font-size:12px}
+.schval .castka{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.schval .akce{display:flex;gap:6px}
+.schval .akce span{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;border:1px solid var(--obrys)}
+.schval .akce span.ano{background:var(--akcent);border-color:var(--akcent)}
+.schval .akce svg{width:15px;height:15px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke:var(--inkoust)}
+.schval .akce .ano svg{stroke:var(--papir)}
+
+/* ---------- Inspirace ---------- */
+.obory{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.obory button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--obrys);background:var(--papir);color:var(--inkoust);font:600 14.5px var(--text);cursor:pointer;transition:background .2s var(--krivka),color .2s var(--krivka),border-color .2s var(--krivka)}
+.obory button[aria-selected="true"]{background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
+.napady{margin-top:22px}
+.napady-obor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--inkoust)}
+.js .napady-obor[hidden]{display:none}
+.napady-obor + .napady-obor{margin-top:30px}
+.napady-obor h3.obor-nazev{grid-column:1/-1;font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);padding:14px 0 0}
+.js .napady-obor h3.obor-nazev{display:none}
+.napad-a{padding:20px 22px 22px 0}
+.napad-a + .napad-a{padding-left:22px;border-left:1px solid var(--linka)}
+.napad-a h3{font-size:clamp(18px,1.5vw,21px)}
+.napad-a p{margin-top:6px;font-size:15px;color:var(--tlum)}
+.napad-a p b{color:var(--inkoust);font-weight:600}
+.napady-pozn{margin-top:22px;font-size:15.5px}
+
+/* ---------- Pribeh ---------- */
+.prijde{display:grid;gap:10px}
+.prijde div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;padding:14px 18px;background:var(--papir);border:1px solid var(--linka);border-radius:var(--r)}
+.prijde svg{width:22px;height:22px;stroke:var(--akcent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.prijde p{font-size:15.5px}
+.prijde .staci{background:var(--akcent);border-color:var(--akcent);color:var(--papir);font-weight:600}
+.prijde .staci svg{stroke:var(--papir)}
+.prijde-nadpis{font-size:15px;font-weight:600;margin-bottom:12px}
+.krokovy{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(26px,4vw,64px);align-items:start;padding:clamp(34px,4vw,56px) 0;border-top:1px solid var(--linka)}
+.krokovy.prvni{margin-top:34px}
+.krok-cislo{font-family:var(--mono);font-size:13px;color:var(--akcent);letter-spacing:.08em}
+.tmava .krok-cislo{color:var(--akcent-sv)}
+.krokovy h3{font-size:clamp(22px,2.2vw,30px);margin-top:8px;line-height:1.15}
+.kdo{margin-top:18px;display:grid;gap:12px}
+.kdo p{display:grid;grid-template-columns:5.2em minmax(0,1fr);gap:12px;font-size:15.5px;color:var(--tlum)}
+.kdo b{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--tlum);padding-top:3px}
+.kdo .ja{color:var(--inkoust)}
+.kdo .ja b{color:var(--akcent)}
+.kdo .ruka{color:var(--inkoust);font-weight:600}
+.okno-lista{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--papir-tmav);border-bottom:1px solid var(--linka)}
+.okno-lista i{width:9px;height:9px;border-radius:50%;background:var(--obrys);opacity:.5}
+.okno-lista span{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--tlum)}
+.okno-lista em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--akcent)}
+.okno-obsah{padding:20px 20px 24px}
+.hovor{display:grid;gap:10px}
+.bublina-h{max-width:88%;padding:12px 14px;border-radius:var(--r) var(--r) var(--r) 3px;background:var(--papir-tmav);font-size:15px}
+.bublina-h small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--tlum);margin-bottom:4px}
+.bublina-h.moje{justify-self:end;border-radius:var(--r) var(--r) 3px var(--r);background:var(--akcent-sv)}
+.vznikne{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.vznikne span{font-family:var(--mono);font-size:12px;padding:6px 10px;border-radius:var(--r-s);background:var(--inkoust);color:var(--papir)}
+.zalozky{display:flex;gap:4px;padding:10px 14px 0;background:var(--papir-tmav);border-bottom:1px solid var(--linka)}
+.zalozky span{padding:9px 14px;font-size:13.5px;font-weight:600;color:var(--tlum);border-radius:var(--r-s) var(--r-s) 0 0}
+.zalozky .akt{background:var(--papir);color:var(--inkoust)}
+.v1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.osnova{font-size:14px;display:grid;gap:7px}
+.osnova div{padding:8px 10px;border-radius:var(--r-s);background:var(--papir-tmav)}
+.osnova .otazky{background:var(--akcent-sv);color:var(--akcent);font-weight:600}
+.osnova .jistota{background:transparent;border:1px dashed var(--obrys);color:var(--tlum)}
+.mini{border:1px solid var(--linka);border-radius:var(--r);padding:12px;display:grid;gap:8px;font-size:12.5px}
+.mini-dl{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mini-dl span{padding:8px;border-radius:var(--r-s);background:var(--papir-tmav)}
+.mini-dl span.odhad{outline:1.5px dashed var(--akcent);outline-offset:2px}
+.mini-dl b{display:block;font-family:var(--display);font-size:18px;font-weight:500}
+.mini-radek{height:9px;border-radius:5px;background:var(--papir-tmav)}
+.mini .stitek-o{justify-self:start;font-family:var(--mono);font-size:11px;color:var(--akcent)}
+
+.pripady{margin-top:30px}
+.pripady-tl{display:flex;flex-wrap:wrap;gap:6px}
+.pripady-tl button{min-height:44px;padding:0 16px;border-radius:var(--r);border:1px solid color-mix(in srgb,var(--papir) 26%,transparent);background:transparent;color:var(--papir);font:600 14px var(--text);cursor:pointer}
+.pripady-tl button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
+.upripad{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start;margin-top:22px}
+.js .upripad[hidden]{display:none}
+.upripad + .upripad{margin-top:40px}
+.obr .obr-h,.obr-h{font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:-.02em}
+.obr .pod{font-size:13px;color:var(--tlum);margin-top:3px}
+.dlazdice-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.dlazdice-kpi span{padding:12px;border-radius:var(--r);background:var(--papir-tmav);font-size:13px;color:var(--tlum);position:relative}
+.dlazdice-kpi b{display:block;font-family:var(--display);font-size:26px;font-weight:500;color:var(--inkoust)}
+.sloupce{display:flex;align-items:flex-end;gap:8px;height:70px;margin-top:14px;padding:0 4px;border-bottom:1px solid var(--linka)}
+.sloupce i{flex:1;background:var(--akcent-sv);border-radius:4px 4px 0 0}
+.pole-d{display:grid;grid-template-columns:8em minmax(0,1fr);gap:8px 12px;margin-top:14px;font-size:14px}
+.pole-d dt{color:var(--tlum)}
+.stav{display:inline-block;padding:2px 8px;border-radius:var(--r-s);background:var(--akcent-sv);color:var(--akcent);font-weight:600;font-size:13px}
+.tl-p{display:inline-block;margin-top:16px;padding:11px 16px;border-radius:var(--r);background:var(--inkoust);color:var(--papir);font-size:14px;font-weight:600;position:relative}
+.tab-m{width:100%;margin-top:12px;border-collapse:collapse;font-size:13.5px}
+.tab-m th{text-align:left;font-weight:600;color:var(--tlum);font-size:12.5px;padding:8px 6px;border-bottom:1px solid var(--linka)}
+.tab-m td{padding:9px 6px;border-bottom:1px solid var(--linka)}
+.filtry{display:flex;gap:6px;margin-top:12px}
+.filtry span{padding:6px 10px;border-radius:var(--r-s);border:1px solid var(--obrys);font-size:12.5px;position:relative}
+.protokol{border:1px solid var(--linka);border-radius:var(--r);padding:14px;margin-top:12px;font-size:13.5px;display:grid;gap:8px}
+.protokol div{display:grid;grid-template-columns:9em minmax(0,1fr);gap:10px}
+.protokol .l{color:var(--tlum)}
+.protokol .chybi{display:block;border:1px dashed var(--obrys);border-radius:var(--r-s);padding:6px 8px;color:var(--tlum);position:relative}
+.cela{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px;position:relative}
+.cela span{aspect-ratio:4/3;border-radius:var(--r-s);background:var(--papir-tmav);border:1px solid var(--linka);font-size:11.5px;padding:8px;color:var(--tlum)}
+.hlas{display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;border-radius:var(--r);background:var(--inkoust);color:var(--papir);font-size:13px}
+.hlas i{width:10px;height:10px;border-radius:50%;background:var(--vada-sv)}
+.hlas s{flex:1;height:4px;border-radius:2px;background:repeating-linear-gradient(90deg,var(--akcent-sv) 0 3px,transparent 3px 6px);text-decoration:none}
+.spend{position:absolute;right:-12px;top:-12px;width:26px;height:26px;border-radius:50%;background:var(--akcent);color:var(--papir);font:700 13px/22px var(--text);font-style:normal;text-align:center;border:2px solid var(--papir);pointer-events:none;box-shadow:0 2px 6px rgba(16,20,19,.25)}
+.komentare{display:grid;gap:12px}
+.koment{padding:16px 18px;border-radius:var(--r-l);background:color-mix(in srgb,var(--papir) 8%,transparent);border:1px solid color-mix(in srgb,var(--papir) 18%,transparent);color:var(--papir)}
+.koment-hlava{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:color-mix(in srgb,var(--papir) 72%,transparent)}
+.koment-hlava b{display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--akcent);color:var(--papir);font:700 12px var(--text)}
+.koment p{margin-top:8px;font-size:15.5px;line-height:1.5}
+.ja-odp{margin-top:12px;padding:10px 12px;border-radius:var(--r-s);background:color-mix(in srgb,var(--akcent-sv) 14%,transparent);font-size:14.5px;color:color-mix(in srgb,var(--papir) 88%,transparent)}
+.ja-odp b{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--akcent-sv);margin-bottom:3px}
+.nastroj-veta{margin-top:30px;padding-top:22px;border-top:1px solid color-mix(in srgb,var(--papir) 16%,transparent);max-width:70ch;color:color-mix(in srgb,var(--papir) 72%,transparent)}
+.karty-r{display:grid;gap:12px}
+.rozh{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:16px 18px}
+.rozh-kdo{font-family:var(--mono);font-size:12px;color:var(--tlum)}
+.rozh-text{margin-top:6px;font-size:15px}
+.rozh-verdikt{margin-top:10px;padding:10px 14px;border-radius:var(--r-s);font-size:14.5px;background:var(--akcent-sv)}
+.rozh-verdikt.ne{background:var(--papir-tmav)}
+.rozh-verdikt b{display:block;font-size:13px;margin-bottom:3px}
+.rozh.rozh-otazka{border-color:var(--akcent)}
+.kola{display:grid;gap:10px}
+.kolo{display:grid;grid-template-columns:6.5em minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--linka);border-radius:var(--r);background:var(--papir)}
+.kolo b{font-family:var(--mono);font-size:12.5px;font-weight:500}
+.kolo-pruh{height:10px;border-radius:5px;background:var(--papir-tmav);overflow:hidden}
+.kolo-pruh i{display:block;height:100%;background:var(--akcent)}
+.kolo small{font-size:13px;color:var(--tlum);white-space:nowrap}
+.kolo.hotovo{background:var(--akcent);border-color:var(--akcent);color:var(--papir)}
+.kolo.hotovo small{color:var(--papir)}
+
+/* ---------- Balik, AI, role ---------- */
+.balik{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:clamp(20px,3vw,40px);margin-top:30px;align-items:start}
+.balik-skupiny{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
+.skupina{padding:20px;border-radius:var(--r-l);background:var(--papir);border:1px solid var(--linka)}
+.skupina h3{font-size:18px}
+.skupina ul{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.skupina li{font-size:14.5px;color:var(--tlum);padding-left:16px;position:relative}
+.skupina li::before{content:'';position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--akcent)}
+.skupina li b{color:var(--inkoust);font-weight:600}
+.nadcas{padding:24px;border-radius:var(--r-l);background:var(--inkoust);color:var(--papir)}
+.nadcas h3{font-size:22px}
+.nadcas p{margin-top:10px;color:color-mix(in srgb,var(--papir) 72%,transparent);font-size:15.5px}
+.ai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,30px);margin-top:32px}
+.ai div{padding-top:16px;border-top:2px solid var(--akcent-sv)}
+.ai h3{font-size:18px;color:var(--papir)}
+.ai p{margin-top:6px;font-size:15.5px;color:color-mix(in srgb,var(--papir) 70%,transparent)}
+.ai-zaver{margin-top:30px;font-size:clamp(18px,1.6vw,21px);max-width:60ch;color:var(--papir)}
+.role{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:28px;border-top:1px solid var(--linka)}
+.role div{padding:18px 18px 18px 0}
+.role div + div{padding-left:18px;border-left:1px solid var(--linka)}
+.role b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--akcent);letter-spacing:.06em;text-transform:uppercase}
+.role h3{font-size:18px;margin-top:6px}
+.role p{font-size:14.5px;color:var(--tlum);margin-top:6px}
+
+
+/* ---------- Kontakt: tri cesty (prevzato z homepage) ---------- */
+.kontakt{background:var(--inkoust);color:var(--papir)}
+.kontakt h2{max-width:18ch}
+.kontakt-uvod{font-size:clamp(16px,1.2vw,18px);color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:52ch;margin-top:18px}
+.cesty{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}
+.cesta{text-align:left;font:inherit;cursor:pointer;background:color-mix(in srgb,var(--papir) 6%,transparent);border:1px solid color-mix(in srgb,var(--papir) 16%,transparent);color:var(--papir);border-radius:var(--r);padding:20px 22px;display:flex;flex-direction:column;gap:6px;transition:background .2s var(--krivka-klid),border-color .2s var(--krivka-klid),transform .16s var(--krivka)}
+.cesta:active{transform:scale(.99)}
+.cesta[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
+.cesta-nazev{font-family:var(--display);font-size:18px;letter-spacing:-.02em}
+.cesta-popis{font-size:14px;color:color-mix(in srgb,var(--papir) 66%,transparent)}
+.cesta[aria-selected="true"] .cesta-popis{color:var(--tlum)}
+.kontakt .panel{margin-top:16px;background:var(--papir);color:var(--inkoust);border-radius:var(--r);padding:clamp(24px,3vw,36px)}
+.kontakt .pole,.dialog-pole{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;border:0;padding:0;border-radius:0}
+.kontakt .pole .siroke,.dialog-pole .siroke{grid-column:1 / -1}
+.kontakt label,.objednavka label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.kontakt input,.kontakt textarea,.objednavka input,.objednavka textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border-radius:var(--r);border:1px solid var(--obrys);background:var(--papir);color:var(--inkoust)}
+.kontakt textarea,.objednavka textarea{min-height:120px;resize:vertical}
+.kontakt input:focus-visible,.kontakt textarea:focus-visible,.objednavka input:focus-visible,.objednavka textarea:focus-visible{outline:2px solid var(--akcent);outline-offset:1px;border-color:var(--akcent)}
+.kontakt .pozn{font-size:14px;color:var(--tlum);margin-top:16px}
+.kontakt .pozn a{color:var(--akcent)}
+.termin-popis{font-size:14px;color:var(--tlum);margin-bottom:12px}
+.bubliny{display:flex;flex-wrap:wrap;gap:8px}
+.bublina{font:inherit;font-size:15px;cursor:pointer;background:var(--papir-tmav);border:1px solid var(--obrys);color:var(--inkoust);border-radius:999px;padding:10px 18px;min-height:44px;transition:background .18s var(--krivka-klid),border-color .18s var(--krivka-klid),transform .14s var(--krivka)}
+.bublina:active{transform:scale(.96)}
+.bublina[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:#fff}
+.datumy{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s var(--krivka);margin-top:0}
+.datumy.otevreno{grid-template-rows:1fr;margin-top:14px}
+.datumy-vnitrek{overflow:hidden}
+.datumy .bubliny{padding-top:2px}
+.dilek{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin:22px 0 10px}
+.souhrn{margin-top:22px;padding:16px 18px;border-radius:var(--r);background:var(--akcent-sv);border:1px solid color-mix(in srgb,var(--akcent) 22%,transparent);font-size:15px;display:none}
+.souhrn.videt{display:block}
+.souhrn b{color:var(--akcent)}
+
+/* ---------- Objednavka: dialog + lepkave CTA ---------- */
+.objednavka{margin:auto;inset:0;width:min(600px,calc(100vw - 24px));max-height:calc(100dvh - 24px);border:0;border-radius:var(--r-l);padding:0;
+  background:var(--papir);color:var(--inkoust);box-shadow:0 30px 90px rgba(0,0,0,.4)}
+.objednavka::backdrop{background:rgba(16,20,19,.62);backdrop-filter:blur(3px)}
+.objednavka[open]{animation:vyjed .32s var(--krivka)}
+@keyframes vyjed{from{transform:translateY(14px);opacity:.4}to{transform:none;opacity:1}}
+.objednavka form{padding:clamp(22px,3vw,32px)}
+.objednavka h2{font-size:clamp(24px,2.4vw,30px);padding-right:40px}
+.objednavka .uvod{margin-top:8px;color:var(--tlum);font-size:15px}
+.dialog-pole{margin-top:20px}
+.objednavka .zavrit{position:absolute;right:14px;top:14px;width:44px;height:44px;border-radius:var(--r);border:0;background:var(--papir-tmav);cursor:pointer;display:grid;place-items:center}
+.objednavka .zavrit svg{width:18px;height:18px;stroke:var(--inkoust);stroke-width:2;fill:none;stroke-linecap:round}
+.objednavka .odeslat{margin-top:20px;width:100%;justify-content:center}
+.objednavka .nebo{margin-top:18px;padding-top:16px;border-top:1px solid var(--linka);display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+.objednavka .nebo a{color:var(--inkoust);font-weight:600}
+.objednavka .hp,.kontakt .hp{position:absolute;left:-9999px;width:1px;height:1px}
+.chyba-f{margin-top:12px;font-size:14px;color:var(--vada)}
+.lepkave{position:fixed;left:50%;bottom:18px;z-index:40;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 18px;
+  border-radius:999px;background:var(--inkoust);color:var(--papir);box-shadow:0 14px 40px rgba(16,20,19,.35);
+  transform:translate(-50%,160%);transition:transform .45s var(--krivka);font-size:14.5px}
+.lepkave.videt{transform:translate(-50%,0)}
+.lepkave .cena{white-space:nowrap;color:color-mix(in srgb,var(--papir) 80%,transparent)}
+.lepkave .cena b{color:var(--papir)}
+.lepkave button,.lepkave a{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;font:600 14.5px var(--text);white-space:nowrap}
+.lepkave button{border:0;background:var(--akcent);color:var(--papir);cursor:pointer}
+.lepkave a{color:var(--papir);text-decoration:none;border:1px solid color-mix(in srgb,var(--papir) 26%,transparent)}
+.lepkave svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:1000px){
+  .app-telo{grid-template-columns:1fr}
+  .app-menu{display:none}
+  .dvojice,.ukazky,.ukazky-dole,.krokovy,.upripad,.balik,.dash-pod{grid-template-columns:1fr}
+  .role{grid-template-columns:1fr 1fr}
+  .role div:nth-child(3){padding-left:0;border-left:0}
+  .role div{border-bottom:1px solid var(--linka)}
+}
+@media (max-width:820px){
+  .cesty,.kontakt .pole,.dialog-pole{grid-template-columns:1fr}
+  .napady-obor{grid-template-columns:1fr}
+  .napad-a,.napad-a + .napad-a{padding:18px 0;border-left:0;border-bottom:1px solid var(--linka)}
+}
+@media (max-width:560px){
+  .ukazatele{grid-template-columns:1fr 1fr}
+  .v1,.balik-skupiny,.ai{grid-template-columns:1fr}
+  .role{grid-template-columns:1fr}
+  .role div,.role div + div{padding-left:0;border-left:0}
+  .dlazdice-kpi{grid-template-columns:1fr 1fr}
+  .kolo{grid-template-columns:5.5em minmax(0,1fr)}
+  .kolo small{grid-column:1/-1}
+  .kdo p{grid-template-columns:1fr;gap:2px}
+  .lide th:nth-child(3),.lide td:nth-child(3){display:none}
+  .lepkave{left:12px;right:12px;bottom:12px;transform:translateY(160%);justify-content:space-between;padding-left:14px}
+  .lepkave.videt{transform:none}
+  .lepkave .cena{display:none}
+  .lepkave button{flex:1;justify-content:center}
+}
+@media (hover:hover) and (pointer:fine){
+  .pripady-tl button:hover{border-color:var(--papir)}
+  .obory button:hover{border-color:var(--inkoust)}
+  .cesta:hover{background:color-mix(in srgb,var(--papir) 12%,transparent)}
+  .cesta[aria-selected="true"]:hover{background:var(--papir)}
+  .bublina:hover{border-color:var(--inkoust)}
+  .bublina[aria-pressed="true"]:hover{border-color:var(--akcent)}
+  .lepkave a:hover{border-color:var(--papir)}
+}
+@media (prefers-reduced-motion:reduce){.objednavka[open]{animation:none}.lepkave{transition:none}}
+</style>
+  <link rel="canonical" href="https://mantait.cz/navrh-aplikace">
+  <meta property="og:title" content="Návrh aplikace: z nápadu zadání a klikací prototyp - Manta IT">
+  <meta property="og:description" content="Řeknete mi nápad, za pár dní si proklikáte první verzi aplikace. Na konci kompletní zadání s prototypem, designem, provozem i návratností. Od 30 000 Kč podle velikosti aplikace.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/navrh-aplikace">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Návrh aplikace",
+    "description": "Řeknete mi nápad, za pár dní si proklikáte první verzi aplikace. Na konci kompletní zadání s prototypem, designem, provozem i návratností. Od 30 000 Kč podle velikosti aplikace.",
+    "serviceType": "Návrh aplikace",
+    "areaServed": {"@type": "Country", "name": "Česko"},
+    "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+      "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}},
+    "offers": {"@type": "Offer", "price": "30000", "priceCurrency": "CZK",
+      "description": "od uvedené částky"}
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=8ebe653" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#sluzby">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/">Články</a>
+  </div>
+  <a href="#objednat" class="nav-cta" data-objednat>Napište mi</a>
+</nav>
+
+<main>
+
+<header class="hero" id="hero">
+  <div>
+    <a href="/#sluzby" class="zpet">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Všechno, s čím pomůžu
+    </a>
+    <h1>
+      <span class="radek"><span class="r1">Řekněte mi nápad.</span></span>
+      <span class="radek"><span class="r1">Za pár dní si ho</span></span>
+      <span class="radek"><b class="r2">proklikáte.</b></span>
+    </h1>
+    <p class="lead vstup z2">Návrh aplikace je zakázka, ve které z vašeho nápadu vznikne
+    kompletní zadání a klikací prototyp. Nemusíte mít nic sepsané. Vyprávíte mi, co má
+    aplikace dělat, já z toho postavím první verzi a provedu vás jejím dolaďováním. Na konci
+    máte v ruce všechno, podle čeho se aplikace dá postavit: se mnou, s kýmkoli jiným,
+    nebo klidně až za rok.</p>
+  </div>
+
+  <aside class="cenovka vstup z3">
+    <div class="cenovka-castka">od 30&nbsp;000&nbsp;Kč</div>
+    <div class="cenovka-pod">podle velikosti aplikace; cenu řeknu po úvodním hovoru a pak se nemění. Když pak stavíme spolu, cenu návrhu odečtu z ceny aplikace.</div>
+    <a href="#objednat" class="btn btn-hlavni" data-objednat>
+      Chci návrh aplikace
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <div class="kontakty-rychle">
+      <span>nebo mi rovnou zavolejte</span>
+      <a href="tel:+420732329431">+420 732 329 431</a>
+      <a href="mailto:petr.kokoska@mantait.cz">petr.kokoska@mantait.cz</a>
+    </div>
+    <p class="cenovka-pozn">Nejsem plátce DPH, cena je konečná.</p>
+  </aside>
+</header>
+
+<!-- ============ REPORTING MAJITELE ============ -->
+<section class="tmava" id="prehled">
+  <div class="obsah">
+    <h2>Konečně budete vědět, co se ve firmě děje.</h2>
+    <p class="tmava-lead">S přehledem pro majitele začíná většina návrhů. Navrhneme ho spolu
+    podle toho, na co se ráno opravdu díváte, a rovnou ukážu, odkud se které číslo vezme.</p>
+
+    <div class="app" style="margin-top:34px" aria-label="Ukázka: přehled pro majitele">
+      <div class="app-lista"><i></i><i></i><i></i><span class="adresa">prehled.vase-firma.cz</span></div>
+      <div class="app-telo">
+        <div class="app-menu" aria-hidden="true">
+          <div class="firma"><b>S</b>Servis Novák</div>
+          <span class="akt"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Přehled</span>
+          <span><svg viewBox="0 0 24 24"><path d="M9 5h11M9 12h11M9 19h11M4 5h.01M4 12h.01M4 19h.01"/></svg>Zakázky</span>
+          <span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 11a4 4 0 0 0 0-8M22 21a7 7 0 0 0-4-6.3"/></svg>Zákazníci</span>
+          <span><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>Faktury</span>
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>Lidé</span>
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Nastavení</span>
+        </div>
+        <div class="app-obsah">
+          <div class="app-hlava">
+            <div><h3>Dobré ráno, pane Nováku</h3><small>čtvrtek 24. září · data z účetnictví a zakázek k 7:00</small></div>
+            <div class="segment" aria-hidden="true"><span>Týden</span><span class="akt">Měsíc</span><span>Rok</span></div>
+          </div>
+          <div class="ukazatele">
+            <div class="ukazatel"><small>Tržby v září</small><b>2,84 mil. Kč</b><em>+12 % proti srpnu</em></div>
+            <div class="ukazatel"><small>Hotové zakázky</small><b>146</b><em>+9 %</em></div>
+            <div class="ukazatel"><small>Marže</small><b>31 %</b><em>cíl 30 %</em></div>
+            <div class="ukazatel"><small>Po splatnosti</small><b>184 000 Kč</b><em class="zle">4 faktury</em></div>
+          </div>
+          <div class="dvojice">
+            <div class="panel-a">
+              <h4>Tržby po měsících <span>tis. Kč · čárkovaně cíl</span></h4>
+              <svg class="graf" viewBox="0 0 520 170" role="img" aria-label="Sloupcový graf tržeb za 9 měsíců s cílovou čárou">
+                <line class="osa" x1="0" y1="150" x2="520" y2="150"/>
+                <rect class="sl" x="10" y="78" width="40" height="72" rx="4"/>
+                <rect class="sl" x="67" y="70" width="40" height="80" rx="4"/>
+                <rect class="sl" x="124" y="84" width="40" height="66" rx="4"/>
+                <rect class="sl" x="181" y="60" width="40" height="90" rx="4"/>
+                <rect class="sl" x="238" y="66" width="40" height="84" rx="4"/>
+                <rect class="sl" x="295" y="52" width="40" height="98" rx="4"/>
+                <rect class="sl" x="352" y="74" width="40" height="76" rx="4"/>
+                <rect class="sl" x="409" y="48" width="40" height="102" rx="4"/>
+                <rect class="sl ted" x="466" y="30" width="40" height="120" rx="4"/>
+                <path class="cil" d="M0 62 H520"/>
+                <text x="18" y="166">led</text><text x="75" y="166">úno</text><text x="132" y="166">bře</text><text x="189" y="166">dub</text><text x="246" y="166">kvě</text><text x="303" y="166">čer</text><text x="360" y="166">črc</text><text x="417" y="166">srp</text><text x="474" y="166">zář</text>
+              </svg>
+            </div>
+            <div class="panel-a">
+              <h4>Co hoří <span>3</span></h4>
+              <ul class="hori">
+                <li><i></i><div>Dvě zakázky po termínu<small>technik Svoboda, zákazník čeká od pondělí</small></div></li>
+                <li><i></i><div>Faktura 2026-0388 po splatnosti 21 dní<small>Stavebniny Kovář, 62 000 Kč</small></div></li>
+                <li><i class="ok"></i><div>Sklad dílů pod minimem u 3 položek<small>objednávka připravená ke schválení</small></div></li>
+              </ul>
+              <h4 style="margin-top:16px">Největší zákazníci <span>září</span></h4>
+              <table class="tab-z"><tbody>
+                <tr><td>Stavebniny Kovář<span class="pruh" style="width:92%"></span></td><td>412 tis.</td></tr>
+                <tr><td>Pekárna U Mlýna<span class="pruh" style="width:64%"></span></td><td>286 tis.</td></tr>
+                <tr><td>Kavárna Rohová<span class="pruh" style="width:38%"></span></td><td>169 tis.</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="pozn-model">Modelová firma a vymyšlená data. Váš přehled bude mít vaše čísla a jen ta, která opravdu potřebujete.</p>
+
+    <div class="dash-pod">
+      <div><h3>Co chcete vidět</h3><p>Tržby, marži, zakázky po termínu, peníze po splatnosti. Nebo něco, co vidí jen váš obor.</p></div>
+      <div><h3>Odkud se to vezme</h3><p>U každého čísla v návrhu stojí, ze kterého systému přijde a jak často se obnoví.</p></div>
+      <div><h3>Kdo to smí vidět</h3><p>Majitel všechno, vedoucí svůj úsek, technik jen svoje zakázky.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DALSI KUSY APLIKACI ============ -->
+<section id="ukazky">
+  <div class="obsah">
+    <h2>A k tomu všechno, co vaši lidé potřebují každý den.</h2>
+    <p class="lead" style="margin-top:16px;max-width:60ch">Takhle vypadají kusy aplikací, které
+    si firmy nechávají navrhnout. Každý z nich uvidíte v prototypu dřív, než se za stavbu zaplatí.</p>
+
+    <div class="ukazky">
+      <figure class="kus">
+        <div class="okno" aria-label="Ukázka: lidé a oprávnění">
+          <div class="okno-hlava"><b>Lidé a oprávnění</b><span class="tl-m">+ Pozvat člověka</span></div>
+          <table class="lide">
+            <thead><tr><th>Člověk</th><th>Role</th><th>Vidí ceny</th><th>Schvaluje</th></tr></thead>
+            <tbody>
+              <tr><td><div class="osoba"><i>JN</i><div>Jan Novák<small>majitel</small></div></div></td><td><span class="role-s hl">Vedení</span></td><td><span class="prepinac zap"></span></td><td><span class="prepinac zap"></span></td></tr>
+              <tr><td><div class="osoba"><i>EB</i><div>Eva Bártová<small>účetní</small></div></div></td><td><span class="role-s">Účetnictví</span></td><td><span class="prepinac zap"></span></td><td><span class="prepinac"></span></td></tr>
+              <tr><td><div class="osoba"><i>PS</i><div>Pavel Svoboda<small>technik</small></div></div></td><td><span class="role-s">Terén</span></td><td><span class="prepinac"></span></td><td><span class="prepinac"></span></td></tr>
+              <tr><td><div class="osoba"><i>LD</i><div>Lenka Dvořáková<small>dispečink</small></div></div></td><td><span class="role-s">Dispečink</span></td><td><span class="prepinac"></span></td><td><span class="prepinac zap"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption><h3>Kdo co vidí a smí</h3><p>Nastavíte jednou, bez IT. Nový člověk dostane pozvánku a vidí jen to, co má.</p></figcaption>
+      </figure>
+
+      <figure class="kus">
+        <div class="telefon" aria-label="Ukázka: aplikace technika v telefonu">
+          <div class="telefon-obr">
+            <div class="stav-r"><span>7:42</span><span class="offline">uloží se i bez signálu</span></div>
+            <p class="obr-h">Dnes 3 výjezdy</p>
+            <div class="ukol"><i><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><div><b>Kavárna Rohová</b><small>8:30 · výměna těsnění</small></div></div>
+            <div class="ukol"><i><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><div><b>Pekárna U Mlýna</b><small>11:00 · pravidelná kontrola</small></div></div>
+            <div class="velke-tl">Jsem na místě</div>
+          </div>
+        </div>
+        <figcaption><h3>Technik má v ruce jen telefon</h3><p>Velká tlačítka, fotka, podpis zákazníka. Protokol odejde sám.</p></figcaption>
+      </figure>
+    </div>
+
+    <div class="ukazky-dole">
+      <figure class="kus">
+        <div class="okno" aria-label="Ukázka: detail zakázky s fotkami">
+          <div class="okno-hlava"><b>Zakázka 2026-0412</b><span class="tl-m vedl">Protokol PDF</span></div>
+          <div class="fotky">
+            <figure><img src="/obrazky/navrh/vyjezd-prodejna.webp?v=45104c5" alt="Fotka z výjezdu: štít prodejny" width="427" height="640" loading="lazy"><figcaption>před</figcaption></figure>
+            <figure><img src="/obrazky/navrh/vyjezd-areal.webp?v=45104c5" alt="Fotka z výjezdu: areál zákazníka" width="480" height="640" loading="lazy"><figcaption>areál</figcaption></figure>
+          </div>
+          <ol class="osa-z">
+            <li class="hot"><i></i><span>Zákazník nahlásil závadu</span><time>po 8:12</time></li>
+            <li class="hot"><i></i><span>Dispečink přidělil Svobodovi</span><time>po 8:40</time></li>
+            <li class="hot"><i></i><span>Technik na místě, 2 fotky</span><time>út 9:05</time></li>
+            <li><i></i><span>Faktura odejde po podpisu</span><time>čeká</time></li>
+          </ol>
+        </div>
+        <figcaption><h3>Všechno o zakázce na jednom místě</h3><p>Kdo, kdy, fotky z terénu a co ještě chybí k faktuře.</p></figcaption>
+      </figure>
+
+      <figure class="kus">
+        <div class="okno" aria-label="Ukázka: schvalování">
+          <div class="okno-hlava"><b>Čeká na vaše schválení</b><span class="tl-m vedl">3</span></div>
+          <ul class="schval">
+            <li><div><b>Objednávka dílů u výrobce</b><small>dispečink · 3 položky pod minimem</small></div><span class="castka">18 400 Kč</span><span class="akce" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="ano"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span></span></li>
+            <li><div><b>Faktura od subdodavatele</b><small>Elektro Hájek · výjezd 18. 9.</small></div><span class="castka">7 260 Kč</span><span class="akce" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="ano"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span></span></li>
+            <li><div><b>Sleva pro stálého zákazníka</b><small>obchod · Stavebniny Kovář, 5 %</small></div><span class="castka">&minus;20 600 Kč</span><span class="akce" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="ano"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span></span></li>
+          </ul>
+        </div>
+        <figcaption><h3>Schválíte z mobilu, kdekoli</h3><p>Objednávky, faktury a slevy nad limit čekají na jedno ťuknutí. Nic neleží v šuplíku.</p></figcaption>
+      </figure>
+    </div>
+    <p class="pozn-model">Modelové obrazovky. Fotky z výjezdu: Unsplash.</p>
+  </div>
+</section>
+
+<!-- ============ INSPIRACE ============ -->
+<section style="background:var(--papir-tmav)" id="inspirace">
+  <div class="obsah">
+    <h2>Jakou aplikaci chtít pro svůj byznys?</h2>
+    <p class="lead" style="margin-top:16px;max-width:60ch">Pro inspiraci pár nápadů podle oboru.
+    Nejlepší nápady ale přinesete vy, protože znáte místa, kde vaše firma ztrácí čas.</p>
+
+    <div class="obory" role="tablist" id="obory" hidden>
+      <button type="button" role="tab" aria-selected="true" data-obor="vyroba">Výroba</button>
+      <button type="button" role="tab" aria-selected="false" data-obor="servis">Servis a montáže</button>
+      <button type="button" role="tab" aria-selected="false" data-obor="obchod">Obchod a distribuce</button>
+      <button type="button" role="tab" aria-selected="false" data-obor="sluzby">Služby</button>
+      <button type="button" role="tab" aria-selected="false" data-obor="stavba">Stavebnictví</button>
+    </div>
+
+    <div class="napady">
+      <div class="napady-obor" data-obor="vyroba">
+        <h3 class="obor-nazev">Výroba</h3>
+        <div class="napad-a"><h3>Plán výroby na týden</h3><p>Kolik se vejde do kapacity strojů a lidí. <b>Termíny, které slíbíte, sedí.</b></p></div>
+        <div class="napad-a"><h3>Naceňování zakázek</h3><p>Cena z aktuálních ceníků materiálu a hodin. <b>Nacení každý obchodník, ne jeden člověk.</b></p></div>
+        <div class="napad-a"><h3>Zmetky a reklamace</h3><p>Kde a proč vznikají, s fotkou z linky. <b>Víte, kolik vás stojí a kde začít.</b></p></div>
+      </div>
+      <div class="napady-obor" data-obor="servis">
+        <h3 class="obor-nazev">Servis a montáže</h3>
+        <div class="napad-a"><h3>Výjezdy a protokoly</h3><p>Technik vyplní protokol v telefonu, zákazník podepíše prstem. <b>Faktura odejde týž den.</b></p></div>
+        <div class="napad-a"><h3>Hlídání pravidelných kontrol</h3><p>Komu propadá revize nebo kontrola. <b>Zákazník nemusí volat, ozvete se první.</b></p></div>
+        <div class="napad-a"><h3>Portál pro zákazníky</h3><p>Nahlášení závady s fotkou a přehled zásahů. <b>Méně telefonů, víc práce.</b></p></div>
+      </div>
+      <div class="napady-obor" data-obor="obchod">
+        <h3 class="obor-nazev">Obchod a distribuce</h3>
+        <div class="napad-a"><h3>Objednávky pro stálé zákazníky</h3><p>Zákazník si objedná sám podle svého ceníku. <b>Nic se nepřepisuje z mailu.</b></p></div>
+        <div class="napad-a"><h3>Přehled pro obchodníky</h3><p>Kdo dlouho neobjednal a komu dochází zboží. <b>Obchodník volá tam, kde to má smysl.</b></p></div>
+        <div class="napad-a"><h3>Reklamace a vratky</h3><p>Od nahlášení po dobropis, s fotkami. <b>Víte, kdo za co může.</b></p></div>
+      </div>
+      <div class="napady-obor" data-obor="sluzby">
+        <h3 class="obor-nazev">Služby</h3>
+        <div class="napad-a"><h3>Rezervace a kapacity</h3><p>Klient si vybere termín, lidé vidí svůj den. <b>Žádné dvojí objednání.</b></p></div>
+        <div class="napad-a"><h3>Evidence práce pro klienty</h3><p>Kdo na čem kolik hodin. <b>Fakturujete všechno, co jste odpracovali.</b></p></div>
+        <div class="napad-a"><h3>Nabídky za pět minut</h3><p>Ze šablon a ceníku. <b>Odpovíte dřív než konkurence.</b></p></div>
+      </div>
+      <div class="napady-obor" data-obor="stavba">
+        <h3 class="obor-nazev">Stavebnictví</h3>
+        <div class="napad-a"><h3>Stavební deník v telefonu</h3><p>Fotky, počasí, lidé na stavbě. <b>Při sporu máte důkazy.</b></p></div>
+        <div class="napad-a"><h3>Rozpočet proti skutečnosti</h3><p>Kolik stavba stojí teď, ne až na konci. <b>Víte včas, kdy přestává vydělávat.</b></p></div>
+        <div class="napad-a"><h3>Subdodavatelé</h3><p>Kdo kdy nastupuje a co má hotové. <b>Stavba nestojí kvůli jednomu telefonu.</b></p></div>
+      </div>
+    </div>
+    <p class="napady-pozn">Váš obor tu není? Tím spíš stojí za to si ho navrhnout.</p>
+  </div>
+</section>
+
+<!-- ============ NIKDO NEMA ZADANI ============ -->
+<section>
+  <div class="obsah">
+    <h2>Sepsané zadání nemá skoro nikdo.</h2>
+    <div class="delene">
+      <div>
+        <p>Většina aplikací, které firmy potřebují, leží roky v šuplíku. Není čas, nejsou
+        peníze, nebo se do toho nikomu nechce, protože neví, kde začít. Za deset let
+        u projektů jsem zadání, podle kterého by se dalo rovnou stavět, dostal snad jednou.
+        Málokdo má popsanou aspoň jednu stránku.</p>
+        <p>Nevadí to. Nikdo nemá tolik představivosti, aby celou aplikaci navrhl v hlavě
+        do posledního tlačítka. Co vlastně chcete, se ukáže, až nad aplikací klikáte.
+        Proto začínám tím, co máte, a klikací verzi vám dám co nejdřív.</p>
+        <p>Není to vaše chyba. IT odborníka zaměstnává jen 13 % firem s 10 až 49 lidmi, takže
+        ve většině firem není nikdo, kdo by nápad převedl do zadání.</p>
+        <p class="zaver-odst">Máte sepsané víc? Tím líp, začneme o kus dál.</p>
+        <p class="pozn-model">Zdroj: ČSÚ, Využívání ICT v podnikatelském sektoru za rok 2024, tab. 4.8.</p>
+      </div>
+      <div>
+        <p class="prijde-nadpis">S čím lidé obvykle přijdou</p>
+        <div class="prijde">
+          <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><p>Dvacet minut vyprávění do telefonu</p></div>
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><p>Tři věty v mailu</p></div>
+          <div><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><p>Excel, který dnes dělá tu práci</p></div>
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg><p>Fotka papírového formuláře</p></div>
+          <div class="staci"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><p>Každé z toho stačí na začátek.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIBEH 1-2 ============ -->
+<section style="background:var(--papir-tmav)" id="jak">
+  <div class="obsah">
+    <h2>Vy vyprávíte. Já navrhuju.</h2>
+    <p class="lead" style="margin-top:16px;max-width:62ch">Jak návrh probíhá, krok za krokem, na modelové
+    firmě: servis a montáže, osm techniků, všechno jede přes telefon a papírové protokoly.</p>
+
+    <div class="krokovy prvni">
+      <div>
+        <span class="krok-cislo">01 · ÚVODNÍ HOVOR</span>
+        <h3>Vysypete, co máte v hlavě.</h3>
+        <div class="kdo">
+          <p><b>Vy</b>Vyprávíte vlastními slovy. Po telefonu, na schůzce, jak vám to vyhovuje.</p>
+          <p class="ja"><b>Já</b>Ptám se i na to, co vás nenapadne říct: kdo s aplikací bude pracovat, jaké dokumenty musí vydávat, co se stane, když se něco pokazí.</p>
+          <p class="ruka"><b>Máte</b>Nic nepíšete. Zbytek je na mně.</p>
+        </div>
+      </div>
+      <div class="okno">
+        <div class="okno-lista"><i></i><i></i><i></i><span>úvodní hovor · 40 minut</span></div>
+        <div class="okno-obsah">
+          <div class="hovor">
+            <div class="bublina-h"><small>Majitel</small>Všechno jede přes telefon a papírové protokoly. Nevím, kdo je zrovna kde.</div>
+            <div class="bublina-h moje"><small>Petr</small>Kdo dnes protokol přepisuje do počítače, a kdy?</div>
+            <div class="bublina-h"><small>Majitel</small>Účetní, v pátek. Faktura odchází klidně za dva týdny.</div>
+            <div class="bublina-h moje"><small>Petr</small>Chtějí velcí zákazníci protokol v nějaké předepsané podobě?</div>
+          </div>
+          <div class="vznikne"><span>4 role</span><span>11 obrazovek</span><span>23 otázek na výjimky</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="krokovy">
+      <div>
+        <span class="krok-cislo">02 · PRVNÍ VERZE ZA PÁR DNÍ</span>
+        <h3>Z hovoru postavím celé zadání a aplikaci, na kterou se dá klikat.</h3>
+        <div class="kdo">
+          <p><b>Vy</b>Dostanete odkaz a heslo. Nic neinstalujete.</p>
+          <p class="ja"><b>Já</b>Sestavím zadání, prototyp, návrh vzhledu, provozu i návratnosti. Co jsem si musel domyslet, v prototypu označím, a co nevím, napíšu jako otázku pro vás.</p>
+          <p class="ruka"><b>Máte</b>Vaši aplikaci, která funguje tak, jak jste ji popsali. Ne obrázek.</p>
+        </div>
+      </div>
+      <div class="okno">
+        <div class="okno-lista"><i></i><i></i><i></i><span>navrhy.mantait.cz</span><em>verze 1</em></div>
+        <div class="zalozky"><span class="akt">Zadání</span><span>Prototyp</span><span>Design</span><span>Provoz</span><span>Byznys</span></div>
+        <div class="okno-obsah">
+          <div class="v1">
+            <div class="osnova">
+              <div>Co to je a proč</div>
+              <div>Kdo s tím pracuje</div>
+              <div>Od hlášení po fakturu</div>
+              <div class="jistota">Výjimky: bez signálu, storno, reklamace</div>
+              <div class="otazky">Otázky pro vás (23)</div>
+            </div>
+            <div class="mini" aria-hidden="true">
+              <b style="font-size:13px">Přehled dne</b>
+              <div class="mini-dl"><span><b>18</b>otevřené</span><span class="odhad"><b>2</b>po termínu</span></div>
+              <span class="stitek-o">navrženo bez podkladu</span>
+              <div class="mini-radek"></div><div class="mini-radek" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIBEH 3: KOMENTOVANI ============ -->
+<section class="tmava" id="ukazka">
+  <div class="obsah">
+    <span class="krok-cislo">03 · VŠICHNI ŘEKNOU SVOJE</span>
+    <h2 style="margin-top:10px">Proklikáte aplikaci a řeknete, co chcete jinak.</h2>
+    <p class="tmava-lead">Vy, technik, dispečink, účetní. Každý sám, když mu to vyjde, z počítače
+    i z telefonu. Klikne na místo, kterého se to týká, a napíše nebo namluví, co vidí jinak.
+    Vyberte si obrazovku.</p>
+
+    <div class="pripady">
+      <div class="pripady-tl" role="tablist" id="pripady-tl" hidden>
+        <button type="button" role="tab" aria-selected="true" data-pripad="prehled">Přehled pro majitele</button>
+        <button type="button" role="tab" aria-selected="false" data-pripad="detail">Detail zakázky</button>
+        <button type="button" role="tab" aria-selected="false" data-pripad="seznam">Seznam zařízení</button>
+        <button type="button" role="tab" aria-selected="false" data-pripad="dokument">Protokol</button>
+        <button type="button" role="tab" aria-selected="false" data-pripad="cela">Celá aplikace</button>
+      </div>
+
+      <div class="upripad" data-pripad="prehled">
+        <div class="okno"><div class="okno-lista"><i></i><i></i><i></i><span>Přehled dne · majitel</span></div>
+          <div class="okno-obsah obr">
+            <p class="obr-h">Dobré ráno</p><p class="pod">Čtvrtek · 8 techniků v terénu</p>
+            <div class="dlazdice-kpi">
+              <span><b>18</b>otevřené zakázky</span>
+              <span><b>5</b>čeká na fakturu</span>
+              <span><b>2</b>po termínu<i class="spend">1</i></span>
+            </div>
+            <div class="sloupce" aria-hidden="true"><i style="height:40%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:80%"></i><i style="height:48%"></i></div>
+          </div>
+        </div>
+        <div class="komentare">
+          <div class="koment"><div class="koment-hlava"><b>1</b>Majitel · dlaždice Po termínu</div>
+            <p>Tohle je jediné číslo, které ráno potřebuju. Nahoru a velké, zbytek může být menší.</p>
+            <div class="ja-odp"><b>Přijato se změnou</b>Po termínu půjde první a rozklikne se na seznam zakázek s technikem u každé.</div></div>
+        </div>
+      </div>
+
+      <div class="upripad" data-pripad="detail">
+        <div class="okno"><div class="okno-lista"><i></i><i></i><i></i><span>Zakázka 2026-0412 · technik</span></div>
+          <div class="okno-obsah obr">
+            <p class="obr-h">Kontrola chladicího boxu</p><p class="pod">Pekárna U Mlýna · Hlavní 12</p>
+            <dl class="pole-d"><dt>Stav</dt><dd><span class="stav">na místě</span></dd><dt>Zařízení</dt><dd>Box B2, výrobní číslo 44-118</dd><dt>Kontakt</dt><dd>vedoucí provozu</dd></dl>
+            <span class="tl-p">Uzavřít zakázku<i class="spend">2</i></span>
+          </div>
+        </div>
+        <div class="komentare">
+          <div class="koment"><div class="koment-hlava"><b>2</b>Technik · namluveno · tlačítko Uzavřít</div>
+            <p>V půlce sklepů nemám signál. Uzavřít musím i bez sítě a odeslat se to má samo, až ji chytím.</p>
+            <div class="ja-odp"><b>Přijato</b>Tahle věta mění, jak se aplikace bude stavět. Bez ní by se na to přišlo až v provozu.</div></div>
+        </div>
+      </div>
+
+      <div class="upripad" data-pripad="seznam">
+        <div class="okno"><div class="okno-lista"><i></i><i></i><i></i><span>Zařízení u zákazníků · dispečink</span></div>
+          <div class="okno-obsah obr">
+            <p class="obr-h">Zařízení</p>
+            <div class="filtry"><span>Všechna</span><span>Podle zákazníka<i class="spend">3</i></span></div>
+            <table class="tab-m"><thead><tr><th>Zařízení</th><th>Zákazník</th><th>Poslední kontrola</th></tr></thead>
+              <tbody><tr><td>Box B2</td><td>Pekárna U Mlýna</td><td>12. 3.</td></tr><tr><td>Vitrína V1</td><td>Kavárna Rohová</td><td>2. 5.</td></tr><tr><td>Sklad S4</td><td>Masna Dvořák</td><td>28. 1.</td></tr></tbody></table>
+          </div>
+        </div>
+        <div class="komentare">
+          <div class="koment"><div class="koment-hlava"><b>3</b>Dispečink · filtry</div>
+            <p>Týden plánuju podle toho, komu do měsíce propadne kontrola. Chci filtr přesně na tohle.</p>
+            <div class="ja-odp"><b>Přijato se změnou</b>Filtr Kontrola do 30 dnů a z něj rovnou naplánovat výjezd.</div></div>
+        </div>
+      </div>
+
+      <div class="upripad" data-pripad="dokument">
+        <div class="okno"><div class="okno-lista"><i></i><i></i><i></i><span>Protokol o kontrole · náhled</span></div>
+          <div class="okno-obsah obr">
+            <p class="obr-h">Protokol o kontrole</p>
+            <div class="protokol">
+              <div><span class="l">Zákazník</span><span>Pekárna U Mlýna</span></div>
+              <div><span class="l">Zařízení</span><span>Box B2, 44-118</span></div>
+              <div><span class="l">Výsledek</span><span>bez závad</span></div>
+              <span class="chybi">Kdo kontrolu provedl a jeho osvědčení<i class="spend">4</i></span>
+            </div>
+          </div>
+        </div>
+        <div class="komentare">
+          <div class="koment"><div class="koment-hlava"><b>4</b>Účetní · protokol</div>
+            <p>Velcí zákazníci chtějí při auditu vidět, kdo kontrolu dělal a jaké má osvědčení. Bez toho protokol vracejí.</p>
+            <div class="ja-odp"><b>Přijato</b>Na tenhle podklad jsem se ptal v hovoru, tady je jeho místo. Doplním i evidenci osvědčení techniků.</div></div>
+        </div>
+      </div>
+
+      <div class="upripad" data-pripad="cela">
+        <div class="okno"><div class="okno-lista"><i></i><i></i><i></i><span>celá aplikace · 11 obrazovek</span></div>
+          <div class="okno-obsah obr">
+            <p class="obr-h">Připomínka k celé aplikaci</p>
+            <div class="cela" aria-hidden="true"><span>Přehled</span><span>Zakázka</span><span>Zařízení</span><span>Protokol</span><span>Plán týdne</span><span>Faktury</span><i class="spend">5</i></div>
+            <div class="hlas"><i></i>Nahrávka 1:12<s></s>přepsáno</div>
+          </div>
+        </div>
+        <div class="komentare">
+          <div class="koment"><div class="koment-hlava"><b>5</b>Majitel · namluveno · celá aplikace</div>
+            <p>Celkově: technik má v ruce jen telefon a často rukavice. Všechno, co dělá on, musí jít jedním palcem.</p>
+            <div class="ja-odp"><b>Přijato</b>Obrazovky technika předělám na velká tlačítka a nejvýš tři kroky na úkon.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="nastroj-veta">Tohle se děje v Návrzích, našem nástroji pro tuhle práci. Nenavrhujete v něm,
+    nic nekreslíte a nedohadujete se v něm s kolegy. Jen ukážete, co vidíte jinak. Navrhuju já.</p>
+    <p class="pozn-model">Modelový příklad. Skutečný návrh je postavený na vaší firmě.</p>
+  </div>
+</section>
+
+<!-- ============ PRIBEH 4-5 ============ -->
+<section>
+  <div class="obsah">
+    <div class="krokovy" style="border-top:0;padding-top:0">
+      <div>
+        <span class="krok-cislo">04 · ROZHODNUTÍ S DŮVODEM</span>
+        <h3>Ke každé připomínce řeknu, co s ní udělám a proč.</h3>
+        <div class="kdo">
+          <p><b>Vy</b>Uvidíte u každé věty, co se s ní stalo. S čímkoli můžete nesouhlasit.</p>
+          <p class="ja"><b>Já</b>Rozhodnu z pohledu produktu: co na obrazovku patří, co je lepší a co by aplikaci zkomplikovalo. Přidám otázky, které z připomínek vyplynuly.</p>
+          <p class="ruka"><b>Máte</b>Žádná připomínka se neztratí. Zápis celého kola s datem.</p>
+        </div>
+      </div>
+      <div class="karty-r">
+        <div class="rozh"><div class="rozh-kdo">Dispečink · seznam zařízení</div>
+          <p class="rozh-text">Chci vidět všechna zařízení všech zákazníků na jedné mapě.</p>
+          <div class="rozh-verdikt ne"><b>Odmítnuto, s náhradou</b>Mapa by stála víc, než kolik ušetří. Místo ní seznam seřazený podle trasy technika na daný den.</div></div>
+        <div class="rozh rozh-otazka"><div class="rozh-kdo">Otázka ode mě · faktury</div>
+          <p class="rozh-text">Fakturujete po každém výjezdu, nebo jednou měsíčně za smluvní zákazníky? Podle toho se liší, kdy aplikace pošle podklad do účetnictví.</p></div>
+      </div>
+    </div>
+
+    <div class="krokovy">
+      <div>
+        <span class="krok-cislo">05 · DALŠÍ KOLO</span>
+        <h3>Nová verze celého návrhu. A znovu.</h3>
+        <div class="kdo">
+          <p><b>Vy</b>Schválíte rozhodnutí, projdete novou verzi, řeknete, co ještě chybí.</p>
+          <p class="ja"><b>Já</b>Po každém kole předělám všechny části najednou, aby spolu vždycky seděly.</p>
+          <p class="ruka"><b>Máte</b>Nápad, který se kolo od kola zpřesňuje, dokud není co dodat.</p>
+        </div>
+      </div>
+      <div class="kola">
+        <div class="kolo"><b>Kolo 1</b><div class="kolo-pruh"><i style="width:100%"></i></div><small>31 připomínek · 23 otázek</small></div>
+        <div class="kolo"><b>Kolo 2</b><div class="kolo-pruh"><i style="width:38%"></i></div><small>12 připomínek · 5 otázek</small></div>
+        <div class="kolo"><b>Kolo 3</b><div class="kolo-pruh"><i style="width:10%"></i></div><small>3 připomínky · 0 otázek</small></div>
+        <div class="kolo hotovo"><b>Schváleno</b><span></span><small>podle tohohle se dá stavět</small></div>
+        <p class="pozn-model">Modelový příklad, ne měření.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BALIK ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <span class="krok-cislo">06 · CO MÁTE V RUCE</span>
+    <h2 style="margin-top:10px">Všechno, co k zadání aplikace může patřit.</h2>
+    <p class="lead" style="margin-top:16px;max-width:62ch">Po schválení dostanete balík, se kterým jde
+    stavět bez dalšího doptávání. Je váš, ať stavíte kdekoli.</p>
+    <div class="balik">
+      <div class="balik-skupiny">
+        <div class="skupina"><h3>Produkt</h3><ul>
+          <li><b>Zadání:</b> co to je a proč, kdo s tím pracuje, jak to chodí včetně výjimek, na co se napojí, co první verze neumí</li>
+          <li><b>Všechny průchody aplikací</b> od prvního kroku po poslední</li>
+          <li><b>Akceptační kritéria:</b> podle čeho poznáte, že je hotovo</li>
+          <li><b>Klikací prototyp</b> v poslední schválené verzi</li></ul></div>
+        <div class="skupina"><h3>Design</h3><ul>
+          <li><b>Vizuální podoba aplikace:</b> barvy, písmo, ikony</li>
+          <li><b>Příručka rozhraní:</b> ze kterých prvků se aplikace skládá a jak se používají</li>
+          <li>Podle ní se staví i rozšiřuje</li></ul></div>
+        <div class="skupina"><h3>Provoz</h3><ul>
+          <li><b>Kde aplikace poběží</b> a co k tomu potřebuje</li>
+          <li><b>Bezpečnost:</b> kdo co smí a kde leží data</li>
+          <li><b>Správa:</b> kdo se o ni stará a kolik to stojí měsíčně</li></ul></div>
+        <div class="skupina"><h3>Byznys</h3><ul>
+          <li><b>Trh a konkurence:</b> co už existuje a čím se lišíte</li>
+          <li><b>Cíle</b> a jak poznáte, že je aplikace plní</li>
+          <li><b>Návratnost</b> a cena stavby i provozu, teď i za tři roky</li></ul></div>
+      </div>
+      <div class="nadcas">
+        <h3>Zadání nezestárne.</h3>
+        <p>Technologie se za pár let změní a obrazovky se budou kreslit jinak. Jak má vaše
+        aplikace fungovat, kdo s ní pracuje a proč, zůstane. Když na stavbu teď nejsou peníze,
+        návrh počká.</p>
+        <p>K tomu zápisy všech kol: kdo co k návrhu řekl a jak se rozhodlo. Za rok v nich
+        najdete, proč je něco postavené právě takhle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROC NE SAMI S AI ============ -->
+<section class="tmava">
+  <div class="obsah">
+    <h2>S umělou inteligencí si prototyp postavíte za večer.</h2>
+    <p class="tmava-lead">Udělá přesně to, co jí řeknete. Jenže nejčastější problém zadání
+    jsou požadavky, které nikdo neřekl nahlas. Uvádí to 48 % z 228 firem v mezinárodní studii.
+    Na tohle se AI sama nezeptá:</p>
+    <div class="ai">
+      <div><h3>Výjimky a hranice</h3><p>Co když technik nemá signál, zákazník zruší zakázku po zaplacení,
+      nebo díl není skladem. Tady se aplikace v provozu láme.</p></div>
+      <div><h3>Podklady, které do ní nedáte</h3><p>Jaký dokument musí aplikace vydat, jaký formulář chce
+      úřad nebo odběratel, podle čeho účetní páruje platby. Ptám se na ně, protože vím, kde chybějí.</p></div>
+      <div><h3>Co je lepší</h3><p>Co na obrazovku patří a co ne, který postup lidé v terénu opravdu zvládnou.
+      Rovnou vám řeknu, co bych udělal jinak a proč.</p></div>
+      <div><h3>Provoz a peníze</h3><p>Kde aplikace poběží, jak se zabezpečí, kolik bude stát měsíčně
+      a kdy se vrátí. Bez toho je prototyp hezký obrázek.</p></div>
+    </div>
+    <p class="pozn-model">Zdroj: Méndez Fernández a kol., Naming the Pain in Requirements Engineering, Empirical Software Engineering 22, 2017.</p>
+    <p class="ai-zaver">S několika AI pracuju taky, podle svých návrhových postupů. Rozdíl je v tom,
+    že u toho sedím já, ptám se, rozhoduju a vedu vás. Vy mluvíte se mnou, ne s chatem.</p>
+  </div>
+</section>
+
+<!-- ============ ROLE NA PRONAJEM ============ -->
+<section>
+  <div class="obsah">
+    <h2>Produktový tým na jednu zakázku.</h2>
+    <p class="lead" style="margin-top:16px;max-width:62ch">Návrh aplikace běžně dělá několik lidí.
+    Tady dostanete jejich práci najednou, bez náboru a bez smlouvy na celý projekt.</p>
+    <div class="role">
+      <div><b>Produkt</b><h3>Produktový manažer</h3><p>Rozhoduje, co aplikace umí a co počká na další verzi.</p></div>
+      <div><b>Design</b><h3>Návrhář rozhraní</h3><p>Navrhne obrazovky, postupy a vizuální podobu.</p></div>
+      <div><b>Analýza</b><h3>Analytik</h3><p>Domyslí data, výjimky a napojení na vaše systémy.</p></div>
+      <div><b>Byznys</b><h3>Konzultant</h3><p>Spočítá, jestli se to vyplatí, a nastaví cíle.</p></div>
+    </div>
+    <div class="delene" style="margin-top:44px">
+      <div>
+        <h3 style="font-size:clamp(20px,1.8vw,24px)">Ta zadání jsem deset let dostával.</h3>
+        <p>Deset let jsem vedl projekty na straně dodavatelů a u části z nich rozhodoval za zákazníka,
+        co se postaví. Kdo tu roli zná, ví ji jako Product Owner. Fáze návrhu se tam často škrtla
+        nebo zkrátila, zůstaly obrázky obrazovek, na které se nedalo kliknout, a hotové zadání nevzniklo.</p>
+        <p class="zaver-odst">Tady je návrh samostatná zakázka na pár týdnů. Nemusíte nejdřív hledat
+        dodavatele ani podepisovat smlouvu na celý projekt.</p>
+      </div>
+    </div>
+    <div class="loga-radek" style="margin-top:34px">
+      <span>Vedl jsem projekty pro</span>
+      <img src="/loga/cesky-rozhlas.png" alt="Český rozhlas" style="--v:20px" width="698" height="104" loading="lazy">
+      <img src="/loga/radioteka.svg" alt="Radioteka" style="--v:18px" width="253" height="43" loading="lazy">
+      <img src="/loga/prima.svg" alt="Prima" style="--v:17px;filter:grayscale(1)" width="1000" height="457" loading="lazy">
+      <img src="/loga/cnc.svg" alt="Czech News Center" style="--v:34px" width="261" height="80" loading="lazy">
+      <img src="/loga/unihobby.svg" alt="UniHobby" style="--v:20px" width="185" height="40" loading="lazy">
+      <img src="/loga/prodoma.svg" alt="Pro-Doma" style="--v:22px" width="246" height="48" loading="lazy">
+      <img src="/loga/almeco.svg" alt="Almeco" style="--v:24px" width="284" height="100" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ DVE CESTY ============ -->
+<section style="background:var(--papir-tmav)">
+  <div class="obsah">
+    <h2>Na konci si vyberete.</h2>
+    <p class="lead" style="margin-top:14px">Návrh je váš v obou případech.</p>
+    <div class="volby-dve">
+      <div class="volba-dve">
+        <span class="volba-znak"><svg viewBox="0 0 24 24"><path d="M4 12h12M12 6l6 6-6 6"/></svg></span>
+        <div>
+          <h3>Stavíme spolu</h3>
+          <p>Na schválený návrh pošlu nabídku s pevnou cenou a termínem. Cenu návrhu z ní
+          odečtu. Kód hotové aplikace patří vám.</p>
+          <span class="volba-cena">aplikace od 50 000 Kč, podle schváleného rozsahu</span>
+        </div>
+      </div>
+      <div class="volba-dve">
+        <span class="volba-znak"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5h6v2M4 12h16"/></svg></span>
+        <div>
+          <h3>Odnesete si to</h3>
+          <p>Celý balík si vezmete a stavíte, s kým chcete, nebo až za čas. Připravím ho tak,
+          aby s ním uměl pracovat jiný dodavatel i nástroje umělé inteligence, které programují
+          podle zadání.</p>
+          <span class="volba-cena">v ceně, nic se nedoplácí</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="obsah faq">
+    <span class="stitek">Časté otázky</span>
+    <h2 style="margin-bottom:38px">Na co se ptají nejčastěji</h2>
+
+    <details>
+      <summary>Musím mít něco sepsaného?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Ne. Stačí mi to vyprávět. Když máte poznámky, Excel nebo fotku formuláře, přineste je, ale nic nepřipravujte.</p></div>
+    </details>
+    <details>
+      <summary>Budu aplikaci navrhovat sám v nějakém programu?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Ne. Navrhuju já. Vy dostanete odkaz, proklikáte si aplikaci a u místa, kterého se to týká, napíšete nebo namluvíte, co chcete jinak. Nic nekreslíte a nic se neučíte.</p></div>
+    </details>
+    <details>
+      <summary>Prototyp si umíme udělat s ChatGPT. Proč za to platit?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Obrazovky vám AI nakreslí rychle. Neřekne vám ale, na co jste zapomněli: výjimky, předepsané dokumenty, napojení na účetnictví, provoz a bezpečnost. A nerozhodne za vás, co z toho je dobrý nápad. Tohle je práce, kterou dělám já. AI k ní používám taky.</p></div>
+    </details>
+    <details>
+      <summary>Kolik to stojí?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Podle toho, jak velká aplikace bude. Když by stavba vyšla do 600 000 Kč, návrh stojí 30 000 Kč, do 1,2 milionu 40 000 Kč a do 3 milionů 50 000 Kč. Větší aplikace naceňuji jednotlivě. Velikost odhadnu v úvodním hovoru a cenu pak už neměním.</p>
+      <p>Počet kol je v nabídce. Když se během návrhu rozsah rozroste o novou část nebo další napojení, řeknu cenu navíc dopředu. Nejsem plátce DPH, cena je konečná.</p></div>
+    </details>
+    <details>
+      <summary>Kolik času to zabere nám?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Úvodní hovor kolem hodiny. Potom v každém kole projít aplikaci a říct, co vidíte jinak. Počítejte spíš s desítkami minut než s dny. Kolik lidí zapojíte, určujete vy; klidně jen sebe.</p></div>
+    </details>
+    <details>
+      <summary>Jak dlouho to trvá celé?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>První verzi si proklikáte do týdne od úvodního hovoru. Kolo pak trvá tak dlouho, jak rychle se k němu dostanete. Počítejte se třemi až pěti týdny ke schválení.</p></div>
+    </details>
+    <details>
+      <summary>Je prototyp už hotová aplikace?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Ne. Kliká se jako aplikace, ale data jsou vymyšlená a nic se neukládá. Slouží k tomu, abyste viděli, co se postaví, dřív, než se za stavbu zaplatí.</p></div>
+    </details>
+    <details>
+      <summary>Na stavbu teď nemáme peníze. Má to smysl?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Má. Návrh vám zůstane a nezestárne, protože popisuje, jak má aplikace fungovat, ne jakou technologií se postaví. S ním taky víte, kolik bude stavba stát, a můžete si na ni naplánovat peníze.</p></div>
+    </details>
+    <details>
+      <summary>Chystáme dotaci na digitalizaci. Hodí se návrh k tomu?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Hodí, nejlíp ještě před podáním žádosti. Z návrhu je přesná poptávka pro dodavatele i dobrý podklad pro projektový záměr. Když už žádost běží, dá se udělat i potom. Když s námi dotaci připravujete, je návrh za polovinu. S dotací pomůžu i s <a href="/dotace-mas">projektovým záměrem a žádostí</a>.</p></div>
+    </details>
+    <details>
+      <summary>Komu patří zadání a prototyp?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Vám. Ať stavíte se mnou, s jiným dodavatelem, nebo vlastními silami.</p></div>
+    </details>
+    <details>
+      <summary>Kde jsou naše připomínky a nahrávky?<span class="znak-plus"></span></summary>
+      <div class="odpoved"><p>Na serveru Manta IT u Cloudflare. Hlasové nahrávky přepisuje služba Cloudflare Workers AI. K návrhu se dostanou jen lidé, kterým jsem založil přihlášení. Po skončení zakázky nahrávky i připomínky smažu, zápisy vám zůstanou.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="navaznost">
+  <div class="obsah">
+    <h2>Co přijde potom.</h2>
+    <div class="navaznost-radky">
+      <div class="navaznost-radek"><span>Stavba</span><p><a href="/reseni-nova-aplikace">Aplikace na míru</a> podle schváleného návrhu, cena návrhu se odečte.</p></div>
+      <div class="navaznost-radek"><span>Napojení</span><p><a href="/reseni-propojeni">Propojení</a> s účetnictvím, skladem a e-shopem, které návrh pojmenuje.</p></div>
+      <div class="navaznost-radek"><span>Dotace</span><p><a href="/dotace-mas">Dotace na digitalizaci</a>, když chcete stavbu financovat z výzvy.</p></div>
+      <div class="navaznost-radek"><span>Celá cesta</span><p><a href="/reseni-vedeni-it">Dlouhodobé vedení IT</a>: návrhy nových aplikací jsou v něm v ceně.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZVAZUJETE: tri cesty jako na homepage ============ -->
+<section class="kontakt" id="kontakt">
+  <div class="obsah">
+    <h2>Nejste si jistí? Chcete si nejdřív popovídat?</h2>
+    <p class="kontakt-uvod">Není problém. Zavoláme si, probereme, co máte v hlavě, a řeknu vám
+    rovnou, jestli se návrh vyplatí a kolik by stál. Hovor nic nestojí a k ničemu nezavazuje.</p>
+
+    <div class="cesty" role="tablist" aria-label="Jak se ozvat">
+      <button class="cesta" type="button" role="tab" aria-selected="true" data-cesta="zprava">
+        <span class="cesta-nazev">Napíšu, co mám v hlavě</span>
+        <span class="cesta-popis">Pár vět stačí, odpovím do jednoho pracovního dne.</span>
+      </button>
+      <button class="cesta" type="button" role="tab" aria-selected="false" data-cesta="zavolat">
+        <span class="cesta-nazev">Zavolejte mi</span>
+        <span class="cesta-popis">Nechám číslo, psát se mi nechce.</span>
+      </button>
+      <button class="cesta" type="button" role="tab" aria-selected="false" data-cesta="termin">
+        <span class="cesta-nazev">Pošlete mi termín</span>
+        <span class="cesta-popis">Řeknu, kdy se mi hodí, potvrzení pošlete vy.</span>
+      </button>
+    </div>
+
+    <form class="panel" id="formular" method="post" action="/api/kontakt">
+      <input type="hidden" name="cesta" id="poleCesta" value="zprava">
+      <input class="hp" type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="pole">
+        <div><label for="k-jmeno">Jméno a příjmení</label><input id="k-jmeno" name="jmeno" type="text" autocomplete="name"></div>
+        <div><label for="k-firma">Firma</label><input id="k-firma" name="firma" type="text" autocomplete="organization"></div>
+        <div><label for="k-tel">Telefon</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel"></div>
+        <div><label for="k-mail">E-mail</label><input id="k-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="siroke" id="blokZprava"><label for="k-zprava">Co máte v hlavě?</label>
+          <textarea id="k-zprava" name="zprava" placeholder="Klidně jen dvě věty. Třeba: technici píšou protokoly na papír a faktury chodí pozdě."></textarea></div>
+      </div>
+      <div id="blokTermin" hidden>
+        <div class="dilek">Který den se vám hodí</div>
+        <p class="termin-popis">Klikněte na den v týdnu. Ukážu tři nejbližší.</p>
+        <div class="bubliny" id="dny"></div>
+        <div class="datumy" id="datumy"><div class="datumy-vnitrek"><div class="bubliny" id="konkretniDny"></div></div></div>
+        <div class="dilek">Kdy během dne</div>
+        <div class="bubliny" id="casti"></div>
+        <div class="souhrn" id="souhrn"></div>
+        <input type="hidden" name="termin" id="poleTermin">
+      </div>
+      <button type="submit" class="btn btn-hlavni" style="margin-top:22px;width:100%">Odeslat
+        <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      <p class="pozn">Odpovím do jednoho pracovního dne. Stačí telefon nebo e-mail. Jak nakládám s údaji, popisují <a href="/soukromi">zásady zpracování osobních údajů</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351</span>
+  </div>
+</footer>
+
+<!-- ============ OBJEDNAVKA: dialog ============ -->
+<dialog class="objednavka" id="objednat" aria-labelledby="objednat-nadpis">
+  <form method="post" action="/api/kontakt" id="objednat-form">
+    <button type="button" class="zavrit" aria-label="Zavřít" data-zavrit><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="objednat-nadpis">Chci návrh aplikace</h2>
+    <p class="uvod">Napište pár vět o tom, co má aplikace umět. Do jednoho pracovního dne se ozvu, domluvíme úvodní hovor a řeknu cenu.</p>
+    <input type="hidden" name="cesta" value="zprava">
+    <input class="hp" type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="dialog-pole">
+      <div class="siroke"><label for="o-zprava">Co má aplikace umět</label>
+        <textarea id="o-zprava" name="zprava" required placeholder="Třeba: přehled zakázek pro mě, protokoly v telefonu pro techniky, faktury do účetnictví samy."></textarea></div>
+      <div><label for="o-jmeno">Jméno</label><input id="o-jmeno" name="jmeno" type="text" autocomplete="name"></div>
+      <div><label for="o-firma">Firma</label><input id="o-firma" name="firma" type="text" autocomplete="organization"></div>
+      <div><label for="o-mail">E-mail</label><input id="o-mail" name="email" type="email" autocomplete="email"></div>
+      <div><label for="o-tel">Telefon</label><input id="o-tel" name="telefon" type="tel" autocomplete="tel"></div>
+    </div>
+    <p class="chyba-f" id="objednat-chyba" hidden>Nechte mi prosím e-mail nebo telefon, ať se vám můžu ozvat.</p>
+    <button type="submit" class="btn btn-hlavni odeslat">Odeslat
+      <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+    <div class="nebo"><span>Nebo rovnou:</span><a href="tel:+420732329431">+420 732 329 431</a><a href="mailto:petr.kokoska@mantait.cz">petr.kokoska@mantait.cz</a></div>
+  </form>
+</dialog>
+
+<div class="lepkave" id="lepkave" aria-hidden="true">
+  <span class="cena">Návrh aplikace <b>od 30 000 Kč</b></span>
+  <button type="button" data-objednat tabindex="-1">Chci návrh</button>
+  <a href="tel:+420732329431" tabindex="-1" aria-label="Zavolat"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Zavolat</a>
+</div>
+
+<script src="/sluzba.js?v=fd536a6" defer></script>
+<script>
+/* Objednavka: dialog nahore i z lepkaveho pruhu. Bez JS vedou odkazy na #objednat
+   a formular funguje jako obycejny POST (dialog se bez JS neotevre, proto
+   data-objednat ma href na #kontakt jako zalohu -- viz nize). */
+(function objednavka(){
+  const d = document.getElementById('objednat'), f = document.getElementById('objednat-form');
+  if (!d || typeof d.showModal !== 'function') {
+    document.querySelectorAll('[data-objednat]').forEach(a => a.setAttribute('href', '#kontakt'));
+    return;
+  }
+  const otevri = e => { e.preventDefault(); d.showModal(); d.querySelector('textarea').focus(); };
+  document.querySelectorAll('[data-objednat]').forEach(a => a.addEventListener('click', otevri));
+  d.querySelector('[data-zavrit]').addEventListener('click', () => d.close());
+  d.addEventListener('click', e => { if (e.target === d) d.close(); });
+  f.addEventListener('submit', e => {
+    const kontakt = f.email.value.trim() || f.telefon.value.trim();
+    document.getElementById('objednat-chyba').hidden = !!kontakt;
+    if (!kontakt) { e.preventDefault(); f.email.focus(); }
+  });
+})();
+
+/* Lepkave CTA: ukaze se po odscrollovani hero, schova se u spodniho kontaktu. */
+(function lepkave(){
+  const l = document.getElementById('lepkave'), hero = document.getElementById('hero'), dole = document.getElementById('kontakt');
+  if (!l || !hero || !('IntersectionObserver' in window)) return;
+  let zaHero = false, uKontaktu = false;
+  const nastav = () => {
+    const vid = zaHero && !uKontaktu;
+    l.classList.toggle('videt', vid);
+    l.setAttribute('aria-hidden', String(!vid));
+    l.querySelectorAll('button,a').forEach(x => x.tabIndex = vid ? 0 : -1);
+  };
+  new IntersectionObserver(([z]) => { zaHero = !z.isIntersecting && z.boundingClientRect.top < 0; nastav(); }).observe(hero);
+  new IntersectionObserver(([z]) => { uKontaktu = z.isIntersecting; nastav(); }).observe(dole);
+})();
+
+/* Prepinace: obory v inspiraci a obrazovky v kroku 03. Bez JS je videt vse. */
+function prepinac(id, polozky, klic, vychozi){
+  const tl = document.getElementById(id);
+  if (!tl) return;
+  const bloky = [...document.querySelectorAll(polozky)];
+  const ukaz = k => {
+    tl.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset[klic] === k)));
+    bloky.forEach(p => { p.hidden = p.dataset[klic] !== k; });
+  };
+  tl.hidden = false;
+  tl.addEventListener('click', e => { const b = e.target.closest('button'); if (b) ukaz(b.dataset[klic]); });
+  ukaz(vychozi);
+}
+prepinac('obory', '.napady-obor', 'obor', 'vyroba');
+prepinac('pripady-tl', '.upripad', 'pripad', 'prehled');
+
+/* Tri cesty kontaktu a vyber terminu -- stejne jako na homepage (web-v2.html). */
+(function kontakt(){
+  const $ = id => document.getElementById(id);
+  const cesty = [...document.querySelectorAll('.cesta[data-cesta]')];
+  const pole = $('poleCesta'), blokTermin = $('blokTermin');
+  if (!cesty.length || !pole) return;
+  const DNY = ['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'];
+  const CASTI = ['dopoledne', 'odpoledne'];
+  const stav = {den: null, datum: null, cast: null};
+  function vyberCestu(klic){
+    cesty.forEach(c => c.setAttribute('aria-selected', String(c.dataset.cesta === klic)));
+    pole.value = klic;
+    blokTermin.hidden = klic !== 'termin';
+    if (klic !== 'termin') { stav.den = stav.datum = stav.cast = null; zapis(); }
+  }
+  function nejblizsi(denVTydnu){
+    const ven = [], d = new Date();
+    d.setHours(0,0,0,0); d.setDate(d.getDate() + 1);
+    while (ven.length < 3) { if (d.getDay() === denVTydnu) ven.push(new Date(d)); d.setDate(d.getDate() + 1); }
+    return ven;
+  }
+  const format = d => `${d.getDate()}. ${d.getMonth() + 1}.`;
+  function bubliny(kam, polozky, jeVybrana, priKliku){
+    kam.innerHTML = '';
+    polozky.forEach(p => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'bublina'; b.textContent = p.popis;
+      b.setAttribute('aria-pressed', String(jeVybrana(p)));
+      b.addEventListener('click', () => priKliku(p));
+      kam.appendChild(b);
+    });
+  }
+  function zapis(){
+    const hotovo = stav.datum && stav.cast;
+    $('souhrn').classList.toggle('videt', !!hotovo);
+    if (!hotovo) { $('poleTermin').value = ''; return; }
+    const text = `${DNY[stav.den]} ${format(stav.datum)} ${stav.cast}`;
+    $('souhrn').innerHTML = 'Ozvu se vám <b></b> a potvrdím to mailem.';
+    $('souhrn').querySelector('b').textContent = text;
+    $('poleTermin').value = text;
+  }
+  function prekresli(){
+    bubliny($('dny'), [1,2,3,4,5].map(n => ({n, popis: DNY[n]})), p => p.n === stav.den,
+      p => { stav.den = p.n; stav.datum = null; prekresli(); });
+    $('datumy').classList.toggle('otevreno', stav.den !== null);
+    bubliny($('konkretniDny'), stav.den === null ? [] : nejblizsi(stav.den).map(d => ({d, popis: format(d)})),
+      p => stav.datum && p.d.getTime() === stav.datum.getTime(), p => { stav.datum = p.d; prekresli(); });
+    bubliny($('casti'), CASTI.map(c => ({c, popis: c})), p => p.c === stav.cast,
+      p => { stav.cast = p.c; prekresli(); });
+    zapis();
+  }
+  cesty.forEach(c => c.addEventListener('click', () => vyberCestu(c.dataset.cesta)));
+  prekresli();
+})();
+</script>
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>

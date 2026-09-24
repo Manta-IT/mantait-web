@@ -27,6 +27,7 @@ step (jen pomocne Python generatory SVG ilustraci). Produkce ma 65 stranek
 - `kdo-jsem.html` -- bio + konstelace kategorii
 - `clanky.html` -- rozcestnik clanku
 - `sluzba-mapa-firmy.html` -- mapovani procesu a toku dat
+- `sluzba-navrh-aplikace.html` -- Navrh aplikace (24. 9. 2026): reporting majitele, ukazky aplikaci, inspirace, pribeh navrhu, dialog objednavky + lepkave CTA, dole tri cesty kontaktu
 - sdilene: `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `pisma.css`,
   `pisma/` (woff2), `obrazky/` (SVG + generatory), `loga/`, `bump.py`
 
@@ -173,6 +174,7 @@ git add -A && git commit -m "fix: ..." && git push origin master
 Cenik na homepage (stav 25. 8., prototyp):
 - **AI plan do 48 hodin** -- 9 900 Kc pevne
 - **Aplikace a systemy na miru** -- od 50 000 Kc, pevna cena za rozsah; kod vlastni klient
+- **Navrh aplikace** -- od 30 000 Kc podle velikosti aplikace (pasma jako cenik dotaci: stavba do 600 tis. 30 000, do 1,2 mil. 40 000, do 3 mil. 50 000, vetsi individualne), v dotacich 50 % sleva; pri stavbe s Mantou odecet. Stranka `navrh-aplikace.html` (prototyp `sluzba-navrh-aplikace.html`), od 24. 9. 2026 nahrazuje Zadani nove sluzby (`/reseni-zadani` -> 301). Stranka jen povzbuzuje (memory `feedback-navrh-aplikace-jen-povzbuzovat`).
 - **AI zamestnanec** -- 89 000 Kc, provoz od 8 000 Kc mesicne
 - **Vedeni IT (digitalni transformace)** -- od 50 000 Kc mesicne; VZOR stranky je `sluzba-vedeni-it.html`
 - **Dilci zakazky** -- 10 000 Kc/den
@@ -217,6 +219,14 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
 8. axe-core bez nalezu na 390 i 1440 px -- **zadna animace nesmi zacinat na
    `opacity:0`** u textu nad ohybem: Chrome takovy prvek nepovazuje za
    vykresleny a LCP ceka na dobehnuti animace
+
+**POZOR (nalez 24. 9. 2026): prototyp `web-v2.html` je ZASTARALY proti produkci `index.html`.**
+Stroj (`mas_parametry.py --web`, clanky) a opravy (T0923-104) pisou primo do `web/index.html`
+a nekterych `reseni-*.html`; prototypy to nemaji (napr. dotacni produkt, UZAVERKA, znacky
+`/*cena:dotace-mas*/`, `type="module"`, `defer`). **`prenos.py` bez kontroly diffu by
+produkci vratil zpet** (vcetne vety o dotacni kancelari). Dokud se prototypy nesrovnaji,
+menit hotove stranky chirurgicky v obou kopiich a pred commitem projit `git diff`.
+Srovnani je task T0924-224.
 
 ## Co NEDELAT
 

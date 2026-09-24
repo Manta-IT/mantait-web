@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import { readFileSync } from 'fs';
 const axe = readFileSync('node_modules/axe-core/axe.min.js', 'utf8');
-const URLS = ['/', '/reseni-podnikova-ai', '/reseni-zadani', '/reseni-mapa-firmy', '/weby',
+const URLS = ['/', '/reseni-podnikova-ai', '/navrh-aplikace', '/reseni-mapa-firmy', '/weby',
   '/clanky/', '/clanky/novy-zakon-kyberbezpecnost-3-otazky', '/reseni-vyber-systemu',
   '/reseni-robot-na-zadani', '/reseni-ai-zamestnanec', '/reseni-bezpecnost',
   '/reseni-vedeni-it', '/reseni-nova-aplikace', '/reseni-propojeni', '/o-mne', '/kontakt', '/dotace-mas'];

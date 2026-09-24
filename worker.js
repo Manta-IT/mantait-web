@@ -321,6 +321,8 @@ const PRESMEROVANI = new Map([
   ['/reseni-nastroje', '/reseni-vyber-systemu'],
   ['/reseni-projekt', '/reseni-vedeni-it'],
   ['/reseni-web', '/weby'],
+  // Zadani nove sluzby nahradil Navrh aplikace (24. 9. 2026).
+  ['/reseni-zadani', '/navrh-aplikace'],
   // Novy web ma formular primo na hlavni strance.
   ['/kontakt', '/#napiste'],
 ]);

@@ -15,6 +15,9 @@
 /reseni-projekt    /reseni-vedeni-it  301
 /reseni-web        /weby          301
 
+# Zadani nove sluzby nahradil Navrh aplikace (24. 9. 2026, T0924-209).
+/reseni-zadani  /navrh-aplikace  301
+
 # Kontakt: novy web ma formular primo na hlavni strance.
 /kontakt  /#napiste  301
 
