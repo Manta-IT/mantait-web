@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import worker from '../worker.js';
-import { podpisToken, vlozVodoznak } from '../pristup.js';
+import { overToken, podpisToken, vlozVodoznak } from '../pristup.js';
 
 const KLIC = 'test-klic-pristup';
 const JAN = { z: '1a0test', j: 'Jan Novák', d: '2026-09-24', e: '2026-10-08' };
@@ -126,5 +126,11 @@ for (const l of logy) {
 assert.match(readFileSync(new URL('../.assetsignore', import.meta.url), 'utf8'), /^_pristup\/$/m);
 const portal = (await import('../_pristup/portal.js')).default;
 assert.equal(portal, readFileSync(new URL('../../specs/podnikova-ai/prototyp/portal.html', import.meta.url), 'utf8'));
+
+// spolecny vektor s pristup.py (T0924-476): jmeno s diakritikou hlida kodovani
+const v = JSON.parse(readFileSync(new URL('../../tools/podnikova-ai-pristup/vektor_tokenu.json', import.meta.url), 'utf8'));
+assert.equal(await podpisToken(v.payload, v.klic), v.token, 'JS token vektoru se musi shodovat s Pythonem');
+assert.deepEqual(await overToken(v.token, v.klic, v.payload.d, new Set()), v.payload);
+assert.equal(await overToken(v.token, v.klic, v.payload.d, new Set([v.payload.z])), null, 'zruseny odkaz');
 
 console.log('test-pristup: OK');
