@@ -21,8 +21,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Bump jen kdyz commit sahne na CSS nebo HTML.
-echo "$changed" | grep -qE '\.(css|js|html)$' || exit 0
-
+if echo "$changed" | grep -qE '\.(css|js|html)$'; then
 echo "[pre-commit] CSS/JS/HTML zmena -> bump cache version"
 python scripts/bump-cache.py
 if [ $? -ne 0 ]; then
@@ -37,6 +36,14 @@ git diff --name-only --diff-filter=ACM -- '*.html' | while IFS= read -r f; do
   if echo "$changed" | grep -qxF "$f"; then
     git add "$f"
   fi
+done
+fi
+
+# Stranky, ktere se lisi JEN ?v= (bump odvozeny z obsahu CSS/JS, zadna cizi prace), jdou
+# do commitu vzdy. 24. 9.: bez toho zustavaly necommitnute a blokovaly nasazeni-produkce,
+# ve worktree dilny se ztratily a produkce odkazovala na stare CSS/JS (62 stranek).
+python scripts/bump-cache.py --jen-bumpy | while IFS= read -r f; do
+  git add "$f"
 done
 
 echo "[pre-commit] hotovo, pokracuje commit"

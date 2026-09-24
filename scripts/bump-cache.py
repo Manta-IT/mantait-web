@@ -22,6 +22,7 @@ import hashlib
 import io
 import os
 import re
+import subprocess
 import sys
 
 WEB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -69,7 +70,49 @@ def bump_file(filepath, pevna):
     return True
 
 
+_VERZE = re.compile(r'\?v=[^"]*')
+
+
+def jen_bump_obsah(index, prac):
+    """True, kdyz se texty lisi JEN hodnotami ?v= -- odvozeny bump, zadna cizi prace."""
+    index, prac = index.replace('\r\n', '\n'), prac.replace('\r\n', '\n')
+    return index != prac and _VERZE.sub('', index) == _VERZE.sub('', prac)
+
+
+def jen_bumpy():
+    """Zmenene HTML, ktere se od indexu lisi jen ?v=. Hook je pridava do commitu vzdy:
+    24. 9. restage jen uz stagovanych stranek nechaval ostatni necommitnute (blokovaly
+    nasazeni-produkce) a v worktree dilny se ztratily (62 stranek odkazovalo na stare CSS/JS)."""
+    zmenene = subprocess.run(['git', 'diff', '--name-only', '--', '*.html'], cwd=WEB_DIR,
+                             capture_output=True, text=True, encoding='utf-8').stdout.split()
+    ven = []
+    for rel in zmenene:
+        r = subprocess.run(['git', 'show', ':' + rel], cwd=WEB_DIR, capture_output=True)
+        if r.returncode:
+            continue
+        with io.open(os.path.join(WEB_DIR, rel), encoding='utf-8') as f:
+            if jen_bump_obsah(r.stdout.decode('utf-8'), f.read()):
+                ven.append(rel)
+    return ven
+
+
+def _test():
+    a = '<link href="/a.css?v=111">\n<p>text</p>\n'
+    assert jen_bump_obsah(a, a.replace('111', '222'))
+    assert jen_bump_obsah(a, a.replace('111', '222').replace('\n', '\r\n')), 'CRLF neni zmena'
+    assert not jen_bump_obsah(a, a), 'beze zmeny neni bump'
+    assert not jen_bump_obsah(a, a.replace('text', 'jiny')), 'obsah = cizi prace'
+    assert not jen_bump_obsah(a, a.replace('111', '222').replace('text', 'jiny')), 'bump + obsah = cizi prace'
+    print('bump-cache OK')
+
+
 def main():
+    if '--test' in sys.argv:
+        _test()
+        return 0
+    if '--jen-bumpy' in sys.argv:
+        print('\n'.join(jen_bumpy()))
+        return 0
     pevna = sys.argv[1] if len(sys.argv) > 1 else None
     print('Cache bump: %s' % (pevna or 'otisk obsahu'))
     changed = sum(bump_file(os.path.join(WEB_DIR, p), pevna) for p in PAGES)
