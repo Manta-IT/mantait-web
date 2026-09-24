@@ -151,3 +151,54 @@
   .zar{display:none}
   .kamen{animation:none}
 }
+
+/* ---------- Co pro vas muze delat: vyberatelne celky (T0924-100) ---------- */
+/* Zalozky: kopie web/robot.css (AI zamestnanec robot.css nenacita). */
+.zalozky{display:inline-flex;flex-wrap:wrap;gap:2px;margin-top:clamp(30px,3.6vw,44px);
+  padding:4px;border:1px solid color-mix(in srgb,var(--papir) 22%,transparent);
+  border-radius:999px;min-width:0}
+.zalozky[hidden]{display:none}
+.zalozka{position:relative}
+.zalozka input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.zalozka span{display:flex;align-items:center;justify-content:center;
+  font-family:var(--text);font-size:15px;font-weight:600;padding:9px 20px;min-height:44px;
+  border-radius:999px;color:color-mix(in srgb,var(--papir) 70%,transparent);
+  transition:background .18s var(--krivka-klid),color .18s var(--krivka-klid)}
+.zalozka input:checked + span{background:var(--papir);color:var(--inkoust)}
+.zalozka input:focus-visible + span{outline:2px solid var(--akcent-sv);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){
+  .zalozka input:not(:checked):hover + span{color:var(--papir)}
+}
+@media (max-width:900px){
+  .zalozky{display:flex;width:100%;border-radius:var(--r-l)}
+  .zalozka{flex:1 1 auto}
+  .zalozka span{border-radius:var(--r)}
+}
+@media (max-width:600px){
+  .zalozky{flex-direction:column}
+}
+
+.linka-pozn{margin-top:clamp(26px,3vw,36px);font-family:var(--mono);font-size:12.5px;line-height:1.6;
+  max-width:74ch;color:color-mix(in srgb,var(--papir) 58%,transparent)}
+
+/* Bez skriptu jsou celky pod sebou; se skriptem je videt jen vybrany. */
+.celky{margin-top:clamp(26px,3vw,36px)}
+.celek + .celek{margin-top:clamp(40px,5vw,64px);padding-top:clamp(30px,4vw,48px);
+  border-top:1px solid color-mix(in srgb,var(--papir) 14%,transparent)}
+.js .celek:not(.aktivni){display:none}
+.js .celek + .celek{margin-top:0;padding-top:0;border-top:0}
+.celek-nazev{font-size:clamp(20px,1.8vw,26px);margin-bottom:6px}
+.celek-prokoho{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--papir) 58%,transparent)}
+.celek-sam{margin-top:16px;padding-left:1.1em;max-width:62ch}
+.celek-sam li + li{margin-top:6px}
+.celek-ceka{margin-top:18px;padding:16px 20px;border-radius:var(--r);
+  border:1px dashed color-mix(in srgb,var(--papir) 32%,transparent);
+  font-size:15.5px;max-width:78ch}
+.celek .btn{margin-top:20px}
+
+/* btn-vedlejsi je inkoust na papiru; na tmave sekci ho obratit do papiru. */
+.tmava .celek .btn-vedlejsi{color:var(--papir);border-color:color-mix(in srgb,var(--papir) 42%,transparent)}
+@media (hover:hover) and (pointer:fine){
+  .tmava .celek .btn-vedlejsi:hover{border-color:var(--papir);background:transparent}
+}
