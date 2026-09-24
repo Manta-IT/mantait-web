@@ -7,10 +7,10 @@
 <meta name="description" content="Stroj, který vezme jeden vstup z vaší firmy a vyrobí z něj hotový kus: výkres z poptávky, seznam firem k oslovení, článek z hlasové zprávy. Spustíte ho, vyrobí, zastaví se. Cena podle rozsahu, pevná po zkušebním zadání.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
-<link rel="stylesheet" href="/sluzba.css?v=f7a5b31">
-<link rel="stylesheet" href="/robot.css?v=7d9344b">
-<link rel="stylesheet" href="/mobil.css?v=64b4033">
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
+<link rel="stylesheet" href="/sluzba.css?v=bd246ec">
+<link rel="stylesheet" href="/robot.css?v=cf1d16c">
+<link rel="stylesheet" href="/mobil.css?v=50ff103">
 <script>document.documentElement.classList.add('js')</script>
   <link rel="canonical" href="https://mantait.cz/reseni-robot-na-zadani">
   <meta property="og:title" content="Robot na zadání: z poptávky výkres, z popisu seznam firem - Manta IT">
@@ -97,7 +97,7 @@
 <section class="tmava linka-sekce" id="linka-sekce">
   <div class="obsah">
     <h2>Jeden vstup,<br>jeden výrobek.</h2>
-    <p class="tmava-lead linka-lead">Tři modelové roboty. U každého je vlevo to, co mu dá člověk,
+    <p class="tmava-lead linka-lead">Pět modelových robotů. U každého je vlevo to, co mu dá člověk,
     uprostřed to, co robot udělá, a vpravo to, co přijde zpět. Pod tím jeden řádek:
     kde do toho člověk sáhne. Vždycky je takové místo.</p>
 
@@ -106,6 +106,8 @@
       <label class="zalozka"><input type="radio" name="robot" value="vykres" checked><span>Výkres z poptávky</span></label>
       <label class="zalozka"><input type="radio" name="robot" value="seznam"><span>Seznam firem z popisu</span></label>
       <label class="zalozka"><input type="radio" name="robot" value="clanek"><span>Článek z poznámek</span></label>
+      <label class="zalozka"><input type="radio" name="robot" value="nabidka"><span>Nabídka z poptávky</span></label>
+      <label class="zalozka"><input type="radio" name="robot" value="report"><span>Report pro vedení</span></label>
     </fieldset>
 
     <div class="roboti" id="roboti">
@@ -142,6 +144,7 @@
         <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Konstruktér
         výkres otevře, zkontroluje dva domyšlené údaje a schválí. Teprve pak jde
         k zákazníkovi. Robot sám neposílá nic.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
 
       <article class="robot" data-robot="seznam">
@@ -177,6 +180,7 @@
         <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Obchodník
         seznam projde a škrtne, koho oslovit nechce. Robot nikomu nepíše a nic
         neodesílá; oslovení je práce člověka.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
 
       <article class="robot" data-robot="clanek">
@@ -213,12 +217,86 @@
         </div>
         <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Autor článek
         přečte, opraví dvě označená místa a schválí. Zveřejnění je jeho klik, ne robotův.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
+      </article>
+
+      <article class="robot" data-robot="nabidka">
+        <h3 class="robot-nazev">Nabídka z poptávky</h3>
+        <p class="robot-prokoho">pro koho: firma, kde obchodník skládá nabídky z ceníku a minulých zakázek</p>
+        <div class="prubeh">
+          <div class="vstup-blok">
+            <span class="stitek-mono">co dáte</span>
+            <p>Poptávka od zákazníka.</p>
+            <p class="citace">"Dobrý den, pošlete nám prosím nabídku na stejnou dodávku jako loni,
+            jen ve větším množství a s dopravou až k nám."</p>
+          </div>
+          <div class="spoj spoj-1" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="robot-stred">
+            <div class="kruh">robot</div>
+            <ol class="kroky">
+              <li><b>1</b><span>vytáhne z poptávky, co zákazník chce</span></li>
+              <li><b>2</b><span>vezme položky z vašeho ceníku</span></li>
+              <li><b>3</b><span>doplní položky, které se v podobných zakázkách obvykle objevují</span></li>
+              <li><b>4</b><span>označí, co si domyslel</span></li>
+            </ol>
+          </div>
+          <div class="spoj spoj-2" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="vystup-blok">
+            <span class="stitek-mono">co dostanete</span>
+            <p>První verzi nabídky s položkami z vašeho ceníku.</p>
+            <ul class="radky">
+              <li>dodávka podle loňské zakázky, větší množství</li>
+              <li>doprava k zákazníkovi</li>
+            </ul>
+            <p class="domysleno">domyšleno: doprava podle minulých zakázek, v poptávce chybí adresa.</p>
+          </div>
+        </div>
+        <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Obchodník
+        schválí cenu a odeslání. Nic nejde ven bez jeho podpisu; robot sám neposílá nic.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
+      </article>
+
+      <article class="robot" data-robot="report">
+        <h3 class="robot-nazev">Report pro vedení</h3>
+        <p class="robot-prokoho">pro koho: majitel nebo vedení s čísly v CRM, účetnictví a skladu</p>
+        <div class="prubeh">
+          <div class="vstup-blok">
+            <span class="stitek-mono">co dáte</span>
+            <p>Jednou seznam čísel, která vedení chce vidět, a kdy.</p>
+            <p class="citace">"Každé pondělí ráno: nové zakázky, nezaplacené faktury
+            a co došlo na skladu."</p>
+          </div>
+          <div class="spoj spoj-1" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="robot-stred">
+            <div class="kruh">robot</div>
+            <ol class="kroky">
+              <li><b>1</b><span>sesbírá čísla z CRM, účetnictví a skladu</span></li>
+              <li><b>2</b><span>srovná je do jednoho přehledu</span></li>
+              <li><b>3</b><span>porovná je s minulým obdobím</span></li>
+              <li><b>4</b><span>označí, co v systému chybělo</span></li>
+            </ol>
+          </div>
+          <div class="spoj spoj-2" aria-hidden="true"><i class="tecka"></i></div>
+          <div class="vystup-blok">
+            <span class="stitek-mono">co dostanete</span>
+            <p>Jeden přehled bez ručního přepisování.</p>
+            <ul class="radky">
+              <li>nové zakázky: 7 / minulý týden 5</li>
+              <li>nezaplacené faktury: 4 / minulý týden 6</li>
+            </ul>
+            <p class="domysleno">nenalezeno: stav skladu za pátek, pole nechané prázdné.</p>
+          </div>
+        </div>
+        <p class="clovek"><span class="stitek-mono">kde člověk zasáhne</span>Které
+        údaje do přehledu patří a co znamenají, rozhoduje vedení. Robot jen sesbírá
+        a srovná.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
 
     </div>
 
-    <p class="linka-pozn">Tři modelové roboty, ne hotové produkty. Firmy v seznamu jsou
-    smyšlené. Váš robot bude mít jiný vstup a jiný výrobek; kroky uprostřed se píšou pro
+    <p class="linka-pozn">Pět modelových robotů, ne hotové produkty. Firmy v seznamu
+    a čísla v reportu jsou smyšlené. Váš robot bude mít jiný vstup a jiný výrobek; kroky uprostřed se píšou pro
     vás a dostanete je popsané česky.</p>
   </div>
 </section>
@@ -653,10 +731,10 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=fd536a6" defer></script>
+<script src="/sluzba.js?v=7b17979" defer></script>
 <script type="module">
-/* Jeden vstup, jeden vyrobek: zalozky prepinaji tri modelove roboty.
-   Bez skriptu jsou videt vsechny tri pod sebou i s nazvy; zalozky jsou v HTML
+/* Jeden vstup, jeden vyrobek: zalozky prepinaji modelove roboty.
+   Bez skriptu jsou videt vsechny pod sebou i s nazvy; zalozky jsou v HTML
    skryte. Prepnuti nic neprehrava -- prubeh bezi jednou pri doscrollovani
    (odkryj) a pak stoji. */
 (function(){
@@ -676,6 +754,6 @@
   odkryj(sekce, .3);
 })();
 </script>
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>

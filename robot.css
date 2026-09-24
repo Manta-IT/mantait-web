@@ -255,3 +255,10 @@
   .slozka,.mapa-radek{grid-template-columns:1fr;gap:6px}
   .slozka-stitek,.mapa-poloha{padding-top:0}
 }
+
+/* ---------- Chci to taky na tmave sekci (T0924-100) ---------- */
+.robot > .btn{margin-top:20px}
+.tmava .robot .btn-vedlejsi{color:var(--papir);border-color:color-mix(in srgb,var(--papir) 42%,transparent)}
+@media (hover:hover) and (pointer:fine){
+  .tmava .robot .btn-vedlejsi:hover{border-color:var(--papir);background:transparent}
+}
