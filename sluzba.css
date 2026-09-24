@@ -1,3 +1,12 @@
+/* Pisma: kopie web/pisma.css:17-22 (T0924-450). Zmena pisma = zmena na trech
+   mistech: web/pisma.css, web/sluzba.css (+ prototyp), web/style.css. */
+@font-face{font-family:'Outfit';font-style:normal;font-weight:300 600;font-display:swap;
+  src:url(/pisma/outfit.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(/pisma/manrope.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;
+  src:url(/pisma/jetbrains-mono.woff2) format('woff2')}
+
 /* =========================================================================
    Detail sluzby -- druha uroven webu.
 
