@@ -33,7 +33,7 @@ vypada jeji vlastni web.
 - Nabidka jako cyklus firmy (od 8. 9. 2026): sedm kroku radu 1 (Priprava
   firmy, Zadani, Vyber systemu, Aplikace na miru, Propojeni, Podnikova AI,
   Vedeni IT) + produkty radu 3 (AI plan 9 900, AI zamestnanec 89 000, Robot
-  na zadani, Web pro dobu AI 35 000, Dotace na klic 30 000). Bezpecnost je
+  na zadani, Web pro dobu AI 35 000, Dotace na digitalizaci od 30 000 podle rozpoctu). Bezpecnost je
   tema v pruhu, ne sluzba. Zdroj: `../specs/web-nabidka/design.md`, ceny
   hlida `scripts/kontrola_webu.py` (registr `sluzby.json`).
 - Mereni: pocet poptavek pres formular (/dekujeme). GA4 se nezaklada.

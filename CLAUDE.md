@@ -122,18 +122,17 @@ git add -A && git commit -m "fix: ..." && git push origin master
 - **U vyvoje povinna veta, ze kod vlastni klient.**
 - **Modelova cisla vzdy s vetou pod carou**, ktera je odlisi od dolozenych --
   bez toho je to falesna presnost.
-- **Zadna konkretni castka dotace v claimu.** Dotace (Petr 10. 9., prepisuje
-  pivot 25. 8.): hlavni zprava je SPOLUPRACE S DOTACNIMI KANCELARAMI. Nas dil
-  je zamer po projektove, produktove, technicke a architektonicke strance plus
-  srovnane nabidky za 30 000 Kc; zadost sestavi a poda kancelar, kterou k
-  projektu prizveme, nebo ta, se kterou uz klient pracuje. Duvod: kancelare
-  jsou partnersky kanal i cilova skupina outreach a web ctou driv nez mail --
-  "podame to za vas" z nas dela konkurenci a podkopava cenu vsem. NIKDE nepsat
-  "zadost vyplnime i podame", "na klic", "na plnou moc podame", ani vymezovani
-  ("co by kancelar umela lip"). Ze u maleho projektu kancelar nemusi byt
-  potreba, smi jen nenapadne prosvitat (jedna polveta v ceniku); rozhodnuti,
-  kdo poda, pada v obchodnim hovoru, ne na strance. Odmena kancelare se na webu
-  neuvadi. Uzke misto zustava kvalifikovany podpis jednatele a pristup do
+- **Zadna konkretni castka dotace v claimu.** Dotace (Petr 15. 9., prepisuje
+  spolupraci s kancelarami z 10. 9.; iniciativa dotacni-kancelare uzavrena):
+  projektovy zamer na MAS i celou zadost v ISKP21+ pripravime MY, kancelar se
+  prizve jen k rozsahlemu nebo netypickemu projektu a rekne se to predem. Cena
+  zije jen v `cenik` v `../iniciativy/dotace-mas-optak/INICIATIVA.md`; blok
+  CENIK na dotace-mas.html, JSON-LD, sluzby.json, dlazdici a karty pod clanky
+  generuje `../scripts/stroj/mas_parametry.py --web` -- rucne je nepsat
+  (registr `../_meta/registr.yml`, tema cenik-dotace). NIKDE nepsat "zadost
+  vyplnime i podame", "na klic", "na plnou moc podame", ani vymezovani ("co by
+  kancelar umela lip"); kdo zadost podava, pada v obchodnim hovoru, ne na
+  strance. Odmena kancelare se na webu neuvadi. Uzke misto zustava kvalifikovany podpis jednatele a pristup do
   ISKP21+. Zdroj: memory `feedback-dotace-spoluprace-s-kancelarami`, task
   T0910-61, `../leadgen/mas-baze/SPOLECNA-PRAVIDLA.md` (pravni realita, kdo smi
   odeslat). Dvojroli (specifikace + vlastni nabidka dodavky) v FAQ nepotvrzovat
@@ -178,7 +177,7 @@ Cenik na homepage (stav 25. 8., prototyp):
 - **Vedeni IT (digitalni transformace)** -- od 50 000 Kc mesicne; VZOR stranky je `sluzba-vedeni-it.html`
 - **Dilci zakazky** -- 10 000 Kc/den
 - **Web pro dobu AI** -- 35 000 Kc pevna cena (od 8. 9. 2026 nahrazuje Web Standard/Quick)
-- **Dotace na klic** -- 30 000 Kc pevne, konci podanim zadosti
+- **Dotace na digitalizaci** -- cena podle rozpoctu projektu z `cenik` iniciativy (generovano, viz vyse), konci podanim zadosti
 
 Pozice (Petr 25. 8.): nejsme IT manager na spravu pocitacu, jsme technologicky
 lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.

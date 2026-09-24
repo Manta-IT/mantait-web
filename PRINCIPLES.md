@@ -188,7 +188,7 @@ při zmenšení 4x zmizí. Změna palety = přegenerovat celou sadu, ne kreslit 
 | AI zaměstnanec | 89 000 Kč, provoz od 8 000 Kč měsíčně | hranol; protiklad proti chatbotu |
 
 Ceník na homepage navíc: AI plán do 48 hodin 9 900 Kč; dílčí zakázky
-10 000 Kč/den; web 16 900 / 8 900 Kč; dotace na klíč 30 000 Kč (končí podáním).
+10 000 Kč/den; web 16 900 / 8 900 Kč; dotace na digitalizaci podle rozpočtu projektu (ceník v iniciativě, na webu generovaný; končí podáním).
 
 Pět stránek sdílí kostru (`sluzba.css`/`sluzba.js`), ale prostředek se liší --
 pět stránek se stejnou skladbou a vyměněnými slovy by četlo jako generované.
@@ -345,4 +345,4 @@ kliky, dnešek se nikdy nenabízí. Pozvánky do kalendáře čekají na T0825-3
 - 2026-07-24: služba přejmenována "Mapa AI příležitostí" -> **"AI plán do 48 hodin"** (rozhodnutí Petra; název = slib rychlosti). URL /reseni-ai a /ukazka-reportu beze změny, JSON-LD alternateName drží starý název. Metafora "mapa" nahrazena "plánem" i na ukázce.
 - 2026-08-07: Calendly pryč z indexu a kontaktu ("vypadá noobsky"); 2026-08-24 ze zbylých 30 stránek. Nevrací se.
 - 2026-08-22: web trojjazyčný (CZ/SK/EN, ceny v EUR), hub /clanky/, ceník a FAQ na indexu.
-- 2026-08-25: redesign (T0825-7) -- nová paleta papír/inkoust/zelená, Outfit + Manrope + JetBrains Mono, 8 stránek v prototypech, CTA "Napište mi", pozice "vedení digitální transformace", pět služeb + AI zaměstnanec 89 000 Kč, dotace na klíč 30 000 Kč (pivot: služba končí podáním). Serif a béžová paleta ZRUŠENY jako AI tells. Nasazení celého webu najednou po schválení.
+- 2026-08-25: redesign (T0825-7) -- nová paleta papír/inkoust/zelená, Outfit + Manrope + JetBrains Mono, 8 stránek v prototypech, CTA "Napište mi", pozice "vedení digitální transformace", pět služeb + AI zaměstnanec 89 000 Kč, dotace na klíč (pivot: služba končí podáním). Serif a béžová paleta ZRUŠENY jako AI tells. Nasazení celého webu najednou po schválení.

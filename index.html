@@ -932,9 +932,9 @@ textarea{min-height:104px;resize:vertical}
         </button>
         <button class="produkt" type="button" aria-expanded="false" data-produkt="5" data-patri="vyber aplikace">
           <img class="produkt-znak" src="/obrazky/znak-dotace.svg?v=a8df0f2" alt="" loading="lazy" width="120" height="80">
-          <span class="produkt-nazev"><span>Dotace na digitalizaci</span><span class="produkt-cena">30 000 Kč</span></span>
-          <span class="produkt-vazba">Ověření nároku, projektový záměr a srovnané nabídky.</span>
-          <div class="produkt-vic" inert><div><p>Ověření nároku, projektový záměr a srovnané cenové nabídky od dodavatelů. Jedna částka předem. Žádost sestaví a podá dotační kancelář, se kterou na projektu spolupracuju.</p><a href="/dotace-mas">Jestli na dotaci dosáhnu &rarr;</a></div></div>
+          <span class="produkt-nazev"><span>Dotace na digitalizaci</span><span class="produkt-cena">od 30 000 Kč</span></span>
+          <span class="produkt-vazba">Ověření nároku, projektový záměr a celá žádost.</span>
+          <div class="produkt-vic" inert><div><p>Ověřím nárok, napíšu projektový záměr, seženu srovnané nabídky od dodavatelů a připravím celou žádost. Cena podle rozpočtu projektu, faktura až po podání záměru na MAS.</p><a href="/dotace-mas">Jestli na dotaci dosáhnu &rarr;</a></div></div>
         </button>
       </div>
       <p class="zvlast-pozn">Nejsem plátce DPH, ceny jsou konečné. U položek "od" a "podle rozsahu"
@@ -1028,12 +1028,12 @@ textarea{min-height:104px;resize:vertical}
 (function(){
   // Aktualni temata: kazde ma landing (zpravodaj) a kategorii clanku.
   // Rotuje se, dokud navstevnik nesahne na zalozku. Bez pohybu = bez rotace.
-  const UZAVERKA = '2026-10-31';
+  const UZAVERKA = '2026-11-10';
   const dnu = Math.ceil((new Date(UZAVERKA + 'T23:59:59') - new Date()) / 86400000);
   const TEMATA = [
     {id:'dotace', zalozka:'Dotace na technologie', h2:'Dotace na technologie končí letos na podzim.',
-     popis:'Výzva Technologie pro MAS je poslední velké kolo, ve kterém stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají průběžně a další srovnatelný program zatím ohlášený není. Ověřím nárok, napíšu záměr a seženu nabídky; žádost dotáhneme s dotační kanceláří.',
-     udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],['30 000 Kč','za ověření, záměr a nabídky']],
+     popis:'Výzva Technologie pro MAS je poslední velké kolo, ve kterém stát vrací polovinu ceny. Uzávěrky u jednotlivých místních akčních skupin padají průběžně a další srovnatelný program zatím ohlášený není. Ověřím nárok, napíšu záměr, seženu nabídky a připravím celou žádost.',
+     udaje:[[dnu>0?dnu:'Pár','dnů do poslední uzávěrky'],['50 %','ceny vrací stát'],[/*cena:dotace-mas*/'od 30 000 Kč'/*/cena*/,'za záměr i celou žádost']],
      cta:['Chci vědět, jestli na to dosáhnu','/dotace-mas'], vedlejsi:['Co přesně ta výzva je','/clanky/dotace-technologie-pro-mas-2026'], plati: dnu>0},
     {id:'zakon', zalozka:'Zákon o kybernetické bezpečnosti', h2:'Nový zákon o kybernetické bezpečnosti. Dopadá i na vás?',
      popis:'Za pět minut zjistíte, jestli se vás zákon týká a co po vás chce. Uvedení do souladu sám nedodávám, tahle stránka je tu, abyste věděli, na čem jste. Průběžně sem píšu, co se kolem zákona mění.',
