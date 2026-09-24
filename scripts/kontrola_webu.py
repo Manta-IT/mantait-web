@@ -13,11 +13,14 @@ Co hlida (jen soubory na disku, zadny server):
     nazev sedi se jmenem sluzby v JSON-LD (META v prenos.py)
  6. presmerovani: `_redirects` a zalozni mapa ve worker.js sedi, cile
     existuji a nevedou na dalsi presmerovani
+ 7. skripty sluzba.js a mobil.js maji `defer`, odkryj() jen v type="module"
+ 8. portal za tokenem: _pristup/portal.js sedi s portal.html
+    (sestav_portal.py --check) a .assetsignore ma radek `_pristup/`
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
 """
-import io, json, os, re, sys, unicodedata
+import io, json, os, re, subprocess, sys, unicodedata
 
 KOREN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
@@ -204,6 +207,17 @@ for dirpath, _, soubory in os.walk(KOREN):
         for tag, telo in re.findall(r'(<script[^>]*>)(.*?)</script>', html, flags=re.S):
             if 'odkryj(' in telo and 'type="module"' not in tag:
                 nalezy.append((s, 'odkryj() v klasickem skriptu', tag))
+
+# --- 8. portal za tokenem -----------------------------------------------
+# Prototyp Podnikove AI je jen za /p/<token> (T0924-477): Worker bundluje
+# vygenerovany _pristup/portal.js, ktery musi sedet s portal.html a nesmi ven
+# jako asset. Bez specs/ (samostatny checkout webu) sestav_portal.py jen varuje.
+if subprocess.run([sys.executable, os.path.join(KOREN, 'scripts', 'sestav_portal.py'),
+                   '--check']).returncode != 0:
+    nalezy.append(('_pristup/portal.js', 'drift proti portal.html', 'sestav_portal.py'))
+ignore = io.open(os.path.join(KOREN, '.assetsignore'), encoding='utf-8').read().splitlines()
+if '_pristup/' not in ignore:
+    nalezy.append(('.assetsignore', 'chybi radek _pristup/', 'portal by byl verejny'))
 
 for n in nalezy:
     print('  %-28s %-24s %s' % n)

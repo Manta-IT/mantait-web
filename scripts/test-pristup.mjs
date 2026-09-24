@@ -2,10 +2,12 @@
 // odkaz /p/<token> s vodoznakem, mereni do D1. Cely Worker, Gmail a D1 podvrzene.
 //   node web/scripts/test-pristup.mjs
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import worker from '../worker.js';
 import { podpisToken, vlozVodoznak } from '../pristup.js';
 
+const ZDROJ = new URL('../../specs/podnikova-ai/prototyp/portal.html', import.meta.url);
+const PORTAL_ZDROJ = existsSync(ZDROJ) ? readFileSync(ZDROJ, 'utf8') : null;
 const KLIC = 'test-klic-pristup';
 const JAN = { z: '1a0test', j: 'Jan Novák', d: '2026-09-24', e: '2026-10-08' };
 // Spolecny vektor s tools/podnikova-ai-pristup/test_pristup.py -- literal, NEPOCITAT z druhe implementace.
@@ -36,9 +38,11 @@ const db = {
   prepare: (sql) => ({ bind: (...a) => ({ sql, a }) }),
   batch: async (st) => { radky.push(...st); return []; },
 };
+const assetsVolano = [];
 const env = {
   GMAIL_CLIENT_ID: 'x', GMAIL_CLIENT_SECRET: 'x', GMAIL_REFRESH_TOKEN: 'x',
   PRISTUP_KLIC: KLIC, PRISTUP_ZRUSENE: 'zrusene1', DB: db,
+  ASSETS: { fetch: async (r) => { assetsVolano.push(new URL(r.url).pathname); return new Response('nenalezeno', { status: 404 }); } },
 };
 const bezKlice = { ...env, PRISTUP_KLIC: undefined };
 const bezDb = { ...env, DB: undefined };
@@ -76,18 +80,47 @@ try {
   assert.equal(res.headers.get('X-Robots-Tag'), 'noindex');
   assert.equal(res.headers.get('Referrer-Policy'), 'no-referrer');
 
+  // krit. 5 (T0924-477): platnost 14 dni nese podepsane `e`, posledni den vcetne
+  const hlavickyPristupu = (r, co) => {
+    assert.equal(r.headers.get('Content-Type'), 'text/html; charset=utf-8', co);
+    assert.match(r.headers.get('Cache-Control'), /private/, co);
+    assert.match(r.headers.get('Cache-Control'), /no-store/, co);
+    assert.equal(r.headers.get('X-Robots-Tag'), 'noindex', co);
+    assert.equal(r.headers.get('Referrer-Policy'), 'no-referrer', co);
+  };
+  hlavickyPristupu(res, 'platny');
+  const plati13 = await podpisToken({ ...JAN, d: den(0), e: den(13) }, KLIC);
+  res = await worker.fetch(req(`/p/${plati13}`), env, null);
+  assert.equal(res.status, 200, 'e = dnes+13');
+  assert.ok((await res.text()).includes(`Jan Novák · ${den(0)}`));
+  res = await worker.fetch(req(`/p/${await podpisToken({ ...JAN, e: den(0) }, KLIC)}`), env, null);
+  assert.equal(res.status, 200, 'e = dnes je posledni platny den');
+
   // neplatne odkazy -> 403 bez prototypu
+  const titulek = /<title>[^<]*<\/title>/.exec(PORTAL_ZDROJ ?? (await import('../_pristup/portal.js')).default)[0];
   const posledni = platny.at(-1) === 'A' ? 'B' : 'A';
   const neplatne = [
     ['zmeneny podpis', platny.slice(0, -1) + posledni, env],
     ['propadly', await podpisToken({ ...JAN, e: den(-1) }, KLIC), env],
     ['zruseny', await podpisToken({ ...JAN, z: 'zrusene1', e: den(14) }, KLIC), env],
+    ['zruseny v seznamu', plati13, { ...env, PRISTUP_ZRUSENE: `jine, ${JAN.z}` }],
     ['bez klice', platny, bezKlice],
   ];
   for (const [co, t, e] of neplatne) {
     res = await worker.fetch(req(`/p/${t}`), e, null);
     assert.equal(res.status, 403, co);
-    assert.ok(!(await res.text()).includes('window.PRISTUP_T'), `${co}: bez prototypu`);
+    hlavickyPristupu(res, co);
+    const telo = await res.text();
+    assert.ok(!telo.includes('window.PRISTUP_T'), `${co}: bez prototypu`);
+    assert.ok(!telo.includes(titulek), `${co}: bez ${titulek}`);
+  }
+
+  // krit. 6: portal neni dosazitelny jako asset -- jde do ASSETS (404), prototyp nevrati
+  for (const cesta of ['/portal.html', '/_pristup/portal.js']) {
+    res = await worker.fetch(req(cesta), env, null);
+    assert.equal(assetsVolano.at(-1), cesta, `${cesta} jde do env.ASSETS`);
+    assert.equal(res.status, 404, cesta);
+    assert.ok(!(await res.text()).includes(titulek), `${cesta}: bez prototypu`);
   }
 
   // vodoznak escapuje jmeno
@@ -124,7 +157,10 @@ for (const l of logy) {
 
 // staticke: portal neni verejny asset a odpovida zdroji
 assert.match(readFileSync(new URL('../.assetsignore', import.meta.url), 'utf8'), /^_pristup\/$/m);
-const portal = (await import('../_pristup/portal.js')).default;
-assert.equal(portal, readFileSync(new URL('../../specs/podnikova-ai/prototyp/portal.html', import.meta.url), 'utf8'));
+if (PORTAL_ZDROJ === null) {
+  console.log('test-pristup: preskoceno portal.js == portal.html (chybi specs/, samostatny checkout webu)');
+} else {
+  assert.equal((await import('../_pristup/portal.js')).default, PORTAL_ZDROJ);
+}
 
 console.log('test-pristup: OK');

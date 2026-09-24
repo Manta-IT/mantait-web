@@ -312,11 +312,13 @@ const ODKAZ_NEPLATI = '<!doctype html><html lang="cs"><meta charset="utf-8"><tit
 async function handlePristup(request, env, retezec) {
   if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
   const zrusene = new Set(String(env.PRISTUP_ZRUSENE || '').split(',').map((s) => s.trim()).filter(Boolean));
+  // UTC: na prelomu dne plati odkaz o par hodin dele/kratsi, vedome (T0924-477).
   const dnes = new Date().toISOString().slice(0, 10);
   const token = await overToken(retezec, env.PRISTUP_KLIC, dnes, zrusene);
   if (!token) {
     return new Response(ODKAZ_NEPLATI, { status: 403, headers: {
-      'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex',
+      'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'private, no-store',
+      'X-Robots-Tag': 'noindex', 'Referrer-Policy': 'no-referrer',
     } });
   }
   console.log(JSON.stringify({ event: 'pristup.otevreno', z: token.z }));
