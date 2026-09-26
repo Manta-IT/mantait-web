@@ -26,12 +26,40 @@ v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
 import io, json, os, re, subprocess, sys, unicodedata
 
 KOREN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
-           'reseni-propojeni.html', 'reseni-bezpecnost.html', 'reseni-ai-zamestnanec.html',
-           'reseni-mapa-firmy.html', 'reseni-zadani.html', 'reseni-vyber-systemu.html',
-           'reseni-robot-na-zadani.html', 'reseni-podnikova-ai.html', 'kalkulacka.html',
-           'weby.html',
-           'o-mne.html', 'raynet.html', 'dotace-mas.html', 'clanky/index.html']
+
+def presmerovani():
+    """_redirects -> [(zdroj, cil, kod)]. kod je '' kdyz radek nema treti sloupec."""
+    red = io.open(os.path.join(KOREN, '_redirects'), encoding='utf-8').read()
+    vysledek = []
+    for radek in red.splitlines():
+        radek = radek.strip()
+        # Komentar je cely radek; '#' uvnitr je fragment (/kontakt -> /#napiste).
+        if not radek or radek.startswith('#'):
+            continue
+        kusy = radek.split()
+        if len(kusy) >= 2:
+            vysledek.append((kusy[0], kusy[1], kusy[2] if len(kusy) >= 3 else ''))
+    return vysledek
+
+def stranky_ze_sitemap():
+    """web/sitemap.xml -> seznam cest relativnich ke KOREN, bez presmerovanych zdroju."""
+    text = io.open(os.path.join(KOREN, 'sitemap.xml'), encoding='utf-8').read()
+    urls = re.findall(r'<loc>https://mantait\.cz(/[^<]*)</loc>', text)
+    zdroje = set(z for z, _, _ in presmerovani() if not z.endswith('*'))
+    prefixy = tuple(z.rstrip('*') for z, _, _ in presmerovani() if z.endswith('*'))
+    vysledek = []
+    for url in urls:
+        if url in zdroje or url.startswith(prefixy):
+            continue
+        if url == '/':
+            vysledek.append('index.html')
+        elif url.endswith('/'):
+            vysledek.append(url[1:] + 'index.html')
+        else:
+            vysledek.append(url[1:] + '.html')
+    return vysledek
+
+STRANKY = stranky_ze_sitemap()
 TYPO = {'em-dash': '—', 'en-dash': '–', 'smart quotes': '[“”„‘’]', 'ellipsis': '…'}
 # 3. Zakazana slova: jedine misto je ../_meta/predpisy/ (vrstvy akce-web, hlas-manta-it,
 # domena-dotace-mas; T0923-104). Web je samostatny repo, cte vygenerovanou kopii
@@ -48,7 +76,10 @@ def srovnej(t):
 
 CENY = {'reseni-mapa-firmy.html': '39 000', 'reseni-ai-zamestnanec.html': '89 000',
         'weby.html': '35 000', 'dotace-mas.html': '30 000'}
+# nalezy predpisu v clancich, oprava textu = task Pro: growth (T0926-144, R6a); nic jineho sem nepatri
+ZNAME_NALEZY = {('clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit.html', 'Z07')}
 nalezy = []
+varovani = []
 
 def text_bez_tagu(html):
     # Retezce v inline skriptech jsou taky text ven (karty cyklu na homepage --
@@ -100,7 +131,10 @@ for s in STRANKY:
             # vyjimka omlouva jen nalez, ktery sama pokryva (jako predpisy.omluveno)
             if not (p.get('kontext') and any(k.start() <= m.start() and k.end() >= m.end()
                                              for k in re.finditer(p['kontext'], t))):
-                nalezy.append((s, '%s %s' % (p['id'], m.group(0)), ctx))
+                if (s, p['id']) in ZNAME_NALEZY:
+                    varovani.append((s, '%s %s' % (p['id'], m.group(0)), ctx))
+                else:
+                    nalezy.append((s, '%s %s' % (p['id'], m.group(0)), ctx))
 
 idx = io.open(os.path.join(KOREN, 'index.html'), encoding='utf-8').read()
 for s, c in CENY.items():
@@ -154,16 +188,7 @@ for klic, v in registr.items():
 # zaloha a 8. 9. se od souboru tise lisila ve dvou cilech. Hlidame tri veci:
 # oba seznamy sedi, cil existuje, a cil sam neni zdrojem dalsiho pravidla
 # (to by byl retez nebo smycka).
-red = io.open(os.path.join(KOREN, '_redirects'), encoding='utf-8').read()
-pravidla = {}
-for radek in red.splitlines():
-    radek = radek.strip()
-    # Komentar je cely radek; '#' uvnitr je fragment (/kontakt -> /#napiste).
-    if not radek or radek.startswith('#'):
-        continue
-    kusy = radek.split()
-    if len(kusy) >= 2:
-        pravidla[kusy[0]] = kusy[1]
+pravidla = {z: c for z, c, _ in presmerovani()}
 
 wj = io.open(os.path.join(KOREN, 'worker.js'), encoding='utf-8').read()
 mapa = dict(re.findall(r"\['(/[^']*)', '([^']*)'\]", wj))
@@ -235,20 +260,8 @@ for jmeno in ('favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'site.web
     if not os.path.exists(os.path.join(KOREN, jmeno)):
         nalezy.append(('web', 'ikona neexistuje', jmeno))
 
-# --- 9. drift prototyp vs produkce ---------------------------------------
-# prenos.py by pri dalsim behu prepsal opravy delane primo ve webu -- rez 1-5
-# (T0926-135..139) zatim jen varovani, rez 6 (T0926-140) z toho udela nalez.
-SPECS = os.path.join(os.path.dirname(KOREN), 'specs', 'web-redesign')
-if os.path.isdir(SPECS):
-    sys.path.insert(0, SPECS)
-    try:
-        import prenos
-        stranky, sdilene = prenos.drift()
-        print('[kontrola_webu] drift: %d stranek, %d sdilenych'
-              % (sum(1 for s in stranky if s.radku), len(sdilene)))
-    except Exception as e:
-        print('[kontrola_webu] drift nezmeren: %s' % e)
-
+for v in varovani:
+    print('  VAROVANI %-28s %-24s %s' % v)
 for n in nalezy:
     print('  %-28s %-24s %s' % n)
 print('[kontrola_webu] %d nalezu, %d stranek' % (len(nalezy), len(STRANKY)))
