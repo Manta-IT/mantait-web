@@ -1,5 +1,22 @@
 [
   {
+    "slug": "inovacni-vouchery-dostaly-vic-penez-na-co-je-firma-muze",
+    "title": "Inovační vouchery mají víc peněz. Co s nimi zvládne firma",
+    "description": "Stát přidal peníze na dotaci pro firmy, které si chtějí nechat od výzkumného ústavu ověřit nápad na inovaci. Zjistěte, jestli se vás to týká.",
+    "date_published": "2026-09-26",
+    "date_modified": "2026-09-26",
+    "highlight": false,
+    "cta_href": "/#napiste",
+    "sluzby": [
+      "reseni-mapa-firmy",
+      "reseni-nova-aplikace",
+      "dotace-mas"
+    ],
+    "og_image": null,
+    "tema": "Dotace",
+    "obrazek": "clanek-inovacni-vouchery-dostaly-vic-penez-na-co-je-firma-muze.svg"
+  },
+  {
     "slug": "prechod-z-microsoftu-365-na-google-workspace-levnejsi",
     "title": "Levnější licence Google Workspace? Úspora mizí v detailu",
     "description": "Nová analýza ukazuje, že levnější licence kancelářského balíku sama o sobě náklady na výměnu nevyrovná. Co má vedení vyčíslit dřív, než migraci schválí.",
