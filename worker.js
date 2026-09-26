@@ -9,6 +9,7 @@
 // musi chodit z tehoz jmena jako web, jinak je podezrela uz z principu.
 import PORTAL from './_pristup/portal.js';
 import { overToken, validujDavku, vlozVodoznak } from './pristup.js';
+import { potvrd, prihlas, validujPrihlaseni } from './souhlas.js';
 
 const NOTIFY_TO = 'petr.kokoska@mantait.cz';
 const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };
@@ -311,6 +312,26 @@ async function handleForm(request, env, formName, ctx) {
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 }
 
+// Prihlaseni k hlidaci vyzev (T0926-211). Honeypot i chyby jako handleForm, ale bez
+// notifikace Petrovi: zapis `zapsan` + potvrzovaci mail resi prihlas() v souhlas.js.
+async function handleHlidac(request, env, ctx) {
+  if (Number(request.headers.get('content-length') || 0) > 64 * 1024) {
+    return errorPage('Odeslaná data jsou příliš velká.', { status: 413, zpet: '/hlidac-vyzev' });
+  }
+  const data = Object.fromEntries(await request.formData());
+  const hotovo = Response.redirect(new URL('/hlidac-vyzev/zkontrolujte-postu', request.url), 303);
+  if (data.website || data.kontrolni_udaj) return hotovo;
+  const udaje = validujPrihlaseni(data);
+  if (udaje.chyba) return errorPage(udaje.chyba, { status: 400, zpet: '/hlidac-vyzev' });
+  const posta = {
+    puvod: new URL(request.url).origin,
+    posli: async (to, predmet, telo) => sendMail(await accessToken(env), to, predmet, telo),
+  };
+  const r = await prihlas(env, ctx, udaje, 'web-hlidac', 'ZNENI_V0',
+                          request.headers.get('cf-connecting-ip') || '', posta);
+  return r || hotovo;
+}
+
 const ODKAZ_NEPLATI = '<!doctype html><html lang="cs"><meta charset="utf-8"><title>Odkaz neplatí</title>'
   + '<body><h1>Odkaz neplatí</h1><p>Platnost odkazu vypršela nebo byl zrušen.</p></body></html>';
 
@@ -432,7 +453,7 @@ function pustDal(klic) {
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
-    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel|pristup)$/);
+    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel|pristup|hlidac)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       // Cizi stranka nesmi odeslat formular jmenem navstevnika. Origin muze
@@ -443,10 +464,14 @@ export default {
         return new Response('Forbidden', { status: 403 });
       }
       if (!pustDal(request.headers.get('cf-connecting-ip') || 'neznamy')) {
-        console.log(JSON.stringify({ event: 'form.rate_limited', form: match[1] }));
+        console.log(JSON.stringify(match[1] === 'hlidac'
+          ? { event: 'hlidac.rate_limited', zdroj: 'web-hlidac' }
+          : { event: 'form.rate_limited', form: match[1] }));
+        const zpet = { pristup: '/podnikova-ai/#pristup', hlidac: '/hlidac-vyzev' }[match[1]] || '/#napiste';
         return errorPage('Formulář jste odeslali několikrát po sobě. Zkuste to prosím za minutu.',
-                         { status: 429, zpet: match[1] === 'pristup' ? '/podnikova-ai/#pristup' : '/#napiste' });
+                         { status: 429, zpet });
       }
+      if (match[1] === 'hlidac') return handleHlidac(request, env, ctx);
       return handleForm(request, env, match[1], ctx);
     }
 
@@ -454,6 +479,7 @@ export default {
     const p = pathname.match(/^\/p\/([A-Za-z0-9_.-]{1,512})$/);
     if (p) return handlePristup(request, env, p[1]);
     if (pathname === '/mereni') return handleMereni(request, env);
+    if (pathname === '/api/souhlas/potvrd') return potvrd(request, env);
 
     // Bez koncoveho lomitka, at /kontakt a /kontakt/ konci stejne.
     const cesta = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
