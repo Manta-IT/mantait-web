@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import worker from '../worker.js';
-import { overToken, podpisToken, vlozVodoznak } from '../pristup.js';
+import { overToken, podpisToken, validujDavku, vlozVodoznak } from '../pristup.js';
 
 const ZDROJ = new URL('../../specs/podnikova-ai/prototyp/portal.html', import.meta.url);
 const PORTAL_ZDROJ = existsSync(ZDROJ) ? readFileSync(ZDROJ, 'utf8') : null;
@@ -43,6 +43,12 @@ const assetsVolano = [];
 const env = {
   GMAIL_CLIENT_ID: 'x', GMAIL_CLIENT_SECRET: 'x', GMAIL_REFRESH_TOKEN: 'x',
   PRISTUP_KLIC: KLIC, PRISTUP_ZRUSENE: 'zrusene1,zrus2:1', DB: db,
+  ASSETS: {
+    fetch: async (r) => {
+      assetsVolano.push(new URL(r.url).pathname);
+      return new Response('nenalezeno', { status: 404 });
+    },
+  },
 };
 const bezKlice = { ...env, PRISTUP_KLIC: undefined };
 const bezDb = { ...env, DB: undefined };
@@ -161,6 +167,25 @@ try {
   assert.equal((await mereni({ t: platny, u: u1 }, bezDb)).status, 503);
   assert.equal(radky.length, 1, 'odmitnute davky nic nezapsaly');
 
+  // T0924-478 (rez 8): token pred hlavnim skriptem, vodoznak za nim
+  const portalTelo = await (await worker.fetch(req(`/p/${platny}`), env, null)).text();
+  const iToken = portalTelo.indexOf('window.PRISTUP_T=');
+  const iHlavni = portalTelo.indexOf('(function(){');
+  assert.ok(iToken > -1 && iHlavni > -1, 'portal ma token i hlavni skript');
+  assert.ok(iToken < portalTelo.indexOf('</head>'), 'token je v <head>');
+  assert.ok(iToken < iHlavni, 'token je pred hlavnim skriptem');
+  assert.ok(portalTelo.indexOf('pristup-vodoznak') > iHlavni, 'vodoznak je za hlavnim skriptem');
+
+  // davka ve tvaru modulu M: cast v pred ':' je klic allowlistu
+  const uM = [
+    { v: 'uvod', o: 'dvorakova', ts: 1 }, { v: 'reporty:finance', o: 'kraus', ts: 2 },
+    { v: 'odd:obchod', o: 'kraus', ts: 3 }, { v: 'agent:x', o: 'kraus', ts: 4 },
+  ];
+  radky.length = 0;
+  assert.equal((await mereni({ t: platny, u: uM })).status, 204, 'davka modulu M');
+  assert.equal(radky.length, 4);
+  assert.ok(radky.every((r) => r.a[0] === JAN.z), 'z z tokenu u vsech radku');
+
   // T0924-472 (rez 2): kriteria 1 a 12
   const zadost = (pole, ip = String(Math.random())) => worker.fetch(req('/api/pristup', {
     method: 'POST', body: new URLSearchParams(pole), headers: { 'cf-connecting-ip': ip },
@@ -231,5 +256,16 @@ const v = JSON.parse(readFileSync(new URL('../../tools/podnikova-ai-pristup/vekt
 assert.equal(await podpisToken(v.payload, v.klic), v.token, 'JS token vektoru se musi shodovat s Pythonem');
 assert.deepEqual(await overToken(v.token, v.klic, v.payload.d, new Set()), v.payload);
 assert.equal(await overToken(v.token, v.klic, v.payload.d, new Set([v.payload.z])), null, 'zruseny odkaz');
+
+// T0924-478: kazda obrazovka prototypu (klice TIT) projde allowlistem /mereni
+if (PORTAL_ZDROJ) {
+  const blok = PORTAL_ZDROJ.slice(PORTAL_ZDROJ.indexOf('var TIT = {'));
+  const tit = blok.slice(0, blok.indexOf('};'));
+  const klice = [...tit.matchAll(/^\s*(\w+):\[/gm), ...tit.matchAll(/, (\w+):\[/g)].map((m) => m[1]);
+  assert.ok(klice.length > 10, `TIT ma klice (${klice.length})`);
+  for (const k of klice) {
+    assert.ok(validujDavku({ t: 'x', u: [{ v: k, o: 'o', ts: 1 }] }), `obrazovka ${k} chybi ve VIEWS`);
+  }
+}
 
 console.log('test-pristup: OK');
