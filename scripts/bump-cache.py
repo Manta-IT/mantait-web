@@ -41,8 +41,16 @@ PAGES += sorted(
 _otisky = {}
 
 
+def otisk_obsahu(data):
+    return hashlib.sha1(data.replace(b'\r\n', b'\n')).hexdigest()[:7]
+
+
 def otisk(jmeno):
-    """Prvnich sedm hex znaku sha1 obsahu souboru v korenu webu."""
+    """Prvnich sedm hex znaku sha1 obsahu souboru v korenu webu.
+
+    Konce radku se normalizuji na LF: CRLF v worktree dilny prepisoval ?v=
+    na vsech strankach, i kdyz se obsah nezmenil (T0926-160).
+    """
     if jmeno not in _otisky:
         cesta = os.path.join(WEB_DIR, jmeno)
         if not os.path.exists(cesta):
@@ -50,7 +58,8 @@ def otisk(jmeno):
             # nesmi spadnout uprostred bumpu.
             _otisky[jmeno] = 'chybi'
         else:
-            _otisky[jmeno] = hashlib.sha1(open(cesta, 'rb').read()).hexdigest()[:7]
+            with open(cesta, 'rb') as f:
+                _otisky[jmeno] = otisk_obsahu(f.read())
     return _otisky[jmeno]
 
 
@@ -103,6 +112,9 @@ def _test():
     assert not jen_bump_obsah(a, a), 'beze zmeny neni bump'
     assert not jen_bump_obsah(a, a.replace('text', 'jiny')), 'obsah = cizi prace'
     assert not jen_bump_obsah(a, a.replace('111', '222').replace('text', 'jiny')), 'bump + obsah = cizi prace'
+    assert otisk_obsahu(b'a\r\nb\r\n') == otisk_obsahu(b'a\nb\n'), 'CRLF meni otisk'
+    assert otisk_obsahu(b'v2\n') == hashlib.sha1(b'v2\n').hexdigest()[:7], 'LF otisk se zmenil'
+    assert otisk_obsahu(b'a\n') != otisk_obsahu(b'b\n')
     print('bump-cache OK')
 
 
