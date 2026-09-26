@@ -330,7 +330,10 @@ async function handleForm(request, env, formName, ctx) {
   }
   // Jen delka: e-mail ani text zadosti do logu nepatri (kriterium 12).
   if (formName === 'pristup') console.log(JSON.stringify({ event: 'pristup.zadost', delka: String(data.text || '').length }));
-  return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
+  // Lead s platnym zdrojem nese zdroj az do konverze Ads na /dekujeme (T0924-185).
+  // Regex = web/gtag.js; cokoli jineho do URL neprojde.
+  const zdroj = formName === 'kontakt' && !robot && /^[a-z0-9-]{1,40}$/.test(String(data.zdroj || '')) ? data.zdroj : '';
+  return Response.redirect(new URL((form.dekujeme || '/dekujeme') + (zdroj ? `?zdroj=${zdroj}` : ''), request.url), 303);
 }
 
 // Prihlaseni k hlidaci vyzev (T0926-211). Honeypot i chyby jako handleForm, ale bez
