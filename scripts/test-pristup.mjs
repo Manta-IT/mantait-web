@@ -9,9 +9,9 @@ import { overToken, podpisToken, vlozVodoznak } from '../pristup.js';
 const ZDROJ = new URL('../../specs/podnikova-ai/prototyp/portal.html', import.meta.url);
 const PORTAL_ZDROJ = existsSync(ZDROJ) ? readFileSync(ZDROJ, 'utf8') : null;
 const KLIC = 'test-klic-pristup';
-const JAN = { z: '1a0test', j: 'Jan Novák', d: '2026-09-24', e: '2026-10-08' };
+const JAN = { z: '1a0test', j: 'Jan Novák', d: '2026-09-24', e: '2026-10-08', n: '1' };
 // Spolecny vektor s tools/podnikova-ai-pristup/test_pristup.py -- literal, NEPOCITAT z druhe implementace.
-const VEKTOR = 'eyJ6IjoiMWEwdGVzdCIsImoiOiJKYW4gTm92w6FrIiwiZCI6IjIwMjYtMDktMjQiLCJlIjoiMjAyNi0xMC0wOCJ9.6jeUmD1sbaPlha3Kr02QRE3TWUW67e-cc6PTWjzacm0';
+const VEKTOR = 'eyJ6IjoiMWEwdGVzdCIsImoiOiJKYW4gTm92w6FrIiwiZCI6IjIwMjYtMDktMjQiLCJlIjoiMjAyNi0xMC0wOCIsIm4iOiIxIn0.IY1_-QdGofJMxoeLVR1KoxV-CKVwav1b41IzaZ-TC54';
 
 const odeslane = [];
 globalThis.fetch = async (url, init) => {
@@ -42,8 +42,7 @@ const db = {
 const assetsVolano = [];
 const env = {
   GMAIL_CLIENT_ID: 'x', GMAIL_CLIENT_SECRET: 'x', GMAIL_REFRESH_TOKEN: 'x',
-  PRISTUP_KLIC: KLIC, PRISTUP_ZRUSENE: 'zrusene1', DB: db,
-  ASSETS: { fetch: async (r) => { assetsVolano.push(new URL(r.url).pathname); return new Response('nenalezeno', { status: 404 }); } },
+  PRISTUP_KLIC: KLIC, PRISTUP_ZRUSENE: 'zrusene1,zrus2:1', DB: db,
 };
 const bezKlice = { ...env, PRISTUP_KLIC: undefined };
 const bezDb = { ...env, DB: undefined };
@@ -52,6 +51,16 @@ const req = (cesta, init = {}) => new Request(`https://mantait.cz${cesta}`, {
   ...init, headers: { 'cf-connecting-ip': String(Math.random()), ...(init.headers || {}) },
 });
 const den = (posun) => new Date(Date.now() + posun * 86400000).toISOString().slice(0, 10);
+
+// Token bez `n` (4 klice) -- hlida, ze overToken prisnost klicu opravdu vynucuje.
+async function podepisBezN(payload, klic) {
+  const enc = new TextEncoder();
+  const b64url = (bytes) => Buffer.from(bytes).toString('base64url');
+  const p = b64url(enc.encode(JSON.stringify({ z: payload.z, j: payload.j, d: payload.d, e: payload.e })));
+  const key = await crypto.subtle.importKey('raw', enc.encode(klic), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const s = await crypto.subtle.sign('HMAC', key, enc.encode(p));
+  return `${p}.${b64url(new Uint8Array(s))}`;
+}
 
 const logy = [];
 const puvodniLog = console.log;
@@ -104,8 +113,9 @@ try {
     ['zmeneny podpis', platny.slice(0, -1) + posledni, env],
     ['propadly', await podpisToken({ ...JAN, e: den(-1) }, KLIC), env],
     ['zruseny', await podpisToken({ ...JAN, z: 'zrusene1', e: den(14) }, KLIC), env],
-    ['zruseny v seznamu', plati13, { ...env, PRISTUP_ZRUSENE: `jine, ${JAN.z}` }],
+    ['zruseny n=1', await podpisToken({ ...JAN, z: 'zrus2', n: '1', e: den(14) }, KLIC), env],
     ['bez klice', platny, bezKlice],
+    ['bez n', await podepisBezN({ ...JAN, e: den(14) }, KLIC), env],
   ];
   for (const [co, t, e] of neplatne) {
     res = await worker.fetch(req(`/p/${t}`), e, null);
@@ -123,6 +133,11 @@ try {
     assert.equal(res.status, 404, cesta);
     assert.ok(!(await res.text()).includes(titulek), `${cesta}: bez prototypu`);
   }
+
+  // zruseno jen vydani n=1 -> druhe vydani stejne zadosti dal plati
+  const druheVydani = await podpisToken({ ...JAN, z: 'zrus2', n: '2', d: den(0), e: den(14) }, KLIC);
+  res = await worker.fetch(req(`/p/${druheVydani}`), env, null);
+  assert.equal(res.status, 200, 'zruseni z:n rusi jen konkretni vydani');
 
   // vodoznak escapuje jmeno
   const zly = vlozVodoznak('<html><body>x</body></html>', { j: '<script>x', d: '2026-09-24' }, 'a.b');

@@ -3,7 +3,7 @@
 // Cista logika bez I/O -- jen WebCrypto a TextEncoder (Workers i Node 20+).
 //
 // Kanonicky tvar tokenu MUSI sedet s tools/podnikova-ai-pristup/pristup.py
-// (poradi klicu z,j,d,e; JSON bez mezer; non-ASCII neescapovane; b64url bez =).
+// (poradi klicu z,j,d,e,n; JSON bez mezer; non-ASCII neescapovane; b64url bez =).
 // Shodu hlida spolecny literal VEKTOR v test-pristup.mjs a test_pristup.py.
 
 const enc = new TextEncoder();
@@ -35,10 +35,13 @@ function hmacKlic(klic, pouziti) {
 }
 
 export async function podpisToken(payload, klic) {
-  const p = b64url(enc.encode(JSON.stringify({ z: payload.z, j: payload.j, d: payload.d, e: payload.e })));
+  const n = String(payload.n ?? '1');
+  const p = b64url(enc.encode(JSON.stringify({ z: payload.z, j: payload.j, d: payload.d, e: payload.e, n })));
   const s = await crypto.subtle.sign('HMAC', await hmacKlic(klic, 'sign'), enc.encode(p));
   return `${p}.${b64url(new Uint8Array(s))}`;
 }
+
+const VYDANI_RE = /^[1-9]\d{0,3}$/;
 
 export async function overToken(retezec, klic, dnes, zrusene) {
   if (!klic || typeof retezec !== 'string' || retezec.length > 512 || !TOKEN_RE.test(retezec)) return null;
@@ -58,9 +61,10 @@ export async function overToken(retezec, klic, dnes, zrusene) {
   }
   if (!t || typeof t !== 'object' || Array.isArray(t)) return null;
   const klice = Object.keys(t).sort().join(',');
-  if (klice !== 'd,e,j,z' || !['z', 'j', 'd', 'e'].every((k) => typeof t[k] === 'string')) return null;
-  if (!DATUM_RE.test(t.e) || dnes > t.e || zrusene.has(t.z)) return null;
-  return { z: t.z, j: t.j, d: t.d, e: t.e };
+  if (klice !== 'd,e,j,n,z' || !['z', 'j', 'd', 'e', 'n'].every((k) => typeof t[k] === 'string')) return null;
+  if (!DATUM_RE.test(t.e) || !VYDANI_RE.test(t.n) || dnes > t.e) return null;
+  if (zrusene.has(t.z) || zrusene.has(`${t.z}:${t.n}`)) return null;
+  return { z: t.z, j: t.j, d: t.d, e: t.e, n: t.n };
 }
 
 const ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
