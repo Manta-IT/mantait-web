@@ -7,10 +7,10 @@
 <meta name="description" content="AI napojená na vaše systémy, která zná vaše data. Lokální varianta běží u vás na serveru a data firmu neopustí, cloudová u mě s měsíčním nákladem. Zaškolení lidí v obou. Začíná se AI plánem za 9 900 Kč.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
 <link rel="stylesheet" href="/sluzba.css?v=7f547ce">
 <link rel="stylesheet" href="/podnikova.css?v=985fb5b">
-<link rel="stylesheet" href="/mobil.css?v=64b4033">
+<link rel="stylesheet" href="/mobil.css?v=50ff103">
 <script>document.documentElement.classList.add('js')</script>
   <link rel="canonical" href="https://mantait.cz/reseni-podnikova-ai">
   <link rel="alternate" hreflang="cs" href="https://mantait.cz/reseni-podnikova-ai">
@@ -110,8 +110,8 @@
   <div class="obsah">
     <h2>Kde jsou vaše data.<br>Přepněte si to.</h2>
     <p class="tmava-lead hranice-lead">Jedno rozhodnutí, které se dá později změnit. Obě podoby mají
-    stejné zaškolení lidí, stejné ranní hlášení a stejná pravidla, kde stroj smí jednat
-    sám. Liší se tím, kde bydlí a co odchází ven.</p>
+    stejné zaškolení lidí, stejné ranní hlášení o tom, jestli se ve firmě věci dějí včas,
+    a stejná pravidla, kde stroj smí jednat sám. Liší se tím, kde bydlí a co odchází ven.</p>
 
     <div class="podoby" id="podoby" role="radiogroup" aria-label="Podoba podnikové AI" hidden>
       <label class="podoba"><input type="radio" name="podoba" value="lokalni" checked><span>Lokální</span></label>
@@ -164,8 +164,8 @@
         <div class="hr-radek">
           <dt>Kdo má přístup</dt>
           <dd>
-            <p class="lok"><span class="var">Lokální</span>Vaši lidé podle seznamu účtů, který dostanete na jeden list. Já na dobu zavedení a pak jen vzdáleně, když mi to zapnete.</p>
-            <p class="clo"><span class="var">Cloudová</span>Vaši lidé podle stejného seznamu. Já jako ten, kdo infrastrukturu provozuje. Poskytovatel modelu vidí dotaz a odpověď, do vašich systémů nevidí.</p>
+            <p class="lok"><span class="var">Lokální</span>Vaši lidé podle seznamu účtů, který dostanete na jeden list. Já na dobu zavedení a pak jen vzdáleně, když mi to zapnete. Stroj vidí jen to, co smí vidět člověk, který se ptá. Práva se nastavují na datech podle vašeho firemního seznamu účtů, ne podle toho, na co je stroj specialista.</p>
+            <p class="clo"><span class="var">Cloudová</span>Vaši lidé podle stejného seznamu. Já jako ten, kdo infrastrukturu provozuje. Poskytovatel modelu vidí dotaz a odpověď, do vašich systémů nevidí. Stroj vidí jen to, co smí vidět člověk, který se ptá. Práva se nastavují na datech podle vašeho firemního seznamu účtů, ne podle toho, na co je stroj specialista.</p>
           </dd>
         </div>
         <div class="hr-radek">
@@ -291,7 +291,8 @@
             <span class="kus-cena">89 000 Kč zavedení, provoz od 8 000 Kč měsíčně</span>
           </div>
           <p>Program s vlastními přístupy do vašich systémů. Běží nepřetržitě, sám si
-          hledá, co je potřeba udělat, a ráno hlásí, co udělal a kde si nevěděl rady.
+          hledá, co je potřeba udělat, a ráno hlásí nahoře, co ve firmě stojí: poptávka bez nabídky, objednávka bez dodání,
+          faktura po splatnosti. Až pod tím, co udělal sám a kde si nevěděl rady.
           Jedna agenda od začátku do konce, třeba pošta s poptávkami.</p>
           <a href="/reseni-ai-zamestnanec" class="kus-odkaz">Jak agent pracuje
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -410,7 +411,8 @@
         a nikdo ho nepoužívá, zná většina firem.</p>
         <p>Proto je součástí obou podob zaškolení lidí, kteří s tím budou pracovat. Ne
         přednáška o AI. Dvě hodiny nad jejich vlastní agendou: co stroj udělá sám, kde se
-        zastaví a čeká, jak číst ranní hlášení a co dělat, když si není jistý.</p>
+        zastaví a čeká, jak číst ranní hlášení a co dělat, když si není jistý. Hlášení neměří, kdo stroj
+        používá a kdo ne. Měří, jestli je včas objednáno, dodáno a zaplaceno.</p>
         <p>A zápis o tom. Od února 2025 má firma podle AI Actu zajistit, že lidé, kteří
         s AI pracují jejím jménem, tomu rozumějí. Žádný certifikát, žádný počet hodin.
         Zápis o zaškolení je pro vás ta povinnost hotová.</p>
@@ -543,7 +545,8 @@
         <span class="etapa-znak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><circle cx="12" cy="14.5" r="3.5"/><path d="M12 12.5v2l1.5 1"/></svg></span>
         <div class="etapa-kdy">První měsíc</div>
         <h3>Provoz pod dohledem</h3>
-        <p>Každé ráno hlášení, já ho první měsíc čtu s vámi. Od vás potřebuji: pět minut
+        <p>Každé ráno hlášení: nahoře, co ve firmě stojí (poptávka bez nabídky, objednávka
+        bez dodání, faktura po splatnosti), pod tím, co udělal stroj. První měsíc ho čtu s vámi. Od vás potřebuji: pět minut
         denně. Pak už jen dohled.</p>
       </div>
     </div>
@@ -574,7 +577,7 @@
     <details>
       <summary>Kdo vidí moje data?<span class="znak-plus"></span></summary>
       <div class="odpoved">
-        <p>U lokální podoby vaši lidé podle seznamu účtů, který dostanete na papíře, a já po dobu zavedení. Pak jen vzdáleně, když mi to zapnete. Nikdo další, server nepotřebuje internet k práci. U cloudové podoby k tomu přibývám já jako provozovatel infrastruktury a poskytovatel modelu, který vidí dotaz a odpověď: jednu poptávku, jeden dokument. Do vašich systémů nevidí a vaši databázi nemá. Smlouvu o zpracování údajů s ním připravím jako součást zavedení.</p>
+        <p>U lokální podoby vaši lidé podle seznamu účtů, který dostanete na papíře, a já po dobu zavedení. Pak jen vzdáleně, když mi to zapnete. Nikdo další, server nepotřebuje internet k práci. U cloudové podoby k tomu přibývám já jako provozovatel infrastruktury a poskytovatel modelu, který vidí dotaz a odpověď: jednu poptávku, jeden dokument. Do vašich systémů nevidí a vaši databázi nemá. Smlouvu o zpracování údajů s ním připravím jako součást zavedení. Stroj vidí jen to, co smí vidět člověk, který se ptá. Práva se nastavují na datech podle vašeho firemního seznamu účtů, ne podle toho, na co je stroj specialista.</p>
       </div>
     </details>
     <details>
@@ -629,7 +632,7 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=fd536a6" defer></script>
+<script src="/sluzba.js?v=7b17979" defer></script>
 <script type="module">
 /* Hranice site: prepinac Lokalni / Cloudova. Blok AI prejede mezi dvema misty;
    vzdalenost meri skript (obe mista stoji, hybe se jen blok), takze totez
@@ -663,6 +666,6 @@
   odkryj(sekce, .3);
 })();
 </script>
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>
