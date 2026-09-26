@@ -7,7 +7,7 @@
 <meta name="description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
 <style>
 /* =========================================================================
    Manta IT -- kompletni stranka, v2
@@ -627,7 +627,7 @@ textarea{min-height:104px;resize:vertical}
   min-height:36px;transition:color .2s var(--krivka-klid),background .2s var(--krivka-klid)}
 .akce-temata button[aria-selected="true"]{background:var(--papir);color:var(--inkoust);border-color:var(--papir)}
 </style>
-  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="stylesheet" href="/mobil.css?v=50ff103">
   <link rel="canonical" href="https://mantait.cz/">
   <meta property="og:title" content="Manta IT - technologický ředitel na vaší straně">
   <meta property="og:description" content="Deset let jsem stavěl systémy pro velké značky. Teď je stavím pro firmy, které vlastní IT oddělení nemají a mít nechtějí.">
@@ -683,7 +683,7 @@ textarea{min-height:104px;resize:vertical}
   }
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
-  <script src="/gtag.js?v=8ebe653" defer></script>
+  <script src="/gtag.js?v=bcdde56" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
 </head>
@@ -968,6 +968,8 @@ textarea{min-height:104px;resize:vertical}
 
     <form class="panel" id="formular" method="post" action="/api/kontakt">
       <input type="hidden" name="cesta" id="poleCesta" value="zprava">
+      <input type="hidden" name="zdroj" id="poleZdroj">
+      <input type="hidden" name="utm_campaign" id="poleUtm">
       <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off"
              style="position:absolute;left:-9999px" aria-hidden="true">
 
@@ -1222,6 +1224,12 @@ vyber('priprava');
 
 (function kontakt(){
   const $ = id => document.getElementById(id);
+  // odkud lead prisel (/?zdroj=kalkulacka&utm_campaign=...), jen kratky slug (T0924-185)
+  const url = new URLSearchParams(location.search);
+  for (const [klic, id] of [['zdroj', 'poleZdroj'], ['utm_campaign', 'poleUtm']]) {
+    const v = url.get(klic);
+    if (v && /^[\w.-]{1,60}$/.test(v) && $(id)) $(id).value = v;
+  }
   const cesty = [...document.querySelectorAll('.cesta[data-cesta]')];
   const pole = $('poleCesta'), blokZprava = $('blokZprava'), blokTermin = $('blokTermin');
   if (!cesty.length || !pole) return;
@@ -1297,6 +1305,6 @@ vyber('priprava');
   prekresli();
 })();
 </script>
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>

@@ -67,6 +67,15 @@ export function spocitej(vstup) {
 /* ---------------- obsluha stranky (jen v prohlizeci) ---------------- */
 
 if (typeof document !== 'undefined') {
+  // Kampan Ads prichazi s utm_campaign; CTA ho predaji formulari na homepage,
+  // aby lead nesl kampan (T0924-185). Jina hodnota nez kratky slug se zahodi.
+  const kampan = new URLSearchParams(location.search).get('utm_campaign');
+  if (kampan && /^[\w.-]{1,60}$/.test(kampan)) {
+    for (const a of document.querySelectorAll('a[href^="/?zdroj=kalkulacka"]')) {
+      a.href = a.getAttribute('href').replace('#napiste', '&utm_campaign=' + kampan + '#napiste');
+    }
+  }
+
   const kc = new Intl.NumberFormat('cs-CZ', {maximumFractionDigits: 0});
   const poleId = ['lidi', 'hodinyTydne', 'sazba', 'podil'];
   const pole = {};

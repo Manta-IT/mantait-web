@@ -88,7 +88,8 @@ Manta IT | mantait.cz | ${TEL}`,
     // `cesta` a `termin` prisly s novym kontaktem (napsat / zavolat / poslat
     // termin). Bez nich by vybrany termin nikdy nedorazil -- formular by ho
     // sebral a Worker zahodil.
-    fields: ['cesta', 'jmeno', 'firma', 'telefon', 'email', 'zprava', 'termin'],
+    // `zdroj` + `utm_campaign`: odkud lead prisel (/?zdroj=kalkulacka, T0924-185).
+    fields: ['cesta', 'jmeno', 'firma', 'telefon', 'email', 'zprava', 'termin', 'zdroj', 'utm_campaign'],
     reply: (d) => {
       if (d.cesta === 'zavolat') {
         return `Dobrý den,
@@ -300,6 +301,11 @@ async function handleForm(request, env, formName, ctx) {
     const potvrzeni = sendMail(token, email, form.replySubject, form.reply(data))
       .catch((e) => console.error('potvrzeni klientovi selhalo', e));
     if (ctx) ctx.waitUntil(potvrzeni); else await potvrzeni;
+  }
+  // gtag.js na /dekujeme posle zdroj s konverzi Ads; do URL jen overena hodnota
+  const zdroj = String(data.zdroj || '');
+  if (formName === 'kontakt' && !robot && /^[a-z0-9-]{1,40}$/.test(zdroj)) {
+    return Response.redirect(new URL('/dekujeme?zdroj=' + zdroj, request.url), 303);
   }
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 }
