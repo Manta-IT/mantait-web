@@ -36,3 +36,5 @@ _mobil-test.html
 _pristup/
 # Logika brany je modul Workeru, ne verejny asset (jako worker.js).
 pristup.js
+# SQL schema D1 je interni (T0926-214)
+schema/
