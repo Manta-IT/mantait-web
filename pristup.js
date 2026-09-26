@@ -73,10 +73,16 @@ const escapuj = (s) => String(s).replace(/[&<>"']/g, (c) => ESC[c]);
 export function vlozVodoznak(html, token, retezec) {
   const vlozka = '<div class="pristup-vodoznak" aria-hidden="true" style="position:fixed;right:12px;'
     + 'bottom:12px;opacity:.55;font-size:12px;pointer-events:none;z-index:9999">'
-    + `${escapuj(`${token.j} · ${token.d}`)}</div>`
-    + `<script>window.PRISTUP_T=${JSON.stringify(retezec).replace(/</g, '\\u003c')};</script>`;
+    + `${escapuj(`${token.j} · ${token.d}`)}</div>`;
+  // Token musi byt definovany PRED hlavnim skriptem portalu, jinak modul M
+  // pri uvodnim render() nevidi window.PRISTUP_T (T0924-478).
+  const skript = `<script>window.PRISTUP_T=${JSON.stringify(retezec).replace(/</g, '\\u003c')};</script>`;
   const i = html.lastIndexOf('</body>');
-  return i < 0 ? html + vlozka : html.slice(0, i) + vlozka + html.slice(i);
+  const sVodoznakem = i < 0 ? html + vlozka : html.slice(0, i) + vlozka + html.slice(i);
+  let j = sVodoznakem.indexOf('</head>');
+  if (j < 0) j = sVodoznakem.indexOf('<script');
+  if (j < 0) j = 0;
+  return sVodoznakem.slice(0, j) + skript + sVodoznakem.slice(j);
 }
 
 export function validujDavku(telo) {
