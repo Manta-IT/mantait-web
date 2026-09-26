@@ -7,9 +7,9 @@
 <meta name="description" content="{{POPIS}}">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
 <link rel="stylesheet" href="/sluzba.css?v=7f547ce">
-  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="stylesheet" href="/mobil.css?v=50ff103">
   <link rel="canonical" href="https://mantait.cz/clanky/{{SLUG}}">
   <meta property="og:title" content="{{TITULEK}}">
   <meta property="og:description" content="{{POPIS}}">
@@ -126,6 +126,14 @@
   .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
   .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
 
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
   footer{margin-top:0}
 
   @media (hover:hover) and (pointer:fine){
@@ -162,6 +170,7 @@
      (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
      "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
 {{TELO}}
+{{HLIDAC}}
 {{SOUVISEJICI}}
 </main>
 
@@ -172,6 +181,6 @@
   </div>
 </footer>
 
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>
