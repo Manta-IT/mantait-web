@@ -22,6 +22,7 @@ const FORMS = {
     subject: 'Pristup: podnikova-ai',
     fields: ['email', 'text'],
     dekujeme: '/podnikova-ai-dekujeme',
+    povinne: ['email', 'text'],
   },
   // Onboarding dodavatelu (T0831-17). Klice MUSI sedet na
   // specs/dodavatele/sloupce.json (zdroj: formular) -- hlida
@@ -251,6 +252,9 @@ async function handleForm(request, env, formName, ctx) {
   if (email && !/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email)) {
     return chybaUzivatele('E-mailová adresa nevypadá platně.');
   }
+  for (const f of form.povinne || []) {
+    if (!String(data[f] || '').trim()) return chybaUzivatele('Vyplňte prosím e-mail i to, o co vám jde.');
+  }
 
   // Serverova validace strojovych formularu (OWASP review M1): klientske
   // type=number a formatovani jsou jen pohodli. ICO je parovaci klic
@@ -302,11 +306,8 @@ async function handleForm(request, env, formName, ctx) {
       .catch((e) => console.error('potvrzeni klientovi selhalo', e));
     if (ctx) ctx.waitUntil(potvrzeni); else await potvrzeni;
   }
-  // gtag.js na /dekujeme posle zdroj s konverzi Ads; do URL jen overena hodnota
-  const zdroj = String(data.zdroj || '');
-  if (formName === 'kontakt' && !robot && /^[a-z0-9-]{1,40}$/.test(zdroj)) {
-    return Response.redirect(new URL('/dekujeme?zdroj=' + zdroj, request.url), 303);
-  }
+  // Jen delka: e-mail ani text zadosti do logu nepatri (kriterium 12).
+  if (formName === 'pristup') console.log(JSON.stringify({ event: 'pristup.zadost', delka: String(data.text || '').length }));
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
 }
 
@@ -442,7 +443,7 @@ export default {
       if (!pustDal(request.headers.get('cf-connecting-ip') || 'neznamy')) {
         console.log(JSON.stringify({ event: 'form.rate_limited', form: match[1] }));
         return errorPage('Formulář jste odeslali několikrát po sobě. Zkuste to prosím za minutu.',
-                         { status: 429, zpet: '/#napiste' });
+                         { status: 429, zpet: match[1] === 'pristup' ? '/podnikova-ai/#pristup' : '/#napiste' });
       }
       return handleForm(request, env, match[1], ctx);
     }
