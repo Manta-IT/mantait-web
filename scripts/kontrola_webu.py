@@ -13,14 +13,14 @@ Co hlida (jen soubory na disku, zadny server):
     nazev sedi se jmenem sluzby v JSON-LD (META v prenos.py)
  6. presmerovani: `_redirects` a zalozni mapa ve worker.js sedi, cile
     existuji a nevedou na dalsi presmerovani
- 7. skripty neblokuji vykresleni (sluzba.js/mobil.js s `defer`, odkryj() v module)
- 8. pocet blokujicich <link rel=stylesheet> v head na strankach ze sitemap
-    (zatim jen varovani, BLOKUJICI_JE_CHYBA)
+ 7. skripty sluzba.js a mobil.js maji `defer`, odkryj() jen v type="module"
+ 8. portal za tokenem: _pristup/portal.js sedi s portal.html
+    (sestav_portal.py --check) a .assetsignore ma radek `_pristup/`
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
 """
-import io, json, os, re, sys, unicodedata
+import io, json, os, re, subprocess, sys, unicodedata
 
 KOREN = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STRANKY = ['index.html', 'reseni-vedeni-it.html', 'reseni-nova-aplikace.html',
@@ -208,49 +208,16 @@ for dirpath, _, soubory in os.walk(KOREN):
             if 'odkryj(' in telo and 'type="module"' not in tag:
                 nalezy.append((s, 'odkryj() v klasickem skriptu', tag))
 
-# --- 8. blokujici css v head --------------------------------------------
-# 10 stranek ma dnes 4 blokujici stylopisy (T0924-145); zatim jen varovani,
-# rez 3 (T0924-145) prepne BLOKUJICI_JE_CHYBA na True.
-PRAH_BLOKUJICICH = 2
-BLOKUJICI_JE_CHYBA = False  # rez 3 (T0924-145) prepne na True
-
-def stranky_ze_sitemap(koren):
-    sitemap = io.open(os.path.join(koren, 'sitemap.xml'), encoding='utf-8').read()
-    vysledek = []
-    for url in re.findall(r'<loc>(.*?)</loc>', sitemap):
-        cesta = url[len('https://mantait.cz'):] or '/'
-        f = soubor_pro(cesta, 'sitemap.xml')
-        if f and os.path.exists(f) and f not in vysledek:
-            vysledek.append(f)
-    return vysledek
-
-def blokujici_css(html):
-    konec = html.lower().find('</head>')
-    hlavicka = html if konec == -1 else html[:konec]
-    hrefy = []
-    for tag in re.findall(r'<link[^>]+>', hlavicka, flags=re.S):
-        if not re.search(r'rel="stylesheet"', tag):
-            continue
-        if re.search(r'media="print"', tag) or re.search(r'\bonload=', tag):
-            continue
-        href = re.search(r'href="([^"]+)"', tag)
-        if href:
-            hrefy.append(href.group(1))
-    return hrefy
-
-nad = []
-for cesta in stranky_ze_sitemap(KOREN):
-    html = io.open(cesta, encoding='utf-8').read()
-    hrefy = blokujici_css(html)
-    if len(hrefy) > PRAH_BLOKUJICICH:
-        s = os.path.relpath(cesta, KOREN).replace('\\', '/')
-        nad.append((s, hrefy))
-        if BLOKUJICI_JE_CHYBA:
-            nalezy.append((s, 'blokujici css nad %d' % PRAH_BLOKUJICICH, ', '.join(hrefy)))
-
-print('[kontrola_webu] blokujici css: %d stranek nad %d' % (len(nad), PRAH_BLOKUJICICH))
-for s, hrefy in nad:
-    print('    %s (%d)' % (s, len(hrefy)))
+# --- 8. portal za tokenem -----------------------------------------------
+# Prototyp Podnikove AI je jen za /p/<token> (T0924-477): Worker bundluje
+# vygenerovany _pristup/portal.js, ktery musi sedet s portal.html a nesmi ven
+# jako asset. Bez specs/ (samostatny checkout webu) sestav_portal.py jen varuje.
+if subprocess.run([sys.executable, os.path.join(KOREN, 'scripts', 'sestav_portal.py'),
+                   '--check']).returncode != 0:
+    nalezy.append(('_pristup/portal.js', 'drift proti portal.html', 'sestav_portal.py'))
+ignore = io.open(os.path.join(KOREN, '.assetsignore'), encoding='utf-8').read().splitlines()
+if '_pristup/' not in ignore:
+    nalezy.append(('.assetsignore', 'chybi radek _pristup/', 'portal by byl verejny'))
 
 for n in nalezy:
     print('  %-28s %-24s %s' % n)
