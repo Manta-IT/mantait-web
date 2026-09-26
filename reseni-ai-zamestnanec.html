@@ -7,10 +7,10 @@
 <meta name="description" content="AI zaměstnanec pro firmu: sám vyřizuje poštu a zápisy do CRM, běží nepřetržitě, ráno podá hlášení. Kvůli GDPR může běžet u vás na serveru. Od 89 000 Kč.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
 <link rel="stylesheet" href="/sluzba.css?v=7f547ce">
 <link rel="stylesheet" href="/hranol.css?v=d4b1501">
-  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="stylesheet" href="/mobil.css?v=50ff103">
   <link rel="canonical" href="https://mantait.cz/reseni-ai-zamestnanec">
   <meta property="og:title" content="AI zaměstnanec pro firmu - Manta IT">
   <meta property="og:description" content="AI zaměstnanec pro firmu: sám vyřizuje poštu a zápisy do CRM, běží nepřetržitě, ráno podá hlášení. Kvůli GDPR může běžet u vás na serveru.">
@@ -196,6 +196,9 @@
       <legend class="jen-ctecka">Modelový celek</legend>
       <label class="zalozka"><input type="radio" name="celek" value="obchod" checked><span>Asistent obchodníků</span></label>
       <label class="zalozka"><input type="radio" name="celek" value="leadgen"><span>LeadGen Pipeline</span></label>
+      <label class="zalozka"><input type="radio" name="celek" value="recenze"><span>Stroj na recenze</span></label>
+      <label class="zalozka"><input type="radio" name="celek" value="pohledavky"><span>Hlídač pohledávek</span></label>
+      <label class="zalozka"><input type="radio" name="celek" value="smlouvy"><span>Smluvní kalendář</span></label>
     </fieldset>
 
     <div class="celky" id="celky">
@@ -219,6 +222,38 @@
           <li>Připraví návrh oslovení.</li>
         </ul>
         <p class="celek-ceka"><b>Kde se zastaví:</b> před oslovením. Oslovuje člověk, on sám nikomu nepíše a nic neodesílá.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
+      </article>
+      <article class="celek" data-celek="recenze">
+        <h3 class="celek-nazev">Stroj na recenze</h3>
+        <p class="celek-prokoho">pro koho: firmy, které žijí z doporučení a recenzí</p>
+        <ul class="celek-sam">
+          <li>Po dokončené zakázce připraví žádost o recenzi.</li>
+          <li>Hlídá nové recenze.</li>
+          <li>Ke každé připraví odpověď.</li>
+        </ul>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> před odesláním. Ven nejde nic bez vašeho schválení.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
+      </article>
+      <article class="celek" data-celek="pohledavky">
+        <h3 class="celek-nazev">Hlídač pohledávek</h3>
+        <p class="celek-prokoho">pro koho: firmy s více otevřenými fakturami, než stihne sledovat jeden člověk</p>
+        <ul class="celek-sam">
+          <li>Páruje došlé platby s fakturami.</li>
+          <li>Po splatnosti připraví upomínku v tónu vaší firmy.</li>
+          <li>Řadí dlužníky podle rizika.</li>
+        </ul>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> před odesláním upomínky a u každého kroku nad první urgenci. Tam rozhodujete vy.</p>
+        <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
+      </article>
+      <article class="celek" data-celek="smlouvy">
+        <h3 class="celek-nazev">Smluvní kalendář</h3>
+        <p class="celek-prokoho">pro koho: firmy s více nájmy, servisními smlouvami nebo licencemi, které se samy prodlužují</p>
+        <ul class="celek-sam">
+          <li>Hlídá výpovědní lhůty a termíny obnovy.</li>
+          <li>Měsíc dopředu upozorní, kterou smlouvu zrevidovat.</li>
+        </ul>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> u rozhodnutí. Obnovit, vypovědět nebo přejednat rozhoduje člověk.</p>
         <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
     </div>
@@ -920,7 +955,7 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=fd536a6" defer></script>
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/sluzba.js?v=7b17979" defer></script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>
