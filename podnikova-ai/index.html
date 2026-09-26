@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Podniková AI — jak to funguje</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/pisma.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --papir:#FBFBF9;
+  --papir-tmav:#F1F2EF;
+  --inkoust:#101413;
+  --akcent:#0B6E4F;
+  --akcent-sv:#E7F0EB;
+  --tlum:#5E6663;
+  --text-2:#454C49;
+  --linka:#E2E4DF;
+  --obrys:#8B928C;
+  --vada:#9A3F2B;
+  --vada-sv:#D4715A;
+  --na-tmave:#FBFBF9;
+  --na-tmave-tlum:rgba(251,251,249,.72);
+  --na-tmave-slab:rgba(251,251,249,.58);
+  --r-s:8px; --r:10px; --r-l:14px;
+  --e:cubic-bezier(.23,1,.32,1);
+  --max:1080px;
+  --pad-x:clamp(24px,6vw,80px);
+  --pad-s:clamp(64px,9vw,108px);
+}
+
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--papir);color:var(--inkoust);
+  font:400 16px/1.62 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:Outfit,system-ui,sans-serif;letter-spacing:-.03em;line-height:1.06;font-weight:400}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:var(--akcent)}
+*:focus{outline:none}
+*:focus-visible{outline:2px solid var(--akcent);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad-x);padding-right:var(--pad-x)}
+section{padding-block:var(--pad-s)}
+.s-tmav{background:var(--papir-tmav)}
+.s-ink{background:var(--inkoust);color:var(--na-tmave)}
+.s-ink h2,.s-ink h3{color:var(--na-tmave)}
+
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+.s-ink .eyebrow{color:var(--na-tmave-slab)}
+h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
+.sub{font-size:clamp(16px,1.9vw,18.5px);color:var(--text-2);max-width:60ch;line-height:1.55}
+.s-ink .sub{color:var(--na-tmave-tlum)}
+.fine{font-size:12.5px;color:var(--tlum);line-height:1.55}
+.s-ink .fine{color:var(--na-tmave-slab)}
+
+/* ---------- HLAVIČKA ---------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(251,251,249,.9);
+  backdrop-filter:blur(9px);border-bottom:1px solid var(--linka)}
+.nav .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.znak{width:26px;height:26px;border-radius:7.1px;background:var(--akcent);position:relative;flex:none}
+.znak::after{content:"";position:absolute;top:7.1px;right:7.1px;width:9.5px;height:9.5px;
+  border-radius:2.4px;background:var(--papir)}
+.nav b{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
+.nav .tag{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--tlum);border:1px solid var(--linka);border-radius:6px;padding:4px 9px}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:clamp(56px,8vw,92px);padding-bottom:clamp(48px,7vw,80px)}
+.hero h1{font-size:clamp(36px,6.4vw,68px);margin-bottom:22px;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--akcent)}
+.hero .sub{font-size:clamp(17px,2.1vw,20px);max-width:56ch}
+
+/* ---------- 1. CESTA ÚKOLU ---------- */
+.track{margin-top:40px;border:1px solid var(--linka);border-radius:var(--r-l);
+  background:var(--papir);overflow:hidden}
+.track-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:14px 18px;border-bottom:1px solid var(--linka)}
+.track-head .t{font-size:14px;font-weight:600}
+.track-head .ctrl{margin-left:auto;display:flex;gap:8px}
+.btn{border:1px solid var(--obrys);border-radius:var(--r);padding:9px 15px;font-size:13.5px;
+  font-weight:500;min-height:42px;transition:background .2s var(--e),border-color .2s var(--e)}
+.btn-p{background:var(--akcent);border-color:var(--akcent);color:#fff}
+@media(hover:hover) and (pointer:fine){
+  .btn:hover{background:var(--papir-tmav)}
+  .btn-p:hover{background:#095C42;border-color:#095C42}
+}
+.btn:active{transform:translateY(1px);transition-duration:.16s}
+
+.rail{position:relative;padding:40px 18px 26px;overflow-x:auto}
+.rail-line{position:relative;min-width:760px;height:3px;background:var(--linka);
+  border-radius:2px;margin:0 10%}
+.rail-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--akcent);
+  border-radius:2px;transition:width .9s var(--e)}
+.stations{display:flex;min-width:760px;position:relative;top:-11px}
+.st{width:20%;text-align:center;position:relative;padding:0 8px}
+.st .pin{width:19px;height:19px;border-radius:50%;background:var(--papir);
+  border:2.5px solid var(--linka);margin:0 auto 14px;transition:border-color .4s var(--e),background .4s var(--e)}
+.st.on .pin{border-color:var(--akcent);background:var(--akcent)}
+.st.gate .pin{border-radius:4px;width:19px;height:19px}
+.st.gate.on .pin{background:var(--papir);border-color:var(--akcent);box-shadow:0 0 0 4px var(--akcent-sv)}
+.st .lb{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.25}
+.st .sm{font-size:12px;color:var(--tlum);line-height:1.45}
+.st.gate .lb{color:var(--akcent)}
+
+.rail-note{padding:0 18px 18px;min-height:76px}
+.rail-msg{border-left:2px solid var(--akcent);padding:4px 0 4px 14px;font-size:14.5px;max-width:64ch}
+.rail-msg .who{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--tlum);
+  display:block;margin-bottom:4px;letter-spacing:.03em}
+.audit{border-top:1px solid var(--linka);background:var(--papir-tmav);padding:13px 18px}
+.audit .ah{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+.audit ol{list-style:none;display:grid;gap:4px}
+.audit li{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-2);
+  opacity:0;transform:translateY(3px);transition:opacity .35s var(--e),transform .35s var(--e)}
+.audit li.on{opacity:1;transform:none}
+.audit li b{color:var(--inkoust);font-weight:500}
+
+/* ---------- 2. PROČ NE MAILEM ---------- */
+.fails{list-style:none;margin-top:34px;counter-reset:f}
+.fails>li{display:grid;gap:14px;padding:30px 0;border-top:1px solid var(--linka)}
+.fails>li:first-child{border-top:none;padding-top:8px}
+@media(min-width:820px){.fails>li{grid-template-columns:230px 1fr;gap:40px;align-items:start}}
+.fails .key{display:grid;gap:9px;align-content:start}
+.fails .key .n{counter-increment:f;font-family:Outfit,sans-serif;font-size:15px;
+  color:var(--tlum);letter-spacing:0}
+.fails .key .n::before{content:counter(f,decimal-leading-zero)}
+.fails .key .w{font-family:Outfit,sans-serif;font-size:clamp(22px,3vw,29px);
+  letter-spacing:-.03em;line-height:1.1}
+.fails .key .x{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--vada);
+  border:1px solid var(--vada);border-radius:5px;padding:3px 8px;width:fit-content}
+.fails .txt p{font-size:15.5px;color:var(--text-2);line-height:1.62;max-width:58ch}
+.fails .txt p+p{margin-top:11px}
+
+/* ---------- 3. KDO CO VIDÍ ---------- */
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 24px}
+.pick button{border:1px solid var(--obrys);border-radius:var(--r);padding:10px 16px;
+  font-size:13.5px;font-weight:500;min-height:44px;
+  transition:background .2s var(--e),border-color .2s var(--e),color .2s var(--e)}
+.pick button[aria-pressed="true"]{background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
+@media(hover:hover) and (pointer:fine){
+  .pick button:hover{background:var(--papir-tmav)}
+  .pick button[aria-pressed="true"]:hover{background:var(--inkoust)}
+}
+.lanes{display:grid;gap:16px}
+@media(min-width:820px){.lanes{grid-template-columns:repeat(3,1fr)}}
+.lane{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);
+  padding:20px;display:grid;align-content:start;gap:12px;min-height:210px}
+.lane h3{font-size:18px;letter-spacing:-.02em}
+.lane .role{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tlum)}
+.lane .out{font-size:14.5px;line-height:1.55;transition:opacity .3s var(--e)}
+.lane .out b{font-weight:600}
+.lane .chan{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--tlum);
+  border:1px solid var(--linka);border-radius:5px;padding:3px 7px;width:fit-content}
+.lane.nothing .out{color:var(--tlum)}
+.lanes.fade .out{opacity:0}
+
+/* ---------- 4. BĚH VS OBSAH ---------- */
+.stack{margin-top:36px;display:grid;gap:12px}
+.band{border-radius:var(--r-l);padding:22px 24px;border:1px solid transparent;position:relative}
+.band .bh{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:14px}
+.band .bt{font-family:Outfit,sans-serif;font-size:22px;letter-spacing:-.02em}
+.band .bo{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 8px;border-radius:5px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12.5px;border-radius:6px;padding:5px 10px;line-height:1.3}
+
+.b-obsah{background:var(--akcent-sv);border-color:#CFE0D6}
+.b-obsah .bo{background:var(--akcent);color:#fff}
+.b-obsah .chip{background:var(--papir);color:var(--inkoust);border:1px solid #CFE0D6}
+.b-beh{background:var(--inkoust);color:var(--na-tmave)}
+.b-beh .bt{color:var(--na-tmave)}
+.b-beh .bo{background:rgba(251,251,249,.16);color:var(--na-tmave)}
+.b-beh .chip{background:rgba(251,251,249,.08);color:var(--na-tmave-tlum);border:1px solid rgba(251,251,249,.16)}
+.band .bd{font-size:14px;color:var(--text-2);margin-top:14px;max-width:62ch}
+.b-beh .bd{color:var(--na-tmave-tlum)}
+.seam{display:flex;align-items:center;gap:12px;padding:0 4px}
+.seam .ln{flex:1;height:1px;background:var(--obrys)}
+.seam .tx{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tlum);white-space:nowrap}
+
+.who-runs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.who-runs button{border:1px solid var(--obrys);border-radius:var(--r);padding:10px 15px;
+  font-size:13px;font-weight:500;min-height:44px;transition:background .2s var(--e)}
+.who-runs button[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:#fff}
+@media(hover:hover) and (pointer:fine){ .who-runs button:hover{background:var(--papir-tmav)}
+  .who-runs button[aria-pressed="true"]:hover{background:#095C42} }
+.who-out{margin-top:18px;border-left:2px solid var(--akcent);padding-left:15px;
+  font-size:14.5px;max-width:62ch;color:var(--text-2);min-height:66px}
+.who-out b{color:var(--inkoust);font-weight:600}
+
+/* ---------- 5. ŽEBŘÍK ---------- */
+.rungs{display:grid;gap:14px;margin-top:38px}
+.rung{display:grid;gap:6px;border:1px solid var(--linka);border-radius:var(--r-l);
+  background:var(--papir);padding:22px 24px}
+@media(min-width:860px){.rung{grid-template-columns:auto 1fr auto;gap:24px;align-items:start}}
+.rung .no{font-family:Outfit,sans-serif;font-size:34px;color:var(--akcent);line-height:1;min-width:44px}
+.rung h3{font-size:20px;letter-spacing:-.02em;margin-bottom:7px}
+.rung p{font-size:14.5px;color:var(--text-2);max-width:56ch}
+.rung .not{font-size:13px;color:var(--tlum);margin-top:9px}
+.rung .not b{color:var(--text-2);font-weight:600}
+.rung .price{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--tlum);
+  text-align:right;line-height:1.7;white-space:nowrap}
+@media(max-width:859px){.rung .price{text-align:left}}
+.rung.r3{background:var(--papir-tmav)}
+
+/* ---------- PATIČKA ---------- */
+.foot{border-top:1px solid rgba(251,251,249,.14);margin-top:44px;padding-top:24px;
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.foot .fine{max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cta a{text-decoration:none;border-radius:var(--r);padding:13px 22px;font-size:15px;
+  font-weight:500;min-height:48px;display:inline-flex;align-items:center;
+  transition:background .2s var(--e)}
+.cta .a1{background:var(--akcent-sv);color:#08402F}
+.cta .a2{border:1px solid rgba(251,251,249,.34);color:var(--na-tmave)}
+@media(hover:hover) and (pointer:fine){
+  .cta .a1:hover{background:#fff}
+  .cta .a2:hover{background:rgba(251,251,249,.1)}
+}
+.pristup{margin-top:44px;max-width:60ch}
+.pristup form{display:grid;gap:14px;margin-top:20px}
+.pristup label{display:grid;gap:6px;font-size:14px;color:var(--na-tmave)}
+.pristup input,.pristup textarea{font:inherit;font-size:15px;padding:12px 14px;border-radius:var(--r);
+  border:1px solid rgba(251,251,249,.34);background:rgba(251,251,249,.06);color:var(--na-tmave)}
+.pristup textarea{min-height:120px;resize:vertical}
+.pristup .btn{justify-self:start}
+
+
+/* ---------- 05. PROJEV V SYSTÉMECH ---------- */
+.flow{margin-top:36px;border:1px solid var(--linka);border-radius:var(--r-l);
+  background:var(--papir);overflow:hidden}
+.flow-head{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linka);
+  border-bottom:1px solid var(--linka)}
+.fl-col{background:var(--papir);padding:12px 10px;text-align:center}
+.fl-sys{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--tlum)}
+.fl-sys.fl-me{color:var(--akcent);font-weight:500}
+.flow-steps{list-style:none;padding:8px 0}
+.flow-steps li{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;
+  padding:11px 0;position:relative;opacity:.34;transition:opacity .4s var(--e)}
+.flow-steps li.on{opacity:1}
+.flow-steps li::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;
+  background:var(--linka);z-index:0}
+.fl-dot{grid-row:1;width:11px;height:11px;border-radius:50%;background:var(--papir);
+  border:2px solid var(--obrys);justify-self:center;margin-top:4px;position:relative;z-index:1;
+  transition:border-color .4s var(--e),background .4s var(--e)}
+.flow-steps li.on .fl-dot{border-color:var(--akcent);background:var(--akcent)}
+.flow-steps li.gate .fl-dot{border-radius:3px;width:13px;height:13px}
+.flow-steps li.gate.on .fl-dot{background:var(--papir);box-shadow:0 0 0 4px var(--akcent-sv)}
+.fl-t{grid-row:2;font-size:13.5px;font-weight:600;line-height:1.3;padding:8px 10px 0;position:relative;z-index:1}
+.fl-n{grid-row:3;font-size:11.5px;color:var(--tlum);line-height:1.4;padding:3px 10px 0;position:relative;z-index:1}
+.flow-steps li.gate .fl-t{color:var(--akcent)}
+.flow-steps li[data-c="0"] .fl-dot,.flow-steps li[data-c="0"] .fl-t,.flow-steps li[data-c="0"] .fl-n{grid-column:1}
+.flow-steps li[data-c="1"] .fl-dot,.flow-steps li[data-c="1"] .fl-t,.flow-steps li[data-c="1"] .fl-n{grid-column:2}
+.flow-steps li[data-c="2"] .fl-dot,.flow-steps li[data-c="2"] .fl-t,.flow-steps li[data-c="2"] .fl-n{grid-column:3}
+.flow-steps li[data-c="3"] .fl-dot,.flow-steps li[data-c="3"] .fl-t,.flow-steps li[data-c="3"] .fl-n{grid-column:4}
+.flow-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 18px;
+  border-top:1px solid var(--linka);background:var(--papir-tmav)}
+.flow-foot .fine{flex:1 1 240px;min-width:0}
+@media(max-width:760px){
+  .flow-head{display:none}
+  .flow-steps li{grid-template-columns:auto 1fr;gap:0 10px;padding:12px 16px}
+  .flow-steps li::before{display:none}
+  .flow-steps li .fl-dot{grid-column:1!important;grid-row:1;margin-top:5px}
+  .flow-steps li .fl-t{grid-column:2!important;grid-row:1;padding:0}
+  .flow-steps li .fl-n{grid-column:2!important;grid-row:2;padding:3px 0 0}
+}
+.rules{display:grid;gap:1px;margin-top:20px;background:var(--linka);
+  border:1px solid var(--linka);border-radius:var(--r-l);overflow:hidden}
+@media(min-width:820px){.rules{grid-template-columns:1fr 1fr}}
+.rules>div{background:var(--papir);padding:15px 18px;font-size:13.5px;color:var(--text-2);line-height:1.5}
+.rules b{color:var(--inkoust)}
+
+/* ---------- 06. KALKULAČKA ---------- */
+.calc{display:grid;gap:16px;margin-top:34px}
+@media(min-width:860px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
+.calc-in{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:22px 24px;display:grid;gap:22px}
+.calc-in label{display:grid;gap:9px;font-size:14px;font-weight:600}
+.calc-in output{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--akcent);font-weight:500}
+.calc-in input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;
+  background:var(--linka);border-radius:2px;outline:none}
+.calc-in input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+  width:26px;height:26px;border-radius:50%;background:var(--akcent);cursor:pointer;border:3px solid var(--papir);
+  box-shadow:0 1px 4px rgba(0,0,0,.22)}
+.calc-in input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
+  background:var(--akcent);cursor:pointer;border:3px solid var(--papir)}
+.calc-out{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir-tmav);padding:22px 24px}
+.co-row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:9px 0;font-size:14px;color:var(--text-2)}
+.co-row b{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--inkoust);white-space:nowrap}
+.co-row.sep{border-top:1px solid var(--obrys);margin-top:6px;padding-top:13px}
+.co-row.sep b{color:var(--akcent)}
+.co-big{margin-top:18px;padding-top:18px;border-top:1px solid var(--obrys);display:flex;
+  align-items:baseline;gap:12px;flex-wrap:wrap}
+.cv-n{font-family:Outfit,sans-serif;font-size:clamp(40px,7vw,58px);letter-spacing:-.03em;line-height:1;color:var(--akcent)}
+.cv-l{font-size:15px;color:var(--text-2)}
+.co-big.nope .cv-n{font-size:clamp(20px,3.2vw,26px);color:var(--vada);line-height:1.2}
+.co-note{margin-top:13px;font-size:13px;color:var(--tlum);line-height:1.5}
+.co-note b{color:var(--inkoust)}
+
+.facts{display:grid;gap:1px;margin-top:30px;background:var(--linka);
+  border:1px solid var(--linka);border-radius:var(--r-l);overflow:hidden}
+@media(min-width:700px){.facts{grid-template-columns:1fr 1fr}}
+.fact{background:var(--papir);padding:18px 20px;display:grid;gap:5px;align-content:start}
+.fact b{font-family:Outfit,sans-serif;font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--akcent)}
+.fact span{font-size:13.5px;color:var(--text-2);line-height:1.45}
+.fact i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--tlum);margin-top:3px}
+
+/* ---------- 07. KDE TO BĚŽÍ ---------- */
+.deploy{display:grid;gap:14px;margin-top:34px}
+@media(min-width:840px){.deploy{grid-template-columns:repeat(3,1fr)}}
+.dp{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:22px 24px}
+.dp:first-child{border-color:var(--akcent);background:linear-gradient(180deg,var(--akcent-sv),var(--papir) 62%)}
+.pripady .dp:first-child{border-color:var(--linka);background:var(--papir)}
+.dp-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+.dp h3{font-size:20px;letter-spacing:-.02em;margin-bottom:9px}
+.dp p{font-size:14px;color:var(--text-2);line-height:1.55}
+.dp-m{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.dp .pill{display:inline-flex;border:1px solid var(--linka);border-radius:20px;
+  padding:4px 10px;font-size:12px;color:var(--text-2)}
+.same{margin-top:16px;border:1px solid var(--obrys);border-radius:var(--r-l);
+  padding:20px 24px;background:var(--papir)}
+.same-h{font-family:Outfit,sans-serif;font-size:18px;letter-spacing:-.02em;margin-bottom:13px}
+.same-l{display:flex;flex-wrap:wrap;gap:8px}
+.same-l span{background:var(--akcent-sv);color:#08402F;border-radius:20px;padding:6px 13px;font-size:13px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="znak" aria-hidden="true"></span>
+    <b>Manta IT</b>
+    <span class="tag">pracovní ukázka</span>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <h1>AI, která odpovídá jen z toho, co <em>ten člověk</em> smí sám otevřít.</h1>
+  <p class="sub">Běží u vás ve firmě. Pracuje s vaší poštou, výkresy, ceníky a objednávkami.
+     Práci připraví, rozhodnutí nechá na člověku. Tahle stránka ukazuje, jak to uvnitř funguje —
+     ne co to umí.</p>
+</header>
+
+<!-- ============ 1. CESTA JEDNOHO ÚKOLU ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">01 — mechanika</div>
+    <h2>Cesta jednoho úkolu</h2>
+    <p class="sub">Objednávka po termínu. Sledujte, kde se to zastaví — a proč se to
+       zastaví vždycky.</p>
+
+    <div class="track">
+      <div class="track-head">
+        <span class="t">Urgence dodavatele po termínu</span>
+        <span class="ctrl">
+          <button class="btn btn-p" id="playBtn">Přehrát</button>
+          <button class="btn" id="resetBtn">Znovu</button>
+        </span>
+      </div>
+
+      <div class="rail">
+        <div class="rail-line"><div class="rail-fill" id="fill"></div></div>
+        <div class="stations" id="stations">
+          <div class="st" data-i="0"><div class="pin"></div>
+            <div class="lb">Spouštěč</div><div class="sm">termín uplynul, nikdo nic nezadal</div></div>
+          <div class="st" data-i="1"><div class="pin"></div>
+            <div class="lb">Sběr</div><div class="sm">jen čtení, jen to, na co má nákupčí právo</div></div>
+          <div class="st" data-i="2"><div class="pin"></div>
+            <div class="lb">Návrh</div><div class="sm">model napíše text v jazyce dodavatele</div></div>
+          <div class="st gate" data-i="3"><div class="pin"></div>
+            <div class="lb">Brána</div><div class="sm">tady to stojí, dokud nepřijde člověk</div></div>
+          <div class="st" data-i="4"><div class="pin"></div>
+            <div class="lb">Ven</div><div class="sm">odesílá člověk ze své schránky</div></div>
+        </div>
+      </div>
+
+      <div class="rail-note">
+        <div class="rail-msg" id="railMsg">
+          <span class="who">připraveno</span>
+          Stiskněte <b>Přehrát</b>.
+        </div>
+      </div>
+
+      <div class="audit">
+        <div class="ah">co se zapsalo do auditu</div>
+        <ol id="auditList">
+          <li data-i="0"><b>09:00:04</b> · spuštěno kadencí · proces urgence-dodavatelů v7</li>
+          <li data-i="1"><b>09:00:06</b> · čteno: objednávka O-4471, vlákno pošty · práva: nákup</li>
+          <li data-i="2"><b>09:00:11</b> · návrh vytvořen · model qwen3-30b-a3b · prompt v7</li>
+          <li data-i="3"><b>09:00:11</b> · <b>čeká na schválení</b> · vlastník P. Málek · zástup po 48 h</li>
+          <li data-i="4"><b>11:26:39</b> · schválil P. Málek · odesláno z jeho schránky</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="fine" style="margin-top:18px">Agent v kroku 2 a 3 <b>nemá nástroj „odeslat"</b>.
+       Není to pravidlo v zadání, které by šlo obejít — ten nástroj v něm prostě není.</p>
+  </div>
+</section>
+
+<!-- ============ 2. PROČ TO NEJDE JEN MAILEM ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 — proč vlastní rozhraní</div>
+    <h2>Tři věci se do mailu uložit nedají</h2>
+    <p class="sub">Nejčastější námitka zní: pošlete mi to mailem s tlačítkem a žádný systém
+       nepotřebuju. Skoro to jde. Rozbije se to na těchhle třech.</p>
+
+    <ol class="fails">
+      <li>
+        <div class="key">
+          <span class="n"></span>
+          <span class="w">Kdo se ptá</span>
+          <span class="x">mail to neunese</span>
+        </div>
+        <div class="txt">
+          <p>Aby AI odpověděla jen z toho, co ten člověk smí otevřít, musí v okamžiku dotazu
+             vědět, kdo se ptá. Sdílená schránka, přeposlání a zástup ten řetěz trhají.</p>
+          <p>A totéž pravidlo, které říká <b>došlá pošta nemůže agentovi nic přikázat</b>,
+             říká i <b>došlá pošta nemůže nikoho autentizovat</b> — jinak by přeposlání
+             bylo povýšení práv.</p>
+        </div>
+      </li>
+      <li>
+        <div class="key">
+          <span class="n"></span>
+          <span class="w">Co se stalo</span>
+          <span class="x">schránky se mažou</span>
+        </div>
+        <div class="txt">
+          <p>Kdo schválil, z jakých zdrojů to bylo, jakou verzí modelu a promptu a kdy.
+             Plus označení, že psal stroj — to od srpna 2026 žádá evropské nařízení o AI.</p>
+          <p>Z pošty se rozhodnutí po půl roce nezrekonstruuje. A když se na to někdo zeptá,
+             ptá se obvykle až po půl roce.</p>
+        </div>
+      </li>
+      <li>
+        <div class="key">
+          <span class="n"></span>
+          <span class="w">Co čeká</span>
+          <span class="x">mail neumí stav</span>
+        </div>
+        <div class="txt">
+          <p>Vlastník, termín, zástup, připomenutí, opakování při chybě, fronta výjimek
+             a vypínač na každý proces zvlášť.</p>
+          <p>Mail umí oznámit. Neumí si pamatovat, že na něco devět dní nikdo neklikl —
+             a přesně tohle je nejčastější tichá porucha celého systému.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="fine" style="margin-top:22px">Bez vlastní vrstvy se dá postavit AI, která vidí
+       jen to, co smí vidět úplně každý ve firmě. To je strop, ne varianta.
+       <b>Vrstva ale není pracoviště</b> — devět z deseti věcí dorazí tam, kde lidé už pracují.</p>
+  </div>
+</section>
+
+<!-- ============ 3. KDO CO VIDÍ ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">03 — jedna událost, tři lidé</div>
+    <h2>Táž věc vypadá jinak podle toho, kdo se dívá</h2>
+    <p class="sub">Přepněte událost. Sledujte, že zaměstnanec skoro nikdy nemusí nikam chodit.</p>
+
+    <div class="pick" role="group" aria-label="Vyberte událost">
+      <button data-ev="0" aria-pressed="true">Přišla poptávka</button>
+      <button data-ev="1" aria-pressed="false">Objednávka je po termínu</button>
+      <button data-ev="2" aria-pressed="false">Napojení na CRM spadlo</button>
+      <button data-ev="3" aria-pressed="false">Nikdo týden neschválil</button>
+    </div>
+
+    <div class="lanes" id="lanes">
+      <div class="lane"><span class="role">zaměstnanec</span><h3>Jana · obchod</h3>
+        <span class="chan" id="c0">Outlook</span><div class="out" id="o0"></div></div>
+      <div class="lane"><span class="role">správce</span><h3>Tomáš · IT</h3>
+        <span class="chan" id="c1">Portál</span><div class="out" id="o1"></div></div>
+      <div class="lane"><span class="role">majitel</span><h3>Dalibor · jednatel</h3>
+        <span class="chan" id="c2">Měsíční shrnutí</span><div class="out" id="o2"></div></div>
+    </div>
+
+    <p class="fine" style="margin-top:20px">Měřítko úspěchu je obrácené než u běžného produktu:
+       <b>čím míň často musí zaměstnanec vrstvu otevřít, tím líp.</b> U správce a majitele naopak.</p>
+  </div>
+</section>
+
+<!-- ============ 4. BĚH VS OBSAH ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 — proč to jde dodat jako služba</div>
+    <h2>Jedna hranice, na které stojí všechno ostatní</h2>
+    <p class="sub">Nahoře je to, co je vaše a co vás odlišuje. Dole to, co je u každého
+       klienta stejné a co provozujeme a povyšujeme my.</p>
+
+    <div class="stack">
+      <div class="band b-obsah">
+        <div class="bh"><span class="bt">Obsah</span><span class="bo">váš</span></div>
+        <div class="chips">
+          <span class="chip">procesy</span><span class="chip">prompty</span>
+          <span class="chip">mapa oprávnění</span><span class="chip">zkušební sada</span>
+          <span class="chip">napojení na vaše systémy</span>
+        </div>
+        <p class="bd">Čitelné verzované soubory ve vašem repozitáři. Odlišnost firmy žije tady.
+           Můžete to vzít a odejít.</p>
+      </div>
+
+      <div class="seam"><span class="ln"></span><span class="tx">hranice</span><span class="ln"></span></div>
+
+      <div class="band b-beh">
+        <div class="bh"><span class="bt">Běh</span><span class="bo">náš, stejný u všech</span></div>
+        <div class="chips">
+          <span class="chip">kernel a plánovač</span><span class="chip">fronty a opakování</span>
+          <span class="chip">schvalování</span><span class="chip">audit</span>
+          <span class="chip">brána modelů</span><span class="chip">portál</span>
+        </div>
+        <p class="bd">Nikdo tady nemá konkurenční výhodu. Proto se to dá dodat jako služba
+           a ne jako zakázka na míru: jeden běh, mnoho klientů.</p>
+      </div>
+    </div>
+
+    <div class="who-runs" role="group" aria-label="Kdo to provozuje">
+      <button data-op="0" aria-pressed="true">Provozujeme my</button>
+      <button data-op="1" aria-pressed="false">Provozuje váš správce</button>
+      <button data-op="2" aria-pressed="false">Postavíme a odejdeme</button>
+    </div>
+    <div class="who-out" id="whoOut"></div>
+
+    <p class="fine" style="margin-top:22px">Rozhodnutí zůstává vratné a je to omezení návrhu,
+       ne slib: <b>žádný krok v provozu nesmí být ruční úkon, který umíme jen my.</b>
+       Jinak je „postavíme a odejdeme" lež.</p>
+  </div>
+</section>
+
+
+<!-- ============ 05. PROJEV V OKOLNÍCH SYSTÉMECH ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">05 — co to udělá ve vašich systémech</div>
+    <h2>Jeden údaj, čtyři systémy, jedno zastavení</h2>
+    <p class="sub">Nejčastější obava zní: co mi to udělá v tom, co už mám.
+       Tohle je celá cesta jedné přijaté faktury. Sledujte, kde se to zastaví.</p>
+
+    <div class="flow">
+      <div class="flow-head">
+        <div class="fl-col"><span class="fl-sys">Pošta</span></div>
+        <div class="fl-col"><span class="fl-sys fl-me">Platforma</span></div>
+        <div class="fl-col"><span class="fl-sys">CRM</span></div>
+        <div class="fl-col"><span class="fl-sys">Účetnictví</span></div>
+      </div>
+
+      <ol class="flow-steps" id="flowSteps">
+        <li data-c="0"><span class="fl-dot"></span><span class="fl-t">Dodavatel pošle fakturu e-mailem</span>
+          <span class="fl-n">přijde do vyhrazené schránky, ne do firemní pošty</span></li>
+        <li data-c="1"><span class="fl-dot"></span><span class="fl-t">Vytěží se částka, číslo a splatnost</span>
+          <span class="fl-n">jen čtení, do pevného schématu — text e-mailu už dál nejde</span></li>
+        <li data-c="2"><span class="fl-dot"></span><span class="fl-t">Najde se objednávka a spočítá rozdíl</span>
+          <span class="fl-n">čtení: objednáno 42 800, fakturováno 43 690 — o 2 % víc</span></li>
+        <li data-c="1" class="gate"><span class="fl-dot"></span><span class="fl-t">Tady to stojí. Rozdíl potvrdí nákupčí.</span>
+          <span class="fl-n">jediné místo v celém řetězu, kde se čeká na člověka</span></li>
+        <li data-c="3"><span class="fl-dot"></span><span class="fl-t">Faktura se založí</span>
+          <span class="fl-n">zápis s poznámkou, kdo ho potvrdil a kdy</span></li>
+        <li data-c="2"><span class="fl-dot"></span><span class="fl-t">K objednávce se doplní odkaz na doklad</span>
+          <span class="fl-n">zápis; nic se nepřepisuje, jen přidává</span></li>
+      </ol>
+
+      <div class="flow-foot">
+        <button class="btn btn-p" id="flowPlay">Přehrát</button>
+        <button class="btn" id="flowReset">Znovu</button>
+        <span class="fine" id="flowMsg">Tohle dnes ve firmách dělá člověk přepisováním.</span>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div><b>Zápis ven nikdy bez potvrzení člověkem.</b> Kromě čtení a interních poznámek.</div>
+      <div><b>Nic se nemaže a nepřepisuje.</b> Jen se přidává.</div>
+      <div><b>Každý zápis nese, že ho připravila platforma</b> — a kdo ho potvrdil.</div>
+      <div><b>Když zápis selže, zůstane ve frontě</b> s odkazem na záznam. Nezmizí.</div>
+    </div>
+
+    <p class="fine" style="margin-top:20px">V každém vašem systému je pak poznat, co je lidská
+       práce a co připravila platforma — <b>i pro toho, kdo do portálu nikdy nevleze</b>.</p>
+  </div>
+</section>
+
+<!-- ============ 06. SPOČÍTEJTE SI TO ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">06 — kdy to dává smysl a kdy ne</div>
+    <h2>Spočítejte si to. Někdy z toho vyjde, že ne.</h2>
+    <p class="sub">Otázku po návratnosti dostává každý, kdo o tomhle mluví, a skoro nikdo na ni
+       neodpovídá. Tady je počítadlo na jednu agendu. Posuňte to na svoje čísla.</p>
+
+    <div class="calc">
+      <div class="calc-in">
+        <label>Kolik lidí tu agendu dělá
+          <input type="range" id="cN" min="1" max="20" value="4" step="1">
+          <output id="cNo">4 lidi</output>
+        </label>
+        <label>Kolik minut denně jim to bere
+          <input type="range" id="cM" min="10" max="240" value="45" step="5">
+          <output id="cMo">45 minut</output>
+        </label>
+        <label>Kolik stojí jejich hodina
+          <input type="range" id="cS" min="200" max="1200" value="450" step="50">
+          <output id="cSo">450 Kč</output>
+        </label>
+      </div>
+
+      <div class="calc-out">
+        <div class="co-row"><span>Ta agenda vás ročně stojí</span><b id="rHod">750 hodin</b></div>
+        <div class="co-row"><span>V penězích</span><b id="rKc">338 tis. Kč</b></div>
+        <div class="co-row sep"><span>Když z toho stroj ubere 60 %</span><b id="rUsp">203 tis. Kč / rok</b></div>
+        <div class="co-row"><span>Zavedení jednorázově</span><b>89 000 Kč</b></div>
+        <div class="co-row"><span>Dohled měsíčně</span><b>8 000 Kč</b></div>
+        <div class="co-big" id="rVerd">
+          <span class="cv-n" id="rMes">10</span>
+          <span class="cv-l">měsíců do návratnosti</span>
+        </div>
+        <div class="co-note" id="rNote">Po prvním roce zůstává čistá úspora <b id="rCista">107 tis. Kč</b> ročně.</div>
+      </div>
+    </div>
+
+    <p class="fine" style="margin-top:18px">
+      Šedesát procent je náš odhad z toho, co u téhle třídy agend obvykle zůstane na člověku
+      (rozhodnutí, výjimky, kontrola). <b>Není to naměřený údaj</b> a u vaší agendy může vyjít
+      jinak — od toho je plán za 48 hodin. Ceny bez DPH, nejsem plátce DPH. Sazba za hodinu je
+      superhrubý náklad, ne mzda.
+    </p>
+
+    <div class="facts">
+      <div class="fact"><b>81 521</b><span>firem v ČR má 10 až 249 lidí</span><i>ČSÚ, stav k 31. 12. 2025</i></div>
+      <div class="fact"><b>89,5 %</b><span>malých firem nemá vlastního IT odborníka</span><i>ČSÚ, data 2025</i></div>
+      <div class="fact"><b>59 %</b><span>nejčastější důvod neinvestování: „nevidíme potřebu nebo přínos"</span><i>Ipsos pro AMSP, 11/2024</i></div>
+      <div class="fact"><b>48 %</b><span>malých firem se v nabídkách digitálních řešení orientuje obtížně nebo vůbec</span><i>Ipsos pro AMSP, 11/2024</i></div>
+    </div>
+    <p class="fine" style="margin-top:14px">Poslední dvě čísla jsou důvod, proč je na týhle stránce
+       počítadlo a ne ceník. Když si výsledek nespočítáte sám, je jedno, co si o tom myslím já.</p>
+  </div>
+</section>
+
+<!-- ============ 07. MODELOVÝ PŘÍPAD ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div data-sekce="modelovy-pripad">
+      <div class="eyebrow">07 — modelový případ</div>
+      <div class="dp-k">modelový případ</div>
+      <h2>Modelová firma, ne reference</h2>
+      <p class="sub">Tohle je modelová firma, nikde to neběží. Čísla jsou výpočet, ne naměřený výsledek.</p>
+
+      <div class="facts">
+        <div class="fact"><b>10–49 lidí</b><span>modelová firma má 10 až 49 lidí a žádného vlastního IT odborníka, jako 89,5 % takových firem</span><i>ČSÚ, data 2025</i></div>
+        <div class="fact"><b>68,8 %</b><span>malých firem svěřuje správu IT externím lidem, modelová firma taky</span><i>ČSÚ, 2024</i></div>
+        <div class="fact"><b>41,8 %</b><span>malých firem má ERP, modelová firma taky</span><i>ČSÚ, 2025</i></div>
+        <div class="fact"><b>50–250 tis. Kč</b><span>ročně na digitalizaci plánuje 40 % malých firem, modelová firma se do toho vejde</span><i>Ipsos pro AMSP, 11/2024</i></div>
+      </div>
+
+      <p>Přijaté faktury: dorazí do schránky, systém je vytěží a spáruje s objednávkou, člověk potvrdí výjimky a zápis jde do účetnictví.</p>
+
+      <div class="calc-out">
+        <div class="co-row"><span>Výchozí zadání</span><b>4 lidi × 45 min/den × 450 Kč/h</b></div>
+        <div class="co-row"><span>Ta agenda stojí ročně</span><b>750 hodin</b></div>
+        <div class="co-row"><span>V penězích</span><b>338 tis. Kč</b></div>
+        <div class="co-row sep"><span>Když z toho stroj ubere 60 %</span><b>203 tis. Kč / rok</b></div>
+        <div class="co-row"><span>Zavedení jednorázově</span><b>89 000 Kč</b></div>
+        <div class="co-row"><span>Dohled měsíčně</span><b>8 000 Kč</b></div>
+        <div class="co-row"><span>Návratnost</span><b>10 měsíců</b></div>
+        <div class="co-row"><span>Čistá úspora po prvním roce</span><b>107 tis. Kč</b></div>
+      </div>
+
+      <p class="fine">Šedesát procent je náš odhad, ne naměřený údaj. Cena železa, tedy stroje, v těchto číslech není. Nejsem plátce DPH.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08. VEŘEJNÉ PŘÍPADY ============ -->
+<section>
+  <div class="wrap">
+    <div data-sekce="verejne-pripady">
+      <div class="eyebrow">08 — veřejné případy</div>
+      <h2>Kdo to už provozuje veřejně</h2>
+      <p class="sub">Velké firmy to provozují a mluví o tom. Veřejný případ malé firmy jsme nenašli, proto je výše modelový.</p>
+      <div class="deploy pripady">
+        <div class="dp">
+          <div class="dp-k">McKinsey</div>
+          <h3>Lilli</h3>
+          <p>Asistent nad interní znalostí firmy. Na startu ho dostalo 7 tis. zaměstnanců (dle zdroje).</p>
+          <p>Pro malou firmu: „zeptej se firmy" funguje i nad směrnicemi, nabídkami a vzory malé firmy.</p>
+          <p><a href="https://www.ciodive.com/news/McKinsey-generative-AI-Lilli-platform-internal-employees/691231/" target="_blank" rel="noopener">CIO Dive, 2023</a></p>
+        </div>
+        <div class="dp">
+          <div class="dp-k">Morgan Stanley</div>
+          <h3>Asistent pro poradce</h3>
+          <p>Odpovídá nad zhruba 100 tis. výzkumnými zprávami. Používá ho přes 98 % poradenských týmů (dle zdroje).</p>
+          <p>Pro malou firmu: úzký, jasně ohraničený zdroj dokumentů a ověření kvality odpovědí před spuštěním.</p>
+          <p><a href="https://openai.com/index/morgan-stanley/" target="_blank" rel="noopener">OpenAI, 2023</a></p>
+        </div>
+        <div class="dp">
+          <div class="dp-k">Klarna</div>
+          <h3>Zákaznická podpora</h3>
+          <p>Za první měsíc 2,3 mil. konverzací, práce odpovídající 700 lidem (tisková zpráva Klarny, 27. 2. 2024). V roce 2025 přiznala pokles kvality a vrací lidi.</p>
+          <p>Pro malou firmu: AI zrychluje člověka, nenahrazuje ho.</p>
+          <p><a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/" target="_blank" rel="noopener">Klarna, 2024</a> · <a href="https://www.fastcompany.com/91468582/klarna-tried-to-replace-its-workforce-with-ai" target="_blank" rel="noopener">Fast Company, 2025</a></p>
+        </div>
+        <div class="dp">
+          <div class="dp-k">Alza</div>
+          <h3>Vševěd</h3>
+          <p>Interní asistent nad směrnicemi, dokumentací a návody.</p>
+          <p>Pro malou firmu: nejbližší obdoba — asistent nad vlastními směrnicemi a návody.</p>
+          <p><a href="https://byznys.hn.cz/c1-67800830-jak-si-spravne-pustit-ai-do-firmy-alza-rohlik-a-dalsi-ukazaly-jak-ji-pouzivaji-dovnitr-i-navenek" target="_blank" rel="noopener">Hospodářské noviny</a></p>
+        </div>
+        <div class="dp">
+          <div class="dp-k">Česká spořitelna</div>
+          <h3>Knowledge Base Search</h3>
+          <p>Jedna znalostní báze pro celou banku.</p>
+          <p>Pro malou firmu: jedna znalostní báze, na kterou se napojí víc kanálů.</p>
+          <p><a href="https://ittrendy.cz/clanky/znalostni-baze-nova-virtualni-asistentka-pro-celou-banku" target="_blank" rel="noopener">IT Trendy</a></p>
+        </div>
+        <div class="dp">
+          <div class="dp-k">Rohlík</div>
+          <h3>Cena jednoho úkonu</h3>
+          <p>Měří, kolik stojí jeden úkon: automatizovaná marketingová kampaň vyjde zhruba na 3 Kč za úkon (Tomáš Čupr, WebExpo 2025, dle zdroje).</p>
+          <p>Pro malou firmu: počítat cenu jednoho úkonu, ne cenu licence.</p>
+          <p><a href="https://insmart.cz/ai-za-3-kc-nahradila-praci-tymu-lidi-rohlik/" target="_blank" rel="noopener">inSmart, WebExpo 2025</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09. KDE TO BĚŽÍ ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">09 — kde to stojí</div>
+    <h2>„Lokální" neznamená server ve sklepě</h2>
+    <p class="sub">Znamená to, že model je váš a data neopouštějí váš okruh. Kde to fyzicky běží,
+       je samostatné rozhodnutí — a dá se změnit později.</p>
+
+    <div class="deploy">
+      <div class="dp">
+        <div class="dp-k">u vás ve firmě</div>
+        <h3>Vlastní stroj</h3>
+        <p>Stojí ve vaší serverovně. K práci nad vašimi daty nepotřebuje internet.</p>
+        <div class="dp-m"><span class="pill">železo jednorázově</span><span class="pill">žádný nájem</span></div>
+      </div>
+      <div class="dp">
+        <div class="dp-k">pronajatý stroj</div>
+        <h3>Vyhrazený server</h3>
+        <p>U českého poskytovatele. Železo nekupujete, model i data zůstávají jen vaše.</p>
+        <div class="dp-m"><span class="pill">měsíční nájem</span><span class="pill">bez investice</span></div>
+      </div>
+      <div class="dp">
+        <div class="dp-k">cloud s grafikou</div>
+        <h3>Pronajatá karta</h3>
+        <p>Stroj s GPU, na kterém běží <b>váš</b> model. Ne cizí služba, ne cizí model — jen cizí železo.</p>
+        <div class="dp-m"><span class="pill">platí se za běh</span><span class="pill">nejrychlejší start</span></div>
+      </div>
+    </div>
+
+    <div class="same">
+      <div class="same-h">Co je ve všech třech stejné</div>
+      <div class="same-l">
+        <span>model je váš</span><span>dotaz neodchází cizí AI službě</span>
+        <span>vaše dokumenty nikdo mimo firmu nevidí</span><span>klíče držíte vy</span>
+        <span>portál, pipeline a agenti beze změny</span>
+      </div>
+    </div>
+
+    <p class="fine" style="margin-top:20px">Rozdíl proti cizí AI službě zůstává ve všech třech
+       případech tentýž. A protože obsah — procesy, prompty, mapa oprávnění — je váš,
+       <b>přechod mezi variantami je stěhování, ne přestavba</b>.</p>
+  </div>
+</section>
+
+<!-- ============ 5. ŽEBŘÍK ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">10 — kudy se to staví</div>
+    <h2>Tři příčky. Každá je rozšíření, ne přestavba.</h2>
+    <p class="sub">Nikdo nezačíná nahoře. Co v příčce schválně není, je stejně důležité
+       jako co v ní je.</p>
+
+    <div class="rungs">
+      <div class="rung">
+        <div class="no">1</div>
+        <div>
+          <h3>Jeden agent, jedna agenda</h3>
+          <p>Jeden proces od spouštěče po koncept. Jeden až dva zdroje dat. Přihlášení,
+             audit, vypínač, fronta výjimek. Malý model.</p>
+          <div class="not"><b>Schválně tam není:</b> znalostní index nad dokumenty,
+             chat nad firemními daty, role, zkušebna.</div>
+        </div>
+        <div class="price">2–4 týdny<br>od 89 000 Kč<br>+ jeden stroj</div>
+      </div>
+
+      <div class="rung">
+        <div class="no">2</div>
+        <div>
+          <h3>Několik agend a jeden index</h3>
+          <p>Znalostní index nad dokumenty <b>s oprávněními převzatými ze zdroje</b>,
+             dotaz s citací, role podle skupin, rituál výměny modelu.</p>
+          <div class="not"><b>Tady začíná ta těžká část.</b> Oprávnění nejsou funkce,
+             je to průřez celým systémem.</div>
+        </div>
+        <div class="price">3–5 měsíců<br>odhad 250–450 tis.<br>+ větší stroj</div>
+      </div>
+
+      <div class="rung r3">
+        <div class="no">3</div>
+        <div>
+          <h3>Platforma</h3>
+          <p>Velký model na vlastním stroji, uzel na dávky, zkušebna jako železo,
+             rack. Patnáct až osmnáct procesů napříč odděleními.</p>
+          <div class="not"><b>Doložená čísla:</b> tři nezávislé nabídky na totéž zadání,
+             září 2026.</div>
+        </div>
+        <div class="price">10–14 měsíců<br>jádro 1,0–1,25 mil.<br>+ technika 0,7–0,9 mil.</div>
+      </div>
+    </div>
+
+    <p class="fine" style="margin-top:20px">Ceny příček 1 a 3 jsou doložené; <b>příčka 2 je náš
+       odhad</b>, ne tržní údaj — interpolace mezi dvěma vzdálenými body. Ceny bez DPH,
+       nejsem plátce DPH.</p>
+  </div>
+</section>
+
+<!-- ============ ZÁVĚR ============ -->
+<section class="s-ink">
+  <div class="wrap">
+    <div class="eyebrow">11 — jak se pozná, že to funguje</div>
+    <div data-sekce="prutok">
+      <h2>Nejdřív průtok firmy a termíny</h2>
+      <p class="sub">Poptávka, nabídka, objednávka, faktura a dodávka: kolik jich je otevřených,
+         jak dlouho firmou procházejí a na kom stojí. Tohle je hlavní měřítko pro vedení.</p>
+    </div>
+    <div data-sekce="vyuziti">
+      <p class="sub">Využití AI a míra úprav textu jsou až druhá vrstva. Vedle nich zůstává
+         bezpečnostní kritérium, které musí být na nule: kolikrát dostal někdo obsah,
+         na který nemá právo.</p>
+    </div>
+
+    <div class="cta">
+      <a class="a1" href="portal.html">Prohlédnout si rozhraní →</a>
+      <a class="a2" href="#pristup">Napište mi</a>
+    </div>
+
+    <div id="pristup" class="pristup">
+      <h2>Přístup do ukázky</h2>
+      <!-- COPY-PLACEHOLDER: text vyzvy ceka na growth (manta-copy + humanizer), T0924-472 -->
+      <p class="sub">Postavil jsem celé rozhraní, včetně toho, jak to vypadá pro zaměstnance,
+         správce i majitele. Hledám první firmy, se kterými to rozjedu.
+         Napište mi, o co vám jde, a pošlu vám přístup do ukázky.</p>
+      <form method="post" action="/api/pristup">
+        <label>E-mail
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>O co vám jde
+          <textarea name="text" required></textarea>
+        </label>
+        <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="btn btn-p" type="submit">Poslat žádost</button>
+      </form>
+    </div>
+
+    <div class="foot">
+      <p class="fine">Pracovní ukázka, ne nabídka. Čísla v rozhraní jsou vymyšlená.
+         Podklad: <span class="mono">specs/podnikova-ai/program-design.md</span></p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 1. cesta úkolu ---- */
+  var msgs = [
+    ['09:00 · kernel','Termín u objednávky <b>O-4471</b> uplynul před třemi dny. Nikdo nic nezadal — spustila to kadence.'],
+    ['09:00 · sběr','Agent přečetl objednávku a poslední vlákno s dodavatelem. <b>Jen čte</b>, a jen to, na co má nákupčí právo.'],
+    ['09:00 · návrh','Hotový text urgence v němčině, tónem podle postupu. <b>Zatím to nikam neodešlo.</b>'],
+    ['09:00 · brána','Koncept leží ve schránce nákupčího. <b>Tady to stojí</b> — může to trvat minutu nebo dva dny. Po 48 hodinách se ozve zástupci.'],
+    ['11:26 · člověk','Nákupčí koncept přečetl, upravil jedno slovo a <b>odeslal ho sám ze své schránky</b>.']
+  ];
+  var sts = document.querySelectorAll('#stations .st');
+  var auds = document.querySelectorAll('#auditList li');
+  var fill = document.getElementById('fill');
+  var msg  = document.getElementById('railMsg');
+  var timers = [];
+
+  function clearAll(){
+    timers.forEach(clearTimeout); timers = [];
+    sts.forEach(function(s){ s.classList.remove('on'); });
+    auds.forEach(function(a){ a.classList.remove('on'); });
+    fill.style.width = '0';
+    msg.innerHTML = '<span class="who">připraveno</span>Stiskněte <b>Přehrát</b>.';
+  }
+  function step(i){
+    sts[i].classList.add('on');
+    auds[i].classList.add('on');
+    fill.style.width = (i/(sts.length-1)*100) + '%';
+    msg.innerHTML = '<span class="who">'+msgs[i][0]+'</span>'+msgs[i][1];
+  }
+  function play(){
+    clearAll();
+    var delays = reduce ? [0,1,2,3,4].map(function(i){return i*40;})
+                        : [0, 1000, 2100, 3300, 5100];
+    delays.forEach(function(d,i){ timers.push(setTimeout(function(){ step(i); }, d)); });
+  }
+  document.getElementById('playBtn').addEventListener('click', play);
+  document.getElementById('resetBtn').addEventListener('click', clearAll);
+  clearAll();
+  /* tvrdý časovač: v uspané záložce IntersectionObserver nikdy nepromluví */
+  setTimeout(function(){ if(!sts[0].classList.contains('on')) play(); }, 1400);
+
+  /* ---- 3. kdo co vidí ---- */
+  var EV = [
+    [ ['Outlook','Koncept odpovědi čeká ve složce <b>Koncepty</b>. Odešlete ho vy.'],
+      ['Portál','Nic. Proces proběhl, <b>zapsal se do auditu</b> a nikoho nevolal.'],
+      ['Shrnutí','Nic. Objeví se jen jako číslo v měsíčním součtu.'] ],
+    [ ['Outlook','Ráno v přehledu: <b>2 dodávky po termínu</b>, u obou připravená urgence.'],
+      ['Portál','Nic, dokud to nespadne. Běh je vidět v historii.'],
+      ['Shrnutí','Nic.'] ],
+    [ ['Outlook','Nic. Objednávky se drží jako koncepty a <b>nic se neztratilo</b>.'],
+      ['Portál','<b>Fronta výjimek: blokuje.</b> Vypršel přístupový token, tři pokusy, pak stop. Ve frontě čekají 2 objednávky.'],
+      ['Shrnutí','Nic — pokud se to vyřeší do dvou dnů.'] ],
+    [ ['Outlook','Připomenutí. Po 48 hodinách totéž zástupci.'],
+      ['Portál','Vidí, že fronta roste. <b>Není to jeho práce vyřešit</b>, je to práce vedoucího.'],
+      ['Shrnutí','<b>Na kom co visí:</b> Petr Málek, 6 objednávek, nejstarší 9 dní. Tohle je ta věc, kvůli které rozhraní majitele existuje.'] ]
+  ];
+  var lanes = document.getElementById('lanes');
+  function render(n){
+    lanes.classList.add('fade');
+    setTimeout(function(){
+      for(var i=0;i<3;i++){
+        document.getElementById('c'+i).textContent = EV[n][i][0];
+        document.getElementById('o'+i).innerHTML   = EV[n][i][1];
+        document.getElementById('o'+i).parentNode.classList.toggle(
+          'nothing', EV[n][i][1].indexOf('Nic') === 0);
+      }
+      lanes.classList.remove('fade');
+    }, reduce ? 0 : 190);
+  }
+  var evb = document.querySelectorAll('.pick button');
+  evb.forEach(function(b){
+    b.addEventListener('click', function(){
+      evb.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
+      render(+b.dataset.ev);
+    });
+  });
+  render(0);
+
+
+  /* ---- 5. projev v systémech ---- */
+  var fSteps = document.querySelectorAll('#flowSteps li');
+  var fMsg = document.getElementById('flowMsg');
+  var fT = [];
+  var fTexts = [
+    'Přišla faktura. Platforma vidí jen tuhle schránku, ne firemní poštu.',
+    'Vytěženo do pevného schématu. Text e-mailu už dál nepokračuje.',
+    'Objednávka nalezena. Fakturováno o 2 % víc, než bylo objednáno.',
+    'Tady to stojí. Bez nákupčího se dál nepokračuje — a může to trvat minutu nebo dva dny.',
+    'Nákupčí rozdíl potvrdil. Teprve teď se zapisuje ven.',
+    'Hotovo. Šest kroků, jedno zastavení, všechno dohledatelné.'
+  ];
+  function fClear(){
+    fT.forEach(clearTimeout); fT = [];
+    fSteps.forEach(function(x){ x.classList.remove('on'); });
+    fMsg.textContent = 'Tohle dnes ve firmách dělá člověk přepisováním.';
+  }
+  function fPlay(){
+    fClear();
+    var d = reduce ? [0,1,2,3,4,5].map(function(i){return i*40;}) : [0,900,1800,2900,4600,5600];
+    d.forEach(function(ms,i){
+      fT.push(setTimeout(function(){
+        fSteps[i].classList.add('on');
+        fMsg.textContent = fTexts[i];
+      }, ms));
+    });
+  }
+  document.getElementById('flowPlay').addEventListener('click', fPlay);
+  document.getElementById('flowReset').addEventListener('click', fClear);
+  fClear();
+  setTimeout(function(){ if(!fSteps[0].classList.contains('on')) fPlay(); }, 2600);
+
+  /* ---- 6. kalkulačka ---- */
+  var cN = document.getElementById('cN'), cM = document.getElementById('cM'), cS = document.getElementById('cS');
+  function kc(v){
+    if(v >= 1000000) return (v/1000000).toFixed(1).replace('.', ',') + ' mil. Kč';
+    if(v >= 10000)   return Math.round(v/1000) + ' tis. Kč';
+    return Math.round(v).toLocaleString('cs') + ' Kč';
+  }
+  function tvarLidi(n){ return n === 1 ? '1 člověk' : (n < 5 ? n + ' lidé' : n + ' lidí'); }
+  function tvarMes(n){ return n === 1 ? 'měsíc' : (n < 5 ? 'měsíce' : 'měsíců'); }
+  function pocitej(){
+    var n = +cN.value, m = +cM.value, sz = +cS.value;
+    document.getElementById('cNo').textContent = tvarLidi(n);
+    document.getElementById('cMo').textContent = m + ' minut';
+    document.getElementById('cSo').textContent = sz + ' Kč';
+
+    var hod = n * m * 250 / 60;
+    var rok = hod * sz;
+    var usp = rok * 0.6;
+    var uspMes = usp / 12;
+    var cistaMes = uspMes - 8000;
+
+    document.getElementById('rHod').textContent = Math.round(hod).toLocaleString('cs') + ' hodin';
+    document.getElementById('rKc').textContent = kc(rok);
+    document.getElementById('rUsp').textContent = kc(usp) + ' / rok';
+
+    var big = document.getElementById('rVerd');
+    var num = document.getElementById('rMes');
+    var lbl = big.querySelector('.cv-l');
+    var note = document.getElementById('rNote');
+
+    if(cistaMes <= 0){
+      big.classList.add('nope');
+      num.textContent = 'U tohohle objemu se to nevrátí.';
+      lbl.textContent = '';
+      note.innerHTML = 'Samotný dohled stojí víc, než co ta agenda ročně sežere. ' +
+        '<b>Tohle bych vám nedoporučil</b> — a vyjde to tak u části firem. Zkuste agendu, která bere víc času.';
+    } else {
+      big.classList.remove('nope');
+      var mes = Math.ceil(89000 / cistaMes);
+      num.textContent = mes;
+      lbl.textContent = tvarMes(mes) + ' do návratnosti';
+      note.innerHTML = 'Po prvním roce zůstává čistá úspora <b>' + kc(cistaMes * 12) + '</b> ročně.' +
+        (mes > 24 ? ' Přes dva roky je dlouho — u takové agendy se vyplatí začít levněji nebo ji nechat být.' : '');
+    }
+  }
+  [cN, cM, cS].forEach(function(el){ el.addEventListener('input', pocitej); });
+  pocitej();
+
+  /* ---- 4. kdo provozuje ---- */
+  var OPS = [
+    'Frontu výjimek řešíme my. Vzdálený přístup máme trvale, včetně spínatelných zásuvek, abychom uměli tvrdě restartovat stroj bez cesty k vám. <b>Vy neděláte nic.</b> Měsíčně: servis plus provozní model.',
+    'Frontu výjimek řeší váš člověk, my jsme na telefonu. Vzdálený přístup nám <b>zapínáte vy</b>, když ho potřebujeme. Předáváme navíc provozní dokumentaci a školení správců. Měsíčně: jen servis.',
+    'Provoz je celý váš. Předáváme navíc runbooky, zkušebnu, postupy obnovy a dvoudenní školení. <b>Měsíčně nic.</b> Podmínkou je, že v provozu není jediný ruční krok, který umíme jen my — jinak by to byl slib, který nedržíme.'
+  ];
+  var wo = document.getElementById('whoOut');
+  var opb = document.querySelectorAll('.who-runs button');
+  opb.forEach(function(b){
+    b.addEventListener('click', function(){
+      opb.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
+      wo.innerHTML = OPS[+b.dataset.op];
+    });
+  });
+  wo.innerHTML = OPS[0];
+})();
+</script>
+</body>
+</html>
