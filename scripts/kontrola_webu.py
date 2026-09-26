@@ -18,6 +18,7 @@ Co hlida (jen soubory na disku, zadny server):
  8. ikony v hlavicce: kazda stranka s `<head` ma cely blok ikon
     (favicon.svg, favicon-32.png, apple-touch-icon, manifest) a assety
     z bloku existuji na disku
+ 9. drift prototyp vs produkce (zatim jen varovani)
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
@@ -233,6 +234,20 @@ for dirpath, _, soubory in os.walk(KOREN):
 for jmeno in ('favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'site.webmanifest'):
     if not os.path.exists(os.path.join(KOREN, jmeno)):
         nalezy.append(('web', 'ikona neexistuje', jmeno))
+
+# --- 9. drift prototyp vs produkce ---------------------------------------
+# prenos.py by pri dalsim behu prepsal opravy delane primo ve webu -- rez 1-5
+# (T0926-135..139) zatim jen varovani, rez 6 (T0926-140) z toho udela nalez.
+SPECS = os.path.join(os.path.dirname(KOREN), 'specs', 'web-redesign')
+if os.path.isdir(SPECS):
+    sys.path.insert(0, SPECS)
+    try:
+        import prenos
+        stranky, sdilene = prenos.drift()
+        print('[kontrola_webu] drift: %d stranek, %d sdilenych'
+              % (sum(1 for s in stranky if s.radku), len(sdilene)))
+    except Exception as e:
+        print('[kontrola_webu] drift nezmeren: %s' % e)
 
 for n in nalezy:
     print('  %-28s %-24s %s' % n)
