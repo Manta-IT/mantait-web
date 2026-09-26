@@ -33,3 +33,8 @@
 /brand-lab-v4   /  301
 /brand-lab-v5   /  301
 /brand-lab-v6   /  301
+
+# Brana varianty A (T0926-410): prototyp jen pres osobni odkaz /p/<token>.
+# 302, ne 301 -- brana se jeste muze zmenit a prohlizec by si 301 pamatoval.
+/podnikova-ai/portal*     /podnikova-ai/#pristup     302
+/podnikova-ai/en/portal*  /podnikova-ai/en/#pristup  302
