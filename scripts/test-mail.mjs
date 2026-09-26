@@ -7,19 +7,9 @@
 //   node scripts/test-mail.mjs                # jen sestavi MIME, neodesila
 //   node scripts/test-mail.mjs --odeslat      # posle testovaci mail
 //
-// Cte stejne promenne jako Worker, z .dev.vars.
-import { readFileSync } from 'node:fs';
+// Cte stejne promenne jako Worker, z .dev.vars -- jen s --odeslat.
+import { existsSync, readFileSync } from 'node:fs';
 import { b64, hlavicka, accessToken, sendMail } from '../worker.js';
-
-// .dev.vars psany na Windows ma CRLF; \r na konci hodnoty udela
-// z client_id neplatny udaj a OAuth vrati "invalid_client".
-const env = Object.fromEntries(
-  readFileSync(new URL('../.dev.vars', import.meta.url), 'utf8')
-    .split(/\r?\n/).filter(Boolean).map((r) => {
-      const i = r.indexOf('=');
-      return [r.slice(0, i).trim(), r.slice(i + 1).trim()];
-    }),
-);
 
 let chyby = 0;
 const overit = (co, podminka) => {
@@ -36,6 +26,21 @@ if (!process.argv.includes('--odeslat')) {
   console.log('\n(bez --odeslat se nic neposila)');
   process.exit(chyby ? 1 : 0);
 }
+
+const devVars = new URL('../.dev.vars', import.meta.url);
+if (!existsSync(devVars)) {
+  console.log('  FAIL chybi web/.dev.vars');
+  process.exit(1);
+}
+// .dev.vars psany na Windows ma CRLF; \r na konci hodnoty udela
+// z client_id neplatny udaj a OAuth vrati "invalid_client".
+const env = Object.fromEntries(
+  readFileSync(devVars, 'utf8')
+    .split(/\r?\n/).filter(Boolean).map((r) => {
+      const i = r.indexOf('=');
+      return [r.slice(0, i).trim(), r.slice(i + 1).trim()];
+    }),
+);
 
 console.log('\nOdeslani pres Gmail API:');
 try {

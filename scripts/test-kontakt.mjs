@@ -1,6 +1,28 @@
-import puppeteer from './_puppeteer.mjs';
+import { existsSync } from 'node:fs';
+
+const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+if (!existsSync(CHROME)) {
+  console.log('test-kontakt: preskoceno (chybi Chrome)');
+  process.exit(0);
+}
+
+let puppeteer;
+try {
+  puppeteer = (await import('./_puppeteer.mjs')).default;
+} catch {
+  console.log('test-kontakt: preskoceno (chybi puppeteer-core v tools/axe, npm ci tamtez)');
+  process.exit(0);
+}
+
+try {
+  await fetch('http://localhost:8773/', { signal: AbortSignal.timeout(2000) });
+} catch {
+  console.log('test-kontakt: preskoceno (nebezi python scripts/serve.py na :8773)');
+  process.exit(0);
+}
+
 const b = await puppeteer.launch({
-  executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  executablePath: CHROME,
   headless: 'new', args: ['--no-sandbox'],
 });
 const p = await b.newPage();
