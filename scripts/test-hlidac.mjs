@@ -160,13 +160,17 @@ try {
     for (const i of ipky) assert.ok(!l.includes(i), `log bez IP: ${l}`);
   }
 
-  // staticky: stub stranky existuji a maji noindex
-  for (const s of ['hlidac-vyzev.html', 'hlidac-vyzev/zkontrolujte-postu.html', 'hlidac-vyzev/potvrzeno.html']) {
+  // staticky: stavove stranky maji noindex, stranka hlidace (rez 5) je v indexu
+  for (const s of ['hlidac-vyzev/zkontrolujte-postu.html', 'hlidac-vyzev/potvrzeno.html', 'hlidac-vyzev/odhlaseno.html']) {
     const u = new URL(`../${s}`, import.meta.url);
     assert.ok(existsSync(u), s);
     assert.ok(readFileSync(u, 'utf8').includes('<meta name="robots" content="noindex">'), `${s} noindex`);
   }
   const html = readFileSync(new URL('../hlidac-vyzev.html', import.meta.url), 'utf8');
+  assert.ok(!/name="robots"/.test(html) && !html.includes('ZNENI_V0'), 'hlidac-vyzev.html bez noindex a placeholderu');
+  assert.ok(html.includes('<link rel="canonical" href="https://mantait.cz/hlidac-vyzev">'), 'canonical');
+  assert.ok(readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8').includes('<loc>https://mantait.cz/hlidac-vyzev</loc>'), 'sitemap');
+  assert.ok(readFileSync(new URL('../dotace-mas.html', import.meta.url), 'utf8').includes('href="/hlidac-vyzev"'), 'odkaz z dotace-mas');
   assert.match(html, /<form method="post" action="\/api\/hlidac">/);
   assert.ok(/name="souhlas" type="checkbox" value="ano"/.test(html) && !/checked/.test(html), 'souhlas nezaskrtnuty');
 

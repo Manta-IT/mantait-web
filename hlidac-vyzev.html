@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Hlídač dotačních výzev - Manta IT</title>
-  <link rel="stylesheet" href="/pisma.css?v=b885abf">
+  <meta name="description" content="Vyplňte obor a území firmy, pošleme e-mail, jakmile vyjde dotační výzva, která na ně sedí. Jen při nové výzvě, odhlášení jedním klikem.">
+  <link rel="canonical" href="https://mantait.cz/hlidac-vyzev">
+  <link rel="stylesheet" href="/pisma.css?v=e45c8d6">
   <link rel="stylesheet" href="/style.css?v=7bad279">
 </head>
 <body>
-<!-- ZNENI_V0: placeholder, finalni text schvaluje Petr (T0926-219, rez 5) -->
 <main id="obsah" style="max-width:640px;margin:80px auto;padding:0 24px">
 <h1>Hlídač dotačních výzev</h1>
-<p>[ZNENI_V0] Pošlu vám upozornění, když vyjde dotační výzva pro váš region a obor.</p>
+<p>Vyplňte obor a území firmy, pošleme e-mail, jakmile vyjde výzva, která na ně sedí.</p>
 <form method="post" action="/api/hlidac">
   <p><label for="h-email">E-mail</label><br><input id="h-email" name="email" type="email" required autocomplete="email"></p>
-  <p><label for="h-region">Region</label><br><input id="h-region" name="region" type="text" required maxlength="200"></p>
+  <p><label for="h-region">Území (MAS nebo kraj)</label><br><input id="h-region" name="region" type="text" required maxlength="200"></p>
   <p><label for="h-obor">Obor</label><br><input id="h-obor" name="obor" type="text" required maxlength="200"></p>
-  <p><label><input name="souhlas" type="checkbox" value="ano" required> [ZNENI_V0] Souhlasím se zasíláním upozornění na dotační výzvy.</label></p>
+  <p><label><input name="souhlas" type="checkbox" value="ano" required> Souhlasím se zasíláním e-mailu o nových dotačních výzvách pro vybraný obor a území. Zprávu posíláme jen při nové výzvě. Odhlásit se dá jedním klikem v patičce e-mailu.</label></p>
   <div class="hp-field" aria-hidden="true">
     <label for="h-web">Nevyplňujte</label>
     <input id="h-web" name="kontrolni_udaj" type="text" tabindex="-1" autocomplete="off">
   </div>
   <button type="submit" class="btn">Přihlásit se</button>
 </form>
+<ul>
+  <li>Posíláme jen při nové výzvě, ne pravidelný newsletter.</li>
+  <li>Přihlášení potvrzujete e-mailem, odhlásíte se jedním klikem.</li>
+  <li>Adresu nepředáváme nikomu dalšímu.</li>
+</ul>
 </main>
 </body>
 </html>
