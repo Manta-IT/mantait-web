@@ -234,7 +234,9 @@ Srovnani je task T0924-224.
 - Nevolat externi JS krome Google Ads (gtag) a Cloudflare Web Analytics.
   **Pisma jsou od 8. 9. 2026 self-hostovana** v `/pisma/` (variabilni woff2,
   latin + latin-ext), deklarace v `pisma.css`, na kazde strance preload ctyr
-  rezu. Google Fonts se nevraci: blokovaly vykresleni 800 ms z ciziho puvodu.
+  rezu. Kopie deklaraci je i na zacatku `sluzba.css` a `style.css` (T0924-450);
+  stranky s nimi `pisma.css` nenacitaji. Google Fonts se nevraci: blokovaly
+  vykresleni 800 ms z ciziho puvodu.
 - Nezvysovat ani nesnizovat ceny bez Petrova pokynu.
 - Nezavadet externi rezervacni widget (Calendly odstraneno 8/2026, nevraci se;
   duvody v `PRINCIPLES.md`).
