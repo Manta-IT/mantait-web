@@ -7,10 +7,11 @@
 <meta name="description" content="AI zaměstnanec pro firmu: sám vyřizuje poštu a zápisy do CRM, běží nepřetržitě, ráno podá hlášení. Kvůli GDPR může běžet u vás na serveru. Od 89 000 Kč.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="/pisma.css?v=e45c8d6">
 <link rel="stylesheet" href="/sluzba.css?v=7f547ce">
 <link rel="stylesheet" href="/hranol.css?v=d4b1501">
-  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="stylesheet" href="/mobil.css?v=50ff103">
   <link rel="canonical" href="https://mantait.cz/reseni-ai-zamestnanec">
   <meta property="og:title" content="AI zaměstnanec pro firmu - Manta IT">
   <meta property="og:description" content="AI zaměstnanec pro firmu: sám vyřizuje poštu a zápisy do CRM, běží nepřetržitě, ráno podá hlášení. Kvůli GDPR může běžet u vás na serveru.">
@@ -190,7 +191,7 @@
 <section class="tmava">
   <div class="obsah">
     <h2>Co pro vás může dělat.</h2>
-    <p class="tmava-lead">Stejný zaměstnanec zvládne různé práce. Vyberte si celek, který se nejvíc podobá tomu, co vás dnes zdržuje, a podívejte se, co udělá sám a kde se zastaví.</p>
+    <p class="tmava-lead">Stejný zaměstnanec zvládne různé práce. Vyberte si celek, který se nejvíc podobá tomu, co vás dnes zdržuje. Uvidíte, co udělá sám a kde se zastaví.</p>
 
     <fieldset class="zalozky" id="celky-zalozky" hidden>
       <legend class="jen-ctecka">Modelový celek</legend>
@@ -221,7 +222,7 @@
           <li>Ke každé doplní kontakt do CRM.</li>
           <li>Připraví návrh oslovení.</li>
         </ul>
-        <p class="celek-ceka"><b>Kde se zastaví:</b> před oslovením. Oslovuje člověk, on sám nikomu nepíše a nic neodesílá.</p>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> před oslovením. Oslovuje člověk, sám nikomu nic nepošle.</p>
         <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
       <article class="celek" data-celek="recenze">
@@ -243,7 +244,7 @@
           <li>Po splatnosti připraví upomínku v tónu vaší firmy.</li>
           <li>Řadí dlužníky podle rizika.</li>
         </ul>
-        <p class="celek-ceka"><b>Kde se zastaví:</b> před odesláním upomínky a u každého kroku nad první urgenci. Tam rozhodujete vy.</p>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> před odesláním upomínky. Co přijde po první urgenci, rozhodujete vy.</p>
         <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
       <article class="celek" data-celek="smlouvy">
@@ -251,9 +252,9 @@
         <p class="celek-prokoho">pro koho: firmy s více nájmy, servisními smlouvami nebo licencemi, které se samy prodlužují</p>
         <ul class="celek-sam">
           <li>Hlídá výpovědní lhůty a termíny obnovy.</li>
-          <li>Měsíc dopředu upozorní, kterou smlouvu zrevidovat.</li>
+          <li>Měsíc dopředu upozorní, na kterou smlouvu se podívat.</li>
         </ul>
-        <p class="celek-ceka"><b>Kde se zastaví:</b> u rozhodnutí. Obnovit, vypovědět nebo přejednat rozhoduje člověk.</p>
+        <p class="celek-ceka"><b>Kde se zastaví:</b> u rozhodnutí. Jestli smlouvu obnovit, vypovědět, nebo přejednat, rozhodujete vy.</p>
         <a href="/#napiste" class="btn btn-vedlejsi">Chci to taky</a>
       </article>
     </div>
@@ -955,7 +956,24 @@
   </div>
 </footer>
 
-<script src="/sluzba.js?v=fd536a6" defer></script>
-<script src="/mobil.js?v=1bc92b7" defer></script>
+<script src="/sluzba.js?v=7b17979" defer></script>
+<script type="module">
+/* Vyberatelne celky: zalozky prepinaji celky v sekci Co pro vas muze delat.
+   Bez skriptu jsou videt vsechny celky pod sebou; zalozky jsou v HTML skryte. */
+(function(){
+  const zalozky = document.getElementById('celky-zalozky');
+  const celky = [...document.querySelectorAll('#celky .celek')];
+  if (!zalozky || celky.length < 2) return;
+  zalozky.hidden = false;
+  function vyber(klic){
+    celky.forEach(c => c.classList.toggle('aktivni', c.dataset.celek === klic));
+  }
+  zalozky.addEventListener('change', e => {
+    if (e.target.name === 'celek') vyber(e.target.value);
+  });
+  vyber(zalozky.querySelector('input[name="celek"]:checked').value);
+})();
+</script>
+<script src="/mobil.js?v=ef67676" defer></script>
 </body>
 </html>
