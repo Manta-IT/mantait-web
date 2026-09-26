@@ -109,19 +109,32 @@ const ODKAZ_NEPLATI = '<!doctype html><html lang="cs"><meta charset="utf-8"><met
   + '<title>Odkaz neplatí</title><body><h1>Odkaz neplatí</h1>'
   + '<p>Platnost odkazu vypršela nebo je poškozený. Přihlaste se prosím znovu na <a href="/hlidac-vyzev">mantait.cz/hlidac-vyzev</a>.</p></body></html>';
 
+const odkazNeplati = () => new Response(ODKAZ_NEPLATI, { status: 403, headers: {
+  'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'private, no-store',
+  'X-Robots-Tag': 'noindex', 'Referrer-Policy': 'no-referrer',
+} });
+
 export async function potvrd(request, env) {
   if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
   const klic = env.MANTA_SOUHLAS_KLIC;
   if (!env.DB || !klic) return new Response('Service unavailable', { status: 503 });
   const t = new URL(request.url).searchParams.get('t');
   const r = await overSouhlasToken(t, 'potvrdit', klic, Date.now());
-  if (!r) {
-    return new Response(ODKAZ_NEPLATI, { status: 403, headers: {
-      'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'private, no-store',
-      'X-Robots-Tag': 'noindex', 'Referrer-Policy': 'no-referrer',
-    } });
-  }
+  if (!r) return odkazNeplati();
   await zapisUdalost(env.DB, { adresa: r.adresa, udalost: 'potvrzen', zdroj: 'odkaz', cas: casIso(Date.now()) });
   console.log(JSON.stringify({ event: 'hlidac.potvrzen', zdroj: 'odkaz' }));
   return Response.redirect(new URL('/hlidac-vyzev/potvrzeno', request.url), 303);
+}
+
+/** Odhlaseni jednim klikem z paticky mailu (rez 2). Token 'odhlasit' neexpiruje. */
+export async function odhlas(request, env) {
+  if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
+  const klic = env.MANTA_SOUHLAS_KLIC;
+  if (!env.DB || !klic) return new Response('Service unavailable', { status: 503 });
+  const t = new URL(request.url).searchParams.get('t');
+  const r = await overSouhlasToken(t, 'odhlasit', klic, Date.now());
+  if (!r) return odkazNeplati();
+  await zapisUdalost(env.DB, { adresa: r.adresa, udalost: 'odvolan', zdroj: 'odkaz', cas: casIso(Date.now()) });
+  console.log(JSON.stringify({ event: 'souhlas.odhlasen', zdroj: 'odkaz' }));
+  return Response.redirect(new URL('/hlidac-vyzev/odhlaseno', request.url), 303);
 }

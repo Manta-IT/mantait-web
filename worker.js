@@ -9,7 +9,10 @@
 // musi chodit z tehoz jmena jako web, jinak je podezrela uz z principu.
 import PORTAL from './_pristup/portal.js';
 import { overToken, validujDavku, vlozVodoznak } from './pristup.js';
-import { potvrd, prihlas, validujPrihlaseni } from './souhlas.js';
+import { odhlas, potvrd, prihlas, validujPrihlaseni } from './souhlas.js';
+
+// Verze zneni souhlasu u checkboxu hlidace v dotazniku; finalni verzi nastavi rez 5 (T0926-215).
+const ZNENI_HLIDAC_DOTAZNIK = 'dotaznik-placeholder-v0';
 
 const NOTIFY_TO = 'petr.kokoska@mantait.cz';
 const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };
@@ -307,6 +310,24 @@ async function handleForm(request, env, formName, ctx) {
       .catch((e) => console.error('potvrzeni klientovi selhalo', e));
     if (ctx) ctx.waitUntil(potvrzeni); else await potvrzeni;
   }
+  // Hlidac vyzev z dotazniku (rez 3): az za notifikaci, aby chyba D1 nikdy neshodila lead.
+  // Redirect prihlas() se zahazuje -- dotaznik vzdy konci na /dekujeme.
+  if (formName === 'dotaznik' && data.hlidac === 'ano' && email) {
+    const udaje = { adresa: email.toLowerCase(), region: String(data.mas || '').trim().slice(0, 100), obor: '' };
+    const posta = {
+      puvod: new URL(request.url).origin,
+      posli: async (to, predmet, telo) => sendMail(await accessToken(env), to, predmet, telo),
+    };
+    let selhal = false;
+    try {
+      const r = await prihlas(env, ctx, udaje, 'dotaznik', ZNENI_HLIDAC_DOTAZNIK,
+                              request.headers.get('cf-connecting-ip') || '', posta);
+      selhal = Boolean(r && r.status >= 400);
+    } catch {
+      selhal = true;
+    }
+    if (selhal) console.log(JSON.stringify({ event: 'hlidac.selhal', zdroj: 'dotaznik' }));
+  }
   // Jen delka: e-mail ani text zadosti do logu nepatri (kriterium 12).
   if (formName === 'pristup') console.log(JSON.stringify({ event: 'pristup.zadost', delka: String(data.text || '').length }));
   return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
@@ -480,6 +501,7 @@ export default {
     if (p) return handlePristup(request, env, p[1]);
     if (pathname === '/mereni') return handleMereni(request, env);
     if (pathname === '/api/souhlas/potvrd') return potvrd(request, env);
+    if (pathname === '/api/souhlas/odhlas') return odhlas(request, env);
 
     // Bez koncoveho lomitka, at /kontakt a /kontakt/ konci stejne.
     const cesta = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;

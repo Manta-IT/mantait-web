@@ -169,6 +169,113 @@ try {
   const html = readFileSync(new URL('../hlidac-vyzev.html', import.meta.url), 'utf8');
   assert.match(html, /<form method="post" action="\/api\/hlidac">/);
   assert.ok(/name="souhlas" type="checkbox" value="ano"/.test(html) && !/checked/.test(html), 'souhlas nezaskrtnuty');
+
+  // krit. 5 (T0926-212): sdileny literalni vektor -- tentyz retezec assertuje souhlasy.py _test()
+  const VEKTOR = 'eEB5LmN6fDIwMjYtMDEtMDFUMDA6MDA6MDArMDA6MDB8b2RobGFzaXQ'
+    + '.f461b809da9e0e6486c04a5056dfadf1dee24520e87dd4281e4fca324bc4a3fa';
+  const KLIC_V = 'testovaci-klic';
+  assert.equal(await podpisSouhlas('x@y.cz', '2026-01-01T00:00:00+00:00', 'odhlasit', KLIC_V), VEKTOR);
+  assert.deepEqual(await overSouhlasToken(VEKTOR, 'odhlasit', KLIC_V, Date.parse('2027-01-01T00:00:00Z')),
+    { adresa: 'x@y.cz', cas: '2026-01-01T00:00:00+00:00' }, 'odhlaseni neexpiruje');
+
+  // krit. 4: odhlaseni jednim klikem -> 303 odhlaseno, 1 udalost odvolan, 0 mailu
+  const envV = { ...env, MANTA_SOUHLAS_KLIC: KLIC_V };
+  const odhlas = (t, e = envV, init = {}) => worker.fetch(req(`/api/souhlas/odhlas${t === undefined ? '' : `?t=${encodeURIComponent(t)}`}`, init), e, null);
+  let pred = radky.length;
+  const predMaily = odeslane.length;
+  logy.length = 0;
+  res = await odhlas(VEKTOR);
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/hlidac-vyzev/odhlaseno'));
+  assert.equal(radky.length, pred + 1);
+  assert.deepEqual({ ...sloupec(radky.at(-1)), cas: undefined },
+    { adresa: 'x@y.cz', udalost: 'odvolan', zdroj: 'odkaz', cas: undefined, zneni: null });
+  assert.ok(logy.some((l) => l.includes('"event":"souhlas.odhlasen"')));
+  pred = radky.length;
+  const posledniV = VEKTOR.at(-1) === 'a' ? 'b' : 'a';
+  for (const [co, t] of [
+    ['ucel potvrdit', await podpisSouhlas('x@y.cz', casIso(Date.now()), 'potvrdit', KLIC_V)],
+    ['podvrzeny', VEKTOR.slice(0, -1) + posledniV],
+    ['bez t', undefined],
+  ]) {
+    res = await odhlas(t);
+    assert.equal(res.status, 403, co);
+    assert.ok((await res.text()).includes('Odkaz neplatí'), co);
+    assert.equal(radky.length, pred, `${co}: 0 zapisu`);
+  }
+  for (const [co, e] of [['bez DB', { ...envV, DB: undefined }], ['bez klice', { ...envV, MANTA_SOUHLAS_KLIC: undefined }]]) {
+    res = await odhlas(VEKTOR, e);
+    assert.equal(res.status, 503, co);
+    assert.equal(radky.length, pred, `${co}: 0 zapisu`);
+  }
+  res = await odhlas(VEKTOR, envV, { method: 'POST' });
+  assert.equal(res.status, 405);
+  assert.equal(radky.length, pred);
+  assert.equal(odeslane.length, predMaily, 'odhlaseni neposila mail');
+  for (const l of logy) assert.ok(!l.includes('x@y.cz'), `log odhlaseni bez e-mailu: ${l}`);
+  assert.ok(existsSync(new URL('../hlidac-vyzev/odhlaseno.html', import.meta.url)));
+  assert.ok(readFileSync(new URL('../hlidac-vyzev/odhlaseno.html', import.meta.url), 'utf8')
+    .includes('<meta name="robots" content="noindex">'), 'odhlaseno noindex');
+
+  // krit. 6 (T0926-213): checkbox hlidace v dotazniku dotace-mas
+  const dotaznik = (pole, e = env) => worker.fetch(req('/api/dotaznik', {
+    method: 'POST', headers: { origin: 'https://mantait.cz' },
+    body: new URLSearchParams({ email: 'a@b.cz', text: 'dotaz', mas: 'jesenicko', ...pole }),
+  }), e, null);
+  const udalostiDotazniku = () => radky.filter((r) => r.a[2] === 'dotaznik');
+  const potvrzovaci = () => odeslane.filter((m) => m.telo.includes('/api/souhlas/potvrd?t='));
+  logy.length = 0;
+
+  // a. hlidac=ano -> /dekujeme, 1 zapsan (dotaznik, jesenicko), 1 potvrzovaci mail na a@b.cz
+  let predM = odeslane.length;
+  const predP = potvrzovaci().length;
+  res = await dotaznik({ hlidac: 'ano' });
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/dekujeme'));
+  assert.equal(udalostiDotazniku().length, 1);
+  const u = udalostiDotazniku()[0];
+  assert.deepEqual([u.a[0], u.a[1], u.a[2], u.a[5]], ['a@b.cz', 'zapsan', 'dotaznik', 'jesenicko']);
+  assert.equal(potvrzovaci().length, predP + 1);
+  assert.equal(potvrzovaci().at(-1).to, 'a@b.cz');
+  const mailuSHlidacem = odeslane.length - predM;
+
+  // b. bez hlidac -> /dekujeme, 0 udalosti, o 1 mail mene (jen notifikace + potvrzeni klientovi)
+  predM = odeslane.length;
+  res = await dotaznik({});
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/dekujeme'));
+  assert.equal(udalostiDotazniku().length, 1, 'bez hlidac: 0 udalosti');
+  assert.equal(potvrzovaci().length, predP + 1, 'bez hlidac: zadny potvrzovaci mail');
+  assert.equal(odeslane.length - predM, mailuSHlidacem - 1);
+  assert.equal(odeslane.length - predM, 2, 'notifikace + potvrzeni klientovi');
+
+  // c. bez env.DB -> dotaznik stale /dekujeme, 0 udalosti, log hlidac.selhal
+  res = await dotaznik({ hlidac: 'ano' }, { ...env, DB: undefined });
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/dekujeme'));
+  assert.equal(udalostiDotazniku().length, 1);
+  assert.ok(logy.some((l) => l.includes('"event":"hlidac.selhal"')));
+
+  // d. DB.prepare hodi vyjimku -> dotaznik stale /dekujeme
+  const padajiciDb = { prepare: () => { throw new Error('D1 down a@b.cz'); } };
+  res = await dotaznik({ hlidac: 'ano' }, { ...env, DB: padajiciDb });
+  assert.equal(res.status, 303);
+  assert.ok(res.headers.get('Location').endsWith('/dekujeme'));
+
+  // e. jen telefon, bez e-mailu -> 0 udalosti
+  res = await dotaznik({ hlidac: 'ano', email: '', telefon: '777000111' });
+  assert.equal(res.status, 303);
+  assert.equal(udalostiDotazniku().length, 1);
+  for (const l of logy) assert.ok(!l.includes('a@b.cz'), `log dotazniku bez e-mailu: ${l}`);
+
+  // f. staticky: checkbox hlidac v #dotaznik, nepovinny a nezaskrtnuty
+  const dm = readFileSync(new URL('../dotace-mas.html', import.meta.url), 'utf8');
+  const form = /<form[^>]*id="dotaznik"[\s\S]*?<\/form>/.exec(dm)?.[0];
+  assert.ok(form, '#dotaznik existuje');
+  const input = /<input[^>]*name="hlidac"[^>]*>/.exec(form)?.[0];
+  assert.ok(input, 'checkbox hlidac v #dotaznik');
+  assert.ok(/type="checkbox"/.test(input) && /value="ano"/.test(input), input);
+  assert.ok(!/\bchecked\b/.test(input) && !/\brequired\b/.test(input), 'bez checked a required');
 } finally {
   console.log = puvodniLog;
   console.error = puvodniError;
