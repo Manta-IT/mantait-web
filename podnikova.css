@@ -228,3 +228,8 @@
   .cena-sloupec{padding:0}
   .cena-sloupec:first-child{border-right:0;border-bottom:1px solid var(--linka);padding-bottom:26px;margin-bottom:26px}
 }
+
+.lang-switch{display:flex;align-items:center;gap:4px;font-size:13px}
+.lang-switch a{color:var(--tlum);text-decoration:none;padding:4px 5px}
+.lang-switch span{color:var(--inkoust);font-weight:600;padding:4px 5px}
+.menu .lang-switch a::after{display:none}
