@@ -11,8 +11,8 @@ import PORTAL from './_pristup/portal.js';
 import { overToken, validujDavku, vlozVodoznak } from './pristup.js';
 import { odhlas, potvrd, prihlas, validujPrihlaseni } from './souhlas.js';
 
-// Verze zneni souhlasu u checkboxu hlidace v dotazniku; finalni verzi nastavi rez 5 (T0926-215).
-const ZNENI_HLIDAC_DOTAZNIK = 'dotaznik-placeholder-v0';
+// Verze zneni souhlasu u checkboxu hlidace v dotazniku = sekce 2 deliverables/2026-09-26_koncept-souhlas-hlidac-vyzev.md (schvaleno T0926-243).
+const ZNENI_HLIDAC_DOTAZNIK = 'dotaznik-v1-2026-09-26';
 
 const NOTIFY_TO = 'petr.kokoska@mantait.cz';
 const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };

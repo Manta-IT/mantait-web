@@ -239,6 +239,7 @@ try {
   assert.equal(udalostiDotazniku().length, 1);
   const u = udalostiDotazniku()[0];
   assert.deepEqual([u.a[0], u.a[1], u.a[2], u.a[5]], ['a@b.cz', 'zapsan', 'dotaznik', 'jesenicko']);
+  assert.equal(u.a[4], 'dotaznik-v1-2026-09-26', 'zneni dotazniku = schvalena verze');
   assert.equal(potvrzovaci().length, predP + 1);
   assert.equal(potvrzovaci().at(-1).to, 'a@b.cz');
   const mailuSHlidacem = odeslane.length - predM;
@@ -280,6 +281,9 @@ try {
   assert.ok(input, 'checkbox hlidac v #dotaznik');
   assert.ok(/type="checkbox"/.test(input) && /value="ano"/.test(input), input);
   assert.ok(!/\bchecked\b/.test(input) && !/\brequired\b/.test(input), 'bez checked a required');
+  assert.ok(!dm.includes('PLACEHOLDER'), 'dotace-mas bez placeholderu');
+  assert.ok(!/id="f-hlidac-pole"[^>]*\bhidden\b/.test(form), 'pole hlidace neni hidden');
+  assert.ok(form.includes('Chci dostávat e-mail i o dalších výzvách pro můj obor a území. Posíláme jen při nové výzvě, odhlásit se dá jedním klikem v patičce.'), 'schvalene zneni sekce 2');
 } finally {
   console.log = puvodniLog;
   console.error = puvodniError;
