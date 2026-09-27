@@ -19,6 +19,8 @@ Co hlida (jen soubory na disku, zadny server):
     (favicon.svg, favicon-32.png, apple-touch-icon, manifest) a assety
     z bloku existuji na disku
  9. drift prototyp vs produkce (zatim jen varovani)
+ 10. pocet blokujicich <link rel=stylesheet> v head na strankach ze sitemap
+     (zatim jen varovani, BLOKUJICI_JE_CHYBA)
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
@@ -259,6 +261,44 @@ for dirpath, _, soubory in os.walk(KOREN):
 for jmeno in ('favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'site.webmanifest'):
     if not os.path.exists(os.path.join(KOREN, jmeno)):
         nalezy.append(('web', 'ikona neexistuje', jmeno))
+
+# --- 10. blokujici css v head --------------------------------------------
+# T0924-145 / T0924-449: 10 stranek melo 4 blokujici stylopisy, proto zatim
+# jen varovani; rez 3 (T0924-145) prepne BLOKUJICI_JE_CHYBA na True. Sekci
+# odebral merge 8bdfed46 (nasazeni dilny 20260924-231120-workshop-task),
+# ktery pri konfliktu na tomtez miste nahradil ji sekci "portal za tokenem".
+PRAH_BLOKUJICICH = 2
+BLOKUJICI_JE_CHYBA = False  # rez 3 (T0924-145) prepne na True
+
+def blokujici_css(html):
+    konec = html.lower().find('</head>')
+    hlavicka = html if konec == -1 else html[:konec]
+    hrefy = []
+    for tag in re.findall(r'<link[^>]+>', hlavicka, flags=re.S):
+        if not re.search(r'rel="stylesheet"', tag):
+            continue
+        if re.search(r'media="print"', tag) or re.search(r'\bonload=', tag):
+            continue
+        href = re.search(r'href="([^"]+)"', tag)
+        if href:
+            hrefy.append(href.group(1))
+    return hrefy
+
+nad = []
+for s in STRANKY:
+    cesta = os.path.join(KOREN, s)
+    if not os.path.exists(cesta):
+        continue
+    html = io.open(cesta, encoding='utf-8').read()
+    hrefy = blokujici_css(html)
+    if len(hrefy) > PRAH_BLOKUJICICH:
+        nad.append((s, hrefy))
+        if BLOKUJICI_JE_CHYBA:
+            nalezy.append((s, 'blokujici css nad %d' % PRAH_BLOKUJICICH, ', '.join(hrefy)))
+
+print('[kontrola_webu] blokujici css: %d stranek nad %d' % (len(nad), PRAH_BLOKUJICICH))
+for s, hrefy in nad:
+    print('    %s (%d)' % (s, len(hrefy)))
 
 for v in varovani:
     print('  VAROVANI %-28s %-24s %s' % v)

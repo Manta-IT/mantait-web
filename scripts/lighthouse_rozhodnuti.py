@@ -136,8 +136,9 @@ def vystup(pred, po):
         radky.append('| %s | %d | %d | %d | %.2f | - | - |' % (
             s, round(m['lcp']), round(m['fcp']), round(m['tbt']), m['cls']))
     radky.append('')
+    # zlepseni = pred - po, kladne = rychlejsi
     radky.append('zlepseni LCP: ' + ', '.join(
-        '%s %+d ms' % (s, round(po[s]['lcp'] - pred[s]['lcp'])) for s in pred))
+        '%s %+d ms' % (s, round(pred[s]['lcp'] - po[s]['lcp'])) for s in pred))
     radky.append('')
     radky.append('rozhodnuti: rez 3 %s' % ('ano' if ano else 'ne'))
     radky.extend('- ' + d for d in duvody)
@@ -220,7 +221,12 @@ def test():
         assert ano
         text, ano = vystup(pred, po('a2', (2850, 2350, 4000)))
         assert ano and text.count('rozhodnuti: rez 3 ') == 1, text
-        assert 'rozhodnuti: rez 3 ano' in text and '/reseni-bezpecnost -150 ms' in text, text
+        assert 'rozhodnuti: rez 3 ano' in text and '/reseni-bezpecnost +150 ms' in text, text
+        # znam) zlepseni LCP = pred - po: pomalejsi stranka zaporne, rychlejsi kladne
+        text, _ = vystup(pred, po('znam', (3050, 2350, 4000)))
+        assert '/clanky/ai-zamestnanec-co-je-a-co-neni -50 ms' in text, text
+        assert '/reseni-bezpecnost +150 ms' in text, text
+        assert '/kalkulacka +0 ms' in text, text
         # b) jen 1 stranka lepsi -> ne
         ano, duvody = rozhodni(pred, po('b', (2850, 2500, 4000)))
         assert not ano and 'na 1 ze 3' in duvody[0], duvody
