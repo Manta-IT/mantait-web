@@ -14,7 +14,9 @@ changed=$(git diff --cached --name-only --diff-filter=ACM)
 
 # Kontrola obsahu bezi vzdycky, i kdyz commit sahne jen na worker.js nebo
 # skripty: nalez muze vzniknout i zmenou registru sluzeb nebo llms.txt.
-python scripts/kontrola_webu.py
+# --commit: cizi nestagovany drift v souboru mimo commit nesmi zastavit tenhle
+# commit, do commitu se stejne nedostane (T0927-106).
+python scripts/kontrola_webu.py --commit
 if [ $? -ne 0 ]; then
   echo "[pre-commit] kontrola_webu.py nasla chyby, abortuju commit"
   exit 1
