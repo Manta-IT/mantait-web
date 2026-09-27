@@ -19,7 +19,9 @@ Co hlida (jen soubory na disku, zadny server):
     (favicon.svg, favicon-32.png, apple-touch-icon, manifest) a assety
     z bloku existuji na disku
  9. drift prototyp vs produkce (prenos.drift()): rozdilna stranka nebo
-    sdileny soubor = nalez = exit 1
+    sdileny soubor = nalez = exit 1; s `--commit` (pre-commit) blokuje jen
+    drift v souborech, ktere jsou soucasti commitu (`git diff --cached`),
+    drift jinde je jen varovani (T0927-106)
  10. pocet blokujicich <link rel=stylesheet> v head na strankach ze sitemap
      (zatim jen varovani, BLOKUJICI_JE_CHYBA)
 
@@ -63,6 +65,17 @@ def stranky_ze_sitemap():
     return vysledek
 
 STRANKY = stranky_ze_sitemap()
+JEN_COMMIT = '--commit' in sys.argv[1:]
+
+def commitovane():
+    """Cesty, ktere jdou do commitu (pre-commit: `git diff --cached` cte docasny
+    index, u `git commit -- cesty` presne to, co se commitne, T0927-106). None
+    kdyz git selze -- pak plati fail-closed plna kontrola."""
+    r = subprocess.run(['git', 'diff', '--cached', '--name-only', '-z'], cwd=KOREN,
+                        capture_output=True)
+    if r.returncode != 0:
+        return None
+    return set(c.decode('utf-8') for c in r.stdout.split(b'\0') if c)
 TYPO = {'em-dash': '—', 'en-dash': '–', 'smart quotes': '[“”„‘’]', 'ellipsis': '…'}
 # 3. Zakazana slova: jedine misto je ../_meta/predpisy/ (vrstvy akce-web, hlas-manta-it,
 # domena-dotace-mas; T0923-104). Web je samostatny repo, cte vygenerovanou kopii
@@ -273,13 +286,27 @@ if os.path.isdir(SPECS):
     sys.path.insert(0, SPECS)
     import prenos  # pyright: ignore[reportMissingImports] -- sys.path za behu
     stranky, sdilene = prenos.drift()
+    mnozina = commitovane() if JEN_COMMIT else None
+    mimo_commit = 0
     for s in stranky:
         if s.radku:
-            nalezy.append((s.cil, 'drift proti prototypu', str(s.radku)))
+            cesta = s.cil.replace(os.sep, '/')
+            if mnozina is None or cesta in mnozina:
+                nalezy.append((s.cil, 'drift proti prototypu', str(s.radku)))
+            else:
+                varovani.append((s.cil, 'drift mimo commit', str(s.radku)))
+                mimo_commit += 1
     for soubor in sdilene:
-        nalezy.append((soubor, 'drift proti prototypu', 'sdileny soubor'))
+        cesta = soubor.replace(os.sep, '/')
+        if mnozina is None or cesta in mnozina:
+            nalezy.append((soubor, 'drift proti prototypu', 'sdileny soubor'))
+        else:
+            varovani.append((soubor, 'drift mimo commit', 'sdileny soubor'))
+            mimo_commit += 1
     print('[kontrola_webu] drift: %d stranek, %d sdilenych'
           % (sum(1 for s in stranky if s.radku), len(sdilene)))
+    if JEN_COMMIT:
+        print('[kontrola_webu] drift mimo commit: %d' % mimo_commit)
 
 # --- 10. blokujici css v head --------------------------------------------
 # T0924-145 / T0924-449: 10 stranek melo 4 blokujici stylopisy, proto zatim
