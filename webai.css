@@ -49,7 +49,8 @@
   color:var(--akcent-sv);visibility:hidden}
 .radky li.vas .tecka{background:#12A06B;border-color:#12A06B}
 .radky li.vas .rad-t{background:color-mix(in srgb,var(--papir) 78%,transparent)}
-.radky li.vas em{visibility:visible}
+/* inherit, ne visible: jinak em prosvita skrytou scenou a chyta klik (T0927-100) */
+.radky li.vas em{visibility:inherit}
 
 /* AI asistent: jedna odpoved a tri dlazdice zdroju. */
 .odpoved-ai{margin-top:18px;font-size:clamp(15.5px,1.2vw,17px);line-height:1.55;color:color-mix(in srgb,var(--papir) 84%,transparent);max-width:58ch}
