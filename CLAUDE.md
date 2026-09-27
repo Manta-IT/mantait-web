@@ -220,14 +220,6 @@ lidr, ktery vede digitalni transformaci. Stranky sluzeb podle vzoru vedeni-it.
    `opacity:0`** u textu nad ohybem: Chrome takovy prvek nepovazuje za
    vykresleny a LCP ceka na dobehnuti animace
 
-**POZOR (nalez 24. 9. 2026): prototyp `web-v2.html` je ZASTARALY proti produkci `index.html`.**
-Stroj (`mas_parametry.py --web`, clanky) a opravy (T0923-104) pisou primo do `web/index.html`
-a nekterych `reseni-*.html`; prototypy to nemaji (napr. dotacni produkt, UZAVERKA, znacky
-`/*cena:dotace-mas*/`, `type="module"`, `defer`). **`prenos.py` bez kontroly diffu by
-produkci vratil zpet** (vcetne vety o dotacni kancelari). Dokud se prototypy nesrovnaji,
-menit hotove stranky chirurgicky v obou kopiich a pred commitem projit `git diff`.
-Srovnani je task T0924-224.
-
 ## Co NEDELAT
 
 - Nepridavat JS framework ani build step. Vanilla nebo nic.
@@ -243,7 +235,8 @@ Srovnani je task T0924-224.
 - Nevkladat hidden metadata ani SEO triky.
 - Nepridavat anglicismy do body copy.
 - Neopravovat tech devet prepsanych stranek primo v `web/` -- zmena se ztrati
-  pri dalsim `prenos.py`. Opravuje se prototyp, pak se prenese.
+  pri dalsim `prenos.py`. Opravuje se prototyp, pak se prenese. Od rezu 6
+  (T0926-140) to zastavi `kontrola_webu.py` sekce 9 nalezem `drift proti prototypu`.
 - **Totez plati pro sdilene CSS a JS**, ne jen pro stranky: `prenos.py` kopiruje
   `sluzba.css`, `sluzba.js`, `hranol.css`, `kruh.css`, `stopa.css`, `mobil.css`,
   `mobil.js`, `pisma.css` a slozku `pisma/` z prototypu do `web/`. Oprava jen v `web/` prezije do prvniho

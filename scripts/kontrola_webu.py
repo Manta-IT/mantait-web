@@ -18,7 +18,8 @@ Co hlida (jen soubory na disku, zadny server):
  8. ikony v hlavicce: kazda stranka s `<head` ma cely blok ikon
     (favicon.svg, favicon-32.png, apple-touch-icon, manifest) a assety
     z bloku existuji na disku
- 9. drift prototyp vs produkce (zatim jen varovani)
+ 9. drift prototyp vs produkce (prenos.drift()): rozdilna stranka nebo
+    sdileny soubor = nalez = exit 1
  10. pocet blokujicich <link rel=stylesheet> v head na strankach ze sitemap
      (zatim jen varovani, BLOKUJICI_JE_CHYBA)
 
@@ -261,6 +262,24 @@ for dirpath, _, soubory in os.walk(KOREN):
 for jmeno in ('favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'site.webmanifest'):
     if not os.path.exists(os.path.join(KOREN, jmeno)):
         nalezy.append(('web', 'ikona neexistuje', jmeno))
+
+# --- 9. drift prototyp vs produkce ---------------------------------------
+# prenos.py by pri dalsim behu prepsal opravy delane primo ve webu. Rezy 1-5
+# (T0926-135..139) drift srovnaly na 0; od rezu 6 (T0926-140, 27. 9.) je kazdy
+# rozdil nalez. Sekci odebral merge 2f72161 (nasazeni dilny
+# 20260926-120602-workshop-task), rez 6 ji vratil.
+SPECS = os.path.join(os.path.dirname(KOREN), 'specs', 'web-redesign')
+if os.path.isdir(SPECS):
+    sys.path.insert(0, SPECS)
+    import prenos  # pyright: ignore[reportMissingImports] -- sys.path za behu
+    stranky, sdilene = prenos.drift()
+    for s in stranky:
+        if s.radku:
+            nalezy.append((s.cil, 'drift proti prototypu', str(s.radku)))
+    for soubor in sdilene:
+        nalezy.append((soubor, 'drift proti prototypu', 'sdileny soubor'))
+    print('[kontrola_webu] drift: %d stranek, %d sdilenych'
+          % (sum(1 for s in stranky if s.radku), len(sdilene)))
 
 # --- 10. blokujici css v head --------------------------------------------
 # T0924-145 / T0924-449: 10 stranek melo 4 blokujici stylopisy, proto zatim
