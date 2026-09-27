@@ -79,6 +79,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Vypadl Microsoft 365 a firma stála. Co mít připravené](https://mantait.cz/clanky/vypadl-microsoft-365-a-firma-stala-co-ma-mit-majitel): V pondělí nešla pošta, Teams ani OneDrive. Co má mít majitel firmy sepsané, aby ho příští výpadek dodavatele nenechal stát bez slova.
 - [Levnější licence Google Workspace? Úspora mizí v detailu](https://mantait.cz/clanky/prechod-z-microsoftu-365-na-google-workspace-levnejsi): Nová analýza ukazuje, že levnější licence kancelářského balíku sama o sobě náklady na výměnu nevyrovná. Co má vedení vyčíslit dřív, než migraci schválí.
 - [Inovační vouchery mají víc peněz. Co s nimi zvládne firma](https://mantait.cz/clanky/inovacni-vouchery-dostaly-vic-penez-na-co-je-firma-muze): Stát přidal peníze na dotaci pro firmy, které si chtějí nechat od výzkumného ústavu ověřit nápad na inovaci. Zjistěte, jestli se vás to týká.
+- [NÚKIB hlásí nejvíc významných incidentů za rok](https://mantait.cz/clanky/nukib-hlasi-nejvic-vaznych-incidentu-za-rok-co-si-ve-firme): Srpnový přehled NÚKIB ukázal nejvíc významných kybernetických incidentů za rok. Co má mít firma do 250 lidí ověřené, než ji potká podobný zásah.
 
 ## Co Manta IT není
 

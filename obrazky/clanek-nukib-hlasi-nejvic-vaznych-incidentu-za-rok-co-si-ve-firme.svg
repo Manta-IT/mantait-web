@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Firemní síť s napadeným vstupním bodem a odděleným trezorem záloh mimo hlavní síť." fill="none">
+<title>Firemní síť s napadeným vstupním bodem a odděleným trezorem záloh mimo hlavní síť.</title>
+  <rect x="20" y="26" width="40" height="24" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="20" y="70" width="40" height="24" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="20" y="114" width="40" height="24" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="126" y="60" width="60" height="48" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 76h30" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 86h20" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M60 38h30q10 0 10 10v20" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M60 126h30q10 0 10-10v-20" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M60 82h36" stroke="#9A3F2B" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <circle cx="96" cy="82" r="6" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="0"/>
+  <path d="M186 84h44" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="250" y="62" width="54" height="44" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2" opacity="1"/>
+  <circle cx="277" cy="84" r="5" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>
