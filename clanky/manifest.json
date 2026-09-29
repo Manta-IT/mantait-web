@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vymenili-jste-system-a-lide-nadavaji-dal-proc-a-co-s-tim",
+    "title": "Vyměnili jste systém a lidé nadávají dál. Proč a co s tím",
+    "description": "Nový systém je lepší než starý, a přesto se spokojenost lidí nezvedla. Proč se to stává a jak výměnu naplánovat, aby něco přinesla.",
+    "date_published": "2026-09-29",
+    "date_modified": "2026-09-29",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-vymenili-jste-system-a-lide-nadavaji-dal-proc-a-co-s-tim.svg"
+  },
+  {
     "slug": "vasi-lide-uz-ai-pouzivaji-jen-nevite-kterou-a-s-jakymi-daty",
     "title": "Vaši lidé už AI používají. Nevíte kterou a s jakými daty",
     "description": "Zaměstnanci si do práce nosí vlastní bezplatné AI nástroje a nikdo ve firmě neví, kam s nimi mizí smlouvy, ceníky a osobní údaje zákazníků.",
