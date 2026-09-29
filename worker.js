@@ -18,7 +18,25 @@ const NOTIFY_TO = 'petr.kokoska@mantait.cz';
 const FROM = { email: 'petr.kokoska@mantait.cz', name: 'Petr Kokoška | Manta IT' };
 const TEL = '+420 732 329 431';
 
+// Kontrolni seznamy k clankum (T0929-226). Slug jde do predmetu mailu i do URL,
+// proto whitelist; Object.hasOwn, aby `constructor` a `__proto__` neprosly.
+const SEZNAMY = Object.freeze({
+  'vypadl-microsoft-365-a-firma-stala-co-ma-mit-majitel': true,
+  'prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve': true,
+  'kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data': true,
+});
+function seznamPlatny(slug) { return typeof slug === 'string' && Object.hasOwn(SEZNAMY, slug); }
+
 const FORMS = {
+  // Kontrolni seznam k clanku (T0929-226). Predmet cte scripts/stav_kampane.py
+  // (jen pocet, zadny triaz) a scripts/stroj/leady_clanky.py -- menit jen spolu.
+  // Bez `reply`: zadny mail na adresu z formulare (subscription bombing).
+  seznam: {
+    fields: ['email', 'zdroj_clanek'],
+    povinne: ['email', 'zdroj_clanek'],
+    subject: (d) => `Seznam: ${d.zdroj_clanek}`,
+    dekujeme: (d) => `/clanky/seznamy/${d.zdroj_clanek}`,
+  },
   // Zadost o pristup k prototypu Podnikove AI (T0924-471, tracer brany).
   // Predmet a pole `text` cte tools/podnikova-ai-pristup/zadosti.py -- menit jen spolu.
   // Bez `reply`: PRAVE 1 mail Petrovi s Reply-To zadatele, potvrzeni by byl text ven bez copy.
@@ -230,6 +248,12 @@ function jeRobot(formName, data) {
   return !ma('telefon') && !ma('firma') && ROBOT_TEXT.test(String(data.zprava || ''));
 }
 
+// subject a dekujeme jsou u formulare retezec, u `seznam` funkce slugu; volaji se jen pri platnem slugu.
+function hodnota(pole, data, formName) {
+  if (typeof pole !== 'function') return pole;
+  return formName === 'seznam' && !seznamPlatny(data.zdroj_clanek) ? '/clanky/' : pole(data);
+}
+
 async function handleForm(request, env, formName, ctx) {
   const form = FORMS[formName];
   // Nejdelsi poctivy formular (dodavatele) ma pod 8 kB. 64 kB je strop, po
@@ -243,10 +267,13 @@ async function handleForm(request, env, formName, ctx) {
   // dva honeypoty: `website` (stare stranky) + `kontrolni_udaj` (nove --
   // "website" umi vyplnit autofill prohlizece i poctivemu cloveku a lead
   // by se tise ztratil; OWASP review M2)
-  if (data.website || data.kontrolni_udaj) return Response.redirect(new URL(form.dekujeme || '/dekujeme', request.url), 303);
+  if (data.website || data.kontrolni_udaj) return Response.redirect(new URL(hodnota(form.dekujeme, data, formName) || '/dekujeme', request.url), 303);
 
-  const zpet = { dotaznik: '/dotace-mas', dodavatel: '/dodavatele', pristup: '/podnikova-ai/#pristup' }[formName] || '/kontakt';
+  const zpet = formName === 'seznam'
+    ? (seznamPlatny(data.zdroj_clanek) ? `/clanky/${data.zdroj_clanek}` : '/clanky/')
+    : { dotaznik: '/dotace-mas', dodavatel: '/dodavatele', pristup: '/podnikova-ai/#pristup' }[formName] || '/kontakt';
   const chybaUzivatele = (msg) => errorPage(msg, { status: 400, zpet });
+  if (formName === 'seznam' && !seznamPlatny(data.zdroj_clanek)) return chybaUzivatele('Formulář se nepodařilo přiřadit k článku.');
 
   const email = (data.email || '').trim();
   const telefon = (data.telefon || '').trim();
@@ -286,7 +313,7 @@ async function handleForm(request, env, formName, ctx) {
     // u lidskych proti podvrzenym radkum v mailu (OWASP review L1)
     .map((f) => `${f}: ${String(data[f]).trim().slice(0, 2000).replace(/[\r\n]+/g, ' ')}`);
   const robot = jeRobot(formName, data);
-  const subject = robot ? ROBOT_SUBJECT : form.subject;
+  const subject = robot ? ROBOT_SUBJECT : hodnota(form.subject, data, formName);
   const body = `${subject}\n\n${lines.join('\n')}\n\n---\nOdeslano z ${(request.headers.get('referer') || 'webu').replace(/[\r\n]+/g, ' ').slice(0, 200)}`;
 
   if (!env.GMAIL_REFRESH_TOKEN) {
@@ -333,7 +360,7 @@ async function handleForm(request, env, formName, ctx) {
   // Lead s platnym zdrojem nese zdroj az do konverze Ads na /dekujeme (T0924-185).
   // Regex = web/gtag.js; cokoli jineho do URL neprojde.
   const zdroj = formName === 'kontakt' && !robot && /^[a-z0-9-]{1,40}$/.test(String(data.zdroj || '')) ? data.zdroj : '';
-  return Response.redirect(new URL((form.dekujeme || '/dekujeme') + (zdroj ? `?zdroj=${zdroj}` : ''), request.url), 303);
+  return Response.redirect(new URL((hodnota(form.dekujeme, data, formName) || '/dekujeme') + (zdroj ? `?zdroj=${zdroj}` : ''), request.url), 303);
 }
 
 // Prihlaseni k hlidaci vyzev (T0926-211). Honeypot i chyby jako handleForm, ale bez
@@ -477,7 +504,7 @@ function pustDal(klic) {
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
-    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel|pristup|hlidac)$/);
+    const match = pathname.match(/^\/api\/(dotaznik|kontakt|dodavatel|pristup|hlidac|seznam)$/);
     if (match) {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       // Cizi stranka nesmi odeslat formular jmenem navstevnika. Origin muze
@@ -491,7 +518,7 @@ export default {
         console.log(JSON.stringify(match[1] === 'hlidac'
           ? { event: 'hlidac.rate_limited', zdroj: 'web-hlidac' }
           : { event: 'form.rate_limited', form: match[1] }));
-        const zpet = { pristup: '/podnikova-ai/#pristup', hlidac: '/hlidac-vyzev' }[match[1]] || '/#napiste';
+        const zpet = { pristup: '/podnikova-ai/#pristup', hlidac: '/hlidac-vyzev', seznam: '/clanky/' }[match[1]] || '/#napiste';
         return errorPage('Formulář jste odeslali několikrát po sobě. Zkuste to prosím za minutu.',
                          { status: 429, zpet });
       }
