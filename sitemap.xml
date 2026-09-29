@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -323,6 +323,11 @@
   <url>
     <loc>https://mantait.cz/clanky/nukib-hlasi-nejvic-vaznych-incidentu-za-rok-co-si-ve-firme</loc>
     <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/ai-za-par-stovek-mesicne-je-dotovana-pocitejte-s-tim-ze</loc>
+    <lastmod>2026-09-27</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cenovka předplatného skrývá skutečnou cenu, která roste mimo kruh, zatímco evidence spotřeby vede k bezpečné zóně" fill="none">
+<title>Cenovka předplatného skrývá skutečnou cenu, která roste mimo kruh, zatímco evidence spotřeby vede k bezpečné zóně</title>
+  <circle cx="70" cy="110" r="26" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="70" cy="110" r="6" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M72 85Q95 40 132 22" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="150" y="66" width="72" height="48" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M164 80h44" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M164 90h30" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M222 90h38" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="278" cy="90" r="20" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M270 90l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
