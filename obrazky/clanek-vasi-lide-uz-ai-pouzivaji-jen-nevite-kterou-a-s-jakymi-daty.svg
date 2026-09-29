@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Firemní dokumenty odcházejí z firmy do neznámých cizích AI nástrojů, jen jedna cesta míří do bezpečného nástroje uvnitř firmy" fill="none">
+<title>Firemní dokumenty odcházejí z firmy do neznámých cizích AI nástrojů, jen jedna cesta míří do bezpečného nástroje uvnitř firmy</title>
+  <rect x="90" y="45" width="110" height="110" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.8" opacity="1"/>
+  <path d="M105 65h55" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M105 77h45" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M105 89h35" stroke="#C3CAC4" stroke-width="2.2" stroke-linecap="round" opacity="1"/>
+  <path d="M200 65L245 45" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M200 90L265 85" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M200 115L250 125" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M170 155L215 175" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="245" cy="45" r="9" fill="none" stroke="#9AA29E" stroke-width="1.6"/>
+  <circle cx="265" cy="85" r="9" fill="none" stroke="#9AA29E" stroke-width="1.6"/>
+  <circle cx="250" cy="125" r="9" fill="none" stroke="#9AA29E" stroke-width="1.6"/>
+  <circle cx="215" cy="175" r="9" fill="none" stroke="#9AA29E" stroke-width="1.6"/>
+  <path d="M130 77L140 100" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="140" cy="100" r="9" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>

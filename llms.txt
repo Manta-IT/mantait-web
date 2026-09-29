@@ -82,6 +82,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [NÚKIB hlásí nejvíc významných incidentů za rok](https://mantait.cz/clanky/nukib-hlasi-nejvic-vaznych-incidentu-za-rok-co-si-ve-firme): Srpnový přehled NÚKIB ukázal nejvíc významných kybernetických incidentů za rok. Co má mít firma do 250 lidí ověřené, než ji potká podobný zásah.
 - [AI za pár stovek je dotovaná, počítejte se zdražením](https://mantait.cz/clanky/ai-za-par-stovek-mesicne-je-dotovana-pocitejte-s-tim-ze): Firmy dnes stavějí procesy na AI předplatném za pár stovek korun. Rozbor ukazuje, že cena je dotovaná a jednou se zvedne - co s tím teď.
 - [Polsko má povinné e-faktury. Co to znamená pro české firmy](https://mantait.cz/clanky/polsko-ma-povinne-e-faktury-co-to-znamena-pro-ceske-firmy): Polsko posílá firemní faktury přes státní systém. Zjistěte, jestli se povinnost týká i vás jako dodavatele, odběratele nebo majitele pobočky v Polsku.
+- [Vaši lidé už AI používají. Nevíte kterou a s jakými daty](https://mantait.cz/clanky/vasi-lide-uz-ai-pouzivaji-jen-nevite-kterou-a-s-jakymi-daty): Zaměstnanci si do práce nosí vlastní bezplatné AI nástroje a nikdo ve firmě neví, kam s nimi mizí smlouvy, ceníky a osobní údaje zákazníků.
 
 ## Co Manta IT není
 
