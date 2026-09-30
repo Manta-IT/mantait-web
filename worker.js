@@ -474,6 +474,8 @@ const PRESMEROVANI = new Map([
 ]);
 
 // Pracovni verze brandu nemaji byt verejne vubec.
+// Jedina zverejnena EN stranka (Petr 30. 9., T0926-133 A); zbytek /en/ zustava stazeny.
+const ZVEREJNENE = new Set(['/en/reseni-podnikova-ai']);
 const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
 
 /* Brzda na odesilani formularu. Endpoint posila postu z Petrovy schranky:
@@ -537,7 +539,7 @@ export default {
     const cesta = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
     const cil = PRESMEROVANI.get(cesta);
     if (cil) return Response.redirect(new URL(cil, request.url), 301);
-    if (STAZENE_PREFIXY.some(p => cesta === p.replace(/\/$/, '') || cesta.startsWith(p))) {
+    if (!ZVEREJNENE.has(cesta) && STAZENE_PREFIXY.some(p => cesta === p.replace(/\/$/, '') || cesta.startsWith(p))) {
       return Response.redirect(new URL('/', request.url), 301);
     }
 

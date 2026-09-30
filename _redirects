@@ -23,8 +23,31 @@
 
 # Jazykove mutace jeste nejsou prelozene do noveho designu. Zustavaji v repu,
 # jen se odpojuji z webu, aby navstevnik nespadl ze srovnaneho webu do stareho.
+# /en/ zustava stazene, vyjimka /en/reseni-podnikova-ai (Petr 30. 9., T0926-133 A).
+# Splat /en/* je rozepsany na explicitni pravidla; dalsi EN stranka, ktera ma
+# zustat skryta, potrebuje vlastni radek (hlida kontrola_webu.py).
 /sk/*  /  301
-/en/*  /  301
+/en  /  301
+/en/  /  301
+/en/llms.txt  /  301
+/en/case-kalkulacka  /  301
+/en/dekujeme  /  301
+/en/kontakt  /  301
+/en/o-mne  /  301
+/en/raynet  /  301
+/en/reseni-ai-zamestnanec  /  301
+/en/reseni-ai  /  301
+/en/reseni-bezpecnost  /  301
+/en/reseni-naklady  /  301
+/en/reseni-nastroje  /  301
+/en/reseni-nova-aplikace  /  301
+/en/reseni-projekt  /  301
+/en/reseni-propojeni  /  301
+/en/reseni-vedeni-it  /  301
+/en/reseni-web  /  301
+/en/soukromi  /  301
+/en/ukazka-reportu  /  301
+/en/weby  /  301
 
 # Pracovni verze brandu nemaji byt verejne vubec.
 /brand-lab      /  301
