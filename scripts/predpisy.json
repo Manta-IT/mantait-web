@@ -66,6 +66,12 @@
    "vzor": "(zadost|ji)\\s+(vyplnime|zpracujeme)\\s+i\\s+podame|na plnou moc\\s+(ji\\s+)?podame|podame ji za vas|dotace na klic|od zameru po podani zadosti",
    "kontext": null,
    "proc": "na webu se netvrdi, kdo zadost podava -- rozhoduje se v obchodnim hovoru"
+  },
+  {
+   "id": "DM03",
+   "vzor": "\\bsanc\\w*\\b[^.?!]{0,60}?(?<!neni )\\b(velmi\\s+vysok|vysok|jist|zarucen)\\w*|\\b(velmi\\s+vysok|vysok|velk|jist)\\w*\\s+sanc|\\brealn\\w*\\s+sanc\\w*\\s+(na\\s+)?(projit|uspech|ziskani)",
+   "kontext": null,
+   "proc": "dotace neni jista"
   }
  ]
 }
