@@ -231,6 +231,20 @@ for zdroj in mapa:
     if zdroj not in pravidla and not zdroj.startswith(prefixy):
         nalezy.append(('worker.js', 'presmerovani chybi v _redirects', zdroj))
 
+# EN stranka bud je stazena (vlastni pravidlo v _redirects), nebo zverejnena
+# (ZVEREJNENE ve worker.js). Nova EN stranka tak neunikne na web potichu.
+zv = re.search(r"ZVEREJNENE = new Set\(\[(.*?)\]\)", wj, re.S)
+zverejnene = set(re.findall(r"'(/[^']*)'", zv.group(1))) if zv else set()
+en_cesty = ['/en/' + f[:-5] if f != 'index.html' else '/en/'
+            for f in sorted(os.listdir(os.path.join(KOREN, 'en'))) if f.endswith('.html')]
+en_cesty.append('/en/llms.txt')
+for cesta in en_cesty:
+    if cesta not in pravidla and cesta not in zverejnene:
+        nalezy.append(('_redirects', 'EN stranka neni stazena ani zverejnena', cesta))
+for cesta in sorted(zverejnene):
+    if cesta in pravidla or cesta.startswith(prefixy):
+        nalezy.append(('_redirects', 'zverejnena EN stranka je zaroven stazena', cesta))
+
 # --- 7. skripty neblokuji vykresleni ------------------------------------
 # sluzba.js a mobil.js bez `defer` drzely LCP nad 2,5 s na 32 z 36 stranek
 # (audit CWV 17. 9., T0917-114). S `defer` bezi az po parsovani, takze inline
