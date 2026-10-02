@@ -126,6 +126,13 @@
   .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
   .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
 
+  .clanek #seznam form{margin-top:18px;max-width:68ch}
+  .clanek #seznam label{display:block;font-size:14px;color:var(--tlum);margin-bottom:6px}
+  .clanek #seznam input[type=email]{width:100%;max-width:420px;padding:12px 14px;font:inherit;color:var(--inkoust);
+    background:var(--papir);border:1px solid var(--linka);border-radius:var(--r-s)}
+  .clanek #seznam input[type=email]:focus-visible{outline:2px solid var(--akcent);outline-offset:2px}
+  .clanek #seznam .hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .clanek #seznam .seznam-veta{margin:14px 0 18px;font-size:14.5px;color:var(--tlum);max-width:60ch}
   footer{margin-top:0}
 
   @media (hover:hover) and (pointer:fine){
@@ -201,6 +208,22 @@
   <span class="label">Kde to jde nastavit natrvalo</span>
   <h2>Kontrola patří <em>do systému, ne do hlavy.</em></h2>
   <p>Psané pravidlo pomůže, dokud si ho lidé pamatují. Spolehlivější je dát ho tam, kde platba fyzicky vzniká: do <a href="/reseni-propojeni">propojení účetnictví s bankou a dodavateli</a>. Když se změna účtu u dodavatele musí ručně potvrdit ve druhém systému, než se dostane do platebního příkazu, nezáleží na tom, jestli si to zrovna ten den někdo pamatuje. Kontrola běží sama, protože je součástí toku dat, ne součástí paměti jednoho člověka.</p>
+</section>
+
+<section class="lp-section" id="seznam">
+  <h2>Pravidlo pro změnu účtu dodavatele</h2>
+  <p>Dvě pravidla z článku a místo pro jména.</p>
+  <form method="post" action="/api/seznam">
+    <label for="seznam-email">E-mail</label>
+    <input id="seznam-email" type="email" name="email" required autocomplete="email">
+    <input type="hidden" name="zdroj_clanek" value="prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve">
+    <div class="hp-field" aria-hidden="true">
+      <label for="s-web">Nevyplňujte</label>
+      <input id="s-web" name="kontrolni_udaj" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <p class="seznam-veta">Seznam pošlu na tento e-mail. Použiju ho jen k tomu, abych vám ho poslal, a případně se ozvu k tématu seznamu.</p>
+    <button class="btn" type="submit">Poslat seznam</button>
+  </form>
 </section>
 
 <section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">

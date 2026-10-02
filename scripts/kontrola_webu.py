@@ -24,6 +24,10 @@ Co hlida (jen soubory na disku, zadny server):
     drift jinde je jen varovani (T0927-106)
  10. pocet blokujicich <link rel=stylesheet> v head na strankach ze sitemap
      (zatim jen varovani, BLOKUJICI_JE_CHYBA)
+ 11. kontrolni seznamy (T0929-228): stranky v clanky/seznamy/ maji noindex, nejsou
+     v sitemap.xml ani llms.txt, patri k clanku; formular `/api/seznam` v clanku
+     nese vlastni slug, ma stranku a je pred "Dalsim krokem"; SEZNAMY ve
+     worker.js == stranky seznamu
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
@@ -359,6 +363,51 @@ for s in STRANKY:
 print('[kontrola_webu] blokujici css: %d stranek nad %d' % (len(nad), PRAH_BLOKUJICICH))
 for s, hrefy in nad:
     print('    %s (%d)' % (s, len(hrefy)))
+
+# --- 11. kontrolni seznamy u clanku (T0929-228) --------------------------
+slozka_seznamu = os.path.join(KOREN, 'clanky', 'seznamy')
+stranky_seznamu = sorted(f[:-5] for f in os.listdir(slozka_seznamu) if f.endswith('.html')) \
+    if os.path.isdir(slozka_seznamu) else []
+sitemap_text = io.open(os.path.join(KOREN, 'sitemap.xml'), encoding='utf-8').read()
+for slug in stranky_seznamu:
+    s = 'clanky/seznamy/' + slug + '.html'
+    html = io.open(os.path.join(KOREN, s), encoding='utf-8').read()
+    if not re.search(r'<meta name="robots" content="[^"]*noindex', html):
+        nalezy.append((s, 'seznam bez noindex', ''))
+    if '/clanky/seznamy/' + slug in sitemap_text:
+        nalezy.append(('sitemap.xml', 'seznam v sitemap', slug))
+    if '/clanky/seznamy/' + slug in llms:
+        nalezy.append(('llms.txt', 'seznam v llms.txt', slug))
+    if not os.path.exists(os.path.join(KOREN, 'clanky', slug + '.html')):
+        nalezy.append((s, 'seznam bez clanku', slug))
+
+formularu = 0
+slozka_clanku = os.path.join(KOREN, 'clanky')
+for jmeno in sorted(os.listdir(slozka_clanku)):
+    if not jmeno.endswith('.html') or jmeno == '_template.html':
+        continue
+    c = 'clanky/' + jmeno
+    html = io.open(os.path.join(slozka_clanku, jmeno), encoding='utf-8').read()
+    if 'action="/api/seznam"' not in html:
+        continue
+    formularu += 1
+    slug_clanku = jmeno[:-5]
+    form = re.search(r'<form[^>]*action="/api/seznam".*?</form>', html, re.S)
+    hodnoty = re.findall(r'name="zdroj_clanek" value="([^"]*)"', form.group(0))
+    if hodnoty != [slug_clanku]:
+        nalezy.append((c, 'formular seznamu nese cizi slug', ', '.join(hodnoty)))
+    if slug_clanku not in stranky_seznamu:
+        nalezy.append((c, 'formular bez stranky seznamu', slug_clanku))
+    krok = html.find('<span class="label">Další krok</span>')
+    if krok != -1 and krok < form.start():
+        nalezy.append((c, 'formular seznamu az za Dalsi krok', ''))
+
+m = re.search(r'const SEZNAMY = Object\.freeze\(\{(.*?)\}\)', wj, re.S)
+ve_workeru = set(re.findall(r"'([^']+)': true", m.group(1))) if m else set()
+if set(stranky_seznamu) != ve_workeru:
+    nalezy.append(('worker.js', 'SEZNAMY != stranky seznamu',
+                   '%s vs %s' % (sorted(ve_workeru), sorted(stranky_seznamu))))
+print('[kontrola_webu] seznamy: %d stranek, %d formularu' % (len(stranky_seznamu), formularu))
 
 for v in varovani:
     print('  VAROVANI %-28s %-24s %s' % v)

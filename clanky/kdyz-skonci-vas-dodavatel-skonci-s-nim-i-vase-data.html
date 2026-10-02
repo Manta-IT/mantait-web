@@ -126,6 +126,13 @@
   .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
   .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
 
+  .clanek #seznam form{margin-top:18px;max-width:68ch}
+  .clanek #seznam label{display:block;font-size:14px;color:var(--tlum);margin-bottom:6px}
+  .clanek #seznam input[type=email]{width:100%;max-width:420px;padding:12px 14px;font:inherit;color:var(--inkoust);
+    background:var(--papir);border:1px solid var(--linka);border-radius:var(--r-s)}
+  .clanek #seznam input[type=email]:focus-visible{outline:2px solid var(--akcent);outline-offset:2px}
+  .clanek #seznam .hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .clanek #seznam .seznam-veta{margin:14px 0 18px;font-size:14.5px;color:var(--tlum);max-width:60ch}
   footer{margin-top:0}
 
   @media (hover:hover) and (pointer:fine){
@@ -202,6 +209,22 @@
   <p>Když pro klienty stavím <a href="/reseni-nova-aplikace">aplikace na míru</a>, postupuji tak, aby klient nebyl vázán na moji osobu ani na žádnou konkrétní infrastrukturu. Vše stavím na principu naprosté otevřenosti a samostatnosti klienta.</p>
   <p>Zdrojový kód aplikace od prvního dne patří klientovi. K hotovému řešení předávám podrobnou technickou dokumentaci a srozumitelný návod, jak aplikaci spustit na jakémkoli běžném serveru. Pokud bych zítra z jakéhokoli důvodu nebyl k dispozici, vezmete kód, předáte jej jinému vývojáři a ten může během jednoho dne navázat na rozdělanou práci.</p>
   <p>Zakázky dodávám za předem dohodnutou pevnou cenu. První funkční verzi předávám k vyzkoušení do jednoho týdne od odsouhlasení zadání. Získáte tak nástroj přesně pro potřeby vaší firmy, aniž byste se dostali do závislosti na jednom programátorovi.</p>
+</section>
+
+<section class="lp-section" id="seznam">
+  <h2>Tři otázky pro váš IT dodavatele</h2>
+  <p>Otázky z článku s místem na odpovědi.</p>
+  <form method="post" action="/api/seznam">
+    <label for="seznam-email">E-mail</label>
+    <input id="seznam-email" type="email" name="email" required autocomplete="email">
+    <input type="hidden" name="zdroj_clanek" value="kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data">
+    <div class="hp-field" aria-hidden="true">
+      <label for="s-web">Nevyplňujte</label>
+      <input id="s-web" name="kontrolni_udaj" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <p class="seznam-veta">Seznam pošlu na tento e-mail. Použiju ho jen k tomu, abych vám ho poslal, a případně se ozvu k tématu seznamu.</p>
+    <button class="btn" type="submit">Poslat seznam</button>
+  </form>
 </section>
 
 <section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
