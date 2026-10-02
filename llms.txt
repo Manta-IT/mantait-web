@@ -87,6 +87,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Vyrábíte zařízení, které posílá data? Data Act už platí](https://mantait.cz/clanky/vyrabite-zarizeni-ktere-posila-data-data-act-uz-plati): Vyrábíte stroj, měřidlo nebo zařízení s aplikací? Nové výrobky musí být od září navržené tak, aby uživatel dostal svá data. Co si ověřit.
 - [Kupujete menší firmu? Její IT si prověřte před podpisem](https://mantait.cz/clanky/kupujete-mensi-firmu-jeji-it-si-proverte-pred-podpisem): Kupujete konkurenta nebo dodavatele? Licence, smlouvy a data jeho IT patří do ceny transakce. Které otázky položit před podpisem.
 - [Propojení CRM s účetnictvím nevázne na technice](https://mantait.cz/clanky/propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na): Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.
+- [Smlouva s dodavatelem se prodloužila sama. Nikdo ji nečetl](https://mantait.cz/clanky/smlouva-s-dodavatelem-se-prodlouzila-sama-nikdo-ji-necetl): Oznámení o prodloužení přišlo do sdílené schránky a někdo ho odklepl. Jak ohlídat výpovědní lhůty, než firma zaplatí službu, kterou nepoužívá.
 
 ## Co Manta IT není
 

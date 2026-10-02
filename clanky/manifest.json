@@ -1,5 +1,20 @@
 [
   {
+    "slug": "smlouva-s-dodavatelem-se-prodlouzila-sama-nikdo-ji-necetl",
+    "title": "Smlouva s dodavatelem se prodloužila sama. Nikdo ji nečetl",
+    "description": "Oznámení o prodloužení přišlo do sdílené schránky a někdo ho odklepl. Jak ohlídat výpovědní lhůty, než firma zaplatí službu, kterou nepoužívá.",
+    "date_published": "2026-10-02",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-smlouva-s-dodavatelem-se-prodlouzila-sama-nikdo-ji-necetl.svg"
+  },
+  {
     "slug": "propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na",
     "title": "Propojení CRM s účetnictvím nevázne na technice",
     "description": "Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.",
