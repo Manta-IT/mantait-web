@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Z jednoho rozcestí vedou dvě cesty, hotový systém a vlastní aplikace, a po pěti letech se znovu potkají v cíli" fill="none">
+<title>Z jednoho rozcestí vedou dvě cesty, hotový systém a vlastní aplikace, a po pěti letech se znovu potkají v cíli</title>
+  <path d="M28 178H292" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M48 172v12" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M104 172v12" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M160 172v12" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M216 172v12" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M272 172v12" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="40" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M146 40H68q-10 0-10 10v16" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M174 40H252q10 0 10 10v16" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="66" width="68" height="44" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M34 80h48" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 91h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="228" y="66" width="68" height="44" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M238 80h48" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M238 91h34" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M58 110v28q0 12 12 12H252" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M262 110v28q0 12-12 12" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M252 150h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="280" cy="150" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M273 150l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

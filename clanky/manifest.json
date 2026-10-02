@@ -1,5 +1,22 @@
 [
   {
+    "slug": "koupit-hotovy-system-nebo-nechat-postavit-vlastni-ai-meni",
+    "title": "Koupit hotový systém, nebo postavit vlastní? AI mění počty",
+    "description": "Aplikace na míru dřív vycházela draho, hotové systémy teď zdražují kvůli AI funkcím. U každé agendy spočítejte cenu obou cest na pět let.",
+    "date_published": "2026-10-02",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-nova-aplikace",
+      "navrh-aplikace"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-koupit-hotovy-system-nebo-nechat-postavit-vlastni-ai-meni.svg"
+  },
+  {
     "slug": "smlouva-s-dodavatelem-se-prodlouzila-sama-nikdo-ji-necetl",
     "title": "Smlouva s dodavatelem se prodloužila sama. Nikdo ji nečetl",
     "description": "Oznámení o prodloužení přišlo do sdílené schránky a někdo ho odklepl. Jak ohlídat výpovědní lhůty, než firma zaplatí službu, kterou nepoužívá.",
