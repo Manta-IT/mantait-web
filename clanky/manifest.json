@@ -1,5 +1,21 @@
 [
   {
+    "slug": "propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na",
+    "title": "Propojení CRM s účetnictvím nevázne na technice",
+    "description": "Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.",
+    "date_published": "2026-09-30",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na.svg"
+  },
+  {
     "slug": "kupujete-mensi-firmu-jeji-it-si-proverte-pred-podpisem",
     "title": "Kupujete menší firmu? Její IT si prověřte před podpisem",
     "description": "Kupujete konkurenta nebo dodavatele? Licence, smlouvy a data jeho IT patří do ceny transakce. Které otázky položit před podpisem.",

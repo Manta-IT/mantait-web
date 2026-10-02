@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propojení CRM s účetnictvím nevázne na technice - Manta IT</title>
+<meta name="description" content="Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na">
+  <meta property="og:title" content="Propojení CRM s účetnictvím nevázne na technice">
+  <meta property="og:description" content="Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Propojení CRM s účetnictvím nevázne na technice",
+    "description": "Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.",
+    "inLanguage": "cs",
+    "datePublished": "2026-09-30",
+    "dateModified": "2026-09-30",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["propojení CRM a účetnictví", "vlastnictví dat"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Propojení systémů</span>
+  <h1>Propojení CRM s účetnictvím nevázne na technice, ale <em>na datech.</em></h1>
+  <p class="hero-lead">Propojení CRM s účetnictvím je dohoda o tom, který systém vlastní který údaj. Konektor data přenese, ale nerozhodne, kdo má pravdu, když se obchodník a účetní neshodnou. Kdo tuhle dohodu přeskočí, postaví propojení rychle a pak dlouho opravuje duplicity a součty, kterým nikdo nevěří.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 30. září 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na.svg" alt="Dva systémy, CRM a účetnictví, každý s několika poli, propojené cestou jedním směrem, uprostřed které stojí kruh jako místo rozhodnutí, kdo pole vlastní" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Kde to vázne</span>
+  <h2>Obchod a účetnictví popisují jednu firmu <em>dvakrát.</em></h2>
+  <p>Autor blogu Mecanik Dev to říká na začátku svého textu takhle: "propojení CRM a ERP se téměř vždy popisuje jako problém spojení a téměř nikdy o problém spojení nejde" (<a href="https://dev.to/mecanik-dev/crm-and-erp-integration-costs-methods-and-pitfalls-4lm2" rel="nofollow">Mecanik Dev, dev.to, 16. 9. 2026</a>). Oba systémy mají popsané rozhraní a hotové konektory. Potíž je jinde: obchod a finance roky popisují tutéž firmu jinými slovy a propojení je místo, kde se musí shodnout.</p>
+  <p>Česká firma to pozná ve chvíli, kdy někdo položí první otázku. Má se zákazník, kterého obchodník v CRM založil podruhé, propsat do účetnictví jako jeden odběratel, nebo jako dva? Od té chvíle už nejde o techniku. Tu samou otázku pak musíte rozhodnout u každého sdíleného údaje a to je vlastní práce projektu.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Tři rozdíly</span>
+  <h2>Kde se dva správné modely <em>rozcházejí.</em></h2>
+  <p>CRM je postavené kolem získávání obchodu. Jeho hlavní objekty jsou lidé, příležitosti a aktivity, a snese nepřesnost, protože napůl známý zájemce je stejně cenný záznam. Účetnictví eviduje závazky, a proto nesnese nic, co by nesedělo. Autor to shrnuje větou: "nic z toho nejsou vady, jsou to dva správné modely téhož podniku" (<a href="https://dev.to/mecanik-dev/crm-and-erp-integration-costs-methods-and-pitfalls-4lm2" rel="nofollow">Mecanik Dev, dev.to, 16. 9. 2026</a>).</p>
+  <p>V praxi se to láme na třech místech. Zákazník: jedna firma v CRM je v účetnictví několik odběratelů, protože nakupuje přes více dceřiných společností s různou splatností. Zakázka: jedna položka v CRM je v účetnictví řada měsíčních plateb. Cena: součet nabídky, který spočítal obchodník, se liší od faktury, protože daň a zaokrouhlení žijí v účetním systému a obchod je jen odhadl. Slevu a stav objednávky každá strana chápe po svém.</p>
+  <p>Nikdo z nich nemá špatně. Rozhodnout musí lidé z obou oddělení u jednoho stolu, ne dodavatel konektoru. Kdo začne stavět dřív, odkládá nejtěžší část na dobu, kdy je změna nejdražší.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Vlastnictví dat</span>
+  <h2>Kdo smí který údaj <em>změnit.</em></h2>
+  <p>Podle autora zdrojového textu funguje vlastnictví po jednotlivých polích, ne po celých záznamech: obchod vlastní jméno kontaktu, telefon a fázi příležitosti, finance kreditní limit, platební podmínky a fakturační adresu (<a href="https://dev.to/mecanik-dev/crm-and-erp-integration-costs-methods-and-pitfalls-4lm2" rel="nofollow">Mecanik Dev, dev.to, 16. 9. 2026</a>). Každé pole teče jedním směrem a druhý systém ho ukazuje jen ke čtení, aby nikdo neopravoval hodnotu, kterou noční přenos přepíše.</p>
+  <p>Já bych to v české firmě nastavil stejně a přidal jednu věc navíc: párování odběratelů podle IČO. Tam, kde IČO chybí nebo se liší zápis názvu, patří záznam do fronty ke schválení člověkem, ne do automatického sloučení. Špatně sloučené dva různé zákazníky se rozplétají hůř než pár nespárovaných záznamů. Po spárování se uloží dvojice identifikátorů, aby se firma příště nepárovala znovu.</p>
+  <p>Chcete-li vidět, jak vypadá propojení s konkrétním systémem, přečtěte si, <a href="/clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit">jak se Raynet CRM napojuje na účetnictví</a>, nebo <a href="/clanky/propojeni-pohody-s-e-shopem-bankou-a-platbami">co se dá propojit s Pohodou</a>. Tady jde o to, co musí být dohodnuto před nimi.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Před začátkem</span>
+  <h2>Na co se zeptat, než začne <em>vývoj.</em></h2>
+  <p>Otázky, které z tohoto pohledu rozhodují o tom, jestli propojení obstojí i po měsíci provozu:</p>
+  <ol>
+    <li>Který systém vlastní které pole a co se stane, když ho někdo změní na druhé straně?</li>
+    <li>Podle čeho se pozná, že firma v CRM a odběratel v účetnictví jsou tentýž subjekt?</li>
+    <li>Kdy se údaj přenáší a ví o tom uživatel? Autor upozorňuje, že většina stížností na propojení jsou stížnosti na nevysvětlené zpoždění.</li>
+    <li>Kam se dostane záznam, který se nepodařilo přenést, a kdo ho opraví?</li>
+    <li>Kdo se dozví, že přenos selhal, a kdo pravidelně porovnává součty v obou systémech?</li>
+  </ol>
+  <p>Poslední otázku je lepší vyřešit předem. Autor píše, že když srovnání součtů nepostaví firma formálně, postaví ho finance neformálně a bude to tabulka (<a href="https://dev.to/mecanik-dev/crm-and-erp-integration-costs-methods-and-pitfalls-4lm2" rel="nofollow">Mecanik Dev, dev.to, 16. 9. 2026</a>). Souhlasím a dodávám, že takovou tabulku pak nikdo nevlastní.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud CRM nepoužíváte, nebo do účetnictví putuje jen pár dokladů, nepotřebujete mapu vlastnictví ani propojení. Stačí pravidelný export. Jakmile se stejný zákazník nebo zakázka zapisuje na dvou místech a někdo z toho přepisuje čísla, začíná se to vyplácet dohodnout jako první.</p>
+  <div class="lp-price">
+    <p><b>Než začnu cokoli propojovat, sepíšu s vámi, který systém vlastní který údaj, a teprve pak zvolím konektor.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-propojeni" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-propojeni"><b>Propojení a automatizace</b><small>podle rozsahu</small><span>Účetnictví, sklad, e-shop a CRM si předávají data samy.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
