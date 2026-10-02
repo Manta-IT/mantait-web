@@ -7,9 +7,15 @@
   "assets": {
     "directory": "./",
     "binding": "ASSETS"
-  }
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "pristup", "database_id": "d87c7c83-0225-4b8a-9e0d-4f96f9c27ba3" }
+  ]
 }
 // Secrets v CF dashboardu (Workers -> mantait-web -> Settings -> Variables):
 // GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN (jen scope
 // gmail.send). Bez nich formulare vraci chybovou stranku. Stary
 // SENDGRID_API_KEY je mrtvy od 10. 8. -- pokud v dashboardu jeste je, smazat.
+// PRISTUP_KLIC: klic osobnich odkazu /p/<token> a /mereni; bez nej vse 403.
+// MANTA_SOUHLAS_KLIC: hlidac vyzev (souhlas.js).
+// PRISTUP_ZRUSENE (nepovinna promenna): carkami oddelene zrusene tokeny (worker.js).
