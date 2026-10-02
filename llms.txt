@@ -89,6 +89,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Propojení CRM s účetnictvím nevázne na technice](https://mantait.cz/clanky/propojeni-crm-s-ucetnictvim-nevazne-na-technice-ale-na): Konektor pro CRM a účetnictví existuje, a přesto propojení skřípe. Proč obchod a účetní chápou zákazníka jinak a co dohodnout dřív, než začne vývoj.
 - [Smlouva s dodavatelem se prodloužila sama. Nikdo ji nečetl](https://mantait.cz/clanky/smlouva-s-dodavatelem-se-prodlouzila-sama-nikdo-ji-necetl): Oznámení o prodloužení přišlo do sdílené schránky a někdo ho odklepl. Jak ohlídat výpovědní lhůty, než firma zaplatí službu, kterou nepoužívá.
 - [Koupit hotový systém, nebo postavit vlastní? AI mění počty](https://mantait.cz/clanky/koupit-hotovy-system-nebo-nechat-postavit-vlastni-ai-meni): Aplikace na míru dřív vycházela draho, hotové systémy teď zdražují kvůli AI funkcím. U každé agendy spočítejte cenu obou cest na pět let.
+- [Zaplaceno, neodesláno: když propojení tiše selže](https://mantait.cz/clanky/zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane): Zákazníci zaplatili, zboží neodešlo a nikde nesvítila chyba. Jak vypadá tiché selhání propojení systémů a jak ho ve firmě odhalit včas.
 
 ## Co Manta IT není
 

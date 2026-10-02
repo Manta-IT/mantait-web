@@ -1,5 +1,20 @@
 [
   {
+    "slug": "zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane",
+    "title": "Zaplaceno, neodesláno: když propojení tiše selže",
+    "description": "Zákazníci zaplatili, zboží neodešlo a nikde nesvítila chyba. Jak vypadá tiché selhání propojení systémů a jak ho ve firmě odhalit včas.",
+    "date_published": "2026-10-02",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane.svg"
+  },
+  {
     "slug": "koupit-hotovy-system-nebo-nechat-postavit-vlastni-ai-meni",
     "title": "Koupit hotový systém, nebo postavit vlastní? AI mění počty",
     "description": "Aplikace na míru dřív vycházela draho, hotové systémy teď zdražují kvůli AI funkcím. U každé agendy spočítejte cenu obou cest na pět let.",
