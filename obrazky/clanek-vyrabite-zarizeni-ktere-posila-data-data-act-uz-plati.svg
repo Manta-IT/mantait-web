@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Zařízení s čidlem vlevo posílá linku dat přes kruh rozhodnutí s fajfkou k uživateli vpravo" fill="none">
+<title>Zařízení s čidlem vlevo posílá linku dat přes kruh rozhodnutí s fajfkou k uživateli vpravo</title>
+  <rect x="24" y="60" width="64" height="80" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M36 92h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 102h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 112h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="56" cy="76" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <rect x="232" y="60" width="64" height="80" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M244 92h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M244 102h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M244 112h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M88 100h54" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M178 100h54" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="18" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M151 100l6 7 12-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

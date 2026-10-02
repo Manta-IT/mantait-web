@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vyrabite-zarizeni-ktere-posila-data-data-act-uz-plati",
+    "title": "Vyrábíte zařízení, které posílá data? Data Act už platí",
+    "description": "Vyrábíte stroj, měřidlo nebo zařízení s aplikací? Nové výrobky musí být od září navržené tak, aby uživatel dostal svá data. Co si ověřit.",
+    "date_published": "2026-09-29",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/#napiste",
+    "sluzby": [
+      "reseni-propojeni",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-vyrabite-zarizeni-ktere-posila-data-data-act-uz-plati.svg"
+  },
+  {
     "slug": "vymenili-jste-system-a-lide-nadavaji-dal-proc-a-co-s-tim",
     "title": "Vyměnili jste systém a lidé nadávají dál. Proč a co s tím",
     "description": "Nový systém je lepší než starý, a přesto se spokojenost lidí nezvedla. Proč se to stává a jak výměnu naplánovat, aby něco přinesla.",
