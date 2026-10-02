@@ -85,6 +85,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Vaši lidé už AI používají. Nevíte kterou a s jakými daty](https://mantait.cz/clanky/vasi-lide-uz-ai-pouzivaji-jen-nevite-kterou-a-s-jakymi-daty): Zaměstnanci si do práce nosí vlastní bezplatné AI nástroje a nikdo ve firmě neví, kam s nimi mizí smlouvy, ceníky a osobní údaje zákazníků.
 - [Vyměnili jste systém a lidé nadávají dál. Proč a co s tím](https://mantait.cz/clanky/vymenili-jste-system-a-lide-nadavaji-dal-proc-a-co-s-tim): Nový systém je lepší než starý, a přesto se spokojenost lidí nezvedla. Proč se to stává a jak výměnu naplánovat, aby něco přinesla.
 - [Vyrábíte zařízení, které posílá data? Data Act už platí](https://mantait.cz/clanky/vyrabite-zarizeni-ktere-posila-data-data-act-uz-plati): Vyrábíte stroj, měřidlo nebo zařízení s aplikací? Nové výrobky musí být od září navržené tak, aby uživatel dostal svá data. Co si ověřit.
+- [Kupujete menší firmu? Její IT si prověřte před podpisem](https://mantait.cz/clanky/kupujete-mensi-firmu-jeji-it-si-proverte-pred-podpisem): Kupujete konkurenta nebo dodavatele? Licence, smlouvy a data jeho IT patří do ceny transakce. Které otázky položit před podpisem.
 
 ## Co Manta IT není
 

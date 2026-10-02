@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Dva bloky firem spojené smlouvou o koupi, z níž vede cesta přes místo rozhodnutí k prázdné položce IT v ceně transakce." fill="none">
+<title>Dva bloky firem spojené smlouvou o koupi, z níž vede cesta přes místo rozhodnutí k prázdné položce IT v ceně transakce.</title>
+  <rect x="20" y="24" width="84" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 38h56" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M32 48h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M32 58h48" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="216" y="24" width="84" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M228 38h56" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M228 48h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M228 58h48" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M104 54h20" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M196 54h20" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="124" y="30" width="72" height="48" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M136 44h48" stroke="#101413" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M136 54h32" stroke="#101413" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M160 78v26" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="118" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="160" cy="118" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M174 118h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="216" y="100" width="84" height="36" rx="4" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.6" opacity="1"/>
+</svg>

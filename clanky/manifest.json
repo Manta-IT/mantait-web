@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kupujete-mensi-firmu-jeji-it-si-proverte-pred-podpisem",
+    "title": "Kupujete menší firmu? Její IT si prověřte před podpisem",
+    "description": "Kupujete konkurenta nebo dodavatele? Licence, smlouvy a data jeho IT patří do ceny transakce. Které otázky položit před podpisem.",
+    "date_published": "2026-09-30",
+    "date_modified": "2026-10-02",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-kupujete-mensi-firmu-jeji-it-si-proverte-pred-podpisem.svg"
+  },
+  {
     "slug": "vyrabite-zarizeni-ktere-posila-data-data-act-uz-plati",
     "title": "Vyrábíte zařízení, které posílá data? Data Act už platí",
     "description": "Vyrábíte stroj, měřidlo nebo zařízení s aplikací? Nové výrobky musí být od září navržené tak, aby uživatel dostal svá data. Co si ověřit.",
