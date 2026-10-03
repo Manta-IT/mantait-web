@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Záloha jako dokument vede přes místo rozhodnutí k obnově provozu: cesta bez zkoušky je přerušená, ověřená cesta dojde do cíle" fill="none">
+<title>Záloha jako dokument vede přes místo rozhodnutí k obnově provozu: cesta bez zkoušky je přerušená, ověřená cesta dojde do cíle</title>
+  <rect x="20" y="70" width="64" height="60" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M32 86h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M32 97h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M32 108h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="236" y="70" width="64" height="60" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <rect x="248" y="82" width="40" height="36" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M256 94h24" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M256 105h16" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M84 100h58" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="18" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M151 100l6 7 12-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M178 100h16" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M196 94l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M210 100h26" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.6"/>
+  <path d="M160 118v44h96v-32" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

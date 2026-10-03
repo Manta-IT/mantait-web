@@ -1,5 +1,20 @@
 [
   {
+    "slug": "zalohujete-zkusil-nekdy-nekdo-zalohu-obnovit",
+    "title": "Zálohujete. Zkusil někdy někdo zálohu obnovit?",
+    "description": "Záloha, kterou nikdo nezkusil obnovit, je jen naděje. Co má majitel firmy chtít po správci: čtvrtletní zkoušku obnovy a písemný záznam.",
+    "date_published": "2026-10-02",
+    "date_modified": "2026-10-04",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-zalohujete-zkusil-nekdy-nekdo-zalohu-obnovit.svg"
+  },
+  {
     "slug": "zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane",
     "title": "Zaplaceno, neodesláno: když propojení tiše selže",
     "description": "Zákazníci zaplatili, zboží neodešlo a nikde nesvítila chyba. Jak vypadá tiché selhání propojení systémů a jak ho ve firmě odhalit včas.",
