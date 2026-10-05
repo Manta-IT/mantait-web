@@ -28,6 +28,8 @@ Co hlida (jen soubory na disku, zadny server):
      v sitemap.xml ani llms.txt, patri k clanku; formular `/api/seznam` v clanku
      nese vlastni slug, ma stranku a je pred "Dalsim krokem"; SEZNAMY ve
      worker.js == stranky seznamu
+ 12. formulare vs zasady (T0930-123): kazdy formular z regexu `/api/(...)` ve
+     worker.js je jmenovan v sekci "Formulare na webu" ve soukromi.html
 
 Nalez = exit 1 = commit se zastavi. Zakazy a jejich vyjimky (kontext) ziji
 v ../_meta/predpisy/, web cte vygenerovanou kopii scripts/predpisy.json.
@@ -408,6 +410,58 @@ if set(stranky_seznamu) != ve_workeru:
     nalezy.append(('worker.js', 'SEZNAMY != stranky seznamu',
                    '%s vs %s' % (sorted(ve_workeru), sorted(stranky_seznamu))))
 print('[kontrola_webu] seznamy: %d stranek, %d formularu' % (len(stranky_seznamu), formularu))
+
+# --- 12. formulare vs zasady ochrany udaju (T0930-123) -------------------
+ZASADY_FORMULARU = {
+    'kontakt': 'Kontaktní formulář',
+    'dotaznik': 'dotazník způsobilosti',
+    'seznam': 'kontrolní seznam',
+    'dodavatel': 'dotazník pro dodavatele',
+    'pristup': 'prototypu Podnikové AI',
+    'hlidac': 'Hlídač dotačních výzev',
+}
+
+def formulare_bez_zasad(worker_js, soukromi_html):
+    """Kazdy formular z regexu ve worker.js musi byt jmenovan v sekci 'Formulare na webu'."""
+    m = re.search(r"pathname\.match\(/\^\\/api\\/\(([^)]+)\)\$/\)", worker_js)
+    if not m:
+        return [('worker.js', 'regex formularu nenalezen', '')]
+    label = '<span class="label">Formuláře na webu</span>'
+    start = soukromi_html.find(label)
+    if start == -1:
+        return [('soukromi.html', 'sekce Formulare na webu chybi', '')]
+    konec = soukromi_html.find('</section>', start)
+    sekce = re.sub(r'\s+', ' ', text_bez_tagu(soukromi_html[start:konec]))
+    vysledek = []
+    for nazev in m.group(1).split('|'):
+        fraze = ZASADY_FORMULARU.get(nazev)
+        if fraze is None:
+            vysledek.append(('kontrola_webu.py', 'formular bez fraze v mape', nazev))
+        elif fraze not in sekce:
+            vysledek.append(('soukromi.html', 'formular chybi v zasadach', nazev))
+    return vysledek
+
+def _sekce(text, pred=''):
+    return pred + '<section><span class="label">Formuláře na webu</span><p>' + text + '</p></section>'
+
+for pripad, vysledek, ocekavano in (
+    ('a', formulare_bez_zasad('pathname.match(/^\\/api\\/(kontakt|novy)$/)', _sekce('Kontaktní formulář')),
+     [('kontrola_webu.py', 'formular bez fraze v mape', 'novy')]),
+    ('b', formulare_bez_zasad('pathname.match(/^\\/api\\/(kontakt|seznam)$/)', _sekce('Kontaktní formulář')),
+     [('soukromi.html', 'formular chybi v zasadach', 'seznam')]),
+    ('c', formulare_bez_zasad('pathname.match(/^\\/api\\/(kontakt|seznam)$/)',
+                              _sekce('Kontaktní formulář a kontrolní seznam')), []),
+    ('d', formulare_bez_zasad('pathname.match(/^\\/api\\/(kontakt|seznam)$/)',
+                              _sekce('Kontaktní formulář', '<section>kontrolní seznam</section>')),
+     [('soukromi.html', 'formular chybi v zasadach', 'seznam')]),
+):
+    if vysledek != ocekavano:
+        nalezy.append(('kontrola_webu.py', 'self-test zasad selhal', pripad))
+
+zasady_nalezy = formulare_bez_zasad(
+    wj, io.open(os.path.join(KOREN, 'soukromi.html'), encoding='utf-8').read())
+nalezy.extend(zasady_nalezy)
+print('[kontrola_webu] zasady: %d formularu' % len(ZASADY_FORMULARU))
 
 for v in varovani:
     print('  VAROVANI %-28s %-24s %s' % v)
