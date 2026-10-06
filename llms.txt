@@ -91,6 +91,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Koupit hotový systém, nebo postavit vlastní? AI mění počty](https://mantait.cz/clanky/koupit-hotovy-system-nebo-nechat-postavit-vlastni-ai-meni): Aplikace na míru dřív vycházela draho, hotové systémy teď zdražují kvůli AI funkcím. U každé agendy spočítejte cenu obou cest na pět let.
 - [Zaplaceno, neodesláno: když propojení tiše selže](https://mantait.cz/clanky/zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane): Zákazníci zaplatili, zboží neodešlo a nikde nesvítila chyba. Jak vypadá tiché selhání propojení systémů a jak ho ve firmě odhalit včas.
 - [Zálohujete. Zkusil někdy někdo zálohu obnovit?](https://mantait.cz/clanky/zalohujete-zkusil-nekdy-nekdo-zalohu-obnovit): Záloha, kterou nikdo nezkusil obnovit, je jen naděje. Co má majitel firmy chtít po správci: čtvrtletní zkoušku obnovy a písemný záznam.
+- [AI používá každá druhá velká firma. Malé zůstávají pozadu](https://mantait.cz/clanky/ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu): Velké firmy už AI provozují, malé zaostávají. Proč rozdíl roste a jak ji nasadit bez vlastního IT oddělení, než se z náskoku stane propast.
 
 ## Co Manta IT není
 

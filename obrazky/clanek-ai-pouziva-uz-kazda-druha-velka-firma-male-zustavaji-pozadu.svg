@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Vysoký blok velké firmy vlevo a nízký blok malé firmy vpravo, mezi nimi mezera s prázdným zeleným kruhem, místem rozhodnutí, kdo povede AI; z velkého bloku k němu vede plná linka a od něj čárkovaná linka k malému bloku" fill="none">
+<title>Vysoký blok velké firmy vlevo a nízký blok malé firmy vpravo, mezi nimi mezera s prázdným zeleným kruhem, místem rozhodnutí, kdo povede AI; z velkého bloku k němu vede plná linka a od něj čárkovaná linka k malému bloku</title>
+  <rect x="28" y="40" width="80" height="120" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M42 56h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M42 67h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M42 78h46" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M42 89h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="212" y="112" width="80" height="48" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M226 128h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M226 139h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M108 100h36" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M176 100h20q16 0 16 16" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="160" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>

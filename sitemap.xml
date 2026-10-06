@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -383,6 +383,11 @@
   <url>
     <loc>https://mantait.cz/clanky/zalohujete-zkusil-nekdy-nekdo-zalohu-obnovit</loc>
     <lastmod>2026-10-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu</loc>
+    <lastmod>2026-10-05</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu",
+    "title": "AI používá každá druhá velká firma. Malé zůstávají pozadu",
+    "description": "Velké firmy už AI provozují, malé zaostávají. Proč rozdíl roste a jak ji nasadit bez vlastního IT oddělení, než se z náskoku stane propast.",
+    "date_published": "2026-10-05",
+    "date_modified": "2026-10-06",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "sluzby": [
+      "reseni-ai-zamestnanec",
+      "reseni-podnikova-ai",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu.svg"
+  },
+  {
     "slug": "zalohujete-zkusil-nekdy-nekdo-zalohu-obnovit",
     "title": "Zálohujete. Zkusil někdy někdo zálohu obnovit?",
     "description": "Záloha, kterou nikdo nezkusil obnovit, je jen naděje. Co má majitel firmy chtít po správci: čtvrtletní zkoušku obnovy a písemný záznam.",
