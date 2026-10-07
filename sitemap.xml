@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -388,6 +388,11 @@
   <url>
     <loc>https://mantait.cz/clanky/ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu</loc>
     <lastmod>2026-10-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/polovina-cechu-se-pri-nakupu-radi-s-ai-co-to-znamena-pro-e</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
