@@ -2,6 +2,8 @@
 // a presmerovani na /dekujeme?zdroj=... (konverze Ads). Gmail API je podvrzene.
 //   node web/scripts/test-zdroj.mjs
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
 import worker from '../worker.js';
 
 const dekoduj = (b) => new TextDecoder().decode(Uint8Array.from(atob(b), (c) => c.charCodeAt(0)));
@@ -46,3 +48,39 @@ r = await posli('dotaznik', { email: 'a@b.cz', zdroj: 'kalkulacka' });
 assert.ok(r.location.endsWith('/dekujeme'), r.location);
 assert.doesNotMatch(r.notifikace, /zdroj/);
 console.log('dotaznik: zdroj ignorovan OK');
+
+const slug = 'nukib-hlasi-vyzvy-123';
+r = await posli('kontakt', { ...zaklad, odkud: slug });
+assert.match(r.notifikace, new RegExp(`^odkud: ${slug}$`, 'm'));
+assert.ok(r.location.endsWith('/dekujeme'), r.location);
+r = await posli('dotaznik', { email: 'a@b.cz', odkud: slug });
+assert.match(r.notifikace, new RegExp(`^odkud: ${slug}$`, 'm'));
+console.log('odkud platny: kontakt i dotaznik nesou radek v mailu OK');
+
+for (const spatne of ['<script>', '/clanky/../x', 'a'.repeat(121)]) {
+  r = await posli('kontakt', { ...zaklad, odkud: spatne });
+  assert.doesNotMatch(r.notifikace, /^odkud:/m);
+  r = await posli('dotaznik', { email: 'a@b.cz', odkud: spatne });
+  assert.doesNotMatch(r.notifikace, /^odkud:/m);
+}
+console.log('odkud neplatny: tise zahozen, 303 OK');
+
+r = await posli('kontakt', zaklad);
+assert.doesNotMatch(r.notifikace, /^odkud:/m);
+r = await posli('dotaznik', { email: 'a@b.cz' });
+assert.doesNotMatch(r.notifikace, /^odkud:/m);
+console.log('odkud chybejici: bez radku OK');
+
+const kodOdkud = fs.readFileSync(new URL('../odkud.js', import.meta.url), 'utf8');
+assert.ok(Buffer.byteLength(kodOdkud) < 1024, 'odkud.js >= 1 KB');
+for (const zakazano of ['localStorage', 'sessionStorage', 'document.cookie']) {
+  assert.ok(!kodOdkud.includes(zakazano), zakazano);
+}
+const ctx = { URL };
+vm.runInNewContext(kodOdkud, ctx);
+const O = 'https://mantait.cz';
+assert.equal(ctx.slugZReferreru(`${O}/clanky/x-1`, O), 'x-1');
+for (const ref of ['https://jinde.cz/clanky/x-1', `${O}/clanky/../x`, `${O}/clanky/seznamy/x`, `${O}/dotace-mas`, '']) {
+  assert.equal(ctx.slugZReferreru(ref, O), '', ref);
+}
+console.log('odkud.js: slugZReferreru, velikost, bez uloziste OK');
