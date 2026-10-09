@@ -27,6 +27,8 @@ const SEZNAMY = Object.freeze({
 });
 function seznamPlatny(slug) { return typeof slug === 'string' && Object.hasOwn(SEZNAMY, slug); }
 
+const ODKUD_SLUG = /^[a-z0-9-]{1,120}$/;
+
 const FORMS = {
   // Kontrolni seznam k clanku (T0929-226). Predmet cte scripts/stav_kampane.py
   // (jen pocet, zadny triaz) a scripts/stroj/leady_clanky.py -- menit jen spolu.
@@ -90,7 +92,7 @@ Manta IT | mantait.cz`,
     subject: 'Dotace MAS: ověření způsobilosti',
     replySubject: 'Mám váš dotazník - Manta IT',
     fields: ['ico', 'obec', 'zamestnanci', 'ucetni_roky', 'vazby', 'bezdluznost',
-             'datovka', 'zamer', 'investice', 'drivejsi_dotace', 'jmeno', 'telefon', 'email', 'mas'],
+             'datovka', 'zamer', 'investice', 'drivejsi_dotace', 'jmeno', 'telefon', 'email', 'mas', 'odkud'],
     // Jmeno z formulare je v 1. padu a JS ho neumi sklonit ("Dobry den,
     // Robin Mrtvy" -- nalez DK12). Osloveni bez jmena je spravne vzdy.
     reply: (d) => `Dobrý den,
@@ -112,7 +114,7 @@ Manta IT | mantait.cz | ${TEL}`,
     // termin). Bez nich by vybrany termin nikdy nedorazil -- formular by ho
     // sebral a Worker zahodil.
     // `zdroj` + `utm_campaign`: odkud lead prisel (/?zdroj=kalkulacka, T0924-185).
-    fields: ['cesta', 'jmeno', 'firma', 'telefon', 'email', 'zprava', 'termin', 'zdroj', 'utm_campaign'],
+    fields: ['cesta', 'jmeno', 'firma', 'telefon', 'email', 'zprava', 'termin', 'zdroj', 'utm_campaign', 'odkud'],
     reply: (d) => {
       if (d.cesta === 'zavolat') {
         return `Dobrý den,
@@ -302,6 +304,8 @@ async function handleForm(request, env, formName, ctx) {
       if (v) data[f] = v;
     }
   }
+
+  if (data.odkud && !ODKUD_SLUG.test(String(data.odkud))) delete data.odkud;
 
   const lines = form.fields
     .filter((f) => (data[f] || '').trim())
