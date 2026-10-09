@@ -84,3 +84,39 @@ for (const ref of ['https://jinde.cz/clanky/x-1', `${O}/clanky/../x`, `${O}/clan
   assert.equal(ctx.slugZReferreru(ref, O), '', ref);
 }
 console.log('odkud.js: slugZReferreru, velikost, bez uloziste OK');
+
+function spustHandler(referrer) {
+  const inputy = [{ value: '' }, { value: '' }];
+  const selektory = [];
+  let handler;
+  const kontext = {
+    URL,
+    location: { origin: O },
+    document: {
+      referrer,
+      addEventListener: (ev, fn) => { if (ev === 'DOMContentLoaded') handler = fn; },
+      querySelectorAll: (sel) => { selektory.push(sel); return sel === 'input[name="odkud"]' ? inputy : []; },
+    },
+  };
+  vm.runInNewContext(kodOdkud, kontext);
+  assert.equal(typeof handler, 'function', 'odkud.js neregistruje DOMContentLoaded');
+  handler();
+  return { inputy, selektory };
+}
+
+const platny = spustHandler(`${O}/clanky/x-1`);
+assert.deepEqual(platny.inputy.map((i) => i.value), ['x-1', 'x-1']);
+assert.ok(platny.selektory.includes('input[name="odkud"]'), platny.selektory.join());
+for (const ref of ['https://jinde.cz/clanky/x-1', `${O}/dotace-mas`]) {
+  assert.deepEqual(spustHandler(ref).inputy.map((i) => i.value), ['', ''], ref);
+}
+console.log('odkud.js: handler plni input[name="odkud"] OK');
+
+for (const [soubor, id] of [['../dotace-mas.html', 'dotaznik'], ['../index.html', 'formular'], ['../kontakt.html', 'kontakt-form']]) {
+  const html = fs.readFileSync(new URL(soubor, import.meta.url), 'utf8');
+  const m = new RegExp(`<form[^>]*id="${id}"[^>]*>([\\s\\S]*?)</form>`).exec(html);
+  assert.ok(m, `${soubor}: formular #${id} nenalezen`);
+  assert.match(m[1], /<input type="hidden" name="odkud" value="">/, soubor);
+  assert.match(html, /<script src="\/odkud\.js(\?v=[0-9a-f]+)?" defer><\/script>/, soubor);
+}
+console.log('odkud: input ve formularich a skript ve strankach OK');
