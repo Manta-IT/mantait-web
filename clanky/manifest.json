@@ -16,6 +16,22 @@
     "obrazek": "clanek-polovina-cechu-se-pri-nakupu-radi-s-ai-co-to-znamena-pro-e.svg"
   },
   {
+    "slug": "data-jste-uklidili-za-pul-roku-budou-zase-spinava",
+    "title": "Data jste uklidili. Za půl roku budou zase špinavá",
+    "description": "Úklid dat před nasazením AI jste odškrtli, ale duplicity se vracejí. Proč čistá data nevydrží bez vlastníka a jak je hlídat strojově, ne jednou ročně.",
+    "date_published": "2026-10-06",
+    "date_modified": "2026-10-11",
+    "highlight": false,
+    "cta_href": "/reseni-podnikova-ai",
+    "sluzby": [
+      "reseni-podnikova-ai",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-data-jste-uklidili-za-pul-roku-budou-zase-spinava.svg"
+  },
+  {
     "slug": "ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu",
     "title": "AI používá každá druhá velká firma. Malé zůstávají pozadu",
     "description": "Velké firmy už AI provozují, malé zaostávají. Proč rozdíl roste a jak ji nasadit bez vlastního IT oddělení, než se z náskoku stane propast.",

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Tabulka dat, ve které se dolní řádky zdvojují a pole zůstávají prázdná, a vedle ní kruh vlastníka jako místo rozhodnutí" fill="none">
+<title>Tabulka dat, ve které se dolní řádky zdvojují a pole zůstávají prázdná, a vedle ní kruh vlastníka jako místo rozhodnutí</title>
+  <rect x="24" y="28" width="180" height="144" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M40 44h120" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 56h96" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 68h108" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 86h108" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 98h108" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 110h96" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 122h96" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M40 140h120" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 6" opacity="1"/>
+  <path d="M40 152h84" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 6" opacity="1"/>
+  <circle cx="262" cy="100" r="22" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <circle cx="262" cy="100" r="5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M240 100h-36" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

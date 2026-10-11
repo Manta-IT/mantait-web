@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data jste uklidili. Za půl roku budou zase špinavá - Manta IT</title>
+<meta name="description" content="Úklid dat před nasazením AI jste odškrtli, ale duplicity se vracejí. Proč čistá data nevydrží bez vlastníka a jak je hlídat strojově, ne jednou ročně.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava">
+  <meta property="og:title" content="Data jste uklidili. Za půl roku budou zase špinavá">
+  <meta property="og:description" content="Úklid dat před nasazením AI jste odškrtli, ale duplicity se vracejí. Proč čistá data nevydrží bez vlastníka a jak je hlídat strojově, ne jednou ročně.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data jste uklidili. Za půl roku budou zase špinavá",
+    "description": "Úklid dat před nasazením AI jste odškrtli, ale duplicity se vracejí. Proč čistá data nevydrží bez vlastníka a jak je hlídat strojově, ne jednou ročně.",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-06",
+    "dateModified": "2026-10-06",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["kvalita dat", "umělá inteligence ve firmě"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Data a AI</span>
+  <h1>Data jste uklidili. Za půl roku budou zase <em>špinavá.</em></h1>
+  <p class="hero-lead">Úklid dat před nasazením AI je jednorázová akce, která nemá vlastníka, a proto nevydrží. Duplicity a prázdná pole se vracejí, dokud nikdo nerozhodne, kdo který údaj zakládá a schvaluje. Čistá data jsou výsledek provozu, ne položka na seznamu.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 6. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-data-jste-uklidili-za-pul-roku-budou-zase-spinava.svg" alt="Tabulka dat, ve které se dolní řádky zdvojují a pole zůstávají prázdná, a vedle ní kruh vlastníka jako místo rozhodnutí" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Co se stalo</span>
+  <h2>Odškrtli jste úklid a <em>pustili AI dál.</em></h2>
+  <p>Typický průběh vypadá takhle: před nasazením AI se vyčistí export zákazníků a ceníků, duplicity zmizí, prázdná pole se doplní. Projekt dostane zelenou a položka "data" se odškrtne. První týdny AI nad daty funguje dobře.</p>
+  <p>Pak se pole začnou zase prázdnit. Obchodník založí zákazníka podruhé, protože ten první našel pod jiným názvem. Účetní opraví adresu jen u sebe. Nikdo to nedělá ze zlé vůle, jen nikdo neurčil, komu který údaj patří. Výsledky AI se pomalu zhoršují a nikdo neví proč, protože na datech se "přece nic nezměnilo".</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Zdrojový článek</span>
+  <h2>Čistá data nejsou <em>důvěryhodná data.</em></h2>
+  <p>Jessie Smith, Chief Product Officer společnosti Ataccama, v <a href="https://www.systemonline.cz/business-intelligence/cista-data-umele-inteligenci-nestaci.htm" rel="nofollow">IT Systems, 9/2026</a> popisuje rozdíl na jednoduchém příkladu: dva systémy sledují aktivitu zákazníků, ale jeden počítá posledních 30 dní a druhý 12 měsíců. Každý z nich je sám o sobě v pořádku. Když je AI spojí, dostane vstup, který je podle autorky nespolehlivý, i když "ani jeden zdroj neobsahuje" chybu.</p>
+  <p>Druhé pozorování se týká pilotů. Pilotní tým zná všechny zdroje dat a anomálie rychle pozná. V ostrém provozu přicházejí duplicity, nejednotné zápisy a data ze starších systémů, které pilot nezachytil. Smith z toho vyvozuje, že "AI readiness" není stav, kterého se dosáhne, ale průběžná provozní disciplína. K ní podle ní patří čtyři věci: kontext, jmenovaný vlastník s pravomocí rozhodnout, vědomé rozhodnutí, zda systém smí pokračovat, a definovaná cesta k nápravě.</p>
+  <p>Tohle je pozorování autorky, ne měření. Pro českou firmu je ale užitečné, protože říká přesně to, co vídám při práci s daty ve firmách: problém není v tom, že data byla špinavá, ale v tom, že nikdo nebyl pověřený je držet čistá.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Co to znamená u vás</span>
+  <h2>Firma do 250 lidí nemá <em>datový tým.</em></h2>
+  <p>Velká společnost si může dovolit oddělení pro kvalitu dat. Firma do 250 lidí obvykle nemá nikoho, kdo by měl "data" v popisu práce. Zákazníky zakládá obchod, ceníky účetní nebo nákup, sklad si spravuje sklad. Každý systém je v pořádku sám za sebe a AI nad nimi to najednou spojí.</p>
+  <p>Proto neplatí rada "uklidit častěji". Úklid jednou za rok jen posune okamžik, kdy se chyba projeví. Pomůže tři věci, které se dají zavést bez velkého projektu:</p>
+  <ul>
+    <li>Každý údaj má jedno místo, kde žije. Ostatní systémy ho přebírají, nezakládají vlastní kopii.</li>
+    <li>Každý údaj má jméno člověka, který ho zakládá a schvaluje. Ne oddělení, jméno.</li>
+    <li>Kvalita se hlídá strojově při každém načtení: duplicity, prázdná povinná pole, ceníky bez platnosti. Člověk dostane seznam nálezů, ne tabulku k ručnímu procházení.</li>
+  </ul>
+  <p>Tohle je rozhodnutí vedení, ne technický úkol. Právě proto bez něj AI do provozu často nedojde, jak jsem popsal v článku <a href="/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu">o tom, proč se AI pilot nedostane do provozu</a>.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Jak to dělám</span>
+  <h2>Mapa, kdo smí co <em>založit a schválit.</em></h2>
+  <p>Při přípravě firmy na AI nejdřív sleduji, kudy data skutečně tečou. Pak spustím strojovou kontrolu na skutečných exportech a výsledkem je seznam nálezů seřazený podle peněz. K tomu navrhnu, kde má který údaj žít, a sepíšu, kdo ho smí založit a schválit. Tuhle mapu pak firma drží sama; kontrola se dá pouštět opakovaně, ne jednou ročně.</p>
+  <p>Nasazení AI nad takovými daty je v <a href="/reseni-podnikova-ai">podnikové AI</a> poslední krok, ne první. Dává to smysl i ekonomicky: oprava vlastnictví údajů je levnější než hledání, proč AI začala dávat jiné odpovědi než minulý měsíc.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud AI zatím nenasazujete a data držíte v jednom systému s jasným správcem, tohle nepotřebujete. Pokud AI plánujete nebo už běží a údaje zakládá víc lidí ve víc systémech, začněte otázkou, kdo za který údaj odpovídá.</p>
+  <div class="lp-price">
+    <p><b>Projdu s vámi, kde vaše data žijí a kdo je zakládá, a navrhnu vlastníka ke každému údaji dřív, než nad nimi AI začne pracovat.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-podnikova-ai" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-podnikova-ai"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
