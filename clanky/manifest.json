@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat",
+    "title": "Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?",
+    "description": "Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.",
+    "date_published": "2026-10-11",
+    "date_modified": "2026-10-13",
+    "highlight": false,
+    "cta_href": "/navrh-aplikace",
+    "sluzby": [
+      "navrh-aplikace",
+      "reseni-nova-aplikace"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat.svg"
+  },
+  {
     "slug": "polovina-cechu-se-pri-nakupu-radi-s-ai-co-to-znamena-pro-e",
     "title": "Polovina Čechů nakupuje s AI. Co to znamená pro e-shop",
     "description": "Polovina Čechů, kteří nakupují online, už při výběru zboží použila AI. Co z toho plyne pro firmu s e-shopem a co si ověřit na vlastním webu.",

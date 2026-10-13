@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kolega si s AI napsal firemní aplikaci. Kdo ji udrží? - Manta IT</title>
+<meta name="description" content="Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat">
+  <meta property="og:title" content="Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?">
+  <meta property="og:description" content="Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?",
+    "description": "Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-11",
+    "dateModified": "2026-10-11",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["Aplikace vytvořené s AI", "Vlastnictví a provoz kódu"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Aplikace vytvořené s AI</span>
+  <h1>Kolega si s AI napsal firemní aplikaci. <em>Kdo ji bude udržovat?</em></h1>
+  <p class="hero-lead">Aplikace z AI je funkční program, který vznikl rychle a bez běžného vývojového procesu, a proto za ni dnes nikdo nemůže poctivě ručit. Pro majitele firmy je důležitější otázka než "funguje to?": kdo ví, co s daty dělá, a kdo ji spustí znovu, až autor odejde?</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 11. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat.svg" alt="Firemní aplikace je napojená jedinou cestou na svého autora a vedle ní stojí pět nespojených bloků: kontrola, testy, popis provozu, kód a správce" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Situace</span>
+  <h2>Nástroj, který vznikl za víkend a <em>už ho nikdo nevypne.</em></h2>
+  <p>Ve firmě to začne nenápadně. Vedoucí skladu nebo obchodu si s AI naklikal malou aplikaci na hlídání zakázek, na kalkulace nebo na schvalování dovolených. Běží mu na vlastním počítači nebo na bezplatné službě, a protože šetří hodiny práce, začnou ji používat další lidé.</p>
+  <p>Za měsíc na ní závisí provoz. Nikdo ale neví, kde jsou uložená data, kdo k nim má přístup, ani jak se aplikace spouští po restartu. Autor je jediný, kdo tomu rozumí, a to jen napůl, protože kód psal stroj.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Pohled z trhu</span>
+  <h2>Prototyp a provoz jsou <em>dvě různé věci.</em></h2>
+  <p>Lupa.cz tento týden popsala, kam se vývoj softwaru s AI posouvá. Autor Marek Přibáň uvádí, že vibe coding, tedy zadávání práce AI bez důkladné kontroly výsledku, se hodí na prototypy a interní nástroje. U softwaru, na kterém stojí peníze nebo citlivá data, podle něj nestačí (<a href="https://www.lupa.cz/clanky/prejde-vyvoj-softwaru-na-autopilota-ai-vygeneruje-vetsinu-kodu-ale-lidsky-usudek-nenahradi/" rel="nofollow">Lupa.cz, Marek Přibáň, 8. 10. 2026</a>).</p>
+  <p>Popisuje také přístup, který pojmenovává Agentic Development Lifecycle. Podle článku jde o "přístup, který do celého procesu vývoje systematicky zapojuje AI agenty". Důležité je slovo proces: AI píše kód, ale zadání, kontrolu a rozhodnutí dělá člověk podle předem daných kroků (<a href="https://www.lupa.cz/clanky/prejde-vyvoj-softwaru-na-autopilota-ai-vygeneruje-vetsinu-kodu-ale-lidsky-usudek-nenahradi/" rel="nofollow">Lupa.cz, Marek Přibáň, 8. 10. 2026</a>).</p>
+  <p>Pro českou firmu do 250 lidí z toho plyne jednoduchá věc. Nástroj od kolegy nemusíte zakazovat, protože často řeší skutečný problém. Jen ho nemůžete nechat v provozu stejně, jako vznikl.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Co chtít</span>
+  <h2>Co chtít po každé aplikaci, <em>ať ji psal kdokoli.</em></h2>
+  <p>Tyto požadavky platí stejně pro kolegu s AI, pro externího programátora i pro velkého dodavatele. Jakmile na aplikaci závisí práce firmy, chci vidět pět věcí:</p>
+  <ul>
+    <li>Kontrolu kódu. Druhý člověk, ideálně nezávislý na autorovi, si přečte, co aplikace dělá s daty a komu posílá informace ven.</li>
+    <li>Testy. Automatické ověření, že po úpravě pořád funguje to, co fungovalo včera.</li>
+    <li>Popis provozu. Na jedné straně papíru: kde aplikace běží, jak se spouští, kde jsou zálohy a kdo má přístupy.</li>
+    <li>Vlastnictví kódu. Zdrojový kód patří firmě a leží na místě, ke kterému se dostane i bez autora.</li>
+    <li>Jmenovaného správce. Konkrétní člověk, který ví, že je za aplikaci zodpovědný, a má na ni čas.</li>
+  </ul>
+  <p>Stejnou otázku řeším u dodavatelů v článku o tom, <a href="/clanky/kdyz-skonci-vas-dodavatel-skonci-s-nim-i-vase-data">co se stane s daty, když dodavatel skončí</a>. U kódu z AI je to totéž, jen dodavatelem je zaměstnanec, který může zítra dát výpověď.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Rozhodnutí</span>
+  <h2>Kdy se vyplatí udělat <em>řádné zadání dřív.</em></h2>
+  <p>Malý nástroj pro jednoho člověka, který nesahá na zákaznická data, stačí nechat být. Změní se to ve chvíli, kdy ho začnou používat další lidé, kdy do něj putují osobní údaje nebo ceny, nebo kdy na něm závisí fakturace či expedice.</p>
+  <p>V tu chvíli je levnější nástroj nechat sepsat jako zadání, než ho zachraňovat po výpadku. Rozsah první verze má být malý, jak popisuji v článku o tom, <a href="/clanky/male-projekty-vychazeji-velke-ne">proč malé projekty vycházejí a velké skoro nikdy</a>. Zadání z nápadu kolegy vznikne za pár dní a firmě pak patří, ať ho realizuje kdokoli. Pokud je potřeba aplikaci postavit znovu a pořádně, dělám i <a href="/reseni-nova-aplikace">aplikace na míru</a>, kde je kód vždy klientův.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud ve firmě nic podobného nevzniklo, nebo jde o nástroj, který používá jeden člověk pro sebe, nepotřebujete nic řešit. Jinak se zeptejte, které aplikace ve firmě jsou dnes nepostradatelné a kdo z lidí ví, jak fungují.</p>
+  <div class="lp-price">
+    <p><b>Probereme, co váš interní nástroj dělá, a připravím z něj zadání, které bude vaše: s popisem provozu, s testy a s jasným vlastnictvím kódu. První funkční verzi otevřu do týdne.</b></p>
+    <p style="margin-top: 18px;"><a href="/navrh-aplikace" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/navrh-aplikace"><b>Návrh aplikace</b><small>od 30 000 Kč</small><span>Řeknete mi nápad, za pár dní si ho proklikáte. Na konci kompletní zadání, které je vaše.</span></a></li>
+    <li><a href="/reseni-nova-aplikace"><b>Aplikace na míru</b><small>od 50 000 Kč</small><span>Když to, co potřebujete, nikdo neprodává. První verze do týdne, kód je váš.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>

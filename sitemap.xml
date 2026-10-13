@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -398,6 +398,11 @@
   <url>
     <loc>https://mantait.cz/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava</loc>
     <lastmod>2026-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat</loc>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

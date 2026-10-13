@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Firemní aplikace je napojená jedinou cestou na svého autora a vedle ní stojí pět nespojených bloků: kontrola, testy, popis provozu, kód a správce" fill="none">
+<title>Firemní aplikace je napojená jedinou cestou na svého autora a vedle ní stojí pět nespojených bloků: kontrola, testy, popis provozu, kód a správce</title>
+  <circle cx="72" cy="36" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M72 50v34" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="84" width="96" height="70" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M36 102h60" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 114h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 126h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="204" y="16" width="92" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M214 25h48" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 33h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M168 29 h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="204" y="50" width="92" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M214 59h60" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 67h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M168 63 h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="204" y="84" width="92" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M214 93h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 101h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M168 97 h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="204" y="118" width="92" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M214 127h56" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 135h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M168 131 h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="204" y="152" width="92" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M214 161h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M214 169h46" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M168 165 h24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+</svg>

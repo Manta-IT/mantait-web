@@ -94,6 +94,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [AI používá každá druhá velká firma. Malé zůstávají pozadu](https://mantait.cz/clanky/ai-pouziva-uz-kazda-druha-velka-firma-male-zustavaji-pozadu): Velké firmy už AI provozují, malé zaostávají. Proč rozdíl roste a jak ji nasadit bez vlastního IT oddělení, než se z náskoku stane propast.
 - [Polovina Čechů nakupuje s AI. Co to znamená pro e-shop](https://mantait.cz/clanky/polovina-cechu-se-pri-nakupu-radi-s-ai-co-to-znamena-pro-e): Polovina Čechů, kteří nakupují online, už při výběru zboží použila AI. Co z toho plyne pro firmu s e-shopem a co si ověřit na vlastním webu.
 - [Data jste uklidili. Za půl roku budou zase špinavá](https://mantait.cz/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava): Úklid dat před nasazením AI jste odškrtli, ale duplicity se vracejí. Proč čistá data nevydrží bez vlastníka a jak je hlídat strojově, ne jednou ročně.
+- [Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?](https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat): Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.
 
 ## Co Manta IT není
 
