@@ -175,7 +175,7 @@ Cenik na homepage (stav 25. 8., prototyp):
 - **AI plan do 48 hodin** -- 9 900 Kc pevne
 - **Aplikace a systemy na miru** -- od 50 000 Kc, pevna cena za rozsah; kod vlastni klient
 - **Navrh aplikace** -- od 30 000 Kc podle velikosti aplikace (pasma jako cenik dotaci: stavba do 600 tis. 30 000, do 1,2 mil. 40 000, do 3 mil. 50 000, vetsi individualne), v dotacich 50 % sleva; pri stavbe s Mantou odecet. Stranka `navrh-aplikace.html` (prototyp `sluzba-navrh-aplikace.html`), od 24. 9. 2026 nahrazuje Zadani nove sluzby (`/reseni-zadani` -> 301). Stranka jen povzbuzuje (memory `feedback-navrh-aplikace-jen-povzbuzovat`).
-- **AI zamestnanec** -- 89 000 Kc, provoz od 8 000 Kc mesicne
+- **AI zamestnanec** -- projekt s pevnou cenou po AI planu (9 900 Kc), pak mesicni provoz; cenu 89 000 Kc za agenta zrusil Petr 14. 10. 2026 (T1014-48)
 - **Vedeni IT (digitalni transformace)** -- od 50 000 Kc mesicne; VZOR stranky je `sluzba-vedeni-it.html`
 - **Dilci zakazky** -- 10 000 Kc/den
 - **Web pro dobu AI** -- 35 000 Kc pevna cena (od 8. 9. 2026 nahrazuje Web Standard/Quick)

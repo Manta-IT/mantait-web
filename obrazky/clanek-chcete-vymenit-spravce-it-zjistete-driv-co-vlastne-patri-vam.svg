@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Pět položek mezi firmou a správcem IT: šipky k firmě mají jen doména a zálohy, účty, licence a dokumentace míří ke správci." fill="none">
+<title>Pět položek mezi firmou a správcem IT: šipky k firmě mají jen doména a zálohy, účty, licence a dokumentace míří ke správci.</title>
+  <rect x="14" y="14" width="70" height="172" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M24 24h50" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M24 33h36" stroke="#CFE3D9" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="236" y="14" width="70" height="172" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.8" opacity="1"/>
+  <path d="M246 24h50" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M246 33h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="130" y="27" width="60" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 35h34" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 43h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M130 38 h-40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M96 33 l-6 5 6 5" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="190" cy="38" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <rect x="130" y="58" width="60" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 66h34" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 74h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M190 69 h40" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M224 64 l6 5 -6 5" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="130" cy="69" r="4" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="0"/>
+  <rect x="130" y="89" width="60" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 97h34" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 105h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M190 100 h40" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M224 95 l6 5 -6 5" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="130" cy="100" r="4" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="0"/>
+  <rect x="130" y="120" width="60" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 128h34" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 136h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M190 131 h40" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M224 126 l6 5 -6 5" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="130" cy="131" r="4" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="0"/>
+  <rect x="130" y="151" width="60" height="22" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M138 159h34" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M138 167h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M130 162 h-40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M96 157 l-6 5 6 5" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="190" cy="162" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+</svg>

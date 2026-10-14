@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Účet za jednoho zaměstnance s přistavěným pruhem odvodů a rozcestí, ze kterého vede cesta ke správě počítačů a přerušovaná cesta k rozpočtu a dodavatelům" fill="none">
+<title>Účet za jednoho zaměstnance s přistavěným pruhem odvodů a rozcestí, ze kterého vede cesta ke správě počítačů a přerušovaná cesta k rozpočtu a dodavatelům</title>
+  <rect x="24" y="52" width="90" height="28" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M34 62h50" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="80" width="90" height="84" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M36 98h60" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 110h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 122h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M114 108h40" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="170" cy="108" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M184 100q14 -40 46 -40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="230" y="40" width="66" height="40" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M242 54h40" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M242 65h28" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M184 116q14 40 46 40" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="230" y="136" width="66" height="40" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M242 150h40" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M242 161h28" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>

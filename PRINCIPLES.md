@@ -185,7 +185,7 @@ při zmenšení 4x zmizí. Změna palety = přegenerovat celou sadu, ne kreslit 
 | Aplikace a systémy na míru | od 50 000 Kč, pevná cena za rozsah | antikampaň na starý model vývoje |
 | Propojení a automatizace | podle rozsahu | okruh čtyř systémů, dvojice dnes -> potom |
 | Bezpečnost a nový zákon | podle rozsahu | self-check zákona (Ano/Ne/Nevím) |
-| AI zaměstnanec | 89 000 Kč, provoz od 8 000 Kč měsíčně | hranol; protiklad proti chatbotu |
+| AI zaměstnanec | pevná cena po AI plánu, pak měsíční provoz | hranol; protiklad proti chatbotu |
 
 Ceník na homepage navíc: AI plán do 48 hodin 9 900 Kč; dílčí zakázky
 10 000 Kč/den; Web pro dobu AI 35 000 Kč (web/sluzby.json); dotace na digitalizaci podle rozpočtu projektu (ceník v iniciativě, na webu generovaný; končí podáním).

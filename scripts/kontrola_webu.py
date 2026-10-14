@@ -96,7 +96,7 @@ def srovnej(t):
     t = unicodedata.normalize('NFKD', t.replace('\u00a0', ' ').lower())
     return ''.join(z for z in t if not unicodedata.combining(z))
 
-CENY = {'reseni-mapa-firmy.html': '39 000', 'reseni-ai-zamestnanec.html': '89 000',
+CENY = {'reseni-mapa-firmy.html': '39 000', 
         'weby.html': '35 000', 'dotace-mas.html': '30 000'}
 # nalezy predpisu v clancich, oprava textu = task Pro: growth (T0926-144, R6a); nic jineho sem nepatri
 ZNAME_NALEZY = {('clanky/co-je-raynet-crm-kolik-stoji-a-s-cim-ho-propojit.html', 'Z07')}

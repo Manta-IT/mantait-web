@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Stroj s bezpečnostním systémem řízeným modelem a časová cesta se dvěma odlišnými termíny" fill="none">
+<title>Stroj s bezpečnostním systémem řízeným modelem a časová cesta se dvěma odlišnými termíny</title>
+  <rect x="22" y="22" width="158" height="124" rx="8" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <rect x="42" y="42" width="118" height="84" rx="6" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M42 64h118" stroke="#C3CAC4" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="55" cy="53" r="3.5" fill="#9AA29E" stroke="#9AA29E" stroke-width="1.5"/>
+  <circle cx="67" cy="53" r="3.5" fill="#9AA29E" stroke="#9AA29E" stroke-width="1.5"/>
+  <rect x="76" y="76" width="50" height="34" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <circle cx="101" cy="93" r="9" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M84 70v6m12-6v6m12-6v6m12-6v6" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M84 110v6m12-6v6m12-6v6m12-6v6" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M70 82h6m-6 11h6m-6 11h6" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M126 82h6m-6 11h6m-6 11h6" stroke="#0B6E4F" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M38 170h248" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M180 114v36q0 20 20 20" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M126 93h94q18 0 18 18v39" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="5 5" opacity="1"/>
+  <circle cx="200" cy="170" r="12" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="238" cy="170" r="12" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M200 158v24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M238 158v24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+</svg>

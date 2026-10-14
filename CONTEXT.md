@@ -32,7 +32,7 @@ vypada jeji vlastni web.
 - Cilovka: majitele ne-tech firem, 50+, nesnasi zargon.
 - Nabidka jako cyklus firmy (od 8. 9. 2026): sedm kroku radu 1 (Priprava
   firmy, Zadani, Vyber systemu, Aplikace na miru, Propojeni, Podnikova AI,
-  Vedeni IT) + produkty radu 3 (AI plan 9 900, AI zamestnanec 89 000, Robot
+  Vedeni IT) + produkty radu 3 (AI plan 9 900, AI zamestnanec po AI planu, Robot
   na zadani, Web pro dobu AI 35 000, Dotace na digitalizaci od 30 000 podle rozpoctu). Bezpecnost je
   tema v pruhu, ne sluzba. Zdroj: `../specs/web-nabidka/design.md`, ceny
   hlida `scripts/kontrola_webu.py` (registr `sluzby.json`).
