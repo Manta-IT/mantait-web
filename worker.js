@@ -466,20 +466,23 @@ export { b64, b64url, hlavicka, accessToken, sendMail };
 const PRESMEROVANI = new Map([
   ['/ai', '/'],
   // Pet zanikajicich cest: v nove strukture jsou to radky v ceniku, ne stranky.
-  ['/reseni-ai', '/reseni-podnikova-ai'],
+  ['/reseni-ai', '/podnikova-ai/'],
   ['/reseni-naklady', '/reseni-vedeni-it'],
   ['/reseni-nastroje', '/reseni-vyber-systemu'],
   ['/reseni-projekt', '/reseni-vedeni-it'],
   ['/reseni-web', '/weby'],
   // Zadani nove sluzby nahradil Navrh aplikace (24. 9. 2026).
   ['/reseni-zadani', '/navrh-aplikace'],
+  // Podnikova AI: vysvetlovaci stranka nahradila stranku sluzby (T1014-99).
+  ['/reseni-podnikova-ai', '/podnikova-ai/'],
+  ['/en/reseni-podnikova-ai', '/podnikova-ai/en/'],
   // Novy web ma formular primo na hlavni strance.
   ['/kontakt', '/#napiste'],
 ]);
 
 // Pracovni verze brandu nemaji byt verejne vubec.
-// Jedina zverejnena EN stranka (Petr 30. 9., T0926-133 A); zbytek /en/ zustava stazeny.
-const ZVEREJNENE = new Set(['/en/reseni-podnikova-ai']);
+// Zadna zverejnena EN stranka pod /en/ (od T1014-99 je EN podnikove AI /podnikova-ai/en/).
+const ZVEREJNENE = new Set([]);
 const STAZENE_PREFIXY = ['/sk/', '/en/', '/brand-lab'];
 
 /* Brzda na odesilani formularu. Endpoint posila postu z Petrovy schranky:

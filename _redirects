@@ -9,7 +9,7 @@
 /ai  /  301
 
 # Pet zanikajicich cest. V nove strukture jsou to radky v ceniku, ne stranky.
-/reseni-ai         /reseni-podnikova-ai  301
+/reseni-ai         /podnikova-ai/  301
 /reseni-naklady    /reseni-vedeni-it  301
 /reseni-nastroje   /reseni-vyber-systemu  301
 /reseni-projekt    /reseni-vedeni-it  301
@@ -18,12 +18,16 @@
 # Zadani nove sluzby nahradil Navrh aplikace (24. 9. 2026, T0924-209).
 /reseni-zadani  /navrh-aplikace  301
 
+# Podnikova AI: vysvetlovaci stranka nahradila stranku sluzby (Petr 14. 10., T1014-49 A, T1014-99). Soubory reseni-podnikova-ai.html zustavaji jako archiv.
+/reseni-podnikova-ai  /podnikova-ai/  301
+/en/reseni-podnikova-ai  /podnikova-ai/en/  301
+
 # Kontakt: novy web ma formular primo na hlavni strance.
 /kontakt  /#napiste  301
 
 # Jazykove mutace jeste nejsou prelozene do noveho designu. Zustavaji v repu,
 # jen se odpojuji z webu, aby navstevnik nespadl ze srovnaneho webu do stareho.
-# /en/ zustava stazene, vyjimka /en/reseni-podnikova-ai (Petr 30. 9., T0926-133 A).
+# /en/ zustava stazene; EN podnikove AI je /podnikova-ai/en/ (T1014-99), /en/reseni-podnikova-ai je 301 na ni.
 # Splat /en/* je rozepsany na explicitni pravidla; dalsi EN stranka, ktera ma
 # zustat skryta, potrebuje vlastni radek (hlida kontrola_webu.py).
 /sk/*  /  301
