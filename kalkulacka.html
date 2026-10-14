@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalkulačka dopadu AI: co vám to přinese - Manta IT</title>
-<meta name="description" content="Spočítejte si, kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí. Čtyři údaje, které o své firmě víte, a model, který je celý vidět.">
+<meta name="description" content="Spočítejte si, kolik hodin a korun vám AI v jedné agendě vrátí a kolik smí stát, aby se vrátila do dvou let. Čtyři údaje a model, který je celý vidět.">
 <link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/pisma.css?v=b885abf">
@@ -14,7 +14,7 @@
 <script>document.documentElement.classList.add('js')</script>
   <link rel="canonical" href="https://mantait.cz/kalkulacka">
   <meta property="og:title" content="Kalkulačka dopadu AI: co vám to přinese - Manta IT">
-  <meta property="og:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí. Čtyři údaje a model, který je celý vidět.">
+  <meta property="og:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a kolik smí stát, aby se vrátila do dvou let. Čtyři údaje a model, který je celý vidět.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://mantait.cz/kalkulacka">
@@ -22,7 +22,7 @@
   <meta property="og:image" content="https://mantait.cz/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kalkulačka dopadu AI: co vám to přinese - Manta IT">
-  <meta name="twitter:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a za jak dlouho se zaplatí.">
+  <meta name="twitter:description" content="Kolik hodin a korun vám AI v jedné agendě vrátí a kolik smí stát, aby se vrátila do dvou let.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -60,7 +60,7 @@
     </h1>
     <p class="lead">Kalkulačka dopadu AI je jednoduchý model, který z hodin strávených
     opakovanou prací spočítá, kolik vám jedna agenda převzatá strojem vrátí za rok
-    a za jak dlouho se zaplatí. Nejtěžší na rozhodování o AI není cena, ale to, že si
+    a kolik smí stát, aby se vrátila do dvou let. Nejtěžší na rozhodování o AI není cena, ale to, že si
     firma neumí říct, co z toho bude. Tohle je nejmenší poctivý výpočet, který na
     tu otázku odpovídá: čtyři údaje, které o své firmě víte, a vzorec, který je
     celý vidět.</p>
@@ -109,26 +109,16 @@
         <span class="kalk-popis">Za rok se uvolní</span>
         <strong class="kalk-cislo"><span id="vystup-hodiny">720</span> hodin</strong>
         <span class="kalk-popis">to je při vašem nákladu</span>
-        <strong class="kalk-cislo"><span id="vystup-uspora">302 400</span> Kč</strong>
+        <strong class="kalk-cislo"><span id="vystup-uspora">313 200</span> Kč</strong>
       </div>
       <dl class="kalk-radky">
         <div>
-          <dt>Zavedení a provoz první rok</dt>
-          <dd><span id="vystup-naklad">185 000</span> Kč</dd>
-        </div>
-        <div>
-          <dt>Rozdíl za první rok</dt>
-          <dd><span id="vystup-rozdil">+117 400</span> Kč</dd>
-        </div>
-        <div>
-          <dt>Rozdíl za každý další rok</dt>
-          <dd><span id="vystup-dalsirok">+206 400</span> Kč</dd>
+          <dt>Projekt na tuhle agendu smí stát nejvýš</dt>
+          <dd><span id="vystup-strop">626 400</span> Kč</dd>
         </div>
       </dl>
-      <p class="kalk-navratnost" id="vystup-navratnost">vrátí se za 6 měsíců</p>
-      <p class="kalk-pozn">Modelový odhad z vašich čísel, ne nabídka. Zavedení od 89 000 Kč
-      a provoz od 8 000 Kč měsíčně jsou ceny ze stránky podnikové AI. Nejsem plátce DPH,
-      ceny jsou konečné.</p>
+      <p class="kalk-navratnost">aby se vrátil do dvou let</p>
+      <p class="kalk-pozn">Modelový odhad z vašich čísel, ne nabídka. Kolik bude projekt stát doopravdy, řeknu po AI plánu. Když vyjde víc než strop, nedoporučím ho. Nejsem plátce DPH, strop se tedy srovnává rovnou s mou cenou.</p>
       <a href="/?zdroj=kalkulacka#napiste" class="btn btn-hlavni">
         Napište mi
         <span class="sipka"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -142,7 +132,7 @@
   <div class="obsah">
     <span class="stitek">Vzorec</span>
     <h2>Z čeho se to počítá.</h2>
-    <p class="tmava-lead">Celý model je jedno násobení a jedno dělení. Schválně,
+    <p class="tmava-lead">Celý model je pár násobení. Schválně,
     ať si ho můžete přepočítat na papíře a nemusíte mi věřit.</p>
     <ul class="vzorec">
       <li><b>Uvolněné hodiny za rok</b> = lidé &times; hodiny týdně &times; 45 týdnů
@@ -152,11 +142,7 @@
         435 Kč vychází z průměrné hrubé mzdy 51 966 Kč (ČSÚ, 2. čtvrtletí 2026)
         plus odvody zaměstnavatele, na 160 hodin v měsíci. Máte-li jinou mzdovou
         úroveň, posuňte si to.</li>
-      <li><b>Náklad prvního roku</b> = zavedení 89 000 Kč a provoz 8 000 Kč měsíčně.
-        Od druhého roku zůstává jen provoz.</li>
-      <li><b>Návratnost</b> = zavedení děleno tím, co měsíčně zbude po zaplacení
-        provozu. Když nezbude nic, kalkulačka napíše, že se to nevrátí. To je
-        pro vás nejcennější výsledek, jaký umí dát.</li>
+      <li><b>Strop rozpočtu</b> = koruny za rok &times; 2. Tolik smí projekt na tuhle agendu stát, aby se vrátil do dvou let. Dva roky jsou naše hranice návratnosti, ne pravidlo.</li>
     </ul>
   </div>
 </section>
@@ -179,7 +165,7 @@
       zadávat a kontrolovat je. V modelu je ten čas schovaný v tom, že podíl
       převzaté práce je jen část, ne celek.</p>
       <p><b>Nejsou to doložená čísla z trhu.</b> Je to váš odhad protažený vzorcem.
-      Doložená v něm jsou jen dvě čísla: průměrná mzda a moje ceny.</p>
+      Doložené je v něm jen jedno číslo: průměrná mzda.</p>
     </div>
   </div>
 </section>
@@ -190,12 +176,9 @@
     <span class="stitek">Otázky</span>
     <h2>Než to začnete brát vážně.</h2>
     <details>
-      <summary>Proč mi kalkulačka u malé agendy říká, že se to nevrátí?<span class="znak-plus"></span></summary>
+      <summary>Proč mi u malé agendy vyjde tak malý strop?<span class="znak-plus"></span></summary>
       <div class="odpoved">
-        <p>Protože se to nevrátí. Jedna hodina týdně u jednoho člověka je za rok míň
-        peněz, než stojí provoz. Na takovou agendu se podniková AI nestaví samostatně:
-        buď se přidá k větší, která už běží na stejném zázemí, nebo se nechá být.
-        Radši to uvidíte tady než po roce provozu.</p>
+        <p>Protože jedna hodina týdně u jednoho člověka je za rok málo peněz. Na takovou agendu se podniková AI nestaví samostatně: buď se přidá k větší, která už běží na stejném zázemí, nebo se nechá být. Radši to uvidíte tady než po roce provozu.</p>
       </div>
     </details>
     <details>
@@ -243,7 +226,7 @@
 </footer>
 
 <script src="/sluzba.js?v=fd536a6" defer></script>
-<script type="module" src="/kalkulacka.js?v=dbab079"></script>
+<script type="module" src="/kalkulacka.js?v=af482e6"></script>
 <script src="/mobil.js?v=1bc92b7" defer></script>
 </body>
 </html>
