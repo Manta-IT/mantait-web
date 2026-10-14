@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Uprostřed místo rozhodnutí, z něj vede cesta vlevo k bloku s řádky stejné délky (hodiny) a vpravo k bloku s řádky různé délky (pevný rozsah); pod každým blokem jsou tři malé bloky s kódem, dokumentací a testy." fill="none">
+<title>Uprostřed místo rozhodnutí, z něj vede cesta vlevo k bloku s řádky stejné délky (hodiny) a vpravo k bloku s řádky různé délky (pevný rozsah); pod každým blokem jsou tři malé bloky s kódem, dokumentací a testy.</title>
+  <circle cx="160" cy="70" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M108 70h34" stroke="#9AA29E" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="50" width="84" height="40" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M36 59h58" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 69h58" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 79h58" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M178 70h34" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="212" y="50" width="84" height="40" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M224 59h58" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M224 69h40" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M224 79h50" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M66 90v28M34 118v-14h64v14" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="22" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M27 126h8" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M27 132h12" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M27 138h8" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="54" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M59 126h14" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M59 132h14" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M59 138h9" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="86" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M91 132l4 5 8-10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M254 90v28M222 118v-14h64v14" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="210" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M215 126h8" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M215 132h12" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M215 138h8" stroke="#101413" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="242" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M247 126h14" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M247 132h14" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M247 138h9" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="274" y="118" width="24" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M279 132l4 5 8-10" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

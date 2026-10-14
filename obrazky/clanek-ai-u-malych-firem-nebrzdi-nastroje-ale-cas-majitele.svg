@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Blok provozních úkolů zabírá téměř celou plochu, jen úzký okraj vede přerušovanou linkou ke kruhu místa rozhodnutí, který stojí stranou" fill="none">
+<title>Blok provozních úkolů zabírá téměř celou plochu, jen úzký okraj vede přerušovanou linkou ke kruhu místa rozhodnutí, který stojí stranou</title>
+  <rect x="16" y="24" width="208" height="152" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M30 40h150" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 53h120" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 66h164" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 79h100" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 92h156" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 105h130" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 118h148" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 131h90" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 144h140" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M30 157h110" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="230" y="24" width="14" height="152" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M244 100h38" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="296" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>
