@@ -4,7 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Podniková AI — jak to funguje</title>
+<title>Podniková AI u vás ve firmě: jak funguje a kolik stojí - Manta IT</title>
+<meta name="description" content="AI napojená na vaše systémy, která zná vaše data a nepouští je ven. Ukázka na modelové firmě. Začíná se AI plánem do 48 hodin za 9 900 Kč.">
+<link rel="canonical" href="https://mantait.cz/podnikova-ai/">
+<link rel="alternate" hreflang="cs" href="https://mantait.cz/podnikova-ai/">
+<link rel="alternate" hreflang="en" href="https://mantait.cz/podnikova-ai/en/">
+<link rel="alternate" hreflang="x-default" href="https://mantait.cz/podnikova-ai/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Podniková AI",
+  "description": "AI napojená na vaše systémy, která zná vaše data a nepouští je ven. Ukázka na modelové firmě. Začíná se AI plánem do 48 hodin za 9 900 Kč.",
+  "serviceType": "Podniková AI",
+  "url": "https://mantait.cz/podnikova-ai/",
+  "areaServed": {"@type": "Country", "name": "Česko"},
+  "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+    "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoška"}}
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -67,7 +85,8 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 .znak{width:26px;height:26px;border-radius:7.1px;background:var(--akcent);position:relative;flex:none}
 .znak::after{content:"";position:absolute;top:7.1px;right:7.1px;width:9.5px;height:9.5px;
   border-radius:2.4px;background:var(--papir)}
-.nav b{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
+.nav .domu{color:inherit;text-decoration:none}
+.nav b,.nav .domu{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
 .nav .tag{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;
   color:var(--tlum);border:1px solid var(--linka);border-radius:6px;padding:4px 9px}
 
@@ -220,9 +239,11 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
   transition:background .2s var(--e)}
 .cta .a1{background:var(--akcent-sv);color:#08402F}
 .cta .a2{border:1px solid rgba(251,251,249,.34);color:var(--na-tmave)}
+.hero .cta .a1{background:var(--akcent);color:var(--papir)}
 @media(hover:hover) and (pointer:fine){
   .cta .a1:hover{background:#fff}
   .cta .a2:hover{background:rgba(251,251,249,.1)}
+  .hero .cta .a1:hover{background:var(--inkoust)}
 }
 .pristup{margin-top:44px;max-width:60ch}
 .pristup form{display:grid;gap:14px;margin-top:20px}
@@ -343,7 +364,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <nav class="nav">
   <div class="wrap">
     <span class="znak" aria-hidden="true"></span>
-    <b>Manta IT</b>
+    <a class="domu" href="/">Manta IT</a>
     <span class="tag">pracovní ukázka</span>
   </div>
 </nav>
@@ -351,16 +372,17 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <header class="hero wrap">
   <h1>AI, která odpovídá jen z toho, co <em>ten člověk</em> smí sám otevřít.</h1>
   <p class="sub">Běží u vás ve firmě. Pracuje s vaší poštou, výkresy, ceníky a objednávkami.
-     Práci připraví, rozhodnutí nechá na člověku. Tahle stránka ukazuje, jak to uvnitř funguje —
+     Práci připraví, rozhodnutí nechá na člověku. Tahle stránka ukazuje, jak to uvnitř funguje,
      ne co to umí.</p>
+  <div class="cta"><a class="a1" href="#pristup">Požádat o ukázku →</a></div>
 </header>
 
 <!-- ============ 1. CESTA JEDNOHO ÚKOLU ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">01 — mechanika</div>
+    <div class="eyebrow">01 - mechanika</div>
     <h2>Cesta jednoho úkolu</h2>
-    <p class="sub">Objednávka po termínu. Sledujte, kde se to zastaví — a proč se to
+    <p class="sub">Objednávka po termínu. Sledujte, kde se to zastaví - a proč se to
        zastaví vždycky.</p>
 
     <div class="track">
@@ -407,15 +429,15 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
       </div>
     </div>
 
-    <p class="fine" style="margin-top:18px">Agent v kroku 2 a 3 <b>nemá nástroj „odeslat"</b>.
-       Není to pravidlo v zadání, které by šlo obejít — ten nástroj v něm prostě není.</p>
+    <p class="fine" style="margin-top:18px">Agent v kroku 2 a 3 <b>nemá nástroj "odeslat"</b>.
+       Není to pravidlo v zadání, které by šlo obejít - ten nástroj v něm prostě není.</p>
   </div>
 </section>
 
 <!-- ============ 2. PROČ TO NEJDE JEN MAILEM ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">02 — proč vlastní rozhraní</div>
+    <div class="eyebrow">02 - proč vlastní rozhraní</div>
     <h2>Tři věci se do mailu uložit nedají</h2>
     <p class="sub">Nejčastější námitka zní: pošlete mi to mailem s tlačítkem a žádný systém
        nepotřebuju. Skoro to jde. Rozbije se to na těchhle třech.</p>
@@ -431,7 +453,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <p>Aby AI odpověděla jen z toho, co ten člověk smí otevřít, musí v okamžiku dotazu
              vědět, kdo se ptá. Sdílená schránka, přeposlání a zástup ten řetěz trhají.</p>
           <p>A totéž pravidlo, které říká <b>došlá pošta nemůže agentovi nic přikázat</b>,
-             říká i <b>došlá pošta nemůže nikoho autentizovat</b> — jinak by přeposlání
+             říká i <b>došlá pošta nemůže nikoho autentizovat</b> - jinak by přeposlání
              bylo povýšení práv.</p>
         </div>
       </li>
@@ -443,7 +465,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         </div>
         <div class="txt">
           <p>Kdo schválil, z jakých zdrojů to bylo, jakou verzí modelu a promptu a kdy.
-             Plus označení, že psal stroj — to od srpna 2026 žádá evropské nařízení o AI.</p>
+             Plus označení, že psal stroj - to od srpna 2026 žádá evropské nařízení o AI.</p>
           <p>Z pošty se rozhodnutí po půl roce nezrekonstruuje. A když se na to někdo zeptá,
              ptá se obvykle až po půl roce.</p>
         </div>
@@ -457,7 +479,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="txt">
           <p>Vlastník, termín, zástup, připomenutí, opakování při chybě, fronta výjimek
              a vypínač na každý proces zvlášť.</p>
-          <p>Mail umí oznámit. Neumí si pamatovat, že na něco devět dní nikdo neklikl —
+          <p>Mail umí oznámit. Neumí si pamatovat, že na něco devět dní nikdo neklikl -
              a přesně tohle je nejčastější tichá porucha celého systému.</p>
         </div>
       </li>
@@ -465,14 +487,14 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 
     <p class="fine" style="margin-top:22px">Bez vlastní vrstvy se dá postavit AI, která vidí
        jen to, co smí vidět úplně každý ve firmě. To je strop, ne varianta.
-       <b>Vrstva ale není pracoviště</b> — devět z deseti věcí dorazí tam, kde lidé už pracují.</p>
+       <b>Vrstva ale není pracoviště</b> - devět z deseti věcí dorazí tam, kde lidé už pracují.</p>
   </div>
 </section>
 
 <!-- ============ 3. KDO CO VIDÍ ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">03 — jedna událost, tři lidé</div>
+    <div class="eyebrow">03 - jedna událost, tři lidé</div>
     <h2>Táž věc vypadá jinak podle toho, kdo se dívá</h2>
     <p class="sub">Přepněte událost. Sledujte, že zaměstnanec skoro nikdy nemusí nikam chodit.</p>
 
@@ -500,7 +522,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 4. BĚH VS OBSAH ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">04 — proč to jde dodat jako služba</div>
+    <div class="eyebrow">04 - proč to jde dodat jako služba</div>
     <h2>Jedna hranice, na které stojí všechno ostatní</h2>
     <p class="sub">Nahoře je to, co je vaše a co vás odlišuje. Dole to, co je u každého
        klienta stejné a co provozujeme a povyšujeme my.</p>
@@ -540,7 +562,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 
     <p class="fine" style="margin-top:22px">Rozhodnutí zůstává vratné a je to omezení návrhu,
        ne slib: <b>žádný krok v provozu nesmí být ruční úkon, který umíme jen my.</b>
-       Jinak je „postavíme a odejdeme" lež.</p>
+       Jinak je "postavíme a odejdeme" lež.</p>
   </div>
 </section>
 
@@ -548,7 +570,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 05. PROJEV V OKOLNÍCH SYSTÉMECH ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">05 — co to udělá ve vašich systémech</div>
+    <div class="eyebrow">05 - co to udělá ve vašich systémech</div>
     <h2>Jeden údaj, čtyři systémy, jedno zastavení</h2>
     <p class="sub">Nejčastější obava zní: co mi to udělá v tom, co už mám.
        Tohle je celá cesta jedné přijaté faktury. Sledujte, kde se to zastaví.</p>
@@ -565,9 +587,9 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <li data-c="0"><span class="fl-dot"></span><span class="fl-t">Dodavatel pošle fakturu e-mailem</span>
           <span class="fl-n">přijde do vyhrazené schránky, ne do firemní pošty</span></li>
         <li data-c="1"><span class="fl-dot"></span><span class="fl-t">Vytěží se částka, číslo a splatnost</span>
-          <span class="fl-n">jen čtení, do pevného schématu — text e-mailu už dál nejde</span></li>
+          <span class="fl-n">jen čtení, do pevného schématu - text e-mailu už dál nejde</span></li>
         <li data-c="2"><span class="fl-dot"></span><span class="fl-t">Najde se objednávka a spočítá rozdíl</span>
-          <span class="fl-n">čtení: objednáno 42 800, fakturováno 43 690 — o 2 % víc</span></li>
+          <span class="fl-n">čtení: objednáno 42 800, fakturováno 43 690 - o 2 % víc</span></li>
         <li data-c="1" class="gate"><span class="fl-dot"></span><span class="fl-t">Tady to stojí. Rozdíl potvrdí nákupčí.</span>
           <span class="fl-n">jediné místo v celém řetězu, kde se čeká na člověka</span></li>
         <li data-c="3"><span class="fl-dot"></span><span class="fl-t">Faktura se založí</span>
@@ -586,19 +608,19 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     <div class="rules">
       <div><b>Zápis ven nikdy bez potvrzení člověkem.</b> Kromě čtení a interních poznámek.</div>
       <div><b>Nic se nemaže a nepřepisuje.</b> Jen se přidává.</div>
-      <div><b>Každý zápis nese, že ho připravila platforma</b> — a kdo ho potvrdil.</div>
+      <div><b>Každý zápis nese, že ho připravila platforma</b> - a kdo ho potvrdil.</div>
       <div><b>Když zápis selže, zůstane ve frontě</b> s odkazem na záznam. Nezmizí.</div>
     </div>
 
     <p class="fine" style="margin-top:20px">V každém vašem systému je pak poznat, co je lidská
-       práce a co připravila platforma — <b>i pro toho, kdo do portálu nikdy nevleze</b>.</p>
+       práce a co připravila platforma - <b>i pro toho, kdo do portálu nikdy nevleze</b>.</p>
   </div>
 </section>
 
 <!-- ============ 06. SPOČÍTEJTE SI TO ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">06 — kdy to dává smysl a kdy ne</div>
+    <div class="eyebrow">06 - kdy to dává smysl a kdy ne</div>
     <h2>Spočítejte si to. Někdy z toho vyjde, že ne.</h2>
     <p class="sub">Otázku po návratnosti dostává každý, kdo o tomhle mluví, a skoro nikdo na ni
        neodpovídá. Tady je počítadlo na jednu agendu. Posuňte to na svoje čísla.</p>
@@ -634,14 +656,14 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     <p class="fine" style="margin-top:18px">
       Šedesát procent je náš odhad z toho, co u téhle třídy agend obvykle zůstane na člověku
       (rozhodnutí, výjimky, kontrola). <b>Není to naměřený údaj</b> a u vaší agendy může vyjít
-      jinak — od toho je plán za 48 hodin. Dva roky jsou naše hranice návratnosti, ne pravidlo.
+      jinak - od toho je plán za 48 hodin. Dva roky jsou naše hranice návratnosti, ne pravidlo.
       Nejsem plátce DPH. Sazba za hodinu je superhrubý náklad, ne mzda.
     </p>
 
     <div class="facts">
       <div class="fact"><b>81 521</b><span>firem v ČR má 10 až 249 lidí</span><i>ČSÚ, stav k 31. 12. 2025</i></div>
       <div class="fact"><b>89,5 %</b><span>malých firem nemá vlastního IT odborníka</span><i>ČSÚ, data 2025</i></div>
-      <div class="fact"><b>59 %</b><span>nejčastější důvod neinvestování: „nevidíme potřebu nebo přínos"</span><i>Ipsos pro AMSP, 11/2024</i></div>
+      <div class="fact"><b>59 %</b><span>nejčastější důvod neinvestování: "nevidíme potřebu nebo přínos"</span><i>Ipsos pro AMSP, 11/2024</i></div>
       <div class="fact"><b>48 %</b><span>malých firem se v nabídkách digitálních řešení orientuje obtížně nebo vůbec</span><i>Ipsos pro AMSP, 11/2024</i></div>
     </div>
     <p class="fine" style="margin-top:14px">Poslední dvě čísla jsou důvod, proč je na týhle stránce
@@ -653,16 +675,16 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <section class="s-tmav">
   <div class="wrap">
     <div data-sekce="modelovy-pripad">
-      <div class="eyebrow">07 — modelový případ</div>
+      <div class="eyebrow">07 - modelový případ</div>
       <div class="dp-k">modelový případ</div>
       <h2>Modelová firma, ne reference</h2>
       <p class="sub">Tohle je modelová firma, nikde to neběží. Čísla jsou výpočet, ne naměřený výsledek.</p>
 
       <div class="facts">
-        <div class="fact"><b>10–49 lidí</b><span>modelová firma má 10 až 49 lidí a žádného vlastního IT odborníka, jako 89,5 % takových firem</span><i>ČSÚ, data 2025</i></div>
+        <div class="fact"><b>10-49 lidí</b><span>modelová firma má 10 až 49 lidí a žádného vlastního IT odborníka, jako 89,5 % takových firem</span><i>ČSÚ, data 2025</i></div>
         <div class="fact"><b>68,8 %</b><span>malých firem svěřuje správu IT externím lidem, modelová firma taky</span><i>ČSÚ, 2024</i></div>
         <div class="fact"><b>41,8 %</b><span>malých firem má ERP, modelová firma taky</span><i>ČSÚ, 2025</i></div>
-        <div class="fact"><b>50–250 tis. Kč</b><span>ročně na digitalizaci plánuje 40 % malých firem, modelová firma se do toho vejde</span><i>Ipsos pro AMSP, 11/2024</i></div>
+        <div class="fact"><b>50-250 tis. Kč</b><span>ročně na digitalizaci plánuje 40 % malých firem, modelová firma se do toho vejde</span><i>Ipsos pro AMSP, 11/2024</i></div>
       </div>
 
       <p>Přijaté faktury: dorazí do schránky, systém je vytěží a spáruje s objednávkou, člověk potvrdí výjimky a zápis jde do účetnictví.</p>
@@ -684,7 +706,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <section>
   <div class="wrap">
     <div data-sekce="verejne-pripady">
-      <div class="eyebrow">08 — veřejné případy</div>
+      <div class="eyebrow">08 - veřejné případy</div>
       <h2>Kdo to už provozuje veřejně</h2>
       <p class="sub">Velké firmy to provozují a mluví o tom. Veřejný případ malé firmy jsme nenašli, proto je výše modelový.</p>
       <div class="deploy pripady">
@@ -692,7 +714,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="dp-k">McKinsey</div>
           <h3>Lilli</h3>
           <p>Asistent nad interní znalostí firmy. Na startu ho dostalo 7 tis. zaměstnanců (dle zdroje).</p>
-          <p>Pro malou firmu: „zeptej se firmy" funguje i nad směrnicemi, nabídkami a vzory malé firmy.</p>
+          <p>Pro malou firmu: "zeptej se firmy" funguje i nad směrnicemi, nabídkami a vzory malé firmy.</p>
           <p><a href="https://www.ciodive.com/news/McKinsey-generative-AI-Lilli-platform-internal-employees/691231/" target="_blank" rel="noopener">CIO Dive, 2023</a></p>
         </div>
         <div class="dp">
@@ -713,7 +735,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="dp-k">Alza</div>
           <h3>Vševěd</h3>
           <p>Interní asistent nad směrnicemi, dokumentací a návody.</p>
-          <p>Pro malou firmu: nejbližší obdoba — asistent nad vlastními směrnicemi a návody.</p>
+          <p>Pro malou firmu: nejbližší obdoba - asistent nad vlastními směrnicemi a návody.</p>
           <p><a href="https://byznys.hn.cz/c1-67800830-jak-si-spravne-pustit-ai-do-firmy-alza-rohlik-a-dalsi-ukazaly-jak-ji-pouzivaji-dovnitr-i-navenek" target="_blank" rel="noopener">Hospodářské noviny</a></p>
         </div>
         <div class="dp">
@@ -738,10 +760,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 09. KDE TO BĚŽÍ ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">09 — kde to stojí</div>
-    <h2>„Lokální" neznamená server ve sklepě</h2>
+    <div class="eyebrow">09 - kde to stojí</div>
+    <h2>"Lokální" neznamená server ve sklepě</h2>
     <p class="sub">Znamená to, že model je váš a data neopouštějí váš okruh. Kde to fyzicky běží,
-       je samostatné rozhodnutí — a dá se změnit později.</p>
+       je samostatné rozhodnutí - a dá se změnit později.</p>
 
     <div class="deploy">
       <div class="dp">
@@ -759,7 +781,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
       <div class="dp">
         <div class="dp-k">cloud s grafikou</div>
         <h3>Pronajatá karta</h3>
-        <p>Stroj s GPU, na kterém běží <b>váš</b> model. Ne cizí služba, ne cizí model — jen cizí železo.</p>
+        <p>Stroj s GPU, na kterém běží <b>váš</b> model. Ne cizí služba, ne cizí model - jen cizí železo.</p>
         <div class="dp-m"><span class="pill">platí se za běh</span><span class="pill">nejrychlejší start</span></div>
       </div>
     </div>
@@ -774,7 +796,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <p class="fine" style="margin-top:20px">Rozdíl proti cizí AI službě zůstává ve všech třech
-       případech tentýž. A protože obsah — procesy, prompty, mapa oprávnění — je váš,
+       případech tentýž. A protože obsah - procesy, prompty, mapa oprávnění - je váš,
        <b>přechod mezi variantami je stěhování, ne přestavba</b>.</p>
   </div>
 </section>
@@ -782,7 +804,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 5. ŽEBŘÍK ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">10 — kudy se to staví</div>
+    <div class="eyebrow">10 - kudy se to staví</div>
     <h2>Tři příčky. Každá je rozšíření, ne přestavba.</h2>
     <p class="sub">Nikdo nezačíná nahoře. Co v příčce schválně není, je stejně důležité
        jako co v ní je.</p>
@@ -797,7 +819,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="not"><b>Schválně tam není:</b> znalostní index nad dokumenty,
              chat nad firemními daty, role, zkušebna.</div>
         </div>
-        <div class="price">2–4 týdny<br>podle rozsahu<br>+ jeden stroj</div>
+        <div class="price">2-4 týdny<br>podle rozsahu<br>+ jeden stroj</div>
       </div>
 
       <div class="rung">
@@ -809,7 +831,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="not"><b>Tady začíná ta těžká část.</b> Oprávnění nejsou funkce,
              je to průřez celým systémem.</div>
         </div>
-        <div class="price">3–5 měsíců<br>odhad 250–450 tis.<br>+ větší stroj</div>
+        <div class="price">3-5 měsíců<br>odhad 250-450 tis.<br>+ větší stroj</div>
       </div>
 
       <div class="rung r3">
@@ -821,20 +843,41 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="not"><b>Doložená čísla:</b> tři nezávislé nabídky na totéž zadání,
              září 2026.</div>
         </div>
-        <div class="price">10–14 měsíců<br>jádro 1,0–1,25 mil.<br>+ technika 0,7–0,9 mil.</div>
+        <div class="price">10-14 měsíců<br>jádro 1,0-1,25 mil.<br>+ technika 0,7-0,9 mil.</div>
       </div>
     </div>
 
     <p class="fine" style="margin-top:20px">Ceny příček 1 a 3 jsou doložené; <b>příčka 2 je náš
-       odhad</b>, ne tržní údaj — interpolace mezi dvěma vzdálenými body. Ceny bez DPH,
+       odhad</b>, ne tržní údaj - interpolace mezi dvěma vzdálenými body. Ceny bez DPH,
        nejsem plátce DPH.</p>
+  </div>
+</section>
+
+<!-- ============ 11. JAK ZAČÍT A KOLIK TO STOJÍ ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">11 - jak začít a kolik to stojí</div>
+    <div data-sekce="cena">
+      <h2>Začíná se AI plánem. Pevnou cenu projektu dostanete z něj.</h2>
+      <p class="sub">Cena projektu záleží na tom, kolik máte systémů a agend. Co v ní je, je pokaždé stejné.</p>
+      <div class="calc-out">
+        <div class="co-row sep"><span>AI plán do 48 hodin. Cena plánu se odečte z ceny projektu.</span><b>9 900 Kč, pevná</b></div>
+        <div class="co-row"><span><a href="/reseni-mapa-firmy">Příprava firmy</a>, dva týdny. Jen když data nejsou připravená.</span><b>39 000 Kč</b></div>
+        <div class="co-row"><span>Projekt na míru: model a agenti, napojení na vaše systémy, práva podle vašeho seznamu účtů, zaškolení lidí, první měsíc pod dohledem.</span><b>pevná cena po AI plánu</b></div>
+        <div class="co-row"><span>Dohled měsíčně. Bez položky za dotaz a bez položky za uživatele.</span><b>podle počtu agend a systémů</b></div>
+        <div class="co-row"><span>Server s grafickou kartou kupujete zvlášť a je váš.</span><b>řádově od 80 000 Kč</b></div>
+        <div class="co-row"><span>Cloudová podoba: bez vlastního železa, provoz včetně modelů v jedné měsíční položce.</span><b>měsíčně</b></div>
+      </div>
+      <p class="fine" style="margin-top:14px">Řád ceny železa je orientační k červnu 2026 a mění se s trhem grafických karet; konkrétní stroj vyberu podle agendy.
+         Nejsem plátce DPH, ceny jsou konečné.</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ ZÁVĚR ============ -->
 <section class="s-ink">
   <div class="wrap">
-    <div class="eyebrow">11 — jak se pozná, že to funguje</div>
+    <div class="eyebrow">12 - jak se pozná, že to funguje</div>
     <div data-sekce="prutok">
       <h2>Nejdřív průtok firmy a termíny</h2>
       <p class="sub">Poptávka, nabídka, objednávka, faktura a dodávka: kolik jich je otevřených,
@@ -847,12 +890,11 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <div class="cta">
-      <a class="a1" href="#pristup">Přístup do ukázky →</a>
+      <a class="a1" href="#pristup">Požádat o ukázku →</a>
     </div>
 
     <div id="pristup" class="pristup">
       <h2>Přístup do ukázky</h2>
-      <!-- COPY-PLACEHOLDER: text vyzvy ceka na growth (manta-copy + humanizer), T0924-472 -->
       <p class="sub">Postavil jsem celé rozhraní, včetně toho, jak to vypadá pro zaměstnance,
          správce i majitele. Hledám první firmy, se kterými to rozjedu.
          Napište mi, o co vám jde, a pošlu vám přístup do ukázky.</p>
@@ -869,8 +911,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <div class="foot">
-      <p class="fine">Pracovní ukázka, ne nabídka. Čísla v rozhraní jsou vymyšlená.
-         Podklad: <span class="mono">specs/podnikova-ai/program-design.md</span></p>
+      <p class="fine">Firma v ukázce je modelová, čísla v rozhraní jsou vymyšlená.</p>
     </div>
   </div>
 </section>
@@ -881,10 +922,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 
   /* ---- 1. cesta úkolu ---- */
   var msgs = [
-    ['09:00 · kernel','Termín u objednávky <b>O-4471</b> uplynul před třemi dny. Nikdo nic nezadal — spustila to kadence.'],
+    ['09:00 · kernel','Termín u objednávky <b>O-4471</b> uplynul před třemi dny. Nikdo nic nezadal - spustila to kadence.'],
     ['09:00 · sběr','Agent přečetl objednávku a poslední vlákno s dodavatelem. <b>Jen čte</b>, a jen to, na co má nákupčí právo.'],
     ['09:00 · návrh','Hotový text urgence v němčině, tónem podle postupu. <b>Zatím to nikam neodešlo.</b>'],
-    ['09:00 · brána','Koncept leží ve schránce nákupčího. <b>Tady to stojí</b> — může to trvat minutu nebo dva dny. Po 48 hodinách se ozve zástupci.'],
+    ['09:00 · brána','Koncept leží ve schránce nákupčího. <b>Tady to stojí</b> - může to trvat minutu nebo dva dny. Po 48 hodinách se ozve zástupci.'],
     ['11:26 · člověk','Nákupčí koncept přečetl, upravil jedno slovo a <b>odeslal ho sám ze své schránky</b>.']
   ];
   var sts = document.querySelectorAll('#stations .st');
@@ -928,7 +969,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
       ['Shrnutí','Nic.'] ],
     [ ['Outlook','Nic. Objednávky se drží jako koncepty a <b>nic se neztratilo</b>.'],
       ['Portál','<b>Fronta výjimek: blokuje.</b> Vypršel přístupový token, tři pokusy, pak stop. Ve frontě čekají 2 objednávky.'],
-      ['Shrnutí','Nic — pokud se to vyřeší do dvou dnů.'] ],
+      ['Shrnutí','Nic - pokud se to vyřeší do dvou dnů.'] ],
     [ ['Outlook','Připomenutí. Po 48 hodinách totéž zástupci.'],
       ['Portál','Vidí, že fronta roste. <b>Není to jeho práce vyřešit</b>, je to práce vedoucího.'],
       ['Shrnutí','<b>Na kom co visí:</b> Petr Málek, 6 objednávek, nejstarší 9 dní. Tohle je ta věc, kvůli které rozhraní majitele existuje.'] ]
@@ -964,7 +1005,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     'Přišla faktura. Platforma vidí jen tuhle schránku, ne firemní poštu.',
     'Vytěženo do pevného schématu. Text e-mailu už dál nepokračuje.',
     'Objednávka nalezena. Fakturováno o 2 % víc, než bylo objednáno.',
-    'Tady to stojí. Bez nákupčího se dál nepokračuje — a může to trvat minutu nebo dva dny.',
+    'Tady to stojí. Bez nákupčího se dál nepokračuje - a může to trvat minutu nebo dva dny.',
     'Nákupčí rozdíl potvrdil. Teprve teď se zapisuje ven.',
     'Hotovo. Šest kroků, jedno zastavení, všechno dohledatelné.'
   ];
@@ -1020,7 +1061,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
   var OPS = [
     'Frontu výjimek řešíme my. Vzdálený přístup máme trvale, včetně spínatelných zásuvek, abychom uměli tvrdě restartovat stroj bez cesty k vám. <b>Vy neděláte nic.</b> Měsíčně: servis plus provozní model.',
     'Frontu výjimek řeší váš člověk, my jsme na telefonu. Vzdálený přístup nám <b>zapínáte vy</b>, když ho potřebujeme. Předáváme navíc provozní dokumentaci a školení správců. Měsíčně: jen servis.',
-    'Provoz je celý váš. Předáváme navíc runbooky, zkušebnu, postupy obnovy a dvoudenní školení. <b>Měsíčně nic.</b> Podmínkou je, že v provozu není jediný ruční krok, který umíme jen my — jinak by to byl slib, který nedržíme.'
+    'Provoz je celý váš. Předáváme navíc runbooky, zkušebnu, postupy obnovy a dvoudenní školení. <b>Měsíčně nic.</b> Podmínkou je, že v provozu není jediný ruční krok, který umíme jen my - jinak by to byl slib, který nedržíme.'
   ];
   var wo = document.getElementById('whoOut');
   var opb = document.querySelectorAll('.who-runs button');
