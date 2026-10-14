@@ -628,21 +628,19 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="co-row"><span>This workflow costs you a year</span><b id="rHod">750 hours</b></div>
         <div class="co-row"><span>In money</span><b id="rKc">CZK 338k</b></div>
         <div class="co-row sep"><span>If a machine takes 60% off that</span><b id="rUsp">CZK 203k / year</b></div>
-        <div class="co-row"><span>One-off setup</span><b>CZK 89,000</b></div>
-        <div class="co-row"><span>Monthly upkeep</span><b>CZK 8,000</b></div>
         <div class="co-big" id="rVerd">
-          <span class="cv-n" id="rMes">11</span>
-          <span class="cv-l">months to payback</span>
+          <span class="cv-n" id="rStrop">CZK 405k</span>
+          <span class="cv-l">is the most a project for this workflow may cost to pay back within two years</span>
         </div>
-        <div class="co-note" id="rNote">After the first year, a net saving of <b id="rCista">CZK 107k</b> a year remains.</div>
+        <div class="co-note" id="rNote">What it will really cost, I tell you after the AI plan. If it comes out higher, I will not recommend it.</div>
       </div>
     </div>
 
     <p class="fine" style="margin-top:18px">
       Sixty percent is our estimate of what usually stays with a person for this class of
       workflow (decisions, exceptions, review). <b>It is not a measured figure</b> and your
-      workflow may come out different — that's what the 48-hour plan is for. I am not a VAT
-      payer. The hourly rate is the fully loaded cost, not the wage.
+      workflow may come out different — that's what the 48-hour plan is for. Two years is our
+      payback limit, not a rule. I am not a VAT payer. The hourly rate is the fully loaded cost, not the wage.
     </p>
 
     <div class="facts">
@@ -680,13 +678,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="co-row"><span>This workflow costs a year</span><b>750 hours</b></div>
         <div class="co-row"><span>In money</span><b>CZK 338k</b></div>
         <div class="co-row sep"><span>If a machine takes 60% off that</span><b>CZK 203k / year</b></div>
-        <div class="co-row"><span>One-off setup</span><b>CZK 89,000</b></div>
-        <div class="co-row"><span>Monthly upkeep</span><b>CZK 8,000</b></div>
-        <div class="co-row"><span>Payback</span><b>11 months</b></div>
-        <div class="co-row"><span>Net saving after the first year</span><b>CZK 107k</b></div>
+        <div class="co-row"><span>The project pays back within two years if it costs at most</span><b>CZK 405k</b></div>
       </div>
 
-      <p class="fine">Sixty percent is our estimate, not a measured figure. The cost of the machine itself is not in these numbers. I am not a VAT payer.</p>
+      <p class="fine">Sixty percent is our estimate, not a measured figure. What the project really costs, the AI plan will tell. I am not a VAT payer, so the limit compares directly with my price.</p>
     </div>
   </div>
 </section>
@@ -809,7 +804,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="not"><b>Deliberately not there:</b> a knowledge index over documents,
              chat over company data, roles, a test bench.</div>
         </div>
-        <div class="price">2-4 weeks<br>from CZK 89,000<br>+ one machine</div>
+        <div class="price">2-4 weeks<br>priced per job<br>+ one machine</div>
       </div>
 
       <div class="rung">
@@ -1009,7 +1004,6 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     return 'CZK ' + Math.round(v).toLocaleString('en');
   }
   function tvarLidi(n){ return n === 1 ? '1 person' : n + ' people'; }
-  function tvarMes(n){ return n === 1 ? 'month' : 'months'; }
   function pocitej(){
     var n = +cN.value, m = +cM.value, sz = +cS.value;
     document.getElementById('cNo').textContent = tvarLidi(n);
@@ -1019,32 +1013,13 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     var hod = n * m * 250 / 60;
     var rok = hod * sz;
     var usp = rok * 0.6;
-    var uspMes = usp / 12;
-    var cistaMes = uspMes - 8000;
+    var strop = usp * 2;
 
     document.getElementById('rHod').textContent = Math.round(hod).toLocaleString('en') + ' hours';
     document.getElementById('rKc').textContent = kc(rok);
     document.getElementById('rUsp').textContent = kc(usp) + ' / year';
 
-    var big = document.getElementById('rVerd');
-    var num = document.getElementById('rMes');
-    var lbl = big.querySelector('.cv-l');
-    var note = document.getElementById('rNote');
-
-    if(cistaMes <= 0){
-      big.classList.add('nope');
-      num.textContent = 'At this volume it doesn\'t pay back.';
-      lbl.textContent = '';
-      note.innerHTML = 'The upkeep alone costs more than this workflow eats up in a year. ' +
-        '<b>I wouldn\'t recommend this one</b> — and that\'s how it turns out for some companies. Try a workflow that takes more time.';
-    } else {
-      big.classList.remove('nope');
-      var mes = Math.ceil(89000 / cistaMes);
-      num.textContent = mes;
-      lbl.textContent = tvarMes(mes) + ' to payback';
-      note.innerHTML = 'After the first year, a net saving of <b>' + kc(cistaMes * 12) + '</b> a year remains.' +
-        (mes > 24 ? ' Over two years is a long time — for a workflow like that it pays to start cheaper or leave it be.' : '');
-    }
+    document.getElementById('rStrop').textContent = kc(strop);
   }
   [cN, cM, cS].forEach(function(el){ el.addEventListener('input', pocitej); });
   pocitej();

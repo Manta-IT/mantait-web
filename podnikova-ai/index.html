@@ -623,21 +623,19 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="co-row"><span>Ta agenda vás ročně stojí</span><b id="rHod">750 hodin</b></div>
         <div class="co-row"><span>V penězích</span><b id="rKc">338 tis. Kč</b></div>
         <div class="co-row sep"><span>Když z toho stroj ubere 60 %</span><b id="rUsp">203 tis. Kč / rok</b></div>
-        <div class="co-row"><span>Zavedení jednorázově</span><b>89 000 Kč</b></div>
-        <div class="co-row"><span>Dohled měsíčně</span><b>8 000 Kč</b></div>
         <div class="co-big" id="rVerd">
-          <span class="cv-n" id="rMes">11</span>
-          <span class="cv-l">měsíců do návratnosti</span>
+          <span class="cv-n" id="rStrop">405 tis. Kč</span>
+          <span class="cv-l">smí stát projekt na tuhle agendu, aby se vrátil do dvou let</span>
         </div>
-        <div class="co-note" id="rNote">Po prvním roce zůstává čistá úspora <b id="rCista">107 tis. Kč</b> ročně.</div>
+        <div class="co-note" id="rNote">Kolik bude stát doopravdy, řeknu po AI plánu. Když vyjde víc, nedoporučím ho.</div>
       </div>
     </div>
 
     <p class="fine" style="margin-top:18px">
       Šedesát procent je náš odhad z toho, co u téhle třídy agend obvykle zůstane na člověku
       (rozhodnutí, výjimky, kontrola). <b>Není to naměřený údaj</b> a u vaší agendy může vyjít
-      jinak — od toho je plán za 48 hodin. Ceny bez DPH, nejsem plátce DPH. Sazba za hodinu je
-      superhrubý náklad, ne mzda.
+      jinak — od toho je plán za 48 hodin. Dva roky jsou naše hranice návratnosti, ne pravidlo.
+      Nejsem plátce DPH. Sazba za hodinu je superhrubý náklad, ne mzda.
     </p>
 
     <div class="facts">
@@ -674,13 +672,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="co-row"><span>Ta agenda stojí ročně</span><b>750 hodin</b></div>
         <div class="co-row"><span>V penězích</span><b>338 tis. Kč</b></div>
         <div class="co-row sep"><span>Když z toho stroj ubere 60 %</span><b>203 tis. Kč / rok</b></div>
-        <div class="co-row"><span>Zavedení jednorázově</span><b>89 000 Kč</b></div>
-        <div class="co-row"><span>Dohled měsíčně</span><b>8 000 Kč</b></div>
-        <div class="co-row"><span>Návratnost</span><b>11 měsíců</b></div>
-        <div class="co-row"><span>Čistá úspora po prvním roce</span><b>107 tis. Kč</b></div>
+        <div class="co-row"><span>Projekt se vrátí do dvou let, když stojí nejvýš</span><b>405 tis. Kč</b></div>
       </div>
 
-      <p class="fine">Šedesát procent je náš odhad, ne naměřený údaj. Cena železa, tedy stroje, v těchto číslech není. Nejsem plátce DPH.</p>
+      <p class="fine">Šedesát procent je náš odhad, ne naměřený údaj. Kolik projekt doopravdy stojí, řekne AI plán. Nejsem plátce DPH, strop se tedy srovnává rovnou s mou cenou.</p>
     </div>
   </div>
 </section>
@@ -802,7 +797,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <div class="not"><b>Schválně tam není:</b> znalostní index nad dokumenty,
              chat nad firemními daty, role, zkušebna.</div>
         </div>
-        <div class="price">2–4 týdny<br>od 89 000 Kč<br>+ jeden stroj</div>
+        <div class="price">2–4 týdny<br>podle rozsahu<br>+ jeden stroj</div>
       </div>
 
       <div class="rung">
@@ -1001,7 +996,6 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     return Math.round(v).toLocaleString('cs') + ' Kč';
   }
   function tvarLidi(n){ return n === 1 ? '1 člověk' : (n < 5 ? n + ' lidé' : n + ' lidí'); }
-  function tvarMes(n){ return n === 1 ? 'měsíc' : (n < 5 ? 'měsíce' : 'měsíců'); }
   function pocitej(){
     var n = +cN.value, m = +cM.value, sz = +cS.value;
     document.getElementById('cNo').textContent = tvarLidi(n);
@@ -1011,32 +1005,13 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     var hod = n * m * 250 / 60;
     var rok = hod * sz;
     var usp = rok * 0.6;
-    var uspMes = usp / 12;
-    var cistaMes = uspMes - 8000;
+    var strop = usp * 2;
 
     document.getElementById('rHod').textContent = Math.round(hod).toLocaleString('cs') + ' hodin';
     document.getElementById('rKc').textContent = kc(rok);
     document.getElementById('rUsp').textContent = kc(usp) + ' / rok';
 
-    var big = document.getElementById('rVerd');
-    var num = document.getElementById('rMes');
-    var lbl = big.querySelector('.cv-l');
-    var note = document.getElementById('rNote');
-
-    if(cistaMes <= 0){
-      big.classList.add('nope');
-      num.textContent = 'U tohohle objemu se to nevrátí.';
-      lbl.textContent = '';
-      note.innerHTML = 'Samotný dohled stojí víc, než co ta agenda ročně sežere. ' +
-        '<b>Tohle bych vám nedoporučil</b> — a vyjde to tak u části firem. Zkuste agendu, která bere víc času.';
-    } else {
-      big.classList.remove('nope');
-      var mes = Math.ceil(89000 / cistaMes);
-      num.textContent = mes;
-      lbl.textContent = tvarMes(mes) + ' do návratnosti';
-      note.innerHTML = 'Po prvním roce zůstává čistá úspora <b>' + kc(cistaMes * 12) + '</b> ročně.' +
-        (mes > 24 ? ' Přes dva roky je dlouho — u takové agendy se vyplatí začít levněji nebo ji nechat být.' : '');
-    }
+    document.getElementById('rStrop').textContent = kc(strop);
   }
   [cN, cM, cS].forEach(function(el){ el.addEventListener('input', pocitej); });
   pocitej();
