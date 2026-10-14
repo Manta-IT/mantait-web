@@ -4,7 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Enterprise AI — how it works</title>
+<title>Enterprise AI at your company: how it works and what it costs - Manta IT</title>
+<meta name="description" content="AI connected to your systems that knows your data and keeps it in. Shown on a model company. It starts with an AI plan within 48 hours for approx. EUR 400.">
+<link rel="canonical" href="https://mantait.cz/podnikova-ai/en/">
+<link rel="alternate" hreflang="cs" href="https://mantait.cz/podnikova-ai/">
+<link rel="alternate" hreflang="en" href="https://mantait.cz/podnikova-ai/en/">
+<link rel="alternate" hreflang="x-default" href="https://mantait.cz/podnikova-ai/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Enterprise AI",
+  "description": "AI connected to your systems that knows your data and keeps it in. Shown on a model company. It starts with an AI plan within 48 hours for approx. EUR 400.",
+  "serviceType": "Enterprise AI",
+  "url": "https://mantait.cz/podnikova-ai/en/",
+  "areaServed": {"@type": "Country", "name": "Czechia"},
+  "provider": {"@type": "ProfessionalService", "name": "Manta IT",
+    "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoska"}}
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -67,7 +85,8 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 .znak{width:26px;height:26px;border-radius:7.1px;background:var(--akcent);position:relative;flex:none}
 .znak::after{content:"";position:absolute;top:7.1px;right:7.1px;width:9.5px;height:9.5px;
   border-radius:2.4px;background:var(--papir)}
-.nav b{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
+.nav .domu{color:inherit;text-decoration:none}
+.nav b,.nav .domu{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
 .nav .tag{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;
   color:var(--tlum);border:1px solid var(--linka);border-radius:6px;padding:4px 9px}
 
@@ -220,9 +239,11 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
   transition:background .2s var(--e)}
 .cta .a1{background:var(--akcent-sv);color:#08402F}
 .cta .a2{border:1px solid rgba(251,251,249,.34);color:var(--na-tmave)}
+.hero .cta .a1{background:var(--akcent);color:var(--papir)}
 @media(hover:hover) and (pointer:fine){
   .cta .a1:hover{background:#fff}
   .cta .a2:hover{background:rgba(251,251,249,.1)}
+  .hero .cta .a1:hover{background:var(--inkoust)}
 }
 .pristup{margin-top:44px;max-width:60ch}
 .pristup form{display:grid;gap:14px;margin-top:20px}
@@ -343,7 +364,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <nav class="nav">
   <div class="wrap">
     <span class="znak" aria-hidden="true"></span>
-    <b>Manta IT</b>
+    <a class="domu" href="/">Manta IT</a>
     <span class="tag">working demo</span>
   </div>
 </nav>
@@ -351,16 +372,17 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <header class="hero wrap">
   <h1>AI that answers only from what <em>that person</em> is allowed to open.</h1>
   <p class="sub">It runs inside your company. It works with your email, drawings, price lists and orders.
-     It prepares the work and leaves decisions to people. This page shows how it works inside —
+     It prepares the work and leaves decisions to people. This page shows how it works inside,
      not what it can do.</p>
+  <div class="cta"><a class="a1" href="#pristup">Request the demo →</a></div>
 </header>
 
 <!-- ============ 1. PATH OF ONE TASK ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">01 — mechanics</div>
+    <div class="eyebrow">01 - mechanics</div>
     <h2>The path of one task</h2>
-    <p class="sub">An overdue supplier order. Watch where it stops — and why it always
+    <p class="sub">An overdue supplier order. Watch where it stops - and why it always
        stops.</p>
 
     <div class="track">
@@ -408,14 +430,14 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <p class="fine" style="margin-top:18px">The agent in steps 2 and 3 <b>has no "send" tool</b>.
-       It is not a rule in the instructions that could be worked around — that tool simply is not there.</p>
+       It is not a rule in the instructions that could be worked around - that tool simply is not there.</p>
   </div>
 </section>
 
 <!-- ============ 2. WHY EMAIL ISN'T ENOUGH ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">02 — why a dedicated interface</div>
+    <div class="eyebrow">02 - why a dedicated interface</div>
     <h2>Three things email can't hold</h2>
     <p class="sub">The most common objection: just send it to me by email with a button and I
        don't need a system. It almost works. It breaks on these three things.</p>
@@ -432,7 +454,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
              who is asking at the moment of the question. A shared inbox, a forward or a
              delegate breaks that chain.</p>
           <p>And the same rule that says <b>incoming mail cannot instruct the agent</b>
-             also says <b>incoming mail cannot authenticate anyone</b> — otherwise a forward
+             also says <b>incoming mail cannot authenticate anyone</b> - otherwise a forward
              would be a privilege escalation.</p>
         </div>
       </li>
@@ -444,7 +466,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         </div>
         <div class="txt">
           <p>Who approved, what sources it came from, which model and prompt version, and when.
-             Plus a mark that a machine wrote it — the EU AI regulation has required that
+             Plus a mark that a machine wrote it - the EU AI regulation has required that
              since August 2026.</p>
           <p>A decision can't be reconstructed from email half a year later. And when someone
              asks, they usually ask half a year later.</p>
@@ -460,14 +482,14 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
           <p>Owner, deadline, delegate, reminders, retry on error, an exception queue and a
              kill switch for every process separately.</p>
           <p>Email can announce. It cannot remember that nobody clicked something for nine
-             days — and that is exactly the most common silent failure of the whole system.</p>
+             days - and that is exactly the most common silent failure of the whole system.</p>
         </div>
       </li>
     </ol>
 
     <p class="fine" style="margin-top:22px">Without a dedicated layer you can build AI that sees
        only what absolutely everyone in the company is allowed to see. That's a ceiling, not
-       an option. <b>But the layer is not a workplace</b> — nine times out of ten, things end up
+       an option. <b>But the layer is not a workplace</b> - nine times out of ten, things end up
        where people already work.</p>
   </div>
 </section>
@@ -475,7 +497,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 3. WHO SEES WHAT ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">03 — one event, three people</div>
+    <div class="eyebrow">03 - one event, three people</div>
     <h2>The same thing looks different depending on who's looking</h2>
     <p class="sub">Switch the event. Notice that the employee almost never has to go anywhere.</p>
 
@@ -504,7 +526,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 4. RUNTIME VS CONTENT ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">04 — why this can be delivered as a service</div>
+    <div class="eyebrow">04 - why this can be delivered as a service</div>
     <h2>One boundary everything else stands on</h2>
     <p class="sub">Above is what's yours and what sets you apart. Below is what's the same for
        every client and what we run and upgrade.</p>
@@ -552,7 +574,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 05. FOOTPRINT IN SURROUNDING SYSTEMS ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">05 — what it does in your systems</div>
+    <div class="eyebrow">05 - what it does in your systems</div>
     <h2>One record, four systems, one stop</h2>
     <p class="sub">The most common worry: what will this do to what I already have.
        This is the whole path of one incoming invoice. Watch where it stops.</p>
@@ -569,9 +591,9 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <li data-c="0"><span class="fl-dot"></span><span class="fl-t">The supplier sends an invoice by email</span>
           <span class="fl-n">arrives in a dedicated inbox, not the company's general mail</span></li>
         <li data-c="1"><span class="fl-dot"></span><span class="fl-t">The amount, number and due date are extracted</span>
-          <span class="fl-n">read-only, into a fixed schema — the email text goes no further</span></li>
+          <span class="fl-n">read-only, into a fixed schema - the email text goes no further</span></li>
         <li data-c="2"><span class="fl-dot"></span><span class="fl-t">The order is found and the difference is calculated</span>
-          <span class="fl-n">read-only: ordered 42,800, invoiced 43,690 — 2% more</span></li>
+          <span class="fl-n">read-only: ordered 42,800, invoiced 43,690 - 2% more</span></li>
         <li data-c="1" class="gate"><span class="fl-dot"></span><span class="fl-t">It stops here. The buyer confirms the difference.</span>
           <span class="fl-n">the only place in the whole chain where it waits for a person</span></li>
         <li data-c="3"><span class="fl-dot"></span><span class="fl-t">The invoice is created</span>
@@ -590,12 +612,12 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     <div class="rules">
       <div><b>No write ever goes out without human confirmation.</b> Except reads and internal notes.</div>
       <div><b>Nothing is deleted or overwritten.</b> Only added.</div>
-      <div><b>Every record carries who prepared it — the platform</b> — and who confirmed it.</div>
+      <div><b>Every record carries who prepared it - the platform</b> - and who confirmed it.</div>
       <div><b>When a write fails, it stays in the queue</b> with a link to the record. It doesn't disappear.</div>
     </div>
 
     <p class="fine" style="margin-top:20px">In every one of your systems it stays clear what is
-       human work and what the platform prepared — <b>even for someone who never opens the
+       human work and what the platform prepared - <b>even for someone who never opens the
        portal</b>.</p>
   </div>
 </section>
@@ -603,7 +625,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 06. DO THE MATH ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">06 — when it makes sense and when it doesn't</div>
+    <div class="eyebrow">06 - when it makes sense and when it doesn't</div>
     <h2>Do the math. Sometimes the answer is no.</h2>
     <p class="sub">Everyone who talks about this gets asked about payback, and almost nobody
        answers it. Here's a calculator for one workflow. Move it to your own numbers.</p>
@@ -639,7 +661,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     <p class="fine" style="margin-top:18px">
       Sixty percent is our estimate of what usually stays with a person for this class of
       workflow (decisions, exceptions, review). <b>It is not a measured figure</b> and your
-      workflow may come out different — that's what the 48-hour plan is for. Two years is our
+      workflow may come out different - that's what the 48-hour plan is for. Two years is our
       payback limit, not a rule. I am not a VAT payer. The hourly rate is the fully loaded cost, not the wage.
     </p>
 
@@ -659,16 +681,16 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <section class="s-tmav">
   <div class="wrap">
     <div data-sekce="modelovy-pripad">
-      <div class="eyebrow">07 — model case</div>
+      <div class="eyebrow">07 - model case</div>
       <div class="dp-k">model case</div>
       <h2>A model company, not a reference</h2>
       <p class="sub">This is a model company; it does not run anywhere. The numbers are a calculation, not a measured result.</p>
 
       <div class="facts">
-        <div class="fact"><b>10–49 people</b><span>the model company has 10 to 49 people and no in-house IT specialist, like 89.5% of such companies</span><i>Czech Statistical Office, 2025 data</i></div>
+        <div class="fact"><b>10-49 people</b><span>the model company has 10 to 49 people and no in-house IT specialist, like 89.5% of such companies</span><i>Czech Statistical Office, 2025 data</i></div>
         <div class="fact"><b>68.8%</b><span>of small companies outsource IT management, and so does the model company</span><i>Czech Statistical Office, 2024</i></div>
         <div class="fact"><b>41.8%</b><span>of small companies have an ERP system, and so does the model company</span><i>Czech Statistical Office, 2025 data</i></div>
-        <div class="fact"><b>CZK 50k–250k</b><span>a year on digitalization is the plan for 40% of small companies, and the model company fits that budget</span><i>Ipsos for AMSP, 11/2024</i></div>
+        <div class="fact"><b>CZK 50k-250k</b><span>a year on digitalization is the plan for 40% of small companies, and the model company fits that budget</span><i>Ipsos for AMSP, 11/2024</i></div>
       </div>
 
       <p>Incoming invoices: they land in the inbox, the system extracts them and matches them against the purchase order, a person confirms the exceptions, and the entry goes into the books.</p>
@@ -690,7 +712,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <section>
   <div class="wrap">
     <div data-sekce="verejne-pripady">
-      <div class="eyebrow">08 — public cases</div>
+      <div class="eyebrow">08 - public cases</div>
       <h2>Who already runs this in public</h2>
       <p class="sub">Large companies run this and talk about it. We found no public case of a small company, so the one above is a model.</p>
       <div class="deploy pripady">
@@ -744,10 +766,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 <!-- ============ 09. WHERE IT RUNS ============ -->
 <section class="s-tmav">
   <div class="wrap">
-    <div class="eyebrow">09 — where it stands</div>
+    <div class="eyebrow">09 - where it stands</div>
     <h2>"Local" doesn't mean a server in the basement</h2>
     <p class="sub">It means the model is yours and data never leaves your own perimeter. Where it
-       physically runs is a separate decision — and it can change later.</p>
+       physically runs is a separate decision - and it can change later.</p>
 
     <div class="deploy">
       <div class="dp">
@@ -766,7 +788,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="dp-k">cloud with a GPU</div>
         <h3>Rented card</h3>
         <p>A machine with a GPU running <b>your</b> model. Not someone else's service, not
-           someone else's model — just someone else's hardware.</p>
+           someone else's model - just someone else's hardware.</p>
         <div class="dp-m"><span class="pill">pay for runtime</span><span class="pill">fastest start</span></div>
       </div>
     </div>
@@ -781,15 +803,15 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <p class="fine" style="margin-top:20px">The difference against an outside AI service stays
-       the same across all three cases. And because the content — processes, prompts, the
-       permissions map — is yours, <b>moving between variants is a move, not a rebuild</b>.</p>
+       the same across all three cases. And because the content - processes, prompts, the
+       permissions map - is yours, <b>moving between variants is a move, not a rebuild</b>.</p>
   </div>
 </section>
 
 <!-- ============ 08. LADDER ============ -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">10 — how it gets built</div>
+    <div class="eyebrow">10 - how it gets built</div>
     <h2>Three rungs. Each one is an extension, not a rebuild.</h2>
     <p class="sub">Nobody starts at the top. What's deliberately not in a rung matters as much
        as what is.</p>
@@ -833,15 +855,33 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <p class="fine" style="margin-top:20px">The prices for rungs 1 and 3 are documented; <b>rung 2
-       is our estimate</b>, not a market figure — an interpolation between two distant points.
+       is our estimate</b>, not a market figure - an interpolation between two distant points.
        I am not a VAT payer.</p>
+  </div>
+</section>
+
+<!-- ============ 11. HOW TO START AND WHAT IT COSTS ============ -->
+<section class="s-tmav">
+  <div class="wrap">
+    <div class="eyebrow">11 - how to start and what it costs</div>
+    <div data-sekce="cena">
+      <h2>It starts with an AI plan. The fixed project price comes out of it.</h2>
+      <div class="calc-out">
+        <div class="co-row sep"><span>AI plan within 48 hours. Its price is deducted from the project price.</span><b>approx. EUR 400, fixed</b></div>
+        <div class="co-row"><span>Project at a fixed price after the plan.</span><b>fixed price</b></div>
+        <div class="co-row"><span>Monthly oversight. No per-user fee and no fee per question.</span><b>monthly</b></div>
+        <div class="co-row"><span>On-premise: the hardware is bought separately and yours.</span><b>separately</b></div>
+        <div class="co-row"><span>Cloud: operation including models, no hardware.</span><b>monthly</b></div>
+      </div>
+      <p class="fine" style="margin-top:14px">I am not a VAT payer, prices are final and converted from CZK as approximations.</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ CONCLUSION ============ -->
 <section class="s-ink">
   <div class="wrap">
-    <div class="eyebrow">11 — how you know it's working</div>
+    <div class="eyebrow">12 - how you know it's working</div>
     <div data-sekce="prutok">
       <h2>Company flow and deadlines come first</h2>
       <p class="sub">Quote, offer, order, invoice and delivery: how many are open, how long they
@@ -855,12 +895,11 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <div class="cta">
-      <a class="a1" href="#pristup">Access to the demo →</a>
+      <a class="a1" href="#pristup">Request the demo →</a>
     </div>
 
     <div id="pristup" class="pristup">
       <h2>Access to the demo</h2>
-      <!-- COPY-PLACEHOLDER: invitation text awaits growth (manta-copy + humanizer), T0924-472 -->
       <p class="sub">I have built the whole interface, including how it looks for employees,
          administrators and owners. I am looking for the first companies to get it running with.
          Tell me what you need, and I will send you access to the demo.</p>
@@ -877,8 +916,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     </div>
 
     <div class="foot">
-      <p class="fine">Working demo, not an offer. Numbers in the interface are fictional.
-         Source: <span class="mono">specs/podnikova-ai/program-design.md</span></p>
+      <p class="fine">The company in the demo is a model, the numbers in the interface are fictional.</p>
     </div>
   </div>
 </section>
@@ -889,10 +927,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 
   /* ---- 1. path of one task ---- */
   var msgs = [
-    ['09:00 · scheduler','The deadline for order <b>O-4471</b> passed three days ago. Nobody entered anything — the schedule triggered it.'],
+    ['09:00 · scheduler','The deadline for order <b>O-4471</b> passed three days ago. Nobody entered anything - the schedule triggered it.'],
     ['09:00 · collect','The agent read the order and the last thread with the supplier. <b>Read-only</b>, and only what the buyer has rights to.'],
     ['09:00 · draft','A finished reminder text in German, in the usual tone. <b>It hasn\'t gone anywhere yet.</b>'],
-    ['09:00 · gate','The draft sits in the buyer\'s inbox. <b>It stops here</b> — it can take a minute or two days. After 48 hours the delegate is notified.'],
+    ['09:00 · gate','The draft sits in the buyer\'s inbox. <b>It stops here</b> - it can take a minute or two days. After 48 hours the delegate is notified.'],
     ['11:26 · human','The buyer read the draft, changed one word and <b>sent it themselves from their own inbox</b>.']
   ];
   var sts = document.querySelectorAll('#stations .st');
@@ -936,7 +974,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
       ['Summary','Nothing.'] ],
     [ ['Outlook','Nothing. Orders stay as drafts and <b>nothing gets lost</b>.'],
       ['Portal','<b>Exception queue: blocked.</b> The access token expired, three attempts, then stop. 2 orders are waiting in the queue.'],
-      ['Summary','Nothing — provided it\'s resolved within two days.'] ],
+      ['Summary','Nothing - provided it\'s resolved within two days.'] ],
     [ ['Outlook','A reminder. After 48 hours the same to the delegate.'],
       ['Portal','Sees the queue growing. <b>It\'s not their job to fix it</b>, it\'s the manager\'s job.'],
       ['Summary','<b>Who owns what:</b> Petr Malek, 6 orders, oldest 9 days. This is exactly why the owner\'s interface exists.'] ]
@@ -972,7 +1010,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     'An invoice arrived. The platform only sees this inbox, not the company\'s general mail.',
     'Extracted into a fixed schema. The email text goes no further.',
     'Order found. Invoiced 2% more than was ordered.',
-    'It stops here. It doesn\'t continue without the buyer — and it can take a minute or two days.',
+    'It stops here. It doesn\'t continue without the buyer - and it can take a minute or two days.',
     'The buyer confirmed the difference. Only now does it get written out.',
     'Done. Six steps, one stop, everything traceable.'
   ];
@@ -1028,7 +1066,7 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
   var OPS = [
     'We handle the exception queue. We keep remote access permanently, including switchable outlets, so we can hard-restart the machine without a site visit. <b>You do nothing.</b> Monthly: service plus the operating model.',
     'Your own person handles the exception queue, we\'re on the phone. You <b>turn on</b> remote access for us when we need it. We also hand over operating docs and admin training. Monthly: just the service.',
-    'Operation is entirely yours. We also hand over runbooks, a test bench, recovery procedures and two days of training. <b>Nothing monthly.</b> The condition is that not a single manual step in operation is something only we know how to do — otherwise it would be a promise we don\'t keep.'
+    'Operation is entirely yours. We also hand over runbooks, a test bench, recovery procedures and two days of training. <b>Nothing monthly.</b> The condition is that not a single manual step in operation is something only we know how to do - otherwise it would be a promise we don\'t keep.'
   ];
   var wo = document.getElementById('whoOut');
   var opb = document.querySelectorAll('.who-runs button');
