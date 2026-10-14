@@ -1,11 +1,11 @@
 {
-  "_": "Registr sluzeb pro odkazy z clanku a kontrolu konzistence. Nazvy a ceny = specs/web-nabidka/design.md. Klic = produkcni cesta bez lomitka.",
+  "_": "Registr sluzeb pro odkazy z clanku a kontrolu konzistence. Nazvy a ceny = specs/web-nabidka/design.md. Klic = produkcni cesta bez uvodniho lomitka (slozka konci /).",
   "reseni-mapa-firmy":      {"nazev": "Příprava firmy",          "veta": "Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.", "cena": "39 000 Kč"},
   "navrh-aplikace":         {"nazev": "Návrh aplikace",          "veta": "Řeknete mi nápad, za pár dní si ho proklikáte. Na konci kompletní zadání, které je vaše.", "cena": "od 30 000 Kč"},
   "reseni-vyber-systemu":   {"nazev": "Výběr systému",           "veta": "Docházka, sklad, CRM, ERP: tři systémy s cenou za pět let a doporučení.",             "cena": "podle rozsahu"},
   "reseni-nova-aplikace":   {"nazev": "Aplikace na míru",        "veta": "Když to, co potřebujete, nikdo neprodává. První verze do týdne, kód je váš.",          "cena": "od 50 000 Kč"},
   "reseni-propojeni":       {"nazev": "Propojení a automatizace", "veta": "Účetnictví, sklad, e-shop a CRM si předávají data samy.",                             "cena": "podle rozsahu"},
-  "reseni-podnikova-ai":    {"nazev": "Podniková AI",            "veta": "AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.",                  "cena": "podle varianty"},
+  "podnikova-ai/":          {"nazev": "Podniková AI",            "veta": "AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.",                  "cena": "podle varianty"},
   "reseni-ai-zamestnanec":  {"nazev": "AI zaměstnanec",          "veta": "Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.",                     "cena": "pevná cena po AI plánu"},
   "reseni-robot-na-zadani": {"nazev": "Robot na zadání",         "veta": "Dáte zadání, robot vyrobí výkres, seznam firem nebo článek a skončí.",                "cena": "podle rozsahu"},
   "reseni-vedeni-it":       {"nazev": "Dlouhodobé vedení IT",    "veta": "Celá cesta na paušál. Vy se k IT vracíte jen na poradách.",                           "cena": "od 50 000 Kč měsíčně"},

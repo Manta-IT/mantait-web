@@ -10,7 +10,8 @@ Co hlida (jen soubory na disku, zadny server):
     zargon, stare nazvy a ceny (Web Standard/Quick, 16 900, 8 900, AI linka)
  4. pevne ceny sluzeb jsou na homepage i na detailu stejne
  5. registr `sluzby.json` sedi se svetem: stranka existuje, je v llms.txt,
-    nazev sedi se jmenem sluzby v JSON-LD (META v prenos.py)
+    nazev sedi se jmenem sluzby v JSON-LD (META v prenos.py); klic konci / =
+    slozka s index.html (T1014-99)
  6. presmerovani: `_redirects` a zalozni mapa ve worker.js sedi, cile
     existuji a nevedou na dalsi presmerovani
  7. skripty neblokuji vykresleni: `sluzba.js`/`mobil.js` maji `defer`,
@@ -188,7 +189,7 @@ meta = io.open(os.path.join(os.path.dirname(KOREN), 'specs', 'web-redesign', 'pr
 meta = meta[meta.index('META = {'):meta.index('# JSON-LD pro stranky bez sluzby')] + "\n    '"
 
 for klic, v in registr.items():
-    cesta = os.path.join(KOREN, klic + '.html')
+    cesta = os.path.join(KOREN, klic + 'index.html' if klic.endswith('/') else klic + '.html')
     if not os.path.exists(cesta):
         nalezy.append(('sluzby.json', 'stranka neexistuje', klic))
         continue
@@ -198,7 +199,8 @@ for klic, v in registr.items():
     ocekavany = NAZEV_JINAK.get(klic, v['nazev'])
     if ocekavany not in html:
         nalezy.append((klic + '.html', 'nazev registru neni na strance', ocekavany))
-    b = re.search(r"'%s\.html': dict\((.*?)\),\n    '" % re.escape(klic), meta, re.S)
+    b = None if klic.endswith('/') else re.search(
+        r"'%s\.html': dict\((.*?)\),\n    '" % re.escape(klic), meta, re.S)
     ld = re.search(r"sluzba='([^']+)'", b.group(1)) if b else None
     if ld and ld.group(1) != ocekavany:
         nalezy.append(('prenos.py META', 'JSON-LD nazev != registr',

@@ -38,9 +38,9 @@
     "date_published": "2026-10-06",
     "date_modified": "2026-10-11",
     "highlight": false,
-    "cta_href": "/reseni-podnikova-ai",
+    "cta_href": "/podnikova-ai/",
     "sluzby": [
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "reseni-mapa-firmy"
     ],
     "og_image": null,
@@ -57,7 +57,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "reseni-mapa-firmy"
     ],
     "og_image": null,
@@ -231,7 +231,7 @@
     "cta_href": "/reseni-vedeni-it",
     "sluzby": [
       "reseni-vedeni-it",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "IT rozpočet a náklady",
@@ -421,7 +421,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "AI",
@@ -532,7 +532,7 @@
     "cta_href": "/reseni-mapa-firmy",
     "sluzby": [
       "reseni-mapa-firmy",
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "reseni-propojeni"
     ],
     "og_image": null,
@@ -613,7 +613,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "AI",
@@ -678,7 +678,7 @@
     "sluzby": [
       "reseni-ai-zamestnanec",
       "reseni-mapa-firmy",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "AI",
@@ -710,7 +710,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "weby"
     ],
     "og_image": null,
@@ -743,7 +743,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "AI",
@@ -775,7 +775,7 @@
     "cta_href": "/reseni-ai-zamestnanec",
     "sluzby": [
       "reseni-ai-zamestnanec",
-      "reseni-podnikova-ai"
+      "podnikova-ai/"
     ],
     "og_image": null,
     "tema": "AI",
@@ -853,7 +853,7 @@
     "highlight": false,
     "cta_href": "/#cenik",
     "sluzby": [
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "reseni-ai-zamestnanec"
     ],
     "og_image": null,
@@ -966,7 +966,7 @@
     "tema": "AI",
     "obrazek": "clanek-ai.svg",
     "sluzby": [
-      "reseni-podnikova-ai",
+      "podnikova-ai/",
       "reseni-ai-zamestnanec",
       "reseni-robot-na-zadani"
     ]
