@@ -179,6 +179,7 @@ NAZEV_JINAK = {
     'reseni-mapa-firmy':    'Příprava firmy: data, procesy a lidé',
     'reseni-nova-aplikace': 'Aplikace a systémy na míru',
     'reseni-propojeni':     'Propojení systémů a automatizace',
+    'podnikova-ai/':        'Lokální podniková AI',  # H1 nese klicova slova poptavky (Petr 15. 10., T1015-83)
 }
 
 registr = json.load(io.open(os.path.join(KOREN, 'sluzby.json'), encoding='utf-8'))
