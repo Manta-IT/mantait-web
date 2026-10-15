@@ -264,9 +264,37 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
   background:var(--akcent)}
 .body b{color:var(--inkoust);font-weight:600}
 .zast figure figcaption{font-size:13.5px;color:var(--tlum);margin-top:14px;max-width:72ch}
-/* na úzkém displeji je snímek malý: odkaz ho otevře ve velkém */
-.zvetsit{display:none}
-@media(max-width:700px){.zvetsit{display:inline}}
+
+/* kde to bezi: vyber varianty bez JS (radio + :has), panel ukazuje, co se meni */
+.misto{border:0;display:grid;gap:16px;min-width:0}
+@media(min-width:900px){.misto{grid-template-columns:5fr 7fr;align-items:start}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.misto-volby{display:grid;gap:10px}
+.volba{position:relative;display:grid;gap:4px;padding:16px 18px 16px 54px;border:1px solid var(--obrys);
+  border-radius:var(--r-l);background:var(--papir);cursor:pointer;
+  transition:border-color .2s var(--e),background .2s var(--e),transform .16s var(--e)}
+.volba input{position:absolute;left:20px;top:20px;width:20px;height:20px;margin:0;accent-color:var(--akcent);cursor:pointer}
+.volba b{font-family:Outfit,sans-serif;font-size:19px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.volba span{font-size:14.5px;color:var(--text-2);line-height:1.45}
+.volba:has(input:checked){border-color:var(--akcent);background:var(--akcent-sv)}
+.volba:has(input:focus-visible){outline:2px solid var(--akcent);outline-offset:3px}
+.volba input:focus-visible{outline:none}
+.volba:active{transform:scale(.99)}
+@media(hover:hover) and (pointer:fine){.volba:hover{border-color:var(--inkoust)}}
+.misto-detail{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);
+  padding:22px 24px;display:grid;gap:26px;min-width:0}
+.misto-panel{display:none}
+.misto:has(#misto-u-vas:checked) .misto-panel[data-misto="u-vas"],
+.misto:has(#misto-pronajaty:checked) .misto-panel[data-misto="pronajaty"],
+.misto:has(#misto-cloud:checked) .misto-panel[data-misto="cloud"]{display:block;animation:prolni .28s var(--e)}
+@supports not selector(:has(*)){.misto-panel{display:block}}
+@keyframes prolni{from{opacity:0;transform:translateY(4px)}}
+.misto-panel p{font-size:16.5px;line-height:1.55;max-width:56ch}
+.misto-fakta{margin-top:16px;border-top:1px solid var(--linka)}
+.misto-fakta div{display:grid;grid-template-columns:minmax(120px,2fr) 3fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--linka)}
+.misto-fakta dt{font-size:14px;color:var(--tlum)}
+.misto-fakta dd{font-size:15.5px;font-weight:600}
+.misto-stejne h3{font-size:19px;letter-spacing:-.02em;margin-bottom:12px}
 
 /* ---------- kalkulačka ---------- */
 .calc{display:grid;gap:16px;margin-top:36px}
@@ -364,7 +392,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <button type="button" data-osoba="david" aria-pressed="false">David, managing director</button>
         <button type="button" data-osoba="tomas" aria-pressed="false">Tomas, IT admin</button>
       </div>
-      <a class="ram" href="snimky/jana-2x.webp" id="ramOdkaz"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <div class="vrstva" data-osoba="jana" aria-hidden="false">
           <img src="snimky/jana-1x.webp" srcset="snimky/jana-sm.webp 720w, snimky/jana-1x.webp 1440w, snimky/jana-2x.webp 2880w" sizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)"
                width="1440" height="900" fetchpriority="high"
@@ -389,7 +417,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
           <span class="bod" style="--x:11.8%;--y:76.4%" aria-hidden="true">2</span>
           <span class="bod" style="--x:89.6%;--y:73.4%" aria-hidden="true">3</span>
         </div>
-      </div></a>
+      </div></div>
       <figcaption>
         <ol class="legenda" data-osoba="jana">
           <li>The menu shows sales only. Jana sees neither finance nor production.</li>
@@ -406,7 +434,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
           <li>Exceptions queue: what got stuck and why.</li>
           <li>Load of the machines the model runs on.</li>
         </ol>
-        <p class="fine">Screenshots are from the prototype. The company and the data are fictional.<span class="zvetsit"> Tap a screenshot to open it full size.</span></p>
+        <p class="fine">Screenshots are from the prototype. The company and the data are fictional.</p>
       </figcaption>
     </figure>
   </div>
@@ -428,11 +456,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/prutok-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/prutok-1x.webp" srcset="snimky/prutok-sm.webp 515w, snimky/prutok-1x.webp 1030w, snimky/prutok-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="812" loading="lazy"
              alt="Managing director's overview: flow of inquiries, quotes, orders and invoices, median time and number of overdue items">
-      </div></a>
+      </div></div>
       <figcaption>Managing director's overview: what is open, how long it takes and what is overdue.</figcaption>
     </figure>
   </div>
@@ -446,20 +474,54 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <p class="sub">Local means the model is yours and questions do not go to an outside AI service.
            Where the machine sits, you choose by budget, and you can change it later.</p>
       </div>
-      <ul class="body">
-        <li><b>On your premises.</b> You buy the machine once, and it does not need the internet to work with your data.</li>
-        <li><b>Rented machine.</b> A dedicated server at a Czech provider, with no hardware investment.</li>
-        <li><b>Cloud with a graphics card.</b> The fastest start, you pay only while it runs.</li>
-      </ul>
     </div>
-    <figure>
-      <a class="ram" href="snimky/kde-to-bezi-2x.webp"><div class="ram-in">
-        <img src="snimky/kde-to-bezi-1x.webp" srcset="snimky/kde-to-bezi-sm.webp 515w, snimky/kde-to-bezi-1x.webp 1030w, snimky/kde-to-bezi-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="765" loading="lazy"
-             alt="Where it runs screen: three deployment options and a table of what changes between them and what stays the same">
-      </div></a>
-      <figcaption>In all three options the model is yours and you hold the keys.</figcaption>
-    </figure>
+    <fieldset class="misto">
+      <legend class="vh">Where should the machine sit</legend>
+      <div class="misto-volby">
+        <label class="volba"><input type="radio" name="misto" id="misto-u-vas" value="u-vas" checked>
+          <b>On your premises</b><span>The machine sits in your server room.</span></label>
+        <label class="volba"><input type="radio" name="misto" id="misto-pronajaty" value="pronajaty">
+          <b>Rented machine</b><span>A dedicated server at a Czech provider.</span></label>
+        <label class="volba"><input type="radio" name="misto" id="misto-cloud" value="cloud">
+          <b>Cloud with a graphics card</b><span>Your model on a rented GPU machine.</span></label>
+      </div>
+      <div class="misto-detail">
+        <div class="misto-panel" data-misto="u-vas">
+          <p>The machines sit in your server room. The platform does not need the internet to work with your data.</p>
+          <dl class="misto-fakta">
+            <div><dt>Where the data is</dt><dd>with you</dd></div>
+            <div><dt>How you pay</dt><dd>hardware once, no rent</dd></div>
+            <div><dt>How fast you start</dt><dd>once the hardware arrives</dd></div>
+          </dl>
+        </div>
+        <div class="misto-panel" data-misto="pronajaty">
+          <p>A dedicated server at a Czech provider. You do not buy hardware, and the model and the data stay yours alone.</p>
+          <dl class="misto-fakta">
+            <div><dt>Where the data is</dt><dd>on the rented machine</dd></div>
+            <div><dt>How you pay</dt><dd>monthly rent, no investment</dd></div>
+            <div><dt>How fast you start</dt><dd>within a week</dd></div>
+          </dl>
+        </div>
+        <div class="misto-panel" data-misto="cloud">
+          <p>A GPU machine in the cloud that runs your own model. Only the hardware is rented; the service and the model are yours.</p>
+          <dl class="misto-fakta">
+            <div><dt>Where the data is</dt><dd>on the rented GPU machine</dd></div>
+            <div><dt>How you pay</dt><dd>only for running time</dd></div>
+            <div><dt>How fast you start</dt><dd>within two days</dd></div>
+          </dl>
+        </div>
+        <div class="misto-stejne">
+          <h3>The same in all three</h3>
+          <ul class="body">
+            <li>The model is yours.</li>
+            <li>Nobody outside the company sees your documents.</li>
+            <li>Questions do not go to an outside AI service.</li>
+            <li>You hold the keys.</li>
+            <li>Moving between options is a move: the portal, agents and workflows stay.</li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
   </div>
 </section>
 
@@ -477,11 +539,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/schvaleni-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/schvaleni-1x.webp" srcset="snimky/schvaleni-sm.webp 515w, snimky/schvaleni-1x.webp 1030w, snimky/schvaleni-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="757" loading="lazy"
              alt="To approve screen: orders, chasers, reminders and a price entry waiting for a person to decide">
-      </div></a>
+      </div></div>
       <figcaption>To approve: items wait for a person to decide, and the machine sends none of them.</figcaption>
     </figure>
   </div>
@@ -502,11 +564,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/znalost-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/znalost-1x.webp" srcset="snimky/znalost-sm.webp 515w, snimky/znalost-1x.webp 1030w, snimky/znalost-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="853" loading="lazy"
              alt="Chat with the company agent: an answer about orders with links to sources in POHODA and RAYNET">
-      </div></a>
+      </div></div>
       <figcaption>Chat: an answer to a question about this year's orders, with sources from accounting and the CRM below it.</figcaption>
     </figure>
   </div>
@@ -526,11 +588,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/prezkoumani-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/prezkoumani-1x.webp" srcset="snimky/prezkoumani-sm.webp 515w, snimky/prezkoumani-1x.webp 1030w, snimky/prezkoumani-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="798" loading="lazy"
              alt="For review screen: three outputs someone flagged as wrong and how they were resolved">
-      </div></a>
+      </div></div>
       <figcaption>For review: flagged outputs and how each one was resolved.</figcaption>
     </figure>
   </div>
@@ -672,7 +734,6 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
 (function(){
   /* ---- kdo co vidí: přepínač osoby nad snímkem ---- */
   var tlacitka = document.querySelectorAll('.kdo button');
-  var odkaz = document.getElementById('ramOdkaz');
   var vrstvy = document.querySelectorAll('.vrstva');
   var legendy = document.querySelectorAll('.legenda');
   tlacitka.forEach(function(b){
@@ -681,7 +742,6 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       tlacitka.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       vrstvy.forEach(function(v){ v.setAttribute('aria-hidden', v.dataset.osoba === o ? 'false' : 'true'); });
       legendy.forEach(function(l){ l.hidden = l.dataset.osoba !== o; });
-      odkaz.href = 'snimky/' + o + '-2x.webp';
     });
   });
 

@@ -264,9 +264,37 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
   background:var(--akcent)}
 .body b{color:var(--inkoust);font-weight:600}
 .zast figure figcaption{font-size:13.5px;color:var(--tlum);margin-top:14px;max-width:72ch}
-/* na úzkém displeji je snímek malý: odkaz ho otevře ve velkém */
-.zvetsit{display:none}
-@media(max-width:700px){.zvetsit{display:inline}}
+
+/* kde to bezi: vyber varianty bez JS (radio + :has), panel ukazuje, co se meni */
+.misto{border:0;display:grid;gap:16px;min-width:0}
+@media(min-width:900px){.misto{grid-template-columns:5fr 7fr;align-items:start}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.misto-volby{display:grid;gap:10px}
+.volba{position:relative;display:grid;gap:4px;padding:16px 18px 16px 54px;border:1px solid var(--obrys);
+  border-radius:var(--r-l);background:var(--papir);cursor:pointer;
+  transition:border-color .2s var(--e),background .2s var(--e),transform .16s var(--e)}
+.volba input{position:absolute;left:20px;top:20px;width:20px;height:20px;margin:0;accent-color:var(--akcent);cursor:pointer}
+.volba b{font-family:Outfit,sans-serif;font-size:19px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.volba span{font-size:14.5px;color:var(--text-2);line-height:1.45}
+.volba:has(input:checked){border-color:var(--akcent);background:var(--akcent-sv)}
+.volba:has(input:focus-visible){outline:2px solid var(--akcent);outline-offset:3px}
+.volba input:focus-visible{outline:none}
+.volba:active{transform:scale(.99)}
+@media(hover:hover) and (pointer:fine){.volba:hover{border-color:var(--inkoust)}}
+.misto-detail{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);
+  padding:22px 24px;display:grid;gap:26px;min-width:0}
+.misto-panel{display:none}
+.misto:has(#misto-u-vas:checked) .misto-panel[data-misto="u-vas"],
+.misto:has(#misto-pronajaty:checked) .misto-panel[data-misto="pronajaty"],
+.misto:has(#misto-cloud:checked) .misto-panel[data-misto="cloud"]{display:block;animation:prolni .28s var(--e)}
+@supports not selector(:has(*)){.misto-panel{display:block}}
+@keyframes prolni{from{opacity:0;transform:translateY(4px)}}
+.misto-panel p{font-size:16.5px;line-height:1.55;max-width:56ch}
+.misto-fakta{margin-top:16px;border-top:1px solid var(--linka)}
+.misto-fakta div{display:grid;grid-template-columns:minmax(120px,2fr) 3fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--linka)}
+.misto-fakta dt{font-size:14px;color:var(--tlum)}
+.misto-fakta dd{font-size:15.5px;font-weight:600}
+.misto-stejne h3{font-size:19px;letter-spacing:-.02em;margin-bottom:12px}
 
 /* ---------- kalkulačka ---------- */
 .calc{display:grid;gap:16px;margin-top:36px}
@@ -364,7 +392,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <button type="button" data-osoba="david" aria-pressed="false">David, jednatel</button>
         <button type="button" data-osoba="tomas" aria-pressed="false">Tomáš, správce IT</button>
       </div>
-      <a class="ram" href="snimky/jana-2x.webp" id="ramOdkaz"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <div class="vrstva" data-osoba="jana" aria-hidden="false">
           <img src="snimky/jana-1x.webp" srcset="snimky/jana-sm.webp 720w, snimky/jana-1x.webp 1440w, snimky/jana-2x.webp 2880w" sizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)"
                width="1440" height="900" fetchpriority="high"
@@ -389,7 +417,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
           <span class="bod" style="--x:9.5%;--y:76.4%" aria-hidden="true">2</span>
           <span class="bod" style="--x:89.6%;--y:73.4%" aria-hidden="true">3</span>
         </div>
-      </div></a>
+      </div></div>
       <figcaption>
         <ol class="legenda" data-osoba="jana">
           <li>Menu má jen obchod. Finance ani výrobu Jana nevidí.</li>
@@ -406,7 +434,7 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
           <li>Fronta výjimek: co se zaseklo a proč.</li>
           <li>Vytížení strojů, na kterých model běží.</li>
         </ol>
-        <p class="fine">Snímky jsou z prototypu. Firma i data jsou vymyšlená.<span class="zvetsit"> Klepnutím na snímek ho otevřete ve velkém.</span></p>
+        <p class="fine">Snímky jsou z prototypu. Firma i data jsou vymyšlená.</p>
       </figcaption>
     </figure>
   </div>
@@ -428,11 +456,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/prutok-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/prutok-1x.webp" srcset="snimky/prutok-sm.webp 515w, snimky/prutok-1x.webp 1030w, snimky/prutok-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="812" loading="lazy"
              alt="Přehled jednatele: průtok poptávek, nabídek, objednávek a faktur, medián doby a počet věcí po termínu">
-      </div></a>
+      </div></div>
       <figcaption>Přehled jednatele: kolik je otevřeno, jak dlouho to trvá a co je po termínu.</figcaption>
     </figure>
   </div>
@@ -446,20 +474,54 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <p class="sub">Lokální znamená, že model je váš a dotazy nejdou k cizí AI službě. Kde stroj
            stojí, vyberete podle rozpočtu a později to jde změnit.</p>
       </div>
-      <ul class="body">
-        <li><b>U vás ve firmě.</b> Stroj koupíte jednou a k práci s vašimi daty nepotřebuje internet.</li>
-        <li><b>Pronajatý stroj.</b> Vyhrazený server u českého poskytovatele, bez investice do železa.</li>
-        <li><b>Cloud s grafickou kartou.</b> Nejrychlejší start, platí se jen za běh.</li>
-      </ul>
     </div>
-    <figure>
-      <a class="ram" href="snimky/kde-to-bezi-2x.webp"><div class="ram-in">
-        <img src="snimky/kde-to-bezi-1x.webp" srcset="snimky/kde-to-bezi-sm.webp 515w, snimky/kde-to-bezi-1x.webp 1030w, snimky/kde-to-bezi-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="765" loading="lazy"
-             alt="Obrazovka Kde to běží: tři varianty nasazení a tabulka, co se mezi nimi mění a co zůstává stejné">
-      </div></a>
-      <figcaption>Ve všech třech variantách je model váš a klíče držíte vy.</figcaption>
-    </figure>
+    <fieldset class="misto">
+      <legend class="vh">Kde má stroj stát</legend>
+      <div class="misto-volby">
+        <label class="volba"><input type="radio" name="misto" id="misto-u-vas" value="u-vas" checked>
+          <b>U vás ve firmě</b><span>Stroj stojí ve vaší serverovně.</span></label>
+        <label class="volba"><input type="radio" name="misto" id="misto-pronajaty" value="pronajaty">
+          <b>Pronajatý stroj</b><span>Vyhrazený server u českého poskytovatele.</span></label>
+        <label class="volba"><input type="radio" name="misto" id="misto-cloud" value="cloud">
+          <b>Cloud s grafickou kartou</b><span>Váš model na pronajatém stroji s GPU.</span></label>
+      </div>
+      <div class="misto-detail">
+        <div class="misto-panel" data-misto="u-vas">
+          <p>Stroje stojí ve vaší serverovně. Platforma nepotřebuje internet, aby pracovala nad vašimi daty.</p>
+          <dl class="misto-fakta">
+            <div><dt>Kde leží data</dt><dd>u vás</dd></div>
+            <div><dt>Platí se</dt><dd>železo jednorázově, řádově od 80 000 Kč</dd></div>
+            <div><dt>Jak rychle se začne</dt><dd>po dodání železa</dd></div>
+          </dl>
+        </div>
+        <div class="misto-panel" data-misto="pronajaty">
+          <p>Vyhrazený server u českého poskytovatele. Železo nekupujete, model i data jsou pořád jen vaše.</p>
+          <dl class="misto-fakta">
+            <div><dt>Kde leží data</dt><dd>v pronajatém stroji</dd></div>
+            <div><dt>Platí se</dt><dd>měsíční nájem, bez investice</dd></div>
+            <div><dt>Jak rychle se začne</dt><dd>do týdne</dd></div>
+          </dl>
+        </div>
+        <div class="misto-panel" data-misto="cloud">
+          <p>Stroj s grafickou kartou v cloudu, na kterém běží váš model. Pronajaté je jen železo, služba i model jsou vaše.</p>
+          <dl class="misto-fakta">
+            <div><dt>Kde leží data</dt><dd>v pronajatém stroji s GPU</dd></div>
+            <div><dt>Platí se</dt><dd>jen za čas běhu</dd></div>
+            <div><dt>Jak rychle se začne</dt><dd>do dvou dnů</dd></div>
+          </dl>
+        </div>
+        <div class="misto-stejne">
+          <h3>Ve všech třech zůstává stejné</h3>
+          <ul class="body">
+            <li>Model je váš.</li>
+            <li>Vaše dokumenty nikdo mimo firmu nevidí.</li>
+            <li>Dotaz neodchází k cizí AI službě.</li>
+            <li>Klíče držíte vy.</li>
+            <li>Přechod mezi variantami je stěhování: portál, agenti i postupy zůstanou.</li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
   </div>
 </section>
 
@@ -477,11 +539,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/schvaleni-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/schvaleni-1x.webp" srcset="snimky/schvaleni-sm.webp 515w, snimky/schvaleni-1x.webp 1030w, snimky/schvaleni-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="734" loading="lazy"
              alt="Obrazovka Ke schválení: objednávky, urgence, upomínky a zápis ceny, které čekají na rozhodnutí člověka">
-      </div></a>
+      </div></div>
       <figcaption>Ke schválení: položky čekají na rozhodnutí člověka, žádnou z nich neodešle stroj.</figcaption>
     </figure>
   </div>
@@ -502,11 +564,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/znalost-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/znalost-1x.webp" srcset="snimky/znalost-sm.webp 515w, snimky/znalost-1x.webp 1030w, snimky/znalost-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="830" loading="lazy"
              alt="Chat s firemním agentem: odpověď na dotaz o zakázkách s odkazy na zdroje v POHODĚ a RAYNETU">
-      </div></a>
+      </div></div>
       <figcaption>Chat: odpověď na dotaz o letošních zakázkách, pod ní zdroje z účetnictví a CRM.</figcaption>
     </figure>
   </div>
@@ -526,11 +588,11 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       </ul>
     </div>
     <figure>
-      <a class="ram" href="snimky/prezkoumani-2x.webp"><div class="ram-in">
+      <div class="ram"><div class="ram-in">
         <img src="snimky/prezkoumani-1x.webp" srcset="snimky/prezkoumani-sm.webp 515w, snimky/prezkoumani-1x.webp 1030w, snimky/prezkoumani-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
              width="1030" height="759" loading="lazy"
              alt="Obrazovka K přezkoumání: tři výstupy, které někdo označil jako špatné, a jak se vyřešily">
-      </div></a>
+      </div></div>
       <figcaption>K přezkoumání: označené výstupy a u každého, jak se vyřešil.</figcaption>
     </figure>
   </div>
@@ -674,7 +736,6 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
 (function(){
   /* ---- kdo co vidí: přepínač osoby nad snímkem ---- */
   var tlacitka = document.querySelectorAll('.kdo button');
-  var odkaz = document.getElementById('ramOdkaz');
   var vrstvy = document.querySelectorAll('.vrstva');
   var legendy = document.querySelectorAll('.legenda');
   tlacitka.forEach(function(b){
@@ -683,7 +744,6 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
       tlacitka.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       vrstvy.forEach(function(v){ v.setAttribute('aria-hidden', v.dataset.osoba === o ? 'false' : 'true'); });
       legendy.forEach(function(l){ l.hidden = l.dataset.osoba !== o; });
-      odkaz.href = 'snimky/' + o + '-2x.webp';
     });
   });
 
