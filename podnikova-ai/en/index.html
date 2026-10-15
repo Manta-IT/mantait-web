@@ -3,8 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enterprise AI at your company: how it works and what it costs - Manta IT</title>
-<meta name="description" content="AI connected to your systems that knows your data and keeps it in. Shown on a model company. It starts with an AI plan within 48 hours for approx. EUR 400.">
+<title>Local enterprise AI on your own server - Manta IT</title>
+<meta name="description" content="Local (on-premise) AI over your whole company's data. It runs on your server or on a machine rented just for you, and everyone sees only what they are allowed to. See the prototype. It starts with an AI plan within 48 hours.">
+<meta property="og:title" content="Local enterprise AI - Manta IT">
+<meta property="og:description" content="Your own AI over email, CRM, accounting and documents. It runs on your premises, and data does not go to an outside AI service.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://mantait.cz/podnikova-ai/en/">
+<meta property="og:site_name" content="Manta IT">
+<meta property="og:image" content="https://mantait.cz/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://mantait.cz/podnikova-ai/en/">
 <link rel="alternate" hreflang="cs" href="https://mantait.cz/podnikova-ai/">
 <link rel="alternate" hreflang="en" href="https://mantait.cz/podnikova-ai/en/">
@@ -12,14 +20,113 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Enterprise AI",
-  "description": "AI connected to your systems that knows your data and keeps it in. Shown on a model company. It starts with an AI plan within 48 hours for approx. EUR 400.",
-  "serviceType": "Enterprise AI",
-  "url": "https://mantait.cz/podnikova-ai/en/",
-  "areaServed": {"@type": "Country", "name": "Czechia"},
-  "provider": {"@type": "ProfessionalService", "name": "Manta IT",
-    "url": "https://mantait.cz/", "founder": {"@type": "Person", "name": "Petr Kokoska"}}
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Local enterprise AI",
+      "description": "Your own AI over the whole company's data. It runs on your server or on a machine rented just for you, and everyone sees only what they are allowed to. It starts with an AI plan within 48 hours.",
+      "serviceType": "Local enterprise AI",
+      "url": "https://mantait.cz/podnikova-ai/en/",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Czechia"
+      },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Manta IT",
+        "url": "https://mantait.cz/",
+        "founder": {
+          "@type": "Person",
+          "name": "Petr Kokoska"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is local enterprise AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A language model and agents that run on your company's machine or on a machine rented just for you. They work with email, CRM, accounting and documents, prepare routine work and answer questions. Every person sees only what they are allowed to open in the source systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it running anywhere yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The prototype shows what the platform will look like and how people work in it. I am looking for the first companies to get it running with. The company and the data in the demo are fictional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why local?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A question about a contract or a drawing stays inside your perimeter. The model runs on a machine that is yours or rented just for you, and the running cost does not depend on the number of questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the platform know who may see what?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It takes permissions from the source: Microsoft 365 groups, folder permissions and roles in the CRM and accounting. It does not invent its own list, so when you remove a permission at the source, it disappears from the platform at the next sync."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "We already run our own local chat. Why a platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A chat over a model is a good start. The platform adds permissions on documents, workflows that prepare work on their own, and an overview for management. If your model fits, it can stay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which systems does it connect to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ones you have. The prototype works with RAYNET, HubSpot, Pipedrive, Salesforce, POHODA, HELIOS, ABRA, SAP Business One, iDoklad, Fakturoid and Microsoft 365. Another system connects the same way, through a standard interface."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which model, and under which licence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We choose the model by workflow, document language and a licence your industry allows. It runs on your machine, so it can be swapped later without changing workflows or permissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does running it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A monthly oversight fee based on the number of workflows and systems, with no per-question and no per-user fee. On top of that, either your own server with a graphics card, bought once, or the cloud version as one monthly item."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does our data have to be ready?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. If it is not, we start with a two-week company preparation. The AI plan tells you whether it is needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it be co-funded by subsidies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes. Servers, software and implementation are often eligible costs in Czech regional vouchers or OP TAK calls. Whether that applies to you, we check in the AI plan."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -27,6 +134,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/pisma.css">
+<link rel="preload" as="image" href="snimky/jana-1x.webp" imagesrcset="snimky/jana-sm.webp 720w, snimky/jana-1x.webp 1440w, snimky/jana-2x.webp 2880w" imagesizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)" fetchpriority="high">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -35,30 +143,31 @@
   --papir-tmav:#F1F2EF;
   --inkoust:#101413;
   --akcent:#0B6E4F;
+  --akcent-tmav:#095C42;
   --akcent-sv:#E7F0EB;
   --tlum:#5E6663;
   --text-2:#454C49;
   --linka:#E2E4DF;
   --obrys:#8B928C;
   --vada:#9A3F2B;
-  --vada-sv:#D4715A;
   --na-tmave:#FBFBF9;
   --na-tmave-tlum:rgba(251,251,249,.72);
   --na-tmave-slab:rgba(251,251,249,.58);
   --r-s:8px; --r:10px; --r-l:14px;
   --e:cubic-bezier(.23,1,.32,1);
-  --max:1080px;
-  --pad-x:clamp(24px,6vw,80px);
-  --pad-s:clamp(64px,9vw,108px);
+  --max:1180px;
+  --pad-x:clamp(16px,5vw,64px);
+  --pad-s:clamp(64px,9vw,112px);
+  --stin:0 1px 2px rgba(16,20,19,.06),0 24px 60px -24px rgba(16,20,19,.28);
 }
 
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
 body{background:var(--papir);color:var(--inkoust);
   font:400 16px/1.62 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.disp{font-family:Outfit,system-ui,sans-serif;letter-spacing:-.03em;line-height:1.06;font-weight:400}
-.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;letter-spacing:-.03em;line-height:1.06;font-weight:400}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 a{color:var(--akcent)}
+img{display:block;max-width:100%;height:auto}
 *:focus{outline:none}
 *:focus-visible{outline:2px solid var(--akcent);outline-offset:3px;border-radius:3px}
 
@@ -66,243 +175,104 @@ a{color:var(--akcent)}
 section{padding-block:var(--pad-s)}
 .s-tmav{background:var(--papir-tmav)}
 .s-ink{background:var(--inkoust);color:var(--na-tmave)}
-.s-ink h2,.s-ink h3{color:var(--na-tmave)}
+.s-ink h2{color:var(--na-tmave)}
 
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
-.s-ink .eyebrow{color:var(--na-tmave-slab)}
-h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
-.sub{font-size:clamp(16px,1.9vw,18.5px);color:var(--text-2);max-width:60ch;line-height:1.55}
+h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:balance}
+.sub{font-size:clamp(16.5px,1.9vw,19px);color:var(--text-2);max-width:56ch;line-height:1.55}
 .s-ink .sub{color:var(--na-tmave-tlum)}
-.fine{font-size:12.5px;color:var(--tlum);line-height:1.55}
+.fine{font-size:13px;color:var(--tlum);line-height:1.55;max-width:72ch}
 .s-ink .fine{color:var(--na-tmave-slab)}
 
-/* ---------- HLAVIČKA ---------- */
-.nav{position:sticky;top:0;z-index:60;background:rgba(251,251,249,.9);
+/* ---------- tlačítka ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  border-radius:var(--r);padding:12px 22px;font-size:15px;font-weight:600;min-height:48px;
+  background:var(--akcent);color:var(--papir);border:1px solid var(--akcent);
+  transition:background .2s var(--e),border-color .2s var(--e),transform .16s var(--e)}
+.btn:active,.kdo button:active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){ .btn:hover{background:var(--akcent-tmav);border-color:var(--akcent-tmav)} }
+
+/* ---------- hlavička ---------- */
+.skok{position:absolute;left:16px;top:-60px;z-index:70;background:var(--inkoust);color:var(--papir);
+  padding:10px 14px;border-radius:var(--r);text-decoration:none}
+.skok:focus-visible{top:12px}
+.nav{position:sticky;top:0;z-index:60;background:rgba(251,251,249,.92);
   backdrop-filter:blur(9px);border-bottom:1px solid var(--linka)}
-.nav .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.nav .wrap{display:flex;align-items:center;gap:12px;height:64px}
 .znak{width:26px;height:26px;border-radius:7.1px;background:var(--akcent);position:relative;flex:none}
 .znak::after{content:"";position:absolute;top:7.1px;right:7.1px;width:9.5px;height:9.5px;
   border-radius:2.4px;background:var(--papir)}
-.nav .domu{color:inherit;text-decoration:none}
-.nav b,.nav .domu{font-family:Outfit,sans-serif;font-weight:500;font-size:16px;letter-spacing:-.02em}
-.nav .tag{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;
-  color:var(--tlum);border:1px solid var(--linka);border-radius:6px;padding:4px 9px}
+.nav .domu{color:inherit;text-decoration:none;font-family:Outfit,sans-serif;font-weight:500;
+  font-size:16px;letter-spacing:-.02em}
+.nav .btn{margin-left:auto;min-height:44px;padding:9px 18px;font-size:14px}
 
-/* ---------- HERO ---------- */
-.hero{padding-top:clamp(56px,8vw,92px);padding-bottom:clamp(48px,7vw,80px)}
-.hero h1{font-size:clamp(36px,6.4vw,68px);margin-bottom:22px;max-width:15ch}
-.hero h1 em{font-style:normal;color:var(--akcent)}
-.hero .sub{font-size:clamp(17px,2.1vw,20px);max-width:56ch}
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(56px,9vw,104px);position:relative}
+.hero h1{font-size:clamp(46px,9vw,104px);max-width:11ch;margin-bottom:26px;line-height:.98}
+.hero .sub{font-size:clamp(17.5px,2.1vw,21px);max-width:54ch}
+.hero .btn{margin-top:32px}
 
-/* ---------- 1. CESTA ÚKOLU ---------- */
-.track{margin-top:40px;border:1px solid var(--linka);border-radius:var(--r-l);
-  background:var(--papir);overflow:hidden}
-.track-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
-  padding:14px 18px;border-bottom:1px solid var(--linka)}
-.track-head .t{font-size:14px;font-weight:600}
-.track-head .ctrl{margin-left:auto;display:flex;gap:8px}
-.btn{border:1px solid var(--obrys);border-radius:var(--r);padding:9px 15px;font-size:13.5px;
-  font-weight:500;min-height:42px;transition:background .2s var(--e),border-color .2s var(--e)}
-.btn-p{background:var(--akcent);border-color:var(--akcent);color:#fff}
-@media(hover:hover) and (pointer:fine){
-  .btn:hover{background:var(--papir-tmav)}
-  .btn-p:hover{background:#095C42;border-color:#095C42}
-}
-.btn:active{transform:translateY(1px);transition-duration:.16s}
-
-.rail{position:relative;padding:40px 18px 26px;overflow-x:auto}
-.rail-line{position:relative;min-width:760px;height:3px;background:var(--linka);
-  border-radius:2px;margin:0 10%}
-.rail-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--akcent);
-  border-radius:2px;transition:width .9s var(--e)}
-.stations{display:flex;min-width:760px;position:relative;top:-11px}
-.st{width:20%;text-align:center;position:relative;padding:0 8px}
-.st .pin{width:19px;height:19px;border-radius:50%;background:var(--papir);
-  border:2.5px solid var(--linka);margin:0 auto 14px;transition:border-color .4s var(--e),background .4s var(--e)}
-.st.on .pin{border-color:var(--akcent);background:var(--akcent)}
-.st.gate .pin{border-radius:4px;width:19px;height:19px}
-.st.gate.on .pin{background:var(--papir);border-color:var(--akcent);box-shadow:0 0 0 4px var(--akcent-sv)}
-.st .lb{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.25}
-.st .sm{font-size:12px;color:var(--tlum);line-height:1.45}
-.st.gate .lb{color:var(--akcent)}
-
-.rail-note{padding:0 18px 18px;min-height:76px}
-.rail-msg{border-left:2px solid var(--akcent);padding:4px 0 4px 14px;font-size:14.5px;max-width:64ch}
-.rail-msg .who{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--tlum);
-  display:block;margin-bottom:4px;letter-spacing:.03em}
-.audit{border-top:1px solid var(--linka);background:var(--papir-tmav);padding:13px 18px}
-.audit .ah{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
-.audit ol{list-style:none;display:grid;gap:4px}
-.audit li{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-2);
-  opacity:0;transform:translateY(3px);transition:opacity .35s var(--e),transform .35s var(--e)}
-.audit li.on{opacity:1;transform:none}
-.audit li b{color:var(--inkoust);font-weight:500}
-
-/* ---------- 2. PROČ NE MAILEM ---------- */
-.fails{list-style:none;margin-top:34px;counter-reset:f}
-.fails>li{display:grid;gap:14px;padding:30px 0;border-top:1px solid var(--linka)}
-.fails>li:first-child{border-top:none;padding-top:8px}
-@media(min-width:820px){.fails>li{grid-template-columns:230px 1fr;gap:40px;align-items:start}}
-.fails .key{display:grid;gap:9px;align-content:start}
-.fails .key .n{counter-increment:f;font-family:Outfit,sans-serif;font-size:15px;
-  color:var(--tlum);letter-spacing:0}
-.fails .key .n::before{content:counter(f,decimal-leading-zero)}
-.fails .key .w{font-family:Outfit,sans-serif;font-size:clamp(22px,3vw,29px);
-  letter-spacing:-.03em;line-height:1.1}
-.fails .key .x{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--vada);
-  border:1px solid var(--vada);border-radius:5px;padding:3px 8px;width:fit-content}
-.fails .txt p{font-size:15.5px;color:var(--text-2);line-height:1.62;max-width:58ch}
-.fails .txt p+p{margin-top:11px}
-
-/* ---------- 3. KDO CO VIDÍ ---------- */
-.pick{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 24px}
-.pick button{border:1px solid var(--obrys);border-radius:var(--r);padding:10px 16px;
-  font-size:13.5px;font-weight:500;min-height:44px;
+/* pás za snímkem: spodní polovina okna sedí na akcentovém papíře */
+.ukazka{position:relative;margin-top:clamp(48px,7vw,80px);padding-bottom:clamp(56px,8vw,96px)}
+.ukazka::before{content:"";position:absolute;left:0;right:0;bottom:0;top:180px;background:var(--akcent-sv)}
+.ukazka .wrap{position:relative;max-width:1288px}
+.kdo{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
+.kdo span{font-size:14px;color:var(--tlum);margin-right:4px}
+.kdo button{border:1px solid var(--obrys);border-radius:var(--r);padding:9px 16px;font-size:14px;
+  font-weight:500;min-height:44px;background:var(--papir);
   transition:background .2s var(--e),border-color .2s var(--e),color .2s var(--e)}
-.pick button[aria-pressed="true"]{background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
-@media(hover:hover) and (pointer:fine){
-  .pick button:hover{background:var(--papir-tmav)}
-  .pick button[aria-pressed="true"]:hover{background:var(--inkoust)}
-}
-.lanes{display:grid;gap:16px}
-@media(min-width:820px){.lanes{grid-template-columns:repeat(3,1fr)}}
-.lane{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);
-  padding:20px;display:grid;align-content:start;gap:12px;min-height:210px}
-.lane h3{font-size:18px;letter-spacing:-.02em}
-.lane .role{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--tlum)}
-.lane .out{font-size:14.5px;line-height:1.55;transition:opacity .3s var(--e)}
-.lane .out b{font-weight:600}
-.lane .chan{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--tlum);
-  border:1px solid var(--linka);border-radius:5px;padding:3px 7px;width:fit-content}
-.lane.nothing .out{color:var(--tlum)}
-.lanes.fade .out{opacity:0}
+.kdo button[aria-pressed="true"]{background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
+@media(hover:hover) and (pointer:fine){ .kdo button[aria-pressed="false"]:hover{background:var(--papir-tmav)} }
 
-/* ---------- 4. BĚH VS OBSAH ---------- */
-.stack{margin-top:36px;display:grid;gap:12px}
-.band{border-radius:var(--r-l);padding:22px 24px;border:1px solid transparent;position:relative}
-.band .bh{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:14px}
-.band .bt{font-family:Outfit,sans-serif;font-size:22px;letter-spacing:-.02em}
-.band .bo{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 8px;border-radius:5px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12.5px;border-radius:6px;padding:5px 10px;line-height:1.3}
+/* dvojity ram: obal (papir) + jadro (snimek), soustredne polomery 14 a 8 */
+.ram{display:block;padding:6px;border-radius:var(--r-l);background:rgba(16,20,19,.05);
+  box-shadow:0 1px 2px rgba(16,20,19,.06),0 28px 64px -28px rgba(16,20,19,.32)}
+.ram-in{display:grid;border-radius:var(--r-s);overflow:hidden;background:#fff;
+  box-shadow:0 0 0 1px rgba(16,20,19,.08)}
+.ram-in>*{grid-area:1/1}
+.ram img{width:100%}
+.ukazka .ram{animation:vystup .8s var(--e) .15s both}
+@keyframes vystup{from{transform:translateY(32px)}}
 
-.b-obsah{background:var(--akcent-sv);border-color:#CFE0D6}
-.b-obsah .bo{background:var(--akcent);color:#fff}
-.b-obsah .chip{background:var(--papir);color:var(--inkoust);border:1px solid #CFE0D6}
-.b-beh{background:var(--inkoust);color:var(--na-tmave)}
-.b-beh .bt{color:var(--na-tmave)}
-.b-beh .bo{background:rgba(251,251,249,.16);color:var(--na-tmave)}
-.b-beh .chip{background:rgba(251,251,249,.08);color:var(--na-tmave-tlum);border:1px solid rgba(251,251,249,.16)}
-.band .bd{font-size:14px;color:var(--text-2);margin-top:14px;max-width:62ch}
-.b-beh .bd{color:var(--na-tmave-tlum)}
-.seam{display:flex;align-items:center;gap:12px;padding:0 4px}
-.seam .ln{flex:1;height:1px;background:var(--obrys)}
-.seam .tx{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--tlum);white-space:nowrap}
+/* prepinac osoby: vrstvy se prolinaji, cislovane body miri do obrazovky */
+.vrstva{position:relative;transition:opacity .28s var(--e),filter .28s var(--e)}
+.vrstva[aria-hidden="true"]{opacity:0;filter:blur(4px);pointer-events:none}
+.bod{position:absolute;left:var(--x);top:var(--y);width:30px;height:30px;margin:-15px 0 0 -15px;
+  border-radius:var(--r-s);background:var(--akcent);color:#fff;font:600 15px/30px Outfit,sans-serif;
+  text-align:center;box-shadow:0 0 0 5px rgba(11,110,79,.2),0 4px 10px rgba(16,20,19,.25);
+  transition:transform .2s var(--e)}
+@media(max-width:700px){.bod{width:20px;height:20px;margin:-10px 0 0 -10px;font-size:11px;line-height:20px;
+  box-shadow:0 0 0 3px rgba(11,110,79,.25)}}
+.ukazka:has(.legenda li:nth-child(1):hover) .vrstva[aria-hidden="false"] .bod:nth-of-type(1),
+.ukazka:has(.legenda li:nth-child(2):hover) .vrstva[aria-hidden="false"] .bod:nth-of-type(2),
+.ukazka:has(.legenda li:nth-child(3):hover) .vrstva[aria-hidden="false"] .bod:nth-of-type(3){transform:scale(1.2)}
+.ukazka figcaption{display:grid;gap:18px;margin-top:22px}
+.legenda{list-style:none;display:grid;gap:12px 32px;counter-reset:b}
+@media(min-width:900px){.legenda{grid-template-columns:repeat(3,1fr)}}
+.legenda[hidden]{display:none}
+.legenda li{counter-increment:b;display:grid;grid-template-columns:30px 1fr;gap:12px;
+  font-size:16px;line-height:1.45;align-items:start}
+.legenda li::before{content:counter(b);width:30px;height:30px;border-radius:var(--r-s);background:var(--akcent);
+  color:#fff;font:600 15px/30px Outfit,sans-serif;text-align:center}
 
-.who-runs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.who-runs button{border:1px solid var(--obrys);border-radius:var(--r);padding:10px 15px;
-  font-size:13px;font-weight:500;min-height:44px;transition:background .2s var(--e)}
-.who-runs button[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:#fff}
-@media(hover:hover) and (pointer:fine){ .who-runs button:hover{background:var(--papir-tmav)}
-  .who-runs button[aria-pressed="true"]:hover{background:#095C42} }
-.who-out{margin-top:18px;border-left:2px solid var(--akcent);padding-left:15px;
-  font-size:14.5px;max-width:62ch;color:var(--text-2);min-height:66px}
-.who-out b{color:var(--inkoust);font-weight:600}
+/* ---------- zastávky ---------- */
+.zast-hlava{display:grid;gap:20px 56px;align-items:end;margin-bottom:clamp(32px,4.5vw,48px)}
+@media(min-width:900px){.zast-hlava{grid-template-columns:7fr 5fr}}
+.zast-hlava h2{margin-bottom:14px}
+.body{list-style:none;display:grid;gap:14px}
+.body li{font-size:15.5px;color:var(--text-2);line-height:1.55;padding-left:16px;position:relative}
+.body li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;
+  background:var(--akcent)}
+.body b{color:var(--inkoust);font-weight:600}
+.zast figure figcaption{font-size:13.5px;color:var(--tlum);margin-top:14px;max-width:72ch}
+/* na úzkém displeji je snímek malý: odkaz ho otevře ve velkém */
+.zvetsit{display:none}
+@media(max-width:700px){.zvetsit{display:inline}}
 
-/* ---------- 5. ŽEBŘÍK ---------- */
-.rungs{display:grid;gap:14px;margin-top:38px}
-.rung{display:grid;gap:6px;border:1px solid var(--linka);border-radius:var(--r-l);
-  background:var(--papir);padding:22px 24px}
-@media(min-width:860px){.rung{grid-template-columns:auto 1fr auto;gap:24px;align-items:start}}
-.rung .no{font-family:Outfit,sans-serif;font-size:34px;color:var(--akcent);line-height:1;min-width:44px}
-.rung h3{font-size:20px;letter-spacing:-.02em;margin-bottom:7px}
-.rung p{font-size:14.5px;color:var(--text-2);max-width:56ch}
-.rung .not{font-size:13px;color:var(--tlum);margin-top:9px}
-.rung .not b{color:var(--text-2);font-weight:600}
-.rung .price{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--tlum);
-  text-align:right;line-height:1.7;white-space:nowrap}
-@media(max-width:859px){.rung .price{text-align:left}}
-.rung.r3{background:var(--papir-tmav)}
-
-/* ---------- PATIČKA ---------- */
-.foot{border-top:1px solid rgba(251,251,249,.14);margin-top:44px;padding-top:24px;
-  display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.foot .fine{max-width:56ch}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.cta a{text-decoration:none;border-radius:var(--r);padding:13px 22px;font-size:15px;
-  font-weight:500;min-height:48px;display:inline-flex;align-items:center;
-  transition:background .2s var(--e)}
-.cta .a1{background:var(--akcent-sv);color:#08402F}
-.cta .a2{border:1px solid rgba(251,251,249,.34);color:var(--na-tmave)}
-.hero .cta .a1{background:var(--akcent);color:var(--papir)}
-@media(hover:hover) and (pointer:fine){
-  .cta .a1:hover{background:#fff}
-  .cta .a2:hover{background:rgba(251,251,249,.1)}
-  .hero .cta .a1:hover{background:var(--inkoust)}
-}
-.pristup{margin-top:44px;max-width:60ch}
-.pristup form{display:grid;gap:14px;margin-top:20px}
-.pristup label{display:grid;gap:6px;font-size:14px;color:var(--na-tmave)}
-.pristup input,.pristup textarea{font:inherit;font-size:15px;padding:12px 14px;border-radius:var(--r);
-  border:1px solid rgba(251,251,249,.34);background:rgba(251,251,249,.06);color:var(--na-tmave)}
-.pristup textarea{min-height:120px;resize:vertical}
-.pristup .btn{justify-self:start}
-
-
-/* ---------- 05. PROJEV V SYSTÉMECH ---------- */
-.flow{margin-top:36px;border:1px solid var(--linka);border-radius:var(--r-l);
-  background:var(--papir);overflow:hidden}
-.flow-head{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linka);
-  border-bottom:1px solid var(--linka)}
-.fl-col{background:var(--papir);padding:12px 10px;text-align:center}
-.fl-sys{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--tlum)}
-.fl-sys.fl-me{color:var(--akcent);font-weight:500}
-.flow-steps{list-style:none;padding:8px 0}
-.flow-steps li{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;
-  padding:11px 0;position:relative;opacity:.34;transition:opacity .4s var(--e)}
-.flow-steps li.on{opacity:1}
-.flow-steps li::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;
-  background:var(--linka);z-index:0}
-.fl-dot{grid-row:1;width:11px;height:11px;border-radius:50%;background:var(--papir);
-  border:2px solid var(--obrys);justify-self:center;margin-top:4px;position:relative;z-index:1;
-  transition:border-color .4s var(--e),background .4s var(--e)}
-.flow-steps li.on .fl-dot{border-color:var(--akcent);background:var(--akcent)}
-.flow-steps li.gate .fl-dot{border-radius:3px;width:13px;height:13px}
-.flow-steps li.gate.on .fl-dot{background:var(--papir);box-shadow:0 0 0 4px var(--akcent-sv)}
-.fl-t{grid-row:2;font-size:13.5px;font-weight:600;line-height:1.3;padding:8px 10px 0;position:relative;z-index:1}
-.fl-n{grid-row:3;font-size:11.5px;color:var(--tlum);line-height:1.4;padding:3px 10px 0;position:relative;z-index:1}
-.flow-steps li.gate .fl-t{color:var(--akcent)}
-.flow-steps li[data-c="0"] .fl-dot,.flow-steps li[data-c="0"] .fl-t,.flow-steps li[data-c="0"] .fl-n{grid-column:1}
-.flow-steps li[data-c="1"] .fl-dot,.flow-steps li[data-c="1"] .fl-t,.flow-steps li[data-c="1"] .fl-n{grid-column:2}
-.flow-steps li[data-c="2"] .fl-dot,.flow-steps li[data-c="2"] .fl-t,.flow-steps li[data-c="2"] .fl-n{grid-column:3}
-.flow-steps li[data-c="3"] .fl-dot,.flow-steps li[data-c="3"] .fl-t,.flow-steps li[data-c="3"] .fl-n{grid-column:4}
-.flow-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 18px;
-  border-top:1px solid var(--linka);background:var(--papir-tmav)}
-.flow-foot .fine{flex:1 1 240px;min-width:0}
-@media(max-width:760px){
-  .flow-head{display:none}
-  .flow-steps li{grid-template-columns:auto 1fr;gap:0 10px;padding:12px 16px}
-  .flow-steps li::before{display:none}
-  .flow-steps li .fl-dot{grid-column:1!important;grid-row:1;margin-top:5px}
-  .flow-steps li .fl-t{grid-column:2!important;grid-row:1;padding:0}
-  .flow-steps li .fl-n{grid-column:2!important;grid-row:2;padding:3px 0 0}
-}
-.rules{display:grid;gap:1px;margin-top:20px;background:var(--linka);
-  border:1px solid var(--linka);border-radius:var(--r-l);overflow:hidden}
-@media(min-width:820px){.rules{grid-template-columns:1fr 1fr}}
-.rules>div{background:var(--papir);padding:15px 18px;font-size:13.5px;color:var(--text-2);line-height:1.5}
-.rules b{color:var(--inkoust)}
-
-/* ---------- 06. KALKULAČKA ---------- */
-.calc{display:grid;gap:16px;margin-top:34px}
+/* ---------- kalkulačka ---------- */
+.calc{display:grid;gap:16px;margin-top:36px}
 @media(min-width:860px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
 .calc-in{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:22px 24px;display:grid;gap:22px}
-.calc-in label{display:grid;gap:9px;font-size:14px;font-weight:600}
+.calc-in label{display:grid;gap:9px;font-size:14.5px;font-weight:600}
 .calc-in output{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--akcent);font-weight:500}
 .calc-in input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;
   background:var(--linka);border-radius:2px;outline:none}
@@ -312,8 +282,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 .calc-in input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
   background:var(--akcent);cursor:pointer;border:3px solid var(--papir)}
 .calc-out{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir-tmav);padding:22px 24px}
+.s-tmav .calc-out{background:var(--papir)}
+.calc-out>.co-row.sep:first-child{border-top:none;margin-top:0;padding-top:9px}
 .co-row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
-  padding:9px 0;font-size:14px;color:var(--text-2);flex-wrap:wrap;row-gap:2px}
+  padding:9px 0;font-size:14.5px;color:var(--text-2);flex-wrap:wrap;row-gap:2px}
 .co-row b{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--inkoust);margin-left:auto;text-align:right;min-width:0;overflow-wrap:anywhere}
 .co-row.sep{border-top:1px solid var(--obrys);margin-top:6px;padding-top:13px}
 .co-row.sep b{color:var(--akcent)}
@@ -321,36 +293,42 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
   align-items:baseline;gap:12px;flex-wrap:wrap}
 .cv-n{font-family:Outfit,sans-serif;font-size:clamp(40px,7vw,58px);letter-spacing:-.03em;line-height:1;color:var(--akcent)}
 .cv-l{font-size:15px;color:var(--text-2)}
-.co-big.nope .cv-n{font-size:clamp(20px,3.2vw,26px);color:var(--vada);line-height:1.2}
-.co-note{margin-top:13px;font-size:13px;color:var(--tlum);line-height:1.5}
-.co-note b{color:var(--inkoust)}
+.co-note{margin-top:13px;font-size:13.5px;color:var(--tlum);line-height:1.5}
 
-.facts{display:grid;gap:1px;margin-top:30px;background:var(--linka);
-  border:1px solid var(--linka);border-radius:var(--r-l);overflow:hidden}
-@media(min-width:700px){.facts{grid-template-columns:1fr 1fr}}
-.fact{background:var(--papir);padding:18px 20px;display:grid;gap:5px;align-content:start}
-.fact b{font-family:Outfit,sans-serif;font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--akcent)}
-.fact span{font-size:13.5px;color:var(--text-2);line-height:1.45}
-.fact i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--tlum);margin-top:3px}
+/* ---------- jak začít ---------- */
+.kroky{list-style:none;display:grid;gap:0;margin:36px 0 28px;counter-reset:k;
+  border-top:1px solid var(--linka)}
+.kroky li{counter-increment:k;display:grid;grid-template-columns:44px 1fr;gap:4px 16px;
+  padding:20px 0;border-bottom:1px solid var(--linka)}
+.kroky li::before{content:counter(k);grid-row:span 2;font-family:Outfit,sans-serif;font-size:30px;
+  line-height:1;color:var(--akcent)}
+.kroky h3{font-size:clamp(19px,2.2vw,22px);letter-spacing:-.02em;line-height:1.2}
+.kroky p{font-size:15px;color:var(--text-2);max-width:62ch}
+.cena-cta{margin-top:32px}
 
-/* ---------- 07. KDE TO BĚŽÍ ---------- */
-.deploy{display:grid;gap:14px;margin-top:34px}
-@media(min-width:840px){.deploy{grid-template-columns:repeat(3,1fr)}}
-.dp{border:1px solid var(--linka);border-radius:var(--r-l);background:var(--papir);padding:22px 24px}
-.dp:first-child{border-color:var(--akcent);background:linear-gradient(180deg,var(--akcent-sv),var(--papir) 62%)}
-.pripady .dp:first-child{border-color:var(--linka);background:var(--papir)}
-.dp-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
-.dp h3{font-size:20px;letter-spacing:-.02em;margin-bottom:9px}
-.dp p{font-size:14px;color:var(--text-2);line-height:1.55}
-.dp-m{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.dp .pill{display:inline-flex;border:1px solid var(--linka);border-radius:20px;
-  padding:4px 10px;font-size:12px;color:var(--text-2)}
-.same{margin-top:16px;border:1px solid var(--obrys);border-radius:var(--r-l);
-  padding:20px 24px;background:var(--papir)}
-.same-h{font-family:Outfit,sans-serif;font-size:18px;letter-spacing:-.02em;margin-bottom:13px}
-.same-l{display:flex;flex-wrap:wrap;gap:8px}
-.same-l span{background:var(--akcent-sv);color:#08402F;border-radius:20px;padding:6px 13px;font-size:13px}
+/* ---------- otázky ---------- */
+.ot{display:grid;gap:8px 56px;padding:24px 0;border-top:1px solid var(--obrys)}
+.ot:last-child{border-bottom:1px solid var(--obrys)}
+@media(min-width:860px){.ot{grid-template-columns:5fr 7fr}}
+.ot h3{font-size:clamp(19px,2.2vw,22px);letter-spacing:-.02em;line-height:1.25}
+.ot p{font-size:15.5px;color:var(--text-2);max-width:62ch}
+.otazky-list{margin-top:36px}
+
+/* ---------- přístup ---------- */
+.pristup{max-width:60ch}
+.pristup form{display:grid;gap:14px;margin-top:26px}
+.pristup label{display:grid;gap:6px;font-size:14.5px;color:var(--na-tmave)}
+.pristup input,.pristup textarea{font:inherit;font-size:16px;padding:12px 14px;border-radius:var(--r);
+  border:1px solid rgba(251,251,249,.42);background:rgba(251,251,249,.06);color:var(--na-tmave)}
+.pristup textarea{min-height:120px;resize:vertical}
+.pristup .btn{justify-self:start;background:var(--akcent-sv);border-color:var(--akcent-sv);color:#08402F}
+@media(hover:hover) and (pointer:fine){ .pristup .btn:hover{background:#fff;border-color:#fff} }
+.kdo-jsem{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:center;margin-top:26px}
+.kdo-jsem img{border-radius:var(--r);width:72px;height:72px;object-fit:cover}
+.kdo-jsem p{font-size:15px;color:var(--na-tmave-tlum);line-height:1.55}
+.kdo-jsem b{color:var(--na-tmave);font-weight:600}
+.pristup textarea::placeholder{color:var(--na-tmave-slab)}
+.pata{border-top:1px solid rgba(251,251,249,.14);margin-top:56px;padding-top:24px}
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
@@ -360,278 +338,213 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
 </head>
 <body>
 
+<a class="skok" href="#obsah">Skip to content</a>
 <nav class="nav">
   <div class="wrap">
     <span class="znak" aria-hidden="true"></span>
     <a class="domu" href="/">Manta IT</a>
-    <span class="tag">working demo</span>
+    <a class="btn" href="#pristup">Book a demo</a>
   </div>
 </nav>
 
-<header class="hero wrap">
-  <h1>AI that answers only from what <em>that person</em> is allowed to open.</h1>
-  <p class="sub">It runs inside your company. It works with your email, drawings, price lists and orders.
-     It prepares the work and leaves decisions to people. This page shows how it works inside,
-     not what it can do.</p>
-  <div class="cta"><a class="a1" href="#pristup">Request the demo →</a></div>
+<header class="hero" id="obsah">
+  <div class="wrap">
+    <h1>Local enterprise AI</h1>
+    <p class="sub">Your own AI over email, CRM, accounting and documents. It prepares routine work,
+       people only confirm it, and management sees where things are stuck. It runs on your server
+       or on a machine rented just for you, so data does not go to an outside AI service.</p>
+    <a class="btn" href="#pristup">Book a demo</a>
+  </div>
+
+  <div class="ukazka" id="kdo-co-vidi" data-sekce="kdo-co-vidi">
+    <figure class="wrap">
+      <div class="kdo" role="group" aria-labelledby="kdoNadpis">
+        <span id="kdoNadpis">Signed in as</span>
+        <button type="button" data-osoba="jana" aria-pressed="true">Jana, sales</button>
+        <button type="button" data-osoba="david" aria-pressed="false">David, managing director</button>
+        <button type="button" data-osoba="tomas" aria-pressed="false">Tomas, IT admin</button>
+      </div>
+      <a class="ram" href="snimky/jana-2x.webp" id="ramOdkaz"><div class="ram-in">
+        <div class="vrstva" data-osoba="jana" aria-hidden="false">
+          <img src="snimky/jana-1x.webp" srcset="snimky/jana-sm.webp 720w, snimky/jana-1x.webp 1440w, snimky/jana-2x.webp 2880w" sizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)"
+               width="1440" height="900" fetchpriority="high"
+               alt="Sales coordinator's overview: a sales-only menu, a draft reply to an inquiry in Outlook and a price entry waiting for her confirmation">
+          <span class="bod" style="--x:9.5%;--y:51.3%" aria-hidden="true">1</span>
+          <span class="bod" style="--x:27%;--y:27.4%" aria-hidden="true">2</span>
+          <span class="bod" style="--x:49.7%;--y:65%" aria-hidden="true">3</span>
+        </div>
+        <div class="vrstva" data-osoba="david" aria-hidden="true">
+          <img src="snimky/david-1x.webp" srcset="snimky/david-sm.webp 720w, snimky/david-1x.webp 1440w, snimky/david-2x.webp 2880w" sizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)"
+               width="1440" height="900" loading="lazy"
+               alt="Managing director's overview: how many inquiries, quotes, orders and invoices are open, how long they take and how many are overdue">
+          <span class="bod" style="--x:87.8%;--y:44.7%" aria-hidden="true">1</span>
+          <span class="bod" style="--x:33%;--y:57.9%" aria-hidden="true">2</span>
+          <span class="bod" style="--x:9.5%;--y:51.3%" aria-hidden="true">3</span>
+        </div>
+        <div class="vrstva" data-osoba="tomas" aria-hidden="true">
+          <img src="snimky/tomas-1x.webp" srcset="snimky/tomas-sm.webp 720w, snimky/tomas-1x.webp 1440w, snimky/tomas-2x.webp 2880w" sizes="(max-width: 700px) calc(100vw - 44px), min(1276px, 100vw - 44px)"
+               width="1440" height="900" loading="lazy"
+               alt="IT administrator's overview: company flow, health of the RAYNET, POHODA and Microsoft 365 connections and machine load">
+          <span class="bod" style="--x:89.6%;--y:27.3%" aria-hidden="true">1</span>
+          <span class="bod" style="--x:11.8%;--y:76.4%" aria-hidden="true">2</span>
+          <span class="bod" style="--x:89.6%;--y:73.4%" aria-hidden="true">3</span>
+        </div>
+      </div></a>
+      <figcaption>
+        <ol class="legenda" data-osoba="jana">
+          <li>The menu shows sales only. Jana sees neither finance nor production.</li>
+          <li>A draft reply to an inquiry is already waiting in her Outlook.</li>
+          <li>The system records the new price only after Jana confirms it.</li>
+        </ol>
+        <ol class="legenda" data-osoba="david" hidden>
+          <li>Inquiries, quotes, orders and invoices: how many are open and how many are overdue.</li>
+          <li>Who is holding what, and for how many days.</li>
+          <li>Finance and the closing, which Jana does not have in her menu.</li>
+        </ol>
+        <ol class="legenda" data-osoba="tomas" hidden>
+          <li>The CRM connection reports an error, the other systems are running.</li>
+          <li>Exceptions queue: what got stuck and why.</li>
+          <li>Load of the machines the model runs on.</li>
+        </ol>
+        <p class="fine">Screenshots are from the prototype. The company and the data are fictional.<span class="zvetsit"> Tap a screenshot to open it full size.</span></p>
+      </figcaption>
+    </figure>
+  </div>
 </header>
 
-<!-- ============ 1. PATH OF ONE TASK ============ -->
-<section class="s-tmav">
+<main>
+
+<section class="zast" id="prutok" data-sekce="prutok">
   <div class="wrap">
-    <div class="eyebrow">01 - mechanics</div>
-    <h2>The path of one task</h2>
-    <p class="sub">An overdue supplier order. Watch where it stops - and why it always
-       stops.</p>
-
-    <div class="track">
-      <div class="track-head">
-        <span class="t">Overdue-order reminder to a supplier</span>
-        <span class="ctrl">
-          <button class="btn btn-p" id="playBtn">Play</button>
-          <button class="btn" id="resetBtn">Reset</button>
-        </span>
+    <div class="zast-hlava">
+      <div>
+        <h2>Management sees whether things happen on time</h2>
+        <p class="sub">The main number for management is flow: how fast an inquiry, quote, order and
+           invoice move through the company, and who everyone is waiting on. How much people use AI is only the second layer.</p>
       </div>
-
-      <div class="rail">
-        <div class="rail-line"><div class="rail-fill" id="fill"></div></div>
-        <div class="stations" id="stations">
-          <div class="st" data-i="0"><div class="pin"></div>
-            <div class="lb">Trigger</div><div class="sm">deadline passed, nobody entered anything</div></div>
-          <div class="st" data-i="1"><div class="pin"></div>
-            <div class="lb">Collect</div><div class="sm">read-only, only what the buyer has rights to</div></div>
-          <div class="st" data-i="2"><div class="pin"></div>
-            <div class="lb">Draft</div><div class="sm">the model writes the text in the supplier's language</div></div>
-          <div class="st gate" data-i="3"><div class="pin"></div>
-            <div class="lb">Gate</div><div class="sm">it stops here until a person comes</div></div>
-          <div class="st" data-i="4"><div class="pin"></div>
-            <div class="lb">Out</div><div class="sm">a person sends it from their own inbox</div></div>
-        </div>
-      </div>
-
-      <div class="rail-note">
-        <div class="rail-msg" id="railMsg">
-          <span class="who">ready</span>
-          Press <b>Play</b>.
-        </div>
-      </div>
-
-      <div class="audit">
-        <div class="ah">what got written to the audit trail</div>
-        <ol id="auditList">
-          <li data-i="0"><b>09:00:04</b> · started by schedule · process supplier-reminder-v7</li>
-          <li data-i="1"><b>09:00:06</b> · read: order O-4471, mail thread · rights: purchasing</li>
-          <li data-i="2"><b>09:00:11</b> · draft created · model qwen3-30b-a3b · prompt v7</li>
-          <li data-i="3"><b>09:00:11</b> · <b>awaiting approval</b> · owner P. Malek · delegate after 48 h</li>
-          <li data-i="4"><b>11:26:39</b> · approved by P. Malek · sent from his own inbox</li>
-        </ol>
-      </div>
+      <ul class="body">
+        <li><b>Who is holding what.</b> Every overdue item has a name and a number of days.</li>
+        <li><b>From the first demos.</b> At prototype demos, company management wanted to see this first, so the overview is built around flow.</li>
+      </ul>
     </div>
-
-    <p class="fine" style="margin-top:18px">The agent in steps 2 and 3 <b>has no "send" tool</b>.
-       It is not a rule in the instructions that could be worked around - that tool simply is not there.</p>
+    <figure>
+      <a class="ram" href="snimky/prutok-2x.webp"><div class="ram-in">
+        <img src="snimky/prutok-1x.webp" srcset="snimky/prutok-sm.webp 515w, snimky/prutok-1x.webp 1030w, snimky/prutok-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
+             width="1030" height="812" loading="lazy"
+             alt="Managing director's overview: flow of inquiries, quotes, orders and invoices, median time and number of overdue items">
+      </div></a>
+      <figcaption>Managing director's overview: what is open, how long it takes and what is overdue.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ============ 2. WHY EMAIL ISN'T ENOUGH ============ -->
-<section>
+<section class="s-tmav zast" id="kde-to-bezi" data-sekce="kde-to-bezi">
   <div class="wrap">
-    <div class="eyebrow">02 - why a dedicated interface</div>
-    <h2>Three things email can't hold</h2>
-    <p class="sub">The most common objection: just send it to me by email with a button and I
-       don't need a system. It almost works. It breaks on these three things.</p>
-
-    <ol class="fails">
-      <li>
-        <div class="key">
-          <span class="n"></span>
-          <span class="w">Who is asking</span>
-          <span class="x">email can't carry it</span>
-        </div>
-        <div class="txt">
-          <p>For AI to answer only from what that person is allowed to open, it has to know
-             who is asking at the moment of the question. A shared inbox, a forward or a
-             delegate breaks that chain.</p>
-          <p>And the same rule that says <b>incoming mail cannot instruct the agent</b>
-             also says <b>incoming mail cannot authenticate anyone</b> - otherwise a forward
-             would be a privilege escalation.</p>
-        </div>
-      </li>
-      <li>
-        <div class="key">
-          <span class="n"></span>
-          <span class="w">What happened</span>
-          <span class="x">inboxes get cleaned out</span>
-        </div>
-        <div class="txt">
-          <p>Who approved, what sources it came from, which model and prompt version, and when.
-             Plus a mark that a machine wrote it - the EU AI regulation has required that
-             since August 2026.</p>
-          <p>A decision can't be reconstructed from email half a year later. And when someone
-             asks, they usually ask half a year later.</p>
-        </div>
-      </li>
-      <li>
-        <div class="key">
-          <span class="n"></span>
-          <span class="w">What is pending</span>
-          <span class="x">email has no state</span>
-        </div>
-        <div class="txt">
-          <p>Owner, deadline, delegate, reminders, retry on error, an exception queue and a
-             kill switch for every process separately.</p>
-          <p>Email can announce. It cannot remember that nobody clicked something for nine
-             days - and that is exactly the most common silent failure of the whole system.</p>
-        </div>
-      </li>
-    </ol>
-
-    <p class="fine" style="margin-top:22px">Without a dedicated layer you can build AI that sees
-       only what absolutely everyone in the company is allowed to see. That's a ceiling, not
-       an option. <b>But the layer is not a workplace</b> - nine times out of ten, things end up
-       where people already work.</p>
+    <div class="zast-hlava">
+      <div>
+        <h2>The model and the data stay with you</h2>
+        <p class="sub">Local means the model is yours and questions do not go to an outside AI service.
+           Where the machine sits, you choose by budget, and you can change it later.</p>
+      </div>
+      <ul class="body">
+        <li><b>On your premises.</b> You buy the machine once, and it does not need the internet to work with your data.</li>
+        <li><b>Rented machine.</b> A dedicated server at a Czech provider, with no hardware investment.</li>
+        <li><b>Cloud with a graphics card.</b> The fastest start, you pay only while it runs.</li>
+      </ul>
+    </div>
+    <figure>
+      <a class="ram" href="snimky/kde-to-bezi-2x.webp"><div class="ram-in">
+        <img src="snimky/kde-to-bezi-1x.webp" srcset="snimky/kde-to-bezi-sm.webp 515w, snimky/kde-to-bezi-1x.webp 1030w, snimky/kde-to-bezi-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
+             width="1030" height="765" loading="lazy"
+             alt="Where it runs screen: three deployment options and a table of what changes between them and what stays the same">
+      </div></a>
+      <figcaption>In all three options the model is yours and you hold the keys.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ============ 3. WHO SEES WHAT ============ -->
-<section class="s-tmav">
+<section class="zast" id="podpis" data-sekce="podpis">
   <div class="wrap">
-    <div class="eyebrow">03 - one event, three people</div>
-    <h2>The same thing looks different depending on who's looking</h2>
-    <p class="sub">Switch the event. Notice that the employee almost never has to go anywhere.</p>
-
-    <div class="pick" role="group" aria-label="Choose an event">
-      <button data-ev="0" aria-pressed="true">A quote request came in</button>
-      <button data-ev="1" aria-pressed="false">An order is overdue</button>
-      <button data-ev="2" aria-pressed="false">The CRM connection dropped</button>
-      <button data-ev="3" aria-pressed="false">Nobody approved for a week</button>
+    <div class="zast-hlava">
+      <div>
+        <h2>The machine prepares, a person signs</h2>
+        <p class="sub">The platform reads email and your systems and prepares a draft reply, a supplier
+           chaser or a price entry. Nothing goes out until a person confirms it under their own name.</p>
+      </div>
+      <ul class="body">
+        <li><b>The draft reply waits in Outlook</b> in the Drafts folder, the price entry in the CRM. You confirm, edit or reject it with one click.</li>
+        <li><b>Nothing falls through.</b> After 24&nbsp;hours a reminder arrives, after 48 the item goes to a deputy. Above CZK&nbsp;100k, the managing director approves.</li>
+      </ul>
     </div>
-
-    <div class="lanes" id="lanes">
-      <div class="lane"><span class="role">employee</span><h3>Jana · sales</h3>
-        <span class="chan" id="c0">Outlook</span><div class="out" id="o0"></div></div>
-      <div class="lane"><span class="role">admin</span><h3>Tomas · IT</h3>
-        <span class="chan" id="c1">Portal</span><div class="out" id="o1"></div></div>
-      <div class="lane"><span class="role">owner</span><h3>David · managing director</h3>
-        <span class="chan" id="c2">Monthly summary</span><div class="out" id="o2"></div></div>
-    </div>
-
-    <p class="fine" style="margin-top:20px">The measure of success is reversed from a typical product:
-       <b>the less often the employee has to open the layer, the better.</b> For the admin and
-       owner it's the opposite.</p>
+    <figure>
+      <a class="ram" href="snimky/schvaleni-2x.webp"><div class="ram-in">
+        <img src="snimky/schvaleni-1x.webp" srcset="snimky/schvaleni-sm.webp 515w, snimky/schvaleni-1x.webp 1030w, snimky/schvaleni-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
+             width="1030" height="757" loading="lazy"
+             alt="To approve screen: orders, chasers, reminders and a price entry waiting for a person to decide">
+      </div></a>
+      <figcaption>To approve: items wait for a person to decide, and the machine sends none of them.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ============ 4. RUNTIME VS CONTENT ============ -->
-<section>
+<section class="s-tmav zast" id="zdroje" data-sekce="zdroje">
   <div class="wrap">
-    <div class="eyebrow">04 - why this can be delivered as a service</div>
-    <h2>One boundary everything else stands on</h2>
-    <p class="sub">Above is what's yours and what sets you apart. Below is what's the same for
-       every client and what we run and upgrade.</p>
-
-    <div class="stack">
-      <div class="band b-obsah">
-        <div class="bh"><span class="bt">Content</span><span class="bo">yours</span></div>
-        <div class="chips">
-          <span class="chip">processes</span><span class="chip">prompts</span>
-          <span class="chip">permissions map</span><span class="chip">test suite</span>
-          <span class="chip">connections to your systems</span>
-        </div>
-        <p class="bd">Readable, versioned files in your own repository. The company's edge
-           lives here. You can take it and leave.</p>
+    <div class="zast-hlava">
+      <div>
+        <h2>It answers from your documents and shows the source</h2>
+        <p class="sub">The platform searches drawings, quotes, price lists and invoices. Every answer
+           shows where it came from, and when it cannot find a source, it says so.</p>
       </div>
-
-      <div class="seam"><span class="ln"></span><span class="tx">boundary</span><span class="ln"></span></div>
-
-      <div class="band b-beh">
-        <div class="bh"><span class="bt">Runtime</span><span class="bo">ours, the same for everyone</span></div>
-        <div class="chips">
-          <span class="chip">kernel and scheduler</span><span class="chip">queues and retries</span>
-          <span class="chip">approvals</span><span class="chip">audit</span>
-          <span class="chip">model gateway</span><span class="chip">portal</span>
-        </div>
-        <p class="bd">Nobody has a competitive edge here. That's why it can be delivered as a
-           service and not a custom project: one runtime, many clients.</p>
-      </div>
+      <ul class="body">
+        <li><b>Only what is allowed.</b> It searches the documents the person asking may open.</li>
+        <li><b>Specialists per workflow.</b> Sales, purchasing, design or finance, each with its own sources.</li>
+        <li><b>Numbers from the source.</b> Dimensions, drawing numbers and prices come straight from the document and are never estimated.</li>
+      </ul>
     </div>
-
-    <div class="who-runs" role="group" aria-label="Who runs it">
-      <button data-op="0" aria-pressed="true">We run it</button>
-      <button data-op="1" aria-pressed="false">Your admin runs it</button>
-      <button data-op="2" aria-pressed="false">We build it and leave</button>
-    </div>
-    <div class="who-out" id="whoOut"></div>
-
-    <p class="fine" style="margin-top:22px">The choice stays reversible, and it's a design
-       constraint, not a promise: <b>no step in operation may be a manual action only we know
-       how to do.</b> Otherwise "we build it and leave" is a lie.</p>
+    <figure>
+      <a class="ram" href="snimky/znalost-2x.webp"><div class="ram-in">
+        <img src="snimky/znalost-1x.webp" srcset="snimky/znalost-sm.webp 515w, snimky/znalost-1x.webp 1030w, snimky/znalost-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
+             width="1030" height="853" loading="lazy"
+             alt="Chat with the company agent: an answer about orders with links to sources in POHODA and RAYNET">
+      </div></a>
+      <figcaption>Chat: an answer to a question about this year's orders, with sources from accounting and the CRM below it.</figcaption>
+    </figure>
   </div>
 </section>
 
-
-<!-- ============ 05. FOOTPRINT IN SURROUNDING SYSTEMS ============ -->
-<section class="s-tmav">
+<section class="zast" id="opravy" data-sekce="opravy">
   <div class="wrap">
-    <div class="eyebrow">05 - what it does in your systems</div>
-    <h2>One record, four systems, one stop</h2>
-    <p class="sub">The most common worry: what will this do to what I already have.
-       This is the whole path of one incoming invoice. Watch where it stops.</p>
-
-    <div class="flow">
-      <div class="flow-head">
-        <div class="fl-col"><span class="fl-sys">Mail</span></div>
-        <div class="fl-col"><span class="fl-sys fl-me">Platform</span></div>
-        <div class="fl-col"><span class="fl-sys">CRM</span></div>
-        <div class="fl-col"><span class="fl-sys">Accounting</span></div>
+    <div class="zast-hlava">
+      <div>
+        <h2>Anyone can flag a wrong answer with one button</h2>
+        <p class="sub">An employee, a manager or the managing director does it right at the output,
+           without a form. The administrator then fixes the source or the permission the error came from.</p>
       </div>
-
-      <ol class="flow-steps" id="flowSteps">
-        <li data-c="0"><span class="fl-dot"></span><span class="fl-t">The supplier sends an invoice by email</span>
-          <span class="fl-n">arrives in a dedicated inbox, not the company's general mail</span></li>
-        <li data-c="1"><span class="fl-dot"></span><span class="fl-t">The amount, number and due date are extracted</span>
-          <span class="fl-n">read-only, into a fixed schema - the email text goes no further</span></li>
-        <li data-c="2"><span class="fl-dot"></span><span class="fl-t">The order is found and the difference is calculated</span>
-          <span class="fl-n">read-only: ordered 42,800, invoiced 43,690 - 2% more</span></li>
-        <li data-c="1" class="gate"><span class="fl-dot"></span><span class="fl-t">It stops here. The buyer confirms the difference.</span>
-          <span class="fl-n">the only place in the whole chain where it waits for a person</span></li>
-        <li data-c="3"><span class="fl-dot"></span><span class="fl-t">The invoice is created</span>
-          <span class="fl-n">a record noting who confirmed it and when</span></li>
-        <li data-c="2"><span class="fl-dot"></span><span class="fl-t">A link to the document is added to the order</span>
-          <span class="fl-n">a record; nothing is overwritten, only added</span></li>
-      </ol>
-
-      <div class="flow-foot">
-        <button class="btn btn-p" id="flowPlay">Play</button>
-        <button class="btn" id="flowReset">Reset</button>
-        <span class="fine" id="flowMsg">Today, a person does this in companies by retyping.</span>
-      </div>
+      <ul class="body">
+        <li><b>Fixed at the cause.</b> If an agent reached for an old price list, the whole price list is removed from the sources.</li>
+        <li><b>Test set.</b> The fixed case is added to it and tested again, even after the model is swapped.</li>
+      </ul>
     </div>
-
-    <div class="rules">
-      <div><b>No write ever goes out without human confirmation.</b> Except reads and internal notes.</div>
-      <div><b>Nothing is deleted or overwritten.</b> Only added.</div>
-      <div><b>Every record carries who prepared it - the platform</b> - and who confirmed it.</div>
-      <div><b>When a write fails, it stays in the queue</b> with a link to the record. It doesn't disappear.</div>
-    </div>
-
-    <p class="fine" style="margin-top:20px">In every one of your systems it stays clear what is
-       human work and what the platform prepared - <b>even for someone who never opens the
-       portal</b>.</p>
+    <figure>
+      <a class="ram" href="snimky/prezkoumani-2x.webp"><div class="ram-in">
+        <img src="snimky/prezkoumani-1x.webp" srcset="snimky/prezkoumani-sm.webp 515w, snimky/prezkoumani-1x.webp 1030w, snimky/prezkoumani-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
+             width="1030" height="798" loading="lazy"
+             alt="For review screen: three outputs someone flagged as wrong and how they were resolved">
+      </div></a>
+      <figcaption>For review: flagged outputs and how each one was resolved.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ============ 06. DO THE MATH ============ -->
-<section>
+<section class="s-tmav" id="navratnost" data-sekce="navratnost">
   <div class="wrap">
-    <div class="eyebrow">06 - when it makes sense and when it doesn't</div>
-    <h2>Do the math. Sometimes the answer is no.</h2>
-    <p class="sub">Everyone who talks about this gets asked about payback, and almost nobody
-       answers it. Here's a calculator for one workflow. Move it to your own numbers.</p>
+    <h2>Work out how much the project may cost</h2>
+    <p class="sub">For one workflow: how many people do it, how much time it takes them and what
+       their hour costs. Sometimes the answer is that it does not pay off, and then I will not recommend it.</p>
 
     <div class="calc">
       <div class="calc-in">
-        <label>How many people do this
+        <label>How many people do this workflow
           <input type="range" id="cN" min="1" max="20" value="4" step="1">
           <output id="cNo">4 people</output>
         </label>
@@ -649,391 +562,130 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
         <div class="co-row"><span>This workflow costs you a year</span><b id="rHod">750 hours</b></div>
         <div class="co-row"><span>In money</span><b id="rKc">CZK 338k</b></div>
         <div class="co-row sep"><span>If a machine takes 60% off that</span><b id="rUsp">CZK 203k / year</b></div>
-        <div class="co-big" id="rVerd">
+        <div class="co-big">
           <span class="cv-n" id="rStrop">CZK 405k</span>
-          <span class="cv-l">is the most a project for this workflow may cost to pay back within two years</span>
+          <span class="cv-l">may be spent on a project for this workflow so that it pays back within two years</span>
         </div>
-        <div class="co-note" id="rNote">What it will really cost, I tell you after the AI plan. If it comes out higher, I will not recommend it.</div>
+        <div class="co-note">What it will really cost, I will tell you after the AI plan. If it comes out higher, I will not recommend it.</div>
       </div>
     </div>
 
     <p class="fine" style="margin-top:18px">
-      Sixty percent is our estimate of what usually stays with a person for this class of
-      workflow (decisions, exceptions, review). <b>It is not a measured figure</b> and your
-      workflow may come out different - that's what the 48-hour plan is for. Two years is our
-      payback limit, not a rule. I am not a VAT payer. The hourly rate is the fully loaded cost, not the wage.
+      Sixty percent is our estimate of what typically stays with a person in this class of workflows
+      (decisions, exceptions, checks). <b>It is not a measured figure</b> and for your workflow it may
+      come out differently, which is what the 48-hour plan is for. Two years is our payback limit, not a rule.
+      The hourly rate is the full employer cost, not the salary. I am not a VAT payer.
     </p>
-
-    <div class="facts">
-      <div class="fact"><b>81,521</b><span>companies in the Czech Republic have 10 to 249 people</span><i>Czech Statistical Office, as of 31 Dec 2025</i></div>
-      <div class="fact"><b>89.5%</b><span>of small companies have no in-house IT specialist</span><i>Czech Statistical Office, 2025 data</i></div>
-      <div class="fact"><b>59%</b><span>most common reason for not investing: "we don't see the need or benefit"</span><i>Ipsos for AMSP, 11/2024</i></div>
-      <div class="fact"><b>48%</b><span>of small companies find it hard or impossible to navigate digital-solution offers</span><i>Ipsos for AMSP, 11/2024</i></div>
-    </div>
-    <p class="fine" style="margin-top:14px">Those last two numbers are why this page has a
-       calculator and not a price list. If you don't do the math yourself, it doesn't matter
-       what I think about it.</p>
   </div>
 </section>
 
-<!-- ============ 07. MODEL CASE ============ -->
-<section class="s-tmav">
+<section id="cena" data-sekce="cena">
   <div class="wrap">
-    <div data-sekce="modelovy-pripad">
-      <div class="eyebrow">07 - model case</div>
-      <div class="dp-k">model case</div>
-      <h2>A model company, not a reference</h2>
-      <p class="sub">This is a model company; it does not run anywhere. The numbers are a calculation, not a measured result.</p>
+    <h2>How to start and what it costs</h2>
+    <p class="sub">The project price depends on how many systems and workflows you have. You get a
+       fixed price before anything is built.</p>
 
-      <div class="facts">
-        <div class="fact"><b>10-49 people</b><span>the model company has 10 to 49 people and no in-house IT specialist, like 89.5% of such companies</span><i>Czech Statistical Office, 2025 data</i></div>
-        <div class="fact"><b>68.8%</b><span>of small companies outsource IT management, and so does the model company</span><i>Czech Statistical Office, 2024</i></div>
-        <div class="fact"><b>41.8%</b><span>of small companies have an ERP system, and so does the model company</span><i>Czech Statistical Office, 2025 data</i></div>
-        <div class="fact"><b>CZK 50k-250k</b><span>a year on digitalization is the plan for 40% of small companies, and the model company fits that budget</span><i>Ipsos for AMSP, 11/2024</i></div>
-      </div>
+    <ol class="kroky">
+      <li><h3>Demo, 25&nbsp;minutes online</h3>
+          <p>We walk through the prototype on your company's workflows: what AI would do first and who may see what.</p></li>
+      <li><h3>AI plan within 48 hours</h3>
+          <p>The plan says what the project covers and what it costs, at a fixed price. It is usable even if you build with someone else.</p></li>
+      <li><h3>Project at a fixed price</h3>
+          <p>Connection to your systems, permissions from your list of accounts, training for your people and the first month under supervision.</p></li>
+    </ol>
 
-      <p>Incoming invoices: they land in the inbox, the system extracts them and matches them against the purchase order, a person confirms the exceptions, and the entry goes into the books.</p>
-
-      <div class="calc-out">
-        <div class="co-row"><span>Starting assumptions</span><b>4 people x 45 min/day x CZK 450/h</b></div>
-        <div class="co-row"><span>This workflow costs a year</span><b>750 hours</b></div>
-        <div class="co-row"><span>In money</span><b>CZK 338k</b></div>
-        <div class="co-row sep"><span>If a machine takes 60% off that</span><b>CZK 203k / year</b></div>
-        <div class="co-row"><span>The project pays back within two years if it costs at most</span><b>CZK 405k</b></div>
-      </div>
-
-      <p class="fine">Sixty percent is our estimate, not a measured figure. What the project really costs, the AI plan will tell. I am not a VAT payer, so the limit compares directly with my price.</p>
+    <div class="calc-out">
+      <div class="co-row sep"><span>AI plan within 48 hours. Its price is deducted from the project price.</span><b>approx. EUR 400, fixed</b></div>
+      <div class="co-row"><span>Project at a fixed price after the plan.</span><b>fixed price</b></div>
+      <div class="co-row"><span>Monthly oversight. No per-user fee and no fee per question.</span><b>monthly</b></div>
+      <div class="co-row"><span>On-premise: the hardware is bought separately and is yours.</span><b>separately</b></div>
+      <div class="co-row"><span>Cloud: operation including models, no hardware.</span><b>monthly</b></div>
     </div>
+    <p class="fine" style="margin-top:14px">I am not a VAT payer, prices are final and converted from CZK as approximations.</p>
+
+    <div class="cena-cta"><a class="btn" href="#pristup">Book a demo</a></div>
   </div>
 </section>
 
-<!-- ============ 08. PUBLIC CASES ============ -->
-<section>
+<section class="s-tmav" id="otazky" data-sekce="otazky">
   <div class="wrap">
-    <div data-sekce="verejne-pripady">
-      <div class="eyebrow">08 - public cases</div>
-      <h2>Who already runs this in public</h2>
-      <p class="sub">Large companies run this and talk about it. We found no public case of a small company, so the one above is a model.</p>
-      <div class="deploy pripady">
-        <div class="dp">
-          <div class="dp-k">McKinsey</div>
-          <h3>Lilli</h3>
-          <p>An assistant over the firm's internal knowledge. It launched for 7,000 employees (according to the source).</p>
-          <p>For a small company: "ask the company" works over the policies, quotes and templates of a small firm too.</p>
-          <p>Source: CIO Dive, 2023</p>
-        </div>
-        <div class="dp">
-          <div class="dp-k">Morgan Stanley</div>
-          <h3>Assistant for advisors</h3>
-          <p>It answers over roughly 100,000 research reports. More than 98 % of advisor teams use it (according to the source).</p>
-          <p>For a small company: a narrow, clearly bounded set of documents, and answer quality checked before launch.</p>
-          <p>Source: OpenAI, 2023</p>
-        </div>
-        <div class="dp">
-          <div class="dp-k">Klarna</div>
-          <h3>Customer service</h3>
-          <p>2.3 million conversations in the first month, work equal to 700 people (Klarna press release, 27 Feb 2024). In 2025 it admitted a drop in quality and is bringing people back.</p>
-          <p>For a small company: AI speeds a person up, it does not replace them.</p>
-          <p>Source: Klarna press release, 2024; Fast Company, 2025</p>
-        </div>
-        <div class="dp">
-          <div class="dp-k">Alza</div>
-          <h3>Vseved</h3>
-          <p>An internal assistant over policies, documentation and how-to guides.</p>
-          <p>For a small company: the closest match is an assistant over your own policies and guides.</p>
-          <p>Source: Hospodarske noviny</p>
-        </div>
-        <div class="dp">
-          <div class="dp-k">Ceska sporitelna</div>
-          <h3>Knowledge Base Search</h3>
-          <p>One knowledge base for the whole bank.</p>
-          <p>For a small company: one knowledge base that several channels connect to.</p>
-          <p>Source: IT Trendy</p>
-        </div>
-        <div class="dp">
-          <div class="dp-k">Rohlik</div>
-          <h3>Cost of one task</h3>
-          <p>It measures what one task costs: an automated marketing campaign comes to about CZK 3 per task (Tomas Cupr, WebExpo 2025, according to the source).</p>
-          <p>For a small company: count the cost of one task, not the cost of a licence.</p>
-          <p>Source: inSmart, WebExpo 2025</p>
-        </div>
-      </div>
+    <h2>Frequently asked questions</h2>
+    <div class="otazky-list">
+      <div class="ot"><h3>What is local enterprise AI?</h3>
+        <p>A language model and agents that run on your company's machine or on a machine rented just for you. They work with email, CRM, accounting and documents, prepare routine work and answer questions. Every person sees only what they are allowed to open in the source systems.</p></div>
+      <div class="ot"><h3>Is it running anywhere yet?</h3>
+        <p>No. The prototype shows what the platform will look like and how people work in it. I am looking for the first companies to get it running with. The company and the data in the demo are fictional.</p></div>
+      <div class="ot"><h3>Why local?</h3>
+        <p>A question about a contract or a drawing stays inside your perimeter. The model runs on a machine that is yours or rented just for you, and the running cost does not depend on the number of questions.</p></div>
+      <div class="ot"><h3>How does the platform know who may see what?</h3>
+        <p>It takes permissions from the source: Microsoft 365 groups, folder permissions and roles in the CRM and accounting. It does not invent its own list, so when you remove a permission at the source, it disappears from the platform at the next sync.</p></div>
+      <div class="ot"><h3>We already run our own local chat. Why a platform?</h3>
+        <p>A chat over a model is a good start. The platform adds permissions on documents, workflows that prepare work on their own, and an overview for management. If your model fits, it can stay.</p></div>
+      <div class="ot"><h3>Which systems does it connect to?</h3>
+        <p>The ones you have. The prototype works with RAYNET, HubSpot, Pipedrive, Salesforce, POHODA, HELIOS, ABRA, SAP Business One, iDoklad, Fakturoid and Microsoft 365. Another system connects the same way, through a standard interface.</p></div>
+      <div class="ot"><h3>Which model, and under which licence?</h3>
+        <p>We choose the model by workflow, document language and a licence your industry allows. It runs on your machine, so it can be swapped later without changing workflows or permissions.</p></div>
+      <div class="ot"><h3>What does running it cost?</h3>
+        <p>A monthly oversight fee based on the number of workflows and systems, with no per-question and no per-user fee. On top of that, either your own server with a graphics card, bought once, or the cloud version as one monthly item.</p></div>
+      <div class="ot"><h3>Does our data have to be ready?</h3>
+        <p>No. If it is not, we start with a two-week company preparation. The AI plan tells you whether it is needed.</p></div>
+      <div class="ot"><h3>Can it be co-funded by subsidies?</h3>
+        <p>Sometimes. Servers, software and implementation are often eligible costs in Czech regional vouchers or OP TAK calls. Whether that applies to you, we check in the AI plan.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 09. WHERE IT RUNS ============ -->
-<section class="s-tmav">
+<section class="s-ink" id="pristup">
   <div class="wrap">
-    <div class="eyebrow">09 - where it stands</div>
-    <h2>"Local" doesn't mean a server in the basement</h2>
-    <p class="sub">It means the model is yours and data never leaves your own perimeter. Where it
-       physically runs is a separate decision - and it can change later.</p>
-
-    <div class="deploy">
-      <div class="dp">
-        <div class="dp-k">at your company</div>
-        <h3>Your own machine</h3>
-        <p>Stands in your own server room. Doesn't need the internet to work on your data.</p>
-        <div class="dp-m"><span class="pill">one-off hardware</span><span class="pill">no rent</span></div>
-      </div>
-      <div class="dp">
-        <div class="dp-k">a rented machine</div>
-        <h3>Dedicated server</h3>
-        <p>At a Czech provider. You don't buy hardware, the model and data stay yours only.</p>
-        <div class="dp-m"><span class="pill">monthly rent</span><span class="pill">no investment</span></div>
-      </div>
-      <div class="dp">
-        <div class="dp-k">cloud with a GPU</div>
-        <h3>Rented card</h3>
-        <p>A machine with a GPU running <b>your</b> model. Not someone else's service, not
-           someone else's model - just someone else's hardware.</p>
-        <div class="dp-m"><span class="pill">pay for runtime</span><span class="pill">fastest start</span></div>
-      </div>
-    </div>
-
-    <div class="same">
-      <div class="same-h">What's the same in all three</div>
-      <div class="same-l">
-        <span>the model is yours</span><span>the query never leaves to an outside AI service</span>
-        <span>nobody outside the company sees your documents</span><span>you hold the keys</span>
-        <span>the portal, pipeline and agents don't change</span>
-      </div>
-    </div>
-
-    <p class="fine" style="margin-top:20px">The difference against an outside AI service stays
-       the same across all three cases. And because the content - processes, prompts, the
-       permissions map - is yours, <b>moving between variants is a move, not a rebuild</b>.</p>
-  </div>
-</section>
-
-<!-- ============ 08. LADDER ============ -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">10 - how it gets built</div>
-    <h2>Three rungs. Each one is an extension, not a rebuild.</h2>
-    <p class="sub">Nobody starts at the top. What's deliberately not in a rung matters as much
-       as what is.</p>
-
-    <div class="rungs">
-      <div class="rung">
-        <div class="no">1</div>
-        <div>
-          <h3>One agent, one workflow</h3>
-          <p>One process from trigger to draft. One or two data sources. Login,
-             audit, kill switch, exception queue. A small model.</p>
-          <div class="not"><b>Deliberately not there:</b> a knowledge index over documents,
-             chat over company data, roles, a test bench.</div>
-        </div>
-        <div class="price">2-4 weeks<br>priced per job<br>+ one machine</div>
-      </div>
-
-      <div class="rung">
-        <div class="no">2</div>
-        <div>
-          <h3>Several workflows and one index</h3>
-          <p>A knowledge index over documents <b>with permissions inherited from the source</b>,
-             a query with citations, roles based on groups, a model-swap ritual.</p>
-          <div class="not"><b>This is where the hard part starts.</b> Permissions aren't a
-             feature, they're a cross-cutting concern across the whole system.</div>
-        </div>
-        <div class="price">3-5 months<br>estimate CZK 250-450k<br>+ a larger machine</div>
-      </div>
-
-      <div class="rung r3">
-        <div class="no">3</div>
-        <div>
-          <h3>Platform</h3>
-          <p>A large model on your own machine, a node for batches, a test bench as
-             hardware, a rack. Fifteen to eighteen processes across departments.</p>
-          <div class="not"><b>Documented figures:</b> three independent quotes for the same
-             brief, September 2026.</div>
-        </div>
-        <div class="price">10-14 months<br>core CZK 1.0-1.25M<br>+ hardware CZK 0.7-0.9M</div>
-      </div>
-    </div>
-
-    <p class="fine" style="margin-top:20px">The prices for rungs 1 and 3 are documented; <b>rung 2
-       is our estimate</b>, not a market figure - an interpolation between two distant points.
-       I am not a VAT payer.</p>
-  </div>
-</section>
-
-<!-- ============ 11. HOW TO START AND WHAT IT COSTS ============ -->
-<section class="s-tmav">
-  <div class="wrap">
-    <div class="eyebrow">11 - how to start and what it costs</div>
-    <div data-sekce="cena">
-      <h2>It starts with an AI plan. The fixed project price comes out of it.</h2>
-      <div class="calc-out">
-        <div class="co-row sep"><span>AI plan within 48 hours. Its price is deducted from the project price.</span><b>approx. EUR 400, fixed</b></div>
-        <div class="co-row"><span>Project at a fixed price after the plan.</span><b>fixed price</b></div>
-        <div class="co-row"><span>Monthly oversight. No per-user fee and no fee per question.</span><b>monthly</b></div>
-        <div class="co-row"><span>On-premise: the hardware is bought separately and yours.</span><b>separately</b></div>
-        <div class="co-row"><span>Cloud: operation including models, no hardware.</span><b>monthly</b></div>
-      </div>
-      <p class="fine" style="margin-top:14px">I am not a VAT payer, prices are final and converted from CZK as approximations.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONCLUSION ============ -->
-<section class="s-ink">
-  <div class="wrap">
-    <div class="eyebrow">12 - how you know it's working</div>
-    <div data-sekce="prutok">
-      <h2>Company flow and deadlines come first</h2>
-      <p class="sub">Quote, offer, order, invoice and delivery: how many are open, how long they
-         take to move through the company, and who they're waiting on. This is the main
-         measure for management.</p>
-    </div>
-    <div data-sekce="vyuziti">
-      <p class="sub">AI usage and the edit rate on its text are only a second layer. Beside them
-         stays a safety criterion that must sit at zero: how many times did someone get content
-         they had no right to.</p>
-    </div>
-
-    <div class="cta">
-      <a class="a1" href="#pristup">Request the demo →</a>
-    </div>
-
-    <div id="pristup" class="pristup">
+    <div class="pristup">
       <h2>Access to the demo</h2>
       <p class="sub">I have built the whole interface, including how it looks for employees,
          administrators and owners. I am looking for the first companies to get it running with.
          Tell me what you need, and I will send you access to the demo.</p>
+      <div class="kdo-jsem">
+        <img src="/petr-kokoska.jpg" width="72" height="72" loading="lazy" alt="Petr Kokoska">
+        <p><b>Petr Kokoska, Manta IT.</b> For ten years I built systems for big brands. Now I build them
+           for companies that have no IT department of their own.</p>
+      </div>
       <form method="post" action="/api/pristup">
         <label>Email
-          <input type="email" name="email" required autocomplete="email">
+          <input type="email" name="email" required autocomplete="email" spellcheck="false">
         </label>
         <label>What you need
-          <textarea name="text" required></textarea>
+          <textarea name="text" required placeholder="E.g. sales spends hours retyping inquiries into the CRM."></textarea>
         </label>
         <input type="text" name="kontrolni_udaj" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-        <button class="btn btn-p" type="submit">Send request</button>
+        <button class="btn" type="submit">Send demo request</button>
       </form>
     </div>
 
-    <div class="foot">
-      <p class="fine">The company in the demo is a model, the numbers in the interface are fictional.</p>
+    <div class="pata">
+      <p class="fine">The company in the demo is a model, the numbers in the interface are fictional.
+         <a href="/" style="color:inherit">Manta IT</a>, Petr Kokoska.</p>
     </div>
   </div>
 </section>
 
+</main>
+
 <script>
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- 1. path of one task ---- */
-  var msgs = [
-    ['09:00 · scheduler','The deadline for order <b>O-4471</b> passed three days ago. Nobody entered anything - the schedule triggered it.'],
-    ['09:00 · collect','The agent read the order and the last thread with the supplier. <b>Read-only</b>, and only what the buyer has rights to.'],
-    ['09:00 · draft','A finished reminder text in German, in the usual tone. <b>It hasn\'t gone anywhere yet.</b>'],
-    ['09:00 · gate','The draft sits in the buyer\'s inbox. <b>It stops here</b> - it can take a minute or two days. After 48 hours the delegate is notified.'],
-    ['11:26 · human','The buyer read the draft, changed one word and <b>sent it themselves from their own inbox</b>.']
-  ];
-  var sts = document.querySelectorAll('#stations .st');
-  var auds = document.querySelectorAll('#auditList li');
-  var fill = document.getElementById('fill');
-  var msg  = document.getElementById('railMsg');
-  var timers = [];
-
-  function clearAll(){
-    timers.forEach(clearTimeout); timers = [];
-    sts.forEach(function(s){ s.classList.remove('on'); });
-    auds.forEach(function(a){ a.classList.remove('on'); });
-    fill.style.width = '0';
-    msg.innerHTML = '<span class="who">ready</span>Press <b>Play</b>.';
-  }
-  function step(i){
-    sts[i].classList.add('on');
-    auds[i].classList.add('on');
-    fill.style.width = (i/(sts.length-1)*100) + '%';
-    msg.innerHTML = '<span class="who">'+msgs[i][0]+'</span>'+msgs[i][1];
-  }
-  function play(){
-    clearAll();
-    var delays = reduce ? [0,1,2,3,4].map(function(i){return i*40;})
-                        : [0, 1000, 2100, 3300, 5100];
-    delays.forEach(function(d,i){ timers.push(setTimeout(function(){ step(i); }, d)); });
-  }
-  document.getElementById('playBtn').addEventListener('click', play);
-  document.getElementById('resetBtn').addEventListener('click', clearAll);
-  clearAll();
-  /* hard timer: an IntersectionObserver never fires in a sleeping tab */
-  setTimeout(function(){ if(!sts[0].classList.contains('on')) play(); }, 1400);
-
-  /* ---- 3. who sees what ---- */
-  var EV = [
-    [ ['Outlook','A reply draft is waiting in the <b>Drafts</b> folder. You send it.'],
-      ['Portal','Nothing. The process ran, <b>it got logged to the audit trail</b> and called nobody.'],
-      ['Summary','Nothing. It only shows up as a number in the monthly total.'] ],
-    [ ['Outlook','This morning in the overview: <b>2 overdue deliveries</b>, a reminder drafted for both.'],
-      ['Portal','Nothing until it fails. The run is visible in history.'],
-      ['Summary','Nothing.'] ],
-    [ ['Outlook','Nothing. Orders stay as drafts and <b>nothing gets lost</b>.'],
-      ['Portal','<b>Exception queue: blocked.</b> The access token expired, three attempts, then stop. 2 orders are waiting in the queue.'],
-      ['Summary','Nothing - provided it\'s resolved within two days.'] ],
-    [ ['Outlook','A reminder. After 48 hours the same to the delegate.'],
-      ['Portal','Sees the queue growing. <b>It\'s not their job to fix it</b>, it\'s the manager\'s job.'],
-      ['Summary','<b>Who owns what:</b> Petr Malek, 6 orders, oldest 9 days. This is exactly why the owner\'s interface exists.'] ]
-  ];
-  var lanes = document.getElementById('lanes');
-  function render(n){
-    lanes.classList.add('fade');
-    setTimeout(function(){
-      for(var i=0;i<3;i++){
-        document.getElementById('c'+i).textContent = EV[n][i][0];
-        document.getElementById('o'+i).innerHTML   = EV[n][i][1];
-        document.getElementById('o'+i).parentNode.classList.toggle(
-          'nothing', EV[n][i][1].indexOf('Nothing') === 0);
-      }
-      lanes.classList.remove('fade');
-    }, reduce ? 0 : 190);
-  }
-  var evb = document.querySelectorAll('.pick button');
-  evb.forEach(function(b){
+  /* ---- kdo co vidí: přepínač osoby nad snímkem ---- */
+  var tlacitka = document.querySelectorAll('.kdo button');
+  var odkaz = document.getElementById('ramOdkaz');
+  var vrstvy = document.querySelectorAll('.vrstva');
+  var legendy = document.querySelectorAll('.legenda');
+  tlacitka.forEach(function(b){
     b.addEventListener('click', function(){
-      evb.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
-      render(+b.dataset.ev);
+      var o = b.dataset.osoba;
+      tlacitka.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      vrstvy.forEach(function(v){ v.setAttribute('aria-hidden', v.dataset.osoba === o ? 'false' : 'true'); });
+      legendy.forEach(function(l){ l.hidden = l.dataset.osoba !== o; });
+      odkaz.href = 'snimky/' + o + '-2x.webp';
     });
   });
-  render(0);
 
-
-  /* ---- 5. footprint in systems ---- */
-  var fSteps = document.querySelectorAll('#flowSteps li');
-  var fMsg = document.getElementById('flowMsg');
-  var fT = [];
-  var fTexts = [
-    'An invoice arrived. The platform only sees this inbox, not the company\'s general mail.',
-    'Extracted into a fixed schema. The email text goes no further.',
-    'Order found. Invoiced 2% more than was ordered.',
-    'It stops here. It doesn\'t continue without the buyer - and it can take a minute or two days.',
-    'The buyer confirmed the difference. Only now does it get written out.',
-    'Done. Six steps, one stop, everything traceable.'
-  ];
-  function fClear(){
-    fT.forEach(clearTimeout); fT = [];
-    fSteps.forEach(function(x){ x.classList.remove('on'); });
-    fMsg.textContent = 'Today, a person does this in companies by retyping.';
-  }
-  function fPlay(){
-    fClear();
-    var d = reduce ? [0,1,2,3,4,5].map(function(i){return i*40;}) : [0,900,1800,2900,4600,5600];
-    d.forEach(function(ms,i){
-      fT.push(setTimeout(function(){
-        fSteps[i].classList.add('on');
-        fMsg.textContent = fTexts[i];
-      }, ms));
-    });
-  }
-  document.getElementById('flowPlay').addEventListener('click', fPlay);
-  document.getElementById('flowReset').addEventListener('click', fClear);
-  fClear();
-  setTimeout(function(){ if(!fSteps[0].classList.contains('on')) fPlay(); }, 2600);
-
-  /* ---- 6. calculator ---- */
+  /* ---- kalkulačka ---- */
   var cN = document.getElementById('cN'), cM = document.getElementById('cM'), cS = document.getElementById('cS');
   function kc(v){
     if(v >= 1000000) return 'CZK ' + (v/1000000).toFixed(1) + 'M';
@@ -1055,27 +707,10 @@ h2{font-size:clamp(28px,4.6vw,44px);margin-bottom:16px;max-width:20ch}
     document.getElementById('rHod').textContent = Math.round(hod).toLocaleString('en') + ' hours';
     document.getElementById('rKc').textContent = kc(rok);
     document.getElementById('rUsp').textContent = kc(usp) + ' / year';
-
     document.getElementById('rStrop').textContent = kc(strop);
   }
   [cN, cM, cS].forEach(function(el){ el.addEventListener('input', pocitej); });
   pocitej();
-
-  /* ---- 4. who runs it ---- */
-  var OPS = [
-    'We handle the exception queue. We keep remote access permanently, including switchable outlets, so we can hard-restart the machine without a site visit. <b>You do nothing.</b> Monthly: service plus the operating model.',
-    'Your own person handles the exception queue, we\'re on the phone. You <b>turn on</b> remote access for us when we need it. We also hand over operating docs and admin training. Monthly: just the service.',
-    'Operation is entirely yours. We also hand over runbooks, a test bench, recovery procedures and two days of training. <b>Nothing monthly.</b> The condition is that not a single manual step in operation is something only we know how to do - otherwise it would be a promise we don\'t keep.'
-  ];
-  var wo = document.getElementById('whoOut');
-  var opb = document.querySelectorAll('.who-runs button');
-  opb.forEach(function(b){
-    b.addEventListener('click', function(){
-      opb.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
-      wo.innerHTML = OPS[+b.dataset.op];
-    });
-  });
-  wo.innerHTML = OPS[0];
 })();
 </script>
 </body>
