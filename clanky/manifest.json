@@ -1,5 +1,20 @@
 [
   {
+    "slug": "dodavatele-pisou-software-s-ai-platite-porad-stejne-hodiny",
+    "title": "Dodavatelé píšou software s AI. Platíte stejné hodiny?",
+    "description": "Softwarové firmy omezují ruční psaní kódu a část programátorů propouštějí. Co si ohlídat v zakázce, když se mění, co dostáváte za hodiny?",
+    "date_published": "2026-10-11",
+    "date_modified": "2026-10-15",
+    "highlight": false,
+    "cta_href": "/reseni-nova-aplikace",
+    "sluzby": [
+      "reseni-nova-aplikace"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-dodavatele-pisou-software-s-ai-platite-porad-stejne-hodiny.svg"
+  },
+  {
     "slug": "kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat",
     "title": "Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?",
     "description": "Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.",
