@@ -296,6 +296,95 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
 .misto-fakta dd{font-size:15.5px;font-weight:600}
 .misto-stejne h3{font-size:19px;letter-spacing:-.02em;margin-bottom:12px}
 
+/* kusy portalu (T1015-87): vyrezy z prototypu bez JS, vse scopovane pod .kus */
+.kus{--ok:#1C6B45;--ok-sv:#E4F0EA;--wait:#7E5A0E;--wait-sv:#F6EEDC;--err:#933B28;--err-sv:#F6E7E3}
+.kus-in{padding:clamp(14px,2.6vw,26px);display:grid;gap:18px;min-width:0;color:var(--inkoust)}
+.kus fieldset{border:0;min-width:0}
+.kus-h{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tlum);margin-bottom:6px}
+.kus .tag{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  padding:3px 7px;border-radius:5px;white-space:nowrap;justify-self:start}
+.kus .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.kus .t-ok{background:var(--ok-sv);color:var(--ok)}
+.kus .t-wait{background:var(--wait-sv);color:var(--wait)}
+.kus .t-err{background:var(--err-sv);color:var(--err)}
+.kus-dvoj{display:grid;gap:16px;min-width:0}
+@media(min-width:900px){.kus-dvoj{grid-template-columns:5fr 6fr;align-items:start}}
+.kus-volby{display:grid;gap:8px;min-width:0}
+.kus-v{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;
+  min-height:44px;padding:11px 14px 11px 44px;border:1px solid var(--linka);border-radius:var(--r);background:#fff;
+  cursor:pointer;transition:border-color .2s var(--e),background .2s var(--e),transform .16s var(--e)}
+.kus-v input{position:absolute;left:15px;top:14px;width:18px;height:18px;margin:0;accent-color:var(--akcent);cursor:pointer}
+.kus-v b{font-size:15px;font-weight:600;line-height:1.3}
+.kus-v .kus-c{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-2)}
+.kus-v:has(input:checked){border-color:var(--akcent);background:var(--akcent-sv)}
+.kus-v:active,.kus-tl:active{transform:scale(.99)}
+.kus-v:has(input:focus-visible),.kus-tl:has(input:focus-visible){outline:2px solid var(--akcent);outline-offset:3px}
+.kus input:focus-visible{outline:none}
+@media(hover:hover) and (pointer:fine){.kus-v:hover,.kus-tl:hover{border-color:var(--inkoust)}}
+.kus-karta{border:1px solid var(--linka);border-radius:var(--r-l);background:#fff;padding:16px 18px;min-width:0}
+.kus-panel,.kus-vysl{display:none}
+.kus:has(#prutok-poptavka:checked) [data-prutok="poptavka"],
+.kus:has(#prutok-nabidka:checked) [data-prutok="nabidka"],
+.kus:has(#prutok-objednavka:checked) [data-prutok="objednavka"],
+.kus:has(#prutok-faktura:checked) [data-prutok="faktura"],
+.kus:has(#prutok-dodavka:checked) [data-prutok="dodavka"],
+.kus:has(#zdroje-zakazky:checked) [data-zdroje="zakazky"],
+.kus:has(#zdroje-dil:checked) [data-zdroje="dil"],
+.kus:has(#zdroje-zaruka:checked) [data-zdroje="zaruka"],
+.kus-pol:has(input[value="potvrdit"]:checked) [data-volba="potvrdit"],
+.kus-pol:has(input[value="upravit"]:checked) [data-volba="upravit"],
+.kus-pol:has(input[value="zamitnout"]:checked) [data-volba="zamitnout"]{display:block;animation:prolni .28s var(--e)}
+@supports not selector(:has(*)){.kus-panel,.kus-vysl{display:block}}
+.kus-radky{list-style:none;display:grid}
+.kus-radky li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--linka);font-size:14.5px}
+.kus-radky li:last-child{border-bottom:0}
+.kus-kdo{font-size:13.5px;color:var(--text-2)}
+@media(max-width:560px){.kus-radky li{grid-template-columns:minmax(0,1fr) auto}
+  .kus-radky .kus-kdo{grid-row:2;grid-column:1}}
+.kus-pol{display:grid;gap:10px;padding:14px 0;border-bottom:1px solid var(--linka);min-width:0}
+.kus-pol:first-of-type{padding-top:4px}
+.kus-pol p{font-size:15px;line-height:1.45}
+.kus-pol .kus-c{display:block;font-size:13px;color:var(--text-2);margin-top:2px}
+.kus-tla{display:flex;flex-wrap:wrap;gap:8px}
+.kus-tl{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;
+  border:1px solid var(--obrys);border-radius:var(--r);background:#fff;font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .2s var(--e),border-color .2s var(--e),color .2s var(--e),transform .16s var(--e)}
+.kus-tl input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.kus-tl:has(input:checked){background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
+.kus-vysl{font-size:14px;color:var(--text-2);border-left:2px solid var(--akcent);padding-left:12px}
+.kus-stitky{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.kus-stitky span{font-size:13px;padding:6px 10px;border:1px solid var(--linka);border-radius:var(--r-s);background:var(--papir)}
+.kus-vlakno>*+*{margin-top:14px}
+.kus-msg{display:grid;gap:6px;min-width:0}
+.kus-msg .kus-kdo{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--tlum)}
+.kus-msg>p{font-size:15px;line-height:1.6;max-width:62ch}
+.kus-me{justify-items:end}
+.kus-me>p{background:var(--akcent-sv);border-radius:var(--r-l) var(--r-l) 4px var(--r-l);padding:10px 14px}
+.kus-ai>p{border-left:2px solid var(--akcent);padding-left:14px}
+.kus-zdroje{display:grid;gap:8px;margin-top:4px}
+.kus details{border:1px solid var(--linka);border-radius:var(--r);background:var(--papir);min-width:0}
+.kus summary{display:flex;align-items:center;gap:10px;min-height:44px;padding:9px 12px;cursor:pointer;list-style:none;
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--akcent);overflow-wrap:anywhere;border-radius:var(--r)}
+.kus summary::-webkit-details-marker{display:none}
+.kus summary::before{content:"+";flex:none;width:16px;font-size:15px;text-align:center}
+.kus details[open]>summary::before{content:"-"}
+.kus summary:focus-visible{outline:2px solid var(--akcent);outline-offset:3px}
+.kus details>div{padding:2px 14px 14px;font-size:14px;color:var(--text-2);line-height:1.55;animation:prolni .28s var(--e)}
+.kus-vystup{display:grid;gap:10px}
+.kus-vystup .kus-hlava{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.kus-vystup .kus-hlava b{font-size:15.5px}
+.kus-vystup p{font-size:14.5px;color:var(--text-2);line-height:1.55;max-width:66ch}
+.kus details.kus-oznac{border:0;background:none}
+.kus-oznac>summary{width:fit-content;border:1px solid var(--err);color:var(--err);font-family:inherit;font-size:14px;
+  font-weight:500;padding:9px 16px}
+.kus-oznac>summary::before{content:none}
+.kus-oznac[open]>summary{background:var(--err-sv)}
+.kus details.kus-oznac>div{padding:14px 0 0;display:grid;gap:10px}
+.kus-kroky{display:grid;gap:8px;padding-left:22px}
+.kus-kroky li{font-size:14.5px;color:var(--inkoust);line-height:1.5}
+.kus-kroky li::marker{font-family:'JetBrains Mono',monospace;color:var(--akcent)}
+
 /* ---------- kalkulačka ---------- */
 .calc{display:grid;gap:16px;margin-top:36px}
 @media(min-width:860px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
@@ -455,13 +544,27 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Z prvních ukázek.</b> Na ukázkách prototypu chtělo vedení firem vidět tohle jako první, proto je přehled postavený kolem průtoku.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/prutok-1x.webp" srcset="snimky/prutok-sm.webp 515w, snimky/prutok-1x.webp 1030w, snimky/prutok-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="812" loading="lazy"
-             alt="Přehled jednatele: průtok poptávek, nabídek, objednávek a faktur, medián doby a počet věcí po termínu">
-      </div></div>
-      <figcaption>Přehled jednatele: kolik je otevřeno, jak dlouho to trvá a co je po termínu.</figcaption>
+    <figure class="kus kus-prutok">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <fieldset class="kus-dvoj">
+          <legend class="vh">Agenda</legend>
+          <div class="kus-volby">
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-poptavka" value="poptavka"><b>Poptávky</b><span class="tag t-ok">v pořádku</span><span class="kus-c">214 otevřeno, medián 0,8 dne, 6 po termínu</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-nabidka" value="nabidka"><b>Nabídky</b><span class="tag t-wait">zdržuje se</span><span class="kus-c">67 otevřeno, medián 3,2 dne, 6 po termínu</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-objednavka" value="objednavka"><b>Objednávky od zákazníků</b><span class="tag t-ok">v pořádku</span><span class="kus-c">42 otevřeno, medián 2,1 dne, 1 po termínu</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-faktura" value="faktura" checked><b>Vydané faktury</b><span class="tag t-err">po termínu</span><span class="kus-c">84 otevřeno, medián 18,4 dne, 13 po termínu</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-dodavka" value="dodavka"><b>Objednávky dodavatelům</b><span class="tag t-wait">zdržuje se</span><span class="kus-c">112 otevřeno, medián 4,2 dne, 18 po termínu</span></label>
+          </div>
+          <div class="kus-karta"><p class="kus-h">Na kom co visí</p>
+          <div class="kus-panel" data-prutok="poptavka"><ul class="kus-radky"><li><span>Poptávka Gumex CZ, extruzní hlava</span><span class="kus-kdo">Obchod</span><span class="tag t-wait">2 dny po</span></li><li><span>Poptávka Technoplast, náhradní šnek</span><span class="kus-kdo">Jana Dvořáková</span><span class="tag t-wait">1 den po</span></li></ul></div>
+          <div class="kus-panel" data-prutok="nabidka"><ul class="kus-radky"><li><span>Nabídka Stavokomplet, linka EX90</span><span class="kus-kdo">Jana Dvořáková</span><span class="tag t-err">5 dní po</span></li><li><span>Nabídka Plastform, náhradní díly</span><span class="kus-kdo">Obchod</span><span class="tag t-wait">2 dny po</span></li></ul></div>
+          <div class="kus-panel" data-prutok="objednavka"><ul class="kus-radky"><li><span>Potvrzení objednávky Z-2604, Gumex</span><span class="kus-kdo">Výroba</span><span class="tag t-wait">1 den po</span></li></ul></div>
+          <div class="kus-panel" data-prutok="faktura"><ul class="kus-radky"><li><span>Upomínka Stavokomplet, 980 tis.</span><span class="kus-kdo">Finance</span><span class="tag t-err">41 dní po</span></li><li><span>Upomínka Technoplast, 620 tis.</span><span class="kus-kdo">Finance</span><span class="tag t-err">33 dní po</span></li><li><span>Upomínka FA 2026-0418</span><span class="kus-kdo">Eva Krausová</span><span class="tag t-wait">21 dní po</span></li></ul></div>
+          <div class="kus-panel" data-prutok="dodavka"><ul class="kus-radky"><li><span>Materiál pro Z-2611</span><span class="kus-kdo">Nákup</span><span class="tag t-err">9 dní po</span></li><li><span>Urgence Kunststoff</span><span class="kus-kdo">Nákup</span><span class="tag t-wait">4 dny po</span></li><li><span>Objednávka O-4490, Bohdalice</span><span class="kus-kdo">Petr Málek</span><span class="tag t-wait">4 dny po</span></li></ul></div>
+          </div>
+        </fieldset>
+      </div></div></div>
+      <figcaption>Klepněte na agendu a uvidíte, na kom co visí. Ukázka z prototypu, data jsou vymyšlená.</figcaption>
     </figure>
   </div>
 </section>
@@ -538,13 +641,16 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Nic nezapadne.</b> Po 24&nbsp;hodinách přijde připomenutí, po 48 věc přejde na zástupce. Nad 100&nbsp;tisíc schvaluje jednatel.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/schvaleni-1x.webp" srcset="snimky/schvaleni-sm.webp 515w, snimky/schvaleni-1x.webp 1030w, snimky/schvaleni-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="734" loading="lazy"
-             alt="Obrazovka Ke schválení: objednávky, urgence, upomínky a zápis ceny, které čekají na rozhodnutí člověka">
-      </div></div>
-      <figcaption>Ke schválení: položky čekají na rozhodnutí člověka, žádnou z nich neodešle stroj.</figcaption>
+    <figure class="kus kus-podpis">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <div class="kus-karta"><p class="kus-h">Čeká na rozhodnutí, 3 položky</p>
+          <fieldset class="kus-pol"><legend class="vh">Objednávka tyče u Ferony</legend><p>Objednávka <b>tyč 1.2379 průměr 100</b> u Ferony<span class="kus-c">42 800 Kč, pod stropem 100 tis. Odbavuje Nákup, čeká 9 dní.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-potvrdit" value="potvrdit">Potvrdit</label><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-upravit" value="upravit">Upravit</label><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-zamitnout" value="zamitnout">Zamítnout</label></div><p class="kus-vysl" data-volba="potvrdit">Odejde pod jménem Petr Málek, stroj nic nepošle sám.</p><p class="kus-vysl" data-volba="upravit">Koncept se otevře v Outlooku, po úpravě potvrdíte.</p><p class="kus-vysl" data-volba="zamitnout">Nic neodejde, důvod se uloží.</p></fieldset>
+          <fieldset class="kus-pol"><legend class="vh">Urgence Kunststoff GmbH</legend><p>Urgence <b>Kunststoff GmbH</b><span class="kus-c">Německy, 5 dní po termínu. Odbavuje Nákup, čeká 4 dny.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-potvrdit" value="potvrdit">Potvrdit</label><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-upravit" value="upravit">Upravit</label><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-zamitnout" value="zamitnout">Zamítnout</label></div><p class="kus-vysl" data-volba="potvrdit">Odejde pod jménem Petr Málek, stroj nic nepošle sám.</p><p class="kus-vysl" data-volba="upravit">Koncept se otevře v Outlooku, po úpravě potvrdíte.</p><p class="kus-vysl" data-volba="zamitnout">Nic neodejde, důvod se uloží.</p></fieldset>
+          <fieldset class="kus-pol"><legend class="vh">Odpověď na poptávku Stavokomplet</legend><p>Odpověď na poptávku <b>Stavokomplet</b><span class="kus-c">Koncept v Outlooku. Odbavuje Jana Dvořáková, čeká 3 h.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-potvrdit" value="potvrdit">Potvrdit</label><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-upravit" value="upravit">Upravit</label><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-zamitnout" value="zamitnout">Zamítnout</label></div><p class="kus-vysl" data-volba="potvrdit">Odejde pod jménem Jana Dvořáková, stroj nic nepošle sám.</p><p class="kus-vysl" data-volba="upravit">Koncept se otevře v Outlooku, po úpravě potvrdíte.</p><p class="kus-vysl" data-volba="zamitnout">Nic neodejde, důvod se uloží.</p></fieldset>
+          <p class="kus-h" style="margin-top:16px">Pravidla fronty</p><div class="kus-stitky"><span>Připomenutí po 24 h</span><span>Zástup po 48 h</span><span>Nad 100 tis. schvaluje jednatel</span></div>
+        </div>
+      </div></div></div>
+      <figcaption>Vyberte u položky Potvrdit, Upravit nebo Zamítnout. Data jsou vymyšlená.</figcaption>
     </figure>
   </div>
 </section>
@@ -563,13 +669,23 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Čísla ze zdroje.</b> Rozměry, čísla výkresů a ceny bere přesně z dokumentu, nedopočítává je.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/znalost-1x.webp" srcset="snimky/znalost-sm.webp 515w, snimky/znalost-1x.webp 1030w, snimky/znalost-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="830" loading="lazy"
-             alt="Chat s firemním agentem: odpověď na dotaz o zakázkách s odkazy na zdroje v POHODĚ a RAYNETU">
-      </div></div>
-      <figcaption>Chat: odpověď na dotaz o letošních zakázkách, pod ní zdroje z účetnictví a CRM.</figcaption>
+    <figure class="kus kus-zdroje">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <fieldset class="kus-dvoj">
+          <legend class="vh">Dotaz do chatu</legend>
+          <div class="kus-volby">
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-zakazky" value="zakazky" checked><b>Kolik jsme letos udělali zakázek na extruzní linky?</b></label>
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-dil" value="dil"><b>Najdi díl 31-0417 v dokumentaci.</b></label>
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-zaruka" value="zaruka"><b>Jakou záruku jsme dali Gumexu na šnekovou komoru?</b></label>
+          </div>
+          <div class="kus-karta">
+          <div class="kus-panel kus-vlakno" data-zdroje="zakazky"><div class="kus-msg kus-me"><span class="kus-kdo">Vy</span><p>Kolik jsme letos udělali zakázek na extruzní linky?</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Firemní agent</span><p>Letos zatím <b>18 zakázek</b> na extruzní linky v hodnotě 41,2 mil. Kč. Loni ke stejnému datu 14 zakázek za 33,8 mil. Kč.</p><div class="kus-zdroje"><p class="kus-kdo">Zdroje</p><details><summary>POHODA, vydané faktury 2025-2026</summary><div>Filtr: středisko Extruzní linky, datum 1. 1. až dnes. 18 faktur, součet 41 200 000 Kč.</div></details><details><summary>RAYNET, obchodní případy</summary><div>Fáze Vyhráno, produkt "extruzní linka", 18 případů. Loni ke stejnému datu 14.</div></details></div></div></div>
+          <div class="kus-panel kus-vlakno" data-zdroje="dil"><div class="kus-msg kus-me"><span class="kus-kdo">Vy</span><p>Najdi díl 31-0417 v dokumentaci.</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Firemní agent</span><p>Díl <b>31-0417</b> je <b>těsnění příruby šnekové komory</b> (průměr 90 mm, FKM). V katalogu náhradních dílů linky EX90 je na <b>straně 47</b>, pozice 12 ve výkresu sestavy.</p><div class="kus-zdroje"><p class="kus-kdo">Zdroje</p><details><summary>Linka-EX90/katalog-nahradnich-dilu.pdf, s. 47</summary><div>Pos. 12 | 31-0417 | Flanschdichtung Schneckenkammer | O 90 mm | FKM</div></details><details><summary>Linka-EX90/vykres-sestavy-komory.pdf, s. 3</summary><div>Výkres sestavy komory, pozice 12: těsnění příruby, odkaz na katalog s. 47.</div></details></div></div></div>
+          <div class="kus-panel kus-vlakno" data-zdroje="zaruka"><div class="kus-msg kus-me"><span class="kus-kdo">Vy</span><p>Jakou záruku jsme dali Gumexu na šnekovou komoru?</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Firemní agent</span><p><b>Tohle v podkladech nemám.</b> Smlouva s Gumexem není v dokumentech, které smíte otevřít. Zeptejte se obchodu nebo správce, ať ji přidá.</p></div></div>
+          </div>
+        </fieldset>
+      </div></div></div>
+      <figcaption>Vyberte dotaz a klepněte na zdroj, ze kterého odpověď je. Data jsou vymyšlená.</figcaption>
     </figure>
   </div>
 </section>
@@ -587,13 +703,15 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Zkušební sada.</b> Opravený případ se do ní přidá a zkouší se znovu i po výměně modelu.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/prezkoumani-1x.webp" srcset="snimky/prezkoumani-sm.webp 515w, snimky/prezkoumani-1x.webp 1030w, snimky/prezkoumani-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="759" loading="lazy"
-             alt="Obrazovka K přezkoumání: tři výstupy, které někdo označil jako špatné, a jak se vyřešily">
-      </div></div>
-      <figcaption>K přezkoumání: označené výstupy a u každého, jak se vyřešil.</figcaption>
+    <figure class="kus kus-opravy">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <div class="kus-karta kus-vystup"><p class="kus-h">Výstup agenta</p>
+          <div class="kus-hlava"><b>Podklad cenové nabídky v5</b></div>
+          <p>Podklad k nabídce pro Plastform: šnek 90/25, komora a náhradní těsnění. Ceny agent vzal ze složky Archiv/cenik-2023.</p>
+          <details class="kus-oznac"><summary>Označit jako špatné</summary><div><p>Označila <b>Jana Dvořáková</b>, Obchod, 2. 9.: "Ceny jsou ze starého ceníku z roku 2023." Správce s tím udělá:</p><ol class="kus-kroky"><li>Vyřadí složku Archiv/cenik-2023 z indexu, agent ji už neuvidí.</li><li>Přidá do zkušební sady případ "starý ceník se nepoužije".</li><li>Stav: <span class="tag t-ok">vyřešeno za 2 h</span></li></ol></div></details>
+        </div>
+      </div></div></div>
+      <figcaption>Klepněte na Označit jako špatné. Data jsou vymyšlená.</figcaption>
     </figure>
   </div>
 </section>

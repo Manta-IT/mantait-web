@@ -296,6 +296,95 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
 .misto-fakta dd{font-size:15.5px;font-weight:600}
 .misto-stejne h3{font-size:19px;letter-spacing:-.02em;margin-bottom:12px}
 
+/* kusy portalu (T1015-87): vyrezy z prototypu bez JS, vse scopovane pod .kus */
+.kus{--ok:#1C6B45;--ok-sv:#E4F0EA;--wait:#7E5A0E;--wait-sv:#F6EEDC;--err:#933B28;--err-sv:#F6E7E3}
+.kus-in{padding:clamp(14px,2.6vw,26px);display:grid;gap:18px;min-width:0;color:var(--inkoust)}
+.kus fieldset{border:0;min-width:0}
+.kus-h{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tlum);margin-bottom:6px}
+.kus .tag{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  padding:3px 7px;border-radius:5px;white-space:nowrap;justify-self:start}
+.kus .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.kus .t-ok{background:var(--ok-sv);color:var(--ok)}
+.kus .t-wait{background:var(--wait-sv);color:var(--wait)}
+.kus .t-err{background:var(--err-sv);color:var(--err)}
+.kus-dvoj{display:grid;gap:16px;min-width:0}
+@media(min-width:900px){.kus-dvoj{grid-template-columns:5fr 6fr;align-items:start}}
+.kus-volby{display:grid;gap:8px;min-width:0}
+.kus-v{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;
+  min-height:44px;padding:11px 14px 11px 44px;border:1px solid var(--linka);border-radius:var(--r);background:#fff;
+  cursor:pointer;transition:border-color .2s var(--e),background .2s var(--e),transform .16s var(--e)}
+.kus-v input{position:absolute;left:15px;top:14px;width:18px;height:18px;margin:0;accent-color:var(--akcent);cursor:pointer}
+.kus-v b{font-size:15px;font-weight:600;line-height:1.3}
+.kus-v .kus-c{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-2)}
+.kus-v:has(input:checked){border-color:var(--akcent);background:var(--akcent-sv)}
+.kus-v:active,.kus-tl:active{transform:scale(.99)}
+.kus-v:has(input:focus-visible),.kus-tl:has(input:focus-visible){outline:2px solid var(--akcent);outline-offset:3px}
+.kus input:focus-visible{outline:none}
+@media(hover:hover) and (pointer:fine){.kus-v:hover,.kus-tl:hover{border-color:var(--inkoust)}}
+.kus-karta{border:1px solid var(--linka);border-radius:var(--r-l);background:#fff;padding:16px 18px;min-width:0}
+.kus-panel,.kus-vysl{display:none}
+.kus:has(#prutok-poptavka:checked) [data-prutok="poptavka"],
+.kus:has(#prutok-nabidka:checked) [data-prutok="nabidka"],
+.kus:has(#prutok-objednavka:checked) [data-prutok="objednavka"],
+.kus:has(#prutok-faktura:checked) [data-prutok="faktura"],
+.kus:has(#prutok-dodavka:checked) [data-prutok="dodavka"],
+.kus:has(#zdroje-zakazky:checked) [data-zdroje="zakazky"],
+.kus:has(#zdroje-dil:checked) [data-zdroje="dil"],
+.kus:has(#zdroje-zaruka:checked) [data-zdroje="zaruka"],
+.kus-pol:has(input[value="potvrdit"]:checked) [data-volba="potvrdit"],
+.kus-pol:has(input[value="upravit"]:checked) [data-volba="upravit"],
+.kus-pol:has(input[value="zamitnout"]:checked) [data-volba="zamitnout"]{display:block;animation:prolni .28s var(--e)}
+@supports not selector(:has(*)){.kus-panel,.kus-vysl{display:block}}
+.kus-radky{list-style:none;display:grid}
+.kus-radky li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--linka);font-size:14.5px}
+.kus-radky li:last-child{border-bottom:0}
+.kus-kdo{font-size:13.5px;color:var(--text-2)}
+@media(max-width:560px){.kus-radky li{grid-template-columns:minmax(0,1fr) auto}
+  .kus-radky .kus-kdo{grid-row:2;grid-column:1}}
+.kus-pol{display:grid;gap:10px;padding:14px 0;border-bottom:1px solid var(--linka);min-width:0}
+.kus-pol:first-of-type{padding-top:4px}
+.kus-pol p{font-size:15px;line-height:1.45}
+.kus-pol .kus-c{display:block;font-size:13px;color:var(--text-2);margin-top:2px}
+.kus-tla{display:flex;flex-wrap:wrap;gap:8px}
+.kus-tl{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;
+  border:1px solid var(--obrys);border-radius:var(--r);background:#fff;font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .2s var(--e),border-color .2s var(--e),color .2s var(--e),transform .16s var(--e)}
+.kus-tl input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.kus-tl:has(input:checked){background:var(--inkoust);border-color:var(--inkoust);color:var(--papir)}
+.kus-vysl{font-size:14px;color:var(--text-2);border-left:2px solid var(--akcent);padding-left:12px}
+.kus-stitky{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.kus-stitky span{font-size:13px;padding:6px 10px;border:1px solid var(--linka);border-radius:var(--r-s);background:var(--papir)}
+.kus-vlakno>*+*{margin-top:14px}
+.kus-msg{display:grid;gap:6px;min-width:0}
+.kus-msg .kus-kdo{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--tlum)}
+.kus-msg>p{font-size:15px;line-height:1.6;max-width:62ch}
+.kus-me{justify-items:end}
+.kus-me>p{background:var(--akcent-sv);border-radius:var(--r-l) var(--r-l) 4px var(--r-l);padding:10px 14px}
+.kus-ai>p{border-left:2px solid var(--akcent);padding-left:14px}
+.kus-zdroje{display:grid;gap:8px;margin-top:4px}
+.kus details{border:1px solid var(--linka);border-radius:var(--r);background:var(--papir);min-width:0}
+.kus summary{display:flex;align-items:center;gap:10px;min-height:44px;padding:9px 12px;cursor:pointer;list-style:none;
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--akcent);overflow-wrap:anywhere;border-radius:var(--r)}
+.kus summary::-webkit-details-marker{display:none}
+.kus summary::before{content:"+";flex:none;width:16px;font-size:15px;text-align:center}
+.kus details[open]>summary::before{content:"-"}
+.kus summary:focus-visible{outline:2px solid var(--akcent);outline-offset:3px}
+.kus details>div{padding:2px 14px 14px;font-size:14px;color:var(--text-2);line-height:1.55;animation:prolni .28s var(--e)}
+.kus-vystup{display:grid;gap:10px}
+.kus-vystup .kus-hlava{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.kus-vystup .kus-hlava b{font-size:15.5px}
+.kus-vystup p{font-size:14.5px;color:var(--text-2);line-height:1.55;max-width:66ch}
+.kus details.kus-oznac{border:0;background:none}
+.kus-oznac>summary{width:fit-content;border:1px solid var(--err);color:var(--err);font-family:inherit;font-size:14px;
+  font-weight:500;padding:9px 16px}
+.kus-oznac>summary::before{content:none}
+.kus-oznac[open]>summary{background:var(--err-sv)}
+.kus details.kus-oznac>div{padding:14px 0 0;display:grid;gap:10px}
+.kus-kroky{display:grid;gap:8px;padding-left:22px}
+.kus-kroky li{font-size:14.5px;color:var(--inkoust);line-height:1.5}
+.kus-kroky li::marker{font-family:'JetBrains Mono',monospace;color:var(--akcent)}
+
 /* ---------- kalkulačka ---------- */
 .calc{display:grid;gap:16px;margin-top:36px}
 @media(min-width:860px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
@@ -455,13 +544,27 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>From the first demos.</b> At prototype demos, company management wanted to see this first, so the overview is built around flow.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/prutok-1x.webp" srcset="snimky/prutok-sm.webp 515w, snimky/prutok-1x.webp 1030w, snimky/prutok-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="812" loading="lazy"
-             alt="Managing director's overview: flow of inquiries, quotes, orders and invoices, median time and number of overdue items">
-      </div></div>
-      <figcaption>Managing director's overview: what is open, how long it takes and what is overdue.</figcaption>
+    <figure class="kus kus-prutok">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <fieldset class="kus-dvoj">
+          <legend class="vh">Process</legend>
+          <div class="kus-volby">
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-poptavka" value="poptavka"><b>Inquiries</b><span class="tag t-ok">on track</span><span class="kus-c">214 open, median 0.8 days, 6 overdue</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-nabidka" value="nabidka"><b>Quotes</b><span class="tag t-wait">slowing</span><span class="kus-c">67 open, median 3.2 days, 6 overdue</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-objednavka" value="objednavka"><b>Customer orders</b><span class="tag t-ok">on track</span><span class="kus-c">42 open, median 2.1 days, 1 overdue</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-faktura" value="faktura" checked><b>Issued invoices</b><span class="tag t-err">overdue</span><span class="kus-c">84 open, median 18.4 days, 13 overdue</span></label>
+          <label class="kus-v"><input type="radio" name="prutok" id="prutok-dodavka" value="dodavka"><b>Supplier orders</b><span class="tag t-wait">slowing</span><span class="kus-c">112 open, median 4.2 days, 18 overdue</span></label>
+          </div>
+          <div class="kus-karta"><p class="kus-h">Who is holding what</p>
+          <div class="kus-panel" data-prutok="poptavka"><ul class="kus-radky"><li><span>Inquiry Gumex CZ, extrusion head</span><span class="kus-kdo">Sales</span><span class="tag t-wait">2 days over</span></li><li><span>Inquiry Technoplast, spare screw</span><span class="kus-kdo">Jana Dvorakova</span><span class="tag t-wait">1 day over</span></li></ul></div>
+          <div class="kus-panel" data-prutok="nabidka"><ul class="kus-radky"><li><span>Quote Stavokomplet, line EX90</span><span class="kus-kdo">Jana Dvorakova</span><span class="tag t-err">5 days over</span></li><li><span>Quote Plastform, spare parts</span><span class="kus-kdo">Sales</span><span class="tag t-wait">2 days over</span></li></ul></div>
+          <div class="kus-panel" data-prutok="objednavka"><ul class="kus-radky"><li><span>Order confirmation Z-2604, Gumex</span><span class="kus-kdo">Production</span><span class="tag t-wait">1 day over</span></li></ul></div>
+          <div class="kus-panel" data-prutok="faktura"><ul class="kus-radky"><li><span>Reminder Stavokomplet, 41 days past due</span><span class="kus-kdo">Finance</span><span class="tag t-err">41 days over</span></li><li><span>Reminder Technoplast, 33 days past due</span><span class="kus-kdo">Finance</span><span class="tag t-err">33 days over</span></li><li><span>Reminder INV 2026-0418</span><span class="kus-kdo">Eva Krausova</span><span class="tag t-wait">21 days over</span></li></ul></div>
+          <div class="kus-panel" data-prutok="dodavka"><ul class="kus-radky"><li><span>Material for Z-2611</span><span class="kus-kdo">Purchasing</span><span class="tag t-err">9 days over</span></li><li><span>Chaser Kunststoff</span><span class="kus-kdo">Purchasing</span><span class="tag t-wait">4 days over</span></li><li><span>Order O-4490, Bohdalice</span><span class="kus-kdo">Petr Malek</span><span class="tag t-wait">4 days over</span></li></ul></div>
+          </div>
+        </fieldset>
+      </div></div></div>
+      <figcaption>Tap a process to see who is holding what. A piece of the prototype; the data is made up.</figcaption>
     </figure>
   </div>
 </section>
@@ -538,13 +641,16 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Nothing falls through.</b> After 24&nbsp;hours a reminder arrives, after 48 the item goes to a deputy. Above CZK&nbsp;100k, the managing director approves.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/schvaleni-1x.webp" srcset="snimky/schvaleni-sm.webp 515w, snimky/schvaleni-1x.webp 1030w, snimky/schvaleni-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="757" loading="lazy"
-             alt="To approve screen: orders, chasers, reminders and a price entry waiting for a person to decide">
-      </div></div>
-      <figcaption>To approve: items wait for a person to decide, and the machine sends none of them.</figcaption>
+    <figure class="kus kus-podpis">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <div class="kus-karta"><p class="kus-h">Waiting for a decision, 3 items</p>
+          <fieldset class="kus-pol"><legend class="vh">Order for bar at Ferona</legend><p>Order for <b>bar 1.2379, diameter 100</b> at Ferona<span class="kus-c">Under the 100k limit. Handled by Purchasing, waiting 9 days.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-potvrdit" value="potvrdit">Approve</label><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-upravit" value="upravit">Edit</label><label class="kus-tl"><input type="radio" name="podpis-1" id="podpis-1-zamitnout" value="zamitnout">Reject</label></div><p class="kus-vysl" data-volba="potvrdit">Goes out under the name Petr Malek; the machine sends nothing by itself.</p><p class="kus-vysl" data-volba="upravit">The draft opens in Outlook; you approve it after editing.</p><p class="kus-vysl" data-volba="zamitnout">Nothing goes out; the reason is saved.</p></fieldset>
+          <fieldset class="kus-pol"><legend class="vh">Chaser to Kunststoff GmbH</legend><p>Chaser to <b>Kunststoff GmbH</b><span class="kus-c">In German, 5 days late. Handled by Purchasing, waiting 4 days.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-potvrdit" value="potvrdit">Approve</label><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-upravit" value="upravit">Edit</label><label class="kus-tl"><input type="radio" name="podpis-2" id="podpis-2-zamitnout" value="zamitnout">Reject</label></div><p class="kus-vysl" data-volba="potvrdit">Goes out under the name Petr Malek; the machine sends nothing by itself.</p><p class="kus-vysl" data-volba="upravit">The draft opens in Outlook; you approve it after editing.</p><p class="kus-vysl" data-volba="zamitnout">Nothing goes out; the reason is saved.</p></fieldset>
+          <fieldset class="kus-pol"><legend class="vh">Reply to Stavokomplet inquiry</legend><p>Reply to the <b>Stavokomplet</b> inquiry<span class="kus-c">Draft in Outlook. Handled by Jana Dvorakova, waiting 3 h.</span></p><div class="kus-tla"><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-potvrdit" value="potvrdit">Approve</label><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-upravit" value="upravit">Edit</label><label class="kus-tl"><input type="radio" name="podpis-3" id="podpis-3-zamitnout" value="zamitnout">Reject</label></div><p class="kus-vysl" data-volba="potvrdit">Goes out under the name Jana Dvorakova; the machine sends nothing by itself.</p><p class="kus-vysl" data-volba="upravit">The draft opens in Outlook; you approve it after editing.</p><p class="kus-vysl" data-volba="zamitnout">Nothing goes out; the reason is saved.</p></fieldset>
+          <p class="kus-h" style="margin-top:16px">Queue rules</p><div class="kus-stitky"><span>Reminder after 24 h</span><span>Deputy after 48 h</span><span>Over 100k the managing director approves</span></div>
+        </div>
+      </div></div></div>
+      <figcaption>Pick Approve, Edit or Reject for an item. The data is made up.</figcaption>
     </figure>
   </div>
 </section>
@@ -563,13 +669,23 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Numbers from the source.</b> Dimensions, drawing numbers and prices come straight from the document and are never estimated.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/znalost-1x.webp" srcset="snimky/znalost-sm.webp 515w, snimky/znalost-1x.webp 1030w, snimky/znalost-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="853" loading="lazy"
-             alt="Chat with the company agent: an answer about orders with links to sources in POHODA and RAYNET">
-      </div></div>
-      <figcaption>Chat: an answer to a question about this year's orders, with sources from accounting and the CRM below it.</figcaption>
+    <figure class="kus kus-zdroje">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <fieldset class="kus-dvoj">
+          <legend class="vh">Question for the chat</legend>
+          <div class="kus-volby">
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-zakazky" value="zakazky" checked><b>How many extrusion line orders have we done this year?</b></label>
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-dil" value="dil"><b>Find part 31-0417 in the documentation.</b></label>
+          <label class="kus-v"><input type="radio" name="zdroje" id="zdroje-zaruka" value="zaruka"><b>What warranty did we give Gumex on the screw chamber?</b></label>
+          </div>
+          <div class="kus-karta">
+          <div class="kus-panel kus-vlakno" data-zdroje="zakazky"><div class="kus-msg kus-me"><span class="kus-kdo">You</span><p>How many extrusion line orders have we done this year?</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Company agent</span><p>So far this year <b>18 orders</b> for extrusion lines. Last year by the same date it was 14.</p><div class="kus-zdroje"><p class="kus-kdo">Sources</p><details><summary>POHODA, issued invoices 2025-2026</summary><div>Filter: cost centre Extrusion lines, Jan 1 to today. 18 invoices.</div></details><details><summary>RAYNET, sales deals</summary><div>Stage Won, product "extrusion line", 18 deals. Last year by the same date 14.</div></details></div></div></div>
+          <div class="kus-panel kus-vlakno" data-zdroje="dil"><div class="kus-msg kus-me"><span class="kus-kdo">You</span><p>Find part 31-0417 in the documentation.</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Company agent</span><p>Part <b>31-0417</b> is the <b>screw chamber flange seal</b> (diameter 90 mm, FKM). In the spare parts catalogue for line EX90 it is on <b>page 47</b>, item 12 in the assembly drawing.</p><div class="kus-zdroje"><p class="kus-kdo">Sources</p><details><summary>Linka-EX90/spare-parts-catalogue.pdf, p. 47</summary><div>Pos. 12 | 31-0417 | Flanschdichtung Schneckenkammer | O 90 mm | FKM</div></details><details><summary>Linka-EX90/chamber-assembly-drawing.pdf, p. 3</summary><div>Chamber assembly drawing, item 12: flange seal, see catalogue p. 47.</div></details></div></div></div>
+          <div class="kus-panel kus-vlakno" data-zdroje="zaruka"><div class="kus-msg kus-me"><span class="kus-kdo">You</span><p>What warranty did we give Gumex on the screw chamber?</p></div><div class="kus-msg kus-ai"><span class="kus-kdo">Company agent</span><p><b>I do not have that in the documents.</b> The Gumex contract is not among the files you may open. Ask sales or the administrator to add it.</p></div></div>
+          </div>
+        </fieldset>
+      </div></div></div>
+      <figcaption>Pick a question and tap a source to see where the answer comes from. The data is made up.</figcaption>
     </figure>
   </div>
 </section>
@@ -587,13 +703,15 @@ h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:18px;max-width:18ch;text-wrap:
         <li><b>Test set.</b> The fixed case is added to it and tested again, even after the model is swapped.</li>
       </ul>
     </div>
-    <figure>
-      <div class="ram"><div class="ram-in">
-        <img src="snimky/prezkoumani-1x.webp" srcset="snimky/prezkoumani-sm.webp 515w, snimky/prezkoumani-1x.webp 1030w, snimky/prezkoumani-2x.webp 2060w" sizes="(max-width: 700px) calc(100vw - 44px), min(1040px, 100vw - 140px)"
-             width="1030" height="798" loading="lazy"
-             alt="For review screen: three outputs someone flagged as wrong and how they were resolved">
-      </div></div>
-      <figcaption>For review: flagged outputs and how each one was resolved.</figcaption>
+    <figure class="kus kus-opravy">
+      <div class="ram"><div class="ram-in"><div class="kus-in">
+        <div class="kus-karta kus-vystup"><p class="kus-h">Agent output</p>
+          <div class="kus-hlava"><b>Quote draft v5</b></div>
+          <p>Quote draft for Plastform: screw 90/25, chamber and spare seals. The agent took the prices from the folder Archive/pricelist-2023.</p>
+          <details class="kus-oznac"><summary>Mark as wrong</summary><div><p>Flagged by <b>Jana Dvorakova</b>, Sales, Sep 2: "The prices come from the old 2023 price list." The administrator then:</p><ol class="kus-kroky"><li>Removes the folder Archive/pricelist-2023 from the index, so the agent no longer sees it.</li><li>Adds the case "an old price list is not used" to the test set.</li><li>Status: <span class="tag t-ok">resolved in 2 h</span></li></ol></div></details>
+        </div>
+      </div></div></div>
+      <figcaption>Tap Mark as wrong. The data is made up.</figcaption>
     </figure>
   </div>
 </section>
