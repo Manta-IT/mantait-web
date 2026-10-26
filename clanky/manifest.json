@@ -16,6 +16,22 @@
     "obrazek": "clanek-skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku.svg"
   },
   {
+    "slug": "co-o-vasi-firme-odpovi-chatgpt-overte-to-driv-nez-vas",
+    "title": "Co o vaší firmě odpoví ChatGPT? Ověřte to sami",
+    "description": "Zákazníci se ptají AI, koho si vybrat. Zjistěte za jedno odpoledne, co o vaší firmě říká, a co na webu změnit, aby vás popsala správně.",
+    "date_published": "2026-10-14",
+    "date_modified": "2026-10-26",
+    "highlight": false,
+    "cta_href": "/weby",
+    "sluzby": [
+      "weby",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-co-o-vasi-firme-odpovi-chatgpt-overte-to-driv-nez-vas.svg"
+  },
+  {
     "slug": "ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele",
     "title": "AI u malých firem nebrzdí nástroje, ale čas majitele",
     "description": "Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.",
