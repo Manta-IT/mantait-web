@@ -1,5 +1,21 @@
 [
   {
+    "slug": "skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku",
+    "title": "Školení a zálohy máte. Víte, co dělat v první hodině útoku?",
+    "description": "Školení a zálohy už firmy mají, plán reakce na incident málokdo. Co patří na jednu stránku a jaké lhůty hlášení stanoví zákon o kybernetické bezpečnosti.",
+    "date_published": "2026-10-15",
+    "date_modified": "2026-10-26",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku.svg"
+  },
+  {
     "slug": "dodavatele-pisou-software-s-ai-platite-porad-stejne-hodiny",
     "title": "Dodavatelé píšou software s AI. Platíte stejné hodiny?",
     "description": "Softwarové firmy omezují ruční psaní kódu a část programátorů propouštějí. Co si ohlídat v zakázce, když se mění, co dostáváte za hodiny?",

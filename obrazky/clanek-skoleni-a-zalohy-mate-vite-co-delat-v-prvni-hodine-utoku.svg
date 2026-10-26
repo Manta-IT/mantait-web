@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Jedna stránka s pěti body plánu stojí u cesty od zjištění útoku přes tři rozhodovací lhůty až ke zvládnutému cíli" fill="none">
+<title>Jedna stránka s pěti body plánu stojí u cesty od zjištění útoku přes tři rozhodovací lhůty až ke zvládnutému cíli</title>
+  <rect x="24" y="20" width="104" height="78" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <circle cx="40" cy="35" r="2.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <circle cx="40" cy="46" r="2.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <circle cx="40" cy="57" r="2.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <circle cx="40" cy="68" r="2.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <circle cx="40" cy="79" r="2.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M50 35h58" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M50 46h46" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M50 57h62" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M50 68h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M50 79h54" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M76 98v52" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="30" cy="150" r="8" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="2"/>
+  <path d="M38 150h62" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="110" cy="150" r="10" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M120 150h60" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="190" cy="150" r="10" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M200 150h58" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="270" cy="150" r="12" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M263 150l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
