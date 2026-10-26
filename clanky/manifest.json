@@ -16,6 +16,22 @@
     "obrazek": "clanek-skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku.svg"
   },
   {
+    "slug": "hackeri-tvrdi-ze-ovladli-tisice-kamer-v-cesku-co-visi-na",
+    "title": "Hackeři tvrdí, že ovládli kamery v Česku. Co visí u vás?",
+    "description": "Kamera na dvoře, terminál docházky nebo regulace kotelny často běží s továrním heslem a přístupem z internetu. Co chtít po dodavateli, než to někdo zneužije.",
+    "date_published": "2026-10-13",
+    "date_modified": "2026-10-26",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-hackeri-tvrdi-ze-ovladli-tisice-kamer-v-cesku-co-visi-na.svg"
+  },
+  {
     "slug": "dodavatele-pisou-software-s-ai-platite-porad-stejne-hodiny",
     "title": "Dodavatelé píšou software s AI. Platíte stejné hodiny?",
     "description": "Softwarové firmy omezují ruční psaní kódu a část programátorů propouštějí. Co si ohlídat v zakázce, když se mění, co dostáváte za hodiny?",

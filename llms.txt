@@ -97,6 +97,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Kolega si s AI napsal firemní aplikaci. Kdo ji udrží?](https://mantait.cz/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat): Zaměstnanec si s AI za víkend postavil firemní nástroj a ostatní už na něm závisí. Co chtít po každé aplikaci dřív, než autor odejde.
 - [Dodavatelé píšou software s AI. Platíte stejné hodiny?](https://mantait.cz/clanky/dodavatele-pisou-software-s-ai-platite-porad-stejne-hodiny): Softwarové firmy omezují ruční psaní kódu a část programátorů propouštějí. Co si ohlídat v zakázce, když se mění, co dostáváte za hodiny?
 - [Školení a zálohy máte. Víte, co dělat v první hodině útoku?](https://mantait.cz/clanky/skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku): Školení a zálohy už firmy mají, plán reakce na incident málokdo. Co patří na jednu stránku a jaké lhůty hlášení stanoví zákon o kybernetické bezpečnosti.
+- [Hackeři tvrdí, že ovládli kamery v Česku. Co visí u vás?](https://mantait.cz/clanky/hackeri-tvrdi-ze-ovladli-tisice-kamer-v-cesku-co-visi-na): Kamera na dvoře, terminál docházky nebo regulace kotelny často běží s továrním heslem a přístupem z internetu. Co chtít po dodavateli, než to někdo zneužije.
 
 ## Co Manta IT není
 
