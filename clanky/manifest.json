@@ -16,6 +16,22 @@
     "obrazek": "clanek-skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku.svg"
   },
   {
+    "slug": "ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele",
+    "title": "AI u malých firem nebrzdí nástroje, ale čas majitele",
+    "description": "Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.",
+    "date_published": "2026-10-14",
+    "date_modified": "2026-10-26",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele.svg"
+  },
+  {
     "slug": "hackeri-tvrdi-ze-ovladli-tisice-kamer-v-cesku-co-visi-na",
     "title": "Hackeři tvrdí, že ovládli kamery v Česku. Co visí u vás?",
     "description": "Kamera na dvoře, terminál docházky nebo regulace kotelny často běží s továrním heslem a přístupem z internetu. Co chtít po dodavateli, než to někdo zneužije.",

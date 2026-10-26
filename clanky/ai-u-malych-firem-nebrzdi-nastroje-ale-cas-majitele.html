@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI u malých firem nebrzdí nástroje, ale čas majitele - Manta IT</title>
+<meta name="description" content="Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele">
+  <meta property="og:title" content="AI u malých firem nebrzdí nástroje, ale čas majitele">
+  <meta property="og:description" content="Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI u malých firem nebrzdí nástroje, ale čas majitele",
+    "description": "Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-14",
+    "dateModified": "2026-10-14",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI v malých firmách", "Vedení IT"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI v malé firmě</span>
+  <h1>AI u malých firem nebrzdí nástroje, ale <em>čas majitele.</em></h1>
+  <p class="hero-lead">Past operativy je stav, kdy majitel firmy tráví téměř celý týden provozem a na rozhodnutí o směru firmy mu zbývá jen volný čas. Podle průzkumu pro AMSP ČR právě ona brzdí zavádění AI v malých firmách, ne nedostatek nástrojů. Další předplatné ji nevyřeší.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 14. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele.svg" alt="Blok provozních úkolů zabírá téměř celou plochu, jen úzký okraj vede přerušovanou linkou ke kruhu místa rozhodnutí, který stojí stranou" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Průzkum</span>
+  <h2>Co brzdí AI <em>v malých firmách.</em></h2>
+  <p>Asociace malých a středních podniků a živnostníků ČR nechala na jaře 2026 zpracovat dvoudílný průzkum. Agentura Ipsos se ptala 201 majitelů, jednatelů a ředitelů mikro, malých a středních podniků, studio Tempo Ventures k tomu vedlo skupinovou diskusi s dvaceti podnikateli (<a href="https://www.businessinfo.cz/clanky/nastup-ai-do-praxe-brzdi-past-operativy-vyplyva-z-pruzkumu-pro-amsp-cr/" rel="nofollow">AMSP ČR, 22. 4. 2026</a>).</p>
+  <p>Z diskuse vyšlo, že podnikatelé tráví "80 a více procent času operativou", tedy e-maily, koordinací lidí a administrativou, a na zkoušení nových nástrojů jim čas nezbývá (<a href="https://www.amsp.cz/media/amsp/16307/vysledky-tempo-report-ke-kvalitativnimu-vyzkumu-pro-rok-ai-2026.pdf" rel="nofollow">Tempo Ventures pro AMSP ČR, 2026</a>). Těch 80 % tedy říkají o sobě účastníci diskuse, je jich dvacet a nikdo jim čas neměřil. AMSP z toho přesto udělala hlavní závěr projektu: AI podle ní brzdí čas majitele víc než strach ze změn.</p>
+  <p>Z toho plyne nepříjemná věc: čas, který by majitel potřeboval na zavedení AI, spolyká právě ta operativa, kterou má AI zmenšit.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Proč nástroj nestačí</span>
+  <h2>Nástroj <em>nikdo nevede.</em></h2>
+  <p>Nástroj si koupí kdokoli. Rozhodnout, na kterém procesu ho vyzkoušet, kdo výsledek zkontroluje a kdy se pokus zastaví, musí někdo, kdo má pravomoc a čas. V malé firmě je tím člověkem majitel, a ten ho nemá.</p>
+  <p>Výsledek znáte: pilot začne nadšením, po třech týdnech se na něj nikdo nedívá a tiše vyschne. Proč se to stává, popisuji v článku <a href="/clanky/proc-se-ai-pilot-ve-firme-nikdy-nedostane-do-provozu">proč se AI pilot nikdy nedostane do provozu</a>. Příčina bývá stejná: změně chybí vedoucí.</p>
+  <p>Mezitím lidé ve firmě používají AI po svém a bez dohledu. Na to se zaměřuje text <a href="/clanky/vasi-lide-uz-ai-pouzivaji-jen-nevite-kterou-a-s-jakymi-daty">vaši lidé už AI používají</a>. Prázdné místo po vedoucím se neudrží prázdné.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Rozdělení rolí</span>
+  <h2>Co musí zůstat u majitele a co <em>může vést jiný.</em></h2>
+  <p>Majiteli zůstává rozhodnutí, která nikdo nepřevezme: do čeho firma investuje, jaká data smí opustit firmu, kde AI nesmí rozhodovat sama a kolik rizika firma unese. Ta se dělají pomalu a málokdy.</p>
+  <p>Vést může někdo jiný všechno kolem: sepsat, kde se ve firmě ztrácí čas, vybrat proces na první zkoušku, nastavit přístupy, hlídat termíny, vyhodnotit výsledek a připravit majiteli podklad, o kterém se rozhodne za čtvrt hodiny. Majitel tak nepřichází o řízení. Přichází o shánění informací.</p>
+  <p>Praktická zkouška: vezměte poslední rozhodnutí o IT, které se ve firmě táhlo. Kolik z té doby šlo na rozhodování a kolik na přípravu podkladů? Přípravu lze předat.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">První měsíc</span>
+  <h2>Jak vypadá první měsíc, když IT vede <em>externí člověk.</em></h2>
+  <p>V prvním týdnu si projdu firmu: systémy, smlouvy, přístupy, a hlavně procesy, kde lidé tráví nejvíc času ručním přepisováním a čekáním. Majitele to stojí jednu dvě schůzky a nic dalšího.</p>
+  <p>Ve druhém týdnu předložím krátký seznam, co má smysl řešit a co ne, včetně věcí, které AI zatím nezvládne. U každé položky napíšu, co stojí a co ušetří. Majitel škrtne a vybere jednu.</p>
+  <p>Zbytek měsíce vedu první zavedení: dodavatele, testování i předání lidem, kterých se to týká. Majitel dostává stručný přehled na konci každého týdne. Na konci měsíce má v provozu jednu změnu a ví, jak se rozhoduje o další. Podrobněji je cesta popsaná na stránce <a href="/reseni-vedeni-it">dlouhodobé vedení IT</a>, rozdíl oproti běžné správě počítačů vysvětluje <a href="/clanky/sprava-it-nebo-vedeni-it-co-mala-firma-potrebuje">článek o správě a vedení IT</a>.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud ve firmě existuje člověk, který má na vedení změn čas i pravomoc, externího vedoucího nepotřebujete. Stačí mu dát jasné zadání. Jestli takový člověk není a věc nese majitel mezi dalšími úkoly, začněte tím, že ji předáte.</p>
+  <div class="lp-price">
+    <p><b>Převezmu vedení IT i zavádění AI a zůstanu u toho, dokud to nebude běžet.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-vedeni-it" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-vedeni-it"><b>Dlouhodobé vedení IT</b><small>od 50 000 Kč měsíčně</small><span>Celá cesta na paušál. Vy se k IT vracíte jen na poradách.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
