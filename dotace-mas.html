@@ -147,7 +147,6 @@
     <table class="lp-table">
       <tr><th>Území</th><th>Uzávěrka záměrů</th><th>Peníze ve výzvě</th><th>Vejde se zhruba</th></tr>
       <!-- MAS:START generuje scripts/stroj/mas_parametry.py --web, needitovat rucne -->
-      <tr data-do="2026-11-02"><td>Krnovsko (okres Bruntál)</td><td>2. listopadu 2026, 12:00</td><td>4 440 000 Kč</td><td>6 až 9 projektů</td></tr>
       <tr data-do="2026-11-03"><td>Broumovsko (okres Náchod)</td><td>3. listopadu 2026</td><td>594 083 Kč</td><td>asi 1 projekt</td></tr>
       <tr data-do="2026-11-05"><td>Hradecký venkov (okresy Hradec Králové, Trutnov, Náchod)</td><td>5. listopadu 2026, 12:00</td><td>433 961 Kč</td><td>asi 1 projekt</td></tr>
       <tr data-do="2026-11-06"><td>Brdy (okresy Příbram, Beroun)</td><td>6. listopadu 2026, 12:00</td><td>1 500 000 Kč</td><td>2 až 3 projekty</td></tr>
@@ -156,6 +155,7 @@
       <tr data-do="2026-11-16"><td>Český ráj (okresy Jičín, Semily)</td><td>16. listopadu 2026, 12:00</td><td>346 561 Kč</td><td>asi 1 projekt</td></tr>
       <tr data-do="2026-11-23"><td>Střední Haná (okresy Přerov, Prostějov, Kroměříž)</td><td>23. listopadu 2026, 14:00</td><td>489 385 Kč</td><td>asi 1 projekt</td></tr>
       <tr data-do="2026-11-23"><td>Šumavsko (okresy Prachatice, Strakonice)</td><td>23. listopadu 2026, 12:00</td><td>1 011 744 Kč</td><td>1 až 2 projekty</td></tr>
+      <tr data-do="2026-11-23"><td>Zálabí (okresy Kolín, Nymburk, Kutná Hora)</td><td>23. listopadu 2026, 14:00</td><td>1 500 000 Kč</td><td>2 až 3 projekty</td></tr>
       <!-- MAS:END -->
     </table>
   </div>
@@ -467,7 +467,6 @@
   // Diakritika tu MUSI byt -- tenhle text cte navstevnik, ne prekladac.
   var MAS = {
     /* MAS:START */
-    'rozvoj-krnovska': { kde: 'v území MAS Rozvoj Krnovska', uzaverka: '2. listopadu, 12:00' },
     'broumovsko': { kde: 'v území MAS Broumovsko+', uzaverka: '3. listopadu' },
     'hradecky-venkov': { kde: 'v území MAS Hradecký venkov', uzaverka: '5. listopadu, 12:00' },
     'brdy': { kde: 'v Brdech', uzaverka: '6. listopadu, 12:00' },
@@ -476,6 +475,7 @@
     'brana-do-ceskeho-raje': { kde: 'v Českém ráji', uzaverka: '16. listopadu, 12:00' },
     'stredni-hana': { kde: 'v území MAS Střední Haná', uzaverka: '23. listopadu, 14:00' },
     'sumavsko': { kde: 'v území MAS Šumavsko', uzaverka: '23. listopadu, 12:00' },
+    'zalabi': { kde: 'v území MAS Zálabí', uzaverka: '23. listopadu, 14:00' },
     /* MAS:END */
   };
   var slug = new URLSearchParams(location.search).get('mas');
