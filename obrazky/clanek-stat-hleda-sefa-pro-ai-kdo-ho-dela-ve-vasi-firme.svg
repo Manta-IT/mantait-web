@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Vlevo jedno rozhodovací místo spojené třemi cestami se třemi bloky, vpravo několik rozhodovacích míst, jejichž přerušené cesty nikam nedojdou" fill="none">
+<title>Vlevo jedno rozhodovací místo spojené třemi cestami se třemi bloky, vpravo několik rozhodovacích míst, jejichž přerušené cesty nikam nedojdou</title>
+  <path d="M56 100h20v-59h24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M56 100h44" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M56 100h20v59h24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="40" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <rect x="100" y="24" width="56" height="34" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M108 37h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M108 46h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="100" y="83" width="56" height="34" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M108 96h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M108 105h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="100" y="142" width="56" height="34" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M108 155h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M108 164h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="272" y="24" width="40" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M279 32h26" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M279 40h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="272" y="87" width="40" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M279 95h26" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M279 103h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="272" y="150" width="40" height="26" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M279 158h26" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M279 166h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="196" cy="48" r="12" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M211 48h14" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <circle cx="226" cy="104" r="12" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M241 104h14" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <circle cx="198" cy="160" r="12" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M213 160h14" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+</svg>
