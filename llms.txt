@@ -106,6 +106,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Než vyměníte starý systém, sepište, co v něm je](https://mantait.cz/clanky/vas-system-roste-s-firmou-dvacet-let-nez-ho-vymenite): Firma po letech neví, co všechno na jejím systému stojí. Jak sepsat, co dělá a kdo ho používá, aby se nabídky na nový daly porovnat na pět let.
 - [Nejdřív pravidla, pak pilot: co AI ve firmě vrátila](https://mantait.cz/clanky/nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co): Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.
 - [ERP máte, výrobu plánujete v Excelu. Kdy to přestane stačit](https://mantait.cz/clanky/erp-mate-vyrobu-planujete-v-excelu-kdy-to-prestane-stacit): Plán z rána odpoledne neplatí a plánovač dohání rozdíl v tabulce. Jak poznat, kdy je čas měnit nástroj a kdy stačí uklidit data, ze kterých se plánuje.
+- [Albert je týden bez aplikace. Vydržela by to vaše firma?](https://mantait.cz/clanky/albert-je-tyden-bez-aplikace-kolik-dni-by-vydrzela-vase): Aplikace Albertu stojí přes týden po útoku na mateřskou skupinu. Bez kterého systému se zastaví vaše firma a co mít napsané dřív, než se to stane?
 
 ## Co Manta IT není
 
