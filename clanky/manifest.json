@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vas-system-roste-s-firmou-dvacet-let-nez-ho-vymenite",
+    "title": "Než vyměníte starý systém, sepište, co v něm je",
+    "description": "Firma po letech neví, co všechno na jejím systému stojí. Jak sepsat, co dělá a kdo ho používá, aby se nabídky na nový daly porovnat na pět let.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-16",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-vas-system-roste-s-firmou-dvacet-let-nez-ho-vymenite.svg"
+  },
+  {
     "slug": "vola-vam-sef-a-chce-poslat-penize-hlas-i-video-uz-umi",
     "title": "Volá vám šéf a chce poslat peníze? Hlas i video umí AI",
     "description": "Hlas i obraz šéfa dnes umí napodobit AI. Co se stalo firmám, proč zpětný hovor nestačí a jaké pravidlo plateb zavést dřív, než zazvoní telefon.",

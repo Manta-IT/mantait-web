@@ -103,6 +103,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [T-Mobile pustil na infolinku AI. Co z toho obstojí](https://mantait.cz/clanky/t-mobile-pustil-na-infolinku-ai-co-z-toho-obstoji-v-male-firme): Telefon vám zvoní pořád kvůli stejným otázkám? Které dotazy zvládne hlasový asistent, k čemu potřebuje přístup a kdy musí hovor převzít člověk.
 - [Podvodné e-maily jménem CzechInvestu a ČNB: jak je poznat](https://mantait.cz/clanky/podvodne-e-maily-jmenem-czechinvestu-a-cnb-jak-poznat-falesnou): Falešný e-mail od úřadu dnes vypadá věrohodně, včetně zfalšovaného potvrzení od ČNB. Ve firmě stačí jedno pravidlo, aby neprošel.
 - [Volá vám šéf a chce poslat peníze? Hlas i video umí AI](https://mantait.cz/clanky/vola-vam-sef-a-chce-poslat-penize-hlas-i-video-uz-umi): Hlas i obraz šéfa dnes umí napodobit AI. Co se stalo firmám, proč zpětný hovor nestačí a jaké pravidlo plateb zavést dřív, než zazvoní telefon.
+- [Než vyměníte starý systém, sepište, co v něm je](https://mantait.cz/clanky/vas-system-roste-s-firmou-dvacet-let-nez-ho-vymenite): Firma po letech neví, co všechno na jejím systému stojí. Jak sepsat, co dělá a kdo ho používá, aby se nabídky na nový daly porovnat na pět let.
 
 ## Co Manta IT není
 
