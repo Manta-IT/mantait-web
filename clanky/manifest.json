@@ -1,5 +1,21 @@
 [
   {
+    "slug": "do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte",
+    "title": "AI knihovna s malwarem: zeptejte se dodavatele",
+    "description": "V oblíbené knihovně pro práci s AI se objevil škodlivý kód. Firmy často nevědí, jestli ji jejich aplikace používá. Co se zeptat dodavatele hned.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-17",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-nova-aplikace"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte.svg"
+  },
+  {
     "slug": "stat-hleda-sefa-pro-ai-kdo-ho-dela-ve-vasi-firme",
     "title": "Stát hledá šéfa pro AI. Kdo ho dělá ve vaší firmě?",
     "description": "Stát vypsal výběrové řízení na šéfa AI. Ve vaší firmě o nástrojích, datech a prvním nasazení rozhoduje každý sám, nebo nikdo. Co z té role potřebujete.",
