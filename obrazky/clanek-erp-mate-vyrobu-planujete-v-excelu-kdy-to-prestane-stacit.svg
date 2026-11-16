@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Plán výroby se z ERP přes ruční tabulku dostává ke třem pracovištím a uprostřed cesty stojí místo rozhodnutí, jestli plán drží do odpoledne." fill="none">
+<title>Plán výroby se z ERP přes ruční tabulku dostává ke třem pracovištím a uprostřed cesty stojí místo rozhodnutí, jestli plán drží do odpoledne.</title>
+  <rect x="10" y="78" width="56" height="44" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M20 92h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M20 102h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M66 100h34" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="100" y="74" width="64" height="52" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M110 88h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M110 98h32" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M110 108h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="100" y="146" width="64" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M110 158h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M110 167h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M132 146v-20" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M164 100h12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="190" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="190" cy="100" r="3.5" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M204 100h26" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M230 50v100" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M230 50 h22" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="252" y="36" width="58" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M262 46h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M230 100 h22" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="252" y="86" width="58" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M262 96h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M230 150 h22" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="252" y="136" width="58" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M262 146h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>

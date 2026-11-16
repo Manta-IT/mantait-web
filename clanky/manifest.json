@@ -1,5 +1,21 @@
 [
   {
+    "slug": "erp-mate-vyrobu-planujete-v-excelu-kdy-to-prestane-stacit",
+    "title": "ERP máte, výrobu plánujete v Excelu. Kdy to přestane stačit",
+    "description": "Plán z rána odpoledne neplatí a plánovač dohání rozdíl v tabulce. Jak poznat, kdy je čas měnit nástroj a kdy stačí uklidit data, ze kterých se plánuje.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-16",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-erp-mate-vyrobu-planujete-v-excelu-kdy-to-prestane-stacit.svg"
+  },
+  {
     "slug": "nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co",
     "title": "Nejdřív pravidla, pak pilot: co AI ve firmě vrátila",
     "description": "Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.",
