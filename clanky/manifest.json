@@ -1,5 +1,21 @@
 [
   {
+    "slug": "nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co",
+    "title": "Nejdřív pravidla, pak pilot: co AI ve firmě vrátila",
+    "description": "Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-16",
+    "highlight": false,
+    "cta_href": "/podnikova-ai/",
+    "sluzby": [
+      "podnikova-ai/",
+      "reseni-ai-zamestnanec"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co.svg"
+  },
+  {
     "slug": "vas-system-roste-s-firmou-dvacet-let-nez-ho-vymenite",
     "title": "Než vyměníte starý systém, sepište, co v něm je",
     "description": "Firma po letech neví, co všechno na jejím systému stojí. Jak sepsat, co dělá a kdo ho používá, aby se nabídky na nový daly porovnat na pět let.",

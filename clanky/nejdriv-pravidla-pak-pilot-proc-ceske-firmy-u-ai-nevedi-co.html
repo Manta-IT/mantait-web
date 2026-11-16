@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nejdřív pravidla, pak pilot: co AI ve firmě vrátila - Manta IT</title>
+<meta name="description" content="Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co">
+  <meta property="og:title" content="Nejdřív pravidla, pak pilot: co AI ve firmě vrátila">
+  <meta property="og:description" content="Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nejdřív pravidla, pak pilot: co AI ve firmě vrátila",
+    "description": "Pilot AI bez předem daných pravidel a měřítka skončí dojmem. Co si má firma do 250 lidí určit dřív, než nástroj poprvé pustí k datům.",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-27",
+    "dateModified": "2026-10-27",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI ve firmě", "Pravidla pro AI"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI ve firmě</span>
+  <h1>Nejdřív pravidla, pak pilot: proč firmy nevědí, <em>co jim AI vrátila.</em></h1>
+  <p class="hero-lead">Pravidla pro AI jsou krátký dokument, který před prvním pilotem určí, jaká data smí do nástroje, kdo ho schvaluje a co se bude měřit. Bez něj pilot nemá s čím porovnat výsledek a skončí dojmem. České firmy ho většinou sepisují až ve chvíli, kdy zaměstnanci veřejné nástroje dávno používají.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 27. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-nejdriv-pravidla-pak-pilot-proc-ceske-firmy-u-ai-nevedi-co.svg" alt="Dokument se třemi řádky pravidel vede přes rozhodnutí o spuštění k pilotu, jehož výsledek se porovnává s výchozí hodnotou" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Pořadí kroků</span>
+  <h2>Američtí kolegové začínají <em>pravidly, my pilotem.</em></h2>
+  <p>Poradenská společnost RSM letos porovnala dva trhy. V Česku se průzkumu zúčastnilo 222 firem, v USA a Kanadě 1 030 firem, které AI už používají. Ve Spojených státech a Kanadě nastavuje pravidla pro AI ještě před prvním pilotem 67 procent firem a návratnost investice sleduje 99 procent z nich. V Česku 57 procent firem neumí říct, jestli se jim investice do AI vrací (<a href="https://www.systemonline.cz/zpravy/vetsina-ceskych-firem-zatim-navratnost-ai-nemeri-z.htm" rel="nofollow">redakce SystemOnLine, 15. 10. 2026</a>).</p>
+  <p>Rozdíl je v pořadí, ne v technice. Zuzana Kubíková, která v RSM vede tým Management Consultingu, to popisuje tak, že zámořské firmy nejdřív nastavily pravidla a vybraly bezpečné nástroje a teprve potom pustily lidi do experimentů (<a href="https://www.systemonline.cz/zpravy/vetsina-ceskych-firem-zatim-navratnost-ai-nemeri-z.htm" rel="nofollow">redakce SystemOnLine, 15. 10. 2026</a>). Česká firma obvykle postupuje obráceně. Kolega si založí účet u veřejného nástroje, vloží do něj nabídku nebo tabulku zákazníků a vedení se o tom dozví po měsících.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Obava z dat</span>
+  <h2>Proč se český pilot <em>začíná u špatné otázky.</em></h2>
+  <p>Hlavní překážkou je u nás ochrana dat a právní otázky, uvádí je 45 procent firem. V USA a Kanadě je na prvním místě kvalita vlastních dat, kterou jako překážku uvádí 34 procent firem (<a href="https://www.systemonline.cz/zpravy/vetsina-ceskych-firem-zatim-navratnost-ai-nemeri-z.htm" rel="nofollow">redakce SystemOnLine, 15. 10. 2026</a>). Česká firma se tedy ptá, jestli AI vůbec pustit k datům. Zámořská už zjišťuje, že data na AI nejsou připravená.</p>
+  <p>Obava je oprávněná, ale zákaz ji nevyřeší. Kubíková upozorňuje, že zákaz nástrojů shadow AI, tedy používání veřejných nástrojů bez vědomí firmy, jen prohloubí. Lidé je používají dál, jen o tom nemluví. Jediné, co s obavou o data opravdu pomůže, je jasné pravidlo, které řekne, co do nástroje smí a co ne.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Měření</span>
+  <h2>Bez předem daného měřítka <em>zůstane každý pilot pilotem.</em></h2>
+  <p>Podle RSM třetina českých firem nesleduje žádné metriky a dalších 24 procent neví, co by měřit mělo. Firmy, které měří, se nejčastěji dívají na produktivitu (34 procent), úspory nákladů (20 procent) a kvalitu výstupů (18 procent). Dopad na tržby sleduje jen 5 procent (<a href="https://www.systemonline.cz/zpravy/vetsina-ceskych-firem-zatim-navratnost-ai-nemeri-z.htm" rel="nofollow">redakce SystemOnLine, 15. 10. 2026</a>).</p>
+  <p>Lucie Odehnalová, senior konzultantka RSM pro zavádění AI, to říká jednoduše: "Bez metrik zůstane každý projekt s AI navždy pilotem. Když firma po půl roce neumí říct, kolik hodin ušetřila nebo o kolik se zrychlilo zpracování objednávek, nemá vedení důvod dát peníze na plošné nasazení." Nejde přitom o složité modely, stačí si na začátku vybrat dvě nebo tři věci, které se dají spočítat (<a href="https://www.systemonline.cz/zpravy/vetsina-ceskych-firem-zatim-navratnost-ai-nemeri-z.htm" rel="nofollow">redakce SystemOnLine, 15. 10. 2026</a>).</p>
+  <p>Pro firmu do 250 lidí to znamená praktickou věc. Pilot bez stanoveného účelu a výchozího stavu se nedá vyhodnotit, protože není s čím porovnávat. Pokud vás zajímá, jak takové porovnání spočítat, popsal jsem to v článku <a href="/clanky/ai-je-vsude-jen-ne-ve-vysledovce-jak-si-spocitat-jestli-se">jak si spočítat, jestli se AI vyplatí</a>.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Jedna stránka</span>
+  <h2>Co má v pravidlech stát, <em>aby se vešla na jednu stránku.</em></h2>
+  <p>Pravidla pro firmu do 250 lidí nemusí být směrnice o třiceti stranách. Stačí tři odpovědi, které platí ještě před prvním pilotem.</p>
+  <p>První se týká dat: které informace smí do AI (například texty bez osobních údajů) a které ne (například smlouvy, ceníky a zákaznické seznamy). Druhá určuje, kdo schvaluje nový nástroj, a to jedno jméno, ne komisi. Třetí říká, co se bude měřit a s jakou hodnotou se výsledek porovná: kolik hodin týdně dnes stojí vybraná činnost a kolik by měla stát po pilotu.</p>
+  <p>K tomu patří jedna věta o tom, kdy pilot skončí. Pokud do dohodnutého data nepřinese změřitelný výsledek, vypne se. Bez ní běží pilot dál jen proto, že už do něj někdo investoval čas. Kde jaká data ve firmě leží a kudy tečou, ukáže <a href="/reseni-mapa-firmy">mapa firmy</a>.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Kdy pravidla <em>zatím nepotřebujete.</em></h2>
+  <p>Pokud ve firmě AI nikdo nepoužívá a nemáte v plánu ji zkoušet, žádná pravidla psát nemusíte. Počkejte, až se objeví první konkrétní činnost, kterou by AI mohla převzít.</p>
+  <p>Jakmile se ve firmě první nástroj objeví, je čas pravidla napsat dřív než pilot.</p>
+  <div class="lp-price">
+    <p><b>Sepíšu s vámi pravidla pro AI na jednu stránku a nastavím, co se u prvního pilotu změří, ještě než nástroj poprvé uvidí vaše data.</b></p>
+    <p style="margin-top: 18px;"><a href="/podnikova-ai/" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/podnikova-ai/"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+    <li><a href="/reseni-ai-zamestnanec"><b>AI zaměstnanec</b><small>pevná cena po AI plánu</small><span>Pracuje nepřetržitě, má přístupy do systémů, ráno podá hlášení.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
