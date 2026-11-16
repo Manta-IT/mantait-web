@@ -109,6 +109,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Albert je týden bez aplikace. Vydržela by to vaše firma?](https://mantait.cz/clanky/albert-je-tyden-bez-aplikace-kolik-dni-by-vydrzela-vase): Aplikace Albertu stojí přes týden po útoku na mateřskou skupinu. Bez kterého systému se zastaví vaše firma a co mít napsané dřív, než se to stane?
 - [Každá druhá česká firma byla cílem útoku. Poznali byste to?](https://mantait.cz/clanky/kazda-druha-ceska-firma-byla-cilem-utoku-poznali-byste-to-vy): Většina firem bez IT oddělení o pokusu o útok nezjistí, protože upozornění chodí do schránky, kterou nikdo nečte. Co chtít po správci.
 - [Web na PHP? Oprava kritické chyby nepočká](https://mantait.cz/clanky/vas-web-bezi-na-php-nukib-varuje-pred-kritickou-chybou): Provozujete firemní web nebo e-shop a nevíte, kdo vám ho aktualizuje? Úřad varuje před kritickou chybou. Co ověřit a co si nechat potvrdit.
+- [Co smí AI ve firmě udělat sama a co jen navrhnout](https://mantait.cz/clanky/ai-sama-meni-ceny-a-menu-co-ji-ve-firme-dovolit-bez): AI s přístupem do systémů umí změnit ceny i nabídku sama. Jak rozdělit kroky na ty, které smí sama, a ty, které musí schválit člověk.
 
 ## Co Manta IT není
 

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Tři stupně pravomocí AI: krok, který udělá sama, krok, který jen navrhne, a krok s podpisem člověka." fill="none">
+<title>Tři stupně pravomocí AI: krok, který udělá sama, krok, který jen navrhne, a krok s podpisem člověka.</title>
+  <path d="M60 100h12q8 0 8-8v-44q0-8 8-8h176" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M60 100h150" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M60 100h12q8 0 8 8v44q0 8 8 8h92" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="16" y="76" width="44" height="48" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="2" opacity="1"/>
+  <path d="M24 92h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M24 102h20" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="284" cy="40" r="14" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M277 40l5 6 10-12" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="210" y="84" width="56" height="32" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M220 96h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M220 105h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="196" cy="160" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="3"/>
+  <circle cx="196" cy="160" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M212 160h32" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="244" y="148" width="40" height="24" rx="3" fill="#FBFBF9" stroke="#9AA29E" stroke-width="1.5" opacity="1"/>
+</svg>
