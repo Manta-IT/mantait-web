@@ -64,3 +64,47 @@ test('JS: v kodu nezustala zrusena cena', () => {
   const js = readFileSync(new URL('../kalkulacka.js', import.meta.url), 'utf8');
   assert.doesNotMatch(js, /89000|PROVOZ_MESICNE/);
 });
+
+/* ---- /ukazka-ai-planu: soucet nekolika agend jedne firmy (T1021-26) ---- */
+
+test('plan: soucet agend = soucet spocitej() pri spolecne sazbe', async () => {
+  const {spocitejPlan} = await import('../kalkulacka.js');
+  const agendy = [{lidi: 2, hodinyTydne: 6, podil: 0.5}, {lidi: 1, hodinyTydne: 8, podil: 0.4}];
+  const r = spocitejPlan(agendy, 375);
+  const a = spocitej({...agendy[0], sazba: 375});
+  const b = spocitej({...agendy[1], sazba: 375});
+  assert.equal(r.hodinyRocne, a.hodinyRocne + b.hodinyRocne);   // 270 + 144
+  assert.equal(r.usporaRocne, a.usporaRocne + b.usporaRocne);
+  assert.equal(r.stropRozpoctu, a.stropRozpoctu + b.stropRozpoctu);
+});
+
+test('plan: zadna zapnuta agenda = nuly, ne chyba', async () => {
+  const {spocitejPlan} = await import('../kalkulacka.js');
+  assert.deepEqual(spocitejPlan([], 375), {hodinyRocne: 0, usporaRocne: 0, stropRozpoctu: 0});
+});
+
+test('plan: nesmyslna agenda spadne', async () => {
+  const {spocitejPlan} = await import('../kalkulacka.js');
+  assert.throws(() => spocitejPlan([{lidi: 0, hodinyTydne: 6, podil: 0.5}], 375), RangeError);
+});
+
+test('HTML ukazky planu: staticka cisla sedi na vychozi zapnute agendy a sazbu', async () => {
+  const {spocitejPlan} = await import('../kalkulacka.js');
+  const html = readFileSync(new URL('../ukazka-ai-planu.html', import.meta.url), 'utf8');
+  const agendy = [...html.matchAll(/<input type="checkbox"([^>]*)>/g)]
+    .filter((m) => /\bchecked\b/.test(m[1]))
+    .map((m) => ({
+      lidi: Number(/data-lidi="([0-9.]+)"/.exec(m[1])[1]),
+      hodinyTydne: Number(/data-hodiny="([0-9.]+)"/.exec(m[1])[1]),
+      podil: Number(/data-podil="([0-9.]+)"/.exec(m[1])[1]),
+    }));
+  assert.ok(agendy.length >= 3, 'ukazka ma aspon tri zapnute agendy');
+  const sazba = Number(html.match(/id="vstup-sazba"[^>]*value="([0-9]+)"/)[1]);
+  const r = spocitejPlan(agendy, sazba);
+  const kc = new Intl.NumberFormat('cs-CZ', {maximumFractionDigits: 0});
+  const bezMezer = (t) => t.replace(/\s/g, '');
+  const staticke = (id) => bezMezer(html.match(new RegExp('id="vystup-' + id + '">([^<]*)<'))[1]);
+  assert.equal(staticke('hodiny'), bezMezer(kc.format(Math.round(r.hodinyRocne))));
+  assert.equal(staticke('uspora'), bezMezer(kc.format(Math.round(r.usporaRocne))));
+  assert.equal(staticke('strop'), bezMezer(kc.format(Math.round(r.stropRozpoctu))));
+});
