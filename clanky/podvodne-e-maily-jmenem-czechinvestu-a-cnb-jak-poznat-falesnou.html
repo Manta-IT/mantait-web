@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Podvodné e-maily jménem CzechInvestu a ČNB: jak je poznat - Manta IT</title>
+<meta name="description" content="Falešný e-mail od úřadu dnes vypadá věrohodně, včetně zfalšovaného potvrzení od ČNB. Ve firmě stačí jedno pravidlo, aby neprošel.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/podvodne-e-maily-jmenem-czechinvestu-a-cnb-jak-poznat-falesnou">
+  <meta property="og:title" content="Podvodné e-maily jménem CzechInvestu a ČNB: jak je poznat">
+  <meta property="og:description" content="Falešný e-mail od úřadu dnes vypadá věrohodně, včetně zfalšovaného potvrzení od ČNB. Ve firmě stačí jedno pravidlo, aby neprošel.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/podvodne-e-maily-jmenem-czechinvestu-a-cnb-jak-poznat-falesnou">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Podvodné e-maily jménem CzechInvestu a ČNB: jak je poznat",
+    "description": "Falešný e-mail od úřadu dnes vypadá věrohodně, včetně zfalšovaného potvrzení od ČNB. Ve firmě stačí jedno pravidlo, aby neprošel.",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-27",
+    "dateModified": "2026-10-27",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/podvodne-e-maily-jmenem-czechinvestu-a-cnb-jak-poznat-falesnou"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["Podvodné e-maily", "Ověřování odesílatele"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Bezpečnost</span>
+  <h1>Podvodné e-maily jménem CzechInvestu a ČNB: <em>jak poznat falešnou poštu od úřadu</em></h1>
+  <p class="hero-lead">Podvodný e-mail jménem úřadu je zpráva, která se tváří jako dopis od instituce, kterou znáte, a chce po vás reakci, přihlášení nebo peníze. Česká národní banka <a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-na-podvodne-e-maily-zneuzivajici-identitu-Ceske-narodni-banky-aagentury-CzechInvest/" rel="nofollow">13. 10. 2026</a> upozornila na takové zprávy, které zneužívají jméno agentury CzechInvest i její vlastní. Platí z nich jedno pravidlo pro každý e-mail, který vypadá jako úřední.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 27. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-podvodne-e-maily-jmenem-czechinvestu-a-cnb-jak-poznat-falesnou.svg" alt="E-mail s logem úřadu míří k prvnímu člověku ve firmě, přímá cesta k platbě je přerušená a projde jen přes kruh rozhodnutí, kde druhý člověk ověří odesílatele u oficiálního zdroje." width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Co se stalo</span>
+  <h2>E-mail s <em>falešným potvrzením od ČNB.</em></h2>
+  <p>Podle <a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-na-podvodne-e-maily-zneuzivajici-identitu-Ceske-narodni-banky-aagentury-CzechInvest/" rel="nofollow">upozornění ČNB z 13. 10. 2026</a> přicházejí e-maily, které vyzývají k výběru peněz z výnosů z algoritmického obchodování s kryptoměnami. Přiložené je zfalšované "Potvrzení", že CzechInvest je regulovaný subjekt s licencí investičního obchodníka, vydanou údajně Českou národní bankou. Aby zpráva působila věrohodně, uvádí i konkrétní kryptopeněženku a částku v dolarech.</p>
+  <p>ČNB k tomu doplňuje, že CzechInvest, IČO 71377999, není v databázi regulovaných subjektů vedený, protože od ní nemá žádné oprávnění (<a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-na-podvodne-e-maily-zneuzivajici-identitu-Ceske-narodni-banky-aagentury-CzechInvest/" rel="nofollow">ČNB, 13. 10. 2026</a>). Banka také nevylučuje, že se podvodníci vracejí ke stejným lidem. Kdo jednou odpověděl, může dostat další zprávu.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Proč to funguje</span>
+  <h2>Zprávu od úřadu <em>nikdo nečte s podezřením.</em></h2>
+  <p>Konkrétní podvod z varování míří na investice, ne na firemní dotace. Mechanika je ale stejná u každé zprávy podepsané známou institucí: jméno, které firma zná, razítko, které vypadá úředně, a důvod reagovat hned. Firma, která na vyjádření nějakého úřadu opravdu čeká, takovou zprávu otevře bez podezření. To je můj úsudek z toho, jak podobné zprávy fungují, ne tvrzení ze zdroje.</p>
+  <p>V české firmě do 250 lidí obvykle čte společnou schránku jednatel nebo účetní. Nemají pod sebou nikoho, kdo by zprávu zkontroloval, a nemají napsané pravidlo, co s úřední poštou dělat. Bez pravidla rozhoduje dojem z podpisu a z loga.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Jak to poznat</span>
+  <h2>Co by úřad <em>nikdy neposlal e-mailem?</em></h2>
+  <p>Falešnou úřední poštu prozradí to, co po vás chce, ne to, jak vypadá. Logo, hlavičku i podpis lze zkopírovat. Podezřelá je zpráva, která chce platbu, přihlášení na neznámou stránku, přístup k vašemu účtu nebo otevření přílohy, a především ta, která naléhá, abyste to udělali rychle.</p>
+  <p>Praktický test je jednoduchý: zeptejte se, jestli by skutečný úřad ve skutečném případě řešil věc touto cestou. Výplatu zisku z kryptoměn žádná státní agentura neřeší e-mailem s přílohou. Stejně tak žádost o doplnění přihlašovacích údajů k firemnímu účtu nepřijde jako odkaz v běžné zprávě.</p>
+  <p>Druhý signál je odkaz na oprávnění, které si nemůžete ověřit u zprávy samotné. ČNB sama říká, že odkaz na její oprávnění může být zfalšovaný, a doporučuje ověřovat identitu těch, kdo vás kontaktují, i když se na banku odvolávají (<a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-na-podvodne-e-maily-zneuzivajici-identitu-Ceske-narodni-banky-aagentury-CzechInvest/" rel="nofollow">ČNB, 13. 10. 2026</a>). Aktuální seznam regulovaných a registrovaných subjektů je v databázi JERRS na webu ČNB.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Pravidlo do firmy</span>
+  <h2>Ověřit jiným kanálem, <em>ne odkazem z e-mailu.</em></h2>
+  <p>Pravidlo, které stačí napsat na jednu stránku: každou zprávu od úřadu, banky nebo agentury, která po firmě chce platbu, přihlášení nebo přílohu, nejdřív ověří druhý člověk jiným kanálem. Telefonem na číslo z oficiálního webu instituce, ne z podpisu zprávy, nebo přes datovou schránku či známý kontakt.</p>
+  <p>Druhá část pravidla: kdo na podezřelou zprávu odpověděl, zadal údaje nebo poslal peníze, to hned řekne. ČNB radí takovým lidem obrátit se co nejdříve na Policii ČR. Čím dřív se ví, že odpověď odešla, tím dřív jde změnit hesla a upozornit banku. Je to nepříjemná věta, a proto ji musí firma dopředu vyslovit jako běžný postup, ne jako přiznání chyby.</p>
+  <p>Pravidla ověřování a hlášení patří k tomu, co řeší <a href="/reseni-bezpecnost">bezpečnost firmy jako celek</a>, a ne jen k ochraně pošty.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Když ve vaší firmě už platí, že úřední poštu s požadavkem na platbu či přihlášení ověřuje druhý člověk, nepotřebujete nic dalšího. Kdyby vás zajímalo, jak to nastavit ve vaší firmě, napište mi.</p>
+  <div class="lp-price">
+    <p><b>Projdu s vámi, kdo ve firmě čte úřední poštu a jak se u ní ověřuje odesílatel.</b></p>
+    <p style="margin-top: 18px;"><a href="/#napiste" class="btn">Napište mi</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-bezpecnost"><b>Zákon o kybernetické bezpečnosti</b><span>Za pět minut zjistíte, jestli na vás zákon dopadá a co po vás chce.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
