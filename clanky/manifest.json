@@ -1,5 +1,20 @@
 [
   {
+    "slug": "kazda-druha-ceska-firma-byla-cilem-utoku-poznali-byste-to-vy",
+    "title": "Každá druhá česká firma byla cílem útoku. Poznali byste to?",
+    "description": "Většina firem bez IT oddělení o pokusu o útok nezjistí, protože upozornění chodí do schránky, kterou nikdo nečte. Co chtít po správci.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-17",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-kazda-druha-ceska-firma-byla-cilem-utoku-poznali-byste-to-vy.svg"
+  },
+  {
     "slug": "albert-je-tyden-bez-aplikace-kolik-dni-by-vydrzela-vase",
     "title": "Albert je týden bez aplikace. Vydržela by to vaše firma?",
     "description": "Aplikace Albertu stojí přes týden po útoku na mateřskou skupinu. Bez kterého systému se zastaví vaše firma a co mít napsané dřív, než se to stane?",

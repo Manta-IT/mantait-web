@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Pokus o přihlášení dojde k firemnímu systému, upozornění skončí v hromadě nepřečtených zpráv a cesta k člověku, který by rozhodl, je přerušená u prázdného místa." fill="none">
+<title>Pokus o přihlášení dojde k firemnímu systému, upozornění skončí v hromadě nepřečtených zpráv a cesta k člověku, který by rozhodl, je přerušená u prázdného místa.</title>
+  <rect x="12" y="84" width="36" height="32" rx="4" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <path d="M20 94h20" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M20 103h12" stroke="#9A3F2B" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M48 100h40" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="88" y="76" width="56" height="48" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M98 90h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M98 99h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M98 108h20" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M144 100h38" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="196" y="68" width="44" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="0.6"/>
+  <rect x="190" y="76" width="44" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="0.8"/>
+  <rect x="182" y="86" width="44" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M190 97h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M190 106h18" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="224" cy="88" r="3.5" fill="#9A3F2B" stroke="#9A3F2B" stroke-width="0"/>
+  <path d="M226 102h10" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M240 95l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M254 102h12" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="0.6"/>
+  <circle cx="288" cy="102" r="18" fill="#FBFBF9" stroke="#9AA29E" stroke-width="1.8"/>
+</svg>
