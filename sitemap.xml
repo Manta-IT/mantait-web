@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -93,6 +93,11 @@
   <url>
     <loc>https://mantait.cz/ukazka-reportu</loc>
     <lastmod>2026-08-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/ukazka-ai-planu</loc>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -428,6 +433,11 @@
   <url>
     <loc>https://mantait.cz/clanky/co-o-vasi-firme-odpovi-chatgpt-overte-to-driv-nez-vas</loc>
     <lastmod>2026-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/t-mobile-pustil-na-infolinku-ai-co-z-toho-obstoji-v-male-firme</loc>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

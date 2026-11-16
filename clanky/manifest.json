@@ -1,5 +1,20 @@
 [
   {
+    "slug": "t-mobile-pustil-na-infolinku-ai-co-z-toho-obstoji-v-male-firme",
+    "title": "T-Mobile pustil na infolinku AI. Co z toho obstojí",
+    "description": "Telefon vám zvoní pořád kvůli stejným otázkám? Které dotazy zvládne hlasový asistent, k čemu potřebuje přístup a kdy musí hovor převzít člověk.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-16",
+    "highlight": false,
+    "cta_href": "/reseni-ai-zamestnanec",
+    "sluzby": [
+      "reseni-ai-zamestnanec"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-t-mobile-pustil-na-infolinku-ai-co-z-toho-obstoji-v-male-firme.svg"
+  },
+  {
     "slug": "skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku",
     "title": "Školení a zálohy máte. Víte, co dělat v první hodině útoku?",
     "description": "Školení a zálohy už firmy mají, plán reakce na incident málokdo. Co patří na jednu stránku a jaké lhůty hlášení stanoví zákon o kybernetické bezpečnosti.",

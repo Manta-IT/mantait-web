@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Hovor, který se na rozcestí dělí na dotazy pro stroj a dotazy pro člověka" fill="none">
+<title>Hovor, který se na rozcestí dělí na dotazy pro stroj a dotazy pro člověka</title>
+  <rect x="20" y="82" width="40" height="36" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M28 94h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M28 103h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M60 100h24" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="100" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M112 89q14 -27 40 -27h18" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="36" width="120" height="52" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M184 51h84" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M184 63h60" stroke="#CFE3D9" stroke-width="3" stroke-linecap="round" opacity="1"/>
+  <path d="M112 111q14 27 40 27h58" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="230" cy="138" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="230" cy="138" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+</svg>

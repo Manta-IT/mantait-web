@@ -100,6 +100,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Hackeři tvrdí, že ovládli kamery v Česku. Co visí u vás?](https://mantait.cz/clanky/hackeri-tvrdi-ze-ovladli-tisice-kamer-v-cesku-co-visi-na): Kamera na dvoře, terminál docházky nebo regulace kotelny často běží s továrním heslem a přístupem z internetu. Co chtít po dodavateli, než to někdo zneužije.
 - [AI u malých firem nebrzdí nástroje, ale čas majitele](https://mantait.cz/clanky/ai-u-malych-firem-nebrzdi-nastroje-ale-cas-majitele): Majitel malé firmy tráví většinu času operativou a na AI mu nezbývá čas. Proč další nástroj nepomůže a co může převzít externí vedení IT.
 - [Co o vaší firmě odpoví ChatGPT? Ověřte to sami](https://mantait.cz/clanky/co-o-vasi-firme-odpovi-chatgpt-overte-to-driv-nez-vas): Zákazníci se ptají AI, koho si vybrat. Zjistěte za jedno odpoledne, co o vaší firmě říká, a co na webu změnit, aby vás popsala správně.
+- [T-Mobile pustil na infolinku AI. Co z toho obstojí](https://mantait.cz/clanky/t-mobile-pustil-na-infolinku-ai-co-z-toho-obstoji-v-male-firme): Telefon vám zvoní pořád kvůli stejným otázkám? Které dotazy zvládne hlasový asistent, k čemu potřebuje přístup a kdy musí hovor převzít člověk.
 
 ## Co Manta IT není
 
