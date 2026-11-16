@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Příchozí hovor se siluetou šéfa končí přerušenou čarou před místem rozhodnutí, účetní u platby jde vlastní linkou na uložené číslo." fill="none">
+<title>Příchozí hovor se siluetou šéfa končí přerušenou čarou před místem rozhodnutí, účetní u platby jde vlastní linkou na uložené číslo.</title>
+  <rect x="138" y="24" width="44" height="30" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M146 34h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M146 43h18" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M160 54v24" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="160" cy="100" r="22" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <path d="M152 100l6 7 10-14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="20" y="68" width="58" height="64" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M42 92a6 6 0 1 1 12 0a6 6 0 1 1-12 0z" stroke="#101413" stroke-width="1.8"/>
+  <path d="M34 120v-4q0-10 14-10t14 10v4" stroke="#101413" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M30 124h38" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M78 100h20" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M100 94l10 12m0-12l-10 12" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M114 100h24" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.6"/>
+  <path d="M160 122v13q0 12 12 12h82" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="254" y="128" width="48" height="38" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M264 140h28" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M264 149h18" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>
