@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta od zranitelného webu k opravě vede přes agenturu a hosting, kteří na sebe ukazují, a nad nimi je prázdné místo pro písemné potvrzení." fill="none">
+<title>Cesta od zranitelného webu k opravě vede přes agenturu a hosting, kteří na sebe ukazují, a nad nimi je prázdné místo pro písemné potvrzení.</title>
+  <rect x="16" y="82" width="44" height="36" rx="4" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <path d="M24 94h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M24 103h20" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="260" y="82" width="44" height="36" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M268 94h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M268 103h20" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M60 100h42" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M218 100h42" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="120" cy="100" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="200" cy="100" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M140 94h38" stroke="#0B6E4F" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+  <path d="M172 89l6 5-6 5" stroke="#0B6E4F" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+  <path d="M180 108h-38" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M148 103l-6 5 6 5" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="130" y="28" width="60" height="36" rx="4" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="0.8"/>
+  <path d="M160 64v18" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+</svg>

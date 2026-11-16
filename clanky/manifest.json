@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vas-web-bezi-na-php-nukib-varuje-pred-kritickou-chybou",
+    "title": "Web na PHP? Oprava kritické chyby nepočká",
+    "description": "Provozujete firemní web nebo e-shop a nevíte, kdo vám ho aktualizuje? Úřad varuje před kritickou chybou. Co ověřit a co si nechat potvrdit.",
+    "date_published": "2026-10-27",
+    "date_modified": "2026-11-17",
+    "highlight": false,
+    "cta_href": "/#napiste",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-bezpecnost"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-vas-web-bezi-na-php-nukib-varuje-pred-kritickou-chybou.svg"
+  },
+  {
     "slug": "kazda-druha-ceska-firma-byla-cilem-utoku-poznali-byste-to-vy",
     "title": "Každá druhá česká firma byla cílem útoku. Poznali byste to?",
     "description": "Většina firem bez IT oddělení o pokusu o útok nezjistí, protože upozornění chodí do schránky, kterou nikdo nečte. Co chtít po správci.",
