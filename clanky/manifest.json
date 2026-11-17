@@ -1,5 +1,21 @@
 [
   {
+    "slug": "cloudove-erp-pro-malou-firmu-v-cesku-co-porovnat-nez-si",
+    "title": "Cloudové ERP pro malou firmu: co porovnat před výběrem",
+    "description": "Hledáte cloudové ERP a nevíte, čím se liší od systému na vlastním serveru? Pět věcí k porovnání a jak spočítat cenu na pět let.",
+    "date_published": "2026-10-29",
+    "date_modified": "2026-11-18",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-cloudove-erp-pro-malou-firmu-v-cesku-co-porovnat-nez-si.svg"
+  },
+  {
     "slug": "nez-podepisete-ai-projekt-tri-otazky-na-ktere-musi-mit",
     "title": "Než podepíšete AI projekt: tři otázky pro dodavatele",
     "description": "Právník, finance a nákup se u AI projektů ptají na data, provoz a spolehlivost. Malá firma se neptá a pak to pozná z faktury. Tři otázky před podpisem.",
