@@ -117,6 +117,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Platy v IT přestaly růst. Najmout vlastního IT člověka?](https://mantait.cz/clanky/platy-v-it-prestaly-rust-vyplati-se-ted-najmout-vlastniho): Mzdy v IT už nerostou plošně a nábor je snazší. Spočítejte, kolik stojí vlastní IT člověk a kdy se vám místo něj vyplatí externí vedení IT.
 - [Než podepíšete AI projekt: tři otázky pro dodavatele](https://mantait.cz/clanky/nez-podepisete-ai-projekt-tri-otazky-na-ktere-musi-mit): Právník, finance a nákup se u AI projektů ptají na data, provoz a spolehlivost. Malá firma se neptá a pak to pozná z faktury. Tři otázky před podpisem.
 - [Cloudové ERP pro malou firmu: co porovnat před výběrem](https://mantait.cz/clanky/cloudove-erp-pro-malou-firmu-v-cesku-co-porovnat-nez-si): Hledáte cloudové ERP a nevíte, čím se liší od systému na vlastním serveru? Pět věcí k porovnání a jak spočítat cenu na pět let.
+- [Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?](https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje): Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?
 
 ## Co Manta IT není
 

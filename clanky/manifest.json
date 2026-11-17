@@ -1,5 +1,21 @@
 [
   {
+    "slug": "utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje",
+    "title": "Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?",
+    "description": "Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?",
+    "date_published": "2026-10-30",
+    "date_modified": "2026-11-18",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje.svg"
+  },
+  {
     "slug": "cloudove-erp-pro-malou-firmu-v-cesku-co-porovnat-nez-si",
     "title": "Cloudové ERP pro malou firmu: co porovnat před výběrem",
     "description": "Hledáte cloudové ERP a nevíte, čím se liší od systému na vlastním serveru? Pět věcí k porovnání a jak spočítat cenu na pět let.",

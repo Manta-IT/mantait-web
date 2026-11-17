@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Linka od varování vede k místu rozhodnutí, odkud jedna cesta míří přes automatickou blokaci k cíli a druhá čeká na člověka" fill="none">
+<title>Linka od varování vede k místu rozhodnutí, odkud jedna cesta míří přes automatickou blokaci k cíli a druhá čeká na člověka</title>
+  <rect x="20" y="84" width="44" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M30 94h24" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M30 103h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M64 100h76" stroke="#101413" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <circle cx="156" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M172 100h4q10 0 10-10v-20q0-10 10-10h14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="210" y="44" width="64" height="32" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M220 54h40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M220 63h28" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M274 60h14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="298" cy="60" r="10" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M293 60l4 5 7-10" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M172 100h4q10 0 10 10v20q0 10 10 10h44" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="240" y="124" width="56" height="32" rx="4" fill="#E7EAE6" stroke="#9AA29E" stroke-width="1.5" opacity="1"/>
+  <path d="M250 134h36" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M250 143h24" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

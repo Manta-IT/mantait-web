@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle? - Manta IT</title>
+<meta name="description" content="Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje">
+  <meta property="og:title" content="Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?">
+  <meta property="og:description" content="Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?",
+    "description": "Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?",
+    "inLanguage": "cs",
+    "datePublished": "2026-10-30",
+    "dateModified": "2026-10-30",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["Kybernetická bezpečnost", "Umělá inteligence v obraně firmy"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Stanovisko k obraně firmy</span>
+  <h1>Útočníkům zrychlila práci AI. Kdo u vás <em>reaguje stejně rychle?</em></h1>
+  <p class="hero-lead">Rychlost obrany je to, jak brzy se podezřelý e-mail, napadený účet nebo cizí přihlášení zastaví po prvním varování. Český průzkum ukazuje, že většina firem o zrychlených útocích ví, ale obranu automatizuje jen menšina. Otázka pro majitele zní, co z ochrany běží samo a co čeká na člověka.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 30. října 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje.svg" alt="Linka od varování vede k místu rozhodnutí, odkud jedna cesta míří přes automatickou blokaci k cíli a druhá čeká na člověka" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Co průzkum říká</span>
+  <h2>Víme, že útoky zrychlily. <em>Obrana zůstala u lidí.</em></h2>
+  <p>Podle <a href="https://www.systemonline.cz/zpravy/jen-necela-polovina-ceskych-firem-vyuziva-ai-v-kyberneticke-bezpecnosti-z.htm" rel="nofollow">SystemOnLine, výzkum zadaný společností Fortinet, 2026</a> souhlasí 74 % českých firem s tím, že umělá inteligence výrazně urychluje a zefektivňuje kybernetické útoky. AI nebo automatizaci v kybernetické bezpečnosti ale využívá jen 46 % firem, z toho 14 % ve velkém rozsahu a 32 % v omezeném.</p>
+  <p>Čím menší firma, tím méně obrany automatizuje. Podle <a href="https://www.systemonline.cz/zpravy/jen-necela-polovina-ceskych-firem-vyuziva-ai-v-kyberneticke-bezpecnosti-z.htm" rel="nofollow">téhož zdroje, 2026</a> používají AI či automatizaci obrany firmy s 250 a více zaměstnanci v 56 % případů, firmy s 50 až 249 zaměstnanci v 47 % a firmy s 10 až 49 zaměstnanci ve 41 %. Dalších 12 % firem zavedení plánuje a 39 % ho neplánuje vůbec.</p>
+  <p>Ondřej Šťáhlavský, regionální senior ředitel Fortinetu pro střední a východní Evropu, výsledek shrnuje větou, že firmy a instituce si rizika spojená s AI uvědomují, ale obrana s ní zatím drží krok jen částečně (<a href="https://www.systemonline.cz/zpravy/jen-necela-polovina-ceskych-firem-vyuziva-ai-v-kyberneticke-bezpecnosti-z.htm" rel="nofollow">SystemOnLine, 2026</a>).</p>
+  <p>Jedno upozornění ke čtení. Výzkum zadal výrobce bezpečnostních produktů, který má na vyšší automatizaci obchodní zájem, a pojem "AI nebo automatizace" je široký. Směr čísel ale odpovídá tomu, co vidím u firem do 250 lidí: o rychlých útocích se ví, ale na rychlou reakci nikdo nemá pověřený postup.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Co to znamená u vás</span>
+  <h2>Rozhodne, kdo zasáhne <em>dřív než člověk.</em></h2>
+  <p>Modelová situace: v pátek odpoledne se v účtu obchodní ředitelky objeví přihlášení z cizí země a z její schránky odejdou první podezřelé zprávy. Správce firmu hlídá v pracovní době, jenže dnes je pátek večer a o víkendu si toho nikdo nevšimne. Útočník žádnou pracovní dobu nemá a AI mu dává možnost zkoušet víc účtů najednou.</p>
+  <p>Právě tady se ukáže rozdíl mezi ochranou, která běží sama, a ochranou, která čeká na pozornost. Přihlášení z neobvyklého místa může účet zablokovat okamžitě. Nebo vznikne e-mail do fronty a někdo ho otevře v pondělí.</p>
+  <p>Nejde o to koupit další nástroj. Jde o to vědět, jak je dnes nastavená pošta, počítače a firemní účty, a kdo má v noci právo něco vypnout. Co dělat v první hodině po útoku, popisuje <a href="/clanky/skoleni-a-zalohy-mate-vite-co-delat-v-prvni-hodine-utoku">článek o první hodině útoku</a>. Tenhle text řeší to, co předchází: jestli se vás o té první hodině vůbec někdo dozví včas.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Otázky pro dodavatele</span>
+  <h2>Co se zeptat správce, <em>než odpoví ve slovech.</em></h2>
+  <p>Správce nebo dodavatel IT by měl umět odpovědět konkrétně a bez výmluv na technologii. Pět otázek, které stačí položit u jednoho stolu:</p>
+  <ol>
+    <li>Co se stane, když se někdo přihlásí do firemního účtu z cizí země v sobotu ve tři ráno? Zablokuje se účet sám, nebo se to uvidí v pondělí?</li>
+    <li>Které podezřelé e-maily se zachytí, než je uvidí zaměstnanec, a kdo kontroluje to, co proklouzlo?</li>
+    <li>Kdo smí v noci nebo o víkendu vypnout napadený počítač či účet a má k tomu pravomoc bez schvalování?</li>
+    <li>Kdo se o poplachu dozví a jak rychle? Dostanete zprávu vy, nebo ji uvidí jen správce?</li>
+    <li>Kdy se naposledy zkoušelo, že to opravdu funguje, a máte o tom písemný záznam?</li>
+  </ol>
+  <p>Odpověď "to řešíme podle potřeby" je také odpověď. Říká, že reakce závisí na tom, kdo je zrovna u počítače. U menší firmy to nemusí být chyba, jen to majitel má vědět dopředu a ne až při incidentu.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Jak to vidím já</span>
+  <h2>Nepotřebujete AI obranu. <em>Potřebujete pověřeného člověka.</em></h2>
+  <p>Firma do 250 lidí obvykle nepotřebuje drahý automatizovaný systém. Potřebuje dohodnuté a vyzkoušené pravidlo, co se děje samo a co udělá konkrétní jmenovaný člověk, i když je víkend. Kde pravidlo chybí, nepomůže ani nejmodernější nástroj, protože alarm nemá komu zazvonit.</p>
+  <p>Pokud zákon o kybernetické bezpečnosti dopadá i na vás, dostanete takové pravidlo předepsané. Jestli na vás dopadá, zjistíte za pět minut na stránce se <a href="/reseni-bezpecnost">třemi otázkami k samoidentifikaci</a>. Pro firmy, které ho po nikom nechtějí, platí stejná logika jako výše: provoz a obnova musí mít majitele. Tohle vedu u firem, kde IT dlouhodobě <a href="/reseni-vedeni-it">řídím za majitele</a>.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud má vaše firma smlouvu s dodavatelem, který na těchto pět otázek odpoví hned a s doklady, nic dalšího nepotřebujete. Pokud váháte, začněte tím, že zjistíte, jestli se vás zákon týká, a co z toho vyplývá pro vašeho dodavatele.</p>
+  <div class="lp-price">
+    <p><b>Poradím, jestli se vás zákon o kybernetické bezpečnosti týká, a doporučím, kdo vám zavedení opatření udělá.</b></p>
+    <p style="margin-top: 18px;"><a href="/reseni-bezpecnost" class="btn">Prověřit firmu</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/reseni-bezpecnost"><b>Zákon o kybernetické bezpečnosti</b><span>Za pět minut zjistíte, jestli na vás zákon dopadá a co po vás chce.</span></a></li>
+    <li><a href="/reseni-vedeni-it"><b>Dlouhodobé vedení IT</b><small>od 50 000 Kč měsíčně</small><span>Celá cesta na paušál. Vy se k IT vracíte jen na poradách.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>
