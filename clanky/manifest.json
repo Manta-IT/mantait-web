@@ -1,5 +1,21 @@
 [
   {
+    "slug": "stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to",
+    "title": "Stroje a kancelář na jedné síti: co to znamená při útoku",
+    "description": "Útok z e-mailu účetní může zastavit i linku, pokud stroje sdílejí síť s kanceláří. Co má majitel výrobní firmy zjistit dřív, než k tomu dojde.",
+    "date_published": "2026-10-29",
+    "date_modified": "2026-11-18",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to.svg"
+  },
+  {
     "slug": "vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na",
     "title": "Všechny aplikace na jedné faktuře: na kom pak firma závisí",
     "description": "Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.",
