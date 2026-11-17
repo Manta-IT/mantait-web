@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -493,6 +493,11 @@
   <url>
     <loc>https://mantait.cz/clanky/do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte</loc>
     <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na</loc>
+    <lastmod>2026-10-28</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

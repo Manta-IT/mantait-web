@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na",
+    "title": "Všechny aplikace na jedné faktuře: na kom pak firma závisí",
+    "description": "Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.",
+    "date_published": "2026-10-28",
+    "date_modified": "2026-11-18",
+    "highlight": false,
+    "cta_href": "/reseni-vyber-systemu",
+    "sluzby": [
+      "reseni-vyber-systemu",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na.svg"
+  },
+  {
     "slug": "do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte",
     "title": "AI knihovna s malwarem: zeptejte se dodavatele",
     "description": "V oblíbené knihovně pro práci s AI se objevil škodlivý kód. Firmy často nevědí, jestli ji jejich aplikace používá. Co se zeptat dodavatele hned.",

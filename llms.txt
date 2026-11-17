@@ -112,6 +112,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Co smí AI ve firmě udělat sama a co jen navrhnout](https://mantait.cz/clanky/ai-sama-meni-ceny-a-menu-co-ji-ve-firme-dovolit-bez): AI s přístupem do systémů umí změnit ceny i nabídku sama. Jak rozdělit kroky na ty, které smí sama, a ty, které musí schválit člověk.
 - [Stát hledá šéfa pro AI. Kdo ho dělá ve vaší firmě?](https://mantait.cz/clanky/stat-hleda-sefa-pro-ai-kdo-ho-dela-ve-vasi-firme): Stát vypsal výběrové řízení na šéfa AI. Ve vaší firmě o nástrojích, datech a prvním nasazení rozhoduje každý sám, nebo nikdo. Co z té role potřebujete.
 - [AI knihovna s malwarem: zeptejte se dodavatele](https://mantait.cz/clanky/do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte): V oblíbené knihovně pro práci s AI se objevil škodlivý kód. Firmy často nevědí, jestli ji jejich aplikace používá. Co se zeptat dodavatele hned.
+- [Všechny aplikace na jedné faktuře: na kom pak firma závisí](https://mantait.cz/clanky/vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na): Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.
 
 ## Co Manta IT není
 
