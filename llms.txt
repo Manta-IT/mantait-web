@@ -115,6 +115,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Všechny aplikace na jedné faktuře: na kom pak firma závisí](https://mantait.cz/clanky/vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na): Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.
 - [Stroje a kancelář na jedné síti: co to znamená při útoku](https://mantait.cz/clanky/stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to): Útok z e-mailu účetní může zastavit i linku, pokud stroje sdílejí síť s kanceláří. Co má majitel výrobní firmy zjistit dřív, než k tomu dojde.
 - [Platy v IT přestaly růst. Najmout vlastního IT člověka?](https://mantait.cz/clanky/platy-v-it-prestaly-rust-vyplati-se-ted-najmout-vlastniho): Mzdy v IT už nerostou plošně a nábor je snazší. Spočítejte, kolik stojí vlastní IT člověk a kdy se vám místo něj vyplatí externí vedení IT.
+- [Než podepíšete AI projekt: tři otázky pro dodavatele](https://mantait.cz/clanky/nez-podepisete-ai-projekt-tri-otazky-na-ktere-musi-mit): Právník, finance a nákup se u AI projektů ptají na data, provoz a spolehlivost. Malá firma se neptá a pak to pozná z faktury. Tři otázky před podpisem.
 
 ## Co Manta IT není
 
