@@ -1,5 +1,20 @@
 [
   {
+    "slug": "platy-v-it-prestaly-rust-vyplati-se-ted-najmout-vlastniho",
+    "title": "Platy v IT přestaly růst. Najmout vlastního IT člověka?",
+    "description": "Mzdy v IT už nerostou plošně a nábor je snazší. Spočítejte, kolik stojí vlastní IT člověk a kdy se vám místo něj vyplatí externí vedení IT.",
+    "date_published": "2026-10-29",
+    "date_modified": "2026-11-18",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "IT rozpočet a náklady",
+    "obrazek": "clanek-platy-v-it-prestaly-rust-vyplati-se-ted-najmout-vlastniho.svg"
+  },
+  {
     "slug": "stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to",
     "title": "Stroje a kancelář na jedné síti: co to znamená při útoku",
     "description": "Útok z e-mailu účetní může zastavit i linku, pokud stroje sdílejí síť s kanceláří. Co má majitel výrobní firmy zjistit dřív, než k tomu dojde.",

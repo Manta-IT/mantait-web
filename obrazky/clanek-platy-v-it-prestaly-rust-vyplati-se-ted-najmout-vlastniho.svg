@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Z otázky, jestli najmout IT člověka, vedou dvě cesty: k obsluze systémů a k rozhodování o nich, kde chybí jméno člověka." fill="none">
+<title>Z otázky, jestli najmout IT člověka, vedou dvě cesty: k obsluze systémů a k rozhodování o nich, kde chybí jméno člověka.</title>
+  <circle cx="56" cy="100" r="20" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="56" cy="100" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+  <path d="M76 96C112 96 112 52 150 52" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="150" y="30" width="110" height="44" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M164 44h68" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M164 56h46" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M76 104C112 104 112 148 150 148" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="150" y="120" width="110" height="56" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M164 134h74" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M164 146h58" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M164 158h66" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M260 148h10" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <path d="M270 134h30v28h-30z" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" opacity="1"/>
+</svg>

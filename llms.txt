@@ -114,6 +114,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [AI knihovna s malwarem: zeptejte se dodavatele](https://mantait.cz/clanky/do-oblibene-ai-knihovny-nekdo-propasoval-malware-zeptejte): V oblíbené knihovně pro práci s AI se objevil škodlivý kód. Firmy často nevědí, jestli ji jejich aplikace používá. Co se zeptat dodavatele hned.
 - [Všechny aplikace na jedné faktuře: na kom pak firma závisí](https://mantait.cz/clanky/vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na): Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.
 - [Stroje a kancelář na jedné síti: co to znamená při útoku](https://mantait.cz/clanky/stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to): Útok z e-mailu účetní může zastavit i linku, pokud stroje sdílejí síť s kanceláří. Co má majitel výrobní firmy zjistit dřív, než k tomu dojde.
+- [Platy v IT přestaly růst. Najmout vlastního IT člověka?](https://mantait.cz/clanky/platy-v-it-prestaly-rust-vyplati-se-ted-najmout-vlastniho): Mzdy v IT už nerostou plošně a nábor je snazší. Spočítejte, kolik stojí vlastní IT člověk a kdy se vám místo něj vyplatí externí vedení IT.
 
 ## Co Manta IT není
 
