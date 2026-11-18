@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -523,6 +523,11 @@
   <url>
     <loc>https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje</loc>
     <lastmod>2026-10-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/v-mews-kvuli-ai-vznikly-odbory-jak-ai-zavest-aby-proti-ni</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
