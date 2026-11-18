@@ -63,3 +63,35 @@
   .kalk,.kalk-meze{grid-template-columns:1fr}
   .kalk-vysledek{position:static}
 }
+
+/* =========================================================================
+   Ukazka AI planu (/ukazka-ai-planu, T1021-26). Stejny vypocet a panel jako
+   kalkulacka, misto ctyr posuvniku zapinaci agendy jedne firmy.
+   ========================================================================= */
+.fakt-hodnota{display:block;font-family:var(--display);font-weight:500;
+  font-size:clamp(26px,2.6vw,34px);letter-spacing:-.03em;line-height:1.1}
+.fakt-co{display:block;font-size:14px;color:var(--tlum);margin-top:4px}
+.fakt-zdroj{display:block;margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--tlum)}
+
+.otazky-pred-nadpis{margin-top:48px;font-size:clamp(20px,2vw,26px)}
+.otazky-pred{margin-top:18px;padding-left:1.4em;display:grid;gap:10px;max-width:62ch}
+.otazky-pred li{font-size:16.5px}
+.otazky-pred li::marker{font-family:var(--mono);color:var(--akcent)}
+
+.prilezitosti{margin-bottom:34px;border-top:1px solid var(--linka)}
+.prilezitost{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;
+  padding:18px 0;border-bottom:1px solid var(--linka)}
+.prilezitost input{width:22px;height:22px;margin-top:3px;accent-color:var(--akcent);cursor:pointer}
+.prilezitost input:focus-visible{outline:2px solid var(--akcent);outline-offset:3px}
+.prilezitost label{cursor:pointer;display:grid;gap:4px}
+.prilezitost label b{font-weight:600;font-size:16.5px}
+.prilezitost label span{font-size:15px;color:var(--tlum)}
+.prilezitost .prilezitost-cisla{font-family:var(--mono);font-size:13px;color:var(--inkoust)}
+/* Vypnuta agenda: preskrtnute cislo a tlumeny nadpis, ne pruhlednost (ta srazi --tlum pod WCAG AA). */
+.prilezitost:has(input:not(:checked)) label b{color:var(--tlum)}
+.prilezitost:has(input:not(:checked)) .prilezitost-cisla{color:var(--tlum);text-decoration:line-through}
+.prilezitost-sluzba{grid-column:2;justify-self:start;font-size:14px;color:var(--akcent);
+  text-underline-offset:3px;padding:10px 0;min-height:44px}
+
+.kalk-odkaz{font-size:15px;color:var(--akcent);text-underline-offset:3px;
+  display:inline-block;padding:10px 0}

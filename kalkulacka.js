@@ -46,6 +46,20 @@ export function spocitej(vstup) {
   return {hodinyRocne, usporaRocne, stropRozpoctu: usporaRocne * LET_NAVRATNOSTI};
 }
 
+/**
+ * Soucet nekolika agend jedne firmy pri spolecne hodinove sazbe (/ukazka-ai-planu).
+ * @param {{lidi:number, hodinyTydne:number, podil:number}[]} agendy zapnute agendy
+ * @param {number} sazba hodinovy naklad zamestnavatele v Kc
+ */
+export function spocitejPlan(agendy, sazba) {
+  const soucet = {hodinyRocne: 0, usporaRocne: 0, stropRozpoctu: 0};
+  for (const a of agendy) {
+    const r = spocitej({...a, sazba});
+    for (const k in soucet) soucet[k] += r[k];
+  }
+  return soucet;
+}
+
 /* ---------------- obsluha stranky (jen v prohlizeci) ---------------- */
 
 if (typeof document !== 'undefined') {
@@ -85,5 +99,24 @@ if (typeof document !== 'undefined') {
 
     for (const id of poleId) pole[id].addEventListener('input', prekresli);
     prekresli();
+  }
+
+  // Ukazka AI planu: zapinaci agendy + jedna sazba z modelove zaverky.
+  const agendy = [...document.querySelectorAll('.prilezitost input[type=checkbox]')];
+  const sazba = document.getElementById('vstup-sazba');
+  if (agendy.length && sazba && !pole.lidi) {
+    const prekresliPlan = () => {
+      const zapnute = agendy.filter((a) => a.checked).map((a) => ({
+        lidi: Number(a.dataset.lidi), hodinyTydne: Number(a.dataset.hodiny), podil: Number(a.dataset.podil),
+      }));
+      const r = spocitejPlan(zapnute, Number(sazba.value));
+      document.getElementById('echo-sazba').textContent = kc.format(Number(sazba.value));
+      document.getElementById('vystup-hodiny').textContent = kc.format(Math.round(r.hodinyRocne));
+      document.getElementById('vystup-uspora').textContent = kc.format(Math.round(r.usporaRocne));
+      document.getElementById('vystup-strop').textContent = kc.format(Math.round(r.stropRozpoctu));
+    };
+    for (const a of agendy) a.addEventListener('change', prekresliPlan);
+    sazba.addEventListener('input', prekresliPlan);
+    prekresliPlan();
   }
 }
