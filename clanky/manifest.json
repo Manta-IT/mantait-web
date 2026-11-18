@@ -1,5 +1,20 @@
 [
   {
+    "slug": "text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani",
+    "title": "Text psal člověk, nebo AI? Poznat to nelze spolehlivě",
+    "description": "Posuzujete recenze, životopisy nebo podklady od dodavatelů podle toho, zda je psala AI? Detektor ani vodoznak to spolehlivě neřeknou. Co dělat místo toho.",
+    "date_published": "2026-11-10",
+    "date_modified": "2026-11-19",
+    "highlight": false,
+    "cta_href": "/podnikova-ai/",
+    "sluzby": [
+      "podnikova-ai/"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani.svg"
+  },
+  {
     "slug": "chcete-novy-informacni-system-nejdriv-zjistete-co-vas-brzdi",
     "title": "Nový informační systém? Nejdřív zjistěte, co vás brzdí",
     "description": "Firma si řekne o nové ERP, ale potíž bývá v postupu práce nebo v datech. Jak majitel pozná, co ho brzdí, dřív než za nový systém zaplatí.",

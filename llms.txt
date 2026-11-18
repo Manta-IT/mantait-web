@@ -124,6 +124,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [AI v účetním systému: co nechat na ní a co kontrolovat](https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat): Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.
 - [Kybernetický zákon a prodej podílu cizinci](https://mantait.cz/clanky/spadate-pod-kyberneticky-zakon-prodej-podilu-cizinci-muze): Plánujete prodat podíl nebo přibrat zahraničního investora? Zařazení do režimu vyšších povinností může znamenat, že transakci musí povolit stát.
 - [Nový informační systém? Nejdřív zjistěte, co vás brzdí](https://mantait.cz/clanky/chcete-novy-informacni-system-nejdriv-zjistete-co-vas-brzdi): Firma si řekne o nové ERP, ale potíž bývá v postupu práce nebo v datech. Jak majitel pozná, co ho brzdí, dřív než za nový systém zaplatí.
+- [Text psal člověk, nebo AI? Poznat to nelze spolehlivě](https://mantait.cz/clanky/text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani): Posuzujete recenze, životopisy nebo podklady od dodavatelů podle toho, zda je psala AI? Detektor ani vodoznak to spolehlivě neřeknou. Co dělat místo toho.
 
 ## Co Manta IT není
 
