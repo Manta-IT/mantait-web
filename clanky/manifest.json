@@ -1,5 +1,22 @@
 [
   {
+    "slug": "chcete-novy-informacni-system-nejdriv-zjistete-co-vas-brzdi",
+    "title": "Nový informační systém? Nejdřív zjistěte, co vás brzdí",
+    "description": "Firma si řekne o nové ERP, ale potíž bývá v postupu práce nebo v datech. Jak majitel pozná, co ho brzdí, dřív než za nový systém zaplatí.",
+    "date_published": "2026-11-09",
+    "date_modified": "2026-11-19",
+    "highlight": false,
+    "cta_href": "/reseni-mapa-firmy",
+    "sluzby": [
+      "reseni-mapa-firmy",
+      "reseni-vyber-systemu",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-chcete-novy-informacni-system-nejdriv-zjistete-co-vas-brzdi.svg"
+  },
+  {
     "slug": "ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat",
     "title": "AI v účetním systému: co nechat na ní a co kontrolovat",
     "description": "Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.",

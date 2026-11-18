@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta práce a dat přes několik systémů s ručním přepisováním, před novým systémem kruh rozhodnutí: krátká odbočka s úpravou postupu, nebo dlouhá cesta k novému systému" fill="none">
+<title>Cesta práce a dat přes několik systémů s ručním přepisováním, před novým systémem kruh rozhodnutí: krátká odbočka s úpravou postupu, nebo dlouhá cesta k novému systému</title>
+  <path d="M54 100h18" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M190 100h30" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="14" y="84" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M22 94h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M22 103h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="72" y="84" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M80 94h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M80 103h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="150" y="84" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M158 94h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M158 103h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M112 100h38" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <rect x="118" y="58" width="26" height="18" rx="3" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.5" opacity="1"/>
+  <path d="M123 64h16" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M131 76v24" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <circle cx="234" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M234 86v-38h28" stroke="#0B6E4F" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <rect x="262" y="36" width="40" height="24" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M270 43h24" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M270 51h14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M234 114v58h28" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="262" y="156" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M270 166h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M270 175h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>
