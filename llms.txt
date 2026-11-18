@@ -120,6 +120,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Cloudové ERP pro malou firmu: co porovnat před výběrem](https://mantait.cz/clanky/cloudove-erp-pro-malou-firmu-v-cesku-co-porovnat-nez-si): Hledáte cloudové ERP a nevíte, čím se liší od systému na vlastním serveru? Pět věcí k porovnání a jak spočítat cenu na pět let.
 - [Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?](https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje): Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?
 - [Odbory v Mews kvůli AI: jak zavést AI bez odporu lidí](https://mantait.cz/clanky/v-mews-kvuli-ai-vznikly-odbory-jak-ai-zavest-aby-proti-ni): V české softwarové firmě vznikly odbory poté, co oznámila propouštění kvůli AI. Co říct týmu předem, aby AI nebrzdili vaši vlastní lidé.
+- [Raynet a Pohoda: co se předává samo a co ne](https://mantait.cz/clanky/propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne): Obchod máte v jednom systému, účetnictví v druhém a zákazníka zakládáte dvakrát. Co může mezi nimi téct samo a co si musíte dohodnout předem.
 
 ## Co Manta IT není
 

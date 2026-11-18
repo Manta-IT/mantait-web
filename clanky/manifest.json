@@ -1,5 +1,21 @@
 [
   {
+    "slug": "propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne",
+    "title": "Raynet a Pohoda: co se předává samo a co ne",
+    "description": "Obchod máte v jednom systému, účetnictví v druhém a zákazníka zakládáte dvakrát. Co může mezi nimi téct samo a co si musíte dohodnout předem.",
+    "date_published": "2026-11-03",
+    "date_modified": "2026-11-19",
+    "highlight": false,
+    "cta_href": "/reseni-propojeni",
+    "sluzby": [
+      "reseni-propojeni",
+      "raynet"
+    ],
+    "og_image": null,
+    "tema": "Automatizace",
+    "obrazek": "clanek-propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne.svg"
+  },
+  {
     "slug": "v-mews-kvuli-ai-vznikly-odbory-jak-ai-zavest-aby-proti-ni",
     "title": "Odbory v Mews kvůli AI: jak zavést AI bez odporu lidí",
     "description": "V české softwarové firmě vznikly odbory poté, co oznámila propouštění kvůli AI. Co říct týmu předem, aby AI nebrzdili vaši vlastní lidé.",
