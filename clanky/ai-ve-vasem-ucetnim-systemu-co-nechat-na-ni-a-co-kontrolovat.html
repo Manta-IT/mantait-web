@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI v účetním systému: co nechat na ní a co kontrolovat - Manta IT</title>
+<meta name="description" content="Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat">
+  <meta property="og:title" content="AI v účetním systému: co nechat na ní a co kontrolovat">
+  <meta property="og:description" content="Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI v účetním systému: co nechat na ní a co kontrolovat",
+    "description": "Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.",
+    "inLanguage": "cs",
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["AI v účetním systému", "dohled nad AI ve firmě"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">AI v podnikovém systému</span>
+  <h1>AI v účetním systému: co nechat na ní a co <em>kontrolovat.</em></h1>
+  <p class="hero-lead">Dohled nad AI v účetním systému je pravidlo, které pro každou agendu určuje, co AI jen navrhne a co smí udělat sama. Dodavatelé účetních a podnikových systémů AI přidávají a sami říkají, že na ni musí někdo dohlížet. Majitel firmy by měl mít toto rozdělení napsané dřív, než se funkce zapne.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 3. listopadu 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat.svg" alt="Doklad prochází pěti kroky, u dvou se cesta zastavuje u člověka a pod linkou je záznam, co AI udělala" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Co říká dodavatel</span>
+  <h2>Autonomii zákazníci nechtějí, <em>dohled ano.</em></h2>
+  <p>Petr Havelka, generální ředitel Abra Software, popisuje v rozhovoru pro <a href="https://www.ciotrends.cz/clanky/petr-havelka-ceo-abra-software-na-ai-musite-dohlizet/" rel="nofollow">CIOtrends, rozhovor s Petrem Havelkou, vydání 5/2026</a> příklad z účetnictví. Systém "vytěží přijatý doklad, zapíše ho do databáze a upozorní účetní na případnou anomálii". Zákazníci od něj podle něj čekají jediné: "Nechtějí, aby jednal autonomně bez jejich dozoru, ale aby jim pomáhal a šetřil čas."</p>
+  <p>Pro českou firmu z toho plyne praktická věc. Až vám dodavatel systému oznámí novou AI funkci, bude otázka, kdo ji kontroluje, mnohem důležitější než otázka, co všechno umí. Dodavatel dohled nabízí, ale nastavit ho musíte vy.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Rozdělení agend</span>
+  <h2>Co AI navrhne a co smí udělat <em>sama.</em></h2>
+  <p>Doporučuji rozdělit každou agendu do dvou přihrádek. První se jmenuje "AI navrhne, člověk schválí": sem patří všechno, co mění peníze, účty nebo vztahy s odběrateli a dodavateli. Druhá se jmenuje "AI udělá sama": sem patří kroky, které jdou vzít zpět a nic nestojí.</p>
+  <p>Modelový příklad, ne měření: AI vytěží přijatou fakturu a předvyplní pole. To je krok do přihrádky "udělá sama", protože chybu uvidí účetní při zaúčtování. Změna bankovního účtu dodavatele nebo schválení platby patří do přihrádky "člověk schválí" vždy. Přesně taková změna je navíc oblíbený podvod, jak popisuje článek o <a href="/clanky/prisel-e-mail-o-zmene-bankovniho-uctu-dodavatele-kdo-to-ve">změně účtu dodavatele</a>.</p>
+  <p>Je i třetí skupina: kroky, kde AI nepatří vůbec. Havelka říká, že je to "všude tam, kde potřebujete deterministický model, tedy proces, který se musí chovat vždy stejně". Důvod uvádí prostý: "Zeptáte se jí třikrát na stejnou věc a třikrát dostanete trochu jinou odpověď." Výpočet, který musí vyjít pokaždé stejně, svěřte běžnému software, ne AI.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Když se splete</span>
+  <h2>Co se stane, <em>když AI udělá chybu?</em></h2>
+  <p>Chyba AI se od chyby člověka liší hlavně tím, že se opakuje stejným způsobem, dokud ji nikdo nezachytí. Proto má smysl mít záznam, ze kterého jde zpětně zjistit, co se stalo. Havelka uvádí, že zákazníci vyžadují, "aby bylo možné vždy zpětně dohledat, z jakých dat AI při rozhodnutí vycházela a co ji k tomu vedlo" (<a href="https://www.ciotrends.cz/clanky/petr-havelka-ceo-abra-software-na-ai-musite-dohlizet/" rel="nofollow">CIOtrends, rozhovor s Petrem Havelkou, vydání 5/2026</a>).</p>
+  <p>Ověřte si u dodavatele tři věci, než funkci zapnete. Zapisuje systém každou akci AI i s daty, ze kterých vycházela? Umíte jednou akcí vrátit celou dávku doporučení AI, ne jen jednotlivý doklad? A kdo ve firmě záznam čte, aspoň jednou měsíčně? Záznam, který nikdo nečte, nepomůže.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Přístupy a data</span>
+  <h2>Pravidla se nastavují <em>před zapnutím.</em></h2>
+  <p>AI v systému má vidět jen to, co smí vidět uživatel, za kterého pracuje. Havelka to říká takto: "na AI agenty uvnitř systému nahlížíme stejně přísně jako na jakéhokoliv jiného uživatele". Pozor je třeba u nástrojů připojených zvenčí: "Pokud není správně vyřešené předávání identity a oprávnění, může vzniknout cesta, jak standardní řízení přístupu nechtěně obejít." (<a href="https://www.ciotrends.cz/clanky/petr-havelka-ceo-abra-software-na-ai-musite-dohlizet/" rel="nofollow">CIOtrends, rozhovor s Petrem Havelkou, vydání 5/2026</a>)</p>
+  <p>Platí tedy jednoduchý postup. Nejdřív napsat, kdo smí co vidět, založit a schválit. Pak teprve zapnout funkci. Firmy, které pořadí obrátí, zjistí, že AI zpřístupnila mzdy nebo cenové podmínky lidem, kteří o nich nikdy neměli vědět. Pravidla pro zaměstnance, kteří AI používají na vlastní pěst, popisuje článek <a href="/clanky/vasi-lide-uz-ai-pouzivaji-jen-nevite-kterou-a-s-jakymi-daty">Vaši lidé už AI používají</a>.</p>
+  <p>Druhou podmínkou jsou čistá data. Havelka upozorňuje, že pro dobré nasazení AI "potřebujete mít skvělé datové podklady, a to je u řady firem velký problém". Pokud jsou v číselnících duplicity a prázdná povinná pole, AI je jen rychleji rozmnoží. K tomu se vrací článek <a href="/clanky/data-jste-uklidili-za-pul-roku-budou-zase-spinava">Data jste uklidili, za půl roku budou zase špinavá</a>. Jak se propojují účetnictví, sklad a CRM tak, aby si data předávaly samy a kontrolovatelně, popisuje stránka <a href="/reseni-propojeni">propojení systémů</a>.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud AI v účetním systému zatím nezapínáte a nikdo ve firmě ji tam nezkouší, rozdělení agend nepotřebujete a stačí si ho připravit až s oznámením od dodavatele. Pokud se funkce chystá nebo už běží, projděte agendy a řekněte si u každé, do které přihrádky patří.</p>
+  <div class="lp-price">
+    <p><b>Projdu s vámi agendy ve vašich systémech, nastavím pravidla přístupu a navrhnu, co smí AI udělat sama a co schvaluje člověk.</b></p>
+    <p style="margin-top: 18px;"><a href="/podnikova-ai/" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/podnikova-ai/"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+    <li><a href="/reseni-propojeni"><b>Propojení a automatizace</b><small>podle rozsahu</small><span>Účetnictví, sklad, e-shop a CRM si předávají data samy.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>

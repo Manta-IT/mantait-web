@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Doklad prochází pěti kroky, u dvou se cesta zastavuje u člověka a pod linkou je záznam, co AI udělala" fill="none">
+<title>Doklad prochází pěti kroky, u dvou se cesta zastavuje u člověka a pod linkou je záznam, co AI udělala</title>
+  <path d="M50 85h28" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M114 85h28" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M178 85h28" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M242 85h28" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="14" y="68" width="36" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M21 78h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M21 87h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="142" y="68" width="36" height="34" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M149 78h22" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M149 87h16" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="96" cy="85" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M88 85l6 7 11-13" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="224" cy="85" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M216 85l6 7 11-13" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="270" y="68" width="36" height="34" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M277 78h22" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M277 87h16" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M160 102v38" stroke="#C3CAC4" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" opacity="1"/>
+  <rect x="108" y="140" width="104" height="42" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M120 151h80" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M120 160h56" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M120 169h68" stroke="#C3CAC4" stroke-width="2" stroke-linecap="round" opacity="1"/>
+</svg>

@@ -121,6 +121,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Útočníkům zrychlila práci AI. Kdo u vás reaguje rychle?](https://mantait.cz/clanky/utocnikum-ai-zrychlila-praci-kdo-ve-vasi-firme-reaguje): Většina českých firem ví, že AI útoky zrychluje, ale obranu automatizuje menšina. Které otázky položit správci dřív, než si všimne člověk?
 - [Odbory v Mews kvůli AI: jak zavést AI bez odporu lidí](https://mantait.cz/clanky/v-mews-kvuli-ai-vznikly-odbory-jak-ai-zavest-aby-proti-ni): V české softwarové firmě vznikly odbory poté, co oznámila propouštění kvůli AI. Co říct týmu předem, aby AI nebrzdili vaši vlastní lidé.
 - [Raynet a Pohoda: co se předává samo a co ne](https://mantait.cz/clanky/propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne): Obchod máte v jednom systému, účetnictví v druhém a zákazníka zakládáte dvakrát. Co může mezi nimi téct samo a co si musíte dohodnout předem.
+- [AI v účetním systému: co nechat na ní a co kontrolovat](https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat): Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.
 
 ## Co Manta IT není
 

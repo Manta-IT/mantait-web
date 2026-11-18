@@ -1,5 +1,22 @@
 [
   {
+    "slug": "ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat",
+    "title": "AI v účetním systému: co nechat na ní a co kontrolovat",
+    "description": "Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.",
+    "date_published": "2026-11-03",
+    "date_modified": "2026-11-19",
+    "highlight": false,
+    "cta_href": "/podnikova-ai/",
+    "sluzby": [
+      "podnikova-ai/",
+      "reseni-mapa-firmy",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat.svg"
+  },
+  {
     "slug": "propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne",
     "title": "Raynet a Pohoda: co se předává samo a co ne",
     "description": "Obchod máte v jednom systému, účetnictví v druhém a zákazníka zakládáte dvakrát. Co může mezi nimi téct samo a co si musíte dohodnout předem.",
