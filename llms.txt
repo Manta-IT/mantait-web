@@ -122,6 +122,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Odbory v Mews kvůli AI: jak zavést AI bez odporu lidí](https://mantait.cz/clanky/v-mews-kvuli-ai-vznikly-odbory-jak-ai-zavest-aby-proti-ni): V české softwarové firmě vznikly odbory poté, co oznámila propouštění kvůli AI. Co říct týmu předem, aby AI nebrzdili vaši vlastní lidé.
 - [Raynet a Pohoda: co se předává samo a co ne](https://mantait.cz/clanky/propojeni-raynetu-s-pohodou-co-se-predava-samo-a-co-ne): Obchod máte v jednom systému, účetnictví v druhém a zákazníka zakládáte dvakrát. Co může mezi nimi téct samo a co si musíte dohodnout předem.
 - [AI v účetním systému: co nechat na ní a co kontrolovat](https://mantait.cz/clanky/ai-ve-vasem-ucetnim-systemu-co-nechat-na-ni-a-co-kontrolovat): Systém umí vytěžit fakturu a upozornit na anomálii. Které kroky smí AI udělat sama, které schvaluje člověk a co ověřit, než funkci zapnete.
+- [Kybernetický zákon a prodej podílu cizinci](https://mantait.cz/clanky/spadate-pod-kyberneticky-zakon-prodej-podilu-cizinci-muze): Plánujete prodat podíl nebo přibrat zahraničního investora? Zařazení do režimu vyšších povinností může znamenat, že transakci musí povolit stát.
 
 ## Co Manta IT není
 

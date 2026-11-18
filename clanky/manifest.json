@@ -128,6 +128,22 @@
     "obrazek": "clanek-stroje-ve-vyrobe-jsou-na-stejne-siti-jako-kancelar-co-to.svg"
   },
   {
+    "slug": "spadate-pod-kyberneticky-zakon-prodej-podilu-cizinci-muze",
+    "title": "Kybernetický zákon a prodej podílu cizinci",
+    "description": "Plánujete prodat podíl nebo přibrat zahraničního investora? Zařazení do režimu vyšších povinností může znamenat, že transakci musí povolit stát.",
+    "date_published": "2026-10-28",
+    "date_modified": "2026-11-19",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-spadate-pod-kyberneticky-zakon-prodej-podilu-cizinci-muze.svg"
+  },
+  {
     "slug": "vsechny-aplikace-na-jedne-fakture-co-tim-firma-ziska-a-na",
     "title": "Všechny aplikace na jedné faktuře: na kom pak firma závisí",
     "description": "Tržiště firemních aplikací slibuje jednu fakturu a hotové propojení. Co z toho firma získá, na kom začne záviset a co si ověřit před přechodem.",
