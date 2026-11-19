@@ -1,5 +1,21 @@
 [
   {
+    "slug": "kvantove-pocitace-a-sifrovani-co-ma-firma-resit-uz-ted",
+    "title": "Kvantové počítače a šifrování: co řešit už teď",
+    "description": "Útočníci sbírají zašifrovaná data dnes a otevřou je později. Která data firmy musí zůstat tajná a na co se zeptat dodavatelů šifrování.",
+    "date_published": "2026-11-16",
+    "date_modified": "2026-11-20",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-kvantove-pocitace-a-sifrovani-co-ma-firma-resit-uz-ted.svg"
+  },
+  {
     "slug": "eu-chysta-digital-fairness-act-co-se-zmeni-pro-e-shopy-a",
     "title": "Digital Fairness Act: co se změní u e-shopů a předplatného",
     "description": "Evropská komise navrhla pravidla pro objednávky, ceny a rušení předplatného online. Zatím je to návrh, ale projít si vlastní web se vyplatí už teď.",
