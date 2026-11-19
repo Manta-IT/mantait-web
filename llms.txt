@@ -126,6 +126,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Nový informační systém? Nejdřív zjistěte, co vás brzdí](https://mantait.cz/clanky/chcete-novy-informacni-system-nejdriv-zjistete-co-vas-brzdi): Firma si řekne o nové ERP, ale potíž bývá v postupu práce nebo v datech. Jak majitel pozná, co ho brzdí, dřív než za nový systém zaplatí.
 - [Text psal člověk, nebo AI? Poznat to nelze spolehlivě](https://mantait.cz/clanky/text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani): Posuzujete recenze, životopisy nebo podklady od dodavatelů podle toho, zda je psala AI? Detektor ani vodoznak to spolehlivě neřeknou. Co dělat místo toho.
 - [Státní hackeři vcházejí přes neopravený systém](https://mantait.cz/clanky/ani-statni-hackeri-nepotrebuji-nic-sloziteho-staci-jim): Podle NÚKIB útočníci stojící za státem často nepotřebují pokročilé nástroje. Stačí neopravený router a heslo bez druhého faktoru. Co chtít po správci.
+- [EET 2.0: pokladna musí navázat na sklad a účetnictví](https://mantait.cz/clanky/eet-2-0-se-blizi-pokladna-nestaci-musi-navazat-na-sklad-a): Blíží se nová evidence tržeb a vy vybíráte pokladnu. Co ověřit, aby tržby, sklad a účetnictví seděly a nepřepisovalo se ručně.
 
 ## Co Manta IT není
 

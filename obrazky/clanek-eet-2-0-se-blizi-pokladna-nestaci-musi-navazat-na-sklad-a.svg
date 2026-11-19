@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Pokladna, sklad a účetnictví spojené jednou linkou, kudy tečou denní tržby, s místem rozhodnutí před pokladnou" fill="none">
+<title>Pokladna, sklad a účetnictví spojené jednou linkou, kudy tečou denní tržby, s místem rozhodnutí před pokladnou</title>
+  <circle cx="26" cy="100" r="10" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M36 100h14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="50" y="68" width="60" height="64" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M60 84h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M60 94h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M60 104h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="130" y="68" width="60" height="64" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M140 84h40" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M140 94h28" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M140 104h36" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="210" y="68" width="60" height="64" rx="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M220 84h40" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M220 94h28" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M220 104h36" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M110 100h20" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M190 100h20" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M270 100h24" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+</svg>
