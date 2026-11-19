@@ -128,6 +128,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Státní hackeři vcházejí přes neopravený systém](https://mantait.cz/clanky/ani-statni-hackeri-nepotrebuji-nic-sloziteho-staci-jim): Podle NÚKIB útočníci stojící za státem často nepotřebují pokročilé nástroje. Stačí neopravený router a heslo bez druhého faktoru. Co chtít po správci.
 - [EET 2.0: pokladna musí navázat na sklad a účetnictví](https://mantait.cz/clanky/eet-2-0-se-blizi-pokladna-nestaci-musi-navazat-na-sklad-a): Blíží se nová evidence tržeb a vy vybíráte pokladnu. Co ověřit, aby tržby, sklad a účetnictví seděly a nepřepisovalo se ručně.
 - [Chatbot nad firemními dokumenty: kdo uvidí smlouvy a mzdy](https://mantait.cz/clanky/chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a): Chatbot nad firemními dokumenty odpoví skladníkovi i z mezd, když čte celý disk. Co si ujasnit dřív, než mu otevřete přístup.
+- [Digital Fairness Act: co se změní u e-shopů a předplatného](https://mantait.cz/clanky/eu-chysta-digital-fairness-act-co-se-zmeni-pro-e-shopy-a): Evropská komise navrhla pravidla pro objednávky, ceny a rušení předplatného online. Zatím je to návrh, ale projít si vlastní web se vyplatí už teď.
 
 ## Co Manta IT není
 
