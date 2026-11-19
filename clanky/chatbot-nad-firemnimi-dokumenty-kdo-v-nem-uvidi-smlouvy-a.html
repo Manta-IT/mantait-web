@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chatbot nad firemními dokumenty: kdo uvidí smlouvy a mzdy - Manta IT</title>
+<meta name="description" content="Chatbot nad firemními dokumenty odpoví skladníkovi i z mezd, když čte celý disk. Co si ujasnit dřív, než mu otevřete přístup.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a">
+  <meta property="og:title" content="Chatbot nad firemními dokumenty: kdo uvidí smlouvy a mzdy">
+  <meta property="og:description" content="Chatbot nad firemními dokumenty odpoví skladníkovi i z mezd, když čte celý disk. Co si ujasnit dřív, než mu otevřete přístup.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Chatbot nad firemními dokumenty: kdo uvidí smlouvy a mzdy",
+    "description": "Chatbot nad firemními dokumenty odpoví skladníkovi i z mezd, když čte celý disk. Co si ujasnit dřív, než mu otevřete přístup.",
+    "inLanguage": "cs",
+    "datePublished": "2026-11-16",
+    "dateModified": "2026-11-16",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["chatbot nad firemními dokumenty", "přístupová práva a umístění dat"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Chatbot nad firemními dokumenty</span>
+  <h1>Chatbot ukáže skladníkovi i mzdy, <em>když čte celý disk.</em></h1>
+  <p class="hero-lead">Chatbot nad firemními dokumenty je program, který na otázku odpoví textem z vašich souborů, ne z hlavy jazykového modelu. Zeptá se ho kdokoli, a proto rozhoduje, jestli odpovídá z toho, co smí číst ten, kdo se ptá, nebo z toho, co smí číst on sám. Podle toho se pozná chatbot, který firmě pomáhá, od chatbota, kterého je po týdnu nutné vypnout.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 16. listopadu 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a.svg" alt="Ze tří složek dokumentů vede do chatbota cesta jen ze směrnic, smlouvy a mzdy jsou zavřené" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Přání a pasti</span>
+  <h2>Co firmy chtějí a <em>kde to drhne.</em></h2>
+  <p>Zadání zní skoro vždy stejně: lidé se zeptají na směrnici, ceník nebo smlouvu a chatbot odpoví z firemních dokumentů. Nikdo nehledá ve složkách, nikdo neposílá kolegům "kde je to naposledy platné". Je to rozumné přání a technicky dnes proveditelné.</p>
+  <p>Past je v tom, že model s přístupem na celý disk nezná rozdíl mezi ceníkem a výplatní páskou. Dokument je pro něj text. Když na otázku "kolik bere vedoucí skladu" najde odpověď, napíše ji. Skladníkovi stejně jako jednatelovi.</p>
+  <p>O úspěchu tedy nerozhoduje, který model vyberete. Rozhodují práva, umístění dat a pořádek v dokumentech. Model se dá za rok vyměnit, špatně otevřený disk se zpátky nezavře.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Práva</span>
+  <h2>Kdo smí co vidět, <em>chatbot sám neví.</em></h2>
+  <p>Chatbot od velkého dodavatele dědí oprávnění, která už ve firmě máte. U Microsoftu to výrobce popisuje přímo: "Microsoft Copilot zobrazuje firemní data jen těm uživatelům, kteří k nim mají alespoň právo čtení" (<a href="https://learn.microsoft.com/en-us/copilot/plan/microsoft-365-copilot-privacy" rel="nofollow">Microsoft Learn, aktualizováno 4. 11. 2026</a>). Ve stejném textu doplňuje, že je důležité mít v systému oprávnění nastavená tak, aby správní lidé měli přístup ke správnému obsahu.</p>
+  <p>Přeloženo do běžné firmy: chatbot nic nevymyslí, jen zrcadlí stav, který máte. Pokud je složka se mzdami "pro jistotu" dostupná všem, chatbot to nezmění. Pouze to poprvé někdo zkusí a zjistí.</p>
+  <p>Zkuste v hlavě tři otázky. Kdo dnes smí číst smlouvy s odběrateli? Kdo mzdy a výpovědi? Víte to z nastavení, nebo z přesvědčení, že se tam nikdo nedívá? Odpověď na třetí otázku bývá nejpoctivější, a nejméně příjemná. Mapu toho, kdo co smí, sestavuje <a href="/reseni-mapa-firmy">příprava firmy: data, procesy a lidé</a>.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Zákaz v zadání</span>
+  <h2>Proč nestačí chatbotovi <em>zakázat mzdy.</em></h2>
+  <p>Častý nápad zní: do zadání chatbota napíšeme, ať o mzdách nemluví. Autoři seznamu rizik pro jazykové modely (<a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" rel="nofollow">OWASP GenAI Security Project, 2025</a>) k tomu píšou, že taková omezení "nemusí být vždy dodržena a lze je obejít" cíleným dotazem. Doporučují omezit přístup k citlivým datům podle principu nejmenších oprávnění: každý dostane jen to, co potřebuje.</p>
+  <p>Zákaz v textu je tedy prosba, ne zámek. Zámek musí být tam, kde se dokumenty vybírají: chatbot dostane k odpovědi jen soubory, které smí číst ten, kdo se ptá. Co do něj nedorazí, nemůže vyzradit.</p>
+  <p>S tím souvisí pořádek. Tři verze jedné směrnice, ceník z minulého roku vedle letošního, smlouva bez označení, zda ještě platí. Člověk si všimne data v názvu souboru, chatbot ne. Odpoví s jistotou, a špatně.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Kam jdou data</span>
+  <h2>Smí dokumenty <em>opustit firmu?</em></h2>
+  <p>Druhá otázka před nasazením je, kam se dokumenty při odpovědi posílají. Veřejná služba zpracovává text na cizích serverech. Někdy je to v pořádku, někdy ne, a často se to liší dokument od dokumentu. Ceník ven smí. Smlouva s klausulí o mlčenlivosti nejspíš ne.</p>
+  <p>Ani u velkého dodavatele není všechno stejné. Microsoft u svého asistenta uvádí, že modely od Anthropic jsou jako subdodavatel zatím z hranice zpracování dat v EU vyloučeny (<a href="https://learn.microsoft.com/en-us/copilot/plan/microsoft-365-copilot-privacy" rel="nofollow">Microsoft Learn, aktualizováno 4. 11. 2026</a>). Správce firemního účtu si tedy musí ověřit, který model je zapnutý a kde běží, nejen jestli "je to Microsoft".</p>
+  <p>Hranici si určíte sami: které dokumenty smí ven, které ne a které se do chatbota vůbec nedostanou. Do té doby je bezpečnější začít jednou složkou, třeba provozními směrnicemi, než celým diskem.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Lokální AI</span>
+  <h2>Kdy má smysl AI, která <em>běží u vás.</em></h2>
+  <p>Lokální AI znamená, že model i dokumenty zůstávají na serveru ve firmě, nebo na stroji pronajatém jen pro vás. Data nikam neodcházejí a práva se hlídají na jednom místě. Má to smysl, když pracujete se smlouvami pod mlčenlivostí, s osobními údaji zaměstnanců nebo s výrobními podklady, které nechcete posílat nikam mimo.</p>
+  <p>Nemá to smysl, když chcete jen odpovídat na otázky nad veřejným ceníkem a návody. Tam stačí veřejná služba a nad ní pořádek ve zdrojích. Lokální provoz přidává práci s hardwarem a údržbou a platí se tím, že data nikam neodejdou. Pokud v dokumentech nic citlivého nemáte, platíte za jistotu, kterou nepotřebujete.</p>
+  <p>Podle toho, jak firma zachází s dokumenty, vychází jedno ze tří rozhodnutí. Úklid předem a pak veřejná služba. Lokální AI s hlídanými právy. Nebo zatím nic, dokud se neví, kdo co smí. Na téma chatbota navazuje na ni <a href="/clanky/chatbot-na-webu-a-texty-od-ai-co-po-vas-od-srpna-chce-ai-act">článek o chatbotu na webu a povinnostech podle AI Actu</a>, který řeší opačnou stranu: chatbota, se kterým mluví vaši zákazníci.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Předem</span>
+  <h2>Co si ujasnit, <em>než se cokoli zapne.</em></h2>
+  <p>Před nasazením stačí tři věci, které se dají zapsat na jednu stránku:</p>
+  <ul>
+    <li>Které dokumenty chatbot čte. Začněte jednou složkou, ne celým diskem.</li>
+    <li>Kdo co z nich smí vidět, a kde je to zapsané v právech, ne v hlavě jednoho člověka.</li>
+    <li>Jestli smí data opustit firmu, a pokud ne, kde chatbot poběží.</li>
+  </ul>
+  <p>Zbytek, tedy výběr modelu a vzhled okna, jsou věci na odpoledne. Tyhle tři věci se dělají týdny, protože se při nich zjistí, jak to ve firmě doopravdy je.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud chcete chatbota jen nad veřejnými návody a ceníkem, tenhle článek nepotřebujete: stačí veřejná služba a pořádek v textech. Jakmile mají odpovídat smlouvy, interní směrnice nebo cokoli o zaměstnancích, začíná otázka práv.</p>
+  <div class="lp-price">
+    <p><b>Nastavím chatbota tak, aby u každé odpovědi viděl jen to, na co má právo ten, kdo se ptá, a poběží tam, kde data zůstanou.</b></p>
+    <p style="margin-top: 18px;"><a href="/podnikova-ai/" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/podnikova-ai/"><b>Podniková AI</b><small>podle varianty</small><span>AI, která zná vaše data a nepouští je ven. Lokální, nebo cloudová.</span></a></li>
+    <li><a href="/reseni-mapa-firmy"><b>Příprava firmy</b><small>39 000 Kč</small><span>Kudy tečou data, kdo co smí a kde se čeká. Před čímkoliv, co se kupuje nebo staví.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>

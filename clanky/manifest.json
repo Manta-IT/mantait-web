@@ -1,5 +1,21 @@
 [
   {
+    "slug": "chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a",
+    "title": "Chatbot nad firemními dokumenty: kdo uvidí smlouvy a mzdy",
+    "description": "Chatbot nad firemními dokumenty odpoví skladníkovi i z mezd, když čte celý disk. Co si ujasnit dřív, než mu otevřete přístup.",
+    "date_published": "2026-11-16",
+    "date_modified": "2026-11-20",
+    "highlight": false,
+    "cta_href": "/podnikova-ai/",
+    "sluzby": [
+      "podnikova-ai/",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-chatbot-nad-firemnimi-dokumenty-kdo-v-nem-uvidi-smlouvy-a.svg"
+  },
+  {
     "slug": "eet-2-0-se-blizi-pokladna-nestaci-musi-navazat-na-sklad-a",
     "title": "EET 2.0: pokladna musí navázat na sklad a účetnictví",
     "description": "Blíží se nová evidence tržeb a vy vybíráte pokladnu. Co ověřit, aby tržby, sklad a účetnictví seděly a nepřepisovalo se ručně.",
