@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta od formuláře přes dva kontrolní body se přeruší, poptávka nedorazí k člověku, který ji vyřídí" fill="none">
+<title>Cesta od formuláře přes dva kontrolní body se přeruší, poptávka nedorazí k člověku, který ji vyřídí</title>
+  <rect x="12" y="82" width="40" height="36" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M20 93h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M20 102h16" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M52 100h42" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="110" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M102 100l6 7 10-13" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M126 100h40" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="182" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <path d="M174 100l6 7 10-13" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M198 100h16" stroke="#9A3F2B" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M218 92l12 16m0-16l-12 16" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M234 100h34" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.7"/>
+  <rect x="268" y="84" width="40" height="32" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M276 95h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M276 104h14" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+</svg>

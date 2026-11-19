@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web od AI za odpoledne: co mu chybí k poptávkám - Manta IT</title>
+<meta name="description" content="AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.">
+<link rel="preload" href="/pisma/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pisma/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/pisma.css?v=b885abf">
+<link rel="stylesheet" href="/sluzba.css?v=09db6ae">
+  <link rel="stylesheet" href="/mobil.css?v=64b4033">
+  <link rel="canonical" href="https://mantait.cz/clanky/web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky">
+  <meta property="og:title" content="Web od AI za odpoledne: co mu chybí k poptávkám">
+  <meta property="og:description" content="AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://mantait.cz/clanky/web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky">
+  <meta property="og:site_name" content="Manta IT">
+  <meta property="og:image" content="https://mantait.cz/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Web od AI za odpoledne: co mu chybí k poptávkám",
+    "description": "AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.",
+    "inLanguage": "cs",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "author": {"@type": "Person", "name": "Petr Kokoška", "url": "https://mantait.cz/o-mne"},
+    "publisher": {"@type": "Organization", "name": "Manta IT", "url": "https://mantait.cz/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mantait.cz/clanky/web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky"},
+    "image": "https://mantait.cz/og-image.png",
+    "about": ["web od AI", "kolaudace firemního webu"]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329667650"></script>
+  <script src="/gtag.js?v=68ac48f" defer></script>
+  <!-- Cloudflare Web Analytics (cookieless) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "00ed8e6d70ee40719f3192866fc93c01"}'></script>
+  <style>
+  /* =====================================================================
+     Clanek -- treti uroven webu, od 8. 9. 2026 v design systemu sluzba.css.
+     Telo dodava scripts/clanek_kontrola.py (render) a pouziva tridy
+     lp-section, label, hero-*, lp-price, btn, lp-list, lp-facts, lp-table,
+     lp-faq, form-note, clanek-obraz. Tady je jejich podoba v nove palete;
+     style.css (mustek) se uz nenacita.
+     ===================================================================== */
+  .skip-link{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--inkoust);color:var(--papir);
+    padding:10px 16px;border-radius:var(--r)}
+  .skip-link:focus{left:8px}
+
+  main.clanek{max-width:860px;margin:0 auto;padding:0 var(--okraj)}
+  .clanek section{padding:0}
+  .clanek h1 em,.clanek h2 em{font-style:normal;color:var(--akcent);font-weight:600}
+  .clanek h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:16px;max-width:26ch}
+  .clanek h3{margin:22px 0 8px}
+  .clanek p+p,.clanek p+ul,.clanek ul+p,.clanek p+h3{margin-top:16px}
+  .clanek .lp-section>p{max-width:68ch}
+  .clanek .lp-section a:not(.btn){color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+  .clanek b{font-weight:600}
+
+  /* Hlava: nad ni je pevna lista 72 px. sluzba.css ma .hero jako mrizku
+     pro stranku sluzby, tady je to jeden sloupec. */
+  .clanek .hero{display:block;grid-template-columns:none;max-width:none;margin:0;
+    padding:124px 0 0}
+  .clanek .hero-eyebrow,.clanek .label{display:inline-block;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--tlum);margin-bottom:18px}
+  .clanek .hero-eyebrow{color:var(--akcent)}
+  .clanek h1{font-size:clamp(34px,4.6vw,58px);max-width:20ch}
+  .clanek .hero-lead{margin-top:20px;font-size:clamp(17px,1.3vw,19px);color:var(--tlum);max-width:60ch}
+  .clanek .form-note{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--tlum)}
+  .clanek .clanek-obraz{display:block;width:min(100%,420px);height:auto;margin-top:32px}
+
+  .clanek .lp-section{padding:clamp(36px,4.5vw,56px) 0 0}
+
+  .clanek .lp-list{list-style:none;margin-top:10px;max-width:68ch}
+  .clanek .lp-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--linka)}
+  .clanek .lp-list li::before{content:'';position:absolute;left:2px;top:19px;width:8px;height:8px;
+    border-radius:2px;background:var(--akcent)}
+
+  .clanek .lp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:22px}
+  .clanek .lp-fact{background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:18px 20px}
+  .clanek .lp-fact b{display:block;font-family:var(--display);font-weight:500;font-size:26px;
+    letter-spacing:-.03em;color:var(--akcent);line-height:1.2}
+  .clanek .lp-fact span{font-size:13.5px;color:var(--tlum)}
+
+  .clanek .lp-table-wrap{overflow-x:auto;margin-top:18px}
+  .clanek .lp-table{width:100%;border-collapse:collapse;font-size:15px}
+  .clanek .lp-table th{text-align:left;padding:12px 14px;font-family:var(--mono);font-weight:500;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--tlum);border-bottom:1px solid var(--inkoust);white-space:nowrap}
+  .clanek .lp-table td{padding:12px 14px;border-bottom:1px solid var(--linka);vertical-align:top}
+
+  /* FAQ: details a summary stylovane v sluzba.css (bez .znak-plus), znamenko tady. */
+  .clanek .lp-faq{margin-top:10px}
+  .clanek .lp-faq summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--akcent);
+    transition:transform .28s var(--krivka)}
+  .clanek .lp-faq details[open] summary::after{transform:rotate(45deg)}
+  .clanek .lp-faq p{padding:0 0 22px;color:var(--tlum);max-width:66ch}
+
+  .clanek .btn{background:var(--inkoust);color:var(--papir)}
+  .clanek .lp-price{background:var(--inkoust);color:var(--papir);border-radius:var(--r-l);
+    padding:clamp(24px,3vw,34px) clamp(22px,3vw,36px);margin-top:26px}
+  .clanek .lp-price p{color:color-mix(in srgb,var(--papir) 72%,transparent);max-width:none}
+  .clanek .lp-price b{color:var(--papir);font-family:var(--display);font-weight:400;
+    font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.3}
+  .clanek .lp-price .btn{background:var(--papir);color:var(--inkoust)}
+  .clanek .lp-price .big{font-family:var(--display);font-size:42px;letter-spacing:-.03em;color:var(--papir);line-height:1.1}
+
+  /* Souvisejici sluzby: sklada render z meta.sluzby a web/sluzby.json (E9). */
+  .lp-souvisejici{margin:56px 0 72px}
+  .lp-souvisejici-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:14px}
+  .lp-souvisejici ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--linka)}
+  .lp-souvisejici li{border-bottom:1px solid var(--linka)}
+  .lp-souvisejici a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:16px 0;
+    text-decoration:none;color:var(--inkoust)}
+  .lp-souvisejici b{font-family:var(--display);font-weight:500;font-size:19px;letter-spacing:-.02em}
+  .lp-souvisejici span{font-size:15px;color:var(--tlum);grid-column:1}
+  .lp-souvisejici small{font-family:var(--mono);font-size:12.5px;color:var(--akcent);white-space:nowrap;grid-row:1;grid-column:2}
+
+  /* Hlidac vyzev: sklada render u clanku s tema z HLIDAC_TEMATA (T0926-217). */
+  .lp-hlidac{margin:56px 0 0;background:var(--papir-tmav);border:1px solid var(--linka);border-radius:var(--r-s);padding:20px 24px}
+  .lp-hlidac-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tlum);margin-bottom:8px}
+  .lp-hlidac p{margin:0;max-width:66ch}
+  .lp-hlidac a{color:var(--akcent);text-decoration:underline;
+    text-decoration-thickness:1px;text-underline-offset:3px}
+
+  footer{margin-top:0}
+
+  @media (hover:hover) and (pointer:fine){
+    .clanek .btn:hover{background:var(--akcent)}
+    .clanek .lp-price .btn:hover{background:var(--akcent-sv)}
+    .lp-souvisejici a:hover b{text-decoration:underline;text-underline-offset:4px}
+  }
+  @media (max-width:600px){
+    .clanek .hero{padding-top:104px}
+    .lp-souvisejici a{grid-template-columns:1fr}
+    .lp-souvisejici small{grid-row:auto;grid-column:1}
+  }
+  </style>
+</head>
+<body>
+<a href="#obsah" class="skip-link">Přeskočit na obsah</a>
+
+<nav>
+  <a href="/" class="znacka"><span class="znak"></span>Manta IT</a>
+  <div class="menu">
+    <a href="/#cinnost">Co dělám</a>
+    <a href="/#obory">S čím pomůžu</a>
+    <a href="/#cenik">Kolik to stojí</a>
+    <a href="/o-mne">Kdo jsem</a>
+    <a href="/clanky/" aria-current="page">Články</a>
+  </div>
+  <a href="/#napiste" class="nav-cta">Napište mi</a>
+</nav>
+
+<main id="obsah" class="clanek">
+
+<!-- TELO: sklada scripts/clanek_kontrola.py (render) z workspace/_clanky/<slug>/telo.html + meta.json.
+     Rucne psany clanek: hero (eyebrow, h1 s <em>, hero-lead, byline, ilustrace), 2-6 sekci lp-section
+     (label + h2 s <em> + odstavce, kazde cislo s inline zdrojem rel="nofollow"), posledni sekce
+     "Dalsi krok" s .lp-price a JEDNIM tlacitkem .btn. Pravidla: specs/clanky-linka/PRAVIDLA.md -->
+<section class="hero">
+  <span class="hero-eyebrow">Web od AI</span>
+  <h1>Web od AI za odpoledne vám nepřinese poptávky, <em>dokud ho nezkolaudujete.</em></h1>
+  <p class="hero-lead">Web od AI je hrubá stavba: stránky, které se dají otevřít a vypadají hotově. Kolaudace je kontrola, která ověří, že ho najdou vyhledávače i AI asistenti, že formulář poptávku opravdu doručí a že ho někdo bude udržovat. Bez ní ušetříte na tvorbě webu a ztratíte na zakázkách, které nikdy nepřijdou.</p>
+  <p class="form-note" style="margin-top: 18px;">Petr Kokoška, Manta IT &middot; publikováno 17. listopadu 2026</p>
+  <img class="clanek-obraz" src="/obrazky/clanek-web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky.svg" alt="Cesta od formuláře přes dva kontrolní body se přeruší, poptávka nedorazí k člověku, který ji vyřídí" width="320" height="200">
+</section>
+
+<section class="lp-section">
+  <span class="label">Co AI postaví</span>
+  <h2>Hrubá stavba je hotová, <em>kolaudaci nikdo neudělal.</em></h2>
+  <p>Majitelé malých firem dnes zadají AI popis podnikání a odpoledne mají web s texty, fotkami i formulářem. Autor článku na SystemOnLine to říká podobně: AI "postaví vám hrubou stavbu za odpoledne a je to zázrak i past zároveň" (<a href="https://www.systemonline.cz/zpravy/ai-zvladne-hrubou-stavbu-webu-ale-co-kolaudace-z.htm" rel="nofollow">SystemOnLine, Petr Klement, 16. 11. 2026, datum přepočteno z "Včera"</a>). Souhlasím s ním v tom hlavním: past je v tom, že hotově vypadající web nikdo neprošel od první stránky po doručenou poptávku.</p>
+  <p>Z mé praxe vedení projektů mívá nejvíc nedodělků to, co zákazník na první pohled nevidí. Tlačítko je hezké, ale formulář nikam nedojde. Stránka se otevírá, ale vyhledávač ji nenajde. Pro majitele firmy je to nejdražší varianta chyby, protože nic nehlásí.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Kolaudace</span>
+  <h2>Kolaudační seznam na <em>jednu stránku.</em></h2>
+  <p>Projděte web podle sedmi bodů dřív, než na něj pošlete první zákazníky. U každého bodu stačí odpověď ano, nebo ne, a u každého ne víte, co opravit.</p>
+  <ol>
+    <li>Vyhledávač web zná: stránky jsou dohledatelné a každá má vlastní nadpis a popis.</li>
+    <li>AI asistent o firmě odpoví správně: když se ho zeptáte, čím se živíte a kde působíte, řekne pravdu.</li>
+    <li>Formulář poptávku doručí: odeslali jste si testovací zprávu a přišla na adresu, kterou čte člověk.</li>
+    <li>Víte, kdo poptávku vyřídí a do kdy: zpráva nepropadne do schránky, kterou nikdo neotevírá.</li>
+    <li>Web má správce: je určeno, kdo mění texty, ceny a kontakty, a ten člověk má přístup.</li>
+    <li>Cookies a osobní údaje jsou ošetřeny: víte, co web nastavuje a ukládá, a stránka to návštěvníkovi řekne.</li>
+    <li>Máte únikový plán: umíte získat obsah, formuláře a doménu zpátky, kdybyste platformu opustili.</li>
+  </ol>
+  <p>Zdrojový článek jde stejným směrem a navíc upozorňuje na bezpečnost přihlášení a plateb a na přístupnost webu. U firemní vizitky bez přihlašování a plateb je to menší riziko, u e-shopu vyšší.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Najdou vás</span>
+  <h2>Najdou web vyhledávače a <em>AI asistenti?</em></h2>
+  <p>Web je dohledatelný, když má jasný nadpis, srozumitelnou nabídku a odpovědi na to, na co se zákazníci ptají. Lidé dnes čím dál víc dostávají hotovou odpověď od AI místo seznamu odkazů. Autoři studie o optimalizaci pro generativní vyhledávače uvádějí, že jejich postupy mohou zvýšit viditelnost obsahu v odpovědích až o 40 % (<a href="https://arxiv.org/abs/2311.09735" rel="nofollow">arXiv, Aggarwal a kol., KDD 2024</a>). Číslo je horní hranice z jejich testů, ne slib pro váš web.</p>
+  <p>Prakticky to znamená psát tak, aby se z textu dala vzít věta jako odpověď: kdo jste, co děláte, pro koho a v jakém území. Co AI o vaší firmě říká dnes, ověříte rychle sami, jak popisuji v článku <a href="/clanky/co-o-vasi-firme-odpovi-chatgpt-overte-to-driv-nez-vas">Co o vaší firmě odpoví ChatGPT</a>. Vygenerované texty bez lidské editace tohle splní zřídka, protože nevědí nic, co jste jim neřekli.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Poptávka</span>
+  <h2>Doručí formulář poptávku, <em>nebo jen vypadá, že ano?</em></h2>
+  <p>Formulář postavený AI téměř vždy zobrazí poděkování po odeslání. To ještě neznamená, že zpráva někam dorazila. Odešlete si proto dvě testovací poptávky, jednu z počítače a jednu z telefonu, a zkontrolujte, kde přistály, včetně složky se spamem.</p>
+  <p>Druhá otázka je, co se s poptávkou stane dál. Když zpráva skončí v obecné schránce, vyřídí ji člověk, který zrovna dohlédne. Když má jít do zákaznické evidence nebo do účetnictví, musí to někdo propojit. Taková propojení umím <a href="/reseni-propojeni">zařídit tak, aby si systémy předávaly data samy</a>. Proč tiše selhávají, popisuje článek <a href="/clanky/zaplaceno-neodeslano-kdyz-propojeni-systemu-tise-prestane">Zaplaceno, neodesláno</a>.</p>
+  <p>Třetí věc se týká toho, kdo web udržuje. Když něco upraví AI na vaše zadání, funguje to, dokud se nezmění kontakt nebo cena. Pak se ukáže, že nikdo neví, kde se to mění a kdo to má na starosti. Podobný problém řeším u firemních aplikací v článku <a href="/clanky/kolega-si-s-ai-napsal-firemni-aplikaci-kdo-ji-bude-udrzovat">Kolega si s AI napsal firemní aplikaci</a>.</p>
+</section>
+
+<section class="lp-section">
+  <span class="label">Kdy co</span>
+  <h2>Kdy stačí web od AI a kdy se vyplatí <em>web na poptávky?</em></h2>
+  <p>Web od AI stačí, když slouží jako vizitka. Zákazníci vás znají z doporučení, na web se podívají, aby ověřili kontakt a obor, a poptávky vám chodí jinudy. Pak ho stačí zkolaudovat podle seznamu výše a vyplatí se každá koruna, kterou jste za tvorbu ušetřili.</p>
+  <p>Web stavěný na poptávky potřebujete, když od něj čekáte nové zákazníky, které neznáte. Vyhledávače a AI asistenti ho musí najít, formulář musí doručit, poptávka musí skončit u člověka, který ji vyřídí, a někdo musí web udržovat. Tady vzniká práce, kterou za vás odpolední generování neudělá. Zdrojový článek to shrnuje větou, že AI je akcelerátor, ne autopilot. Souhlasím a doplňuji: ve firmě bez IT oddělení nemá autopilota kdo hlídat.</p>
+  <p>Když si nejste jistí, kam váš web patří, odpověď vám dá jedna otázka. Kolik poptávek vám loni z webu přišlo? Pokud žádná, je to vizitka, ať ji postavil kdokoliv.</p>
+</section>
+
+<section class="lp-section" style="padding-top: 0; padding-bottom: 80px;">
+  <span class="label">Další krok</span>
+  <h2>Co s tím <em>teď.</em></h2>
+  <p>Pokud vám web slouží jen jako vizitka a poptávky chodí jinudy, mě nepotřebujete: projděte si sedm bodů sami a web od AI klidně nechte. Pokud od webu čekáte nové zákazníky, kolaudaci po večerech sami dělat nemusíte.</p>
+  <div class="lp-price">
+    <p><b>Postavím vám firemní web, který poptávky nasbírá, doručí na správné místo a před spuštěním projde celým kolaudačním seznamem.</b></p>
+    <p style="margin-top: 18px;"><a href="/weby" class="btn">Ukázat řešení</a></p>
+  </div>
+</section>
+
+
+<aside class="lp-souvisejici" aria-label="Souvisejici sluzby">
+  <span class="lp-souvisejici-label">K tomuhle tématu na webu</span>
+  <ul>
+    <li><a href="/weby"><b>Web pro dobu AI</b><small>35 000 Kč</small><span>Firemní web, který sám získává poptávky, přes vyhledávače i AI asistenty.</span></a></li>
+    <li><a href="/reseni-propojeni"><b>Propojení a automatizace</b><small>podle rozsahu</small><span>Účetnictví, sklad, e-shop a CRM si předávají data samy.</span></a></li>
+  </ul>
+</aside>
+</main>
+
+<footer>
+  <div class="obsah pata">
+    <span>Petr Kokoška, Manta IT</span>
+    <span>Sukova 311, 257 22 Čerčany &middot; IČO: 04158351 &middot; <a href="/soukromi">Osobní údaje</a></span>
+  </div>
+</footer>
+
+<script src="/mobil.js?v=1bc92b7" defer></script>
+</body>
+</html>

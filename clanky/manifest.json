@@ -1,5 +1,21 @@
 [
   {
+    "slug": "web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky",
+    "title": "Web od AI za odpoledne: co mu chybí k poptávkám",
+    "description": "AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.",
+    "date_published": "2026-11-17",
+    "date_modified": "2026-11-20",
+    "highlight": false,
+    "cta_href": "/weby",
+    "sluzby": [
+      "weby",
+      "reseni-propojeni"
+    ],
+    "og_image": null,
+    "tema": "Vývoj",
+    "obrazek": "clanek-web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky.svg"
+  },
+  {
     "slug": "kvantove-pocitace-a-sifrovani-co-ma-firma-resit-uz-ted",
     "title": "Kvantové počítače a šifrování: co řešit už teď",
     "description": "Útočníci sbírají zašifrovaná data dnes a otevřou je později. Která data firmy musí zůstat tajná a na co se zeptat dodavatelů šifrování.",
