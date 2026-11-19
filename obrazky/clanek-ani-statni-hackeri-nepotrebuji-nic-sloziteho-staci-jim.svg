@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Tři cesty z firemní sítě ven vedou skrz tři otevřená místa: neopravený router, heslo bez druhého faktoru a zapomenutý účet" fill="none">
+<title>Tři cesty z firemní sítě ven vedou skrz tři otevřená místa: neopravený router, heslo bez druhého faktoru a zapomenutý účet</title>
+  <rect x="24" y="30" width="92" height="140" rx="5" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M38 50h60" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M38 61h44" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M38 72h52" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="252" y="30" width="44" height="140" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M262 50h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M262 61h18" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="184" cy="56" r="13" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M116 56 h68" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M197 56 h55" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M244 56 l8 0 m-4 -4 l4 4 l-4 4" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="184" cy="100" r="13" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M116 100 h68" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M197 100 h55" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M244 100 l8 0 m-4 -4 l4 4 l-4 4" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="184" cy="144" r="13" fill="#FBFBF9" stroke="#9A3F2B" stroke-width="1.8"/>
+  <path d="M116 144 h68" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M197 144 h55" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <path d="M244 144 l8 0 m-4 -4 l4 4 l-4 4" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

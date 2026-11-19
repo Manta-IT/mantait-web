@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mantait.cz/clanky/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -553,6 +553,11 @@
   <url>
     <loc>https://mantait.cz/clanky/text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani</loc>
     <lastmod>2026-11-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mantait.cz/clanky/ani-statni-hackeri-nepotrebuji-nic-sloziteho-staci-jim</loc>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

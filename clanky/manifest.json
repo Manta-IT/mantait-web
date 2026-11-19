@@ -1,5 +1,21 @@
 [
   {
+    "slug": "ani-statni-hackeri-nepotrebuji-nic-sloziteho-staci-jim",
+    "title": "Státní hackeři vcházejí přes neopravený systém",
+    "description": "Podle NÚKIB útočníci stojící za státem často nepotřebují pokročilé nástroje. Stačí neopravený router a heslo bez druhého faktoru. Co chtít po správci.",
+    "date_published": "2026-11-11",
+    "date_modified": "2026-11-20",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-bezpecnost"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-ani-statni-hackeri-nepotrebuji-nic-sloziteho-staci-jim.svg"
+  },
+  {
     "slug": "text-psal-clovek-nebo-ai-spolehlive-to-nepoznate-ani-vy-ani",
     "title": "Text psal člověk, nebo AI? Poznat to nelze spolehlivě",
     "description": "Posuzujete recenze, životopisy nebo podklady od dodavatelů podle toho, zda je psala AI? Detektor ani vodoznak to spolehlivě neřeknou. Co dělat místo toho.",
