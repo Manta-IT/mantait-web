@@ -1,5 +1,21 @@
 [
   {
+    "slug": "vyrabite-potraviny-zakon-o-kyberneticke-bezpecnosti-se-vas",
+    "title": "Vyrábíte potraviny? Zákon o kyberbezpečnosti se vás týká",
+    "description": "Vyrábíte, zpracováváte nebo distribuujete potraviny a jste střední firma? Zjistěte, proč se vás zákon týká a které staré systémy v provozu jsou nejslabší místo.",
+    "date_published": "2026-11-19",
+    "date_modified": "2026-11-24",
+    "highlight": false,
+    "cta_href": "/reseni-bezpecnost",
+    "sluzby": [
+      "reseni-bezpecnost",
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-vyrabite-potraviny-zakon-o-kyberneticke-bezpecnosti-se-vas.svg"
+  },
+  {
     "slug": "e-shop-roste-a-sklad-nestiha-kdy-uz-nestaci-skladovy-modul",
     "title": "Kdy už e-shopu nestačí skladový modul",
     "description": "Sklad nestíhá, i když přibývají lidé? Které signály ukážou, že evidence zásob už nestačí, a jak porovnat možnosti na pět let provozu.",

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Cesta potraviny přes nový řídicí systém linky a starý skladový systém, označený jako nejslabší místo, do místa rozhodnutí o tom, zda se firmy zákon týká" fill="none">
+<title>Cesta potraviny přes nový řídicí systém linky a starý skladový systém, označený jako nejslabší místo, do místa rozhodnutí o tom, zda se firmy zákon týká</title>
+  <path d="M10 100h14" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="24" y="70" width="70" height="60" rx="4" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M36 86h46" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M36 97h32" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M94 100h30" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="124" y="70" width="70" height="60" rx="4" fill="#E7EAE6" stroke="#9A3F2B" stroke-width="2" opacity="1"/>
+  <path d="M136 86h46" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M136 97h32" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M149 48l12 12m0-12l-12 12" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M194 100h54" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <circle cx="268" cy="100" r="20" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <circle cx="268" cy="100" r="4" fill="#0B6E4F" stroke="#0B6E4F" stroke-width="0"/>
+</svg>
