@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Nabídka dodavatele s velkým nadpisem a drobným písmem vede přes šest odškrtnutých otázek k místu rozhodnutí" fill="none">
+<title>Nabídka dodavatele s velkým nadpisem a drobným písmem vede přes šest odškrtnutých otázek k místu rozhodnutí</title>
+  <rect x="20" y="30" width="120" height="140" rx="5" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M34 48h44" stroke="#101413" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <path d="M34 112h92" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 120h84" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 128h90" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 136h70" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M34 144h86" stroke="#9AA29E" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+  <path d="M140 100h16" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 38v125" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 38 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="30" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 38 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 38 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 63 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="55" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 63 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 63 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 88 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="80" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 88 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 88 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 113 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="105" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 113 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 113 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 138 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="130" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 138 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 138 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M156 163 h14" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <rect x="170" y="155" width="16" height="16" rx="3" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M174 163 l4 5 l7-9" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M186 163 h30" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M216 38v125" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M216 100h50" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <circle cx="282" cy="100" r="16" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+</svg>
