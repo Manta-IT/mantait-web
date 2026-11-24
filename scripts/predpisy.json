@@ -3,7 +3,7 @@
  "predpisy": [
   {
    "id": "W01",
-   "vzor": "\\bproviz\\w*",
+   "vzor": "\\bproviz(?!or)\\w*",
    "kontext": null,
    "proc": "provize na webu v zadne podobe (Petr 19. 9.)"
   },
