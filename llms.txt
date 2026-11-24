@@ -131,6 +131,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Digital Fairness Act: co se změní u e-shopů a předplatného](https://mantait.cz/clanky/eu-chysta-digital-fairness-act-co-se-zmeni-pro-e-shopy-a): Evropská komise navrhla pravidla pro objednávky, ceny a rušení předplatného online. Zatím je to návrh, ale projít si vlastní web se vyplatí už teď.
 - [Kvantové počítače a šifrování: co řešit už teď](https://mantait.cz/clanky/kvantove-pocitace-a-sifrovani-co-ma-firma-resit-uz-ted): Útočníci sbírají zašifrovaná data dnes a otevřou je později. Která data firmy musí zůstat tajná a na co se zeptat dodavatelů šifrování.
 - [Web od AI za odpoledne: co mu chybí k poptávkám](https://mantait.cz/clanky/web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky): AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.
+- [Kdy už e-shopu nestačí skladový modul](https://mantait.cz/clanky/e-shop-roste-a-sklad-nestiha-kdy-uz-nestaci-skladovy-modul): Sklad nestíhá, i když přibývají lidé? Které signály ukážou, že evidence zásob už nestačí, a jak porovnat možnosti na pět let provozu.
 
 ## Co Manta IT není
 
