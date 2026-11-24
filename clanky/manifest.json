@@ -1,5 +1,20 @@
 [
   {
+    "slug": "pozvanka-na-schuzku-v-teams-muze-ukrast-firemni-ucet",
+    "title": "Pozvánka na schůzku v Teams může ukrást firemní účet",
+    "description": "Falešná pozvánka na schůzku vypadá jako běžná pracovní zpráva a vede na přihlašovací stránku. Co si majitel firmy má nechat potvrdit od správce.",
+    "date_published": "2026-11-21",
+    "date_modified": "2026-11-24",
+    "highlight": false,
+    "cta_href": "/#napiste",
+    "sluzby": [
+      "reseni-vedeni-it"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-pozvanka-na-schuzku-v-teams-muze-ukrast-firemni-ucet.svg"
+  },
+  {
     "slug": "dodavatel-erp-slibuje-ai-bez-migrace-na-co-se-ho-zeptat",
     "title": "ERP dodavatel slibuje AI bez migrace? Šest otázek",
     "description": "Dodavatel tvrdí, že AI poběží ve vašem stávajícím systému bez migrace. Šest otázek, které si nechte potvrdit písemně dřív, než zaplatíte.",

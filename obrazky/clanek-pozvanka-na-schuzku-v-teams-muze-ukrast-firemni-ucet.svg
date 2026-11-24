@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Kalendářní pozvánka, ze které vede cesta přes přihlašovací okno a místo rozhodnutí k firemnímu účtu s poštou a dokumenty, odbočka dolů se při ověření přeruší" fill="none">
+<title>Kalendářní pozvánka, ze které vede cesta přes přihlašovací okno a místo rozhodnutí k firemnímu účtu s poštou a dokumenty, odbočka dolů se při ověření přeruší</title>
+  <rect x="16" y="68" width="56" height="64" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="16" y="68" width="56" height="16" rx="4" fill="#C3CAC4" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <path d="M26 96h36" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M26 106h24" stroke="#9AA29E" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M72 100h28" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="100" y="72" width="56" height="56" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="100" y="72" width="56" height="12" rx="4" fill="#C3CAC4" stroke="#101413" stroke-width="1.8" opacity="1"/>
+  <rect x="110" y="96" width="36" height="10" rx="2" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="110" y="112" width="36" height="8" rx="2" fill="#FBFBF9" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M156 100h20" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="190" cy="100" r="14" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2"/>
+  <path d="M204 100h32" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="236" y="56" width="68" height="88" rx="5" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="2" opacity="1"/>
+  <rect x="246" y="66" width="48" height="20" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.5" opacity="1"/>
+  <path d="M250 74h30" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="246" y="94" width="48" height="20" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M250 102h36" stroke="#9AA29E" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <path d="M250 124h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M250 133h24" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M190 114v38" stroke="#9A3F2B" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="3 5" opacity="1"/>
+  <path d="M184 154l12 12m0-12l-12 12" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+</svg>

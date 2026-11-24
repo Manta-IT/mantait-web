@@ -135,6 +135,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Vyrábíte potraviny? Zákon o kyberbezpečnosti se vás týká](https://mantait.cz/clanky/vyrabite-potraviny-zakon-o-kyberneticke-bezpecnosti-se-vas): Vyrábíte, zpracováváte nebo distribuujete potraviny a jste střední firma? Zjistěte, proč se vás zákon týká a které staré systémy v provozu jsou nejslabší místo.
 - [FAQ na webu nestačí: podle čeho vás AI doporučí](https://mantait.cz/clanky/faq-na-webu-nestaci-podle-ceho-vas-ai-doporuci-nebo-ne): Přidali jste na web často kladené otázky a AI vás stejně nedoporučuje? Výzkum ukazuje, co rozhoduje a jak si za odpoledne ověříte, kde stojíte.
 - [ERP dodavatel slibuje AI bez migrace? Šest otázek](https://mantait.cz/clanky/dodavatel-erp-slibuje-ai-bez-migrace-na-co-se-ho-zeptat): Dodavatel tvrdí, že AI poběží ve vašem stávajícím systému bez migrace. Šest otázek, které si nechte potvrdit písemně dřív, než zaplatíte.
+- [Pozvánka na schůzku v Teams může ukrást firemní účet](https://mantait.cz/clanky/pozvanka-na-schuzku-v-teams-muze-ukrast-firemni-ucet): Falešná pozvánka na schůzku vypadá jako běžná pracovní zpráva a vede na přihlašovací stránku. Co si majitel firmy má nechat potvrdit od správce.
 
 ## Co Manta IT není
 
