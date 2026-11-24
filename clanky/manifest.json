@@ -1,5 +1,21 @@
 [
   {
+    "slug": "plan-na-utok-mate-na-papire-zkusili-jste-ho-za-hodinu-u",
+    "title": "Plán na útok máte na papíře. Zkusili jste ho u stolu?",
+    "description": "Plán reakce na incident bez zkoušky je jen papír. NÚKIB spustil bezplatný kurz, jak si cvičení u stolu připravit uvnitř firmy.",
+    "date_published": "2026-11-21",
+    "date_modified": "2026-11-24",
+    "highlight": false,
+    "cta_href": "/reseni-vedeni-it",
+    "sluzby": [
+      "reseni-vedeni-it",
+      "reseni-bezpecnost"
+    ],
+    "og_image": null,
+    "tema": "Bezpečnost",
+    "obrazek": "clanek-plan-na-utok-mate-na-papire-zkusili-jste-ho-za-hodinu-u.svg"
+  },
+  {
     "slug": "pozvanka-na-schuzku-v-teams-muze-ukrast-firemni-ucet",
     "title": "Pozvánka na schůzku v Teams může ukrást firemní účet",
     "description": "Falešná pozvánka na schůzku vypadá jako běžná pracovní zpráva a vede na přihlašovací stránku. Co si majitel firmy má nechat potvrdit od správce.",

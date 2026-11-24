@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Kulatý stůl se čtyřmi místy a listem s plánem uprostřed, u jedné odrážky je místo rozhodnutí" fill="none">
+<title>Kulatý stůl se čtyřmi místy a listem s plánem uprostřed, u jedné odrážky je místo rozhodnutí</title>
+  <circle cx="160" cy="100" r="62" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <rect x="140" y="14" width="40" height="18" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="140" y="168" width="40" height="18" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="68" y="80" width="18" height="40" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <rect x="234" y="80" width="18" height="40" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M160 36v32" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M160 164v-32" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M90 100h38" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <path d="M230 100h-38" stroke="#0B6E4F" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 5" opacity="1"/>
+  <rect x="130" y="70" width="60" height="60" rx="4" fill="#E7EAE6" stroke="#101413" stroke-width="1.5" opacity="1"/>
+  <path d="M138 82h34" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M138 94h28" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M138 106h38" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <circle cx="181" cy="94" r="4" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8"/>
+</svg>
