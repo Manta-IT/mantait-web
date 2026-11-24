@@ -133,6 +133,7 @@ Cílovka: majitelé a jednatelé firem do 250 zaměstnanců v ČR, kteří mají
 - [Web od AI za odpoledne: co mu chybí k poptávkám](https://mantait.cz/clanky/web-od-ai-za-odpoledne-co-mu-chybi-nez-zacne-nosit-poptavky): AI postaví firemní web za odpoledne, jenže nikdo nezkontroloval, jestli formulář poptávku doručí a jestli web někdo najde. Kolaudační seznam na jednu stránku.
 - [Kdy už e-shopu nestačí skladový modul](https://mantait.cz/clanky/e-shop-roste-a-sklad-nestiha-kdy-uz-nestaci-skladovy-modul): Sklad nestíhá, i když přibývají lidé? Které signály ukážou, že evidence zásob už nestačí, a jak porovnat možnosti na pět let provozu.
 - [Vyrábíte potraviny? Zákon o kyberbezpečnosti se vás týká](https://mantait.cz/clanky/vyrabite-potraviny-zakon-o-kyberneticke-bezpecnosti-se-vas): Vyrábíte, zpracováváte nebo distribuujete potraviny a jste střední firma? Zjistěte, proč se vás zákon týká a které staré systémy v provozu jsou nejslabší místo.
+- [FAQ na webu nestačí: podle čeho vás AI doporučí](https://mantait.cz/clanky/faq-na-webu-nestaci-podle-ceho-vas-ai-doporuci-nebo-ne): Přidali jste na web často kladené otázky a AI vás stejně nedoporučuje? Výzkum ukazuje, co rozhoduje a jak si za odpoledne ověříte, kde stojíte.
 
 ## Co Manta IT není
 

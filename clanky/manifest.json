@@ -1,5 +1,21 @@
 [
   {
+    "slug": "faq-na-webu-nestaci-podle-ceho-vas-ai-doporuci-nebo-ne",
+    "title": "FAQ na webu nestačí: podle čeho vás AI doporučí",
+    "description": "Přidali jste na web často kladené otázky a AI vás stejně nedoporučuje? Výzkum ukazuje, co rozhoduje a jak si za odpoledne ověříte, kde stojíte.",
+    "date_published": "2026-11-20",
+    "date_modified": "2026-11-24",
+    "highlight": false,
+    "cta_href": "/weby",
+    "sluzby": [
+      "weby",
+      "reseni-mapa-firmy"
+    ],
+    "og_image": null,
+    "tema": "AI",
+    "obrazek": "clanek-faq-na-webu-nestaci-podle-ceho-vas-ai-doporuci-nebo-ne.svg"
+  },
+  {
     "slug": "vyrabite-potraviny-zakon-o-kyberneticke-bezpecnosti-se-vas",
     "title": "Vyrábíte potraviny? Zákon o kyberbezpečnosti se vás týká",
     "description": "Vyrábíte, zpracováváte nebo distribuujete potraviny a jste střední firma? Zjistěte, proč se vás zákon týká a které staré systémy v provozu jsou nejslabší místo.",

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Zákaznická otázka putuje přes vyhledávání AI k několika stránkám, z nichž se jedna cituje, a přeškrtnuté FAQ samo nestačí" fill="none">
+<title>Zákaznická otázka putuje přes vyhledávání AI k několika stránkám, z nichž se jedna cituje, a přeškrtnuté FAQ samo nestačí</title>
+  <path d="M140 100h20q10 0 10-10v-30q0-10 10-10h46" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M140 100h20q10 0 10 10v30q0 10 10 10h46" stroke="#9AA29E" stroke-width="1.6" stroke-linecap="round" opacity="1"/>
+  <path d="M140 100h86" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <rect x="14" y="78" width="46" height="44" rx="4" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M22 92h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M22 101h22" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M60 100h44" stroke="#0B6E4F" stroke-width="2" stroke-linecap="round" opacity="1"/>
+  <circle cx="122" cy="100" r="18" fill="#FBFBF9" stroke="#0B6E4F" stroke-width="1.8"/>
+  <rect x="226" y="36" width="70" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M234 46h40" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="226" y="86" width="70" height="28" rx="3" fill="#CFE3D9" stroke="#0B6E4F" stroke-width="1.8" opacity="1"/>
+  <path d="M234 96h44" stroke="#0B6E4F" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="226" y="136" width="70" height="28" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M234 146h36" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <rect x="14" y="148" width="50" height="30" rx="3" fill="#E7EAE6" stroke="#C3CAC4" stroke-width="1.5" opacity="1"/>
+  <path d="M22 158h30" stroke="#C3CAC4" stroke-width="2.5" stroke-linecap="round" opacity="1"/>
+  <path d="M10 184l58-42" stroke="#9A3F2B" stroke-width="2" stroke-linecap="round"/>
+</svg>
